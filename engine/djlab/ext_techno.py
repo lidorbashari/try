@@ -430,11 +430,12 @@ def hook_events(key, chord_degs, cell="anthem", octave=4, bars_per_chord=2, star
     return ev
 
 
-def bass_roll(root, pattern="roll3", rng_bar=None, fifth=7, octave_jump=True):
+def bass_roll(root, pattern="roll3", rng_bar=None, fifth=7, octave_jump=True, shape=None):
     """One bar of rolling bass events avoiding the kick downbeats.
 
     patterns: ``roll3`` (_xxx per beat), ``roll2`` (__xx), ``offbeat`` (__x_), ``gallop`` (_x_x … ),
-    ``tri`` (_xx_ x_x_ triplet feel)."""
+    ``tri`` (_xx_ x_x_ triplet feel). ``shape``: semitone offsets cycled over the hits of each beat
+    (e.g. ``[0, 12, 0]`` = root-octave-root arpeggiated roll)."""
     steps = {
         "roll3": [1, 2, 3, 5, 6, 7, 9, 10, 11, 13, 14, 15],
         "roll2": [2, 3, 6, 7, 10, 11, 14, 15],
@@ -443,10 +444,14 @@ def bass_roll(root, pattern="roll3", rng_bar=None, fifth=7, octave_jump=True):
         "tri": [1, 2, 5, 7, 9, 10, 13, 15],
     }[pattern]
     ev = []
+    k_in_beat, last_beat = 0, -1
     for s in steps:
-        p = root
+        beat = s // 4
+        k_in_beat = k_in_beat + 1 if beat == last_beat else 0
+        last_beat = beat
+        p = root + (shape[k_in_beat % len(shape)] if shape else 0)
         v = 0.95 if s % 4 == 2 else 0.78
-        if octave_jump and s == 15:
+        if octave_jump and s == 15 and not shape:
             p = root + 12
         elif fifth and s == 11 and rng_bar is not None and rng_bar.random() < 0.3:
             p = root + fifth

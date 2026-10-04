@@ -30,23 +30,23 @@ TEMPLATE = [
 FLAVORS = {
     # Neon Cathedral: choir-heavy, organ-tinted pads, glassy 3-against-4 arp, slow cathedral hook
     "techno-05": dict(prog=[0, 5, 2, 6], arp="three", arp_rate=1, arp_voice="glass", lead="glass",
-                      hook="cathedral", bass="roll3", organ=0.35, choir_db=-9.0, perc="tribal",
+                      hook="cathedral", bass="roll3", bass_shape=None, arp2="up", organ=0.35, choir_db=-9.0, perc="tribal",
                       kick_decay=0.36, swing=50.0, hall=4.5, vowel=("a", "o"), arp_gain=-9.5,
                       desc="קתדרלה של צלילים: מקהלה סינתטית ופדים עם גוון של עוגב, ארפג'יו זכוכיתי בשלוש-נגד-ארבע "
                            "ומלודיה איטית ורחבה בדרופ"),
     # Afterglow Protocol: bright Anyma-style supersaw arp + big anthem lead
     "techno-06": dict(prog=[0, 6, 5, 6], arp="updown", arp_rate=1, arp_voice="supersaw", lead="anthem",
-                      hook="anthem", bass="roll3", organ=0.0, choir_db=-12.0, perc="tight",
+                      hook="anthem", bass="roll3", bass_shape=[0, 12, 0], arp2="converge", organ=0.0, choir_db=-12.0, perc="tight",
                       kick_decay=0.32, swing=50.0, hall=3.8, vowel=("e", "a"), arp_gain=-10.0,
                       desc="ארפג'יו סופר-סו רחב ובוהק בסגנון Anyma, ליד המנוני גדול בדרופ ופדים בסיידצ'יין"),
     # Event Horizon: darker Massano drive, galloping bass, pedal arp, rhythmic pulse hook
     "techno-07": dict(prog=[0, 3, 5, 6], arp="pedal", arp_rate=1, arp_voice="supersaw_dark", lead="anthem_dark",
-                      hook="pulse", bass="gallop", organ=0.0, choir_db=-13.0, perc="driving",
+                      hook="pulse", bass="gallop", bass_shape=[0, 0], arp2="updown", organ=0.0, choir_db=-13.0, perc="driving",
                       kick_decay=0.3, swing=50.0, hall=3.5, vowel=("o", "a"), arp_gain=-9.0,
                       desc="מלודיק טכנו כהה ודוהר בסגנון Massano: באס דוהר, ארפג'יו פדאל אפל וליד ריתמי וחד בדרופ"),
     # Silent Orbit: spacey Tale-Of-Us mood, 8th-note glass arp, soft breathy lead, long delays
     "techno-08": dict(prog=[0, 5, 3, 4], arp="converge", arp_rate=2, arp_voice="glass", lead="soft",
-                      hook="descend", bass="roll2", organ=0.15, choir_db=-10.0, perc="tribal",
+                      hook="descend", bass="roll2", bass_shape=[0, 7], arp2="three", organ=0.15, choir_db=-10.0, perc="tribal",
                       kick_decay=0.34, swing=51.0, hall=5.0, vowel=("u", "a"), arp_gain=-8.5,
                       desc="מסע חללי ושקט בסגנון Tale Of Us: ארפג'יו זכוכית בשמיניות עם דיליי ארוך, ליד רך ונושם "
                            "ופדים רחבים"),
@@ -183,7 +183,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     def bass_notes(c):
         if c.kind in ("intro", "breakdown") or c.bar >= bass_off:
             return []
-        ev = xt.bass_roll(bass_root(prog[chord_i(c)]), fl["bass"], c.rng)
+        ev = xt.bass_roll(bass_root(prog[chord_i(c)]), fl["bass"], c.rng, shape=fl.get("bass_shape"))
         if c.before("breakdown", 1):
             ev = [e for e in ev if e[0] < 8]
         return ev
@@ -206,6 +206,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     else:
         arp_inst = xt.supersaw_pluck(cutoff=450.0, env_amt=5200.0, decay=0.14, sustain=0.14, release=0.2, detune=0.26)
     arp_seqs = [xt.arp_seq(ch, fl["arp"], 2) for ch in arp_chords]
+    arp_seqs2 = [xt.arp_seq(ch, fl.get("arp2", fl["arp"]), 2) for ch in arp_chords]
     rate = fl["arp_rate"]
 
     def arp_notes(c):
@@ -213,7 +214,8 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
               or (c.kind == "breakdown" and (c.i < 8 or c.i >= 16)) or (c.kind == "outro" and c.i < 16))
         if not on:
             return []
-        return xt.arp_bar(arp_seqs[chord_i(c)], c.i * 16, rate=rate, gate=0.7)
+        seqs = arp_seqs2 if (c.kind == "drop" and c.i >= 16) else arp_seqs  # the arp evolves in the 2nd half
+        return xt.arp_bar(seqs[chord_i(c)], c.i * 16, rate=rate, gate=0.7)
 
     arp = song.notes("arp", arp_inst, arp_notes, gain_db=fl["arp_gain"], sidechain=0.45, humanize=0.02, hp=180.0,
                      sends={"delay": 0.22, "hall": 0.14, "space": 0.06})

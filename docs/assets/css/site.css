@@ -853,7 +853,7 @@ kbd, .kbd { display: inline-block; min-width: 1.6em; padding: .05em .45em; borde
 .crate-body { display: grid; gap: 6px; padding: var(--s4) var(--s5) var(--s5); flex: 1; align-content: start; }
 .crate-en { color: var(--muted); font-size: .82rem; font-family: var(--font-head); justify-self: start; }
 .crate-title { font-family: var(--font-head); font-weight: 700; font-size: 1.2rem; }
-.crate-intro { color: var(--text-2); font-size: .92rem; line-height: 1.6; }
+.crate-intro { color: var(--text-2); font-size: .92rem; line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
 .crate-stats { display: flex; align-items: center; gap: var(--s4); flex-wrap: wrap; color: var(--muted); font-size: .84rem; margin-top: auto; padding-top: var(--s2); }
 .crate-stats > span { display: inline-flex; align-items: center; gap: 6px; }
 .crate-stats .icon { width: 16px; height: 16px; }
@@ -912,7 +912,7 @@ kbd, .kbd { display: inline-block; min-width: 1.6em; padding: .05em .45em; borde
 .set-spark { display: block; height: 64px; margin: -4px 0 var(--s2); }
 .set-spark svg { width: 100%; height: 100%; overflow: visible; }
 .set-title { font-family: var(--font-head); font-weight: 700; font-size: 1.2rem; }
-.set-intro { color: var(--text-2); font-size: .92rem; line-height: 1.6; }
+.set-intro { color: var(--text-2); font-size: .92rem; line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
 .set-tools { margin-bottom: var(--s5); }
 .set-tools-head { display: flex; justify-content: space-between; align-items: center; gap: var(--s3); flex-wrap: wrap; margin-bottom: var(--s3); }
 .set-tools-head h2 { font-size: 1.12rem; margin: 0; }

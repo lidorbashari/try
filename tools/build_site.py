@@ -156,6 +156,14 @@ def parse_front_matter(text: str):
     return data, body
 
 
+def clip(text: str, n: int) -> str:
+    text = re.sub(r"\s+", " ", text or "").strip()
+    if len(text) <= n:
+        return text
+    cut = text[:n].rsplit(" ", 1)[0].rstrip(",;:—–-(")
+    return cut + "…"
+
+
 def as_list(v):
     if v is None:
         return []
@@ -1082,7 +1090,7 @@ def build_crates(ctx_base):
         intro = ""
         m = re.search(r"^(?!\s*[#|>\-*!\[])(\S.+)$", body, re.M)
         if m:
-            intro = strip_tags(md_to_html(m.group(1))[0])[:220]
+            intro = clip(strip_tags(md_to_html(m.group(1))[0]), 300)
         crates.append({
             "slug": slug, "title": title, "title_he": title_he, "genres": genres, "count": int(count or 0),
             "verified": verified, "bpm_min": min(bpms) if bpms else None, "bpm_max": max(bpms) if bpms else None,
@@ -1117,7 +1125,7 @@ def render_crate(c, body_html: str, out: Path) -> str:
     genres = "".join(f'<span class="chip chip--static">{esc(g)}</span>' for g in c["genres"])
     bpm = ""
     if c["bpm_min"]:
-        bpm = f'<span class="meta-item">{icon("metronome")}{c["bpm_min"]:g}–{c["bpm_max"]:g} BPM</span>'
+        bpm = f'<span class="meta-item">{icon("metronome")}<bdi dir="ltr">{c["bpm_min"]:g}–{c["bpm_max"]:g} BPM</bdi></span>'
     csv_btn = ""
     if c["csv"]:
         csv_btn = f'<a class="btn btn--ghost btn--sm" href="{rel(out, ROOT / c["csv"])}" download>{icon("download")}<span>הורדת CSV</span></a>'
@@ -1151,7 +1159,7 @@ def render_crates_index(crates) -> str:
         for c in crates:
             genres = "".join(f'<span class="chip chip--static chip--sm">{esc(g)}</span>' for g in c["genres"][:4])
             pct = round(100 * c["verified"] / c["count"]) if c["count"] else 0
-            bpm = f'{c["bpm_min"]:g}–{c["bpm_max"]:g} BPM' if c["bpm_min"] else ""
+            bpm = f'<bdi dir="ltr">{c["bpm_min"]:g}–{c["bpm_max"]:g} BPM</bdi>' if c["bpm_min"] else ""
             cards.append(f"""<li><a class="crate-card card card--link" href="{esc(c['slug'])}.html">
   <span class="crate-art" aria-hidden="true" data-seed="{esc(c['slug'])}"></span>
   <span class="crate-body">
@@ -1202,7 +1210,7 @@ def build_sets(ctx_base, track_ids):
         intro = str(fm.get("summary") or fm.get("description") or "")
         if not intro:
             m = re.search(r"^(?!\s*[#|>\-*!\[])(\S.+)$", body, re.M)
-            intro = strip_tags(md_to_html(m.group(1))[0])[:220] if m else ""
+            intro = clip(strip_tags(md_to_html(m.group(1))[0]), 300) if m else ""
         s = {
             "slug": slug, "file": f.stem, "title_he": title_he, "title": str(fm.get("title_en") or fm.get("title") or ""),
             "duration": fm.get("duration") or fm.get("duration_min") or fm.get("minutes"),

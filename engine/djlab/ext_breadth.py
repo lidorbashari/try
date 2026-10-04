@@ -93,11 +93,12 @@ def psy_kick(tune_hz=48.0, length=0.1, click=0.6, drive=2.4, knock=1.0, rng=None
     nc = int(0.005 * sr)
     tc = np.arange(nc) / sr
     ck = np.zeros(n)
-    ck[:nc] = (hp(white(nc, rng), 2500.0) * 0.6 + np.sin(TAU * 3200.0 * tc)) * np.exp(-tc / 0.0009)
-    x = body * amp + click * 0.4 * ck
+    ck[:nc] = (bp(white(nc, rng), 1800.0, 7000.0) * 0.8 + np.sin(TAU * 2600.0 * tc)) * np.exp(-tc / 0.0018)
+    x = body * amp + click * 0.35 * ck
     x = np.tanh(x * drive) / math.tanh(drive)
     x = hp(x.astype(F32), 22.0, 2)
-    return normalize(fade(x, 0, int(0.003 * sr)))
+    x = lp(x, 9000.0, 2)
+    return normalize(fade(x, int(0.0004 * sr), int(0.003 * sr)))
 
 
 def layered_snare(rng, tone_hz=200.0, snappy=0.8, decay=0.18, clap_amt=0.5, body=1.0, crack_hz=1800.0, sr=SR):

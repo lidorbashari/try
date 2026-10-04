@@ -23,7 +23,7 @@
   {"id":"transition-04","technique":"echo_out","technique_he":"Echo Out","from_id":"house-07","to_id":"techno-01"},
   {"id":"transition-05","technique":"cut","technique_he":"קאט / סלאם","from_id":"mainstream-01","to_id":"mainstream-02"},
   {"id":"transition-06","technique":"loop_roll","technique_he":"לופ רול","from_id":"techno-02","to_id":"techno-03"},
-  {"id":"transition-07","technique":"energy_boost","technique_he":"קפיצת אנרגיה הרמונית (+1 Camelot)","from_id":"house-09","to_id":"house-11"},
+  {"id":"transition-07","technique":"energy_boost","technique_he":"קפיצת אנרגיה הרמונית (+2 Camelot)","from_id":"house-09","to_id":"house-11"},
   {"id":"transition-08","technique":"tempo_change_echo","technique_he":"מעבר טמפו 95→124 עם Echo","from_id":"mainstream-08","to_id":"mainstream-15"},
   {"id":"transition-09","technique":"drop_swap","technique_he":"החלפת דרופים","from_id":"mainstream-13","to_id":"mainstream-14"},
   {"id":"transition-10","technique":"breakdown_mix","technique_he":"כניסה בברייקדאון","from_id":"techno-06","to_id":"techno-07"}

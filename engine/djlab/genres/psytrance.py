@@ -186,7 +186,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return None if c.bars_left > 2 else "gxgxgxgxgxgxgxgx"
         return ch_p
 
-    song.hits("hats", ch, ch_pat, gain_db=-15.5, pan=0.25, humanize=0.12)
+    song.hits("hats", ch, ch_pat, gain_db=-14.0, pan=0.35, humanize=0.12, sends={"delay8": 0.05})
     oh = drums.hat(open_=True, decay=float(rng.uniform(0.09, 0.13)), tone=float(rng.uniform(1.0, 1.2)), rng=rng)
 
     def oh_pat(c):
@@ -198,7 +198,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return None
         return "..x...x...x...x."
 
-    song.hits("open_hat", oh, oh_pat, gain_db=-12.0, pan=-0.12, sends={"room": 0.1})
+    song.hits("open_hat", oh, oh_pat, gain_db=-11.5, pan=-0.22, sends={"room": 0.12})
     clap = drums.variants(drums.clap, 3, rng, jitter={"tone_hz": 0.05}, tone_hz=float(rng.uniform(1300, 1700)),
                           tail=float(rng.uniform(0.1, 0.15)))
 
@@ -280,14 +280,14 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return acid_clip(c)
         return []
 
-    acid = song.line("acid", acid_syn, acid_notes, bus="music", gain_db=-9.0 if not prog else -10.5,
-                     sidechain=0.45, sends={"delay": 0.2, "reverb": 0.08}, hp=140.0, pan=-0.1)
+    acid = song.line("acid", acid_syn, acid_notes, bus="music", gain_db=-8.0 if not prog else -10.0,
+                     sidechain=0.45, sends={"delay": 0.24, "reverb": 0.1}, hp=200.0, pan=-0.15, width=1.3)
     apts = []
     for s in secs:
         if s.kind in ("groove", "drop"):
             for b in range(s.start_bar, s.end_bar, 16):
-                hi = 2600.0 if not prog else 1500.0
-                apts += [(b, 450.0 if not prog else 300.0), (b + 12, 1000.0 if not prog else 700.0),
+                hi = 3800.0 if not prog else 1800.0
+                apts += [(b, 650.0 if not prog else 350.0), (b + 12, 1400.0 if not prog else 800.0),
                          (min(b + 16, s.end_bar) - 0.01, hi)]
         elif s.kind == "breakdown":
             apts += [(s.start_bar + s.bars // 2, 300.0), (s.end_bar - 0.01, 3500.0 if not prog else 2000.0)]
@@ -311,8 +311,8 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return fm_ev
         return []
 
-    fm_l = song.notes("fm_seq", fm_i, fm_notes, gain_db=-11.0 if not prog else -13.0, sidechain=0.4,
-                      sends={"delay": 0.22 if not prog else 0.3, "hall": 0.06}, pan=0.22, width=1.4)
+    fm_l = song.notes("fm_seq", fm_i, fm_notes, gain_db=-9.5 if not prog else -12.0, sidechain=0.4,
+                      sends={"delay": 0.22 if not prog else 0.3, "hall": 0.06}, pan=0.25, width=1.6)
     fpts = []
     for s in secs:
         if s.kind in ("groove", "drop"):
@@ -327,14 +327,14 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     # ---------------------------------------------------------------- leads
     if not prog:
         phrase = LEAD_PHRASES[int(rng.integers(len(LEAD_PHRASES)))]
-        lead_ev = [(s, l * 0.9, key.degree(d, 4), 0.9, "a" if s % 8 == 0 else ("s" if l <= 1 else ""))
+        lead_ev = [(s, l * 0.9, key.degree(d, 5), 0.9, "a" if s % 8 == 0 else ("s" if l <= 1 else ""))
                    for s, l, d in phrase]
         lead_syn = inst.MonoSynth(wave="square", cutoff=900.0, res=0.6, env_mod=2.0, decay=0.14, glide_ms=35.0,
                                   drive=1.8, dist=0.2)
         lclip = clip(lead_ev, 4)
         lead = song.line("lead", lead_syn, lambda c: lclip(c) if (c.kind == "drop" and (c.name == "Drop 2" or c.i >= 16))
-                         else [], bus="music", gain_db=-10.0, sidechain=0.4,
-                         sends={"delay": 0.3, "reverb": 0.15}, hp=200.0, pan=0.12, width=1.3)
+                         else [], bus="music", gain_db=-11.0, sidechain=0.4,
+                         sends={"delay": 0.3, "reverb": 0.15}, hp=300.0, pan=0.12, width=1.3)
         lead.automate("cutoff", [(0, 1200.0)] + [(s.start_bar, 900.0) for s in secs if s.kind == "drop"]
                       + [(s.end_bar - 0.01, 3000.0) for s in secs if s.kind == "drop"])
     else:
@@ -433,8 +433,9 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
 
     # ---------------------------------------------------------------- mix
     song.buses["drums"].eq = [("peak", 3200.0, 1.5, 0.8), ("peak", 120.0, 1.0, 1.0)]
-    song.buses["drums"].width = 1.2
-    song.buses["music"].width = 1.25
+    song.buses["drums"].width = 1.3
+    song.buses["music"].width = 1.4
+    song.buses["music"].eq = [("peak", 2200.0, 2.0, 0.7)]
     song.returns["delay"].beats = 0.75
     song.returns["reverb"].width = 1.4
     song.master.lufs = -9.0

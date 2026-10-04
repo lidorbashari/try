@@ -26,8 +26,8 @@ from . import register
 DEMBOW = "...x..x....x..x."
 DEMBOW_VARS = ["...x..x....x..x.", "...x..x...xx..x.", "...x..x....x.x.x", "..xx..x....x..x."]
 DEMBOW_FILL = ["...x..x.x.xxx.xx", "...x..x.xxxx.xxx", "...x..xx..xxxxxx"]
-KICK_VERSE = ["x.......x.......", "x.......x.......", "x.......x.......", "x.......x.....x."]
-KICK_DROP = "x...x...x...x..."
+KICK_VERSE = ["X...o...X...o...", "X...o...X...o...", "X...o...X...o...", "X...o...X...o.x."]
+KICK_DROP = "X...x...X...x..."
 HATS = ["o.x.o.x.o.x.o.x.", "g.x.g.x.g.x.o.x.", "o.x.o.xgo.x.o.xg"]
 SHAKER = ["xgogxgogxgogxgog", "xgoxxgoxxgoxxgox", "ogxgogxgogxgogxg"]
 CONGA = ["......x...x..x..", "..x...x...x..xx.", "......xx..x...x.", "...x..x.......x."]
@@ -96,9 +96,9 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
 
     # ---------------------------------------------------------------- harmony
     if dark:
-        degs = [[0, 5, 3, 4], [0, 3, 5, 4], [0, 5, 6, 4]][int(rng.integers(3))]   # i–VI–iv–V (harm. minor)
+        degs = [[0, 5, 3, 4], [0, 3, 5, 4], [0, 0, 5, 4]][int(rng.integers(3))]   # i–VI–iv–V (harm. minor)
     else:
-        degs = [[0, 5, 2, 6], [0, 3, 6, 2], [0, 5, 6, 4]][int(rng.integers(3))]   # i–VI–III–VII etc.
+        degs = [[0, 5, 2, 6], [0, 0, 5, 6], [0, 6, 5, 6], [0, 5, 6, 6]][int(rng.integers(4))]  # i–VI–III–VII etc.
     from ..theory import Key
     nat = Key(plan["key"])  # natural minor for everything except the V chord in the dark variant
     chords = []
@@ -125,11 +125,11 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
         if c.kind == "breakdown":
             return "x..............." if c.i == 0 else None
         if c.before("drop", 1):
-            return "x.......x......." if c.rng.random() < 0.5 else "x..............."
+            return "X...x...X......." if c.rng.random() < 0.5 else "X...x...X...x..."
         if c.kind == "drop":
             return KICK_DROP
         if c.kind == "intro" and c.i < 4:
-            return "x.......x......."
+            return "x.......x......."  # bare 1-and-3 dembow kick to open
         return KICK_VERSE[c.i % 4]
 
     song.hits("kick", kick, kick_pat, gain_db=-1.5, sc_source=True, humanize=0.0)
