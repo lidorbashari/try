@@ -269,8 +269,8 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
                         gain_db=-19.0 if tunnel else -22.0)
     fxl.add(fx.noise_sweep(bar * 8, up=True, rng=rng), g0, align="end", gain_db=-18.0)
 
-    song.buses["drums"].eq = [("peak", 3000.0, 1.0 if tunnel else 2.0, 0.8)]
-    song.buses["music"].eq = [("peak", 380.0, -2.0, 0.9)]
+    song.buses["drums"].eq = [("peak", 2400.0, 2.5, 0.7)]
+    song.buses["music"].eq = [("peak", 380.0, -2.5, 0.9), ("peak", 1500.0, 3.0, 0.7)]
     song.master.lufs = -9.0
     if tunnel:
         song.instruments = ["deep round kick", "long sidechained rumble", "offbeat sub", "dub chords into long delays",

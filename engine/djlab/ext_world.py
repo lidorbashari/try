@@ -700,6 +700,32 @@ def guitar(bright=0.55, t60=1.3, hardness=0.8, pos=0.24, muted=False, sr=SR, **k
                           course_cents=1.5, course_ms=6.0, attack_click=0.05, width=0.6, sr=sr, **kw)
 
 
+def deep_bass(cutoff=220.0, env_amt=700.0, decay=0.12, res=0.25, sub_oct=0.55, oct_above_hz=58.0, drive=1.3,
+              grit=0.18, release=0.03, sustain=0.5, sr=SR):
+    """``Notes`` instrument: deep-house bass — saw through a ladder LP with a pluck envelope, solid
+    sine fundamental and, for notes above ``oct_above_hz``, a sine one octave below (sub-octave) so
+    the energy sits in the sub band. Peak ≈ 0.8·vel."""
+    from .dsp import ladder
+    from .synth import adsr
+
+    def inst(freq, dur, vel):
+        gate = max(16, int(dur * sr))
+        n = gate + int(release * sr)
+        t = np.arange(n) / sr
+        osc = saw(freq, n)
+        cut = cutoff + env_amt * vel * np.exp(-t / decay)
+        x = ladder(osc * 0.7, cut, res, drive).astype(np.float64)
+        if grit:
+            g = np.tanh(ladder(osc, cut * 1.6 + 300, 0.2, 1.0) * 3.0)
+            x += grit * hp(lp(g, 2500.0, 2), 300.0, 2)
+        x += 0.9 * sine(freq, n)
+        if freq > oct_above_hz:
+            x += sub_oct * sine(freq / 2.0, n)
+        env = adsr(n, gate, 0.003, decay * 1.6, sustain, release, sr)
+        return normalize(fade((x * env).astype(F32), 16, 64), 0.8 * float(vel))
+    return inst
+
+
 # ============================================================================ wind / bowed / keyboard leads
 def ney(breath=0.35, vib_depth=0.18, vib_rate=5.0, attack=0.07, release=0.2, tail=1.0, bright=0.5, sr=SR):
     """Ney / kaval: end-blown reed flute — sine + weak harmonics, pitched breath noise tracking the
@@ -916,7 +942,7 @@ def run(scale, from_deg: int, to_deg: int, step_len: float = 0.5, start: float =
     return out
 
 
-def kick_tune(key, lo=46.0, hi=60.0) -> float:
+def kick_tune(key, lo=46.0, hi=60.0, center=53.0) -> float:
     """A kick tuning in [lo, hi] Hz that is a chord tone (root, fifth, third) of the key."""
     cands = []
     third = 3 if key.quality == "minor" else 4
@@ -925,5 +951,5 @@ def kick_tune(key, lo=46.0, hi=60.0) -> float:
         for octv in range(0, 3):
             f = 440.0 * 2 ** (((12 * (octv + 1) + pc) - 69) / 12.0)
             if lo <= f <= hi:
-                cands.append((pref + abs(f - 53.0) / 20.0, f))
+                cands.append((pref + abs(f - center) / 20.0, f))
     return min(cands)[1] if cands else 52.0

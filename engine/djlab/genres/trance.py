@@ -94,12 +94,12 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return "x...x...x......."
         return "x...x...x...x..."
 
-    song.hits("kick", kick, kick_pat, gain_db=-2.0, sc_source=True, humanize=0.0)
+    song.hits("kick", kick, kick_pat, gain_db=-3.0, sc_source=True, humanize=0.0)
     clap = drums.variants(drums.clap, 3, rng, jitter={"tone_hz": 0.05}, tone_hz=float(rng.uniform(1150, 1450)),
                           tail=float(rng.uniform(0.16, 0.22)))
     song.hits("clap", clap, lambda c: ("....x.......x..." if not c.phrase_end else "....x.......x.xx")
               if not (c.kind == "breakdown" or (c.kind == "intro" and c.i < 8) or (c.kind == "outro" and c.bars_left <= 8))
-              else None, gain_db=-5.5, sends={"reverb": 0.25, "hall": 0.08})
+              else None, gain_db=-4.5, sends={"reverb": 0.25, "hall": 0.08})
     ch = drums.variants(drums.hat, 4, rng, jitter={"decay": 0.15}, decay=float(rng.uniform(0.03, 0.045)),
                         tone=float(rng.uniform(1.05, 1.25)))
     song.hits("hats", ch, lambda c: ("gxgxgxgxgxgxgxgx" if c.kind != "intro" or c.i >= 8 else "..x...x...x...x.")
@@ -187,15 +187,15 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
         vel = [0.95, 0.65, 0.8, 0.65]
         return [(s, 0.9, tones[arp_shape[s % 8] % len(tones)], vel[s % 4]) for s in range(16)]
 
-    arp = song.notes("arp", arp_i, arp_notes, gain_db=-11.0 if not prog else -8.5, sidechain=0.45,
-                     sends={"delay": 0.25, "reverb": 0.12}, pan=0.15, width=1.5)
+    arp = song.notes("arp", arp_i, arp_notes, gain_db=-9.0 if not prog else -7.5, sidechain=0.45,
+                     sends={"delay": 0.25, "reverb": 0.12}, pan=0.15, width=1.3)
     apts = [(intro.start_bar + 24, 500.0), (intro.end_bar, 1800.0), (groove.start_bar + 16, 3000.0),
             (groove.end_bar, 5000.0), (bd.start_bar, 1200.0), (bd.end_bar - 0.01, 7000.0), (drop.start_bar, 9000.0),
             (outro.start_bar, 6000.0), (outro.start_bar + 16, 600.0)]
     arp.automate("lp", apts)
 
     # ---------------------------------------------------------------- pads
-    pad_i = inst.pad(attack=float(rng.uniform(0.5, 0.9)), cutoff=float(rng.uniform(2200, 3200)), detune=0.32, warmth=0.5)
+    pad_i = inst.pad(attack=float(rng.uniform(0.5, 0.9)), cutoff=float(rng.uniform(2800, 3800)), detune=0.32, warmth=0.45)
 
     def pad_notes(c):
         if c.i % 2:
@@ -304,7 +304,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     song.buses["drums"].eq = [("peak", 3500.0, 1.5, 0.8)]
     song.buses["drums"].width = 1.25
     song.buses["music"].width = 1.15
-    song.buses["music"].eq = [("peak", 3000.0, 1.5, 0.7), ("peak", 350.0, -1.5, 1.0)]
+    song.buses["music"].eq = [("peak", 1500.0, 2.0, 0.7), ("peak", 3500.0, 1.5, 0.7), ("peak", 350.0, -1.5, 1.0)]
     song.returns["hall"].decay = 4.0
     song.returns["reverb"].width = 1.5
     song.returns["delay"].width = 1.4

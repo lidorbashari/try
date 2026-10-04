@@ -1,13 +1,13 @@
 {
- "generated_at": "2026-10-04T22:08:45+00:00",
+ "generated_at": "2026-10-04T22:11:30+00:00",
  "engine_version": "1.0.0",
  "stats": {
-  "tracks": 11,
+  "tracks": 13,
   "practice": 1,
   "transitions": 0,
-  "genres": 5,
-  "minutes": 48.6,
-  "bytes": 127213647
+  "genres": 6,
+  "minutes": 58.4,
+  "bytes": 151291514
  },
  "tracks": [
   {
@@ -1336,6 +1336,161 @@
    "size_bytes": 12569727
   },
   {
+   "id": "techno-08",
+   "title": "Silent Orbit",
+   "title_he": "מסלול שקט",
+   "artist": "DJ Lab Originals",
+   "genre": "Melodic Techno",
+   "genre_slug": "melodic_techno",
+   "family": "techno",
+   "bpm": 122.0,
+   "key": "A minor",
+   "key_short": "Am",
+   "camelot": "8A",
+   "energy": 6,
+   "role": "build",
+   "duration_sec": 314.754,
+   "bars": 160,
+   "beats_per_bar": 4,
+   "first_downbeat_sec": 0.0,
+   "sections": [
+    {
+     "name": "Intro",
+     "start_bar": 0,
+     "bars": 32,
+     "start_sec": 0.0,
+     "energy": 4
+    },
+    {
+     "name": "Build",
+     "start_bar": 32,
+     "bars": 32,
+     "start_sec": 62.951,
+     "energy": 6
+    },
+    {
+     "name": "Breakdown",
+     "start_bar": 64,
+     "bars": 32,
+     "start_sec": 125.902,
+     "energy": 3
+    },
+    {
+     "name": "Drop",
+     "start_bar": 96,
+     "bars": 32,
+     "start_sec": 188.852,
+     "energy": 9
+    },
+    {
+     "name": "Outro",
+     "start_bar": 128,
+     "bars": 32,
+     "start_sec": 251.803,
+     "energy": 4
+    }
+   ],
+   "cues": [
+    {
+     "slot": "A",
+     "name": "Intro",
+     "bar": 0,
+     "sec": 0.0,
+     "color": "#28E214",
+     "type": "hot"
+    },
+    {
+     "slot": "B",
+     "name": "Mix-In",
+     "bar": 32,
+     "sec": 62.951,
+     "color": "#10B1E6",
+     "type": "hot"
+    },
+    {
+     "slot": "C",
+     "name": "Breakdown",
+     "bar": 64,
+     "sec": 125.902,
+     "color": "#E0641B",
+     "type": "hot"
+    },
+    {
+     "slot": "D",
+     "name": "Drop",
+     "bar": 96,
+     "sec": 188.852,
+     "color": "#E62828",
+     "type": "hot"
+    },
+    {
+     "slot": "G",
+     "name": "Outro",
+     "bar": 128,
+     "sec": 251.803,
+     "color": "#305AFF",
+     "type": "hot"
+    },
+    {
+     "slot": "H",
+     "name": "Last 16",
+     "bar": 144,
+     "sec": 283.279,
+     "color": "#8A2BE2",
+     "type": "hot"
+    }
+   ],
+   "memory_cues": [
+    {
+     "name": "Intro",
+     "bar": 0,
+     "sec": 0.0
+    },
+    {
+     "name": "Build",
+     "bar": 32,
+     "sec": 62.951
+    },
+    {
+     "name": "Breakdown",
+     "bar": 64,
+     "sec": 125.902
+    },
+    {
+     "name": "Drop",
+     "bar": 96,
+     "sec": 188.852
+    },
+    {
+     "name": "Outro",
+     "bar": 128,
+     "sec": 251.803
+    }
+   ],
+   "lufs": -9.32,
+   "true_peak_dbtp": -1.04,
+   "file": "music/tracks/melodic_techno/techno-08-silent-orbit.mp3",
+   "cover": "music/tracks/melodic_techno/techno-08-silent-orbit.jpg",
+   "description_he": "מלודיק טכנו ב-122 BPM בסולם A minor: מסע חללי ושקט בסגנון Tale Of Us: ארפג'יו זכוכית בשמיניות עם דיליי ארוך, ליד רך ונושם ופדים רחבים. מבנה ארוך של 32 תיבות לכל חלק — ברייקדאון קולנועי עם מקהלה ומתח שנבנה לדרופ גדול.",
+   "mix_tips_he": "טיפ ערבוב: אינטרו של 32 תיבות להכנסה נקייה, הבאס נכנס בתיבה 33 (Hot Cue B), ברייקדאון בתיבה 65, דרופ בתיבה 97, אאוטרו של 32 תיבות מתיבה 129 — מושלם למיקס החוצה. הארפג'יו מתחיל לרמוז כבר בתיבה 25 (מסונן) — אפשר להתחיל להכניס אז את ה-Mid. הבאס יוצא בתיבה 145, כך ש-16 התיבות האחרונות הן תופים בלבד — חלון מושלם ל-Bass Swap.",
+   "instruments": [
+    "tight tuned techno kick",
+    "rolling arpeggiated bass",
+    "wide arpeggio",
+    "anthem lead hook",
+    "side-chained pads",
+    "formant choir",
+    "clap & plate snare",
+    "stereo hats, shaker & ride",
+    "tribal toms & percussion",
+    "riser, pitched snare roll & impact"
+   ],
+   "seed": 1357,
+   "license": "CC0-1.0",
+   "engine_version": "1.0.0",
+   "size_bytes": 12772588
+  },
+  {
    "id": "mainstream-08",
    "title": "Dembow Fuego",
    "title_he": "דמבו פואגו",
@@ -1881,6 +2036,159 @@
    "license": "CC0-1.0",
    "engine_version": "1.0.0",
    "size_bytes": 11006821
+  },
+  {
+   "id": "breadth-03",
+   "title": "Euphoria Coast",
+   "title_he": "חוף האופוריה",
+   "artist": "DJ Lab Originals",
+   "genre": "Uplifting Trance",
+   "genre_slug": "trance",
+   "family": "breadth",
+   "bpm": 138.0,
+   "key": "A minor",
+   "key_short": "Am",
+   "camelot": "8A",
+   "energy": 9,
+   "role": "peak",
+   "duration_sec": 278.261,
+   "bars": 160,
+   "beats_per_bar": 4,
+   "first_downbeat_sec": 0.0,
+   "sections": [
+    {
+     "name": "Intro",
+     "start_bar": 0,
+     "bars": 32,
+     "start_sec": 0.0,
+     "energy": 5
+    },
+    {
+     "name": "Groove",
+     "start_bar": 32,
+     "bars": 32,
+     "start_sec": 55.652,
+     "energy": 7
+    },
+    {
+     "name": "Breakdown",
+     "start_bar": 64,
+     "bars": 32,
+     "start_sec": 111.304,
+     "energy": 4
+    },
+    {
+     "name": "Drop",
+     "start_bar": 96,
+     "bars": 32,
+     "start_sec": 166.957,
+     "energy": 9
+    },
+    {
+     "name": "Outro",
+     "start_bar": 128,
+     "bars": 32,
+     "start_sec": 222.609,
+     "energy": 5
+    }
+   ],
+   "cues": [
+    {
+     "slot": "A",
+     "name": "Intro",
+     "bar": 0,
+     "sec": 0.0,
+     "color": "#28E214",
+     "type": "hot"
+    },
+    {
+     "slot": "B",
+     "name": "Mix-In",
+     "bar": 16,
+     "sec": 27.826,
+     "color": "#10B1E6",
+     "type": "hot"
+    },
+    {
+     "slot": "C",
+     "name": "Breakdown",
+     "bar": 64,
+     "sec": 111.304,
+     "color": "#E0641B",
+     "type": "hot"
+    },
+    {
+     "slot": "D",
+     "name": "Drop",
+     "bar": 96,
+     "sec": 166.957,
+     "color": "#E62828",
+     "type": "hot"
+    },
+    {
+     "slot": "G",
+     "name": "Outro",
+     "bar": 128,
+     "sec": 222.609,
+     "color": "#305AFF",
+     "type": "hot"
+    },
+    {
+     "slot": "H",
+     "name": "Last 16",
+     "bar": 144,
+     "sec": 250.435,
+     "color": "#8A2BE2",
+     "type": "hot"
+    }
+   ],
+   "memory_cues": [
+    {
+     "name": "Intro",
+     "bar": 0,
+     "sec": 0.0
+    },
+    {
+     "name": "Groove",
+     "bar": 32,
+     "sec": 55.652
+    },
+    {
+     "name": "Breakdown",
+     "bar": 64,
+     "sec": 111.304
+    },
+    {
+     "name": "Drop",
+     "bar": 96,
+     "sec": 166.957
+    },
+    {
+     "name": "Outro",
+     "bar": 128,
+     "sec": 222.609
+    }
+   ],
+   "lufs": -9.06,
+   "true_peak_dbtp": -1.35,
+   "file": "music/tracks/trance/breadth-03-euphoria-coast.mp3",
+   "cover": "music/tracks/trance/breadth-03-euphoria-coast.jpg",
+   "description_he": "טראנס אפליפטינג ב-138 BPM בסולם A minor: באס אופביט מתגלגל, ארפג'יו פלאקים, ליד סופר-סו ענק עם מנגינה מקורית, ברייקדאון רגשי ארוך עם פדים ואקורדי פסנתר, בילד של סנר-רול ורייזר — ודרופ אופורי. רגע הידיים-למעלה של הסט.",
+   "mix_tips_he": "טיפ ערבוב: 16 תיבות תופים בלבד בהתחלה, הבאס המתגלגל נכנס בתיבה 17 (Hot Cue B). הברייקדאון ב-65 נמשך 32 תיבות עם פסנתר ופדים, הסנר-רול מוביל לדרופ בתיבה 97 (Hot Cue D). האאוטרו מתחיל בתיבה 129 והבאס יוצא בתיבה 145. אל תמקסו בזמן הברייקדאון — חכו לדרופ או לאאוטרו. שכנים ב-Camelot: 8A ↔ 9A, 7A, 8B.",
+   "instruments": [
+    "trance kick",
+    "rolling off-beat bass",
+    "plucked arpeggio",
+    "supersaw anthem lead",
+    "piano chords & melody",
+    "lush pads",
+    "clap, hats, ride",
+    "snare roll, riser, impact"
+   ],
+   "seed": 1748,
+   "license": "CC0-1.0",
+   "engine_version": "1.0.0",
+   "size_bytes": 11305279
   }
  ],
  "practice": [

@@ -34,7 +34,7 @@ from . import ENGINE_VERSION, REPO_ROOT, SR, scratch_dir
 from . import drums, fx, instruments as inst
 from .arrangement import Song
 from .dsp import F32, fade
-from .theory import camelot as camelot_of, parse_key, voice_lead
+from .theory import camelot as camelot_of, chord as mkchord, parse_key, voice_lead
 
 EXTRAS_PATH = REPO_ROOT / "music" / "extras.plan.json"
 PRACTICE_DIR = REPO_ROOT / "music" / "practice"
@@ -587,11 +587,13 @@ def build_key_loop(entry, spec, rng):
     fxl = song.audio("crash", bus="fx")
     for b in (16, 32, 64, 96):
         fxl.add(kit["crash"], b, gain_db=-15.0)
-    # i - VI - VII - i, two bars each: tonic-heavy so the key is unmistakable
-    degs = [0, 5, 6, 0]
+    # i – VI – VII – V (harmonic-minor V, two bars each): the raised leading tone on the V makes the minor
+    # tonic unmistakable for ears and key detectors alike (no drift towards the relative major)
+    prog = KEY_LOOP_PROG
+    roots = [key.degree(dg, 3) for dg, _ in prog]
     triads, prev = [], None
-    for dg in degs:
-        ch = voice_lead(prev, key.chord(dg, 3, 3), center=62)
+    for r, q in zip(roots, (q for _, q in prog)):
+        ch = voice_lead(prev, mkchord(r, q), center=62)
         triads.append(ch)
         prev = ch
 
@@ -602,7 +604,7 @@ def build_key_loop(entry, spec, rng):
         if not (16 <= c.bar < 96) or c.i % 2:
             return []
         ch = chord_at(c)
-        return [(0, 31.5, ch + [ch[0] - 12], 0.8)]
+        return [(0, 31.5, ch + [roots[(c.i // 2) % 4] - 12], 0.8)]
 
     p = song.notes("pad", inst.pad(attack=0.35, release=1.2, cutoff=2400.0, detune=0.25, warmth=0.6), pad,
                    gain_db=-8.0, sidechain=0.35, sends={"hall": 0.25}, width=1.5)
@@ -621,17 +623,17 @@ def build_key_loop(entry, spec, rng):
     def bass(c):
         if not (32 <= c.bar < 96):
             return []
-        r = root_at_least(key.degree(degs[(c.i // 2) % 4], 1))
+        r = root_at_least(roots[(c.i // 2) % 4] - 24, KEY_LOOP_BASS_LOW)
         return [(2, 1.75, r, 0.9), (6, 1.75, r, 0.85), (10, 1.75, r, 0.9), (14, 1.75, r, 0.85)]
 
-    song.notes("bass", inst.sub_bass(harmonics=0.22, drive=1.4), bass, bus="bass", gain_db=-6.0, sidechain=0.5,
+    song.notes("bass", inst.sub_bass(harmonics=0.35, drive=1.6), bass, bus="bass", gain_db=-6.0, sidechain=0.5,
                sc_release_ms=120.0)
 
     ks, cam = key_short(spec["key"]), camelot_of(spec["key"])
-    names = [key_short(n) for n in _degree_names(spec["key"], degs)]
-    prog = "–".join(names)
+    names = _chord_names(spec["key"], roots, [q for _, q in prog])
+    prog_txt = "–".join(names)
     d = Drill(category="key", tonal=True, preview=(28, 40))
-    base = (f"לופ אקורדים ב-124 BPM ב-{ks} ({cam}): פד חם מנגן {prog} (2 תיבות לכל אקורד), ארפג'יו פלאק ובאס רך "
+    base = (f"לופ אקורדים ב-124 BPM ב-{ks} ({cam}): פד חם מנגן {prog_txt} (2 תיבות לכל אקורד), ארפג'יו פלאק ובאס רך "
             "נכנסים בתיבה 33. התופים מינימליים — קיק והיי-האט בלבד — כדי שההרמוניה תישמע ברורה. 16 תיבות תופים "
             "בהתחלה ובסוף. ")
     if entry["id"] == "practice-10":
@@ -679,20 +681,17 @@ def build_key_loop(entry, spec, rng):
     return song, d
 
 
-def _degree_names(key_name: str, degs) -> list[str]:
-    """Chord names (diatonic triads) of scale degrees in a natural-minor key, flats preferred."""
-    from .theory import Key
+KEY_LOOP_PROG = [(0, "min"), (5, "maj"), (6, "maj"), (4, "maj")]
+KEY_LOOP_BASS_LOW = 33
+
+
+def _chord_names(key_name: str, roots, quals) -> list[str]:
+    """Short chord names (flats in flat keys): ['Am', 'F', 'G', 'E']."""
     flats = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"]
     sharps = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
-    k = Key(key_name)
-    use_flats = "b" in key_name.split()[0] or k.root_pc in (0, 2, 5, 7)  # C D F G minor → flat keys
-    names = []
-    for dg in degs:
-        ch = k.chord(dg, 3, 3)
-        third = (ch[1] - ch[0]) % 12
-        nm = (flats if use_flats else sharps)[ch[0] % 12]
-        names.append(f"{nm} {'minor' if third == 3 else 'major'}")
-    return names
+    pc, _ = parse_key(key_name)
+    table = flats if ("b" in key_name.split()[0] or pc in (0, 2, 5, 7)) else sharps
+    return [table[r % 12] + ("m" if q == "min" else "") for r, q in zip(roots, quals)]
 
 
 # ============================================================================ 13 cue hunt

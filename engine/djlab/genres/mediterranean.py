@@ -337,7 +337,7 @@ def build_groove(plan, rng):
         song.hits("dembow_snare", snr,
                   lambda c: "...x..x....x..x." if c.kind in ("groove", "drop") or (c.kind == "intro" and c.i >= 8)
                   or (c.kind == "outro" and c.bars_left > 8) else None,
-                  gain_db=-11.0, pan=0.1, sends={"room": 0.12})
+                  gain_db=-6.0, pan=0.1, sends={"room": 0.15, "reverb": 0.05})
     rim = drums.rimshot(float(rng.uniform(1500, 1800)), rng=rng)
     song.hits("rim", rim, lambda c: "...x..x....x..x." if (not M["dembow"]) and c.kind == "drop" else None,
               gain_db=-17.0, pan=0.25, sends={"delay8": 0.1})
@@ -506,6 +506,7 @@ def build_groove(plan, rng):
     song.buses["music"].eq = [("peak", 2000.0, 1.0, 0.8)]
     song.buses["drums"].width = 1.2
     song.master.lufs = -9.0
+    song.master.low_shelf_db, song.master.low_shelf_hz = 1.5, 55.0
 
     rh = {"maqsum": "מקסום", "saidi": "סעידי"}[M["darb"]]
     tonic_name = plan["key"].split()[0]
@@ -577,7 +578,7 @@ def build_house(plan, rng):
         return None
 
     # ------------------------------------------------------------------ drums
-    kick_s = drums.kick("deep" if not club else "house", tune_hz=W.kick_tune(key),
+    kick_s = drums.kick("deep" if not club else "house", tune_hz=W.kick_tune(key, 42.0, 52.0, 47.0),
                         decay=float(rng.uniform(0.36, 0.44)), click=float(rng.uniform(0.3, 0.45)), rng=rng)
 
     def kick_pat(c):
@@ -600,7 +601,7 @@ def build_house(plan, rng):
     snap = [W.finger_snap(np.random.default_rng(int(rng.integers(1 << 31)))) for _ in range(2)]
     clap = drums.clap(tone_hz=float(rng.uniform(1100, 1350)), tail=0.16, rng=rng)
     song.hits("clap", clap, lambda c: "....x.......x..." if c.kind in ("groove", "drop") or (c.kind == "intro" and c.i >= 16)
-              or (c.kind == "outro" and c.bars_left > 8) else None, gain_db=-6.5, sends={"reverb": 0.2, "room": 0.1})
+              or (c.kind == "outro" and c.bars_left > 8) else None, gain_db=-8.5, sends={"reverb": 0.2, "room": 0.1})
     song.hits("snap", snap, lambda c: "....x..g....x..." if c.kind == "drop" or (c.kind == "breakdown" and c.bars_left <= 4)
               else None, gain_db=-14.0, pan=0.2, sends={"reverb": 0.25})
     shk = drums.variants(drums.shaker, 3, rng, jitter={"length": 0.2}, length=float(rng.uniform(0.07, 0.1)))
@@ -639,7 +640,7 @@ def build_house(plan, rng):
             return alt[c.i % len(alt)]
         return hpat[(hp0 + c.i // 4) % len(hpat)]
 
-    dl = W.add_darbuka(song, darb_pat, kit, gain_db=-7.0, pan=-0.1, levels={"D": -5.0, "T": 0.0, "K": -4.0, "S": -3.0},
+    dl = W.add_darbuka(song, darb_pat, kit, gain_db=-5.5, pan=-0.1, levels={"D": -5.0, "T": 0.0, "K": -4.0, "S": -3.0},
                        sends={"room": 0.14, "delay8": 0.04}, humanize=0.1, timing_ms=1.5)
     dl["D"].hp = 90.0
     for st in ("T", "K"):
@@ -663,9 +664,8 @@ def build_house(plan, rng):
               else None, gain_db=-14.0, sends={"reverb": 0.15})
 
     # ------------------------------------------------------------------ deep rolling bass
-    bass_i = inst.bass_pluck(cutoff=float(rng.uniform(180, 240)), env_amt=float(rng.uniform(600, 1100)),
-                             decay=float(rng.uniform(0.1, 0.15)), res=0.3, sub=1.0, drive=1.3, grit=0.22,
-                             sustain=0.4, wave=str(rng.choice(["saw", "square"])))
+    bass_i = W.deep_bass(cutoff=float(rng.uniform(180, 240)), env_amt=float(rng.uniform(500, 900)),
+                         decay=float(rng.uniform(0.1, 0.15)), res=0.28, sub_oct=0.6, grit=0.2)
     bass_off = outro.start_bar
 
     def bass_notes(c):
@@ -750,7 +750,7 @@ def build_house(plan, rng):
             return [(0, hook_lo, 0.7)]
         return []
 
-    oud = W.add_phrases(song, "oud", oud_i, oud_phr, gain_db=-6.5, pan=-0.1, sends={"room": 0.12, "delay": 0.14},
+    oud = W.add_phrases(song, "oud", oud_i, oud_phr, gain_db=-3.5, pan=-0.1, sends={"room": 0.12, "delay": 0.14},
                         lookback=5, width=1.25, sidechain=0.3)
     oud.automate("lp", [(groove.start_bar, 2500), (groove.end_bar - 0.01, 6000), (drop.start_bar, 9000)])
 
@@ -783,7 +783,7 @@ def build_house(plan, rng):
             return [(0, q_arp(prog_at(c)), 0.7)]
         return []
 
-    W.add_phrases(song, "qanun", q_i, q_phr, gain_db=-14.0, pan=0.35, sends={"delay": 0.18, "reverb": 0.12},
+    W.add_phrases(song, "qanun", q_i, q_phr, gain_db=-10.5, pan=0.35, sends={"delay": 0.18, "reverb": 0.12},
                   lookback=2, width=1.5, sidechain=0.35)
 
     # ney: call in the groove, solo in the breakdown(s)
@@ -805,6 +805,7 @@ def build_house(plan, rng):
     song.buses["drums"].width = 1.2
     song.buses["music"].width = 1.15
     song.master.lufs = -9.0
+    song.master.low_shelf_db, song.master.low_shelf_hz = 1.0, 55.0
     tonic_name = plan["key"].split()[0]
     dom_name = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"][(pc + 7) % 12]
     song.instruments = ["deep house kick", "darbuka on top", "congas", "riq", "zills", "clap & snaps", "shaker",

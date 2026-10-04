@@ -126,7 +126,7 @@ def _boom_bap(plan, rng):
     chords, prev = [], None
     for semi, q in prog:
         ch = mkchord(key.root(3) + semi, q)
-        ch = voice_lead(prev, ch, center=key.root(4) - 3)
+        ch = voice_lead(prev, ch, center=key.root(4) + 3)
         chords.append(ch)
         prev = ch
     roots = [_bass_range(key.root(1) + semi) for semi, _ in prog]
@@ -160,11 +160,11 @@ def _boom_bap(plan, rng):
             return "....x.......x.gx"
         return sp
 
-    song.hits("snare", snare, snare_pat, gain_db=-2.5, sends={"room": 0.12}, humanize=0.05, timing_ms=3.0)
+    song.hits("snare", snare, snare_pat, gain_db=-2.5, sends={"room": 0.2, "reverb": 0.06}, humanize=0.05, timing_ms=3.0)
     rim = xm.dusty(drums.rimshot(float(rng.uniform(1500, 1900)), rng=rng), bits=11, lp_hz=8000.0)
     rp = BB_RIM[int(rng.integers(len(BB_RIM)))]
     song.hits("rim", rim, lambda c: rp if c.kind in ("verse", "drop") or (c.kind == "intro" and c.i >= 8) else None,
-              gain_db=-15.0, pan=0.2, humanize=0.15, timing_ms=3.0)
+              gain_db=-15.0, pan=0.4, humanize=0.15, timing_ms=3.0)
     hat_c = [xm.dusty(h, bits=11, lp_hz=10500.0) for h in
              drums.variants(drums.hat, 4, rng, jitter={"decay": 0.2}, decay=float(rng.uniform(0.035, 0.05)),
                             tone=float(rng.uniform(0.85, 1.0)))]
@@ -177,7 +177,7 @@ def _boom_bap(plan, rng):
             return "x.x.x.x.x.x.x.x." if c.i == 1 else None
         return hp_
 
-    hats = song.hits("hats", hat_c, hat_pat, gain_db=-11.0, pan=0.25, humanize=0.18, timing_ms=4.0)
+    hats = song.hits("hats", hat_c, hat_pat, gain_db=-11.0, pan=0.32, humanize=0.18, timing_ms=4.0)
     hats.automate("lp", [(0, 2500), (4, 2500), (8, 16000)])
     ohat = xm.dusty(drums.hat(open_=True, decay=0.22, tone=0.9, rng=rng), bits=11, lp_hz=9500.0)
     song.hits("open_hat", ohat, lambda c: "..............x." if c.kind == "drop" and c.i % 2 == 1
@@ -207,7 +207,7 @@ def _boom_bap(plan, rng):
             nxt = steps[j + 1] if j + 1 < len(steps) else 16
             ev.append((st, max(1.5, nxt - st - 0.5), r, 0.95 if st == 0 else 0.8))
         if c.kind == "drop" and c.i % 2 == 1:
-            ev.append((14, 2, r + 12 if rng.random() < 0.5 else r + 7, 0.7))
+            ev.append((14, 2, r + 12 if c.rng.random() < 0.5 else r + 7, 0.7))
         if c.before("drop", 1):
             ev = [e for e in ev if e[0] < 8]
         return ev
@@ -218,8 +218,8 @@ def _boom_bap(plan, rng):
     bass.automate("gain_db", [(0, 0.0), (beat_only_from - 4, 0.0), (beat_only_from, -6.0)])
 
     # ---------------------------------------------------------------- the "sampled" Rhodes loop
-    rh = xm.rhodes(bright=float(rng.uniform(0.4, 0.6)), bark=float(rng.uniform(0.45, 0.7)),
-                   trem=float(rng.uniform(0.15, 0.3)), wow_cents=float(rng.uniform(6, 11)))
+    rh = xm.rhodes(bright=float(rng.uniform(0.7, 0.9)), bark=float(rng.uniform(0.7, 0.95)),
+                   trem=float(rng.uniform(0.28, 0.4)), wow_cents=float(rng.uniform(6, 11)))
 
     def keys_notes(c):
         if c.kind == "intro" or c.bar >= beat_only_from:
@@ -227,16 +227,16 @@ def _boom_bap(plan, rng):
         ch = chords[c.i % 4]
         return [(s, l, ch, v) for s, l, v in cr]
 
-    keys = song.notes("keys", rh, keys_notes, gain_db=-6.0, sends={"room": 0.15, "reverb": 0.08}, width=1.3,
-                      sidechain=0.15, humanize=0.06, timing_ms=6.0,
-                      fx=[lambda x: fx.tape(x, 1.4, 0.55), lambda x: fx.bitcrush(x, 12, 1)])
+    keys = song.notes("keys", rh, keys_notes, gain_db=-5.0, sends={"room": 0.18, "reverb": 0.1}, width=1.7,
+                      sidechain=0.15, humanize=0.06,
+                      fx=[lambda x: fx.tape(x * 0.3, 1.4, 0.55), lambda x: fx.bitcrush(x, 12, 1)])
     keys.automate("lp", [(verse.start_bar, 1800), (verse.start_bar + 4, 7000), (outro.start_bar, 7000),
                          (beat_only_from, 1200)])
 
     # ---------------------------------------------------------------- hook motif
     mr = MOTIF_RHYTHMS[int(rng.integers(len(MOTIF_RHYTHMS)))]
     tones = [[n for n in ch] for ch in chords]
-    lo, hi = key.root(4) - 2, key.root(5) + 3
+    lo, hi = key.root(5) - 3, key.root(6) + 2
     motif = xm.make_melody(rng, key, tones, mr, lo, hi)
     mclip = clip(motif, 4)
 
@@ -296,8 +296,9 @@ def _boom_bap(plan, rng):
     song.buses["drums"].comp = dict(threshold_db=-12.0, ratio=3.0, attack_ms=10.0, release_ms=80.0, makeup_db=1.0)
     song.buses["drums"].sat = 0.25
     song.buses["drums"].eq = [("peak", 2800.0, 1.5, 0.8), ("peak", 220.0, -1.5, 1.0)]
-    song.buses["music"].eq = [("peak", 350.0, -1.5, 0.8)]
+    song.buses["music"].eq = [("peak", 420.0, -3.0, 0.8), ("peak", 1500.0, 2.5, 0.7)]
     song.buses["bass"].eq = [("lowshelf", 60.0, 1.5, 0.7)]
+    song.returns["room"].width = 1.4
     song.master.lufs = -11.0
     song.master.high_shelf_db = -1.0
     song.instruments = (["dusty swung boom-bap drums (12-bit)", "vinyl crackle", "FM Rhodes chord loop (tape wow)",
