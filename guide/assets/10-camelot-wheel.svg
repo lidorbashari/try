@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 690" width="800" height="690" role="img" aria-labelledby="title desc" font-family="Heebo, Rubik, Arial, sans-serif">
+<title id="title">גלגל Camelot — 24 הסולמות</title>
+<desc id="desc">גלגל קמלוט מלא: 12 מספרים כמו בשעון, טבעת פנימית A למינור וטבעת חיצונית B למז'ור, עם סימון המהלכים הבטוחים מ-8A (A minor).</desc>
+<rect x="1" y="1" width="798" height="688" rx="20" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+<text x="400.0" y="46.0" font-size="26" font-weight="700" fill="#f1f5f9" text-anchor="middle" direction="rtl">גלגל Camelot — כל 24 הסולמות</text>
+<text x="400.0" y="76.0" font-size="14" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">טבעת פנימית A = מינור · טבעת חיצונית B = מז'ור · מספרים שכנים = סולמות חברים</text>
+<g id="wheel">
+<path d="M355.67,152.38 A246,246 0 0 1 465.95,216.05 L415.04,266.96 A174,174 0 0 0 337.03,221.93 Z" fill="#6ae7bd" stroke="#0f172a" stroke-width="2.5"/>
+<path d="M337.03,221.93 A174,174 0 0 1 415.04,266.96 L365.54,316.46 A104,104 0 0 0 318.92,289.54 Z" fill="#27a57b" stroke="#0f172a" stroke-width="2.5"/>
+<path d="M465.95,216.05 A246,246 0 0 1 529.62,326.33 L460.07,344.97 A174,174 0 0 0 415.04,266.96 Z" fill="#6ad2e7" stroke="#0f172a" stroke-width="2.5"/>
+<path d="M415.04,266.96 A174,174 0 0 1 460.07,344.97 L392.46,363.08 A104,104 0 0 0 365.54,316.46 Z" fill="#2790a5" stroke="#0f172a" stroke-width="2.5"/>
+<path d="M529.62,326.33 A246,246 0 0 1 529.62,453.67 L460.07,435.03 A174,174 0 0 0 460.07,344.97 Z" fill="#6a93e7" stroke="#0f172a" stroke-width="2.5"/>
+<path d="M460.07,344.97 A174,174 0 0 1 460.07,435.03 L392.46,416.92 A104,104 0 0 0 392.46,363.08 Z" fill="#2751a5" stroke="#0f172a" stroke-width="2.5"/>
+<path d="M529.62,453.67 A246,246 0 0 1 465.95,563.95 L415.04,513.04 A174,174 0 0 0 460.07,435.03 Z" fill="#7f6ae7" stroke="#0f172a" stroke-width="2.5"/>
+<path d="M460.07,435.03 A174,174 0 0 1 415.04,513.04 L365.54,463.54 A104,104 0 0 0 392.46,416.92 Z" fill="#3c27a5" stroke="#0f172a" stroke-width="2.5"/>
+<path d="M465.95,563.95 A246,246 0 0 1 355.67,627.62 L337.03,558.07 A174,174 0 0 0 415.04,513.04 Z" fill="#bd6ae7" stroke="#0f172a" stroke-width="2.5"/>
+<path d="M415.04,513.04 A174,174 0 0 1 337.03,558.07 L318.92,490.46 A104,104 0 0 0 365.54,463.54 Z" fill="#7b27a5" stroke="#0f172a" stroke-width="2.5"/>
+<path d="M355.67,627.62 A246,246 0 0 1 228.33,627.62 L246.97,558.07 A174,174 0 0 0 337.03,558.07 Z" fill="#e76ad2" stroke="#0f172a" stroke-width="2.5"/>
+<path d="M337.03,558.07 A174,174 0 0 1 246.97,558.07 L265.08,490.46 A104,104 0 0 0 318.92,490.46 Z" fill="#a52790" stroke="#0f172a" stroke-width="2.5"/>
+<path d="M228.33,627.62 A246,246 0 0 1 118.05,563.95 L168.96,513.04 A174,174 0 0 0 246.97,558.07 Z" fill="#e76a93" stroke="#0f172a" stroke-width="2.5"/>
+<path d="M246.97,558.07 A174,174 0 0 1 168.96,513.04 L218.46,463.54 A104,104 0 0 0 265.08,490.46 Z" fill="#a52751" stroke="#0f172a" stroke-width="2.5"/>
+<path d="M118.05,563.95 A246,246 0 0 1 54.38,453.67 L123.93,435.03 A174,174 0 0 0 168.96,513.04 Z" fill="#e77f6a" stroke="#0f172a" stroke-width="2.5"/>
+<path d="M168.96,513.04 A174,174 0 0 1 123.93,435.03 L191.54,416.92 A104,104 0 0 0 218.46,463.54 Z" fill="#a53c27" stroke="#0f172a" stroke-width="2.5"/>
+<path d="M54.38,453.67 A246,246 0 0 1 54.38,326.33 L123.93,344.97 A174,174 0 0 0 123.93,435.03 Z" fill="#e7bd6a" stroke="#0f172a" stroke-width="2.5"/>
+<path d="M123.93,435.03 A174,174 0 0 1 123.93,344.97 L191.54,363.08 A104,104 0 0 0 191.54,416.92 Z" fill="#a57b27" stroke="#0f172a" stroke-width="2.5"/>
+<path d="M54.38,326.33 A246,246 0 0 1 118.05,216.05 L168.96,266.96 A174,174 0 0 0 123.93,344.97 Z" fill="#d2e76a" stroke="#0f172a" stroke-width="2.5"/>
+<path d="M123.93,344.97 A174,174 0 0 1 168.96,266.96 L218.46,316.46 A104,104 0 0 0 191.54,363.08 Z" fill="#90a527" stroke="#0f172a" stroke-width="2.5"/>
+<path d="M118.05,216.05 A246,246 0 0 1 228.33,152.38 L246.97,221.93 A174,174 0 0 0 168.96,266.96 Z" fill="#93e76a" stroke="#0f172a" stroke-width="2.5"/>
+<path d="M168.96,266.96 A174,174 0 0 1 246.97,221.93 L265.08,289.54 A104,104 0 0 0 218.46,316.46 Z" fill="#51a527" stroke="#0f172a" stroke-width="2.5"/>
+<path d="M228.33,152.38 A246,246 0 0 1 355.67,152.38 L337.03,221.93 A174,174 0 0 0 246.97,221.93 Z" fill="#6ae77f" stroke="#0f172a" stroke-width="2.5"/>
+<path d="M246.97,221.93 A174,174 0 0 1 337.03,221.93 L318.92,289.54 A104,104 0 0 0 265.08,289.54 Z" fill="#27a53c" stroke="#0f172a" stroke-width="2.5"/>
+<text x="397.0" y="206.1" font-size="18" font-weight="800" fill="#0b1220" text-anchor="middle">1B</text>
+<text x="397.0" y="224.1" font-size="13" font-weight="600" fill="#1e293b" text-anchor="middle">B</text>
+<text x="361.5" y="267.6" font-size="17" font-weight="800" fill="#ffffff" text-anchor="middle">1A</text>
+<text x="361.5" y="284.6" font-size="12" font-weight="500" fill="#e2e8f0" text-anchor="middle">Abm</text>
+<text x="473.9" y="283.0" font-size="18" font-weight="800" fill="#0b1220" text-anchor="middle">2B</text>
+<text x="473.9" y="301.0" font-size="13" font-weight="600" fill="#1e293b" text-anchor="middle">F#</text>
+<text x="412.4" y="318.5" font-size="17" font-weight="800" fill="#ffffff" text-anchor="middle">2A</text>
+<text x="412.4" y="335.5" font-size="12" font-weight="500" fill="#e2e8f0" text-anchor="middle">Ebm</text>
+<text x="502.0" y="388.0" font-size="18" font-weight="800" fill="#0b1220" text-anchor="middle">3B</text>
+<text x="502.0" y="406.0" font-size="13" font-weight="600" fill="#1e293b" text-anchor="middle">Db</text>
+<text x="431.0" y="388.0" font-size="17" font-weight="800" fill="#ffffff" text-anchor="middle">3A</text>
+<text x="431.0" y="405.0" font-size="12" font-weight="500" fill="#e2e8f0" text-anchor="middle">Bbm</text>
+<text x="473.9" y="493.0" font-size="18" font-weight="800" fill="#0b1220" text-anchor="middle">4B</text>
+<text x="473.9" y="511.0" font-size="13" font-weight="600" fill="#1e293b" text-anchor="middle">Ab</text>
+<text x="412.4" y="457.5" font-size="17" font-weight="800" fill="#ffffff" text-anchor="middle">4A</text>
+<text x="412.4" y="474.5" font-size="12" font-weight="500" fill="#e2e8f0" text-anchor="middle">Fm</text>
+<text x="397.0" y="569.9" font-size="18" font-weight="800" fill="#0b1220" text-anchor="middle">5B</text>
+<text x="397.0" y="587.9" font-size="13" font-weight="600" fill="#1e293b" text-anchor="middle">Eb</text>
+<text x="361.5" y="508.4" font-size="17" font-weight="800" fill="#ffffff" text-anchor="middle">5A</text>
+<text x="361.5" y="525.4" font-size="12" font-weight="500" fill="#e2e8f0" text-anchor="middle">Cm</text>
+<text x="292.0" y="598.0" font-size="18" font-weight="800" fill="#0b1220" text-anchor="middle">6B</text>
+<text x="292.0" y="616.0" font-size="13" font-weight="600" fill="#1e293b" text-anchor="middle">Bb</text>
+<text x="292.0" y="527.0" font-size="17" font-weight="800" fill="#ffffff" text-anchor="middle">6A</text>
+<text x="292.0" y="544.0" font-size="12" font-weight="500" fill="#e2e8f0" text-anchor="middle">Gm</text>
+<text x="187.0" y="569.9" font-size="18" font-weight="800" fill="#0b1220" text-anchor="middle">7B</text>
+<text x="187.0" y="587.9" font-size="13" font-weight="600" fill="#1e293b" text-anchor="middle">F</text>
+<text x="222.5" y="508.4" font-size="17" font-weight="800" fill="#ffffff" text-anchor="middle">7A</text>
+<text x="222.5" y="525.4" font-size="12" font-weight="500" fill="#e2e8f0" text-anchor="middle">Dm</text>
+<text x="110.1" y="493.0" font-size="18" font-weight="800" fill="#0b1220" text-anchor="middle">8B</text>
+<text x="110.1" y="511.0" font-size="13" font-weight="600" fill="#1e293b" text-anchor="middle">C</text>
+<text x="171.6" y="457.5" font-size="17" font-weight="800" fill="#ffffff" text-anchor="middle">8A</text>
+<text x="171.6" y="474.5" font-size="12" font-weight="500" fill="#e2e8f0" text-anchor="middle">Am</text>
+<text x="82.0" y="388.0" font-size="18" font-weight="800" fill="#0b1220" text-anchor="middle">9B</text>
+<text x="82.0" y="406.0" font-size="13" font-weight="600" fill="#1e293b" text-anchor="middle">G</text>
+<text x="153.0" y="388.0" font-size="17" font-weight="800" fill="#ffffff" text-anchor="middle">9A</text>
+<text x="153.0" y="405.0" font-size="12" font-weight="500" fill="#e2e8f0" text-anchor="middle">Em</text>
+<text x="110.1" y="283.0" font-size="18" font-weight="800" fill="#0b1220" text-anchor="middle">10B</text>
+<text x="110.1" y="301.0" font-size="13" font-weight="600" fill="#1e293b" text-anchor="middle">D</text>
+<text x="171.6" y="318.5" font-size="17" font-weight="800" fill="#ffffff" text-anchor="middle">10A</text>
+<text x="171.6" y="335.5" font-size="12" font-weight="500" fill="#e2e8f0" text-anchor="middle">Bm</text>
+<text x="187.0" y="206.1" font-size="18" font-weight="800" fill="#0b1220" text-anchor="middle">11B</text>
+<text x="187.0" y="224.1" font-size="13" font-weight="600" fill="#1e293b" text-anchor="middle">A</text>
+<text x="222.5" y="267.6" font-size="17" font-weight="800" fill="#ffffff" text-anchor="middle">11A</text>
+<text x="222.5" y="284.6" font-size="12" font-weight="500" fill="#e2e8f0" text-anchor="middle">F#m</text>
+<text x="292.0" y="178.0" font-size="18" font-weight="800" fill="#0b1220" text-anchor="middle">12B</text>
+<text x="292.0" y="196.0" font-size="13" font-weight="600" fill="#1e293b" text-anchor="middle">E</text>
+<text x="292.0" y="249.0" font-size="17" font-weight="800" fill="#ffffff" text-anchor="middle">12A</text>
+<text x="292.0" y="266.0" font-size="12" font-weight="500" fill="#e2e8f0" text-anchor="middle">C#m</text>
+<path d="M168.58,508.36 A171,171 0 0 1 127.79,437.71 L189.25,419.85 A107,107 0 0 0 214.77,464.06 Z" fill="none" stroke="#ffffff" stroke-width="5" stroke-linejoin="round"/>
+<path d="M244.29,554.21 A171,171 0 0 1 173.64,513.42 L217.94,467.23 A107,107 0 0 0 262.15,492.75 Z" fill="none" stroke="#facc15" stroke-width="4" stroke-linejoin="round"/>
+<path d="M125.94,430.79 A171,171 0 0 1 125.94,349.21 L188.09,364.48 A107,107 0 0 0 188.09,415.52 Z" fill="none" stroke="#facc15" stroke-width="4" stroke-linejoin="round"/>
+<path d="M116.61,558.19 A243,243 0 0 1 58.65,457.79 L122.03,439.38 A177,177 0 0 0 164.25,512.51 Z" fill="none" stroke="#facc15" stroke-width="4" stroke-linejoin="round"/>
+<path d="M127.79,342.29 A171,171 0 0 1 168.58,271.64 L214.77,315.94 A107,107 0 0 0 189.25,360.15 Z" fill="none" stroke="#4ade80" stroke-width="4" stroke-dasharray="9 6" stroke-linejoin="round"/>
+<path d="M458.06,349.21 A171,171 0 0 1 458.06,430.79 L395.91,415.52 A107,107 0 0 0 395.91,364.48 Z" fill="none" stroke="#fb923c" stroke-width="4" stroke-dasharray="9 6" stroke-linejoin="round"/>
+</g>
+<circle cx="292" cy="390" r="98" fill="#1e293b" stroke="#475569" stroke-width="2"/>
+<text x="292.0" y="364.0" font-size="21" font-weight="800" fill="#f1f5f9" text-anchor="middle" letter-spacing="2">CAMELOT</text>
+<text x="292.0" y="392.0" font-size="15" font-weight="600" fill="#fda4af" text-anchor="middle" direction="rtl">A = מינור</text>
+<text x="292.0" y="414.0" font-size="15" font-weight="600" fill="#93c5fd" text-anchor="middle" direction="rtl">B = מז'ור</text>
+<text x="292.0" y="440.0" font-size="12" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">בית התרגילים: 8A</text>
+<path d="M130.7,183.5 A262,262 0 0 1 453.3,183.5" fill="none" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#arr)"/>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/></marker></defs>
+<text x="292.0" y="116.0" font-size="13" font-weight="400" fill="#cbd5e1" text-anchor="middle" direction="rtl">‎+1 עם כיוון השעון = עוד קצת אנרגיה</text>
+<rect x="566" y="118" width="214" height="500" rx="14" fill="#16213a" stroke="#334155"/>
+<text x="673.0" y="150.0" font-size="17" font-weight="700" fill="#f1f5f9" text-anchor="middle" direction="rtl">מהלכים מ-8A (Am)</text>
+<line x1="633.0" y1="188" x2="713.0" y2="188" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+<text x="673.0" y="214.0" font-size="16" font-weight="700" fill="#f1f5f9" text-anchor="middle">8A → 8A</text>
+<text x="673.0" y="236.0" font-size="13" font-weight="400" fill="#cbd5e1" text-anchor="middle" direction="rtl">אותו סולם — הכי בטוח</text>
+<line x1="633.0" y1="259" x2="713.0" y2="259" stroke="#facc15" stroke-width="5" stroke-linecap="round"/>
+<text x="673.0" y="285.0" font-size="16" font-weight="700" fill="#f1f5f9" text-anchor="middle">8A → 7A · 9A</text>
+<text x="673.0" y="307.0" font-size="13" font-weight="400" fill="#cbd5e1" text-anchor="middle" direction="rtl">שכן בשעון (‎±1) — בטוח מאוד</text>
+<line x1="633.0" y1="330" x2="713.0" y2="330" stroke="#facc15" stroke-width="5" stroke-linecap="round"/>
+<text x="673.0" y="356.0" font-size="16" font-weight="700" fill="#f1f5f9" text-anchor="middle">8A → 8B</text>
+<text x="673.0" y="378.0" font-size="13" font-weight="400" fill="#cbd5e1" text-anchor="middle" direction="rtl">מינור ↔ מז'ור (Am ↔ C)</text>
+<line x1="633.0" y1="401" x2="713.0" y2="401" stroke="#4ade80" stroke-width="5" stroke-linecap="round" stroke-dasharray="9 6"/>
+<text x="673.0" y="427.0" font-size="16" font-weight="700" fill="#f1f5f9" text-anchor="middle">8A → 10A</text>
+<text x="673.0" y="449.0" font-size="13" font-weight="400" fill="#cbd5e1" text-anchor="middle" direction="rtl">‎+2 בוסט אנרגיה (טון שלם)</text>
+<line x1="633.0" y1="472" x2="713.0" y2="472" stroke="#fb923c" stroke-width="5" stroke-linecap="round" stroke-dasharray="9 6"/>
+<text x="673.0" y="498.0" font-size="16" font-weight="700" fill="#f1f5f9" text-anchor="middle">8A → 3A</text>
+<text x="673.0" y="520.0" font-size="13" font-weight="400" fill="#cbd5e1" text-anchor="middle" direction="rtl">‎+7 חצי טון למעלה — רק בקפיצה</text>
+<line x1="633.0" y1="543" x2="713.0" y2="543" stroke="#f87171" stroke-width="5" stroke-linecap="round"/>
+<text x="673.0" y="569.0" font-size="16" font-weight="700" fill="#f1f5f9" text-anchor="middle">8A ✕ 2A</text>
+<text x="673.0" y="591.0" font-size="13" font-weight="400" fill="#cbd5e1" text-anchor="middle" direction="rtl">צד נגדי בגלגל = התנגשות</text>
+<text x="400.0" y="668.0" font-size="13" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">ב-Rekordbox: Preferences › View › Key display format › Alphanumeric = תצוגה בסגנון 8A</text>
+</svg>

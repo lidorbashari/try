@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(python -m djlab *)",
+      "Bash(python3 -m djlab *)",
+      "Bash(python -m pytest *)",
+      "Bash(python3 -m pytest *)",
+      "Bash(pytest *)",
+      "Bash(python tools/verify_audio.py *)",
+      "Bash(python3 tools/verify_audio.py *)",
+      "Bash(python tools/build_catalog.py *)",
+      "Bash(python3 tools/build_catalog.py *)",
+      "Bash(python tools/build_rekordbox_xml.py *)",
+      "Bash(python3 tools/build_rekordbox_xml.py *)",
+      "Bash(python tools/build_site.py *)",
+      "Bash(python3 tools/build_site.py *)",
+      "Bash(python tools/analyze_library.py *)",
+      "Bash(python3 tools/analyze_library.py *)",
+      "Bash(python tools/set_planner.py *)",
+      "Bash(python3 tools/set_planner.py *)",
+      "Bash(python tools/camelot.py *)",
+      "Bash(python3 tools/camelot.py *)",
+      "Bash(python .claude/skills/*)",
+      "Bash(python3 .claude/skills/*)",
+      "Bash(bash .claude/skills/release-check/scripts/release_check.sh *)",
+      "Bash(node .claude/skills/release-check/scripts/site_smoke.cjs *)",
+      "Bash(python -m http.server *)",
+      "Bash(python3 -m http.server *)",
+      "Bash(pip install -r engine/requirements.txt *)",
+      "Bash(ffmpeg *)",
+      "Bash(ffprobe *)",
+      "Bash(git status *)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git show *)",
+      "WebFetch(domain:code.claude.com)",
+      "WebFetch(domain:rekordbox.com)",
+      "WebFetch(domain:www.beatport.com)",
+      "WebFetch(domain:www.traxsource.com)",
+      "WebFetch(domain:tunebat.com)",
+      "WebFetch(domain:songbpm.com)",
+      "WebFetch(domain:www.discogs.com)",
+      "WebFetch(domain:musicbrainz.org)"
+    ],
+    "ask": [
+      "Bash(yt-dlp *)",
+      "Bash(youtube-dl *)",
+      "Bash(spotdl *)",
+      "Bash(git push *)"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/session-start.sh\"",
+            "timeout": 300,
+            "statusMessage": "DJ Lab: checking Python dependencies..."
+          }
+        ]
+      }
+    ]
+  }
+}

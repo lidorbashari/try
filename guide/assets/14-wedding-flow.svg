@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 590" width="800" height="590" role="img" aria-labelledby="title desc" font-family="Heebo, Rubik, Arial, sans-serif">
+<title id="title">מהלך ערב חתונה ישראלית</title>
+<desc id="desc">ציר זמן משמאל לימין בסדר עברי (מימין לשמאל): קבלת פנים, חופה, סבבי ריקודים, ארוחה, סלואו וסיום, עם עקומת אנרגיה.</desc>
+<rect x="1" y="1" width="798" height="588" rx="20" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+<text x="400.0" y="46.0" font-size="26" font-weight="700" fill="#f1f5f9" text-anchor="middle" direction="rtl">ערב חתונה ישראלית — מפת מוזיקה ואנרגיה</text>
+<text x="400.0" y="76.0" font-size="14" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">השעות משוערות · הזמן זורם מימין לשמאל · מתאמים מול הזוג ומנהל/ת האירוע</text>
+<line x1="30" y1="255.6" x2="770" y2="255.6" stroke="#334155" stroke-dasharray="3 6"/>
+<line x1="30" y1="221.2" x2="770" y2="221.2" stroke="#334155" stroke-dasharray="3 6"/>
+<line x1="30" y1="186.8" x2="770" y2="186.8" stroke="#334155" stroke-dasharray="3 6"/>
+<line x1="30" y1="152.4" x2="770" y2="152.4" stroke="#334155" stroke-dasharray="3 6"/>
+<line x1="30" y1="118.0" x2="770" y2="118.0" stroke="#334155" stroke-dasharray="3 6"/>
+<text x="784.0" y="122.0" font-size="10" font-weight="500" fill="#94a3b8" text-anchor="middle">10</text>
+<text x="784.0" y="294.0" font-size="10" font-weight="500" fill="#94a3b8" text-anchor="middle">0</text>
+<defs><linearGradient id="we" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f43f5e" stop-opacity="0.5"/><stop offset="1" stop-color="#6366f1" stop-opacity="0.04"/></linearGradient></defs>
+<polygon points="770.0,290.0 770.0,255.6 673.5,245.3 581.2,238.4 555.5,255.6 521.2,252.2 514.8,178.2 504.0,143.8 448.3,131.8 416.1,143.8 401.1,238.4 330.3,238.4 308.8,161.0 255.2,142.1 216.6,138.6 205.9,238.4 186.6,235.0 169.4,138.6 126.5,126.6 100.8,135.2 62.2,121.4 30.0,143.8 30.0,290.0" fill="url(#we)"/>
+<polyline points="770.0,255.6 673.5,245.3 581.2,238.4 555.5,255.6 521.2,252.2 514.8,178.2 504.0,143.8 448.3,131.8 416.1,143.8 401.1,238.4 330.3,238.4 308.8,161.0 255.2,142.1 216.6,138.6 205.9,238.4 186.6,235.0 169.4,138.6 126.5,126.6 100.8,135.2 62.2,121.4 30.0,143.8" fill="none" stroke="#fbbf24" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="514.8" cy="178.2" r="5" fill="#ffffff"/>
+<text x="518.8" y="166.2" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle" direction="rtl">שבירת הכוס!</text>
+<text x="448.3" y="119.8" font-size="12" font-weight="700" fill="#fed7aa" text-anchor="middle" direction="rtl">כניסה לרחבה</text>
+<text x="736.0" y="114.0" font-size="12" font-weight="600" fill="#94a3b8" text-anchor="middle" direction="rtl">אנרגיה</text>
+<rect x="578.5" y="300" width="190.0" height="44" rx="8" fill="#38bdf8" fill-opacity="0.92"/>
+<text x="673.5" y="327.0" font-size="13" font-weight="800" fill="#0b1220" text-anchor="middle" direction="rtl">קבלת פנים</text>
+<rect x="514.1" y="300" width="61.3" height="44" rx="8" fill="#c084fc" fill-opacity="0.92"/>
+<text x="544.8" y="327.0" font-size="13" font-weight="800" fill="#0b1220" text-anchor="middle" direction="rtl">חופה</text>
+<rect x="417.6" y="300" width="93.5" height="44" rx="8" fill="#f97316" fill-opacity="0.92"/>
+<text x="464.3" y="327.0" font-size="13" font-weight="800" fill="#0b1220" text-anchor="middle" direction="rtl">סבב ראשון</text>
+<rect x="321.1" y="300" width="93.5" height="44" rx="8" fill="#64748b" fill-opacity="0.92"/>
+<text x="367.8" y="327.0" font-size="13" font-weight="800" fill="#0b1220" text-anchor="middle" direction="rtl">ארוחה</text>
+<rect x="213.8" y="300" width="104.2" height="44" rx="8" fill="#ef4444" fill-opacity="0.92"/>
+<text x="265.9" y="327.0" font-size="13" font-weight="800" fill="#0b1220" text-anchor="middle" direction="rtl">סבב שני</text>
+<rect x="181.6" y="300" width="29.2" height="44" rx="8" fill="#f472b6" fill-opacity="0.92"/>
+<text x="196.2" y="327.0" font-size="11" font-weight="800" fill="#0b1220" text-anchor="middle" direction="rtl">סלואו</text>
+<rect x="106.6" y="300" width="72.1" height="44" rx="8" fill="#f59e0b" fill-opacity="0.92"/>
+<text x="142.6" y="327.0" font-size="13" font-weight="800" fill="#0b1220" text-anchor="middle" direction="rtl">סבב שלישי</text>
+<rect x="31.5" y="300" width="72.1" height="44" rx="8" fill="#a855f7" fill-opacity="0.92"/>
+<text x="67.5" y="327.0" font-size="13" font-weight="800" fill="#0b1220" text-anchor="middle" direction="rtl">סיום</text>
+<line x1="770.0" y1="346" x2="770.0" y2="354" stroke="#64748b"/>
+<text x="770.0" y="368.0" font-size="12" font-weight="500" fill="#94a3b8" text-anchor="middle">19:30</text>
+<line x1="641.3" y1="346" x2="641.3" y2="354" stroke="#64748b"/>
+<text x="641.3" y="368.0" font-size="12" font-weight="500" fill="#94a3b8" text-anchor="middle">20:30</text>
+<line x1="512.6" y1="346" x2="512.6" y2="354" stroke="#64748b"/>
+<text x="512.6" y="368.0" font-size="12" font-weight="500" fill="#94a3b8" text-anchor="middle">21:30</text>
+<line x1="383.9" y1="346" x2="383.9" y2="354" stroke="#64748b"/>
+<text x="383.9" y="368.0" font-size="12" font-weight="500" fill="#94a3b8" text-anchor="middle">22:30</text>
+<line x1="255.2" y1="346" x2="255.2" y2="354" stroke="#64748b"/>
+<text x="255.2" y="368.0" font-size="12" font-weight="500" fill="#94a3b8" text-anchor="middle">23:30</text>
+<line x1="126.5" y1="346" x2="126.5" y2="354" stroke="#64748b"/>
+<text x="126.5" y="368.0" font-size="12" font-weight="500" fill="#94a3b8" text-anchor="middle">00:30</text>
+<rect x="597.5" y="392" width="182.5" height="76" rx="12" fill="#16213a" stroke="#334155"/>
+<rect x="597.5" y="392" width="182.5" height="5" rx="2.5" fill="#38bdf8"/>
+<text x="688.8" y="418.0" font-size="14" font-weight="800" fill="#38bdf8" text-anchor="middle" direction="rtl">קבלת פנים</text>
+<text x="688.8" y="438.0" font-size="12" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">לאונג', נו-דיסקו, דיפ, קאברים</text>
+<text x="688.8" y="456.0" font-size="12" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">95-118 BPM · ווליום שיחה</text>
+<rect x="405.0" y="392" width="182.5" height="76" rx="12" fill="#16213a" stroke="#334155"/>
+<rect x="405.0" y="392" width="182.5" height="5" rx="2.5" fill="#c084fc"/>
+<text x="496.2" y="418.0" font-size="14" font-weight="800" fill="#c084fc" text-anchor="middle" direction="rtl">חופה</text>
+<text x="496.2" y="438.0" font-size="12" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">שירי כניסה שהזוג בחר</text>
+<text x="496.2" y="456.0" font-size="12" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">שבירת כוס ← שיר שמח</text>
+<rect x="212.5" y="392" width="182.5" height="76" rx="12" fill="#16213a" stroke="#334155"/>
+<rect x="212.5" y="392" width="182.5" height="5" rx="2.5" fill="#f97316"/>
+<text x="303.8" y="418.0" font-size="14" font-weight="800" fill="#f97316" text-anchor="middle" direction="rtl">סבב ראשון</text>
+<text x="303.8" y="438.0" font-size="12" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">שיר כניסה לרחבה</text>
+<text x="303.8" y="456.0" font-size="12" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">ישראלי שמח, ים-תיכוני, הורה</text>
+<rect x="20.0" y="392" width="182.5" height="76" rx="12" fill="#16213a" stroke="#334155"/>
+<rect x="20.0" y="392" width="182.5" height="5" rx="2.5" fill="#64748b"/>
+<text x="111.2" y="418.0" font-size="14" font-weight="800" fill="#64748b" text-anchor="middle" direction="rtl">ארוחה</text>
+<text x="111.2" y="438.0" font-size="12" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">מוזיקת רקע נעימה</text>
+<text x="111.2" y="456.0" font-size="12" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">עברית רגועה, גרוב</text>
+<rect x="597.5" y="478" width="182.5" height="76" rx="12" fill="#16213a" stroke="#334155"/>
+<rect x="597.5" y="478" width="182.5" height="5" rx="2.5" fill="#ef4444"/>
+<text x="688.8" y="504.0" font-size="14" font-weight="800" fill="#ef4444" text-anchor="middle" direction="rtl">סבב שני</text>
+<text x="688.8" y="524.0" font-size="12" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">להיטים לועזיים, היפ-הופ</text>
+<text x="688.8" y="542.0" font-size="12" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">רגאטון, אפרו, האוס</text>
+<rect x="405.0" y="478" width="182.5" height="76" rx="12" fill="#16213a" stroke="#334155"/>
+<rect x="405.0" y="478" width="182.5" height="5" rx="2.5" fill="#f472b6"/>
+<text x="496.2" y="504.0" font-size="14" font-weight="800" fill="#f472b6" text-anchor="middle" direction="rtl">סלואו</text>
+<text x="496.2" y="524.0" font-size="12" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">סלואו זוגי</text>
+<text x="496.2" y="542.0" font-size="12" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">2-3 שירים, אורות למטה</text>
+<rect x="212.5" y="478" width="182.5" height="76" rx="12" fill="#16213a" stroke="#334155"/>
+<rect x="212.5" y="478" width="182.5" height="5" rx="2.5" fill="#f59e0b"/>
+<text x="303.8" y="504.0" font-size="14" font-weight="800" fill="#f59e0b" text-anchor="middle" direction="rtl">סבב שלישי</text>
+<text x="303.8" y="524.0" font-size="12" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">מזרחית וים-תיכוני</text>
+<text x="303.8" y="542.0" font-size="12" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">להיטי ענק שכולם שרים</text>
+<rect x="20.0" y="478" width="182.5" height="76" rx="12" fill="#16213a" stroke="#334155"/>
+<rect x="20.0" y="478" width="182.5" height="5" rx="2.5" fill="#a855f7"/>
+<text x="111.2" y="504.0" font-size="14" font-weight="800" fill="#a855f7" text-anchor="middle" direction="rtl">סיום</text>
+<text x="111.2" y="524.0" font-size="12" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">טראנס / טכנו לצעירים</text>
+<text x="111.2" y="542.0" font-size="12" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">שיר סיום מוסכם</text>
+</svg>

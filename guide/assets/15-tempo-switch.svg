@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 664" width="800" height="664" role="img" aria-labelledby="title desc" font-family="Heebo, Rubik, Arial, sans-serif">
+<title id="title">החלפת טמפו: חצי, כפול, מדרגות וקפיצה</title>
+<desc id="desc">שלוש אסטרטגיות לשינוי טמפו: יישור חצי/כפול טמפו 87↔174, סולם ז'אנרים מ-95 ל-124 BPM, וקפיצה עם Echo Out.</desc>
+<rect x="1" y="1" width="798" height="662" rx="20" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+<text x="400.0" y="46.0" font-size="26" font-weight="700" fill="#f1f5f9" text-anchor="middle" direction="rtl">מעברי טמפו — שלוש אסטרטגיות</text>
+<text x="400.0" y="76.0" font-size="14" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">חצי/כפול טמפו · סולם ז'אנרים · קפיצה עם Echo Out</text>
+<rect x="20" y="96" width="760" height="150" rx="14" fill="#16213a" stroke="#334155"/>
+<text x="400.0" y="122.0" font-size="15" font-weight="700" fill="#f1f5f9" text-anchor="middle" direction="rtl">① חצי / כפול טמפו: 87 ↔ 174 (אותו עיקרון: 70 ↔ 140, 64 ↔ 128)</text>
+<text x="712.0" y="163.0" font-size="14" font-weight="700" fill="#fb923c" text-anchor="middle" direction="rtl">היפ-הופ 87</text>
+<line x1="48" y1="158" x2="640" y2="158" stroke="#475569" stroke-width="1.5"/>
+<circle cx="85.0" cy="158" r="8" fill="#fb923c" fill-opacity="1"/>
+<circle cx="159.0" cy="158" r="5" fill="#fb923c" fill-opacity="0.75"/>
+<circle cx="233.0" cy="158" r="5" fill="#fb923c" fill-opacity="0.75"/>
+<circle cx="307.0" cy="158" r="5" fill="#fb923c" fill-opacity="0.75"/>
+<circle cx="381.0" cy="158" r="8" fill="#fb923c" fill-opacity="1"/>
+<circle cx="455.0" cy="158" r="5" fill="#fb923c" fill-opacity="0.75"/>
+<circle cx="529.0" cy="158" r="5" fill="#fb923c" fill-opacity="0.75"/>
+<circle cx="603.0" cy="158" r="5" fill="#fb923c" fill-opacity="0.75"/>
+<text x="712.0" y="207.0" font-size="14" font-weight="700" fill="#60a5fa" text-anchor="middle" direction="rtl">DnB 174</text>
+<line x1="48" y1="202" x2="640" y2="202" stroke="#475569" stroke-width="1.5"/>
+<circle cx="66.5" cy="202" r="8" fill="#60a5fa" fill-opacity="1"/>
+<circle cx="103.5" cy="202" r="5" fill="#60a5fa" fill-opacity="0.75"/>
+<circle cx="140.5" cy="202" r="5" fill="#60a5fa" fill-opacity="0.75"/>
+<circle cx="177.5" cy="202" r="5" fill="#60a5fa" fill-opacity="0.75"/>
+<circle cx="214.5" cy="202" r="5" fill="#60a5fa" fill-opacity="0.75"/>
+<circle cx="251.5" cy="202" r="5" fill="#60a5fa" fill-opacity="0.75"/>
+<circle cx="288.5" cy="202" r="5" fill="#60a5fa" fill-opacity="0.75"/>
+<circle cx="325.5" cy="202" r="5" fill="#60a5fa" fill-opacity="0.75"/>
+<circle cx="362.5" cy="202" r="8" fill="#60a5fa" fill-opacity="1"/>
+<circle cx="399.5" cy="202" r="5" fill="#60a5fa" fill-opacity="0.75"/>
+<circle cx="436.5" cy="202" r="5" fill="#60a5fa" fill-opacity="0.75"/>
+<circle cx="473.5" cy="202" r="5" fill="#60a5fa" fill-opacity="0.75"/>
+<circle cx="510.5" cy="202" r="5" fill="#60a5fa" fill-opacity="0.75"/>
+<circle cx="547.5" cy="202" r="5" fill="#60a5fa" fill-opacity="0.75"/>
+<circle cx="584.5" cy="202" r="5" fill="#60a5fa" fill-opacity="0.75"/>
+<circle cx="621.5" cy="202" r="5" fill="#60a5fa" fill-opacity="0.75"/>
+<line x1="85.0" y1="144" x2="85.0" y2="216" stroke="#94a3b8" stroke-opacity="0.35" stroke-dasharray="3 4"/>
+<line x1="159.0" y1="144" x2="159.0" y2="216" stroke="#94a3b8" stroke-opacity="0.35" stroke-dasharray="3 4"/>
+<line x1="233.0" y1="144" x2="233.0" y2="216" stroke="#94a3b8" stroke-opacity="0.35" stroke-dasharray="3 4"/>
+<line x1="307.0" y1="144" x2="307.0" y2="216" stroke="#94a3b8" stroke-opacity="0.35" stroke-dasharray="3 4"/>
+<line x1="381.0" y1="144" x2="381.0" y2="216" stroke="#94a3b8" stroke-opacity="0.35" stroke-dasharray="3 4"/>
+<line x1="455.0" y1="144" x2="455.0" y2="216" stroke="#94a3b8" stroke-opacity="0.35" stroke-dasharray="3 4"/>
+<line x1="529.0" y1="144" x2="529.0" y2="216" stroke="#94a3b8" stroke-opacity="0.35" stroke-dasharray="3 4"/>
+<line x1="603.0" y1="144" x2="603.0" y2="216" stroke="#94a3b8" stroke-opacity="0.35" stroke-dasharray="3 4"/>
+<text x="400.0" y="236.0" font-size="12" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">פעמה אחת של 87 = שתי פעמות של 174 · עיגול גדול = תחילת תיבה</text>
+<rect x="20" y="262" width="760" height="204" rx="14" fill="#16213a" stroke="#334155"/>
+<text x="400.0" y="288.0" font-size="15" font-weight="700" fill="#f1f5f9" text-anchor="middle" direction="rtl">② סולם ז'אנרים: מ-95 ל-124 בלי קפיצה אחת גדולה</text>
+<rect x="658" y="394.0" width="112" height="58.0" rx="10" fill="#e27e36" fill-opacity="0.9"/>
+<text x="714.0" y="414.0" font-size="13" font-weight="800" fill="#0b1220" text-anchor="middle">Reggaeton</text>
+<text x="714.0" y="431.0" font-size="12" font-weight="600" fill="#0b1220" text-anchor="middle">95 BPM · 8A</text>
+<text x="714.0" y="448.0" font-size="11" font-weight="600" fill="#1e293b" text-anchor="middle">mainstream-08</text>
+<rect x="536" y="375.1" width="112" height="76.9" rx="10" fill="#e2d436" fill-opacity="0.9"/>
+<text x="592.0" y="395.1" font-size="13" font-weight="800" fill="#0b1220" text-anchor="middle">Afrobeats</text>
+<text x="592.0" y="412.1" font-size="12" font-weight="600" fill="#0b1220" text-anchor="middle">104 BPM · 9B</text>
+<text x="592.0" y="429.1" font-size="11" font-weight="600" fill="#1e293b" text-anchor="middle">mainstream-11</text>
+<text x="653.0" y="353.1" font-size="12" font-weight="700" fill="#fde68a" text-anchor="middle">+9.5%</text>
+<text x="653.0" y="368.1" font-size="11" font-weight="600" fill="#86efac" text-anchor="middle" direction="rtl">סולם ✓</text>
+<rect x="414" y="366.7" width="112" height="85.3" rx="10" fill="#9be236" fill-opacity="0.9"/>
+<text x="470.0" y="386.7" font-size="13" font-weight="800" fill="#0b1220" text-anchor="middle">Moombahton</text>
+<text x="470.0" y="403.7" font-size="12" font-weight="600" fill="#0b1220" text-anchor="middle">108 BPM · 9A</text>
+<text x="470.0" y="420.7" font-size="11" font-weight="600" fill="#1e293b" text-anchor="middle">mainstream-10</text>
+<text x="531.0" y="344.7" font-size="12" font-weight="700" fill="#fde68a" text-anchor="middle">+3.8%</text>
+<text x="531.0" y="359.7" font-size="11" font-weight="600" fill="#86efac" text-anchor="middle" direction="rtl">סולם ✓</text>
+<rect x="292" y="356.2" width="112" height="95.8" rx="10" fill="#45e236" fill-opacity="0.9"/>
+<text x="348.0" y="376.2" font-size="13" font-weight="800" fill="#0b1220" text-anchor="middle">Amapiano</text>
+<text x="348.0" y="393.2" font-size="12" font-weight="600" fill="#0b1220" text-anchor="middle">113 BPM · 4A</text>
+<text x="348.0" y="410.2" font-size="11" font-weight="600" fill="#1e293b" text-anchor="middle">house-14</text>
+<text x="409.0" y="334.2" font-size="12" font-weight="700" fill="#fde68a" text-anchor="middle">+4.6%</text>
+<text x="409.0" y="349.2" font-size="11" font-weight="600" fill="#fca5a5" text-anchor="middle" direction="rtl">סולם ✕</text>
+<rect x="170" y="341.5" width="112" height="110.5" rx="10" fill="#36e27e" fill-opacity="0.9"/>
+<text x="226.0" y="361.5" font-size="13" font-weight="800" fill="#0b1220" text-anchor="middle">Afro House</text>
+<text x="226.0" y="378.5" font-size="12" font-weight="600" fill="#0b1220" text-anchor="middle">120 BPM · 5A</text>
+<text x="226.0" y="395.5" font-size="11" font-weight="600" fill="#1e293b" text-anchor="middle">house-10</text>
+<text x="287.0" y="319.5" font-size="12" font-weight="700" fill="#fde68a" text-anchor="middle">+6.2%</text>
+<text x="287.0" y="334.5" font-size="11" font-weight="600" fill="#86efac" text-anchor="middle" direction="rtl">סולם ✓</text>
+<rect x="48" y="333.1" width="112" height="118.9" rx="10" fill="#36e2d4" fill-opacity="0.9"/>
+<text x="104.0" y="353.1" font-size="13" font-weight="800" fill="#0b1220" text-anchor="middle">House</text>
+<text x="104.0" y="370.1" font-size="12" font-weight="600" fill="#0b1220" text-anchor="middle">124 BPM · 7A</text>
+<text x="104.0" y="387.1" font-size="11" font-weight="600" fill="#1e293b" text-anchor="middle">house-03</text>
+<text x="165.0" y="311.1" font-size="12" font-weight="700" fill="#fde68a" text-anchor="middle">+3.3%</text>
+<text x="165.0" y="326.1" font-size="11" font-weight="600" fill="#86efac" text-anchor="middle" direction="rtl">סולם ✓</text>
+<rect x="20" y="482" width="760" height="156" rx="14" fill="#16213a" stroke="#334155"/>
+<text x="400.0" y="508.0" font-size="15" font-weight="700" fill="#f1f5f9" text-anchor="middle" direction="rtl">③ קפיצה מ-95 ל-124 עם Echo Out (כמו transition-08)</text>
+<defs><linearGradient id="fade" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#fb923c" stop-opacity="0.95"/><stop offset="1" stop-color="#fb923c" stop-opacity="0"/></linearGradient></defs>
+<rect x="420" y="540" width="340" height="30" rx="8" fill="#fb923c" fill-opacity="0.9"/>
+<text x="590.0" y="560.0" font-size="13" font-weight="800" fill="#0b1220" text-anchor="middle">A · Reggaeton 95</text>
+<rect x="300" y="540" width="120" height="30" rx="8" fill="url(#fade)"/>
+<text x="360.0" y="560.0" font-size="12" font-weight="700" fill="#fff7ed" text-anchor="middle" direction="rtl">הד בלבד</text>
+<rect x="40" y="540" width="256" height="30" rx="8" fill="#2dd4bf" fill-opacity="0.9"/>
+<text x="168.0" y="560.0" font-size="13" font-weight="800" fill="#0b1220" text-anchor="middle">B · Mediterranean House 124</text>
+<line x1="298" y1="532" x2="298" y2="578" stroke="#ffffff" stroke-width="2.5"/>
+<text x="298.0" y="528.0" font-size="11" font-weight="700" fill="#f1f5f9" text-anchor="middle" direction="rtl">ה-1 של B</text>
+<text x="700.0" y="602.0" font-size="13" font-weight="600" fill="#cbd5e1" text-anchor="middle" direction="rtl">① סוף פרייז / לופ</text>
+<text x="530.0" y="602.0" font-size="13" font-weight="600" fill="#cbd5e1" text-anchor="middle" direction="rtl">② Echo + חיתוך באס</text>
+<text x="360.0" y="602.0" font-size="13" font-weight="600" fill="#cbd5e1" text-anchor="middle" direction="rtl">③ פיידר A למטה</text>
+<text x="168.0" y="602.0" font-size="13" font-weight="600" fill="#cbd5e1" text-anchor="middle" direction="rtl">④ B נכנס על ה-1</text>
+<text x="400.0" y="628.0" font-size="12" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">← כיוון הזמן</text>
+</svg>

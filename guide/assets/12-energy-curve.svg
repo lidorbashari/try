@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="800" height="520" role="img" aria-labelledby="title desc" font-family="Heebo, Rubik, Arial, sans-serif">
+<title id="title">עקומת אנרגיה של סט 60 דקות</title>
+<desc id="desc">גרף אנרגיה (1–10) לאורך סט של 60 דקות מ-15 טראקים של DJ Lab: חימום, בנייה, שיא וסגירה.</desc>
+<rect x="1" y="1" width="798" height="518" rx="20" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+<text x="400.0" y="46.0" font-size="26" font-weight="700" fill="#f1f5f9" text-anchor="middle" direction="rtl">עקומת האנרגיה — סט של 60 דקות</text>
+<text x="400.0" y="76.0" font-size="14" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">הסט לדוגמה מפרק 12 · 15 טראקים מהרפו · גלים, לא קו ישר</text>
+<rect x="84.0" y="102" width="136.0" height="316" fill="#0ea5e9" fill-opacity="0.11"/>
+<text x="152.0" y="122.0" font-size="16" font-weight="800" fill="#0ea5e9" text-anchor="middle" direction="rtl">חימום</text>
+<text x="152.0" y="137.0" font-size="11" font-weight="500" fill="#94a3b8" text-anchor="middle">Warm-up</text>
+<rect x="220.0" y="102" width="272.0" height="316" fill="#22c55e" fill-opacity="0.11"/>
+<text x="356.0" y="122.0" font-size="16" font-weight="800" fill="#22c55e" text-anchor="middle" direction="rtl">בנייה</text>
+<text x="356.0" y="137.0" font-size="11" font-weight="500" fill="#94a3b8" text-anchor="middle">Build</text>
+<rect x="492.0" y="102" width="181.3" height="316" fill="#ef4444" fill-opacity="0.11"/>
+<text x="582.7" y="122.0" font-size="16" font-weight="800" fill="#ef4444" text-anchor="middle" direction="rtl">שיא</text>
+<text x="582.7" y="137.0" font-size="11" font-weight="500" fill="#94a3b8" text-anchor="middle">Peak</text>
+<rect x="673.3" y="102" width="90.7" height="316" fill="#a855f7" fill-opacity="0.11"/>
+<text x="718.7" y="122.0" font-size="16" font-weight="800" fill="#a855f7" text-anchor="middle" direction="rtl">סגירה</text>
+<text x="718.7" y="137.0" font-size="11" font-weight="500" fill="#94a3b8" text-anchor="middle">Closing</text>
+<line x1="84" y1="362.0" x2="764" y2="362.0" stroke="#334155" stroke-dasharray="4 6"/>
+<text x="72.0" y="366.0" font-size="12" font-weight="500" fill="#94a3b8" text-anchor="end">2</text>
+<line x1="84" y1="306.0" x2="764" y2="306.0" stroke="#334155" stroke-dasharray="4 6"/>
+<text x="72.0" y="310.0" font-size="12" font-weight="500" fill="#94a3b8" text-anchor="end">4</text>
+<line x1="84" y1="250.0" x2="764" y2="250.0" stroke="#334155" stroke-dasharray="4 6"/>
+<text x="72.0" y="254.0" font-size="12" font-weight="500" fill="#94a3b8" text-anchor="end">6</text>
+<line x1="84" y1="194.0" x2="764" y2="194.0" stroke="#334155" stroke-dasharray="4 6"/>
+<text x="72.0" y="198.0" font-size="12" font-weight="500" fill="#94a3b8" text-anchor="end">8</text>
+<line x1="84" y1="138.0" x2="764" y2="138.0" stroke="#334155" stroke-dasharray="4 6"/>
+<text x="72.0" y="142.0" font-size="12" font-weight="500" fill="#94a3b8" text-anchor="end">10</text>
+<line x1="84" y1="418" x2="764" y2="418" stroke="#64748b" stroke-width="1.5"/>
+<line x1="84.0" y1="418" x2="84.0" y2="424" stroke="#64748b"/>
+<text x="84.0" y="439.0" font-size="12" font-weight="500" fill="#94a3b8" text-anchor="middle">0′</text>
+<line x1="197.3" y1="418" x2="197.3" y2="424" stroke="#64748b"/>
+<text x="197.3" y="439.0" font-size="12" font-weight="500" fill="#94a3b8" text-anchor="middle">10′</text>
+<line x1="310.7" y1="418" x2="310.7" y2="424" stroke="#64748b"/>
+<text x="310.7" y="439.0" font-size="12" font-weight="500" fill="#94a3b8" text-anchor="middle">20′</text>
+<line x1="424.0" y1="418" x2="424.0" y2="424" stroke="#64748b"/>
+<text x="424.0" y="439.0" font-size="12" font-weight="500" fill="#94a3b8" text-anchor="middle">30′</text>
+<line x1="537.3" y1="418" x2="537.3" y2="424" stroke="#64748b"/>
+<text x="537.3" y="439.0" font-size="12" font-weight="500" fill="#94a3b8" text-anchor="middle">40′</text>
+<line x1="650.7" y1="418" x2="650.7" y2="424" stroke="#64748b"/>
+<text x="650.7" y="439.0" font-size="12" font-weight="500" fill="#94a3b8" text-anchor="middle">50′</text>
+<line x1="764.0" y1="418" x2="764.0" y2="424" stroke="#64748b"/>
+<text x="764.0" y="439.0" font-size="12" font-weight="500" fill="#94a3b8" text-anchor="middle">60′</text>
+<text x="40.0" y="278.0" font-size="13" font-weight="600" fill="#94a3b8" text-anchor="middle" direction="rtl" transform="rotate(-90 40 278.0)">אנרגיה</text>
+<text x="424.0" y="458.0" font-size="12" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">דקות מתחילת הסט</text>
+<defs><linearGradient id="eg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f43f5e" stop-opacity="0.45"/><stop offset="1" stop-color="#6366f1" stop-opacity="0.05"/></linearGradient></defs>
+<path d="M106.7,334.0 C114.2,329.3 136.9,320.0 152.0,306.0 C167.1,292.0 182.2,259.3 197.3,250.0 C212.4,240.7 227.6,254.7 242.7,250.0 C257.8,245.3 272.9,226.7 288.0,222.0 C303.1,217.3 318.2,226.7 333.3,222.0 C348.4,217.3 363.6,194.0 378.7,194.0 C393.8,194.0 408.9,217.3 424.0,222.0 C439.1,226.7 454.2,226.7 469.3,222.0 C484.4,217.3 499.6,203.3 514.7,194.0 C529.8,184.7 544.9,166.0 560.0,166.0 C575.1,166.0 590.2,189.3 605.3,194.0 C620.4,198.7 635.6,184.7 650.7,194.0 C665.8,203.3 680.9,236.0 696.0,250.0 C711.1,264.0 733.8,273.3 741.3,278.0  L741.3,418 L106.7,418 Z" fill="url(#eg)"/>
+<path d="M106.7,334.0 C114.2,329.3 136.9,320.0 152.0,306.0 C167.1,292.0 182.2,259.3 197.3,250.0 C212.4,240.7 227.6,254.7 242.7,250.0 C257.8,245.3 272.9,226.7 288.0,222.0 C303.1,217.3 318.2,226.7 333.3,222.0 C348.4,217.3 363.6,194.0 378.7,194.0 C393.8,194.0 408.9,217.3 424.0,222.0 C439.1,226.7 454.2,226.7 469.3,222.0 C484.4,217.3 499.6,203.3 514.7,194.0 C529.8,184.7 544.9,166.0 560.0,166.0 C575.1,166.0 590.2,189.3 605.3,194.0 C620.4,198.7 635.6,184.7 650.7,194.0 C665.8,203.3 680.9,236.0 696.0,250.0 C711.1,264.0 733.8,273.3 741.3,278.0 " fill="none" stroke="#fbbf24" stroke-width="3.5" stroke-linecap="round"/>
+<circle cx="106.7" cy="334.0" r="12" fill="#0ea5e9" stroke="#0f172a" stroke-width="2.5"/>
+<text x="106.7" y="338.5" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">1</text>
+<text x="106.7" y="315.0" font-size="11" font-weight="700" fill="#cbd5e1" text-anchor="middle">9A</text>
+<text x="106.7" y="476.0" font-size="11" font-weight="500" fill="#94a3b8" text-anchor="middle">121</text>
+<circle cx="152.0" cy="306.0" r="12" fill="#0ea5e9" stroke="#0f172a" stroke-width="2.5"/>
+<text x="152.0" y="310.5" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">2</text>
+<text x="152.0" y="287.0" font-size="11" font-weight="700" fill="#cbd5e1" text-anchor="middle">8A</text>
+<text x="152.0" y="476.0" font-size="11" font-weight="500" fill="#94a3b8" text-anchor="middle">122</text>
+<circle cx="197.3" cy="250.0" r="12" fill="#0ea5e9" stroke="#0f172a" stroke-width="2.5"/>
+<text x="197.3" y="254.5" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">3</text>
+<text x="197.3" y="231.0" font-size="11" font-weight="700" fill="#cbd5e1" text-anchor="middle">7A</text>
+<text x="197.3" y="476.0" font-size="11" font-weight="500" fill="#94a3b8" text-anchor="middle">124</text>
+<circle cx="242.7" cy="250.0" r="12" fill="#22c55e" stroke="#0f172a" stroke-width="2.5"/>
+<text x="242.7" y="254.5" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">4</text>
+<text x="242.7" y="231.0" font-size="11" font-weight="700" fill="#cbd5e1" text-anchor="middle">6A</text>
+<text x="242.7" y="476.0" font-size="11" font-weight="500" fill="#94a3b8" text-anchor="middle">124</text>
+<circle cx="288.0" cy="222.0" r="12" fill="#22c55e" stroke="#0f172a" stroke-width="2.5"/>
+<text x="288.0" y="226.5" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">5</text>
+<text x="288.0" y="203.0" font-size="11" font-weight="700" fill="#cbd5e1" text-anchor="middle">6A</text>
+<text x="288.0" y="476.0" font-size="11" font-weight="500" fill="#94a3b8" text-anchor="middle">124</text>
+<circle cx="333.3" cy="222.0" r="12" fill="#22c55e" stroke="#0f172a" stroke-width="2.5"/>
+<text x="333.3" y="226.5" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">6</text>
+<text x="333.3" y="203.0" font-size="11" font-weight="700" fill="#cbd5e1" text-anchor="middle">7A</text>
+<text x="333.3" y="476.0" font-size="11" font-weight="500" fill="#94a3b8" text-anchor="middle">124</text>
+<circle cx="378.7" cy="194.0" r="12" fill="#22c55e" stroke="#0f172a" stroke-width="2.5"/>
+<text x="378.7" y="198.5" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">7</text>
+<text x="378.7" y="175.0" font-size="11" font-weight="700" fill="#cbd5e1" text-anchor="middle">6A</text>
+<text x="378.7" y="476.0" font-size="11" font-weight="500" fill="#94a3b8" text-anchor="middle">125</text>
+<circle cx="424.0" cy="222.0" r="12" fill="#22c55e" stroke="#0f172a" stroke-width="2.5"/>
+<text x="424.0" y="226.5" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">8</text>
+<text x="424.0" y="203.0" font-size="11" font-weight="700" fill="#cbd5e1" text-anchor="middle">7A</text>
+<text x="424.0" y="476.0" font-size="11" font-weight="500" fill="#94a3b8" text-anchor="middle">126</text>
+<circle cx="469.3" cy="222.0" r="12" fill="#22c55e" stroke="#0f172a" stroke-width="2.5"/>
+<text x="469.3" y="226.5" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">9</text>
+<text x="469.3" y="203.0" font-size="11" font-weight="700" fill="#cbd5e1" text-anchor="middle">8A</text>
+<text x="469.3" y="476.0" font-size="11" font-weight="500" fill="#94a3b8" text-anchor="middle">126</text>
+<circle cx="514.7" cy="194.0" r="12" fill="#ef4444" stroke="#0f172a" stroke-width="2.5"/>
+<text x="514.7" y="198.5" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">10</text>
+<text x="514.7" y="175.0" font-size="11" font-weight="700" fill="#cbd5e1" text-anchor="middle">8A</text>
+<text x="514.7" y="476.0" font-size="11" font-weight="500" fill="#94a3b8" text-anchor="middle">128</text>
+<circle cx="560.0" cy="166.0" r="12" fill="#ef4444" stroke="#0f172a" stroke-width="2.5"/>
+<text x="560.0" y="170.5" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">11</text>
+<text x="560.0" y="147.0" font-size="11" font-weight="700" fill="#cbd5e1" text-anchor="middle">7A</text>
+<text x="560.0" y="476.0" font-size="11" font-weight="500" fill="#94a3b8" text-anchor="middle">130</text>
+<circle cx="605.3" cy="194.0" r="12" fill="#ef4444" stroke="#0f172a" stroke-width="2.5"/>
+<text x="605.3" y="198.5" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">12</text>
+<text x="605.3" y="175.0" font-size="11" font-weight="700" fill="#cbd5e1" text-anchor="middle">6A</text>
+<text x="605.3" y="476.0" font-size="11" font-weight="500" fill="#94a3b8" text-anchor="middle">130</text>
+<circle cx="650.7" cy="194.0" r="12" fill="#ef4444" stroke="#0f172a" stroke-width="2.5"/>
+<text x="650.7" y="198.5" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">13</text>
+<text x="650.7" y="175.0" font-size="11" font-weight="700" fill="#cbd5e1" text-anchor="middle">6A</text>
+<text x="650.7" y="476.0" font-size="11" font-weight="500" fill="#94a3b8" text-anchor="middle">128</text>
+<circle cx="696.0" cy="250.0" r="12" fill="#a855f7" stroke="#0f172a" stroke-width="2.5"/>
+<text x="696.0" y="254.5" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">14</text>
+<text x="696.0" y="231.0" font-size="11" font-weight="700" fill="#cbd5e1" text-anchor="middle">5A</text>
+<text x="696.0" y="476.0" font-size="11" font-weight="500" fill="#94a3b8" text-anchor="middle">127</text>
+<circle cx="741.3" cy="278.0" r="12" fill="#a855f7" stroke="#0f172a" stroke-width="2.5"/>
+<text x="741.3" y="282.5" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">15</text>
+<text x="741.3" y="259.0" font-size="11" font-weight="700" fill="#cbd5e1" text-anchor="middle">5A</text>
+<text x="741.3" y="476.0" font-size="11" font-weight="500" fill="#94a3b8" text-anchor="middle">124</text>
+<text x="54.0" y="476.0" font-size="11" font-weight="700" fill="#94a3b8" text-anchor="middle">BPM</text>
+<text x="424.0" y="254.0" font-size="12" font-weight="600" fill="#fde68a" text-anchor="middle" direction="rtl">נשימה</text>
+<text x="560.0" y="126.0" font-size="13" font-weight="700" fill="#fecaca" text-anchor="middle" direction="rtl">השיא</text>
+<text x="400.0" y="506.0" font-size="12" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">העיגול = מספר הטראק בטבלה · מעליו קוד Camelot · מתחת: BPM שבו מנגנים אותו בפועל</text>
+</svg>
