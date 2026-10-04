@@ -78,8 +78,8 @@ All times are in seconds from the very first sample. **Every track starts exactl
 
 ## 3. Practice & transition files
 ```
-music/practice/<id>.mp3 + .json      kind = "practice"  (id like practice-01)
-music/transitions/<id>.mp3 + .json   kind = "transition" (id like transition-01)
+music/practice/<id>-<slug>.mp3 + .json         kind = "practice"   (e.g. practice-03-drums-124.mp3)
+music/transitions/<id>-<technique>.mp3 + .json kind = "transition" (e.g. transition-02-bass_swap.mp3)
 ```
 Their JSON has `id, kind, title, title_he, bpm, key?, duration_sec, description_he, exercise_he` (+ for
 transitions: `from_id, to_id, technique, technique_he, steps_he[]`).

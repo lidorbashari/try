@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>15 · מעברי טמפו וז&#x27;אנר · DJ Lab</title>
+<meta name="description" content="איך עוברים מרגאטון ב-95 להאוס ב-124 (ובחזרה) בלי שהרחבה תרגיש &#x27;בור&#x27;: החשבון של אחוזי טמפו, Echo Out וקאט, חצי/כפול טמפו, רמפה הדרגתית, סולם ז&#x27;אנרים, ושימוש ב-transition-08 וב-practice-15.">
+<meta name="djlab-root" content="../../">
+<meta name="djlab-base" content="../">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#07070c">
+<link rel="canonical" href="https://lidorbashari.github.io/try/docs/guide/15-tempo-genre-switching.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DJ Lab">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="15 · מעברי טמפו וז&#x27;אנר · DJ Lab">
+<meta property="og:description" content="איך עוברים מרגאטון ב-95 להאוס ב-124 (ובחזרה) בלי שהרחבה תרגיש &#x27;בור&#x27;: החשבון של אחוזי טמפו, Echo Out וקאט, חצי/כפול טמפו, רמפה הדרגתית, סולם ז&#x27;אנרים, ושימוש ב-transition-08 וב-practice-15.">
+<meta property="og:url" content="https://lidorbashari.github.io/try/docs/guide/15-tempo-genre-switching.html">
+<meta property="og:image" content="https://lidorbashari.github.io/try/docs/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&family=Rubik:wght@400;500;600;700;800&family=Secular+One&display=swap">
+<link rel="stylesheet" href="../assets/css/site.css?v=a33c9f45">
+<script>(function(){try{var t=localStorage.getItem('djlab:theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+</head>
+<body class="page-guide has-progress">
+<a class="skip-link" href="#main">דלגו לתוכן</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../index.html" aria-label="DJ Lab - דף הבית"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><defs><linearGradient id="bm-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2bd6"/><stop offset=".55" stop-color="#8a5cff"/><stop offset="1" stop-color="#22e1ff"/></linearGradient></defs><circle cx="20" cy="20" r="18" fill="none" stroke="url(#bm-g)" stroke-width="3"/><circle cx="20" cy="20" r="11.5" fill="none" stroke="url(#bm-g)" stroke-width="1.5" opacity=".55"/><g fill="url(#bm-g)"><rect x="11" y="16" width="2.6" height="8" rx="1.3"/><rect x="15.4" y="12" width="2.6" height="16" rx="1.3"/><rect x="19.8" y="9.5" width="2.6" height="21" rx="1.3"/><rect x="24.2" y="13.5" width="2.6" height="13" rx="1.3"/><rect x="28.6" y="17" width="2.6" height="6" rx="1.3"/></g></svg><span class="brand-word">DJ<b>Lab</b></span></a>
+    <nav class="site-nav" id="site-nav" aria-label="ניווט ראשי"><ul><li><a href="../index.html">בית</a></li><li><a href="../guide/index.html" aria-current="page">הקורס</a></li><li><a href="../library.html">ספריית מוזיקה</a></li><li><a href="../practice.html">אימון</a></li><li><a href="../crates/index.html">ארגזים</a></li><li><a href="../sets/index.html">סטים</a></li><li><a href="../tools/index.html">כלים</a></li><li><a href="../about.html">אודות</a></li></ul></nav>
+    <div class="header-actions">
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="החלפה בין מצב כהה למצב בהיר" title="מצב כהה / בהיר"><svg class="icon i-sun" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg><svg class="icon i-moon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.6A8.2 8.2 0 1 1 9.4 4a6.6 6.6 0 0 0 10.6 10.6z"/></svg></button>
+      <a class="icon-btn hide-sm" href="https://github.com/lidorbashari/try" target="_blank" rel="noopener" aria-label="הקוד ב-GitHub" title="GitHub"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2.8a9.3 9.3 0 0 0-2.9 18.1c.5.1.6-.2.6-.5v-1.7c-2.6.6-3.1-1.2-3.1-1.2-.4-1.1-1-1.4-1-1.4-.9-.6 0-.6 0-.6.9.1 1.4 1 1.4 1 .8 1.4 2.2 1 2.7.8.1-.6.3-1 .6-1.2-2-.2-4.2-1-4.2-4.6 0-1 .4-1.8 1-2.5-.1-.2-.4-1.2.1-2.5 0 0 .8-.2 2.6 1a8.9 8.9 0 0 1 4.7 0c1.8-1.2 2.6-1 2.6-1 .5 1.3.2 2.3.1 2.5.6.7 1 1.5 1 2.5 0 3.6-2.2 4.4-4.2 4.6.3.3.6.8.6 1.6v2.4c0 .3.2.6.7.5A9.3 9.3 0 0 0 12 2.8z" fill="currentColor" stroke="none"/></svg></a>
+      <button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="פתיחת תפריט"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+<div class="reading-progress" aria-hidden="true"><span data-reading-bar></span></div>
+<article class="chapter" data-chapter="15-tempo-genre-switching" data-chapter-num="15">
+  <header class="chapter-hero">
+    <div class="container">
+      <nav class="crumbs" aria-label="פירורי לחם"><a href="../index.html">בית</a><span aria-hidden="true">/</span><a href="index.html">הקורס</a><span aria-hidden="true">/</span><span aria-current="page">פרק 15</span></nav>
+      <div class="chapter-hero-grid">
+        <div class="chapter-num" aria-hidden="true">15</div>
+        <div>
+          <p class="eyebrow">פרק 15 מתוך 17</p>
+          <h1 class="chapter-title">מעברי טמפו וז&#x27;אנר</h1>
+          <p class="chapter-en" dir="ltr">Tempo &amp; Genre Switching</p>
+          <p class="lead">איך עוברים מרגאטון ב-95 להאוס ב-124 (ובחזרה) בלי שהרחבה תרגיש &#x27;בור&#x27;: החשבון של אחוזי טמפו, Echo Out וקאט, חצי/כפול טמפו, רמפה הדרגתית, סולם ז&#x27;אנרים, ושימוש ב-transition-08 וב-practice-15.</p>
+          <div class="chapter-meta">
+            <span class="meta-item"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>14 דק' קריאה</span>
+            <span class="badge badge--level" data-level="מתחיל-מתקדם">מתחיל-מתקדם</span>
+            
+            <span class="meta-item read-state" data-read-state hidden><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>נקרא</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container chapter-layout">
+    <aside class="chapter-toc" aria-label="תוכן הפרק">
+  <details class="toc-box" open data-toc-details>
+    <summary><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg><span>בפרק הזה</span><svg class="icon toc-chev" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9.5 6 6 6-6"/></svg></summary>
+    <nav class="toc-nav"><ol><li><a href="#מה-תלמדו-בפרק" data-toc-link>מה תלמדו בפרק</a></li><li><a href="#החשבון-כמה-זה-הרבה" data-toc-link>החשבון: כמה זה &quot;הרבה&quot;?</a></li><li><a href="#אסטרטגיה-1-רמפה-לרכוב-על-הטמפו" data-toc-link>אסטרטגיה 1: רמפה — &quot;לרכוב&quot; על הטמפו</a></li><li><a href="#אסטרטגיה-2-echo-out-וקאט-הקפיצה" data-toc-link>אסטרטגיה 2: Echo Out וקאט — הקפיצה</a><ol><li><a href="#הקפיצה-צעד-אחר-צעד-מ-95-ל-124" data-toc-link>הקפיצה צעד אחר צעד (מ-95 ל-124)</a></li><li><a href="#ניתוח-transition-08" data-toc-link>ניתוח: transition-08</a></li></ol></li><li><a href="#אסטרטגיה-3-חצי-טמפו-וכפול-טמפו" data-toc-link>אסטרטגיה 3: חצי טמפו וכפול טמפו</a></li><li><a href="#אסטרטגיה-4-סולם-זאנרים" data-toc-link>אסטרטגיה 4: סולם ז&#x27;אנרים</a></li><li><a href="#אסטרטגיה-5-שבירה-של-אקפלה-ותופים" data-toc-link>אסטרטגיה 5: שבירה של אקפלה ותופים</a></li><li><a href="#מעברי-זאנר-נפוצים-מתכונים" data-toc-link>מעברי ז&#x27;אנר נפוצים — מתכונים</a><ol><li><a href="#היפ-הופ-רגאטון-ים-תיכוני-האוס-עלייה" data-toc-link>היפ-הופ / רגאטון / ים-תיכוני ← האוס (עלייה)</a></li><li><a href="#האוס-היפ-הופ-רגאטון-ירידה" data-toc-link>האוס ← היפ-הופ / רגאטון (ירידה)</a></li><li><a href="#טראפ-דאבסטפ-פסיכדלי-הארד" data-toc-link>טראפ ← דאבסטפ ← פסיכדלי / הארד</a></li><li><a href="#טכנו-הארד-טכנו" data-toc-link>טכנו ← הארד טכנו</a></li><li><a href="#מלודיק-טכנו-122-124-טק-האוס-126-128" data-toc-link>מלודיק טכנו (122-124) ↔ טק האוס (126-128)</a></li><li><a href="#דראם-אנד-בייס-היפ-הופ" data-toc-link>דראם אנד בייס ↔ היפ-הופ</a></li></ol></li><li><a href="#טעויות-נפוצות" data-toc-link>טעויות נפוצות</a></li><li><a href="#תרגילים" data-toc-link>תרגילים</a></li><li><a href="#סיכום" data-toc-link>סיכום</a></li></ol></nav>
+  </details>
+</aside>
+    <div class="prose" data-prose>
+      <p>אתם באמצע סבב שני בחתונה. בלוק רגאטון עובד מעולה — הרחבה מלאה, ב-95 BPM. עכשיו אתם רוצים להעלות הילוך: האוס ים-תיכוני ב-124. אם תנסו "לבטמאץ'" — תצטרכו להאיץ את הרגאטון ב-30%, והזמר יישמע כמו סנאי. אם פשוט תעצרו ותתחילו שיר חדש — יהיה "בור" של שנייה, והרחבה תתפזר.</p>
+<p>יש דרכים טובות יותר. בפרק הזה נלמד את ארגז הכלים המלא של מעברי טמפו וז'אנר: מתי מספיק להזיז את הפיידר, מתי קופצים, ואיך בונים "סולם" של ז'אנרים שמעלה את הטמפו בלי שאף אחד ירגיש.</p>
+<h2 id="מה-תלמדו-בפרק">מה תלמדו בפרק<a class="anchor" href="#מה-תלמדו-בפרק" title="קישור ישיר לסעיף">#</a></h2>
+<ul>
+<li>לחשב אחוזי שינוי טמפו, ולדעת מה "מורגש" ומה לא.</li>
+<li>חמש אסטרטגיות: רמפה הדרגתית, Echo Out וקאט, חצי/כפול טמפו, סולם ז'אנרים, ושבירת אקפלה ותופים.</li>
+<li>זוגות ז'אנרים נפוצים: היפ-הופ/רגאטון/ים-תיכוני ↔ האוס, טראפ ↔ דאבסטפ, טכנו ↔ הארד טכנו.</li>
+<li>לנתח ולשחזר את <span class="tref" data-id="transition-08"><code>transition-08</code></span>, ולתרגל עם <span class="tref" data-id="practice-15"><code>practice-15</code></span>.</li>
+</ul>
+<figure class="figure"><img alt="שלוש אסטרטגיות למעבר טמפו: חצי/כפול טמפו, סולם ז'אנרים וקפיצה עם Echo Out" src="../assets/guide/15-tempo-switch.svg" loading="lazy" decoding="async"><figcaption>שלוש אסטרטגיות למעבר טמפו: חצי/כפול טמפו, סולם ז'אנרים וקפיצה עם Echo Out</figcaption></figure>
+<h2 id="החשבון-כמה-זה-הרבה">החשבון: כמה זה "הרבה"?<a class="anchor" href="#החשבון-כמה-זה-הרבה" title="קישור ישיר לסעיף">#</a></h2>
+<p><strong>אחוז השינוי = (BPM חדש ÷ BPM נוכחי − 1) × 100.</strong> מ-124 ל-128: ‏128 ÷ 124 = 1.032, כלומר ‎+3.2%.</p>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>מ-</th>
+<th>אל</th>
+<th>שינוי</th>
+<th>מה עושים</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>120</td>
+<td>124</td>
+<td>‎+3.3%</td>
+<td>בלנד רגיל — אף אחד לא ישמע</td>
+</tr>
+<tr>
+<td>124</td>
+<td>128</td>
+<td>‎+3.2%</td>
+<td>בלנד רגיל, או רמפה לאורך טראק</td>
+</tr>
+<tr>
+<td>95</td>
+<td>100</td>
+<td>‎+5.3%</td>
+<td>בלנד קצר; בווקאל כבר מורגש</td>
+</tr>
+<tr>
+<td>113</td>
+<td>120</td>
+<td>‎+6.2%</td>
+<td>גבולי — עדיף Echo Out או בלנד קצר מאוד</td>
+</tr>
+<tr>
+<td>100</td>
+<td>108</td>
+<td>‎+8%</td>
+<td>קפיצה (Echo Out / קאט)</td>
+</tr>
+<tr>
+<td>104</td>
+<td>124</td>
+<td>‎+19%</td>
+<td>קפיצה</td>
+</tr>
+<tr>
+<td>95</td>
+<td>124</td>
+<td>‎+30.5%</td>
+<td>קפיצה — או סולם ז'אנרים</td>
+</tr>
+<tr>
+<td>87</td>
+<td>174</td>
+<td>פי 2</td>
+<td>חצי/כפול טמפו — אותו גריד!</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>כלל אצבע</strong> (עם <code>MASTER TEMPO</code> דולק):</p>
+<ul>
+<li><strong>עד 3%</strong> — בלתי מורגש כמעט בכל ז'אנר.</li>
+<li><strong>3%-6%</strong> — מורגש על ווקאל וכלים "טבעיים" (פסנתר, גיטרה). בטראקי תופים ובאס — בסדר.</li>
+<li><strong>מעל 6%-8%</strong> — מתחילים לשמוע "שאריות" דיגיטליות, וה"אופי" של השיר משתנה. כאן כבר לא מזיזים — קופצים.</li>
+</ul>
+<aside class="callout callout--rekordbox" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17M12 3.5v17M18 3.5v17"/><rect x="3.5" y="13" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="9.5" y="6.5" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="15.5" y="15" width="5" height="3.2" rx="1" fill="currentColor"/></svg><span>ב-Rekordbox</span></div><div class="callout-body"><p>טווח פיידר הטמפו של כל דק ניתן לשינוי — בדרך כלל ‎±6%, ‎±10%, ‎±16% או <code>WIDE</code> (טווח רחב מאוד). בטווח ‎±6% הפיידר מדויק מאוד, אבל לא תוכלו להגיע ל-‎+8%. לרמפות גדולות — עברו ל-‎±16%. שימו לב שבטווח רחב, תזוזה קטנה של הפיידר = שינוי גדול.</p></div></aside>
+<h2 id="אסטרטגיה-1-רמפה-לרכוב-על-הטמפו">אסטרטגיה 1: רמפה — "לרכוב" על הטמפו<a class="anchor" href="#אסטרטגיה-1-רמפה-לרכוב-על-הטמפו" title="קישור ישיר לסעיף">#</a></h2>
+<p>השינוי הכי חלק הוא זה שאף אחד לא שם לב אליו. במקום לקפוץ מ-124 ל-130, מעלים את הטמפו של המאסטר בהדרגה, לאורך כמה טראקים.</p>
+<ol>
+<li>ודאו ש-<code>MASTER TEMPO</code> דולק בשני הדקים.</li>
+<li>בזמן שטראק מתנגן לבד (אחרי מעבר), הזיזו את הטמפו שלו בכחצי BPM כל 16 תיבות.</li>
+<li>כשהגעתם ליעד, הכניסו את הטראק הבא, מותאם לטמפו החדש.</li>
+<li>חזרו על זה לאורך 2-3 טראקים.</li>
+</ol>
+<p><strong>סוד המקצוענים — רמפה בברייקדאון:</strong> כשאין תופים (בברייקדאון, Hot Cue <strong>C</strong> בטראקים שלנו), אין לאוזן "עוגן" קצבי. אפשר להעלות שם 2-3% בתוך 8 תיבות, והדרופ חוזר בטמפו החדש — בלי שאיש ירגיש.</p>
+<aside class="callout callout--exercise" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 15.5V12a8 8 0 0 1 16 0v3.5"/><rect x="3" y="14" width="5" height="7" rx="2"/><rect x="16" y="14" width="5" height="7" rx="2"/></svg><span>תרגיל</span></div><div class="callout-body"><p>בסט לדוגמה ב<a href="12-set-building.html">פרק 12</a>, הטמפו עולה מ-121 ל-130 בתוך 40 דקות — כולו ברמפות כאלה.</p></div></aside>
+<h2 id="אסטרטגיה-2-echo-out-וקאט-הקפיצה">אסטרטגיה 2: Echo Out וקאט — הקפיצה<a class="anchor" href="#אסטרטגיה-2-echo-out-וקאט-הקפיצה" title="קישור ישיר לסעיף">#</a></h2>
+<p>כשהפער גדול מדי לרמפה, קופצים. הקפיצה הטובה מרגישה <strong>מתוכננת</strong>: היא קורית בסוף משפט מוזיקלי, עם "זנב" שמחבר בין העולמות, והטראק החדש נוחת על ה-1 עם אנרגיה.</p>
+<h3 id="הקפיצה-צעד-אחר-צעד-מ-95-ל-124">הקפיצה צעד אחר צעד (מ-95 ל-124)<a class="anchor" href="#הקפיצה-צעד-אחר-צעד-מ-95-ל-124" title="קישור ישיר לסעיף">#</a></h3>
+<ol>
+<li><strong>הכינו את B.</strong> טענו את הטראק החדש, וסמנו Hot Cue בנקודה שבה הוא צריך להיכנס. בקפיצה למעלה — לרוב <strong>הדרופ</strong> (D) או תחילת הגרוב (B), לא אינטרו של 32 תיבות תופים.</li>
+<li><strong>בחרו את רגע היציאה מ-A:</strong> סוף פזמון, סוף משפט ווקאלי, או סוף פרייז של 8/16 תיבות.</li>
+<li><strong>בפעמה האחרונה של המשפט</strong> — הדליקו <code>Echo</code> של 1/2 או פעמה אחת, Level בסביבות 50%. אפשר להוסיף גם חיתוך Low ב-EQ.</li>
+<li><strong>על ה-1 הבא</strong> — הורידו את הפיידר של A. ההד ממשיך לבד.</li>
+<li><strong>על אותו 1 (או פעמה-שתיים אחרי)</strong> — הפעילו את B מה-Hot Cue. הוא נכנס בטמפו המקורי שלו, 124, בלי שום ביטמאצ'ינג.</li>
+<li><strong>כבו את ה-Echo</strong> והחזירו Level לאפס.</li>
+</ol>
+<p><strong>וריאציות:</strong>
+- <strong>קאט "יבש"</strong> — בלי Echo, B על ה-1 מיד אחרי ש-A נגמר. דורש תזמון מושלם, ועובד מצוין בהיפ-הופ ורגאטון.
+- <strong><code>Vinyl Brake</code> / Backspin</strong> — A "נעצר", ו-B מתפוצץ. דרמטי — פעם-פעמיים בערב.
+- <strong>אפקט מעבר</strong> — ריזר, נויז או סאונד אפקט קצר שמחבר. לא להגזים.
+- <strong>שקט מכוון</strong> — חצי פעמה של שקט מוחלט לפני דרופ עוצמתי. רק כשאתם בטוחים בתזמון.</p>
+<aside class="callout callout--tip" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.5 18h5M10.5 21h3M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg><span>טיפ</span></div><div class="callout-body"><p>בקפיצה <strong>למעלה</strong> בטמפו — היכנסו חזק (דרופ, פזמון). בקפיצה <strong>למטה</strong> — היכנסו עם הלהיט הכי מוכר שיש לכם בטמפו החדש, ומיד מההוק. ירידה בטמפו היא הרגע שבו הכי קל לאבד את הרחבה.</p></div></aside>
+<h3 id="ניתוח-transition-08">ניתוח: transition-08<a class="anchor" href="#ניתוח-transition-08" title="קישור ישיר לסעיף">#</a></h3>
+<p><span class="tref" data-id="transition-08"><code>transition-08</code></span> (בתיקייה <code>music/transitions/</code>) הוא בדיוק המעבר הזה: מ-mainstream-08 (Dembow Fuego, רגאטון, 95 BPM, 8A) אל mainstream-15 (Mediterranean Sunrise, האוס ים-תיכוני, 124 BPM, 7A). שימו לב לשלושה דברים כשאתם מאזינים:</p>
+<ol>
+<li><strong>איפה</strong> A יוצא — בסוף משפט, לא באמצע.</li>
+<li><strong>האורך</strong> של זנב ה-Echo — מספיק כדי לגשר, לא כל כך ארוך שהוא "מלכלך" את ההתחלה של B.</li>
+<li><strong>הסולמות</strong> — 8A ו-7A שכנים בגלגל, כך שגם הזנב של ההד לא מתנגש עם B.</li>
+</ol>
+<aside class="callout callout--exercise" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 15.5V12a8 8 0 0 1 16 0v3.5"/><rect x="3" y="14" width="5" height="7" rx="2"/><rect x="16" y="14" width="5" height="7" rx="2"/></svg><span>תרגיל</span></div><div class="callout-body"><p>האזינו ל-<span class="tref" data-id="transition-08"><code>transition-08</code></span> שלוש פעמים, ואז שחזרו אותו בעצמכם עם <span class="tref" data-file="music/tracks/reggaeton/mainstream-08-dembow-fuego.mp3" data-missing="1"><code>music/tracks/reggaeton/mainstream-08-dembow-fuego.mp3</code></span> ו-<span class="tref" data-file="music/tracks/mediterranean/mainstream-15-mediterranean-sunrise.mp3" data-missing="1"><code>music/tracks/mediterranean/mainstream-15-mediterranean-sunrise.mp3</code></span>. נסו Echo של 1/2 ושל 1 — איזה מתאים יותר?</p></div></aside>
+<h2 id="אסטרטגיה-3-חצי-טמפו-וכפול-טמפו">אסטרטגיה 3: חצי טמפו וכפול טמפו<a class="anchor" href="#אסטרטגיה-3-חצי-טמפו-וכפול-טמפו" title="קישור ישיר לסעיף">#</a></h2>
+<p><strong>64 = חצי מ-128. 70 = חצי מ-140. 87 = חצי מ-174.</strong> כשמספר אחד הוא בדיוק פי 2 מהשני, הגרידים מתיישרים: כל פעמה של הטראק האיטי = שתי פעמות של המהיר. לכן אפשר לערבב אותם כמו שני טראקים באותו טמפו.</p>
+<p>הזוגות הנפוצים:</p>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>איטי</th>
+<th>מהיר</th>
+<th>ז'אנרים</th>
+<th>מהרפו</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>87</td>
+<td>174</td>
+<td>היפ-הופ ↔ דראם אנד בייס</td>
+<td>breadth-10 (84, להעלות ל-86) ↔ breadth-06 (172)</td>
+</tr>
+<tr>
+<td>70</td>
+<td>140</td>
+<td>"תחושה" של טראפ/דאבסטפ ↔ פסיכדלי, הארד</td>
+<td>mainstream-06 (140) ↔ breadth-07 (140)</td>
+</tr>
+<tr>
+<td>64</td>
+<td>128</td>
+<td>היפ-הופ איטי / R&amp;B ↔ האוס וטכנו</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<ol>
+<li>ודאו שה-BPM של שני הטראקים מוצג נכון (לפעמים התוכנה מזהה טראפ ב-70 ולפעמים ב-140).</li>
+<li>התאימו את האיטי בדיוק לחצי מהמהיר (למשל 86 מול 172).</li>
+<li>ישרו את ה-1 של שניהם — ה-1 של האיטי חייב ליפול על ה-1 של המהיר.</li>
+<li>מכאן — מעבר רגיל: Bass Swap, פילטר, או קאט.</li>
+</ol>
+<aside class="callout callout--tip" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.5 18h5M10.5 21h3M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg><span>טיפ</span></div><div class="callout-body"><p>טראפ (140) ודאבסטפ (140) נשמעים "איטיים" כי הסנר נופל על פעמה 3 — כמו ב-70. לכן מעבר מהם לפסיכדלי טראנס (138-142) או לטכנו מהיר "מכפיל" פתאום את האנרגיה, בלי לשנות כמעט את ה-BPM. זה טריק חזק לסוף הערב.</p>
+<p>⚠️ זהירות: אם הגריד של אחד הטראקים מוגדר על חצי או כפול מהאמיתי, <code>Sync</code> יתאים אותו בצורה שגויה. בדקו את ה-BPM המוצג, ותקנו את הגריד אם צריך (ראו <a href="04-bpm-beatmatching.html">פרק 4</a>).</p></div></aside>
+<h2 id="אסטרטגיה-4-סולם-זאנרים">אסטרטגיה 4: סולם ז'אנרים<a class="anchor" href="#אסטרטגיה-4-סולם-זאנרים" title="קישור ישיר לסעיף">#</a></h2>
+<p>במקום קפיצה אחת של 30%, עולים במדרגות. כל מדרגה היא ז'אנר שנמצא "בין" הקודם לבא:</p>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>מדרגה</th>
+<th>ז'אנר</th>
+<th>BPM</th>
+<th>אצלנו</th>
+<th>שינוי מהקודם</th>
+<th>מהלך בגלגל</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Reggaeton</td>
+<td>95</td>
+<td>mainstream-08 (8A)</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Afrobeats</td>
+<td>104</td>
+<td>mainstream-11 (9B)</td>
+<td>‎+9.5%</td>
+<td>8A→9B (אלכסון)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Moombahton</td>
+<td>108</td>
+<td>mainstream-10 (9A)</td>
+<td>‎+3.8%</td>
+<td>9B→9A ✓</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Amapiano</td>
+<td>113</td>
+<td>house-14 (4A)</td>
+<td>‎+4.6%</td>
+<td>9A→4A ✕</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Afro House</td>
+<td>120</td>
+<td>house-10 (5A)</td>
+<td>‎+6.2%</td>
+<td>4A→5A ✓</td>
+</tr>
+<tr>
+<td>6</td>
+<td>House</td>
+<td>124</td>
+<td>house-03 (7A)</td>
+<td>‎+3.3%</td>
+<td>5A→7A (‎+2)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>איך עוברים כל מדרגה:</strong></p>
+<ul>
+<li><strong>פחות מ-4%</strong> — בלנד רגיל.</li>
+<li><strong>4%-6%</strong> — "נפגשים באמצע": מעבר מ-108 ל-113? שימו את שניהם על 110.5 במהלך המעבר (‎+2.3% ו-‎−2.2%), ואחרי המעבר "רכבו" עם החדש חזרה ל-113.</li>
+<li><strong>מעל 6%</strong> — Echo Out או קאט, אבל קצר ומדויק. בין רגאטון לאפרוביטס האוזן כבר מצפה לשינוי.</li>
+<li><strong>מדרגה עם ✕ בגלגל</strong> — חפיפה של תופים בלבד, או קאט. לא בלנד ארוך עם שני באסים.</li>
+</ul>
+<aside class="callout callout--tip" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.5 18h5M10.5 21h3M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg><span>טיפ</span></div><div class="callout-body"><p>סולם ז'אנרים עובד מצוין בבלוק "אפרו" — אפרוביטס → אמאפיאנו → אפרו האוס — כי הפרקשן מחבר את כולם. זה גם מעבר טבעי מהחלק ה"לועזי" של חתונה לחלק האלקטרוני.</p></div></aside>
+<h2 id="אסטרטגיה-5-שבירה-של-אקפלה-ותופים">אסטרטגיה 5: שבירה של אקפלה ותופים<a class="anchor" href="#אסטרטגיה-5-שבירה-של-אקפלה-ותופים" title="קישור ישיר לסעיף">#</a></h2>
+<p>הרבה שירים מסתיימים (או אפשר לגרום להם להסתיים) בקטע של תופים בלבד, או בשירה כמעט בלי ביט. בקטע כזה "הקצב" פחות מוחשי — וזה חלון להחליף טמפו.</p>
+<ol>
+<li>מצאו בטראק A קטע של תופים בלבד או ווקאל חופשי (באאוטרו, או בברייקדאון).</li>
+<li>הפעילו לופ של 1-2 תיבות על הקטע הזה.</li>
+<li><strong>אופציה א' (קלה):</strong> Echo Out מהלופ, ו-B נכנס על ה-1 בטמפו שלו.</li>
+<li><strong>אופציה ב' (מתקדמת):</strong> על לופ של תופים בלבד, העלו את הטמפו בהדרגה לאורך 8-16 תיבות — למשל מ-100 ל-110. על תופים, האוזן מקבלת האצה כ"בילד-אפ". ואז קאט ל-B ב-124.</li>
+</ol>
+<aside class="callout callout--exercise" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 15.5V12a8 8 0 0 1 16 0v3.5"/><rect x="3" y="14" width="5" height="7" rx="2"/><rect x="16" y="14" width="5" height="7" rx="2"/></svg><span>תרגיל</span></div><div class="callout-body"><p><span class="tref" data-file="music/practice/practice-15-tempo-bridge-100-to-124.mp3" data-missing="1"><code>music/practice/practice-15-tempo-bridge-100-to-124.mp3</code></span> נבנה בדיוק לזה: גרוב ים-תיכוני/רגאטון ב-100 BPM, עם אאוטרו של אקפלה ותופים. נסו את שתי האופציות לכיוון mainstream-15 (124) או house-03 (124).</p></div></aside>
+<h2 id="מעברי-זאנר-נפוצים-מתכונים">מעברי ז'אנר נפוצים — מתכונים<a class="anchor" href="#מעברי-זאנר-נפוצים-מתכונים" title="קישור ישיר לסעיף">#</a></h2>
+<h3 id="היפ-הופ-רגאטון-ים-תיכוני-האוס-עלייה">היפ-הופ / רגאטון / ים-תיכוני ← האוס (עלייה)<a class="anchor" href="#היפ-הופ-רגאטון-ים-תיכוני-האוס-עלייה" title="קישור ישיר לסעיף">#</a></h3>
+<ul>
+<li><strong>הכלי העיקרי:</strong> Echo Out + כניסה של האוס <strong>מה-Hot Cue B או D</strong>, לא מאינטרו של תופים בלבד (16 תיבות של קיק אחרי שיר רגאטון — הרחבה "מתקררת").</li>
+<li><strong>טריק:</strong> הכניסו את התופים של טראק ההאוס <strong>מתחת לאקפלה או לסוף הפזמון</strong> של השיר הקודם — הקיק של ההאוס "מאיץ" את התחושה.</li>
+<li><strong>ים-תיכוני ← רמיקס ים-תיכוני:</strong> פזמון של שיר ב-100, Echo Out, ורמיקס האוס עם אותו צבע מזרחי. mainstream-14 (Hijaz Fire, 104, 8A) → mainstream-15 (124, 7A) — שכנים בגלגל, אז גם זנב ההד מתאים.</li>
+</ul>
+<h3 id="האוס-היפ-הופ-רגאטון-ירידה">האוס ← היפ-הופ / רגאטון (ירידה)<a class="anchor" href="#האוס-היפ-הופ-רגאטון-ירידה" title="קישור ישיר לסעיף">#</a></h3>
+<ul>
+<li><strong>הבעיה:</strong> ירידה מ-124 ל-95 מרגישה כמו "בלם יד".</li>
+<li><strong>הפתרון:</strong> סיימו את ההאוס בשיא (לא בברייקדאון), Echo Out קצר או <code>Vinyl Brake</code>, וכניסה <strong>מהפזמון</strong> של הלהיט הכי גדול שלכם ב-95. האנרגיה של השיר המוכר "מחפה" על הירידה בטמפו.</li>
+<li><strong>מהרפו:</strong> house-05 (126) → mainstream-07 (95): Echo Out, ו-mainstream-07 מ-Hot Cue D.</li>
+</ul>
+<h3 id="טראפ-דאבסטפ-פסיכדלי-הארד">טראפ ← דאבסטפ ← פסיכדלי / הארד<a class="anchor" href="#טראפ-דאבסטפ-פסיכדלי-הארד" title="קישור ישיר לסעיף">#</a></h3>
+<ul>
+<li><strong>טראפ ↔ דאבסטפ:</strong> אותו 140, ולפעמים אותו סולם (mainstream-06 ו-breadth-07 — שניהם 4A!). בלנד או החלפת דרופים.</li>
+<li><strong>דאבסטפ ← פסיכדלי (138-142):</strong> הקיק משתנה מחצי-טמפו לארבע על הרצפה — האנרגיה מוכפלת. קאט על הדרופ.</li>
+</ul>
+<h3 id="טכנו-הארד-טכנו">טכנו ← הארד טכנו<a class="anchor" href="#טכנו-הארד-טכנו" title="קישור ישיר לסעיף">#</a></h3>
+<ul>
+<li><strong>מ-130 ל-150</strong> זה ‎+15%. רמפה של 2-3% לכל טראק, או רמפה בברייקדאון ואז קפיצה של Echo Out (ראו את התרגול של techno-03 ← techno-12 ב<a href="13-genre-bible.html">פרק 13</a>).</li>
+</ul>
+<h3 id="מלודיק-טכנו-122-124-טק-האוס-126-128">מלודיק טכנו (122-124) ↔ טק האוס (126-128)<a class="anchor" href="#מלודיק-טכנו-122-124-טק-האוס-126-128" title="קישור ישיר לסעיף">#</a></h3>
+<ul>
+<li><strong>פער קטן</strong> (‎+3%) — רמפה רגילה. הקושי הוא באופי: מלודיק "רגשי", טק האוס "קופצני". גשר טוב: טראק טק האוס עם קצת אקורדים, או מלודיק עם באסליין קצבי. בסט של פרק 12: house-05 → techno-01 עובד כי שניהם ב-8A.</li>
+</ul>
+<h3 id="דראם-אנד-בייס-היפ-הופ">דראם אנד בייס ↔ היפ-הופ<a class="anchor" href="#דראם-אנד-בייס-היפ-הופ" title="קישור ישיר לסעיף">#</a></h3>
+<ul>
+<li><strong>חצי/כפול טמפו</strong> — 87 ↔ 174. אקפלה של היפ-הופ מעל DnB היא קלאסיקה של סטים בריטיים.</li>
+</ul>
+<h2 id="טעויות-נפוצות">טעויות נפוצות<a class="anchor" href="#טעויות-נפוצות" title="קישור ישיר לסעיף">#</a></h2>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>טעות</th>
+<th>למה זה קורה</th>
+<th>התיקון</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>מאיצים שיר ווקאלי ב-10%</td>
+<td>"חייב ביטמאץ'"</td>
+<td>Echo Out וקפיצה</td>
+</tr>
+<tr>
+<td>נכנסים לטמפו החדש מאינטרו ארוך של תופים</td>
+<td>"ככה עושים בקלאב"</td>
+<td>באירוע — נכנסים מהגרוב או מהדרופ</td>
+</tr>
+<tr>
+<td>יורדים בטמפו לשיר לא מוכר</td>
+<td>לא תכננו</td>
+<td>ירידה = רק עם להיט</td>
+</tr>
+<tr>
+<td>Echo של 4 פעמות על שיר מהיר</td>
+<td>הזנב ארוך מדי</td>
+<td>1/2 או 1</td>
+</tr>
+<tr>
+<td>שוכחים את טווח הפיידר</td>
+<td>הפיידר "נתקע" ב-‎+6%</td>
+<td>‎±16% לרמפות</td>
+</tr>
+<tr>
+<td>מחליפים ז'אנר בכל שיר</td>
+<td>התלהבות</td>
+<td>בלוקים של 10-20 דקות</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="תרגילים">תרגילים<a class="anchor" href="#תרגילים" title="קישור ישיר לסעיף">#</a></h2>
+<aside class="callout callout--exercise" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 15.5V12a8 8 0 0 1 16 0v3.5"/><rect x="3" y="14" width="5" height="7" rx="2"/><rect x="16" y="14" width="5" height="7" rx="2"/></svg><span>תרגיל</span></div><div class="callout-body"><p>תרגיל 1 — Echo Out בלי ביטמאץ' (15 דקות)
+טענו את <span class="tref" data-file="music/practice/practice-02-drums-120.mp3" data-missing="1"><code>music/practice/practice-02-drums-120.mp3</code></span> ואת <span class="tref" data-file="music/practice/practice-05-drums-132.mp3" data-missing="1"><code>music/practice/practice-05-drums-132.mp3</code></span>. קפצו ביניהם עם Echo Out — הלוך וחזור, 10 פעמים. המטרה: ה-1 של הטראק החדש נוחת בדיוק כשהזנב מתחיל לדעוך.</p>
+<p>🎧 תרגיל 2 — שחזור transition-08 (20 דקות)
+ראו למעלה. הקליטו את הגרסה שלכם והשוו לדמו.</p>
+<p>🎧 תרגיל 3 — practice-15 (20 דקות)
+אופציה א' (Echo Out מהאאוטרו) ואופציה ב' (לופ תופים + רמפה מ-100 ל-110 + קאט) לכיוון mainstream-15. איזו הרגישה טבעית יותר?</p>
+<p>🎧 תרגיל 4 — סולם ז'אנרים (30 דקות)
+נגנו את ששת השלבים מהטבלה, 2-3 דקות לכל טראק: mainstream-08 → mainstream-11 → mainstream-10 → house-14 → house-10 → house-03. השתמשו בטכניקה המתאימה לכל מדרגה (בלנד, "נפגשים באמצע", או Echo Out). הקליטו.</p>
+<p>🎧 תרגיל 5 — חצי טמפו (15 דקות)
+mainstream-06 (טראפ, 140, 4A) ↔ breadth-07 (דאבסטפ, 140, 4A). ואז: breadth-10 (לו-פיי, 84 — העלו ל-86) מעל breadth-06 (DnB, 172). שימו לב שה-1 של שניהם חייב להיפגש.</p>
+<p>🎧 תרגיל 6 — רמפה בברייקדאון (15 דקות)
+house-03 (124) → house-07 (128). במקום להזיז את house-03 לאט, חכו לברייקדאון שלו (C) והעלו בו את הטמפו ל-128 בתוך 8 תיבות. כשהדרופ חוזר — הכניסו את house-07. האם מישהו היה שם לב?</p>
+<p>🎧 תרגיל 7 — ירידה (15 דקות)
+house-05 (126) → mainstream-07 (95). Echo Out או <code>Vinyl Brake</code>, ו-mainstream-07 מה-Hot Cue של הפזמון/הדרופ. נסו גם כניסה מהאינטרו — ותרגישו למה זה פחות עובד.</p></div></aside>
+<h2 id="סיכום">סיכום<a class="anchor" href="#סיכום" title="קישור ישיר לסעיף">#</a></h2>
+<ul>
+<li>עד 3% — בלנד. 3%-6% — בזהירות. מעל 6%-8% — קופצים.</li>
+<li>הקפיצה הטובה: סוף משפט, Echo Out של 1/2 או פעמה, והטראק החדש על ה-1 — מהדרופ או מהגרוב.</li>
+<li>חצי/כפול טמפו (87/174, 70/140, 64/128) מאפשר לערבב עולמות "רחוקים" כאילו הם באותו טמפו.</li>
+<li>סולם ז'אנרים: רגאטון → אפרוביטס → מומבהטון → אמאפיאנו → אפרו → האוס.</li>
+<li>ירידה בטמפו — רק עם להיט, ישר מהפזמון.</li>
+<li><span class="tref" data-id="transition-08"><code>transition-08</code></span> ו-<span class="tref" data-id="practice-15"><code>practice-15</code></span> נבנו בשביל הפרק הזה — השתמשו בהם.</li>
+</ul>
+<p>אחרי שאתם יודעים לחבר כל דבר לכל דבר — הגיע הזמן להקליט את זה ולשתף עם העולם. ← <a href="16-recording-sharing.html">פרק 16: הקלטה ושיתוף</a></p>
+      <div class="chapter-done">
+        <button class="btn btn--ghost" type="button" data-mark-read><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>סימון הפרק כנקרא</span></button>
+      </div>
+    </div>
+  </div>
+  <nav class="container pn" aria-label="ניווט בין פרקים"><a class="pn-card pn-prev" href="14-events-weddings.html"><span class="pn-label"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m0 0-6-6m6 6-6 6"/></svg>הפרק הקודם</span><span class="pn-title"><span class="pn-num">14</span>אירועים וחתונות</span></a><a class="pn-card pn-next" href="16-recording-sharing.html"><span class="pn-label">הפרק הבא<svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5m0 0 6-6m-6 6 6 6"/></svg></span><span class="pn-title"><span class="pn-num">16</span>הקלטה ושיתוף</span></a></nav>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><defs><linearGradient id="bm-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2bd6"/><stop offset=".55" stop-color="#8a5cff"/><stop offset="1" stop-color="#22e1ff"/></linearGradient></defs><circle cx="20" cy="20" r="18" fill="none" stroke="url(#bm-g)" stroke-width="3"/><circle cx="20" cy="20" r="11.5" fill="none" stroke="url(#bm-g)" stroke-width="1.5" opacity=".55"/><g fill="url(#bm-g)"><rect x="11" y="16" width="2.6" height="8" rx="1.3"/><rect x="15.4" y="12" width="2.6" height="16" rx="1.3"/><rect x="19.8" y="9.5" width="2.6" height="21" rx="1.3"/><rect x="24.2" y="13.5" width="2.6" height="13" rx="1.3"/><rect x="28.6" y="17" width="2.6" height="6" rx="1.3"/></g></svg><span class="brand-word">DJ<b>Lab</b></span></a>
+      <p>בית הספר לתקלוט שלך: קורס Rekordbox בעברית, מוזיקה מקורית לתרגול וכלים שעובדים ישר בדפדפן.</p>
+    </div>
+    <nav aria-label="ללמוד"><h2>ללמוד</h2><ul>
+      <li><a href="../guide/index.html">הקורס</a></li><li><a href="../practice.html">אימון ומעברים</a></li><li><a href="../sets/index.html">סטים לדוגמה</a></li></ul></nav>
+    <nav aria-label="מוזיקה"><h2>מוזיקה</h2><ul>
+      <li><a href="../library.html">ספריית מוזיקה</a></li><li><a href="../crates/index.html">ארגזים</a></li><li><a href="../tools/rekordbox.html">ייבוא ל-Rekordbox</a></li></ul></nav>
+    <nav aria-label="כלים"><h2>כלים</h2><ul>
+      <li><a href="../tools/mix-trainer.html">מאמן מיקס</a></li><li><a href="../tools/camelot.html">גלגל קאמלוט</a></li><li><a href="../tools/set-builder.html">בונה סטים</a></li></ul></nav>
+  </div>
+  <div class="container footer-legal">
+    <p>המוזיקה המקורית משוחררת ב-<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.he" target="_blank" rel="noopener">CC0</a> · הקוד ב-MIT · הארגזים הם קישורים בלבד - קנו והזרימו ממקורות חוקיים.</p>
+    <p class="muted"><a href="../about.html">אודות ורישיון</a> · © 2026 DJ Lab</p>
+  </div>
+</footer>
+<script src="../data/catalog.js?v=a33c9f45" defer></script><script src="../data/peaks.js?v=a33c9f45" defer></script><script src="../data/guide.js?v=a33c9f45" defer></script><script src="../assets/js/icons.gen.js?v=a33c9f45" defer></script><script src="../assets/js/core.js?v=a33c9f45" defer></script><script src="../assets/js/player.js?v=a33c9f45" defer></script><script src="../assets/js/guide.js?v=a33c9f45" defer></script>
+</body>
+</html>

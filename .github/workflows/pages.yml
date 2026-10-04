@@ -1,0 +1,89 @@
+name: Deploy DJ Lab site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+      - master
+      - claude/dj-course-music-agents-suitm3
+    paths-ignore:
+      - "engine/tests/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          lfs: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install build dependencies
+        run: pip install markdown numpy pyyaml
+
+      - name: Build site
+        # The committed docs/data/peaks.js is reused for audio that cannot be analysed here,
+        # so CI never needs heavy audio tooling.
+        run: python tools/build_site.py --no-peaks-if-missing
+
+      - name: Assemble _site (docs + music + crates + redirect)
+        run: |
+          rm -rf _site
+          mkdir -p _site
+          cp -r docs _site/docs
+          [ -d music ] && cp -r music _site/music || true
+          [ -d crates ] && cp -r crates _site/crates || true
+          rm -rf _site/music/rekordbox/*.tmp 2>/dev/null || true
+          touch _site/.nojekyll
+          cat > _site/index.html <<'EOF'
+          <!doctype html>
+          <html lang="he" dir="rtl">
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>DJ Lab — מבית הספר לתקלוט שלך</title>
+            <meta http-equiv="refresh" content="0; url=docs/">
+            <link rel="canonical" href="docs/">
+            <style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#07070c;color:#f4f3fa;font-family:system-ui,sans-serif}a{color:#22e1ff}</style>
+          </head>
+          <body><p>מעבירים אתכם ל-<a href="docs/">DJ Lab</a>…</p><script>location.replace('docs/' + location.search + location.hash)</script></body>
+          </html>
+          EOF
+          cp _site/docs/404.html _site/404.html
+          # 404.html at the root needs root-relative asset paths
+          sed -i 's#content="\.\./"#content="./"#; s#content="\./" *>#content="docs/">#' _site/404.html || true
+          du -sh _site
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}docs/
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

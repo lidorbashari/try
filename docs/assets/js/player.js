@@ -269,7 +269,10 @@
         b2.addEventListener('click', function () { DJ.player.play(it); });
         el.replaceWith(b2);
       } else {
-        el.title = 'הקובץ עדיין ברינדור - בקרוב';
+        var stem = f.split('/').pop().replace(/\.[^.]+$/, '');
+        var pl = (DJ.catalog.plan.tracks || []).filter(function (x) { return x.file_stem === stem; })[0] || DJ.planById.get(stem);
+        var lab = pl ? pl.title : stem;
+        el.replaceWith(DJ.h('<button type="button" class="tref-btn" disabled title="' + esc(f) + ' - הקובץ עדיין ברינדור"><span class="ico">' + I('play') + '</span><span class="t">' + esc(lab) + '</span><span class="soon">בקרוב</span></button>'));
       }
     });
     DJ.$$('.tref[data-id]').forEach(function (el) {
@@ -280,7 +283,7 @@
         b.addEventListener('click', function () { DJ.player.play(t); });
         el.replaceWith(b);
       } else {
-        el.title = (p.title || '') + (p.title_he ? ' · ' + p.title_he : '') + ' (בקרוב)';
+        el.replaceWith(DJ.h('<button type="button" class="tref-btn" disabled title="' + esc(id) + ' · ' + esc(p.title_he || '') + ' - בקרוב"><span class="ico">' + I('play') + '</span><span class="t">' + esc(p.title || id) + '</span><span class="soon">בקרוב</span></button>'));
       }
     });
   }
