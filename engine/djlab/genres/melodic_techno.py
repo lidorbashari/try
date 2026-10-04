@@ -40,7 +40,7 @@ FLAVORS = {
                       kick_decay=0.32, swing=50.0, hall=3.8, vowel=("e", "a"), arp_gain=-10.0,
                       desc="ארפג'יו סופר-סו רחב ובוהק בסגנון Anyma, ליד המנוני גדול בדרופ ופדים בסיידצ'יין"),
     # Event Horizon: darker Massano drive, galloping bass, pedal arp, rhythmic pulse hook
-    "techno-07": dict(prog=[0, 3, 5, 6], arp="pedal", arp_rate=1, arp_voice="supersaw_dark", lead="anthem_dark",
+    "techno-07": dict(prog=[0, 0, 5, 6], arp="pedal", arp_rate=1, arp_voice="supersaw_dark", lead="anthem_dark",
                       hook="pulse", bass="gallop", bass_shape=[0, 0], arp2="updown", organ=0.0, choir_db=-13.0, perc="driving",
                       kick_decay=0.3, swing=50.0, hall=3.5, vowel=("o", "a"), arp_gain=-9.0,
                       desc="מלודיק טכנו כהה ודוהר בסגנון Massano: באס דוהר, ארפג'יו פדאל אפל וליד ריתמי וחד בדרופ"),

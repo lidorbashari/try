@@ -1,0 +1,158 @@
+{
+ "id": "house-09",
+ "title": "Desert Drums",
+ "title_he": "תופי מדבר",
+ "artist": "DJ Lab Originals",
+ "genre": "Afro House",
+ "genre_slug": "afro_house",
+ "family": "house",
+ "bpm": 122.0,
+ "key": "F minor",
+ "key_short": "Fm",
+ "camelot": "4A",
+ "energy": 6,
+ "role": "build",
+ "duration_sec": 283.279,
+ "bars": 144,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 32,
+   "start_sec": 0.0,
+   "energy": 4
+  },
+  {
+   "name": "Groove",
+   "start_bar": 32,
+   "bars": 32,
+   "start_sec": 62.951,
+   "energy": 6
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 64,
+   "bars": 16,
+   "start_sec": 125.902,
+   "energy": 3
+  },
+  {
+   "name": "Drop",
+   "start_bar": 80,
+   "bars": 32,
+   "start_sec": 157.377,
+   "energy": 8
+  },
+  {
+   "name": "Outro",
+   "start_bar": 112,
+   "bars": 32,
+   "start_sec": 220.328,
+   "energy": 4
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 32,
+   "sec": 62.951,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 64,
+   "sec": 125.902,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 80,
+   "sec": 157.377,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 112,
+   "sec": 220.328,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 128,
+   "sec": 251.803,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Groove",
+   "bar": 32,
+   "sec": 62.951
+  },
+  {
+   "name": "Breakdown",
+   "bar": 64,
+   "sec": 125.902
+  },
+  {
+   "name": "Drop",
+   "bar": 80,
+   "sec": 157.377
+  },
+  {
+   "name": "Outro",
+   "bar": 112,
+   "sec": 220.328
+  }
+ ],
+ "lufs": -9.05,
+ "true_peak_dbtp": -1.5,
+ "file": "music/tracks/afro_house/house-09-desert-drums.mp3",
+ "cover": "music/tracks/afro_house/house-09-desert-drums.jpg",
+ "description_he": "אפרו-האוס מדברי ב-122 BPM בסולם F minor (צבע של מינור הרמוני): קונגות, ג'מבה, תופים מדברים וטומים שבטיים מעל באס עמוק ומתגלגל, פריטה דמוית קורה ומרימבה, וקריאות ווקאליות נמוכות בברייקדאון רוחני.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 32 תיבות להכנסה נקייה, הבאס נכנס בתיבה 33 (Hot Cue B), ברייקדאון בתיבה 65, דרופ בתיבה 81, אאוטרו של 32 תיבות מתיבה 113 — מושלם למיקס החוצה. בברייקדאון נשארים רק כלי הקשה, פדים וצ'אנטים — מקום טבעי להכניס את הטראק הבא עם הקונגות שלו.",
+ "instruments": [
+  "deep round kick",
+  "congas ×3",
+  "bongos",
+  "12/8 bell (woodblock)",
+  "3-2 clave",
+  "djembe",
+  "tribal toms",
+  "talking drum",
+  "shaker + shekere",
+  "rolling deep bass",
+  "kora-like Karplus-Strong pluck",
+  "marimba",
+  "haunting pad",
+  "chant voices"
+ ],
+ "seed": 1136,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

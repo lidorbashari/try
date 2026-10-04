@@ -104,7 +104,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return "....X.......XXXX"
         return SNARE if not c.phrase_end else "....X.......X.XX"
 
-    song.hits("snare", snr, snare_pat, gain_db=-5.0, sends={"room": 0.15, "reverb": 0.08 if not liquid else 0.18})
+    song.hits("snare", snr, snare_pat, gain_db=-5.0, sc_source=True, sends={"room": 0.15, "reverb": 0.08 if not liquid else 0.18})
     song.hits("ghost", ghost, lambda c: gpat if c.kind in ("drop", "outro") or (c.kind == "intro" and c.i >= 8) else None,
               gain_db=-15.0, pan=0.1, humanize=0.2, timing_ms=1.5)
     hats = drums.variants(drums.hat, 4, rng, jitter={"decay": 0.2}, decay=float(rng.uniform(0.025, 0.04)),
@@ -209,14 +209,14 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
         reese = song.add(xb.SynthLine("reese", xb.Reese(detune=float(rng.uniform(15, 20)),
                                                          cutoff=float(rng.uniform(550, 750)), res=0.28, drive=2.2,
                                                          move=0.6, move_bars=2.0, env=1.0, chorus_mix=0.35,
-                                                         hp_hz=85.0, dist=0.4),
+                                                         hp_hz=85.0, dist=0.55),
                                       reese_notes, bus="bass", gain_db=-3.0, sidechain=0.5, sc_release_ms=120.0))
         rp = [(bass_in, 0.25), (intro.end_bar - 0.01, 0.8), (intro.end_bar, 1.0)]
         rp += [(bd.start_bar + 16, 0.3), (bd.end_bar - 0.01, 0.9), (bd.end_bar, 1.0)]
         rp += [(outro.start_bar, 1.0), (bass_off, 0.3)]
-        reese.automate("cutoff", [(b, v * 950.0) for b, v in rp])
+        reese.automate("cutoff", [(b, v * 1400.0) for b, v in rp])
         sub = song.add(xb.SynthLine("sub", xb.SubLine(harm=0.08, drive=1.2, glide_ms=60.0), reese_notes, bus="bass",
-                                    gain_db=-4.0, sidechain=0.55, sc_release_ms=110.0))
+                                    gain_db=-6.0, sidechain=0.55, sc_release_ms=110.0))
         sub.automate("gain_db", [(bass_in, -8.0), (intro.end_bar - 0.01, -3.0), (intro.end_bar, 0.0)])
     else:
         def sub_notes(c):
@@ -241,7 +241,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
                    if c.i % 2 == 0 and (c.kind in ("drop", "breakdown") or (c.kind == "intro" and c.i >= 16)
                                         or (c.kind == "outro" and c.i < 16)) else [],
                    gain_db=-12.0, sends={"hall": 0.4}, width=1.6, sidechain=0.35, hp=180.0)
-        rh = xb.rhodes(bright=0.5, tremolo=0.25, trem_rate=float(rng.uniform(3.5, 5.0)), bark=0.3)
+        rh = xb.rhodes(bright=0.62, tremolo=0.25, trem_rate=float(rng.uniform(3.5, 5.0)), bark=0.3)
         comp = [[(0, 5, 0.75), (6, 3, 0.55), (10, 5, 0.65)], [(0, 3, 0.7), (3, 3, 0.5), (8, 6, 0.65), (14, 2, 0.45)],
                 [(2, 4, 0.65), (10, 4, 0.6)]][int(rng.integers(3))]
 
@@ -252,7 +252,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             ch = chords[chord_i(c)]
             return [(s, l, ch[1:] if len(ch) > 4 else ch, v) for s, l, v in comp]
 
-        song.notes("rhodes", rh, rhodes_notes, gain_db=-8.5, sends={"reverb": 0.2, "delay": 0.12}, width=1.3,
+        song.notes("rhodes", rh, rhodes_notes, gain_db=-14.5, sends={"reverb": 0.2, "delay": 0.12}, width=1.3,
                    sidechain=0.3)
         # gentle melody (Rhodes, higher register) — chord tones of the bar
         mel_r = [[(0, 6, 2), (6, 2, 1), (8, 8, 0)], [(0, 4, 3), (4, 4, 2), (8, 4, 1), (12, 4, 2)],
@@ -268,7 +268,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             cell = mel_r[(c.i // 2 + c.i % 2) % 4]
             return [(s, l, tones[min(t, len(tones) - 1)], 0.65) for s, l, t in cell]
 
-        song.notes("melody", mel_i, mel_notes, gain_db=-11.0, sends={"delay": 0.3, "hall": 0.25}, pan=0.15, width=1.2)
+        song.notes("melody", mel_i, mel_notes, gain_db=-8.5, sends={"delay": 0.3, "hall": 0.25}, pan=0.15, width=1.2)
         # vocal 'ooh' pad (formant) in breakdown + drop 2
         ooh = inst.vocal_chop(vowel="o", vowel_to="u", shift=1.1, vibrato=0.4, breath=0.15, scoop=-0.5, release=0.4)
         song.notes("ooh", ooh, lambda c: [(0, 30, sorted(chords[chord_i(c)])[-1] + 12, 0.6)]
@@ -277,14 +277,14 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
         rain = xb.bar_texture(lambda bar, n, r: xb.rain_bar(n, r, density=10.0, bed=0.12,
                                                             drops=0.0 if bar < 16 else 1.0),
                               song.seed + 7)
-        song.custom("rain", rain, bus="fx", gain_db=-24.0, width=1.5)
+        song.custom("rain", rain, bus="fx", gain_db=-21.0, width=1.5)
     else:
         stab_i = inst.stab(wave="saw", cutoff=float(rng.uniform(700, 1000)), env_amt=3500.0, decay=0.12)
         stab_r = [[(3, 1, 0.9), (6, 1, 0.7)], [(2, 1, 0.9), (10, 1, 0.8), (13, 1, 0.6)], [(6, 1, 0.9), (14, 1, 0.7)]]
         sr_ = stab_r[int(rng.integers(len(stab_r)))]
         song.notes("stabs", stab_i, lambda c: [(s, l, chords[chord_i(c)], v) for s, l, v in sr_]
                    if c.kind == "drop" and c.i % 4 in (1, 3) else [],
-                   gain_db=-9.5, sidechain=0.4, sends={"delay": 0.3, "reverb": 0.15}, width=1.7)
+                   gain_db=-8.0, sidechain=0.4, sends={"delay": 0.3, "reverb": 0.15}, width=1.7)
         pad_i = inst.pad(attack=1.2, cutoff=1500.0, detune=0.3, warmth=0.6)
         song.notes("pad", pad_i, lambda c: [(0, 31.5, chords[chord_i(c)], 0.7)]
                    if c.i % 2 == 0 and (c.kind == "breakdown" or (c.kind == "intro" and c.i >= 16)) else [],
@@ -319,7 +319,8 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     fxl.add(crash, bass_in, gain_db=-12.0)
 
     # ---------------------------------------------------------------- mix
-    song.buses["drums"].eq = [("peak", 4000.0, 2.0, 0.8), ("peak", 200.0, 1.0, 1.0)]
+    song.buses["drums"].eq = [("peak", 4000.0, 0.5, 0.8), ("peak", 200.0, 1.0, 1.0)]
+    song.buses["music"].eq = [("peak", 1200.0, 2.0, 0.7)]
     song.buses["drums"].width = 1.2
     song.buses["music"].width = 1.3
     song.returns["room"].decay = 0.6

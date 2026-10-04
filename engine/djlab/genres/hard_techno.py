@@ -96,7 +96,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     hats = xt.stereo_variants(drums.hat, 4, rng, jitter={"decay": 0.2}, corr=0.45, decay=0.03, tone=1.25)
     hat_v = xt.pick(rng, ["oxXxoxXxoxXxoxXx", "xoXoxoXoxoXoxoXo"])
     song.hits("hats", hats, lambda c: hat_v if not (c.kind == "breakdown" and c.bars_left > 4) and not (c.kind == "intro" and c.i < 4)
-              else None, gain_db=-13.0, pan=0.2, humanize=0.1)
+              else None, gain_db=-11.5, pan=0.2, humanize=0.1)
     ohat = xt.stereo_hit(drums.hat, rng, corr=0.5, open_=True, decay=0.18, tone=1.2)
     song.hits("open_hat", ohat, lambda c: "..x...x...x...x." if c.kind in ("groove", "drop") or (c.kind == "intro" and c.i >= 8)
               or (c.kind == "outro" and c.bars_left > 8) else None, gain_db=-10.5, pan=-0.2, sends={"room": 0.1})
@@ -140,7 +140,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
                 return [(0, 60, ch_, 0.8) for ch_ in chords[(c.i // 4) % 2]]
             return []
 
-        hv = song.notes("hoover", hoov, hoover_notes, gain_db=-8.0, sidechain=0.5, humanize=0.03,
+        hv = song.notes("hoover", hoov, hoover_notes, gain_db=-4.5, sidechain=0.5, humanize=0.03,
                         sends={"reverb": 0.12, "delay8": 0.1})
         hv.automate("lp", [(groove + 16, 1200), (d1 - 0.01, 3000), (d1, 9000)])
         stab = xt.rave_stab(cutoff=900.0, env_amt=7000.0, decay=0.08, drive=2.5)
@@ -152,7 +152,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
                 return [(s, l, ch_, v) for s, l, v in st_p]
             return []
 
-        stb = song.notes("rave_stab", stab, stab_notes, gain_db=-9.0, sidechain=0.55, humanize=0.04,
+        stb = song.notes("rave_stab", stab, stab_notes, gain_db=-5.5, sidechain=0.55, humanize=0.04,
                          sends={"reverb": 0.2, "delay": 0.15})
         for s in song.sections:
             if s.kind == "breakdown":

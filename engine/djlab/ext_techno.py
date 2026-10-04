@@ -308,20 +308,22 @@ def hoover(detune_cents=22.0, scoop=7.0, dive=12.0, pw_rate=3.5, cutoff=3800.0, 
     return inst
 
 
-def rave_stab(cutoff=700.0, env_amt=7000.0, decay=0.09, drive=2.5, detune_cents=14.0, amp_decay=0.22, sr=SR):
-    """Bright 90s rave chord stab: 3 detuned saws, snappy resonant LP envelope, distortion. Stereo."""
+def rave_stab(cutoff=700.0, env_amt=7000.0, decay=0.09, drive=2.5, detune_cents=14.0, amp_decay=0.22, side=0.4, sr=SR):
+    """Bright 90s rave chord stab: detuned saws + octave square, snappy resonant LP envelope, distortion.
+    Mid = the stab, side = a detuned copy (mono-compatible width)."""
     def inst(freq, dur, vel):
         gate, n = _n(dur, 0.05, sr)
         t = np.arange(n) / sr
         d = 2 ** (detune_cents / 1200)
         cut = np.minimum(cutoff + env_amt * vel * np.exp(-t / decay), 16000)
-        chans = []
-        for c, k in enumerate((d, 1 / d)):
-            x = saw(freq * k, n, 0.2 * c) + saw(freq, n, 0.5 + 0.1 * c) * 0.7 + square(freq * 2 * k, n, 0.0, 0.5) * 0.25
+        sig = []
+        for c, k in enumerate((1.0, d)):
+            x = saw(freq * k, n, 0.2 * c) + saw(freq / d, n, 0.5 + 0.1 * c) * 0.7 + square(freq * 2 * k, n, 0.0, 0.5) * 0.25
             x = svf(x, cut, 2.2, "lp")
-            chans.append(np.tanh(x * drive) / math.tanh(drive))
+            sig.append(np.tanh(x * drive) / math.tanh(drive))
+        st = np.stack([sig[0] + side * sig[1], sig[0] - side * sig[1]], axis=1)
         env = adsr(n, gate, 0.001, amp_decay, 0.0, 0.05, sr, curve=4.0)
-        return _finish(hp(np.stack(chans, axis=1), 120.0, 2) * env[:, None], vel)
+        return _finish(hp(st, 120.0, 2) * env[:, None], vel)
     return inst
 
 
