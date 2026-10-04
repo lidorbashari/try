@@ -83,7 +83,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
 
     prog = fl["prog"]
     arp_chords = xt.chords_for(key, prog, octave=3, size=4, center=key.root(3) + 9)
-    pad_chords = xt.chords_for(key, prog, octave=3, size=4, center=key.root(4) - 3, add9=True)
+    pad_chords = xt.chords_for(key, prog, octave=3, size=3, center=key.root(4) - 3, add9=True)
     choir_chords = [sorted(c)[-3:] for c in xt.chords_for(key, prog, octave=4, size=3, center=key.root(5) - 2)]
 
     def chord_i(c):
