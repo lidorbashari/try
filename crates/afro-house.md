@@ -3,7 +3,7 @@ slug: afro-house
 title: "Afro House"
 title_he: "אפרו-האוס"
 genres: ["afro_house", "organic_house", "amapiano"]
-count: 11
+count: 39
 ---
 
 # ארגז: אפרו-האוס (`Afro House`)
@@ -24,7 +24,7 @@ count: 11
 
 ## הטראקים
 
-סה"כ 11 טראקים · 10 מאומתים במלואם · 1 מאומתים חלקית.
+סה"כ 39 טראקים · 38 מאומתים במלואם · 1 מאומתים חלקית.
 
 > **מקרא עמודת אימות:** ✔ = `BPM` ומפתח אומתו ממקור אמין (בעיקר `Beatport`, `Tunebat`/`SongBPM`); ≈ = אומת חלקית (המקורות חלוקים במפתח, או רק ה-`BPM` אומת); ? = הערכה — **חובה לבדוק אחרי `Analyze` ב-`Rekordbox`**. גרסאות שונות (`Radio Edit`, `Extended`, רמיקס) יכולות להיות במפתח/טמפו אחרים — קנו בדיוק את ה-`Mix` שבטבלה.
 
@@ -49,6 +49,48 @@ count: 11
 | 10 | Alex Wann | Milkshake | Original Mix | 118 | Dm | 7A | 5 | warmup | ✔ |
 | 11 | Tayllor | My Neck, My Back (Lick It) | Original Mix | 118 | E | 12B | 6 | build | ✔ |
 
+### אפרו-האוס דרום-אפריקאי ואורגני (118–126)
+
+> נוסף בסבב אימות מול נתוני ניתוח האודיו של `Spotify` (קבצי נתונים פומביים — אותו מקור ש-`Tunebat`/`SongBPM` מציגים). ✔ = שורה שתואמת אמן + שם; ≈ = גרסאות שונות במקור מזוהות אחרת.
+
+| # | Artist | Title | Mix | BPM | Key | Camelot | Energy | Role | ✔ |
+|---|---|---|---|---|---|---|---|---|---|
+| 12 | Black Coffee, Nakhane | We Dance Again | Original | 122 | `G` | `9B` | 7 | build | ✔ |
+| 13 | Black Coffee, Bucie | Turn Me On | Original | 123 | `Fm` | `4A` | 7 | build | ✔ |
+| 14 | Mi Casa, Black Coffee | Africa Shine | Original | 125 | `Gm` | `6A` | 7 | build | ✔ |
+| 15 | Black Coffee, David Guetta, Delilah Montagu | Drive | Radio Edit | 118 | `Bm` | `10A` | 6 | warmup | ✔ |
+| 16 | Master KG, Nomcebo Zikode | Jerusalema | Original | 124 | `Db` | `3B` | 8 | anthem | ✔ |
+| 17 | Prince Kaybee, Shimza, Black Motion, Ami Faku | Uwrongo | Edit | 123 | `Fm` | `4A` | 7 | build | ✔ |
+| 18 | Black Motion, Nokwazi | Imali | Original | 123 | `F#m` | `11A` | 7 | build | ✔ |
+| 19 | Prince Kaybee, Busiswa, TNS | Banomoya | Original | 124 | `Ebm` | `2A` | 8 | peak | ✔ |
+| 20 | Simmy, Da Capo, Sun-El Musician | Emakhaya | Original | 120 | `Bm` | `10A` | 6 | warmup | ✔ |
+| 21 | Sun-El Musician, Simmy | Ntaba Ezikude | Original | 122 | `A` | `11B` | 6 | warmup | ✔ |
+| 22 | Guy Gerber, &ME | What To Do | &ME Remix | 122 | `Gm` | `6A` | 7 | build | ✔ |
+| 23 | Damian Lazarus & The Ancient Moons, &ME | Vermillion | &ME Remix | 126 | `Gm` | `6A` | 8 | peak | ✔ |
+| 24 | Sun-El Musician, Samthing Soweto | Akanamali | Original | 105 | `C#m` | `12A` | 5 | warmup | ✔ |
+
+### אמפיאנו (112–116)
+
+> נוסף בסבב אימות מול נתוני ניתוח האודיו של `Spotify` (קבצי נתונים פומביים — אותו מקור ש-`Tunebat`/`SongBPM` מציגים). ✔ = שורה שתואמת אמן + שם; ≈ = גרסאות שונות במקור מזוהות אחרת.
+
+| # | Artist | Title | Mix | BPM | Key | Camelot | Energy | Role | ✔ |
+|---|---|---|---|---|---|---|---|---|---|
+| 25 | DJ Maphorisa, Kabza De Small, Samthing Soweto, Mfr Souls | Amantombazane | Original | 116 | `Ab` | `4B` | 7 | build | ✔ |
+| 26 | Samthing Soweto, Sha Sha, DJ Maphorisa, Kabza De Small | Akulaleki | Original | 116 | `G` | `9B` | 7 | build | ✔ |
+| 27 | Kabza De Small, DJ Maphorisa, Focalistic, Kamo Mphela | Sandton | Original | 113 | `Ab` | `4B` | 8 | peak | ✔ |
+| 28 | DJ Maphorisa, Kabza De Small, Nokwazi, Vigro Deep | Vula Vala | Original | 113 | `Db` | `3B` | 7 | build | ✔ |
+| 29 | Focalistic, Vigro Deep | Ke Star | Original | 112 | `Bbm` | `3A` | 8 | peak | ✔ |
+| 30 | Focalistic, Davido, Vigro Deep | Ke Star | Remix | 112 | `Bbm` | `3A` | 9 | anthem | ✔ |
+| 31 | Focalistic, Vigro Deep | Vrr Phaa | Original | 113 | `D` | `10B` | 8 | peak | ✔ |
+| 32 | Mr JazziQ, Kabza De Small, Lady Du, Boohle | Woza | Original | 113 | `F#` | `2B` | 8 | peak | ✔ |
+| 33 | Busta 929, Mpura, Zuma, Mr JazziQ, Lady Du, Reece Madlisa | Umsebenzi Wethu | Original | 114 | `Bbm` | `3A` | 8 | peak | ✔ |
+| 34 | Lady Du, DBN Gogo, Mr JazziQ, Seekay, Busta 929 | Dakiwe | Original | 114 | `Abm` | `1A` | 8 | peak | ✔ |
+| 35 | Mfr Souls, Major League Djz, Kamo Mphela, Bontle Smith | Amanikiniki | Original | 113 | `Bbm` | `3A` | 8 | peak | ✔ |
+| 36 | Major League Djz, Abidoza, Mpho Sebina | Dinaledi | Original | 113 | `Ebm` | `2A` | 7 | build | ✔ |
+| 37 | DJ Stokie, Kabza De Small, Masterpiece YVK, Madumane | Superman | Original | 112 | `Fm` | `4A` | 7 | build | ✔ |
+| 38 | Tyler ICU, Nicole Elocin, Kabza De Small, DJ Maphorisa | Bella Ciao | Original | 112 | `Bm` | `10A` | 8 | peak | ✔ |
+| 39 | Kamo Mphela | Nkulunkulu | Original | 112 | `Db` | `3B` | 8 | peak | ✔ |
+
 ## מעברים מומלצים בתוך הארגז
 
 - מ-**Moderat – More Love** (`122 BPM`, `10A`) אל **Eran Hersh & Neil Amarey – Rej** (`124 BPM`, `10A`): שניהם `10A`: מ-More Love (122) ל-Rej של ערן הרש (124) — Keinemusik לגרסת האפרו לקלאסיקה.
@@ -63,20 +105,16 @@ count: 11
 
 **קלאסיקות אפרו-האוס:**
 - Black Coffee feat. Bucie – Superman (Soulistic Music)
-- Black Coffee feat. Nakhane Touré – We Dance Again
 - Culoe De Song – The Bright Forest (Innervisions)
-- Sun-El Musician – Akanamali
 - Adam Port, Stryv & Keinemusik – Move (2024) — ההמנון הגדול של Keinemusik
 
 **אמפיאנו (בלוק נפרד, `108–115 BPM`):**
 - Tyla – Water (2023)
 - Uncle Waffles – Tanzania (2022)
-- Kabza De Small & DJ Maphorisa — הצמד שהגדיר את הסגנון
-- Focalistic & Davido – Ke Star (Remix) (2021)
 
 **מהסצנה הישראלית:** ערן הרש (Eran Hersh) בטבלה; חפשו גם את Guy Mantzur (רמיקס ל-Black Coffee – Wish You Were Here) ו-Adam Ten.
 
-> **פער ידוע:** הארגז קטן מהמתוכנן (11 טראקים) — חלק האמפיאנו והקלאסיקות טרם אומת ויתווסף בסבב האימות הבא.
+> **פער ידוע:** בסבב האימות נוספו 13 טראקי אפרו-האוס ו-15 טראקי אמפיאנו מאומתים (מנתוני `Spotify`). הלהיטים של 2022–2024 (Tyla, Uncle Waffles, Keinemusik) עדיין לא אומתו — הם ברשימה למעלה.
 
 ## איפה לקנות ולהזרים חוקית
 

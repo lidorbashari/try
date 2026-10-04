@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 430" width="800" height="430" role="img" aria-labelledby="t d" font-family="Heebo, Rubik, Arial, sans-serif">
+<title id="t">מוסכמת ה-Hot Cues של DJ Lab</title>
+<desc id="d">שמונה Hot Cues על ציר הזמן של טראק: A אינטרו, B כניסת גרוב, C ברייקדאון, D דרופ, E ברייקדאון 2, F דרופ 2, G אאוטרו, H 16 אחרונות; ומתחת — פריסת הפדים.</desc>
+<rect x="1" y="1" width="798" height="428" rx="16" fill="#7f7f7f" fill-opacity="0.07" stroke="#7f7f7f" stroke-opacity="0.28"/>
+<text x="400.0" y="34.0" font-size="20" fill="#858b95" text-anchor="middle" direction="rtl" font-weight="bold" >שמונה Hot Cues, שמונה צבעים, שמונה תפקידים</text>
+<rect x="41.0" y="150.0" width="118.0" height="44.0" rx="6" fill="#2e9e4f" />
+<text x="100.0" y="178.0" font-size="12.5" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >אינטרו</text>
+<rect x="161.0" y="150.0" width="118.0" height="44.0" rx="6" fill="#1588b8" />
+<text x="220.0" y="178.0" font-size="12.5" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >גרוב</text>
+<rect x="281.0" y="150.0" width="58.0" height="44.0" rx="6" fill="#d2621f" />
+<text x="310.0" y="178.0" font-size="11" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >ברייקדאון</text>
+<rect x="341.0" y="150.0" width="118.0" height="44.0" rx="6" fill="#cf3434" />
+<text x="400.0" y="178.0" font-size="12.5" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >דרופ</text>
+<rect x="461.0" y="150.0" width="58.0" height="44.0" rx="6" fill="#a8a20f" />
+<text x="490.0" y="178.0" font-size="11" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >ברייקדאון 2</text>
+<rect x="521.0" y="150.0" width="118.0" height="44.0" rx="6" fill="#c13fb3" />
+<text x="580.0" y="178.0" font-size="12.5" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >דרופ 2</text>
+<rect x="641.0" y="150.0" width="118.0" height="44.0" rx="6" fill="#3a5fe0" />
+<text x="700.0" y="178.0" font-size="12.5" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >אאוטרו</text>
+<line x1="40.0" y1="88.0" x2="40.0" y2="200.0" stroke="#28E214" stroke-width="2.2" />
+<rect x="39.0" y="66.0" width="22.0" height="22.0" rx="4" fill="#28E214" />
+<text x="50.0" y="82.0" font-size="13.5" fill="#ffffff" text-anchor="middle" font-weight="bold" >A</text>
+<text x="66.0" y="82.0" font-size="11.5" fill="#858b95" text-anchor="start" font-weight="bold" >Intro</text>
+<line x1="100.0" y1="126.0" x2="100.0" y2="200.0" stroke="#10B1E6" stroke-width="2.2" />
+<rect x="99.0" y="104.0" width="22.0" height="22.0" rx="4" fill="#10B1E6" />
+<text x="110.0" y="120.0" font-size="13.5" fill="#ffffff" text-anchor="middle" font-weight="bold" >B</text>
+<text x="126.0" y="120.0" font-size="11.5" fill="#858b95" text-anchor="start" font-weight="bold" >Mix-In</text>
+<line x1="280.0" y1="88.0" x2="280.0" y2="200.0" stroke="#E0641B" stroke-width="2.2" />
+<rect x="279.0" y="66.0" width="22.0" height="22.0" rx="4" fill="#E0641B" />
+<text x="290.0" y="82.0" font-size="13.5" fill="#ffffff" text-anchor="middle" font-weight="bold" >C</text>
+<text x="306.0" y="82.0" font-size="11.5" fill="#858b95" text-anchor="start" font-weight="bold" >Breakdown</text>
+<line x1="340.0" y1="126.0" x2="340.0" y2="200.0" stroke="#E62828" stroke-width="2.2" />
+<rect x="339.0" y="104.0" width="22.0" height="22.0" rx="4" fill="#E62828" />
+<text x="350.0" y="120.0" font-size="13.5" fill="#ffffff" text-anchor="middle" font-weight="bold" >D</text>
+<text x="366.0" y="120.0" font-size="11.5" fill="#858b95" text-anchor="start" font-weight="bold" >Drop</text>
+<line x1="460.0" y1="88.0" x2="460.0" y2="200.0" stroke="#B4BE04" stroke-width="2.2" />
+<rect x="459.0" y="66.0" width="22.0" height="22.0" rx="4" fill="#B4BE04" />
+<text x="470.0" y="82.0" font-size="13.5" fill="#ffffff" text-anchor="middle" font-weight="bold" >E</text>
+<text x="486.0" y="82.0" font-size="11.5" fill="#858b95" text-anchor="start" font-weight="bold" >Breakdown 2</text>
+<line x1="520.0" y1="126.0" x2="520.0" y2="200.0" stroke="#DE44CF" stroke-width="2.2" />
+<rect x="519.0" y="104.0" width="22.0" height="22.0" rx="4" fill="#DE44CF" />
+<text x="530.0" y="120.0" font-size="13.5" fill="#ffffff" text-anchor="middle" font-weight="bold" >F</text>
+<text x="546.0" y="120.0" font-size="11.5" fill="#858b95" text-anchor="start" font-weight="bold" >Drop 2</text>
+<line x1="640.0" y1="88.0" x2="640.0" y2="200.0" stroke="#305AFF" stroke-width="2.2" />
+<rect x="639.0" y="66.0" width="22.0" height="22.0" rx="4" fill="#305AFF" />
+<text x="650.0" y="82.0" font-size="13.5" fill="#ffffff" text-anchor="middle" font-weight="bold" >G</text>
+<text x="666.0" y="82.0" font-size="11.5" fill="#858b95" text-anchor="start" font-weight="bold" >Outro</text>
+<line x1="700.0" y1="126.0" x2="700.0" y2="200.0" stroke="#8A2BE2" stroke-width="2.2" />
+<rect x="699.0" y="104.0" width="22.0" height="22.0" rx="4" fill="#8A2BE2" />
+<text x="710.0" y="120.0" font-size="13.5" fill="#ffffff" text-anchor="middle" font-weight="bold" >H</text>
+<text x="726.0" y="120.0" font-size="11.5" fill="#858b95" text-anchor="start" font-weight="bold" >Last 16</text>
+<text x="40.0" y="216.0" font-size="11" fill="#858b95" text-anchor="middle" font-weight="normal" >1</text>
+<text x="160.0" y="216.0" font-size="11" fill="#858b95" text-anchor="middle" font-weight="normal" >33</text>
+<text x="280.0" y="216.0" font-size="11" fill="#858b95" text-anchor="middle" font-weight="normal" >65</text>
+<text x="340.0" y="216.0" font-size="11" fill="#858b95" text-anchor="middle" font-weight="normal" >81</text>
+<text x="460.0" y="216.0" font-size="11" fill="#858b95" text-anchor="middle" font-weight="normal" >113</text>
+<text x="520.0" y="216.0" font-size="11" fill="#858b95" text-anchor="middle" font-weight="normal" >129</text>
+<text x="640.0" y="216.0" font-size="11" fill="#858b95" text-anchor="middle" font-weight="normal" >161</text>
+<text x="760.0" y="216.0" font-size="11" fill="#858b95" text-anchor="end" font-weight="normal" >192</text>
+<text x="400.0" y="238.0" font-size="12" fill="#9aa0a9" text-anchor="middle" direction="rtl" font-weight="normal" >דוגמה לטראק עם שני ברייקדאונים ושני דרופים · מספרי תיבות מתחת לציר</text>
+<text x="400.0" y="276.0" font-size="14" fill="#858b95" text-anchor="middle" direction="rtl" font-weight="bold" >בקונטרולר — מצב Hot Cue (שורה עליונה A–D, תחתונה E–H)</text>
+<rect x="145.0" y="290.0" width="120.0" height="52.0" rx="10" fill="#28E214" />
+<text x="161.0" y="322.0" font-size="20" fill="#ffffff" text-anchor="middle" font-weight="bold" >A</text>
+<text x="255.0" y="322.0" font-size="12.5" fill="#ffffff" text-anchor="start" direction="rtl" font-weight="bold" >אינטרו</text>
+<rect x="275.0" y="290.0" width="120.0" height="52.0" rx="10" fill="#10B1E6" />
+<text x="291.0" y="322.0" font-size="20" fill="#ffffff" text-anchor="middle" font-weight="bold" >B</text>
+<text x="385.0" y="322.0" font-size="12.5" fill="#ffffff" text-anchor="start" direction="rtl" font-weight="bold" >כניסת גרוב</text>
+<rect x="405.0" y="290.0" width="120.0" height="52.0" rx="10" fill="#E0641B" />
+<text x="421.0" y="322.0" font-size="20" fill="#ffffff" text-anchor="middle" font-weight="bold" >C</text>
+<text x="515.0" y="322.0" font-size="12.5" fill="#ffffff" text-anchor="start" direction="rtl" font-weight="bold" >ברייקדאון</text>
+<rect x="535.0" y="290.0" width="120.0" height="52.0" rx="10" fill="#E62828" />
+<text x="551.0" y="322.0" font-size="20" fill="#ffffff" text-anchor="middle" font-weight="bold" >D</text>
+<text x="645.0" y="322.0" font-size="12.5" fill="#ffffff" text-anchor="start" direction="rtl" font-weight="bold" >דרופ</text>
+<rect x="145.0" y="352.0" width="120.0" height="52.0" rx="10" fill="#B4BE04" />
+<text x="161.0" y="384.0" font-size="20" fill="#2b2f36" text-anchor="middle" font-weight="bold" >E</text>
+<text x="255.0" y="384.0" font-size="12.5" fill="#2b2f36" text-anchor="start" direction="rtl" font-weight="bold" >ברייקדאון 2</text>
+<rect x="275.0" y="352.0" width="120.0" height="52.0" rx="10" fill="#DE44CF" />
+<text x="291.0" y="384.0" font-size="20" fill="#ffffff" text-anchor="middle" font-weight="bold" >F</text>
+<text x="385.0" y="384.0" font-size="12.5" fill="#ffffff" text-anchor="start" direction="rtl" font-weight="bold" >דרופ 2</text>
+<rect x="405.0" y="352.0" width="120.0" height="52.0" rx="10" fill="#305AFF" />
+<text x="421.0" y="384.0" font-size="20" fill="#ffffff" text-anchor="middle" font-weight="bold" >G</text>
+<text x="515.0" y="384.0" font-size="12.5" fill="#ffffff" text-anchor="start" direction="rtl" font-weight="bold" >אאוטרו</text>
+<rect x="535.0" y="352.0" width="120.0" height="52.0" rx="10" fill="#8A2BE2" />
+<text x="551.0" y="384.0" font-size="20" fill="#ffffff" text-anchor="middle" font-weight="bold" >H</text>
+<text x="645.0" y="384.0" font-size="12.5" fill="#ffffff" text-anchor="start" direction="rtl" font-weight="bold" >16 אחרונות</text>
+</svg>

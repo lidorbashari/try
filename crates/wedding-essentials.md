@@ -3,7 +3,7 @@ slug: wedding-essentials
 title: "Israeli Wedding Essentials"
 title_he: "חתונה ישראלית — הארגז החיוני"
 genres: ["mediterranean", "pop_dance"]
-count: 36
+count: 38
 ---
 
 # ארגז: חתונה ישראלית — הארגז החיוני (`Israeli Wedding Essentials`)
@@ -25,7 +25,7 @@ count: 36
 
 ## הטראקים
 
-סה"כ 36 טראקים · 24 מאומתים במלואם · 3 מאומתים חלקית · 9 לא אומתו.
+סה"כ 38 טראקים · 28 מאומתים במלואם · 4 מאומתים חלקית · 6 לא אומתו.
 
 > **מקרא עמודת אימות:** ✔ = `BPM` ומפתח אומתו ממקור אמין (`Tunebat` / `SongBPM` / `Musicstax`, או נתוני ניתוח האודיו של `Spotify` שעליהם הם מבוססים); ≈ = אומת חלקית (בדרך כלל רק ה-`BPM`, או שהמקורות חלוקים על המפתח); ? = לא אומת — השדות נשארו ריקים במכוון ולא נוחשו. **אחרי קנייה הריצו `Analyze` ב-`Rekordbox` ובדקו את ה-`Beat Grid`.** גרסאות שונות (`Radio Edit`, `Extended`, לייב, רמיקס) יכולות להיות בטמפו/מפתח אחרים — קנו את ה-`Mix` שבטבלה.
 
@@ -35,7 +35,7 @@ count: 36
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | 1 | Ed Sheeran | Thinking Out Loud | Original | 2014 | 79 | `D` | `10B` | 3 | חימום | ✔ | קבלת פנים — רקע רגוע |
 | 2 | Elvis Presley | Can't Help Falling in Love | Original | 1961 | 100 | `D` | `10B` | 3 | חימום | ✔ | קבלת פנים / כניסה לחופה — בלדה |
-| 3 | Shlomi Shabat, Moshe Peretz, Lior Narkis | לכה דודי | Original | — | 74 | `Cm` | `5A` | 3 | חימום | ✔ | תעתיק: Lecha Dodi · קבלת פנים או כניסה לחופה |
+| 3 | Shlomi Shabat, Moshe Peretz, Lior Narkis, Dudu Aharon | לכה דודי | Original | 2020 | 74 | `Cm` | `5A` | 3 | חימום | ✔ | תעתיק: Lecha Dodi · קבלת פנים או כניסה לחופה |
 
 ### כניסה לחופה
 
@@ -56,7 +56,7 @@ count: 36
 
 | # | אמן | שם | מיקס | שנה | BPM | מפתח | Camelot | אנרגיה | תפקיד | אומת | הערות |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 9 | Mergui | הזוג הזה | Original | — | — | — | — | 8 | המנון | ? | תעתיק: Ha'zug Ha'ze · כניסת הזוג לרחבה; קיים ב-Tunebat, ערכים לא נשלפו |
+| 9 | Mergui | הזוג הזה | Original | 2019 | 110 | `Abm` | `1A` | 8 | המנון | ✔ | תעתיק: Ha'zug Ha'ze · כניסת הזוג לרחבה |
 | 10 | Bruno Mars | Marry You | Original | 2010 | 145 | `Bb` | `6B` | 8 | המנון | ✔ | כניסת הזוג לרחבה |
 | 11 | Moshe Peretz, Omer Adam | Hopa / Ein Kamoch / Tel Aviv | Live | — | 130 | `Bbm` | `3A` | 9 | שיא | ✔ | מחרוזת לכניסת הזוג / פתיחת הרחבה |
 | 12 | Omer Adam | תל אביב | Original | 2013 | 130 | `Ebm` | `2A` | 9 | המנון | ✔ | תעתיק: Tel Aviv · כניסת הזוג / שיא |
@@ -76,7 +76,7 @@ count: 36
 | # | אמן | שם | מיקס | שנה | BPM | מפתח | Camelot | אנרגיה | תפקיד | אומת | הערות |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | 18 | Mordechai Ben David | Yidden | Original | 1986 | — | — | — | 9 | שיא | ? | סט חסידי · לא אומת בסשן |
-| 19 | Harry Belafonte | Hava Nagila | Live | 1959 | — | — | — | 8 | המנון | ? | הבה נגילה · מתוך Belafonte at Carnegie Hall; מאיץ — קאט בלבד. יש רמיקסים ייעודיים לרחבה |
+| 19 | Harry Belafonte | Hava Nageela | Live | 1959 | 155 | `A` | `11B` | 8 | המנון | ✔ | הבה נגילה · מתוך Belafonte at Carnegie Hall; מאיץ — קאט בלבד |
 | 20 | Voices of Israel | Hevenu Shalom Aleichem | Original | — | — | — | — | 7 | המנון | ? | הבאנו שלום עליכם · הורה/מעגל; קיים ב-Tunebat, ערכים לא נשלפו |
 | 21 | Eyal Golan | עם ישראל חי | Original | — | 105 | `F` | `7B` | 8 | המנון | ✔ | תעתיק: Am Yisrael Chai · סט ריקודים / שירה בציבור |
 
@@ -101,9 +101,11 @@ count: 36
 
 | # | אמן | שם | מיקס | שנה | BPM | מפתח | Camelot | אנרגיה | תפקיד | אומת | הערות |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 34 | Haim Moshe | אהבת חיי | Original | — | — | — | — | 6 | המנון | ? | תעתיק: Ahavat Chayai · שירה בציבור לקראת סיום; ערכים לא נשלפו |
+| 34 | Haim Moshe | אהבת חיי | Original | 1988 | 155 | `Em` | `9A` | 6 | המנון | ≈ | תעתיק: Ahavat Chayai · שירה בציבור; Spotify 155 — ייתכן שמורגש 77 |
 | 35 | Milk & Honey, Gali Atari | Hallelujah | Original | 1979 | — | — | — | 5 | סגירה | ? | הללויה · זוכת אירוויזיון 1979; סגירה/שירה בציבור |
 | 36 | Shlomi Shabat, Yehuda Poliker | Hatchala Chadasha | Live | — | 145 | `A` | `11B` | 5 | סגירה | ✔ | התחלה חדשה · סגירה מרגשת לאירוע |
+| 37 | Arik Einstein, Miki Gavrielov | Ani Veata | Original | 1971 | 135 | `D` | `10B` | 4 | סגירה | ✔ | אני ואתה · סגירה / שירה בציבור |
+| 38 | Sheva | סאלאם | Original | 1997 | 113 | `Ab` | `4B` | 5 | סגירה | ✔ | תעתיק: Salaam (Od Yavo Shalom Aleinu) · סגירה מרגשת |
 
 ## מעברים מומלצים בתוך הארגז
 

@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400" role="img" aria-labelledby="t d" font-family="Heebo, Rubik, Arial, sans-serif">
+<title id="t">מבנה טיפוסי של טראק האוס ב-DJ Lab</title>
+<desc id="d">אינטרו 32 תיבות, גרוב 32, ברייקדאון 16 עם בילדאפ, דרופ 32 ואאוטרו 32; Hot Cues A, B, C, D, G, H.</desc>
+<rect x="1" y="1" width="798" height="398" rx="16" fill="#7f7f7f" fill-opacity="0.07" stroke="#7f7f7f" stroke-opacity="0.28"/>
+<text x="400.0" y="34.0" font-size="19" fill="#858b95" text-anchor="middle" direction="rtl" font-weight="bold" >מבנה טיפוסי של טראק האוס (דוגמה סכמטית, 144 תיבות)</text>
+<rect x="41.0" y="200.0" width="158.0" height="56.0" rx="6" fill="#2e9e4f" />
+<text x="120.0" y="224.0" font-size="14" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >אינטרו</text>
+<text x="120.0" y="243.0" font-size="11.5" fill="#ffffff" text-anchor="middle" font-weight="normal" >Intro</text>
+<rect x="201.0" y="200.0" width="158.0" height="56.0" rx="6" fill="#1588b8" />
+<text x="280.0" y="224.0" font-size="14" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >גרוב</text>
+<text x="280.0" y="243.0" font-size="11.5" fill="#ffffff" text-anchor="middle" font-weight="normal" >Groove</text>
+<rect x="361.0" y="200.0" width="38.0" height="56.0" rx="6" fill="#d2621f" />
+<text x="380.0" y="224.0" font-size="11.5" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >ברייקדאון</text>
+<text x="380.0" y="243.0" font-size="9.5" fill="#ffffff" text-anchor="middle" font-weight="normal" >Breakdown</text>
+<rect x="401.0" y="200.0" width="38.0" height="56.0" rx="6" fill="#a8a20f" />
+<text x="420.0" y="224.0" font-size="11.5" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >בילדאפ</text>
+<text x="420.0" y="243.0" font-size="9.5" fill="#ffffff" text-anchor="middle" font-weight="normal" >Build</text>
+<rect x="441.0" y="200.0" width="158.0" height="56.0" rx="6" fill="#cf3434" />
+<text x="520.0" y="224.0" font-size="14" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >דרופ</text>
+<text x="520.0" y="243.0" font-size="11.5" fill="#ffffff" text-anchor="middle" font-weight="normal" >Drop</text>
+<rect x="601.0" y="200.0" width="158.0" height="56.0" rx="6" fill="#3a5fe0" />
+<text x="680.0" y="224.0" font-size="14" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >אאוטרו</text>
+<text x="680.0" y="243.0" font-size="11.5" fill="#ffffff" text-anchor="middle" font-weight="normal" >Outro</text>
+<rect x="41.0" y="262.0" width="78.0" height="16.0" rx="4" fill="#7f7f7f" fill-opacity="0.25"/>
+<text x="80.0" y="274.0" font-size="10.5" fill="#858b95" text-anchor="middle" direction="rtl" font-weight="bold" >תופים בלבד</text>
+<rect x="681.0" y="262.0" width="78.0" height="16.0" rx="4" fill="#7f7f7f" fill-opacity="0.25"/>
+<text x="720.0" y="274.0" font-size="10.5" fill="#858b95" text-anchor="middle" direction="rtl" font-weight="bold" >תופים בלבד</text>
+<line x1="40.0" y1="282.0" x2="40.0" y2="296.0" stroke="#858b95" stroke-width="2" />
+<line x1="80.0" y1="282.0" x2="80.0" y2="289.0" stroke="#858b95" stroke-width="1" />
+<line x1="120.0" y1="282.0" x2="120.0" y2="289.0" stroke="#858b95" stroke-width="1" />
+<line x1="160.0" y1="282.0" x2="160.0" y2="289.0" stroke="#858b95" stroke-width="1" />
+<line x1="200.0" y1="282.0" x2="200.0" y2="296.0" stroke="#858b95" stroke-width="2" />
+<line x1="240.0" y1="282.0" x2="240.0" y2="289.0" stroke="#858b95" stroke-width="1" />
+<line x1="280.0" y1="282.0" x2="280.0" y2="289.0" stroke="#858b95" stroke-width="1" />
+<line x1="320.0" y1="282.0" x2="320.0" y2="289.0" stroke="#858b95" stroke-width="1" />
+<line x1="360.0" y1="282.0" x2="360.0" y2="296.0" stroke="#858b95" stroke-width="2" />
+<line x1="400.0" y1="282.0" x2="400.0" y2="289.0" stroke="#858b95" stroke-width="1" />
+<line x1="440.0" y1="282.0" x2="440.0" y2="289.0" stroke="#858b95" stroke-width="1" />
+<line x1="480.0" y1="282.0" x2="480.0" y2="289.0" stroke="#858b95" stroke-width="1" />
+<line x1="520.0" y1="282.0" x2="520.0" y2="296.0" stroke="#858b95" stroke-width="2" />
+<line x1="560.0" y1="282.0" x2="560.0" y2="289.0" stroke="#858b95" stroke-width="1" />
+<line x1="600.0" y1="282.0" x2="600.0" y2="289.0" stroke="#858b95" stroke-width="1" />
+<line x1="640.0" y1="282.0" x2="640.0" y2="289.0" stroke="#858b95" stroke-width="1" />
+<line x1="680.0" y1="282.0" x2="680.0" y2="296.0" stroke="#858b95" stroke-width="2" />
+<line x1="720.0" y1="282.0" x2="720.0" y2="289.0" stroke="#858b95" stroke-width="1" />
+<line x1="760.0" y1="282.0" x2="760.0" y2="289.0" stroke="#858b95" stroke-width="1" />
+<text x="40.0" y="310.0" font-size="11.5" fill="#858b95" text-anchor="middle" font-weight="bold" >1</text>
+<text x="200.0" y="310.0" font-size="11.5" fill="#858b95" text-anchor="middle" font-weight="bold" >33</text>
+<text x="360.0" y="310.0" font-size="11.5" fill="#858b95" text-anchor="middle" font-weight="bold" >65</text>
+<text x="440.0" y="310.0" font-size="11.5" fill="#858b95" text-anchor="middle" font-weight="bold" >81</text>
+<text x="600.0" y="310.0" font-size="11.5" fill="#858b95" text-anchor="middle" font-weight="bold" >113</text>
+<text x="680.0" y="310.0" font-size="11.5" fill="#858b95" text-anchor="middle" font-weight="bold" >129</text>
+<text x="760.0" y="310.0" font-size="11.5" fill="#858b95" text-anchor="middle" font-weight="bold" >144</text>
+<text x="400.0" y="336.0" font-size="12" fill="#9aa0a9" text-anchor="middle" direction="rtl" font-weight="normal" >מספרי התיבות מתחת לציר · קו קצר כל 8 תיבות (פרייז), קו ארוך כל 32</text>
+<polyline points="40.0,152.5 115.0,148.2 120.0,138.9 195.0,135.5 200.0,125.3 355.0,121.9 360.0,142.3 395.0,140.6 435.0,120.2 440.0,101.5 595.0,101.5 600.0,118.5 675.0,127.0 680.0,144.0 760.0,152.5" fill="none" stroke="#858b95" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="762.0" y="144.5" font-size="11.5" fill="#858b95" text-anchor="start" direction="rtl" font-weight="bold" >אנרגיה</text>
+<line x1="40.0" y1="196.0" x2="40.0" y2="256.0" stroke="#28E214" stroke-width="2.5" />
+<rect x="39.0" y="72.0" width="20.0" height="20.0" rx="4" fill="#28E214" />
+<text x="49.0" y="87.0" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold" >A</text>
+<line x1="40.0" y1="92.0" x2="40.0" y2="196.0" stroke="#28E214" stroke-width="1.5" stroke-dasharray="3 3"/>
+<text x="64.0" y="87.0" font-size="11.5" fill="#858b95" text-anchor="end" direction="rtl" font-weight="bold" >Intro</text>
+<line x1="120.0" y1="196.0" x2="120.0" y2="256.0" stroke="#10B1E6" stroke-width="2.5" />
+<rect x="119.0" y="100.0" width="20.0" height="20.0" rx="4" fill="#10B1E6" />
+<text x="129.0" y="115.0" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold" >B</text>
+<line x1="120.0" y1="120.0" x2="120.0" y2="196.0" stroke="#10B1E6" stroke-width="1.5" stroke-dasharray="3 3"/>
+<text x="144.0" y="115.0" font-size="11.5" fill="#858b95" text-anchor="end" direction="rtl" font-weight="bold" >באס נכנס</text>
+<line x1="360.0" y1="196.0" x2="360.0" y2="256.0" stroke="#E0641B" stroke-width="2.5" />
+<rect x="359.0" y="72.0" width="20.0" height="20.0" rx="4" fill="#E0641B" />
+<text x="369.0" y="87.0" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold" >C</text>
+<line x1="360.0" y1="92.0" x2="360.0" y2="196.0" stroke="#E0641B" stroke-width="1.5" stroke-dasharray="3 3"/>
+<text x="384.0" y="87.0" font-size="11.5" fill="#858b95" text-anchor="end" direction="rtl" font-weight="bold" >Breakdown</text>
+<line x1="440.0" y1="196.0" x2="440.0" y2="256.0" stroke="#E62828" stroke-width="2.5" />
+<rect x="439.0" y="100.0" width="20.0" height="20.0" rx="4" fill="#E62828" />
+<text x="449.0" y="115.0" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold" >D</text>
+<line x1="440.0" y1="120.0" x2="440.0" y2="196.0" stroke="#E62828" stroke-width="1.5" stroke-dasharray="3 3"/>
+<text x="464.0" y="115.0" font-size="11.5" fill="#858b95" text-anchor="end" direction="rtl" font-weight="bold" >Drop</text>
+<line x1="600.0" y1="196.0" x2="600.0" y2="256.0" stroke="#305AFF" stroke-width="2.5" />
+<rect x="599.0" y="72.0" width="20.0" height="20.0" rx="4" fill="#305AFF" />
+<text x="609.0" y="87.0" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold" >G</text>
+<line x1="600.0" y1="92.0" x2="600.0" y2="196.0" stroke="#305AFF" stroke-width="1.5" stroke-dasharray="3 3"/>
+<text x="624.0" y="87.0" font-size="11.5" fill="#858b95" text-anchor="end" direction="rtl" font-weight="bold" >Outro</text>
+<line x1="680.0" y1="196.0" x2="680.0" y2="256.0" stroke="#8A2BE2" stroke-width="2.5" />
+<rect x="679.0" y="100.0" width="20.0" height="20.0" rx="4" fill="#8A2BE2" />
+<text x="689.0" y="115.0" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold" >H</text>
+<line x1="680.0" y1="120.0" x2="680.0" y2="196.0" stroke="#8A2BE2" stroke-width="1.5" stroke-dasharray="3 3"/>
+<text x="704.0" y="115.0" font-size="11.5" fill="#858b95" text-anchor="end" direction="rtl" font-weight="bold" >16 אחרונות</text>
+</svg>

@@ -3,7 +3,7 @@ slug: melodic-techno
 title: "Melodic Techno & Progressive"
 title_he: "מלודיק טכנו ופרוגרסיב"
 genres: ["melodic_techno", "progressive_house", "indie_dance"]
-count: 17
+count: 36
 ---
 
 # ארגז: מלודיק טכנו ופרוגרסיב (`Melodic Techno & Progressive`)
@@ -24,7 +24,7 @@ count: 17
 
 ## הטראקים
 
-סה"כ 17 טראקים · 15 מאומתים במלואם · 2 מאומתים חלקית.
+סה"כ 36 טראקים · 34 מאומתים במלואם · 2 מאומתים חלקית.
 
 > **מקרא עמודת אימות:** ✔ = `BPM` ומפתח אומתו ממקור אמין (בעיקר `Beatport`, `Tunebat`/`SongBPM`); ≈ = אומת חלקית (המקורות חלוקים במפתח, או רק ה-`BPM` אומת); ? = הערכה — **חובה לבדוק אחרי `Analyze` ב-`Rekordbox`**. גרסאות שונות (`Radio Edit`, `Extended`, רמיקס) יכולות להיות במפתח/טמפו אחרים — קנו בדיוק את ה-`Mix` שבטבלה.
 
@@ -60,6 +60,32 @@ count: 17
 | 16 | Maori & Adam Ten | Spring Girl | Vintage Culture Remix (Extended) | 127 | G | 9B | 8 | peak | ✔ |
 | 17 | ARTBAT | Remember | Original Mix | 127 | Fm | 4A | 8 | peak | ✔ |
 
+### קלאסיקות ומודרני — נוסף מנתוני Spotify (120–128)
+
+> נוסף בסבב אימות מול נתוני ניתוח האודיו של `Spotify` (קבצי נתונים פומביים — אותו מקור ש-`Tunebat`/`SongBPM` מציגים). ✔ = שורה שתואמת אמן + שם; ≈ = גרסאות שונות במקור מזוהות אחרת.
+
+| # | Artist | Title | Mix | BPM | Key | Camelot | Energy | Role | ✔ |
+|---|---|---|---|---|---|---|---|---|---|
+| 18 | deadmau5 | Strobe | Original | 128 | `Abm` | `1A` | 7 | build | ✔ |
+| 19 | Eric Prydz | Opus | Original | 125 | `F#m` | `11A` | 9 | anthem | ✔ |
+| 20 | RÜFÜS DU SOL | Innerbloom | Original | 122 | `Eb` | `5B` | 6 | closing | ✔ |
+| 21 | Monolink, ARTBAT | Return to Oz | ARTBAT Remix | 124 | `D` | `10B` | 8 | peak | ✔ |
+| 22 | Monolink | Sirens | Original | 120 | `Em` | `9A` | 6 | warmup | ✔ |
+| 23 | Ben Böhmer | Decade | Original | 121 | `F#` | `2B` | 6 | warmup | ✔ |
+| 24 | Ben Böhmer, Monolink | Black Hole | Original | 122 | `F#m` | `11A` | 7 | build | ✔ |
+| 25 | Lane 8 | Fingerprint | Original | 124 | `Fm` | `4A` | 6 | build | ✔ |
+| 26 | Lane 8 | Visions | Original | 125 | `Ab` | `4B` | 7 | build | ✔ |
+| 27 | Kölsch | Grey | Original | 125 | `Bm` | `10A` | 7 | build | ✔ |
+| 28 | Kölsch | Loreley | Original | 128 | `Am` | `8A` | 8 | peak | ✔ |
+| 29 | ARTBAT | Tabu | Original | 122 | `A` | `11B` | 7 | build | ✔ |
+| 30 | Tale Of Us | Red Sky | Original | 124 | `Db` | `3B` | 7 | build | ✔ |
+| 31 | Boris Brejcha | Purple Noise | Original | 125 | `C` | `8B` | 8 | peak | ✔ |
+| 32 | Maceo Plex, Gabriel Ananda | Solitary Daze | Original | 125 | `Ebm` | `2A` | 8 | peak | ✔ |
+| 33 | Patrice Bäumel | Surge | Original | 126 | `Bbm` | `3A` | 8 | peak | ✔ |
+| 34 | Guy Mantzur, Roy Rosenfeld | Epika | Original | 126 | `E` | `12B` | 8 | peak | ✔ |
+| 35 | Guy J | Stop Hold | Original | 124 | `D` | `10B` | 7 | build | ✔ |
+| 36 | CamelPhat | Breathe | Original | 125 | `Am` | `8A` | 8 | peak | ✔ |
+
 ## מעברים מומלצים בתוך הארגז
 
 - מ-**Mano Le Tough – Primative People** (`120 BPM`, `10A`) אל **Guy Gerber – Stoppage Time** (`127 BPM`, `10A`): שניהם `10A`: מ-Primative People (120) ל-Stoppage Time (127) — העלו טמפו בהדרגה; מורשת פרוגרסיב.
@@ -75,19 +101,15 @@ count: 17
 
 לטראקים הבאים לא הצלחנו לאמת `BPM`/מפתח ממקור אמין בזמן הכנת הארגז, ולכן הם לא בטבלה:
 
-- deadmau5 – Strobe (mau5trap, 2009)
-- Eric Prydz – Opus (2016)
 - Guy J – Lamur (Bedrock) — מפיק ישראלי
 - Âme – Rej (בארגז הדיפ-האוס)
 - Stephan Bodzin – Singularity / Powers Of Ten (Herzblut)
 - Tale Of Us – Another Earth (Afterlife)
-- Monolink – Return To Oz (ARTBAT Remix)
-- RÜFÜS DU SOL – Innerbloom
 - Ben Böhmer – Beyond Beliefs (Anjunadeep)
 - Anyma – Eternity / Consciousness (Afterlife)
 - Mita Gami, Guy Mantzur, Khen — אמנים ישראלים בסצנת המלודיק והפרוגרסיב
 
-> **פער ידוע:** חסרים ריליסים מאומתים של 2024–2026 (Afterlife/Anyma) — יתווספו בסבב האימות הבא.
+> **פער ידוע:** בסבב האימות נוספו 19 קלאסיקות מלודיות מאומתות (מנתוני `Spotify`, עד 2019). עדיין חסרים ריליסים מאומתים של 2024–2026 (Afterlife/Anyma).
 
 ## איפה לקנות ולהזרים חוקית
 

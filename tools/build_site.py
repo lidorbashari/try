@@ -284,6 +284,7 @@ def shell(out: Path, *, title: str, body: str, active: str = "", description: st
     script_tags = "".join(f'<script src="{base}assets/js/{s}.js?v={VERSION}" defer></script>' for s in
                           ("icons.gen", "core", "player") + tuple(scripts))
     year = "2026"
+    tools_css = f'\n<link rel="stylesheet" href="{base}assets/css/tools.css?v={VERSION}">' if active == "tools" else ""
     return f"""<!doctype html>
 <html lang="he" dir="rtl">
 <head>
@@ -310,7 +311,7 @@ def shell(out: Path, *, title: str, body: str, active: str = "", description: st
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&family=Rubik:wght@400;500;600;700;800&family=Secular+One&display=swap">
-<link rel="stylesheet" href="{base}assets/css/site.css?v={VERSION}">
+<link rel="stylesheet" href="{base}assets/css/site.css?v={VERSION}">{tools_css}
 <script>(function(){{try{{var t=localStorage.getItem('djlab:theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}}catch(e){{}}}})();</script>
 {extra_head}</head>
 <body class="page-{esc(active or 'misc')} {esc(body_class)}">

@@ -1,27 +1,33 @@
 artist,title,mix,label,year,bpm,key,camelot,energy,role,verified,notes_he
-Zohar Argov,הפרח בגני,Original,,1982,,,,5,closing,no,"תעתיק: Ha'perach Be'gani · קלאסיקה מזרחית; טמפו חי ומשתנה — לא לביטמאץ', לנגן בקאט/פייד"
-Haim Moshe,אהבת חיי,Original,,,,,,6,anthem,no,תעתיק: Ahavat Chayai · קלאסיקה לשירה בציבור; קיים ב-Tunebat אך הערכים לא נשלפו
-"Eyal Golan, Zohar Argov",עוד דקה את נעלמת,Original,,,,,,5,warmup,no,"תעתיק: Od Daka At Ne'elemet · דואט וירטואלי; קיים ב-Tunebat, ערכים לא נשלפו"
-Eyal Golan,צליל מיתר,Original,,,130,,,7,anthem,partial,"תעתיק: Tzlil Meitar · BPM אומת (130), מפתח לא הוצג — לנתח ב-Rekordbox"
+Zohar Argov,הפרח בגני,Original,,1982,81,Cm,5A,5,closing,yes,"תעתיק: Ha'perach Be'gani · קלאסיקה מזרחית בהקלטה חיה — הטמפו נושם; קאט/פייד, לא ביטמאץ'"
+Haim Moshe,אהבת חיי,Original,,1988,155,Em,9A,6,anthem,partial,תעתיק: Ahavat Chayai · Spotify מציין 155 — ייתכן שמורגש כ-77 (חצי); שירה בציבור
+"Eyal Golan, Zohar Argov",עוד דקה את נעלמת,Original,,2018,98,Gm,6A,5,warmup,yes,תעתיק: Od Daka At Ne'elemet · דואט וירטואלי (2018)
+Eyal Golan,צליל מיתר,Original,,2001,130,Dm,7A,7,anthem,yes,תעתיק: Tzlil Meitar · מאומת גם מול נתוני Spotify
 Eyal Golan,דוניה,Original,,,106,F,7B,7,build,partial,תעתיק: Dunya · BPM אומת; המוד לא הוצג
 Sarit Hadad,Shufuni,Original,,,128,,,7,peak,partial,"שופוני · BPM אומת, מפתח לא הוצג"
 Dudu Aharon,Al Tisgeri Li Tadelet,Original,,,100,Em,9A,6,build,yes,אל תסגרי לי ת'דלת · מזרחית-פופ
 Shlomi Shabat,מאריפוסה,Original,,,106,G,9B,6,warmup,yes,תעתיק: Mariposa · מזרחית-לטינית
-Maor Edri,אללה מעאק,Original,,,108,C#m,12A,7,build,partial,תעתיק: Allah Ma'ak · קיימות כמה גרסאות לשיר — ודאו שזו גרסת מאור אדרי (108)
+Maor Edri,Allah Ma'ak,Original,,2018,100,Dm,7A,7,build,partial,"אללה מעאק · Spotify: 100/Dm, Musicstax: 108/C#m — המקורות חלוקים, בדקו"
 Nasrin Kadri,בנאדיק,Original,,,140,Ab,4B,8,peak,partial,תעתיק: Banadik · BPM אומת; המוד לא הוצג; ערבית-עברית
 Nasrin Kadri,אהובי,Original,,,109,C,8B,6,build,partial,תעתיק: Ahuvi · BPM אומת; המוד לא הוצג
 Sarit Hadad,Haim Shelcha,Original,,,140,Am,8A,8,peak,yes,חיים שלך · מזרחית קצבית
+"Eyal Golan, Zohar Argov",ים של דמעות,Original,,2018,92,Em,9A,6,build,partial,תעתיק: Yam Shel Dma'ot · Spotify מציין 183 — תוקן לחצי (92)
 "Eden Ben Zaken, Roni Meller",מועבט,Remix by Roni Meller,,,138,G,9B,9,peak,yes,תעתיק: Mo'avat · רמיקס מזרחי-האוס למועדון
 "Tamta, Stephane Legar",Yala,Original,,,105,G,9B,7,build,yes,תמטה (יוון/קפריסין) + סטפן לגר — פופ ים-תיכוני
 Stephane Legar,Merci,Original,,,108,C,8B,7,build,yes,צרפתית-עברית בניחוח ים-תיכוני
 "Sting, Cheb Mami",Desert Rose,Original,,1999,112,Cm,5A,6,warmup,yes,ראי/פופ — פתיחה מושלמת לבלוק מזרחי
 Amr Diab,Ya Agmal Eyoun,Remix,,2019,109,Fm,4A,7,build,yes,גרסת רמיקס (2019); המקור ותיק יותר
-Khaled,Aïcha,Original,,1996,,,,6,warmup,no,ראי צרפתי-אלג'ירי · לא אומת בסשן — לנתח ב-Rekordbox
+Khaled,Aïcha,Original,,1996,85,Gm,6A,6,warmup,partial,ראי צרפתי-אלג'ירי · Spotify מציין 170 — תוקן לחצי (85)
 Ofra Haza,Im Nin'alu,Original,,1984,,,,6,build,no,אם ננעלו · מתוך 'שירי תימן'; גרסאות רמיקס מאוחרות שונות בטמפו — בחרו גרסה ונתחו
-Tarkan,Şımarık,Original,,1997,,,,7,peak,no,Kiss Kiss · קלאסיקה טורקית במסיבות; לא אומת בסשן
+Khaled,Didi,Original,,1992,99,Bbm,3A,7,peak,yes,ראי — קלאסיקה במסיבות
+Tarkan,Şımarık,Original,,1997,97,G,9B,7,peak,yes,Kiss Kiss · קלאסיקה טורקית במסיבות
 Tarkan,Dudu,Original,,2003,,,,7,peak,no,"קיים ב-Tunebat, ערכים לא נשלפו"
-Despina Vandi,Gia,Original,,2001,,,,8,peak,no,להיט יווני שמנוגן המון באירועים בישראל; לא אומת בסשן
-Mikis Theodorakis,Zorba's Dance (Sirtaki),Original,,1964,,,,7,anthem,no,"זורבה — הטמפו מואץ לאורך השיר! אין ביטמאץ', רק קאט"
+Tarkan,Kuzu Kuzu,Original,,2001,94,Em,9A,7,build,yes,טורקית
+Despina Vandi,Gia,Original,,2001,130,Bbm,3A,8,peak,yes,להיט יווני שמנוגן המון באירועים בישראל
+Mikis Theodorakis,Zorba's Dance (Sirtaki),Original,,1964,80,G,9B,7,anthem,partial,זורבה — הטמפו מואץ לאורך השיר! ה-BPM הוא של הפתיחה; קאט בלבד
+Gipsy Kings,Bamboléo,Original,,1987,120,F#m,11A,8,peak,yes,פלמנקו-פופ ספרדי
+Gipsy Kings,Volare (Nel Blu di Pinto di Blu),Original,,1989,116,E,12B,7,anthem,yes,שירה בציבור
+Gipsy Kings,"Djobi, Djoba",Original,,1987,108,F,7B,7,build,yes,פלמנקו-פופ
 Shakira,"Whenever, Wherever",Original,,2001,108,C#m,12A,7,build,yes,חלילים ואווירה מזרחית
 "Shakira, Wyclef Jean",Hips Don't Lie,Original,,2006,100,Bbm,3A,8,peak,yes,שירה בציבור
 Shakira,Waka Waka (This Time for Africa),Original,,2010,127,Bm,10A,8,peak,yes,עובד מצוין בבלוק 125–130

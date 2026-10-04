@@ -3,7 +3,7 @@ slug: techno
 title: "Techno"
 title_he: "טכנו"
 genres: ["techno", "hard_techno"]
-count: 23
+count: 37
 ---
 
 # ארגז: טכנו (`Techno`)
@@ -25,7 +25,7 @@ count: 23
 
 ## הטראקים
 
-סה"כ 23 טראקים · 23 מאומתים במלואם · 0 מאומתים חלקית.
+סה"כ 37 טראקים · 37 מאומתים במלואם · 0 מאומתים חלקית.
 
 > **מקרא עמודת אימות:** ✔ = `BPM` ומפתח אומתו ממקור אמין (בעיקר `Beatport`, `Tunebat`/`SongBPM`); ≈ = אומת חלקית (המקורות חלוקים במפתח, או רק ה-`BPM` אומת); ? = הערכה — **חובה לבדוק אחרי `Analyze` ב-`Rekordbox`**. גרסאות שונות (`Radio Edit`, `Extended`, רמיקס) יכולות להיות במפתח/טמפו אחרים — קנו בדיוק את ה-`Mix` שבטבלה.
 
@@ -62,6 +62,34 @@ count: 23
 | 22 | HOEHENANGST | INDIGO | Original Mix | 152 | Gm | 6A | 10 | peak | ✔ |
 | 23 | BYØRN | Bass Fusion | Original Mix | 153 | Eb | 5B | 10 | closing | ✔ |
 
+### היפנוטי / מינימל (122–132)
+
+> נוסף בסבב אימות מול נתוני ניתוח האודיו של `Spotify` (קבצי נתונים פומביים — אותו מקור ש-`Tunebat`/`SongBPM` מציגים). ✔ = שורה שתואמת אמן + שם; ≈ = גרסאות שונות במקור מזוהות אחרת.
+
+| # | Artist | Title | Mix | BPM | Key | Camelot | Energy | Role | ✔ |
+|---|---|---|---|---|---|---|---|---|---|
+| 24 | Plastikman | Spastik | Original | 126 | `E` | `12B` | 7 | build | ✔ |
+| 25 | Joris Voorn | Ringo | Original | 122 | `Fm` | `4A` | 6 | warmup | ✔ |
+| 26 | Joris Voorn | Ryo | Original | 126 | `Ab` | `4B` | 7 | build | ✔ |
+| 27 | Dubfire | Fuego | Julian Jeweil Remix | 125 | `C#m` | `12A` | 7 | build | ✔ |
+| 28 | Adam Beyer, Bart Skils | Your Mind | Radio Edit | 126 | `Bm` | `10A` | 8 | peak | ✔ |
+| 29 | Adam Beyer | Teach Me | Amelie Lens Acid Mix | 130 | `F#` | `2B` | 8 | peak | ✔ |
+| 30 | Amelie Lens | Follow | Original | 128 | `G` | `9B` | 7 | build | ✔ |
+| 31 | Enrico Sangiuliano | Hidden T | Original | 126 | `G` | `9B` | 8 | peak | ✔ |
+| 32 | Eats Everything, Charlotte de Witte | Space Raiders | Charlotte de Witte Remix | 132 | `E` | `12B` | 8 | peak | ✔ |
+
+### קלאסיקות טכנו (1990–2000)
+
+> נוסף בסבב אימות מול נתוני ניתוח האודיו של `Spotify` (קבצי נתונים פומביים — אותו מקור ש-`Tunebat`/`SongBPM` מציגים). ✔ = שורה שתואמת אמן + שם; ≈ = גרסאות שונות במקור מזוהות אחרת.
+
+| # | Artist | Title | Mix | BPM | Key | Camelot | Energy | Role | ✔ |
+|---|---|---|---|---|---|---|---|---|---|
+| 33 | Joey Beltram | Energy Flash | Original | 123 | `Ab` | `4B` | 8 | anthem | ✔ |
+| 34 | Slam | Positive Education | Original | 127 | `F#` | `2B` | 8 | anthem | ✔ |
+| 35 | Josh Wink | Higher State of Consciousness | Tweekin Acid Funk | 126 | `G` | `9B` | 9 | anthem | ✔ |
+| 36 | Laurent Garnier | Crispy Bacon | Original | 130 | `G` | `9B` | 8 | peak | ✔ |
+| 37 | Laurent Garnier | The Man With the Red Face | Original | 132 | `Eb` | `5B` | 8 | anthem | ✔ |
+
 ## מעברים מומלצים בתוך הארגז
 
 - מ-**HI-LO & DJ Deeon – WANNA GO BANG** (`132 BPM`, `6A`) אל **Kaspar (DE) – Cycle Of Life** (`135 BPM`, `6A`): שניהם `6A`: מ-132 ל-135 — העלו טמפו בהדרגה במהלך המעבר.
@@ -77,20 +105,15 @@ count: 23
 לא הצלחנו לאמת `BPM`/מפתח ממקור אמין לטראקים הבאים בזמן הכנת הארגז, ולכן הם לא בטבלה — אבל חובה להכיר:
 
 - Rhythim Is Rhythim (Derrick May) – Strings Of Life (1987)
-- Joey Beltram – Energy Flash (R&S, 1990)
 - Jeff Mills – The Bells (1997)
 - Robert Hood – Minus / Minimal Nation
-- Slam – Positive Education (Soma)
-- Laurent Garnier – The Man With The Red Face (F Communications, 2000)
-- Josh Wink – Higher State Of Consciousness (1995)
 - Ben Klock – Subzero (Ostgut Ton)
-- Adam Beyer & Bart Skils – Your Mind (Drumcode, 2018)
 - Enrico Sangiuliano – Symbiosis (Drumcode)
 - Amelie Lens / I Hate Models / Sara Landry / Indira Paganotto — אמנים מרכזיים בסצנה העכשווית (היפנוטי והארד).
 
 **מהסצנה הישראלית:** Shlomi Aber, Itamar Sagi, Yotam Avni — חפשו את הריליסים שלהם ב-`Beatport`/`Bandcamp`.
 
-> **פער ידוע:** חסר כרגע חלק "היפנוטי/Raw" מאומת וריליסים של 2024–2026 — יתווספו בסבב אימות הבא.
+> **פער ידוע:** בסבב האימות נוסף חלק היפנוטי/מינימל וקלאסיקות טכנו מאומתים (מנתוני `Spotify`). עדיין חסרים ריליסים מאומתים של 2024–2026.
 
 ## איפה לקנות ולהזרים חוקית
 

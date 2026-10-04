@@ -3,7 +3,7 @@ slug: house
 title: "House"
 title_he: "האוס"
 genres: ["house", "funky_house", "nu_disco"]
-count: 20
+count: 43
 ---
 
 # ארגז: האוס (`House`)
@@ -24,7 +24,7 @@ count: 20
 
 ## הטראקים
 
-סה"כ 20 טראקים · 18 מאומתים במלואם · 2 מאומתים חלקית.
+סה"כ 43 טראקים · 38 מאומתים במלואם · 5 מאומתים חלקית.
 
 > **מקרא עמודת אימות:** ✔ = `BPM` ומפתח אומתו ממקור אמין (בעיקר `Beatport`, `Tunebat`/`SongBPM`); ≈ = אומת חלקית (המקורות חלוקים במפתח, או רק ה-`BPM` אומת); ? = הערכה — **חובה לבדוק אחרי `Analyze` ב-`Rekordbox`**. גרסאות שונות (`Radio Edit`, `Extended`, רמיקס) יכולות להיות במפתח/טמפו אחרים — קנו בדיוק את ה-`Mix` שבטבלה.
 
@@ -58,6 +58,43 @@ count: 20
 | 19 | Sllash & Doppe | Kyrenia | Extended Mix | 125 | B | 1B | 6 | build | ✔ |
 | 20 | Tensnake | Coma Cat | Original Mix | 119 | C | 8B | 5 | warmup | ✔ |
 
+### קלאסיקות שיקגו, ניו יורק ופילטר — נוסף מנתוני Spotify (118–130)
+
+> נוסף בסבב אימות מול נתוני ניתוח האודיו של `Spotify` (קבצי נתונים פומביים — אותו מקור ש-`Tunebat`/`SongBPM` מציגים). ✔ = שורה שתואמת אמן + שם; ≈ = גרסאות שונות במקור מזוהות אחרת.
+
+| # | Artist | Title | Mix | BPM | Key | Camelot | Energy | Role | ✔ |
+|---|---|---|---|---|---|---|---|---|---|
+| 21 | Frankie Knuckles, Jamie Principle | Your Love | Original | 118 | `Em` | `9A` | 6 | build | ✔ |
+| 22 | Marshall Jefferson | The House Music Anthem (Move Your Body) | Original | 122 | `Em` | `9A` | 8 | anthem | ✔ |
+| 23 | Inner City | Good Life | Original | 121 | `Em` | `9A` | 7 | build | ✔ |
+| 24 | Inner City | Big Fun | Original | 120 | `Ebm` | `2A` | 7 | build | ✔ |
+| 25 | CeCe Peniston | Finally | Original | 120 | `G` | `9B` | 8 | anthem | ≈ |
+| 26 | Crystal Waters | Gypsy Woman (She's Homeless) | Radio Edit | 120 | `Am` | `8A` | 8 | anthem | ≈ |
+| 27 | Robin S | Show Me Love | Original | 120 | `F` | `7B` | 8 | anthem | ✔ |
+| 28 | Ultra Naté | Free | Mood II Swing Radio Edit | 125 | `Ab` | `4B` | 8 | anthem | ✔ |
+| 29 | Daft Punk | Around the World | Original | 121 | `G` | `9B` | 8 | peak | ✔ |
+| 30 | Armand Van Helden, Duane Harden | You Don't Know Me | Original | 130 | `Bb` | `6B` | 8 | peak | ✔ |
+| 31 | Basement Jaxx | Red Alert | Original | 127 | `Bbm` | `3A` | 8 | peak | ✔ |
+| 32 | Daft Punk | One More Time | Original | 123 | `D` | `10B` | 9 | anthem | ✔ |
+| 33 | Modjo | Lady (Hear Me Tonight) | Original | 126 | `F#` | `2B` | 8 | anthem | ✔ |
+| 34 | Basement Jaxx | Where's Your Head At | Original | 128 | `C` | `8B` | 9 | peak | ✔ |
+| 35 | Roger Sanchez | Another Chance | Original | 128 | `Eb` | `5B` | 8 | peak | ✔ |
+| 36 | Eric Prydz | Call on Me | Radio Mix | 126 | `Bb` | `6B` | 9 | anthem | ≈ |
+| 37 | Bob Sinclar, Gary Pine | Love Generation | Radio Edit | 128 | `Db` | `3B` | 8 | anthem | ✔ |
+
+### האוס מודרני — נוסף מנתוני Spotify
+
+> נוסף בסבב אימות מול נתוני ניתוח האודיו של `Spotify` (קבצי נתונים פומביים — אותו מקור ש-`Tunebat`/`SongBPM` מציגים). ✔ = שורה שתואמת אמן + שם; ≈ = גרסאות שונות במקור מזוהות אחרת.
+
+| # | Artist | Title | Mix | BPM | Key | Camelot | Energy | Role | ✔ |
+|---|---|---|---|---|---|---|---|---|---|
+| 38 | Dennis Ferrer | Hey Hey | Original | 126 | `B` | `1B` | 8 | peak | ✔ |
+| 39 | Duke Dumont, A*M*E | Need U (100%) | Radio Edit | 124 | `Cm` | `5A` | 8 | peak | ✔ |
+| 40 | Storm Queen, MK | Look Right Through | MK Vocal Edit | 120 | `Cm` | `5A` | 7 | build | ✔ |
+| 41 | MK | 17 | Original | 122 | `Cm` | `5A` | 7 | build | ✔ |
+| 42 | FISHER | Losing It | Original | 125 | `D` | `10B` | 9 | peak | ✔ |
+| 43 | Peggy Gou | Starry Night | Original Mix | 123 | `Abm` | `1A` | 7 | build | ✔ |
+
 ## מעברים מומלצים בתוך הארגז
 
 - מ-**Cajmere feat. Dajae – Brighter Days** (`126 BPM`, `8A`) אל **Mark Knight & James Hurr – Lady (Hear Me Tonight)** (`125 BPM`, `8A`): שניהם `8A`: מ-Brighter Days (126) ל-Lady (125) — שני הוקים מוכרים ברצף; הורידו טמפו בעדינות.
@@ -72,20 +109,10 @@ count: 20
 
 לטראקים הבאים לא הצלחנו לאמת `BPM`/מפתח ממקור אמין בזמן הכנת הארגז, ולכן הם לא בטבלה — אבל הם חובה:
 
-- Frankie Knuckles & Jamie Principle – Your Love (Trax, 1987)
-- Marshall Jefferson – Move Your Body (Trax, 1986)
-- Robin S – Show Me Love (Stonebridge Club Mix) (1993)
-- Crystal Waters – Gypsy Woman (She's Homeless) (1991)
-- CeCe Peniston – Finally (1991)
-- Daft Punk – Around The World (1997)
-- Modjo – Lady (Hear Me Tonight) (2000) — הגרסה של Mark Knight & James Hurr בטבלה
 - Spiller – Groovejet (If This Ain't Love) (2000)
-- Eric Prydz – Call On Me (2004)
-- Dennis Ferrer – Hey Hey (2009)
-- Storm Queen – Look Right Through (MK Remix) (2013)
 - Purple Disco Machine – Hypnotized (2020)
 
-> **פער ידוע:** הארגז קטן מהמתוכנן (20 טראקים) כי כל הטראקים בטבלה אומתו; הקלאסיקות לעיל וריליסים של 2025–2026 יתווספו בסבב אימות הבא.
+> **פער ידוע:** בסבב האימות נוספו 23 קלאסיקות ולהיטי האוס מאומתים (מנתוני `Spotify`). עדיין חסרים ריליסים מאומתים של 2025–2026.
 
 ## איפה לקנות ולהזרים חוקית
 

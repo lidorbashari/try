@@ -3,7 +3,7 @@ slug: trance
 title: "Trance"
 title_he: "טראנס"
 genres: ["trance"]
-count: 20
+count: 34
 ---
 
 # ארגז: טראנס (`Trance`)
@@ -21,7 +21,7 @@ count: 20
 
 ## הטראקים
 
-סה"כ 20 טראקים · 14 מאומתים במלואם · 0 מאומתים חלקית · 6 לא אומתו.
+סה"כ 34 טראקים · 32 מאומתים במלואם · 2 מאומתים חלקית · 0 לא אומתו.
 
 > **מקרא עמודת אימות:** ✔ = `BPM` ומפתח אומתו ממקור אמין (`Tunebat` / `SongBPM` / `Musicstax`, או נתוני ניתוח האודיו של `Spotify` שעליהם הם מבוססים); ≈ = אומת חלקית (בדרך כלל רק ה-`BPM`, או שהמקורות חלוקים על המפתח); ? = לא אומת — השדות נשארו ריקים במכוון ולא נוחשו. **אחרי קנייה הריצו `Analyze` ב-`Rekordbox` ובדקו את ה-`Beat Grid`.** גרסאות שונות (`Radio Edit`, `Extended`, לייב, רמיקס) יכולות להיות בטמפו/מפתח אחרים — קנו את ה-`Mix` שבטבלה.
 
@@ -37,23 +37,37 @@ count: 20
 | 6 | Faithless | God Is a DJ | Original | 1998 | 131 | `Bbm` | `3A` | 7 | בנייה | ✔ | טראנס-האוס |
 | 7 | Chicane, Bryan Adams | Don't Give Up | Original | 2000 | 132 | `Bbm` | `3A` | 7 | בנייה | ✔ | באלארי; אותו מפתח כמו God Is a DJ |
 | 8 | Gigi D'Agostino | L'amour Toujours | Small Mix | 1999 | 139 | `G` | `9B` | 8 | המנון | ✔ | איטלו-דאנס/טראנס — שירה בציבור |
-| 9 | ATB | 9 PM (Till I Come) | Original | 1998 | — | — | — | 8 | המנון | ? | קלאסיקה; לא אומת בסשן — לנתח ב-Rekordbox |
-| 10 | Paul van Dyk | For an Angel | PvD E-Werk Club Mix | 1998 | — | — | — | 8 | המנון | ? | קלאסיקה; לא אומת בסשן |
-| 11 | Energy 52 | Café del Mar | Original | 1993 | — | — | — | 7 | בנייה | ? | קלאסיקה; קיימים רמיקסים רבים — בחרו גרסה ונתחו |
-| 12 | Tiësto | Adagio for Strings | Original | 2004 | — | — | — | 9 | שיא | ? | מתוך Just Be; לא אומת בסשן |
-| 13 | System F | Out of the Blue | Original | 1999 | — | — | — | 8 | שיא | ? | פרי קורסטן; לא אומת בסשן |
+| 9 | ATB | 9 PM (Till I Come) | Original | 1998 | 130 | `Am` | `8A` | 8 | המנון | ✔ | קלאסיקה; טראנס-האוס |
+| 10 | Paul van Dyk | For an Angel | Radio Edit | 1998 | 138 | `Am` | `8A` | 8 | המנון | ✔ | קלאסיקה; גרסת 1998 (E-Werk) ברדיו-אדיט |
+| 11 | Energy 52 | Café del Mar | Three 'N One Remix | 1997 | 133 | `Fm` | `4A` | 7 | בנייה | ✔ | הרמיקס המפורסם; קיימים עוד רמיקסים רבים |
+| 12 | Tiësto | Adagio for Strings | Original | 2004 | 140 | `Bbm` | `3A` | 9 | שיא | ✔ | מתוך Just Be |
+| 13 | System F | Out of the Blue | Radio Edit | 1999 | 140 | `G` | `9B` | 8 | שיא | ✔ | פרי קורסטן |
+| 14 | Tiësto | Traffic | Radio Edit | 2003 | 138 | `Abm` | `1A` | 8 | שיא | ✔ | טראנס-טק |
+| 15 | Gouryella | Gouryella | Radio Edit | 1999 | 138 | `G` | `9B` | 8 | המנון | ✔ | פרי קורסטן וטיאסטו |
+| 16 | Push | Universal Nation | Original Mix | 1999 | 138 | `Ab` | `4B` | 8 | המנון | ✔ | קלאסיקה בלגית |
+| 17 | Rank 1 | Airwave | Radio Vocal Edit | 2000 | 136 | `Dm` | `7A` | 8 | שיא | ✔ | קלאסיקה הולנדית |
+| 18 | Mauro Picotto | Komodo | Original | 1999 | 138 | `Bm` | `10A` | 8 | שיא | ✔ | טראנס איטלקי |
+| 19 | Mauro Picotto | Lizard | Original | 1999 | 137 | `Em` | `9A` | 8 | שיא | ✔ | טראנס איטלקי |
+| 20 | Cosmic Gate | Exploration of Space | Radio Edit | 2001 | 138 | `Am` | `8A` | 8 | שיא | ✔ | קלאסיקה גרמנית |
+| 21 | Solarstone | Seven Cities | Solarstone's Atlantis Mix | 1999 | 135 | `C` | `8B` | 7 | בנייה | ✔ | באלארי-טראנס |
+| 22 | Binary Finary | 1998 | Paul van Dyk Remix | 1998 | 137 | `D` | `10B` | 8 | שיא | ✔ | קלאסיקה |
+| 23 | Chicane, Moya Brennan | Saltwater | Original Radio Edit | 1999 | 131 | `Fm` | `4A` | 6 | חימום | ≈ | באלארי; גרסאות שונות ב-Spotify מזוהות Fm/Db — בדקו |
+| 24 | Delerium, Sarah McLachlan | Silence | DJ Tiësto's In Search of Sunrise Remix | 2000 | 138 | `Am` | `8A` | 7 | המנון | ≈ | שתי גרסאות ב-Spotify: Am/Bm — בדקו |
 
-### טראנס מודרני (2011–2019)
+### טראנס מודרני (2008–2019)
 
 | # | אמן | שם | מיקס | שנה | BPM | מפתח | Camelot | אנרגיה | תפקיד | אומת | הערות |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 14 | Armin van Buuren, Trevor Guthrie | This Is What It Feels Like | Original | 2013 | 130 | `Ab` | `4B` | 7 | בנייה | ✔ | טראנס-פופ |
-| 15 | Cosmic Gate | The Wave 2.0 | Original | 2019 | 130 | `Am` | `8A` | 7 | בנייה | ✔ | גרסה מחודשת לקלאסיקה |
-| 16 | Armin van Buuren | Let The Music Guide You | ASOT 950 Anthem | 2019 | 135 | `Abm` | `1A` | 8 | שיא | ✔ | המנון A State of Trance |
-| 17 | Armin van Buuren | Turn It Up | Original | 2019 | 138 | `Fm` | `4A` | 8 | שיא | ✔ | טראנס מודרני |
-| 18 | Paul van Dyk | Galaxy | Original | 2019 | 138 | `Fm` | `4A` | 8 | שיא | ✔ | אפליפטינג מודרני; אותו מפתח כמו Turn It Up |
-| 19 | Andrew Rayel | Kick, Bass & Trance | Original | 2019 | 140 | `F#m` | `11A` | 9 | שיא | ✔ | טראנס אנרגטי |
-| 20 | Above & Beyond, Richard Bedford | Sun & Moon | Original | 2011 | — | — | — | 7 | סגירה | ? | וקאל טראנס לסגירה; לא אומת בסשן |
+| 25 | Armin van Buuren, Trevor Guthrie | This Is What It Feels Like | Original | 2013 | 130 | `Ab` | `4B` | 7 | בנייה | ✔ | טראנס-פופ |
+| 26 | Cosmic Gate | The Wave 2.0 | Original | 2019 | 130 | `Am` | `8A` | 7 | בנייה | ✔ | גרסה מחודשת לקלאסיקה |
+| 27 | Armin van Buuren | Let The Music Guide You | ASOT 950 Anthem | 2019 | 135 | `Abm` | `1A` | 8 | שיא | ✔ | המנון A State of Trance |
+| 28 | Armin van Buuren | Turn It Up | Original | 2019 | 138 | `Fm` | `4A` | 8 | שיא | ✔ | טראנס מודרני |
+| 29 | Paul van Dyk, Vini Vici | Galaxy | Original | 2019 | 138 | `Fm` | `4A` | 8 | שיא | ✔ | אפליפטינג מודרני; אותו מפתח כמו Turn It Up |
+| 30 | Andrew Rayel | Kick, Bass & Trance | Original | 2019 | 140 | `F#m` | `11A` | 9 | שיא | ✔ | טראנס אנרגטי |
+| 31 | Above & Beyond, Richard Bedford | Sun & Moon | Club Mix | 2011 | 134 | `F#m` | `11A` | 7 | סגירה | ✔ | וקאל טראנס לסגירה |
+| 32 | Signum, Scott Mac | Coming On Strong | Original Mix | 2008 | 137 | `E` | `12B` | 8 | שיא | ✔ | אפליפטינג |
+| 33 | Armin van Buuren, Sharon den Adel | In and Out of Love | Original | 2008 | 135 | `Fm` | `4A` | 7 | בנייה | ✔ | וקאל טראנס; באותו מפתח כמו Turn It Up |
+| 34 | Gareth Emery, Christina Novelli | Concrete Angel | Original | 2012 | 130 | `G` | `9B` | 7 | בנייה | ✔ | וקאל טראנס |
 
 ## מעברים מומלצים בתוך הארגז
 
@@ -85,11 +99,11 @@ count: 20
 - [Paul van Dyk – For an Angel](https://www.beatport.com/search?q=Paul%20van%20Dyk%20For%20an%20Angel) · [Bandcamp](https://bandcamp.com/search?q=Paul%20van%20Dyk%20For%20an%20Angel)
 - [Tiësto – Adagio for Strings](https://www.beatport.com/search?q=Ti%C3%ABsto%20Adagio%20for%20Strings) · [Bandcamp](https://bandcamp.com/search?q=Ti%C3%ABsto%20Adagio%20for%20Strings)
 - [System F – Out of the Blue](https://www.beatport.com/search?q=System%20F%20Out%20of%20the%20Blue) · [Bandcamp](https://bandcamp.com/search?q=System%20F%20Out%20of%20the%20Blue)
+- [Gouryella – Gouryella](https://www.beatport.com/search?q=Gouryella%20Gouryella) · [Bandcamp](https://bandcamp.com/search?q=Gouryella%20Gouryella)
+- [Push – Universal Nation](https://www.beatport.com/search?q=Push%20Universal%20Nation) · [Bandcamp](https://bandcamp.com/search?q=Push%20Universal%20Nation)
 - [Alice Deejay – Better Off Alone](https://www.beatport.com/search?q=Alice%20Deejay%20Better%20Off%20Alone) · [Bandcamp](https://bandcamp.com/search?q=Alice%20Deejay%20Better%20Off%20Alone)
 - [Robert Miles – Children](https://www.beatport.com/search?q=Robert%20Miles%20Children) · [Bandcamp](https://bandcamp.com/search?q=Robert%20Miles%20Children)
-- [Armin van Buuren – Let The Music Guide You](https://www.beatport.com/search?q=Armin%20van%20Buuren%20Let%20The%20Music%20Guide%20You) · [Bandcamp](https://bandcamp.com/search?q=Armin%20van%20Buuren%20Let%20The%20Music%20Guide%20You)
-- [Paul van Dyk – Galaxy](https://www.beatport.com/search?q=Paul%20van%20Dyk%20Galaxy) · [Bandcamp](https://bandcamp.com/search?q=Paul%20van%20Dyk%20Galaxy)
-- [Andrew Rayel – Kick, Bass & Trance](https://www.beatport.com/search?q=Andrew%20Rayel%20Kick%2C%20Bass%20%26%20Trance) · [Bandcamp](https://bandcamp.com/search?q=Andrew%20Rayel%20Kick%2C%20Bass%20%26%20Trance)
+- [Paul van Dyk, Vini Vici – Galaxy](https://www.beatport.com/search?q=Paul%20van%20Dyk%20Galaxy) · [Bandcamp](https://bandcamp.com/search?q=Paul%20van%20Dyk%20Galaxy)
 
 ## מקורות ואימות
 

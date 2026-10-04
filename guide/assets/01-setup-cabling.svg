@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" width="800" height="440" role="img" aria-labelledby="t d" font-family="Heebo, Rubik, Arial, sans-serif">
+<title id="t">חיבור סטאפ ביתי: מחשב, קונטרולר, מוניטורים ואוזניות</title>
+<desc id="d">המחשב מחובר בכבל USB לקונטרולר; יציאת ה-Master של הקונטרולר מחוברת בכבל למוניטורים; האוזניות מחוברות ליציאת האוזניות.</desc>
+<rect x="1" y="1" width="798" height="438" rx="16" fill="#7f7f7f" fill-opacity="0.07" stroke="#7f7f7f" stroke-opacity="0.28"/>
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#858b95"/></marker>
+</defs>
+<text x="400.0" y="36.0" font-size="21" fill="#858b95" text-anchor="middle" direction="rtl" font-weight="bold" >הסטאפ הביתי — מה מתחבר לאן</text>
+<rect x="615.0" y="110.0" width="150.0" height="95.0" rx="8" fill="#5b6b82" />
+<rect x="623.0" y="118.0" width="134.0" height="79.0" rx="4" fill="#1f2a3a" />
+<polyline points="628,158 632,163 636,169 640,171 644,169 648,161 652,151 656,143 660,140 664,143 668,151 672,161 676,168 680,170 684,168 688,163 692,158 696,153 700,147 704,144 708,147 712,154 716,164 720,173 724,176 728,173 732,165 736,155 740,148 744,146 748,148 752,153" fill="none" stroke="#1588b8" stroke-width="2"/>
+<rect x="600.0" y="205.0" width="180.0" height="12.0" rx="4" fill="#5b6b82" />
+<text x="690.0" y="245.0" font-size="15" fill="#858b95" text-anchor="middle" direction="rtl" font-weight="bold" >מחשב + Rekordbox</text>
+<text x="690.0" y="265.0" font-size="12.5" fill="#9aa0a9" text-anchor="middle" direction="rtl" font-weight="normal" >המוזיקה והתוכנה</text>
+<rect x="255.0" y="105.0" width="290.0" height="120.0" rx="14" fill="#3c4656" />
+<circle cx="307" cy="160" r="34" fill="#596476" stroke="#8a95a8" stroke-width="2"/>
+<circle cx="307" cy="160" r="12" fill="#3c4656"/>
+<circle cx="493" cy="160" r="34" fill="#596476" stroke="#8a95a8" stroke-width="2"/>
+<circle cx="493" cy="160" r="12" fill="#3c4656"/>
+<rect x="380.0" y="145.0" width="4.0" height="55.0" rx="2" fill="#8a95a8" />
+<rect x="373.0" y="157.0" width="18.0" height="10.0" rx="2" fill="#d9dde4" />
+<rect x="416.0" y="145.0" width="4.0" height="55.0" rx="2" fill="#8a95a8" />
+<rect x="409.0" y="177.0" width="18.0" height="10.0" rx="2" fill="#d9dde4" />
+<circle cx="382.0" cy="123" r="4.5" fill="#d9dde4"/>
+<circle cx="382.0" cy="134" r="4.5" fill="#d9dde4"/>
+<circle cx="418.0" cy="123" r="4.5" fill="#d9dde4"/>
+<circle cx="418.0" cy="134" r="4.5" fill="#d9dde4"/>
+<rect x="372.0" y="207.0" width="56.0" height="6.0" rx="3" fill="#8a95a8" />
+<rect x="277.0" y="201.0" width="11.0" height="11.0" rx="2" fill="#28E214" />
+<rect x="292.0" y="201.0" width="11.0" height="11.0" rx="2" fill="#10B1E6" />
+<rect x="307.0" y="201.0" width="11.0" height="11.0" rx="2" fill="#E0641B" />
+<rect x="322.0" y="201.0" width="11.0" height="11.0" rx="2" fill="#E62828" />
+<rect x="467.0" y="201.0" width="11.0" height="11.0" rx="2" fill="#28E214" />
+<rect x="482.0" y="201.0" width="11.0" height="11.0" rx="2" fill="#10B1E6" />
+<rect x="497.0" y="201.0" width="11.0" height="11.0" rx="2" fill="#E0641B" />
+<rect x="512.0" y="201.0" width="11.0" height="11.0" rx="2" fill="#E62828" />
+<text x="400.0" y="253.0" font-size="15" fill="#858b95" text-anchor="middle" direction="rtl" font-weight="bold" >קונטרולר (למשל DDJ-FLX4)</text>
+<text x="400.0" y="273.0" font-size="12.5" fill="#9aa0a9" text-anchor="middle" direction="rtl" font-weight="normal" >דקים + מיקסר + כרטיס קול</text>
+<rect x="30.0" y="100.0" width="80.0" height="125.0" rx="10" fill="#4a5466" />
+<circle cx="70" cy="130" r="13" fill="#2b3240" stroke="#8a95a8" stroke-width="2"/>
+<circle cx="70" cy="182" r="27" fill="#2b3240" stroke="#8a95a8" stroke-width="2"/>
+<circle cx="70" cy="182" r="9" fill="#596476"/>
+<rect x="130.0" y="100.0" width="80.0" height="125.0" rx="10" fill="#4a5466" />
+<circle cx="170" cy="130" r="13" fill="#2b3240" stroke="#8a95a8" stroke-width="2"/>
+<circle cx="170" cy="182" r="27" fill="#2b3240" stroke="#8a95a8" stroke-width="2"/>
+<circle cx="170" cy="182" r="9" fill="#596476"/>
+<text x="120.0" y="255.0" font-size="15" fill="#858b95" text-anchor="middle" direction="rtl" font-weight="bold" >מוניטורים פעילים</text>
+<text x="120.0" y="275.0" font-size="12.5" fill="#9aa0a9" text-anchor="middle" direction="rtl" font-weight="normal" >מה שהקהל שומע (Master)</text>
+<path d="M360,360 C360,302 440,302 440,360" fill="none" stroke="#596476" stroke-width="9" stroke-linecap="round"/>
+<rect x="344.0" y="348.0" width="26.0" height="42.0" rx="9" fill="#7d43c9" />
+<rect x="430.0" y="348.0" width="26.0" height="42.0" rx="9" fill="#7d43c9" />
+<text x="550.0" y="366.0" font-size="15" fill="#858b95" text-anchor="middle" direction="rtl" font-weight="bold" >אוזניות DJ סגורות</text>
+<text x="550.0" y="386.0" font-size="12.5" fill="#9aa0a9" text-anchor="middle" direction="rtl" font-weight="normal" >השיר הבא (Cue) — רק אתם</text>
+<path d="M605,170 L553,165" stroke="#1588b8" stroke-width="4" fill="none" marker-end="url(#arr)"/>
+<rect x="502.0" y="140.0" width="112.0" height="24.0" rx="12" fill="#1588b8" />
+<text x="562.0" y="157.0" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold" >USB-C</text>
+<text x="572.0" y="192.0" font-size="11.5" fill="#9aa0a9" text-anchor="middle" direction="rtl" font-weight="normal" >מוזיקה, שליטה וחשמל</text>
+<path d="M249,165 L218,165" stroke="#cf3434" stroke-width="4" fill="none" marker-end="url(#arr)"/>
+<rect x="195.0" y="72.0" width="120.0" height="24.0" rx="12" fill="#cf3434" />
+<text x="255.0" y="89.0" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold" >Master · RCA</text>
+<path d="M400.0,281 L400,316" stroke="#7d43c9" stroke-width="4" fill="none" marker-end="url(#arr)"/>
+<rect x="250.0" y="284.0" width="118.0" height="24.0" rx="12" fill="#7d43c9" />
+<text x="309.0" y="301.0" font-size="12.5" fill="#ffffff" text-anchor="middle" font-weight="bold" >Phones · 3.5mm</text>
+<rect x="20.0" y="392.0" width="760.0" height="34.0" rx="10" fill="#7f7f7f" fill-opacity="0.12"/>
+<text x="400.0" y="414.0" font-size="13" fill="#858b95" text-anchor="middle" direction="rtl" font-weight="bold" >סדר הדלקה: מחשב ← קונטרולר ← רמקולים (אחרונים) · כיבוי: הפוך · רק כבלים — בלי Bluetooth</text>
+</svg>

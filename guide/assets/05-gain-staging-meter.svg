@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400" role="img" aria-labelledby="t d" font-family="Heebo, Rubik, Arial, sans-serif">
+<title id="t">Gain Staging: הדרך של הצליל והמטר</title>
+<desc id="d">הצליל עובר Trim, EQ, פילטר, פיידר ערוץ, Crossfader ו-Master. במטר: ירוק תקין, כתום לפסגות בלבד, אדום אסור.</desc>
+<rect x="1" y="1" width="798" height="398" rx="16" fill="#7f7f7f" fill-opacity="0.07" stroke="#7f7f7f" stroke-opacity="0.28"/>
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#858b95"/></marker>
+</defs>
+<text x="400.0" y="34.0" font-size="20" fill="#858b95" text-anchor="middle" direction="rtl" font-weight="bold" >הדרך של הצליל במיקסר</text>
+<rect x="672.0" y="56.0" width="108.0" height="62.0" rx="10" fill="#5b6b82" />
+<text x="726.0" y="82.0" font-size="15" fill="#ffffff" text-anchor="middle" font-weight="bold" >Trim</text>
+<text x="726.0" y="103.0" font-size="11.5" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="normal" >ברז הכניסה</text>
+<line x1="670.0" y1="87.0" x2="653.0" y2="87.0" stroke="#858b95" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="542.0" y="56.0" width="108.0" height="62.0" rx="10" fill="#14857a" />
+<text x="596.0" y="82.0" font-size="15" fill="#ffffff" text-anchor="middle" font-weight="bold" >EQ</text>
+<text x="596.0" y="103.0" font-size="11.5" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="normal" >High · Mid · Low</text>
+<line x1="540.0" y1="87.0" x2="523.0" y2="87.0" stroke="#858b95" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="412.0" y="56.0" width="108.0" height="62.0" rx="10" fill="#1588b8" />
+<text x="466.0" y="82.0" font-size="15" fill="#ffffff" text-anchor="middle" font-weight="bold" >Filter</text>
+<text x="466.0" y="103.0" font-size="11.5" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="normal" >LPF / HPF</text>
+<line x1="410.0" y1="87.0" x2="393.0" y2="87.0" stroke="#858b95" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="282.0" y="56.0" width="108.0" height="62.0" rx="10" fill="#3a5fe0" />
+<text x="336.0" y="82.0" font-size="15" fill="#ffffff" text-anchor="middle" font-weight="bold" >Fader</text>
+<text x="336.0" y="103.0" font-size="11.5" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="normal" >פיידר ערוץ</text>
+<line x1="280.0" y1="87.0" x2="263.0" y2="87.0" stroke="#858b95" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="152.0" y="56.0" width="108.0" height="62.0" rx="10" fill="#7d43c9" />
+<text x="206.0" y="82.0" font-size="15" fill="#ffffff" text-anchor="middle" font-weight="bold" >X-Fader</text>
+<text x="206.0" y="103.0" font-size="11.5" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="normal" >Crossfader</text>
+<line x1="150.0" y1="87.0" x2="133.0" y2="87.0" stroke="#858b95" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="22.0" y="56.0" width="108.0" height="62.0" rx="10" fill="#cf3434" />
+<text x="76.0" y="82.0" font-size="15" fill="#ffffff" text-anchor="middle" font-weight="bold" >Master</text>
+<text x="76.0" y="103.0" font-size="11.5" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="normal" >לרמקולים</text>
+<text x="400.0" y="168.0" font-size="20" fill="#858b95" text-anchor="middle" direction="rtl" font-weight="bold" >המטר — לאן לכוון</text>
+<rect x="70.0" y="196.0" width="26.0" height="46.0" rx="4" fill="#2e9e4f" fill-opacity="1.0"/>
+<rect x="100.0" y="196.0" width="26.0" height="46.0" rx="4" fill="#2e9e4f" fill-opacity="1.0"/>
+<rect x="130.0" y="196.0" width="26.0" height="46.0" rx="4" fill="#2e9e4f" fill-opacity="1.0"/>
+<rect x="160.0" y="196.0" width="26.0" height="46.0" rx="4" fill="#2e9e4f" fill-opacity="1.0"/>
+<rect x="190.0" y="196.0" width="26.0" height="46.0" rx="4" fill="#2e9e4f" fill-opacity="1.0"/>
+<rect x="220.0" y="196.0" width="26.0" height="46.0" rx="4" fill="#2e9e4f" fill-opacity="1.0"/>
+<rect x="250.0" y="196.0" width="26.0" height="46.0" rx="4" fill="#2e9e4f" fill-opacity="1.0"/>
+<rect x="280.0" y="196.0" width="26.0" height="46.0" rx="4" fill="#2e9e4f" fill-opacity="1.0"/>
+<rect x="310.0" y="196.0" width="26.0" height="46.0" rx="4" fill="#2e9e4f" fill-opacity="1.0"/>
+<rect x="340.0" y="196.0" width="26.0" height="46.0" rx="4" fill="#2e9e4f" fill-opacity="1.0"/>
+<rect x="370.0" y="196.0" width="26.0" height="46.0" rx="4" fill="#2e9e4f" fill-opacity="1.0"/>
+<rect x="400.0" y="196.0" width="26.0" height="46.0" rx="4" fill="#2e9e4f" fill-opacity="1.0"/>
+<rect x="430.0" y="196.0" width="26.0" height="46.0" rx="4" fill="#2e9e4f" fill-opacity="1.0"/>
+<rect x="460.0" y="196.0" width="26.0" height="46.0" rx="4" fill="#2e9e4f" fill-opacity="1.0"/>
+<rect x="490.0" y="196.0" width="26.0" height="46.0" rx="4" fill="#e08a1b" fill-opacity="1.0"/>
+<rect x="520.0" y="196.0" width="26.0" height="46.0" rx="4" fill="#e08a1b" fill-opacity="1.0"/>
+<rect x="550.0" y="196.0" width="26.0" height="46.0" rx="4" fill="#e08a1b" fill-opacity="1.0"/>
+<rect x="580.0" y="196.0" width="26.0" height="46.0" rx="4" fill="#e08a1b" fill-opacity="0.9"/>
+<rect x="610.0" y="196.0" width="26.0" height="46.0" rx="4" fill="#d93434" fill-opacity="0.9"/>
+<rect x="640.0" y="196.0" width="26.0" height="46.0" rx="4" fill="#d93434" fill-opacity="0.9"/>
+<rect x="670.0" y="196.0" width="26.0" height="46.0" rx="4" fill="#d93434" fill-opacity="0.9"/>
+<rect x="700.0" y="196.0" width="26.0" height="46.0" rx="4" fill="#d93434" fill-opacity="0.9"/>
+<text x="83.0" y="262.0" font-size="12" fill="#858b95" text-anchor="middle" font-weight="bold" >-24</text>
+<text x="203.0" y="262.0" font-size="12" fill="#858b95" text-anchor="middle" font-weight="bold" >-18</text>
+<text x="323.0" y="262.0" font-size="12" fill="#858b95" text-anchor="middle" font-weight="bold" >-12</text>
+<text x="413.0" y="262.0" font-size="12" fill="#858b95" text-anchor="middle" font-weight="bold" >-6</text>
+<text x="503.0" y="262.0" font-size="12" fill="#858b95" text-anchor="middle" font-weight="bold" >0</text>
+<text x="563.0" y="262.0" font-size="12" fill="#858b95" text-anchor="middle" font-weight="bold" >+3</text>
+<text x="623.0" y="262.0" font-size="12" fill="#858b95" text-anchor="middle" font-weight="bold" >+6</text>
+<text x="713.0" y="262.0" font-size="12" fill="#858b95" text-anchor="middle" font-weight="bold" >CLIP</text>
+<text x="738.0" y="262.0" font-size="12" fill="#858b95" text-anchor="start" font-weight="normal" >dB</text>
+<line x1="70.0" y1="278.0" x2="486.0" y2="278.0" stroke="#2e9e4f" stroke-width="3" />
+<text x="278.0" y="300.0" font-size="13.5" fill="#2e9e4f" text-anchor="middle" direction="rtl" font-weight="bold" >ירוק — כאן השיר חי</text>
+<text x="278.0" y="318.0" font-size="12" fill="#9aa0a9" text-anchor="middle" direction="rtl" font-weight="normal" >רוב הזמן</text>
+<line x1="490.0" y1="278.0" x2="606.0" y2="278.0" stroke="#d07a12" stroke-width="3" />
+<text x="548.0" y="300.0" font-size="13.5" fill="#d07a12" text-anchor="middle" direction="rtl" font-weight="bold" >כתום</text>
+<text x="548.0" y="318.0" font-size="12" fill="#9aa0a9" text-anchor="middle" direction="rtl" font-weight="normal" >פסגות בלבד</text>
+<line x1="610.0" y1="278.0" x2="726.0" y2="278.0" stroke="#d93434" stroke-width="3" />
+<text x="668.0" y="300.0" font-size="13.5" fill="#d93434" text-anchor="middle" direction="rtl" font-weight="bold" >אדום ✗</text>
+<text x="668.0" y="318.0" font-size="12" fill="#9aa0a9" text-anchor="middle" direction="rtl" font-weight="normal" >אסור!</text>
+<path d="M466.0,174 L484.0,174 L475.0,190 Z" fill="#858b95"/>
+<text x="475.0" y="168.0" font-size="12.5" fill="#858b95" text-anchor="middle" direction="rtl" font-weight="bold" >יעד: פסגות של הדרופ</text>
+<rect x="20.0" y="350.0" width="760.0" height="34.0" rx="10" fill="#7f7f7f" fill-opacity="0.12"/>
+<text x="400.0" y="372.0" font-size="13.5" fill="#858b95" text-anchor="middle" direction="rtl" font-weight="bold" >רוצים יותר חזק? מגבירים רמקולים / מגבר — לא דוחפים את ה-Master לאדום</text>
+</svg>

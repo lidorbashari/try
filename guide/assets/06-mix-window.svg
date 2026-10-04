@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" width="800" height="360" role="img" aria-labelledby="t d" font-family="Heebo, Rubik, Arial, sans-serif">
+<title id="t">חלון המעבר</title>
+<desc id="d">האאוטרו של שיר A (32 תיבות) חופף לאינטרו של שיר B (32 תיבות). B מתחיל ב-Hot Cue A כש-A מגיע ל-Hot Cue G; בתיבה 17 הבאסים מתחלפים.</desc>
+<rect x="1" y="1" width="798" height="358" rx="16" fill="#7f7f7f" fill-opacity="0.07" stroke="#7f7f7f" stroke-opacity="0.28"/>
+<text x="400.0" y="34.0" font-size="20" fill="#858b95" text-anchor="middle" direction="rtl" font-weight="bold" >חלון המעבר — פרייז מול פרייז</text>
+<text x="40.0" y="123.0" font-size="18" fill="#3d7ff0" text-anchor="middle" font-weight="bold" >A</text>
+<text x="40.0" y="227.0" font-size="18" fill="#e07a1b" text-anchor="middle" font-weight="bold" >B</text>
+<rect x="60.0" y="92.0" width="168.0" height="50.0" rx="6" fill="#cf3434" />
+<text x="145.0" y="123.0" font-size="14" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >דרופ</text>
+<rect x="230.0" y="92.0" width="168.0" height="50.0" rx="6" fill="#3a5fe0" />
+<text x="315.0" y="114.0" font-size="13" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >אאוטרו — עם באס</text>
+<rect x="400.0" y="92.0" width="168.0" height="50.0" rx="6" fill="#3a5fe0" fill-opacity="0.6"/>
+<text x="485.0" y="114.0" font-size="13" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >אאוטרו — תופים בלבד</text>
+<rect x="230.0" y="196.0" width="168.0" height="50.0" rx="6" fill="#2e9e4f" fill-opacity="0.6"/>
+<text x="315.0" y="218.0" font-size="13" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >אינטרו — תופים בלבד</text>
+<rect x="400.0" y="196.0" width="168.0" height="50.0" rx="6" fill="#2e9e4f" />
+<text x="485.0" y="218.0" font-size="13" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >אינטרו — באס נכנס</text>
+<rect x="570.0" y="196.0" width="168.0" height="50.0" rx="6" fill="#1588b8" />
+<text x="655.0" y="227.0" font-size="14" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >גרוב</text>
+<rect x="230.0" y="70.0" width="340.0" height="184.0" rx="10" fill="none" stroke="#858b95" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="400.0" y="62.0" font-size="13" fill="#858b95" text-anchor="middle" direction="rtl" font-weight="bold" >חלון המעבר: 32 תיבות (≈ דקה ב-124 BPM)</text>
+<line x1="230.0" y1="86.0" x2="230.0" y2="264.0" stroke="#858b95" stroke-width="2" />
+<text x="230.0" y="280.0" font-size="12.5" fill="#858b95" text-anchor="middle" font-weight="bold" >1</text>
+<line x1="315.0" y1="86.0" x2="315.0" y2="264.0" stroke="#858b95" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="315.0" y="280.0" font-size="12.5" fill="#858b95" text-anchor="middle" font-weight="bold" >9</text>
+<line x1="400.0" y1="86.0" x2="400.0" y2="264.0" stroke="#858b95" stroke-width="2" />
+<text x="400.0" y="280.0" font-size="12.5" fill="#858b95" text-anchor="middle" font-weight="bold" >17</text>
+<line x1="485.0" y1="86.0" x2="485.0" y2="264.0" stroke="#858b95" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="485.0" y="280.0" font-size="12.5" fill="#858b95" text-anchor="middle" font-weight="bold" >25</text>
+<line x1="570.0" y1="86.0" x2="570.0" y2="264.0" stroke="#858b95" stroke-width="2" />
+<text x="570.0" y="280.0" font-size="12.5" fill="#858b95" text-anchor="middle" font-weight="bold" >33</text>
+<text x="145.0" y="280.0" font-size="12" fill="#9aa0a9" text-anchor="middle" direction="rtl" font-weight="normal" >תיבות מעבר ←</text>
+<rect x="229.0" y="148.0" width="22.0" height="22.0" rx="4" fill="#305AFF" />
+<text x="240.0" y="164.0" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold" >G</text>
+<rect x="229.0" y="168.0" width="22.0" height="22.0" rx="4" fill="#28E214" />
+<text x="240.0" y="184.0" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold" >A</text>
+<text x="222.0" y="164.0" font-size="12" fill="#858b95" text-anchor="start" direction="rtl" font-weight="bold" >Hot Cue G של A</text>
+<text x="222.0" y="184.0" font-size="12" fill="#858b95" text-anchor="start" direction="rtl" font-weight="bold" >Hot Cue A של B</text>
+<rect x="399.0" y="148.0" width="22.0" height="22.0" rx="4" fill="#8A2BE2" />
+<text x="410.0" y="164.0" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold" >H</text>
+<rect x="399.0" y="168.0" width="22.0" height="22.0" rx="4" fill="#10B1E6" />
+<text x="410.0" y="184.0" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold" >B</text>
+<text x="428.0" y="164.0" font-size="12" fill="#858b95" text-anchor="end" direction="rtl" font-weight="bold" >← הבאסים מתחלפים בתיבה 17</text>
+<rect x="20.0" y="310.0" width="760.0" height="34.0" rx="10" fill="#7f7f7f" fill-opacity="0.12"/>
+<text x="400.0" y="332.0" font-size="13" fill="#858b95" text-anchor="middle" direction="rtl" font-weight="bold" >מתחילים את B על ה-1 של האאוטרו של A · גבולות הפרייזים נופלים יחד · הזמן זורם משמאל לימין</text>
+</svg>

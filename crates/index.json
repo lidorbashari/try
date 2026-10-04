@@ -1,0 +1,274 @@
+[
+ {
+  "slug": "afro-house",
+  "title": "Afro House",
+  "title_he": "אפרו-האוס",
+  "genres": [
+   "afro_house",
+   "organic_house",
+   "amapiano"
+  ],
+  "count": 39,
+  "verified": 38,
+  "bpm_min": 105.0,
+  "bpm_max": 126.0,
+  "file_csv": "crates/afro-house.csv",
+  "file_md": "crates/afro-house.md"
+ },
+ {
+  "slug": "afrobeats",
+  "title": "Afrobeats & Amapiano Pop",
+  "title_he": "אפרוביטס ואמפיאנו-פופ",
+  "genres": [
+   "afrobeats",
+   "amapiano"
+  ],
+  "count": 34,
+  "verified": 11,
+  "bpm_min": 92.0,
+  "bpm_max": 108.0,
+  "file_csv": "crates/afrobeats.csv",
+  "file_md": "crates/afrobeats.md"
+ },
+ {
+  "slug": "bass-music",
+  "title": "Bass Music: DnB, Dubstep, UK Garage, Breaks",
+  "title_he": "מוזיקת בס: דראם אנד בס, דאבסטפ, UK גראז', ברייקס",
+  "genres": [
+   "drum_and_bass",
+   "dubstep",
+   "uk_garage",
+   "breaks"
+  ],
+  "count": 54,
+  "verified": 51,
+  "bpm_min": 109.0,
+  "bpm_max": 180.0,
+  "file_csv": "crates/bass-music.csv",
+  "file_md": "crates/bass-music.md"
+ },
+ {
+  "slug": "deep-house",
+  "title": "Deep House",
+  "title_he": "דיפ-האוס",
+  "genres": [
+   "deep_house"
+  ],
+  "count": 30,
+  "verified": 22,
+  "bpm_min": 115.0,
+  "bpm_max": 132.0,
+  "file_csv": "crates/deep-house.csv",
+  "file_md": "crates/deep-house.md"
+ },
+ {
+  "slug": "edm-festival",
+  "title": "EDM & Festival Anthems",
+  "title_he": "EDM והמנוני פסטיבלים",
+  "genres": [
+   "big_room",
+   "house",
+   "tech_house"
+  ],
+  "count": 45,
+  "verified": 41,
+  "bpm_min": 100.0,
+  "bpm_max": 143.0,
+  "file_csv": "crates/edm-festival.csv",
+  "file_md": "crates/edm-festival.md"
+ },
+ {
+  "slug": "hip-hop-rnb",
+  "title": "Hip-Hop & R&B",
+  "title_he": "היפ-הופ ו-R&B",
+  "genres": [
+   "hip_hop"
+  ],
+  "count": 44,
+  "verified": 33,
+  "bpm_min": 77.0,
+  "bpm_max": 174.0,
+  "file_csv": "crates/hip-hop-rnb.csv",
+  "file_md": "crates/hip-hop-rnb.md"
+ },
+ {
+  "slug": "house",
+  "title": "House",
+  "title_he": "האוס",
+  "genres": [
+   "house",
+   "funky_house",
+   "nu_disco"
+  ],
+  "count": 43,
+  "verified": 38,
+  "bpm_min": 118.0,
+  "bpm_max": 130.0,
+  "file_csv": "crates/house.csv",
+  "file_md": "crates/house.md"
+ },
+ {
+  "slug": "israeli-party",
+  "title": "Israeli Party Hits",
+  "title_he": "להיטי מסיבות ישראליים",
+  "genres": [
+   "mediterranean",
+   "pop_dance"
+  ],
+  "count": 48,
+  "verified": 40,
+  "bpm_min": 90.0,
+  "bpm_max": 140.0,
+  "file_csv": "crates/israeli-party.csv",
+  "file_md": "crates/israeli-party.md"
+ },
+ {
+  "slug": "latin-reggaeton",
+  "title": "Latin & Reggaeton",
+  "title_he": "לטיני ורגאטון",
+  "genres": [
+   "reggaeton",
+   "moombahton"
+  ],
+  "count": 45,
+  "verified": 36,
+  "bpm_min": 88.0,
+  "bpm_max": 136.0,
+  "file_csv": "crates/latin-reggaeton.csv",
+  "file_md": "crates/latin-reggaeton.md"
+ },
+ {
+  "slug": "mediterranean",
+  "title": "Mediterranean & Oriental",
+  "title_he": "ים-תיכוני ומזרחי",
+  "genres": [
+   "mediterranean"
+  ],
+  "count": 36,
+  "verified": 24,
+  "bpm_min": 80.0,
+  "bpm_max": 155.0,
+  "file_csv": "crates/mediterranean.csv",
+  "file_md": "crates/mediterranean.md"
+ },
+ {
+  "slug": "melodic-techno",
+  "title": "Melodic Techno & Progressive",
+  "title_he": "מלודיק טכנו ופרוגרסיב",
+  "genres": [
+   "melodic_techno",
+   "progressive_house",
+   "indie_dance"
+  ],
+  "count": 36,
+  "verified": 34,
+  "bpm_min": 118.0,
+  "bpm_max": 128.0,
+  "file_csv": "crates/melodic-techno.csv",
+  "file_md": "crates/melodic-techno.md"
+ },
+ {
+  "slug": "pop-dance",
+  "title": "Pop Dance & Club Hits",
+  "title_he": "פופ-דאנס ולהיטי מועדונים",
+  "genres": [
+   "pop_dance",
+   "house",
+   "nu_disco"
+  ],
+  "count": 44,
+  "verified": 37,
+  "bpm_min": 90.0,
+  "bpm_max": 174.0,
+  "file_csv": "crates/pop-dance.csv",
+  "file_md": "crates/pop-dance.md"
+ },
+ {
+  "slug": "psytrance",
+  "title": "Psytrance",
+  "title_he": "סאי-טראנס",
+  "genres": [
+   "psytrance"
+  ],
+  "count": 43,
+  "verified": 39,
+  "bpm_min": 91.0,
+  "bpm_max": 160.0,
+  "file_csv": "crates/psytrance.csv",
+  "file_md": "crates/psytrance.md"
+ },
+ {
+  "slug": "tech-house",
+  "title": "Tech House",
+  "title_he": "טק-האוס",
+  "genres": [
+   "tech_house"
+  ],
+  "count": 30,
+  "verified": 23,
+  "bpm_min": 124.0,
+  "bpm_max": 130.0,
+  "file_csv": "crates/tech-house.csv",
+  "file_md": "crates/tech-house.md"
+ },
+ {
+  "slug": "techno",
+  "title": "Techno",
+  "title_he": "טכנו",
+  "genres": [
+   "techno",
+   "hard_techno"
+  ],
+  "count": 37,
+  "verified": 37,
+  "bpm_min": 122.0,
+  "bpm_max": 153.0,
+  "file_csv": "crates/techno.csv",
+  "file_md": "crates/techno.md"
+ },
+ {
+  "slug": "throwbacks",
+  "title": "Throwbacks: Disco, 80s, 90s & 2000s",
+  "title_he": "ת׳רובקים: דיסקו, 80, 90 ו-2000",
+  "genres": [
+   "nu_disco",
+   "pop_dance",
+   "house"
+  ],
+  "count": 45,
+  "verified": 40,
+  "bpm_min": 80.0,
+  "bpm_max": 148.0,
+  "file_csv": "crates/throwbacks.csv",
+  "file_md": "crates/throwbacks.md"
+ },
+ {
+  "slug": "trance",
+  "title": "Trance",
+  "title_he": "טראנס",
+  "genres": [
+   "trance"
+  ],
+  "count": 34,
+  "verified": 32,
+  "bpm_min": 127.0,
+  "bpm_max": 140.0,
+  "file_csv": "crates/trance.csv",
+  "file_md": "crates/trance.md"
+ },
+ {
+  "slug": "wedding-essentials",
+  "title": "Israeli Wedding Essentials",
+  "title_he": "חתונה ישראלית — הארגז החיוני",
+  "genres": [
+   "mediterranean",
+   "pop_dance"
+  ],
+  "count": 38,
+  "verified": 28,
+  "bpm_min": 74.0,
+  "bpm_max": 155.0,
+  "file_csv": "crates/wedding-essentials.csv",
+  "file_md": "crates/wedding-essentials.md"
+ }
+]

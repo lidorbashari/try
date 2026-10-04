@@ -3,7 +3,7 @@ slug: israeli-party
 title: "Israeli Party Hits"
 title_he: "להיטי מסיבות ישראליים"
 genres: ["mediterranean", "pop_dance"]
-count: 42
+count: 48
 ---
 
 # ארגז: להיטי מסיבות ישראליים (`Israeli Party Hits`)
@@ -24,7 +24,7 @@ count: 42
 
 ## הטראקים
 
-סה"כ 42 טראקים · 36 מאומתים במלואם · 6 מאומתים חלקית · 0 לא אומתו.
+סה"כ 48 טראקים · 40 מאומתים במלואם · 8 מאומתים חלקית · 0 לא אומתו.
 
 > **מקרא עמודת אימות:** ✔ = `BPM` ומפתח אומתו ממקור אמין (`Tunebat` / `SongBPM` / `Musicstax`, או נתוני ניתוח האודיו של `Spotify` שעליהם הם מבוססים); ≈ = אומת חלקית (בדרך כלל רק ה-`BPM`, או שהמקורות חלוקים על המפתח); ? = לא אומת — השדות נשארו ריקים במכוון ולא נוחשו. **אחרי קנייה הריצו `Analyze` ב-`Rekordbox` ובדקו את ה-`Beat Grid`.** גרסאות שונות (`Radio Edit`, `Extended`, לייב, רמיקס) יכולות להיות בטמפו/מפתח אחרים — קנו את ה-`Mix` שבטבלה.
 
@@ -36,8 +36,8 @@ count: 42
 | 2 | Omer Adam | בוקרשט | Original | 2015 | 130 | `Cm` | `5A` | 8 | שיא | ✔ | תעתיק: Bucharest · מתוך האלבום 'מודה אני' |
 | 3 | Omer Adam, Moshe Peretz | היא רק רוצה לרקוד | Original | 2015 | 130 | `Bm` | `10A` | 8 | שיא | ✔ | תעתיק: Hi Rak Rotza Lirkod · דואט שעובד מצוין בבלוק של 130 |
 | 4 | Moshe Peretz, Omer Adam | Hopa / Ein Kamoch / Tel Aviv | Live | — | 130 | `Bbm` | `3A` | 9 | שיא | ✔ | מחרוזת חיה (הופה / אין כמוך / תל אביב) · גרסת לייב — שימו לב לטמפו פחות יציב |
-| 5 | Omer Adam | שני משוגעים | Original | — | 117 | `Bm` | `10A` | 7 | בנייה | ✔ | תעתיק: Shnei Meshugaim · אפשר גם בחצי טמפו (59); שנת יציאה לא אומתה |
-| 6 | Omer Adam | יעשו לנו כבוד | Original | — | 130 | `B` | `1B` | 8 | שיא | ✔ | תעתיק: Ya'asu Lanu Kavod · שנת יציאה לא אומתה |
+| 5 | Omer Adam | שני משוגעים | Original | 2020 | 117 | `Bm` | `10A` | 7 | בנייה | ✔ | תעתיק: Shnei Meshugaim · אפשר גם בחצי טמפו (59); מאומת גם מול נתוני Spotify |
+| 6 | Omer Adam | יעשו לנו כבוד | Original | 2019 | 130 | `B` | `1B` | 8 | שיא | ✔ | תעתיק: Ya'asu Lanu Kavod · מאומת גם מול נתוני Spotify |
 | 7 | Omer Adam | עקבים וג'ינס | Original | — | 128 | `Abm` | `1A` | 7 | בנייה | ✔ | תעתיק: Akevim Ve'jeans · שנת יציאה לא אומתה |
 | 8 | Omer Adam | גברת אגו | Original | — | 136 | `B` | `1B` | 8 | שיא | ≈ | תעתיק: Gveret Ego · BPM אומת, המוד (מז'ור/מינור) לא הוצג במקור — בדקו ב-Rekordbox |
 
@@ -50,8 +50,8 @@ count: 42
 | 11 | Static & Ben El | Barbie | Original | 2015 | 97 | `Am` | `8A` | 6 | בנייה | ✔ | שם רשמי בלועזית (ברבי) |
 | 12 | Static & Ben El | Hakol Letova | Original | 2017 | 90 | `Cm` | `5A` | 6 | חימום | ✔ | שם רשמי בלועזית (הכל לטובה) |
 | 13 | Static & Ben El, Pitbull | Further Up (Na, Na, Na, Na, Na) | Original | 2020 | 100 | `F#` | `2B` | 8 | שיא | ✔ | באנגלית; גרסה ספרדית בשם Subelo |
-| 14 | Static & Ben El | Zahav | Original | — | 100 | `F#` | `2B` | 7 | בנייה | ✔ | שם רשמי בלועזית (זהב) · שנת יציאה לא אומתה |
-| 15 | Static & Ben El, Black Eyed Peas | Shake Ya Boom Boom | Original | — | 105 | `Db` | `3B` | 7 | בנייה | ✔ | באנגלית · שנת יציאה לא אומתה |
+| 14 | Static & Ben El | Zahav | Original | 2017 | 100 | `F#` | `2B` | 7 | בנייה | ≈ | שם רשמי בלועזית (זהב) · המקורות חלוקים על ה-BPM (Tunebat 100 מול Spotify 140) — בדקו |
+| 15 | Static & Ben El, Black Eyed Peas | Shake Ya Boom Boom | Original | 2020 | 105 | `Db` | `3B` | 7 | בנייה | ✔ | באנגלית · מאומת גם מול נתוני Spotify |
 
 ### אירוויזיון ופופ
 
@@ -69,18 +69,18 @@ count: 42
 | # | אמן | שם | מיקס | שנה | BPM | מפתח | Camelot | אנרגיה | תפקיד | אומת | הערות |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | 22 | Eden Ben Zaken | חמסה | Original | 2023 | 124 | `D` | `10B` | 8 | שיא | ✔ | תעתיק: Hamsa · קצר (2:17) — טוב לקאט מהיר |
-| 23 | Eden Ben Zaken | שיכורים מאהבה | Original | — | 128 | `Gm` | `6A` | 8 | שיא | ✔ | תעתיק: Shikorim Me'ahava · שנת יציאה לא אומתה |
+| 23 | Eden Ben Zaken | שיכורים מאהבה | Original | 2015 | 128 | `Gm` | `6A` | 8 | שיא | ✔ | תעתיק: Shikorim Me'ahava · מאומת גם מול נתוני Spotify |
 | 24 | Eden Ben Zaken | בסיבוב הבא | Original | — | 140 | `Gm` | `6A` | 8 | שיא | ✔ | תעתיק: Ba'sivuv Haba · שנת יציאה לא אומתה |
-| 25 | Eden Ben Zaken | הגענו הבנות | Original | — | 108 | `A` | `11B` | 7 | בנייה | ✔ | תעתיק: Higanu Ha'banot · שנת יציאה לא אומתה |
-| 26 | Eden Ben Zaken | אגרוף | Original | — | 120 | `Ab` | `4B` | 7 | בנייה | ✔ | תעתיק: Egrof · שנת יציאה לא אומתה |
+| 25 | Eden Ben Zaken | הגענו הבנות | Original | 2021 | 108 | `A` | `11B` | 7 | בנייה | ≈ | תעתיק: Higanu Ha'banot · המקורות חלוקים על ה-BPM (108 מול 75) — בדקו ב-Rekordbox |
+| 26 | Eden Ben Zaken | אגרוף | Original | 2019 | 120 | `Ab` | `4B` | 7 | בנייה | ≈ | תעתיק: Egrof · Tunebat: Ab, Spotify: Fm — מז'ור/מינור יחסיים (אותו מספר Camelot 4) |
 
 ### מזרחית-פופ למסיבה
 
 | # | אמן | שם | מיקס | שנה | BPM | מפתח | Camelot | אנרגיה | תפקיד | אומת | הערות |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 27 | Lior Narkis, Moshe Peretz | מול כל העולם | Original | — | 135 | `Ebm` | `2A` | 8 | שיא | ✔ | תעתיק: Mul Kol Ha'olam · שנת יציאה לא אומתה |
+| 27 | Lior Narkis, Moshe Peretz | מול כל העולם | Original | 2013 | 135 | `Ebm` | `2A` | 8 | שיא | ✔ | תעתיק: Mul Kol Ha'olam · מאומת גם מול נתוני Spotify |
 | 28 | Narkis, Sharon Yosefov | הולכת איתך | DJ Sharon Yosefov Official Remix | — | 130 | `F#m` | `11A` | 8 | שיא | ✔ | תעתיק: Holechet Itach · רמיקס מועדונים רשמי |
-| 29 | Sarit Hadad | קצת משוגעת | Original | — | 123 | `F#m` | `11A` | 7 | בנייה | ✔ | תעתיק: Ktzat Meshuga'at · שנת יציאה לא אומתה |
+| 29 | Sarit Hadad | קצת משוגעת | Original | 2003 | 123 | `F#m` | `11A` | 7 | בנייה | ✔ | תעתיק: Ktzat Meshuga'at · מאומת גם מול נתוני Spotify |
 | 30 | Sarit Hadad, Arisa | קרקס | Original | — | 128 | `B` | `1B` | 8 | שיא | ✔ | תעתיק: Kirkas · שנת יציאה לא אומתה |
 | 31 | Sarit Hadad | Shir Ha'frecha (Bimbo's Song) | Original | — | 132 | `A` | `11B` | 7 | שיא | ≈ | שיר הפרחה · BPM אומת; המוד לא הוצג במקור |
 | 32 | Stephane Legar | Vida Loca | Original | 2020 | 130 | `Db` | `3B` | 8 | שיא | ✔ | בשילוב ספרדית/עברית |
@@ -91,9 +91,15 @@ count: 42
 | 37 | Dudu Aharon | Al Tisgeri Li Tadelet | Original | — | 100 | `Em` | `9A` | 6 | חימום | ✔ | אל תסגרי לי ת'דלת · שנת יציאה לא אומתה |
 | 38 | Eyal Golan | עם ישראל חי | Original | — | 105 | `F` | `7B` | 7 | המנון | ✔ | תעתיק: Am Yisrael Chai · שירה בציבור; אפשר בחצי טמפו (53) |
 | 39 | Nasrin Kadri | רוצי עם הלב | Original | — | 124 | `A` | `11B` | 7 | בנייה | ≈ | תעתיק: Rutzi Im Ha'lev · BPM אומת; המוד לא הוצג במקור |
-| 40 | Eden Hason | את חסרה לי | Original | — | 130 | `E` | `12B` | 7 | בנייה | ≈ | תעתיק: At Chasera Li · BPM אומת; המוד לא הוצג במקור |
+| 40 | Eden Hason | את חסרה לי | Original | 2020 | 130 | `Em` | `9A` | 7 | בנייה | ✔ | תעתיק: At Chasera Li · מאומת גם מול נתוני Spotify |
 | 41 | Itay Levi | 12 בלילה | Original | — | 127 | `Db` | `3B` | 7 | בנייה | ≈ | תעתיק: 12 Ba'layla · BPM אומת; המוד לא הוצג במקור |
 | 42 | Sarit Hadad | Haim Shelcha | Original | — | 140 | `Am` | `8A` | 8 | שיא | ✔ | חיים שלך · שנת יציאה לא אומתה |
+| 43 | Moshe Peretz, Nasrin Kadri | היינו שניים | Original | 2018 | 123 | `Dm` | `7A` | 7 | בנייה | ✔ | תעתיק: Hayinu Shnayim · Spotify |
+| 44 | Itay Levi, Stephane Legar | רק בנות | Original | 2020 | 126 | `Bbm` | `3A` | 8 | שיא | ✔ | תעתיק: Rak Banot · Spotify |
+| 45 | Itay Levi | רוקדים עם הדמעות | Original | 2020 | 138 | `Db` | `3B` | 8 | שיא | ✔ | תעתיק: Rokdim Im Ha'dma'ot · Spotify |
+| 46 | Noa Kirel, Mergui | אמבולנס | Original | 2020 | 124 | `C` | `8B` | 8 | שיא | ✔ | תעתיק: Ambulance · Spotify |
+| 47 | Eden Ben Zaken, Peer Tasi | כל העיר שלנו | Original | 2016 | 128 | `F` | `7B` | 8 | שיא | ✔ | תעתיק: Kol Ha'ir Shelanu · Spotify |
+| 48 | Mergui | לא יוצא למסיבות | Original | 2020 | 118 | `C` | `8B` | 7 | בנייה | ✔ | תעתיק: Lo Yotze La'mesibot · Spotify |
 
 ## מעברים מומלצים בתוך הארגז
 
@@ -105,7 +111,7 @@ count: 42
 6. **Omer Adam – בוקרשט ← Eden Ben Zaken – שיכורים מאהבה** — `5A` ← `6A` (+1 = עליית אנרגיה), `130` ← `128`.
 7. **Moshe Peretz & Omer Adam – Hopa / Ein Kamoch / Tel Aviv ← Stephane Legar – Vida Loca** — `3A` ← `3B` (מז'ור יחסי), שניהם `130`.
 8. **Static & Ben El – Silsulim ← Noa Kirel & Agam Buhbut – אצל הדודה והדוד** — שניהם `11A`; עלייה מ-`95` ל-`103` — קאט על פזמון או `Tempo` הדרגתי.
-9. **Static & Ben El x Pitbull – Further Up ← Static & Ben El – Zahav** — שניהם `100` ו-`2B`: בלנד קל לבלוק הרגאטון.
+9. **Static & Ben El x Pitbull – Further Up ← Static & Ben El – Zahav** — שניהם `2B` (F#); ה-`BPM` של `Zahav` שנוי במחלוקת (100/140) — בדקו את ה-`Beat Grid` לפני בלנד.
 10. **Omer Adam & Moshe Peretz – היא רק רוצה לרקוד ← Osher Cohen – בסוף נרקוד** — שניהם `10A`; `130` ← `125` (או ← `חמסה` של עדן בן זקן, `10B`, `124`).
 
 ## איפה לקנות ולהזרים חוקית

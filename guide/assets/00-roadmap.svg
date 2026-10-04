@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400" role="img" aria-labelledby="t d" font-family="Heebo, Rubik, Arial, sans-serif">
+<title id="t">מפת הדרכים של DJ Lab</title>
+<desc id="d">ארבעה חלקים: יסודות (פרקים 0-5), מיקס ראשון (6-9), האמנות (10-13), לעולם האמיתי (14-19).</desc>
+<rect x="1" y="1" width="798" height="398" rx="16" fill="#7f7f7f" fill-opacity="0.07" stroke="#7f7f7f" stroke-opacity="0.28"/>
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#858b95"/></marker>
+</defs>
+<text x="400.0" y="38.0" font-size="22" fill="#858b95" text-anchor="middle" direction="rtl" font-weight="bold" >מפת הדרכים של DJ Lab</text>
+<text x="400.0" y="62.0" font-size="13" fill="#9aa0a9" text-anchor="middle" direction="rtl" font-weight="normal" >ארבעה חלקים, עשרים פרקים — קוראים מימין לשמאל</text>
+<rect x="605.0" y="86.0" width="175.0" height="270.0" rx="14" fill="#2e9e4f" />
+<text x="692.5" y="114.0" font-size="15" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >חלק א&#x27;</text>
+<text x="692.5" y="136.0" font-size="17" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >היסודות</text>
+<rect x="617.0" y="146.0" width="151.0" height="1.5" rx="0" fill="#ffffff" fill-opacity="0.5"/>
+<text x="766.0" y="172.0" font-size="13.5" fill="#ffffff" text-anchor="start" direction="rtl" font-weight="normal" >0 · ברוכים הבאים</text>
+<text x="766.0" y="198.0" font-size="13.5" fill="#ffffff" text-anchor="start" direction="rtl" font-weight="normal" >1 · ציוד</text>
+<text x="766.0" y="224.0" font-size="13.5" fill="#ffffff" text-anchor="start" direction="rtl" font-weight="normal" >2 · יסודות Rekordbox</text>
+<text x="766.0" y="250.0" font-size="13.5" fill="#ffffff" text-anchor="start" direction="rtl" font-weight="normal" >3 · מבנה מוזיקלי</text>
+<text x="766.0" y="276.0" font-size="13.5" fill="#ffffff" text-anchor="start" direction="rtl" font-weight="normal" >4 · BPM וביטמאצ&#x27;ינג</text>
+<text x="766.0" y="302.0" font-size="13.5" fill="#ffffff" text-anchor="start" direction="rtl" font-weight="normal" >5 · מיקסר ו-EQ</text>
+<rect x="617.0" y="322.0" width="151.0" height="24.0" rx="12" fill="#ffffff" fill-opacity="0.22"/>
+<text x="692.5" y="339.0" font-size="12.5" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >שבועות 1–2</text>
+<line x1="603.0" y1="221.0" x2="587.0" y2="221.0" stroke="#858b95" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="410.0" y="86.0" width="175.0" height="270.0" rx="14" fill="#1588b8" />
+<text x="497.5" y="114.0" font-size="15" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >חלק ב&#x27;</text>
+<text x="497.5" y="136.0" font-size="17" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >המיקס הראשון</text>
+<rect x="422.0" y="146.0" width="151.0" height="1.5" rx="0" fill="#ffffff" fill-opacity="0.5"/>
+<text x="571.0" y="172.0" font-size="13.5" fill="#ffffff" text-anchor="start" direction="rtl" font-weight="normal" >6 · מעברים ראשונים</text>
+<text x="571.0" y="198.0" font-size="13.5" fill="#ffffff" text-anchor="start" direction="rtl" font-weight="normal" >7 · Hot Cues ולופים</text>
+<text x="571.0" y="224.0" font-size="13.5" fill="#ffffff" text-anchor="start" direction="rtl" font-weight="normal" >8 · אוזניות וקיואינג</text>
+<text x="571.0" y="250.0" font-size="13.5" fill="#ffffff" text-anchor="start" direction="rtl" font-weight="normal" >9 · הכנת ספרייה</text>
+<rect x="422.0" y="322.0" width="151.0" height="24.0" rx="12" fill="#ffffff" fill-opacity="0.22"/>
+<text x="497.5" y="339.0" font-size="12.5" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >שבועות 3–4</text>
+<line x1="408.0" y1="221.0" x2="392.0" y2="221.0" stroke="#858b95" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="215.0" y="86.0" width="175.0" height="270.0" rx="14" fill="#d2621f" />
+<text x="302.5" y="114.0" font-size="15" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >חלק ג&#x27;</text>
+<text x="302.5" y="136.0" font-size="17" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >האמנות</text>
+<rect x="227.0" y="146.0" width="151.0" height="1.5" rx="0" fill="#ffffff" fill-opacity="0.5"/>
+<text x="376.0" y="172.0" font-size="13.5" fill="#ffffff" text-anchor="start" direction="rtl" font-weight="normal" >10 · מיקס הרמוני</text>
+<text x="376.0" y="198.0" font-size="13.5" fill="#ffffff" text-anchor="start" direction="rtl" font-weight="normal" >11 · אפקטים</text>
+<text x="376.0" y="224.0" font-size="13.5" fill="#ffffff" text-anchor="start" direction="rtl" font-weight="normal" >12 · בניית סט</text>
+<text x="376.0" y="250.0" font-size="13.5" fill="#ffffff" text-anchor="start" direction="rtl" font-weight="normal" >13 · תנ&quot;ך הז&#x27;אנרים</text>
+<rect x="227.0" y="322.0" width="151.0" height="24.0" rx="12" fill="#ffffff" fill-opacity="0.22"/>
+<text x="302.5" y="339.0" font-size="12.5" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >חודש 2</text>
+<line x1="213.0" y1="221.0" x2="197.0" y2="221.0" stroke="#858b95" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="20.0" y="86.0" width="175.0" height="270.0" rx="14" fill="#7d43c9" />
+<text x="107.5" y="114.0" font-size="15" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >חלק ד&#x27;</text>
+<text x="107.5" y="136.0" font-size="17" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >לעולם האמיתי</text>
+<rect x="32.0" y="146.0" width="151.0" height="1.5" rx="0" fill="#ffffff" fill-opacity="0.5"/>
+<text x="181.0" y="172.0" font-size="13.5" fill="#ffffff" text-anchor="start" direction="rtl" font-weight="normal" >14 · אירועים וחתונות</text>
+<text x="181.0" y="198.0" font-size="13.5" fill="#ffffff" text-anchor="start" direction="rtl" font-weight="normal" >15 · מעברי טמפו</text>
+<text x="181.0" y="224.0" font-size="13.5" fill="#ffffff" text-anchor="start" direction="rtl" font-weight="normal" >16 · הקלטה ושיתוף</text>
+<text x="181.0" y="250.0" font-size="13.5" fill="#ffffff" text-anchor="start" direction="rtl" font-weight="normal" >17 · שמיעה והופעה</text>
+<text x="181.0" y="276.0" font-size="13.5" fill="#ffffff" text-anchor="start" direction="rtl" font-weight="normal" >18 · קריירה</text>
+<text x="181.0" y="302.0" font-size="13.5" fill="#ffffff" text-anchor="start" direction="rtl" font-weight="normal" >19 · תוכנית 30 יום</text>
+<rect x="32.0" y="322.0" width="151.0" height="24.0" rx="12" fill="#ffffff" fill-opacity="0.22"/>
+<text x="107.5" y="339.0" font-size="12.5" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >חודש 3 והלאה</text>
+<rect x="630.0" y="368.0" width="150.0" height="26.0" rx="13" fill="#7f7f7f" fill-opacity="0.18"/>
+<text x="705.0" y="386.0" font-size="13" fill="#858b95" text-anchor="middle" direction="rtl" font-weight="bold" >📍 אתם כאן: פרק 0</text>
+<text x="220.0" y="386.0" font-size="12.5" fill="#9aa0a9" text-anchor="middle" direction="rtl" font-weight="normal" >מילון מונחים ושאלות נפוצות — לאורך כל הדרך</text>
+</svg>

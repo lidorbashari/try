@@ -3,7 +3,7 @@ slug: mediterranean
 title: "Mediterranean & Oriental"
 title_he: "ים-תיכוני ומזרחי"
 genres: ["mediterranean"]
-count: 30
+count: 36
 ---
 
 # ארגז: ים-תיכוני ומזרחי (`Mediterranean & Oriental`)
@@ -23,7 +23,7 @@ count: 30
 
 ## הטראקים
 
-סה"כ 30 טראקים · 14 מאומתים במלואם · 7 מאומתים חלקית · 9 לא אומתו.
+סה"כ 36 טראקים · 24 מאומתים במלואם · 10 מאומתים חלקית · 2 לא אומתו.
 
 > **מקרא עמודת אימות:** ✔ = `BPM` ומפתח אומתו ממקור אמין (`Tunebat` / `SongBPM` / `Musicstax`, או נתוני ניתוח האודיו של `Spotify` שעליהם הם מבוססים); ≈ = אומת חלקית (בדרך כלל רק ה-`BPM`, או שהמקורות חלוקים על המפתח); ? = לא אומת — השדות נשארו ריקים במכוון ולא נוחשו. **אחרי קנייה הריצו `Analyze` ב-`Rekordbox` ובדקו את ה-`Beat Grid`.** גרסאות שונות (`Radio Edit`, `Extended`, לייב, רמיקס) יכולות להיות בטמפו/מפתח אחרים — קנו את ה-`Mix` שבטבלה.
 
@@ -31,72 +31,79 @@ count: 30
 
 | # | אמן | שם | מיקס | שנה | BPM | מפתח | Camelot | אנרגיה | תפקיד | אומת | הערות |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | Zohar Argov | הפרח בגני | Original | 1982 | — | — | — | 5 | סגירה | ? | תעתיק: Ha'perach Be'gani · קלאסיקה מזרחית; טמפו חי ומשתנה — לא לביטמאץ', לנגן בקאט/פייד |
-| 2 | Haim Moshe | אהבת חיי | Original | — | — | — | — | 6 | המנון | ? | תעתיק: Ahavat Chayai · קלאסיקה לשירה בציבור; קיים ב-Tunebat אך הערכים לא נשלפו |
-| 3 | Eyal Golan, Zohar Argov | עוד דקה את נעלמת | Original | — | — | — | — | 5 | חימום | ? | תעתיק: Od Daka At Ne'elemet · דואט וירטואלי; קיים ב-Tunebat, ערכים לא נשלפו |
-| 4 | Eyal Golan | צליל מיתר | Original | — | 130 | — | — | 7 | המנון | ≈ | תעתיק: Tzlil Meitar · BPM אומת (130), מפתח לא הוצג — לנתח ב-Rekordbox |
+| 1 | Zohar Argov | הפרח בגני | Original | 1982 | 81 | `Cm` | `5A` | 5 | סגירה | ✔ | תעתיק: Ha'perach Be'gani · קלאסיקה מזרחית בהקלטה חיה — הטמפו נושם; קאט/פייד, לא ביטמאץ' |
+| 2 | Haim Moshe | אהבת חיי | Original | 1988 | 155 | `Em` | `9A` | 6 | המנון | ≈ | תעתיק: Ahavat Chayai · Spotify מציין 155 — ייתכן שמורגש כ-77 (חצי); שירה בציבור |
+| 3 | Eyal Golan, Zohar Argov | עוד דקה את נעלמת | Original | 2018 | 98 | `Gm` | `6A` | 5 | חימום | ✔ | תעתיק: Od Daka At Ne'elemet · דואט וירטואלי (2018) |
+| 4 | Eyal Golan | צליל מיתר | Original | 2001 | 130 | `Dm` | `7A` | 7 | המנון | ✔ | תעתיק: Tzlil Meitar · מאומת גם מול נתוני Spotify |
 | 5 | Eyal Golan | דוניה | Original | — | 106 | `F` | `7B` | 7 | בנייה | ≈ | תעתיק: Dunya · BPM אומת; המוד לא הוצג |
 | 6 | Sarit Hadad | Shufuni | Original | — | 128 | — | — | 7 | שיא | ≈ | שופוני · BPM אומת, מפתח לא הוצג |
 | 7 | Dudu Aharon | Al Tisgeri Li Tadelet | Original | — | 100 | `Em` | `9A` | 6 | בנייה | ✔ | אל תסגרי לי ת'דלת · מזרחית-פופ |
 | 8 | Shlomi Shabat | מאריפוסה | Original | — | 106 | `G` | `9B` | 6 | חימום | ✔ | תעתיק: Mariposa · מזרחית-לטינית |
-| 9 | Maor Edri | אללה מעאק | Original | — | 108 | `C#m` | `12A` | 7 | בנייה | ≈ | תעתיק: Allah Ma'ak · קיימות כמה גרסאות לשיר — ודאו שזו גרסת מאור אדרי (108) |
+| 9 | Maor Edri | Allah Ma'ak | Original | 2018 | 100 | `Dm` | `7A` | 7 | בנייה | ≈ | אללה מעאק · Spotify: 100/Dm, Musicstax: 108/C#m — המקורות חלוקים, בדקו |
 | 10 | Nasrin Kadri | בנאדיק | Original | — | 140 | `Ab` | `4B` | 8 | שיא | ≈ | תעתיק: Banadik · BPM אומת; המוד לא הוצג; ערבית-עברית |
 | 11 | Nasrin Kadri | אהובי | Original | — | 109 | `C` | `8B` | 6 | בנייה | ≈ | תעתיק: Ahuvi · BPM אומת; המוד לא הוצג |
 | 12 | Sarit Hadad | Haim Shelcha | Original | — | 140 | `Am` | `8A` | 8 | שיא | ✔ | חיים שלך · מזרחית קצבית |
+| 13 | Eyal Golan, Zohar Argov | ים של דמעות | Original | 2018 | 92 | `Em` | `9A` | 6 | בנייה | ≈ | תעתיק: Yam Shel Dma'ot · Spotify מציין 183 — תוקן לחצי (92) |
 
 ### רמיקסים מזרחיים ופופ ים-תיכוני ישראלי
 
 | # | אמן | שם | מיקס | שנה | BPM | מפתח | Camelot | אנרגיה | תפקיד | אומת | הערות |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 13 | Eden Ben Zaken, Roni Meller | מועבט | Remix by Roni Meller | — | 138 | `G` | `9B` | 9 | שיא | ✔ | תעתיק: Mo'avat · רמיקס מזרחי-האוס למועדון |
-| 14 | Tamta, Stephane Legar | Yala | Original | — | 105 | `G` | `9B` | 7 | בנייה | ✔ | תמטה (יוון/קפריסין) + סטפן לגר — פופ ים-תיכוני |
-| 15 | Stephane Legar | Merci | Original | — | 108 | `C` | `8B` | 7 | בנייה | ✔ | צרפתית-עברית בניחוח ים-תיכוני |
+| 14 | Eden Ben Zaken, Roni Meller | מועבט | Remix by Roni Meller | — | 138 | `G` | `9B` | 9 | שיא | ✔ | תעתיק: Mo'avat · רמיקס מזרחי-האוס למועדון |
+| 15 | Tamta, Stephane Legar | Yala | Original | — | 105 | `G` | `9B` | 7 | בנייה | ✔ | תמטה (יוון/קפריסין) + סטפן לגר — פופ ים-תיכוני |
+| 16 | Stephane Legar | Merci | Original | — | 108 | `C` | `8B` | 7 | בנייה | ✔ | צרפתית-עברית בניחוח ים-תיכוני |
 
 ### ערבית וצפון אפריקה
 
 | # | אמן | שם | מיקס | שנה | BPM | מפתח | Camelot | אנרגיה | תפקיד | אומת | הערות |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 16 | Sting, Cheb Mami | Desert Rose | Original | 1999 | 112 | `Cm` | `5A` | 6 | חימום | ✔ | ראי/פופ — פתיחה מושלמת לבלוק מזרחי |
-| 17 | Amr Diab | Ya Agmal Eyoun | Remix | 2019 | 109 | `Fm` | `4A` | 7 | בנייה | ✔ | גרסת רמיקס (2019); המקור ותיק יותר |
-| 18 | Khaled | Aïcha | Original | 1996 | — | — | — | 6 | חימום | ? | ראי צרפתי-אלג'ירי · לא אומת בסשן — לנתח ב-Rekordbox |
-| 19 | Ofra Haza | Im Nin'alu | Original | 1984 | — | — | — | 6 | בנייה | ? | אם ננעלו · מתוך 'שירי תימן'; גרסאות רמיקס מאוחרות שונות בטמפו — בחרו גרסה ונתחו |
+| 17 | Sting, Cheb Mami | Desert Rose | Original | 1999 | 112 | `Cm` | `5A` | 6 | חימום | ✔ | ראי/פופ — פתיחה מושלמת לבלוק מזרחי |
+| 18 | Amr Diab | Ya Agmal Eyoun | Remix | 2019 | 109 | `Fm` | `4A` | 7 | בנייה | ✔ | גרסת רמיקס (2019); המקור ותיק יותר |
+| 19 | Khaled | Aïcha | Original | 1996 | 85 | `Gm` | `6A` | 6 | חימום | ≈ | ראי צרפתי-אלג'ירי · Spotify מציין 170 — תוקן לחצי (85) |
+| 20 | Ofra Haza | Im Nin'alu | Original | 1984 | — | — | — | 6 | בנייה | ? | אם ננעלו · מתוך 'שירי תימן'; גרסאות רמיקס מאוחרות שונות בטמפו — בחרו גרסה ונתחו |
+| 21 | Khaled | Didi | Original | 1992 | 99 | `Bbm` | `3A` | 7 | שיא | ✔ | ראי — קלאסיקה במסיבות |
 
 ### טורקית
 
 | # | אמן | שם | מיקס | שנה | BPM | מפתח | Camelot | אנרגיה | תפקיד | אומת | הערות |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 20 | Tarkan | Şımarık | Original | 1997 | — | — | — | 7 | שיא | ? | Kiss Kiss · קלאסיקה טורקית במסיבות; לא אומת בסשן |
-| 21 | Tarkan | Dudu | Original | 2003 | — | — | — | 7 | שיא | ? | קיים ב-Tunebat, ערכים לא נשלפו |
+| 22 | Tarkan | Şımarık | Original | 1997 | 97 | `G` | `9B` | 7 | שיא | ✔ | Kiss Kiss · קלאסיקה טורקית במסיבות |
+| 23 | Tarkan | Dudu | Original | 2003 | — | — | — | 7 | שיא | ? | קיים ב-Tunebat, ערכים לא נשלפו |
+| 24 | Tarkan | Kuzu Kuzu | Original | 2001 | 94 | `Em` | `9A` | 7 | בנייה | ✔ | טורקית |
 
 ### יוונית
 
 | # | אמן | שם | מיקס | שנה | BPM | מפתח | Camelot | אנרגיה | תפקיד | אומת | הערות |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 22 | Despina Vandi | Gia | Original | 2001 | — | — | — | 8 | שיא | ? | להיט יווני שמנוגן המון באירועים בישראל; לא אומת בסשן |
-| 23 | Mikis Theodorakis | Zorba's Dance (Sirtaki) | Original | 1964 | — | — | — | 7 | המנון | ? | זורבה — הטמפו מואץ לאורך השיר! אין ביטמאץ', רק קאט |
+| 25 | Despina Vandi | Gia | Original | 2001 | 130 | `Bbm` | `3A` | 8 | שיא | ✔ | להיט יווני שמנוגן המון באירועים בישראל |
+| 26 | Mikis Theodorakis | Zorba's Dance (Sirtaki) | Original | 1964 | 80 | `G` | `9B` | 7 | המנון | ≈ | זורבה — הטמפו מואץ לאורך השיר! ה-BPM הוא של הפתיחה; קאט בלבד |
 
-### קרוסאובר קיץ — לטיני ובלקני
+### קרוסאובר קיץ — ספרדי, לטיני ובלקני
 
 | # | אמן | שם | מיקס | שנה | BPM | מפתח | Camelot | אנרגיה | תפקיד | אומת | הערות |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 24 | Shakira | Whenever, Wherever | Original | 2001 | 108 | `C#m` | `12A` | 7 | בנייה | ✔ | חלילים ואווירה מזרחית |
-| 25 | Shakira, Wyclef Jean | Hips Don't Lie | Original | 2006 | 100 | `Bbm` | `3A` | 8 | שיא | ✔ | שירה בציבור |
-| 26 | Shakira | Waka Waka (This Time for Africa) | Original | 2010 | 127 | `Bm` | `10A` | 8 | שיא | ✔ | עובד מצוין בבלוק 125–130 |
-| 27 | Las Ketchup | The Ketchup Song (Hey Hah) | Original | 2002 | 92 | `Ebm` | `2A` | 7 | בנייה | ✔ | Aserejé · נתון מגרסת הצ'ארט; הגרסה הספרדית עשויה להיות שונה מעט |
-| 28 | Los del Rio | Macarena | Original | 1993 | 103 | `Ab` | `4B` | 7 | המנון | ✔ | הגרסה המקורית; ל-Bayside Boys Remix ערכים אחרים |
-| 29 | Edward Maya, Vika Jigulina | Stereo Love | Radio Edit | 2009 | 127 | `C#m` | `12A` | 7 | בנייה | ≈ | אקורדיון אזרי · מקורות חלוקים על המפתח (C#m מול A) — לבדוק |
-| 30 | Alexandra Stan | Mr. Saxobeat | Original | 2010 | 127 | `Bm` | `10A` | 8 | שיא | ✔ | סקסופון בלקני |
+| 27 | Gipsy Kings | Bamboléo | Original | 1987 | 120 | `F#m` | `11A` | 8 | שיא | ✔ | פלמנקו-פופ ספרדי |
+| 28 | Gipsy Kings | Volare (Nel Blu di Pinto di Blu) | Original | 1989 | 116 | `E` | `12B` | 7 | המנון | ✔ | שירה בציבור |
+| 29 | Gipsy Kings | Djobi, Djoba | Original | 1987 | 108 | `F` | `7B` | 7 | בנייה | ✔ | פלמנקו-פופ |
+| 30 | Shakira | Whenever, Wherever | Original | 2001 | 108 | `C#m` | `12A` | 7 | בנייה | ✔ | חלילים ואווירה מזרחית |
+| 31 | Shakira, Wyclef Jean | Hips Don't Lie | Original | 2006 | 100 | `Bbm` | `3A` | 8 | שיא | ✔ | שירה בציבור |
+| 32 | Shakira | Waka Waka (This Time for Africa) | Original | 2010 | 127 | `Bm` | `10A` | 8 | שיא | ✔ | עובד מצוין בבלוק 125–130 |
+| 33 | Las Ketchup | The Ketchup Song (Hey Hah) | Original | 2002 | 92 | `Ebm` | `2A` | 7 | בנייה | ✔ | Aserejé · נתון מגרסת הצ'ארט; הגרסה הספרדית עשויה להיות שונה מעט |
+| 34 | Los del Rio | Macarena | Original | 1993 | 103 | `Ab` | `4B` | 7 | המנון | ✔ | הגרסה המקורית; ל-Bayside Boys Remix ערכים אחרים |
+| 35 | Edward Maya, Vika Jigulina | Stereo Love | Radio Edit | 2009 | 127 | `C#m` | `12A` | 7 | בנייה | ≈ | אקורדיון אזרי · מקורות חלוקים על המפתח (C#m מול A) — לבדוק |
+| 36 | Alexandra Stan | Mr. Saxobeat | Original | 2010 | 127 | `Bm` | `10A` | 8 | שיא | ✔ | סקסופון בלקני |
 
 ## מעברים מומלצים בתוך הארגז
 
 1. **Sting & Cheb Mami – Desert Rose ← Amr Diab – Ya Agmal Eyoun (Remix)** — `5A` ← `4A` (−1 = מעבר רך), `112` ← `109`.
 2. **Tamta & Stephane Legar – Yala ← Shlomi Shabat – מאריפוסה** — שניהם `9B`, `105`←`106`: בלנד ארוך.
 3. **Dudu Aharon – Al Tisgeri Li Tadelet ← Tamta & Stephane Legar – Yala** — `9A` ← `9B` (מז'ור יחסי), `100` ← `105`.
-4. **Shakira – Whenever, Wherever ← Maor Edri – אללה מעאק** — שניהם `12A` ו-`108`: גשר מושלם מפופ בינלאומי למזרחית.
+4. **Shakira – Hips Don't Lie ← Khaled – Didi** — שניהם `3A` (Bbm) ו-`100/99`: גשר מושלם מפופ בינלאומי לראי.
 5. **Stephane Legar – Merci ← Nasrin Kadri – אהובי** — שניהם `8B` (C) ו-`108/109` (המוד של `אהובי` לא אומת — ≈).
 6. **Los del Rio – Macarena ← Amr Diab – Ya Agmal Eyoun (Remix)** — `4B` ← `4A` (מינור יחסי), `103` ← `109`.
 7. **Shakira – Waka Waka ← Alexandra Stan – Mr. Saxobeat** — שניהם `10A` ו-`127`: בלנד נקי בשיא.
-8. **Shakira – Hips Don't Lie ← Las Ketchup – The Ketchup Song** — `3A` ← `2A`, `100` ← `92`: קאט על סוף פזמון.
+8. **Gipsy Kings – Bamboléo ← Shakira – Waka Waka** — `11A` ← `10A` (−1), `120` ← `127`: עלייה לשיא הקיצי.
+9. **Zohar Argov – הפרח בגני ← Eyal Golan & Zohar Argov – עוד דקה את נעלמת** — `5A` ← `6A` (+1); טמפו חי — פייד על סוף שיר.
 
 ## איפה לקנות ולהזרים חוקית
 
