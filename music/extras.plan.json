@@ -1,0 +1,31 @@
+{
+ "practice": [
+  {"id":"practice-01","slug":"phrase-counter-124","bpm":124,"title":"Phrase Counter 124","title_he":"סופר הפרייזים 124","purpose_he":"ספירת תיבות ופרייזים: קראש בכל 8 תיבות, צליל 'פעמון' בכל 32 תיבות"},
+  {"id":"practice-02","slug":"drums-120","bpm":120,"title":"Beatmatch Drums 120","title_he":"תופים לביטמאצ'ינג 120","purpose_he":"לופ תופים נקי לתרגול ביטמאצ'ינג באוזן"},
+  {"id":"practice-03","slug":"drums-124","bpm":124,"title":"Beatmatch Drums 124","title_he":"תופים לביטמאצ'ינג 124","purpose_he":"לופ תופים נקי לתרגול ביטמאצ'ינג באוזן"},
+  {"id":"practice-04","slug":"drums-128","bpm":128,"title":"Beatmatch Drums 128","title_he":"תופים לביטמאצ'ינג 128","purpose_he":"לופ תופים נקי לתרגול ביטמאצ'ינג באוזן"},
+  {"id":"practice-05","slug":"drums-132","bpm":132,"title":"Beatmatch Drums 132","title_he":"תופים לביטמאצ'ינג 132","purpose_he":"לופ תופים נקי לתרגול ביטמאצ'ינג באוזן"},
+  {"id":"practice-06","slug":"odd-tempo-125_5","bpm":125.5,"title":"Odd Tempo 125.5","title_he":"טמפו עקום 125.5","purpose_he":"BPM לא עגול — מכריח לכוון באוזן ולא לפי המספר"},
+  {"id":"practice-07","slug":"odd-tempo-122_7","bpm":122.7,"title":"Odd Tempo 122.7","title_he":"טמפו עקום 122.7","purpose_he":"BPM לא עגול — תרגול כיוון עדין עם ה-Tempo fader וה-Jog"},
+  {"id":"practice-08","slug":"bass-swap-a-124","bpm":124,"key":"A minor","title":"Bass Swap A (8A)","title_he":"החלפת באס A","purpose_he":"לופ עם באס דומיננטי לתרגול Bass Swap מול B"},
+  {"id":"practice-09","slug":"bass-swap-b-124","bpm":124,"key":"E minor","title":"Bass Swap B (9A)","title_he":"החלפת באס B","purpose_he":"לופ עם באס דומיננטי לתרגול Bass Swap מול A"},
+  {"id":"practice-10","slug":"key-home-8A-124","bpm":124,"key":"A minor","title":"Key Home 8A","title_he":"סולם הבית 8A","purpose_he":"לופ אקורדים ב-8A — נקודת הייחוס לתרגול הרמוני"},
+  {"id":"practice-11","slug":"key-clash-3A-124","bpm":124,"key":"Bb minor","title":"Key Clash 3A","title_he":"התנגשות סולמות 3A","purpose_he":"מתנגש עם 8A — לשמוע איך נשמע מיקס 'מזייף'"},
+  {"id":"practice-12","slug":"key-friend-9A-124","bpm":124,"key":"E minor","title":"Key Friend 9A","title_he":"סולם חבר 9A","purpose_he":"תואם ל-8A — לשמוע מיקס הרמוני נקי"},
+  {"id":"practice-13","slug":"cue-hunt-126","bpm":126,"title":"Cue Hunt 126","title_he":"ציד Hot Cues 126","purpose_he":"אירועים קוליים ברורים בתיבות 1/17/33/49/65 — לסמן עליהם Hot Cues"},
+  {"id":"practice-14","slug":"eq-ear-training","bpm":124,"title":"EQ Ear Training","title_he":"אימון אוזן EQ","purpose_he":"לופ שבו כל 8 תיבות מודגש תחום תדרים אחר (Low/Mid/High) — לנחש איזה"},
+  {"id":"practice-15","slug":"tempo-bridge-100-to-124","bpm":100,"title":"Tempo Bridge 100","title_he":"גשר טמפו 100","purpose_he":"גרוב ים-תיכוני/רגאטון ב-100 עם אאוטרו אקפלה-תופים לתרגול מעבר ל-124"}
+ ],
+ "transitions": [
+  {"id":"transition-01","technique":"blend","technique_he":"בלנד ארוך","from_id":"house-01","to_id":"house-02"},
+  {"id":"transition-02","technique":"bass_swap","technique_he":"החלפת באס (Bass Swap)","from_id":"house-05","to_id":"house-06"},
+  {"id":"transition-03","technique":"filter","technique_he":"מעבר פילטר","from_id":"techno-05","to_id":"techno-08"},
+  {"id":"transition-04","technique":"echo_out","technique_he":"Echo Out","from_id":"house-07","to_id":"techno-01"},
+  {"id":"transition-05","technique":"cut","technique_he":"קאט / סלאם","from_id":"mainstream-01","to_id":"mainstream-02"},
+  {"id":"transition-06","technique":"loop_roll","technique_he":"לופ רול","from_id":"techno-02","to_id":"techno-03"},
+  {"id":"transition-07","technique":"energy_boost","technique_he":"קפיצת אנרגיה הרמונית (+1 Camelot)","from_id":"house-09","to_id":"house-11"},
+  {"id":"transition-08","technique":"tempo_change_echo","technique_he":"מעבר טמפו 95→124 עם Echo","from_id":"mainstream-08","to_id":"mainstream-15"},
+  {"id":"transition-09","technique":"drop_swap","technique_he":"החלפת דרופים","from_id":"mainstream-13","to_id":"mainstream-14"},
+  {"id":"transition-10","technique":"breakdown_mix","technique_he":"כניסה בברייקדאון","from_id":"techno-06","to_id":"techno-07"}
+ ]
+}
