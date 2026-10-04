@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+*.wav
+*.aif
+*.aiff
+.render_cache/
+/tmp/
+node_modules/
+.DS_Store
+Thumbs.db
+_site/
