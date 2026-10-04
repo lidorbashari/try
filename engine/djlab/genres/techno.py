@@ -215,6 +215,10 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             fxl.add(fx.reverse_cymbal(song.grid.bar_sec, rng=rng), s.end_bar, align="end", gain_db=-11.0)
     fxl.add(fx.noise_sweep(song.grid.bar_sec * 8, up=True, rng=rng), groove, align="end", gain_db=-16.0)
 
+    song.buses["drums"].eq = [("peak", 3000.0, 1.5, 0.8)]
+    song.buses["drums"].width = 1.3
+    song.buses["music"].width = 1.3
+    song.returns["reverb"].width = 1.4
     song.master.lufs = -9.0
     song.instruments = ["driving techno kick", "sidechained reverb rumble", "hypnotic 16th sequence", "acid line",
                         "dub chord stabs", "closed & open hats", "ride", "clap & snare", "industrial metal hits",

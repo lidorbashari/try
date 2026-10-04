@@ -102,7 +102,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return None
         return clap_p if not c.phrase_end else "....x.......x.xx"
 
-    song.hits("clap", clap_s, clap_pat, gain_db=-3.5, sends={"reverb": 0.22, "room": 0.15}, timing_ms=1.5)
+    song.hits("clap", clap_s, clap_pat, gain_db=-2.5, sends={"reverb": 0.22, "room": 0.15}, timing_ms=1.5)
 
     hats_c = drums.variants(drums.hat, 4, rng, jitter={"decay": 0.15}, decay=float(rng.uniform(0.03, 0.05)),
                             tone=float(rng.uniform(0.9, 1.15)))
@@ -272,6 +272,10 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     fxl.add(fx.reverse_cymbal(song.grid.bar_sec, rng=rng), groove_bar, align="end", gain_db=-10.0)
     fxl.sends = {"hall": 0.12}
 
+    # bus tone: a little presence on drums & music so the groove reads on club tops and phones
+    song.buses["drums"].eq = [("peak", 2600.0, 2.0, 0.8)]
+    song.buses["music"].eq = [("peak", 1800.0, 1.5, 0.7)]
+    song.buses["drums"].width = 1.15
     song.master.lufs = -9.0
     song.instruments = ["punchy tuned tech-house kick", "rolling off-beat bass", "swung 16th hats", "open hat",
                         "shaker", "clap + plate reverb", "congas & bongos", "formant vocal chops",
