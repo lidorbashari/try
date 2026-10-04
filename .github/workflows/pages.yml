@@ -64,9 +64,8 @@ jobs:
           <body><p>מעבירים אתכם ל-<a href="docs/">DJ Lab</a>…</p><script>location.replace('docs/' + location.search + location.hash)</script></body>
           </html>
           EOF
+          # docs/404.html is self-contained, so it works at the site root too
           cp _site/docs/404.html _site/404.html
-          # 404.html at the root needs root-relative asset paths
-          sed -i 's#content="\.\./"#content="./"#; s#content="\./" *>#content="docs/">#' _site/404.html || true
           du -sh _site
 
       - name: Configure Pages

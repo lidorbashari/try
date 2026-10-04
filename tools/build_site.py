@@ -1667,6 +1667,37 @@ def render_tool_rekordbox() -> str:
                  description="מחולל rekordbox.xml: כל טראקי DJ Lab עם BPM, Key, Hot Cues צבעוניים ופלייליסטים, מותאם לנתיב אצלכם.")
 
 
+def render_404() -> str:
+    """Self-contained 404 (works at any URL depth on GitHub Pages: no relative assets)."""
+    return f"""<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>לא נמצא · DJ Lab</title>
+<meta name="robots" content="noindex">
+<style>
+:root{{color-scheme:dark}}
+body{{margin:0;min-height:100vh;display:grid;place-items:center;background:#07070c radial-gradient(60vw 50vh at 80% 0%,rgba(255,43,214,.18),transparent 70%);color:#f4f3fa;font-family:Heebo,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;padding:16px;text-align:center}}
+.b{{font:800 clamp(64px,18vw,140px)/1 Rubik,system-ui,sans-serif;background:linear-gradient(100deg,#fff,#ff2bd6 50%,#22e1ff);-webkit-background-clip:text;background-clip:text;color:transparent;direction:ltr}}
+h1{{font-size:clamp(24px,5vw,36px);margin:8px 0}}p{{color:#c9c8d8;max-width:46ch;margin:0 auto 24px;line-height:1.7}}
+a{{display:inline-block;padding:12px 22px;border-radius:999px;background:linear-gradient(135deg,#ff2bd6,#8a5cff);color:#fff;text-decoration:none;font-weight:700}}
+a:focus-visible{{outline:2px solid #22e1ff;outline-offset:3px}}
+</style>
+</head>
+<body>
+<main>
+<div class="b" aria-hidden="true">404</div>
+<h1>הטראק הזה לא בסט</h1>
+<p>העמוד שחיפשתם לא קיים או שעבר מקום. נחזור לרחבה?</p>
+<a id="home" href="./">לדף הבית של DJ Lab</a>
+</main>
+<script>(function(){{var p=location.pathname,i=p.indexOf('/docs/'),h;if(i>=0)h=p.slice(0,i)+'/docs/index.html';else{{var s=p.split('/').filter(Boolean);h=(location.hostname.indexOf('github.io')>=0&&s.length?'/'+s[0]:'')+'/docs/index.html';}}document.getElementById('home').href=h;}})();</script>
+</body>
+</html>
+"""
+
+
 # --------------------------------------------------------------------------------------------- main
 def clean_stale():
     removed = 0
@@ -1741,9 +1772,7 @@ def main(argv=None) -> int:
     write(DOCS / "tools" / "set-builder.html", render_tool_setbuilder())
     write(DOCS / "tools" / "rekordbox.html", render_tool_rekordbox())
     write(DOCS / ".nojekyll", "")
-    write(DOCS / "404.html", shell(DOCS / "404.html", title="לא נמצא", active="", body=f"""<section class="page-hero"><div class="container">
-<p class="eyebrow">404</p><h1 class="display">הטראק הזה לא בסט</h1><p class="lead">העמוד שחיפשתם לא קיים (אולי עבר מקום). נסו מדף הבית.</p>
-<p><a class="btn btn--primary" href="index.html">{icon('arrow-right')}<span>לדף הבית</span></a></p></div></section>"""))
+    write(DOCS / "404.html", render_404())
     removed = clean_stale()
 
     dt = time.time() - t0
