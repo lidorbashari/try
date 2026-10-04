@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>02 · יסודות Rekordbox · DJ Lab</title>
+<meta name="description" content="התקנה, תוכניות ומנויים, ההבדל בין מצב Export למצב Performance, ניתוח טראקים, בדיקה ותיקון של Beatgrid, ספרייה ופלייליסטים, הגדרות מומלצות — וייבוא כל הספרייה של DJ Lab דרך קובץ rekordbox.xml.">
+<meta name="djlab-root" content="../../">
+<meta name="djlab-base" content="../">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#07070c">
+<link rel="canonical" href="https://lidorbashari.github.io/try/docs/guide/02-rekordbox-basics.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DJ Lab">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="02 · יסודות Rekordbox · DJ Lab">
+<meta property="og:description" content="התקנה, תוכניות ומנויים, ההבדל בין מצב Export למצב Performance, ניתוח טראקים, בדיקה ותיקון של Beatgrid, ספרייה ופלייליסטים, הגדרות מומלצות — וייבוא כל הספרייה של DJ Lab דרך קובץ rekordbox.xml.">
+<meta property="og:url" content="https://lidorbashari.github.io/try/docs/guide/02-rekordbox-basics.html">
+<meta property="og:image" content="https://lidorbashari.github.io/try/docs/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&family=Rubik:wght@400;500;600;700;800&family=Secular+One&display=swap">
+<link rel="stylesheet" href="../assets/css/site.css?v=e4c6cf60">
+<script>(function(){try{var t=localStorage.getItem('djlab:theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+</head>
+<body class="page-guide has-progress">
+<a class="skip-link" href="#main">דלגו לתוכן</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../index.html" aria-label="DJ Lab - דף הבית"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><defs><linearGradient id="bm-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2bd6"/><stop offset=".55" stop-color="#8a5cff"/><stop offset="1" stop-color="#22e1ff"/></linearGradient></defs><circle cx="20" cy="20" r="18" fill="none" stroke="url(#bm-g)" stroke-width="3"/><circle cx="20" cy="20" r="11.5" fill="none" stroke="url(#bm-g)" stroke-width="1.5" opacity=".55"/><g fill="url(#bm-g)"><rect x="11" y="16" width="2.6" height="8" rx="1.3"/><rect x="15.4" y="12" width="2.6" height="16" rx="1.3"/><rect x="19.8" y="9.5" width="2.6" height="21" rx="1.3"/><rect x="24.2" y="13.5" width="2.6" height="13" rx="1.3"/><rect x="28.6" y="17" width="2.6" height="6" rx="1.3"/></g></svg><span class="brand-word">DJ<b>Lab</b></span></a>
+    <nav class="site-nav" id="site-nav" aria-label="ניווט ראשי"><ul><li><a href="../index.html">בית</a></li><li><a href="../guide/index.html" aria-current="page">הקורס</a></li><li><a href="../library.html">ספריית מוזיקה</a></li><li><a href="../practice.html">אימון</a></li><li><a href="../crates/index.html">ארגזים</a></li><li><a href="../sets/index.html">סטים</a></li><li><a href="../tools/index.html">כלים</a></li><li><a href="../about.html">אודות</a></li></ul></nav>
+    <div class="header-actions">
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="החלפה בין מצב כהה למצב בהיר" title="מצב כהה / בהיר"><svg class="icon i-sun" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg><svg class="icon i-moon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.6A8.2 8.2 0 1 1 9.4 4a6.6 6.6 0 0 0 10.6 10.6z"/></svg></button>
+      <a class="icon-btn hide-sm" href="https://github.com/lidorbashari/try" target="_blank" rel="noopener" aria-label="הקוד ב-GitHub" title="GitHub"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2.8a9.3 9.3 0 0 0-2.9 18.1c.5.1.6-.2.6-.5v-1.7c-2.6.6-3.1-1.2-3.1-1.2-.4-1.1-1-1.4-1-1.4-.9-.6 0-.6 0-.6.9.1 1.4 1 1.4 1 .8 1.4 2.2 1 2.7.8.1-.6.3-1 .6-1.2-2-.2-4.2-1-4.2-4.6 0-1 .4-1.8 1-2.5-.1-.2-.4-1.2.1-2.5 0 0 .8-.2 2.6 1a8.9 8.9 0 0 1 4.7 0c1.8-1.2 2.6-1 2.6-1 .5 1.3.2 2.3.1 2.5.6.7 1 1.5 1 2.5 0 3.6-2.2 4.4-4.2 4.6.3.3.6.8.6 1.6v2.4c0 .3.2.6.7.5A9.3 9.3 0 0 0 12 2.8z" fill="currentColor" stroke="none"/></svg></a>
+      <button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="פתיחת תפריט"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+<div class="reading-progress" aria-hidden="true"><span data-reading-bar></span></div>
+<article class="chapter" data-chapter="02-rekordbox-basics" data-chapter-num="02">
+  <header class="chapter-hero">
+    <div class="container">
+      <nav class="crumbs" aria-label="פירורי לחם"><a href="../index.html">בית</a><span aria-hidden="true">/</span><a href="index.html">הקורס</a><span aria-hidden="true">/</span><span aria-current="page">פרק 02</span></nav>
+      <div class="chapter-hero-grid">
+        <div class="chapter-num" aria-hidden="true">02</div>
+        <div>
+          <p class="eyebrow">פרק 02 מתוך 15</p>
+          <h1 class="chapter-title">יסודות Rekordbox</h1>
+          <p class="chapter-en" dir="ltr">Rekordbox Basics</p>
+          <p class="lead">התקנה, תוכניות ומנויים, ההבדל בין מצב Export למצב Performance, ניתוח טראקים, בדיקה ותיקון של Beatgrid, ספרייה ופלייליסטים, הגדרות מומלצות — וייבוא כל הספרייה של DJ Lab דרך קובץ rekordbox.xml.</p>
+          <div class="chapter-meta">
+            <span class="meta-item"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>16 דק' קריאה</span>
+            <span class="badge badge--level" data-level="מתחיל">מתחיל</span>
+            
+            <span class="meta-item read-state" data-read-state hidden><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>נקרא</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container chapter-layout">
+    <aside class="chapter-toc" aria-label="תוכן הפרק">
+  <details class="toc-box" open data-toc-details>
+    <summary><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg><span>בפרק הזה</span><svg class="icon toc-chev" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9.5 6 6 6-6"/></svg></summary>
+    <nav class="toc-nav"><ol><li><a href="#מה-תלמדו-בפרק" data-toc-link>מה תלמדו בפרק</a></li><li><a href="#התקנה-ותוכניות" data-toc-link>התקנה ותוכניות</a><ol><li><a href="#התקנה" data-toc-link>התקנה</a></li><li><a href="#התוכניות-בקצרה" data-toc-link>התוכניות — בקצרה</a></li></ol></li><li><a href="#שני-המצבים-export-ו-performance" data-toc-link>שני המצבים: Export ו-Performance</a></li><li><a href="#אנטומיה-של-המסך" data-toc-link>אנטומיה של המסך</a></li><li><a href="#ייבוא-וניתוח-analysis" data-toc-link>ייבוא וניתוח (Analysis)</a><ol><li><a href="#ייבוא-מוזיקה" data-toc-link>ייבוא מוזיקה</a></li><li><a href="#מה-הניתוח-עושה" data-toc-link>מה הניתוח עושה</a></li><li><a href="#normal-dynamic-ו-auto" data-toc-link>Normal, Dynamic ו-Auto</a></li></ol></li><li><a href="#beatgrid-לבדוק-לא-לסמוך-בעיוורון" data-toc-link>Beatgrid — לבדוק, לא לסמוך בעיוורון</a><ol><li><a href="#איך-בודקים-רשת-ב-30-שניות" data-toc-link>איך בודקים רשת ב-30 שניות</a></li><li><a href="#איך-מתקנים" data-toc-link>איך מתקנים</a></li></ol></li><li><a href="#הספרייה-collection-פלייליסטים-ותיקיות" data-toc-link>הספרייה: Collection, פלייליסטים ותיקיות</a></li><li><a href="#הגדרות-מומלצות-למתחילים" data-toc-link>הגדרות מומלצות למתחילים</a></li><li><a href="#ייבוא-הספרייה-של-dj-lab-rekordboxxml" data-toc-link>ייבוא הספרייה של DJ Lab (rekordbox.xml)</a><ol><li><a href="#לפני-שמתחילים-איפה-הקובץ" data-toc-link>לפני שמתחילים: איפה הקובץ?</a></li><li><a href="#צעד-אחר-צעד" data-toc-link>צעד אחר צעד</a></li><li><a href="#פתרון-בעיות" data-toc-link>פתרון בעיות</a></li></ol></li><li><a href="#גיבוי-עכשיו-לא-אחרי-האסון" data-toc-link>גיבוי — עכשיו, לא אחרי האסון</a></li><li><a href="#תרגילים" data-toc-link>תרגילים</a></li><li><a href="#סיכום" data-toc-link>סיכום</a></li><li><a href="#בפרק-הבא" data-toc-link>בפרק הבא</a></li></ol></nav>
+  </details>
+</aside>
+    <div class="prose" data-prose>
+      <p>ה-Rekordbox הוא הרבה יותר מ"תוכנת DJ". הוא הספרייה שלכם, חדר ההכנות שלכם, הגשר לנגני המועדון, וגם — כשמחברים קונטרולר — הכלי שאיתו מנגנים. רוב ה-DJs המקצועיים מבלים בו יותר זמן בהכנה מאשר בנגינה. בפרק הזה נבנה בסיס יציב: נתקין, נבין את המצבים, נלמד לסמוך (ולא לסמוך) על הניתוח האוטומטי, ונייבא את כל 52 הטראקים של DJ Lab עם Hot Cues מוכנים — כך שמחר בבוקר אתם כבר מתרגלים.</p>
+<aside class="callout callout--tip" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.5 18h5M10.5 21h3M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg><span>טיפ</span></div><div class="callout-body"><p>המדריך נכתב על בסיס Rekordbox 7 (קו הגרסאות 7.2.x, נכון לסתיו 2026). הממשק משתנה מעט בכל עדכון. אם כפתור נמצא אצלכם במקום אחר — חפשו את אותו שם בהגדרות; העקרונות לא משתנים.</p></div></aside>
+<h2 id="מה-תלמדו-בפרק">מה תלמדו בפרק<a class="anchor" href="#מה-תלמדו-בפרק" title="קישור ישיר לסעיף">#</a></h2>
+<ul>
+<li>איך מתקינים, איזו תוכנית מנוי צריך (אם בכלל), ומה זה Hardware Unlock</li>
+<li>ההבדל בין מצב Export למצב Performance ומתי משתמשים בכל אחד</li>
+<li>איך נראה המסך: דקים, ווייבפורמים, מיקסר ודפדפן הספרייה</li>
+<li>ניתוח טראקים: BPM, Beatgrid, סולם (Key), פרייזים ווקאלים</li>
+<li>איך בודקים ומתקנים Beatgrid — הכישור שמפריד בין מתחילים למקצוענים</li>
+<li>ספרייה, פלייליסטים ותיקיות</li>
+<li>הגדרות מומלצות למתחילים</li>
+<li>ייבוא קובץ <code>rekordbox.xml</code> של DJ Lab, צעד אחר צעד</li>
+</ul>
+<h2 id="התקנה-ותוכניות">התקנה ותוכניות<a class="anchor" href="#התקנה-ותוכניות" title="קישור ישיר לסעיף">#</a></h2>
+<h3 id="התקנה">התקנה<a class="anchor" href="#התקנה" title="קישור ישיר לסעיף">#</a></h3>
+<ol>
+<li>הורידו את Rekordbox <strong>רק מהאתר הרשמי</strong> (<code>rekordbox.com</code>). גרסאות "פרוצות" מאתרים אחרים הן דרך מצוינת לקבל וירוס ולאבד את הספרייה.</li>
+<li>התקינו והפעילו. תתבקשו ליצור חשבון AlphaTheta (או להתחבר לחשבון קיים).</li>
+<li>ב-Windows: אם יש לקונטרולר שלכם דרייבר ייעודי (ASIO), הורידו אותו מאתר היצרן והתקינו <strong>לפני</strong> שמחברים את הקונטרולר. ב-Mac רוב הקונטרולרים עובדים בלי דרייבר.</li>
+<li>חברו את הקונטרולר. אם הוא תומך ב-Hardware Unlock, Rekordbox יזהה אותו ויפתח את מצב Performance.</li>
+</ol>
+<h3 id="התוכניות-בקצרה">התוכניות — בקצרה<a class="anchor" href="#התוכניות-בקצרה" title="קישור ישיר לסעיף">#</a></h3>
+<p>ל-Rekordbox יש תוכנית חינמית ושלוש תוכניות בתשלום. המחירים בדולרים, כי כך הם מתומחרים; הסכומים משוערים (חישוב חודשי בתשלום שנתי) ועשויים להשתנות:</p>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>תוכנית</th>
+<th>מחיר משוער</th>
+<th>מה מקבלים בעיקר</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Free</td>
+<td>חינם</td>
+<td>ניהול ספרייה מלא, ייצוא ל-USB, מצב Performance עם המחשב או עם קונטרולר שעושה Hardware Unlock, סנכרון ענן מוגבל למספר קטן של טראקים</td>
+</tr>
+<tr>
+<td>Core</td>
+<td>~10$ לחודש</td>
+<td>שימוש בכל ציוד Pioneer DJ / AlphaTheta תואם בלי צורך ב-Hardware Unlock, ופיצ'רים נוספים</td>
+</tr>
+<tr>
+<td>Creative</td>
+<td>~15$ לחודש</td>
+<td>מעל Core: סנכרון ספרייה מלא בענן (Cloud Library Sync), אפקטים מתקדמים, וידאו ועוד</td>
+</tr>
+<tr>
+<td>Professional</td>
+<td>~30$ לחודש</td>
+<td>הכול, כולל אחסון ענן מורחב ופיצ'רים מתקדמים כמו DVS</td>
+</tr>
+</tbody>
+</table></div>
+<aside class="callout callout--warn" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.3 4.3 2.8 17.5A2 2 0 0 0 4.5 20.5h15a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v4.5M12 17h.01"/></svg><span>זהירות</span></div><div class="callout-body"><p>אל תמהרו לקנות מנוי. למתחילים עם <code>DDJ-FLX4</code> או קונטרולר דומה, התוכנית החינמית + Hardware Unlock מספיקים לכל מה שבחלקים א' ו-ב' של המדריך. יש תקופות ניסיון — נצלו אותן כשתרצו לבדוק פיצ'ר ספציפי, כמו STEMS.</p></div></aside>
+<h2 id="שני-המצבים-export-ו-performance">שני המצבים: Export ו-Performance<a class="anchor" href="#שני-המצבים-export-ו-performance" title="קישור ישיר לסעיף">#</a></h2>
+<p>בפינה העליונה של המסך יש בורר מצבים. שני המצבים החשובים הם:</p>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th></th>
+<th>מצב Export</th>
+<th>מצב Performance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>התפקיד</strong></td>
+<td>חדר ההכנות: ניהול ספרייה והכנה לנגני מועדון</td>
+<td>הבמה: נגינה ומיקס חי עם קונטרולר</td>
+</tr>
+<tr>
+<td><strong>מה עושים בו</strong></td>
+<td>ייבוא, ניתוח, עריכת Beatgrid, Hot Cues ו-Memory Cues, פלייליסטים, ייצוא ל-USB</td>
+<td>מיקס בזמן אמת: EQ, אפקטים, לופים, Sampler, הקלטה</td>
+</tr>
+<tr>
+<td><strong>צריך קונטרולר?</strong></td>
+<td>לא</td>
+<td>מומלץ (אפשר גם עם מקלדת ועכבר)</td>
+</tr>
+<tr>
+<td><strong>מתי</strong></td>
+<td>בבית, לפני הופעה על CDJ/XDJ</td>
+<td>תרגול והופעות עם קונטרולר</td>
+</tr>
+</tbody>
+</table></div>
+<p>יש גם מצבים נוספים, כמו Lighting (תאורה) ו-Edit (עריכת טראקים) — לא נזדקק להם בשלב הזה.</p>
+<aside class="callout callout--tip" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.5 18h5M10.5 21h3M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg><span>טיפ</span></div><div class="callout-body"><p>כל מה שאתם עושים באחד המצבים — Hot Cues, פלייליסטים, תיקוני Grid, דירוגים — נשמר באותה ספרייה ומופיע גם במצב השני. אין "שתי ספריות". ההבדל הוא בכלים שמוצגים על המסך.</p></div></aside>
+<figure class="figure"><img alt="זרימת העבודה ב-Rekordbox: מייבוא ועד במה" src="../assets/guide/02-rekordbox-workflow.svg" loading="lazy" decoding="async"><figcaption>זרימת העבודה ב-Rekordbox: מייבוא ועד במה</figcaption></figure>
+<h2 id="אנטומיה-של-המסך">אנטומיה של המסך<a class="anchor" href="#אנטומיה-של-המסך" title="קישור ישיר לסעיף">#</a></h2>
+<p>ברוב הפריסות תמצאו מלמעלה למטה:</p>
+<ol>
+<li><strong>הדקים</strong> — לכל דק יש ווייבפורם מוגדל (הקטע שמתנגן עכשיו, שזז מימין לשמאל מתחת לקו המרכזי) וווייבפורם כללי (Overview) של כל הטראק, עם סימני Cues. ליד: BPM, אחוז Tempo, סולם, זמן שעבר/נשאר, ופדים של Hot Cues.</li>
+<li><strong>המיקסר</strong> (במצב Performance) — Trim, EQ, פיידרים, Crossfader ואפקטים, בדומה לקונטרולר.</li>
+<li><strong>הדפדפן</strong> — מימין או משמאל ה-Tree View (העץ): Collection, פלייליסטים, היסטוריה, מקורות כמו Explorer, rekordbox xml, שירותי סטרימינג והתקנים (Devices). במרכז — רשימת הטראקים עם עמודות.</li>
+</ol>
+<aside class="callout callout--rekordbox" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17M12 3.5v17M18 3.5v17"/><rect x="3.5" y="13" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="9.5" y="6.5" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="15.5" y="15" width="5" height="3.2" rx="1" fill="currentColor"/></svg><span>ב-Rekordbox</span></div><div class="callout-body"><p>לחיצה ימנית על שורת הכותרות של רשימת הטראקים מאפשרת לבחור אילו עמודות להציג. מומלץ להציג לפחות: Track Title, Artist, BPM, Key, Rating, Color, Genre, Comments, Time ו-Date Added. נשתמש בכולן בפרק 9.</p></div></aside>
+<h2 id="ייבוא-וניתוח-analysis">ייבוא וניתוח (Analysis)<a class="anchor" href="#ייבוא-וניתוח-analysis" title="קישור ישיר לסעיף">#</a></h2>
+<h3 id="ייבוא-מוזיקה">ייבוא מוזיקה<a class="anchor" href="#ייבוא-מוזיקה" title="קישור ישיר לסעיף">#</a></h3>
+<p>הדרך הפשוטה ביותר: גוררים תיקייה או קבצים מסייר הקבצים (Finder / Explorer) אל ה-Collection. Rekordbox לא מעתיק את הקבצים — הוא רק "זוכר" איפה הם נמצאים. לכן:</p>
+<aside class="callout callout--warn" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.3 4.3 2.8 17.5A2 2 0 0 0 4.5 20.5h15a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v4.5M12 17h.01"/></svg><span>זהירות</span></div><div class="callout-body"><p><strong>אל תזיזו ואל תשנו שמות של קבצים אחרי שייבאתם אותם.</strong> אחרת Rekordbox יאבד אותם (סימן קריאה ליד הטראק). בחרו מראש תיקיית מוזיקה ראשית אחת וקבועה — על זה בפרק 9.</p></div></aside>
+<h3 id="מה-הניתוח-עושה">מה הניתוח עושה<a class="anchor" href="#מה-הניתוח-עושה" title="קישור ישיר לסעיף">#</a></h3>
+<p>בזמן הייבוא Rekordbox מנתח כל טראק ומוצא:</p>
+<ul>
+<li><strong>BPM ו-Beatgrid</strong> — הקצב, ורשת הקווים שמסמנת כל ביט וכל תחילת תיבה. כל ה-Sync, ה-Quantize, הלופים וה-Beat Jump נשענים על הרשת הזו.</li>
+<li><strong>Key</strong> — הסולם המוזיקלי, למיקס הרמוני (פרק 10).</li>
+<li><strong>Phrase</strong> — חלוקה לקטעים (אינטרו, בנייה, שיא, אאוטרו וכו'), מוצגת כפסים צבעוניים מעל הווייבפורם.</li>
+<li><strong>Vocal</strong> — איפה יש שירה, כדי לא לערבב שני ווקאלים יחד.</li>
+<li><strong>ווייבפורם</strong> — התצוגה הגרפית של השיר.</li>
+</ul>
+<aside class="callout callout--rekordbox" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17M12 3.5v17M18 3.5v17"/><rect x="3.5" y="13" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="9.5" y="6.5" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="15.5" y="15" width="5" height="3.2" rx="1" fill="currentColor"/></svg><span>ב-Rekordbox</span></div><div class="callout-body"><p>את הגדרות הניתוח מוצאים ב-Preferences &gt; Analysis &gt; Track Analysis. שם בוחרים מה לנתח (BPM / Grid, KEY, Phrase, Vocal) ואת מצב הניתוח.</p></div></aside>
+<h3 id="normal-dynamic-ו-auto">Normal, Dynamic ו-Auto<a class="anchor" href="#normal-dynamic-ו-auto" title="קישור ישיר לסעיף">#</a></h3>
+<ul>
+<li><strong>Normal</strong> — לטראקים בקצב קבוע. זה רוב המוזיקה האלקטרונית, וכל הטראקים של DJ Lab. במצב הזה בוחרים גם <strong>BPM Range</strong> — טווח הקצבים שבו Rekordbox "מחפש" את ה-BPM.</li>
+<li><strong>Dynamic</strong> — לטראקים עם קצב משתנה: מוזיקה שהוקלטה עם מתופף חי, דיסקו ופאנק ישנים, הרבה מוזיקה ים-תיכונית וישראלית שהוקלטה "חי". הרשת תעקוב אחרי השינויים.</li>
+<li><strong>Auto</strong> — זמין כשמופעל ניתוח ה-Beatgrid ברמת הדיוק הגבוהה, ונותן לתוכנה להחליט.</li>
+</ul>
+<aside class="callout callout--tip" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.5 18h5M10.5 21h3M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg><span>טיפ</span></div><div class="callout-body"><p>הסיבה הנפוצה ביותר ל-BPM "כפול" או "חצי" (למשל היפ-הופ ב-92 שמזוהה כ-184, או דראם אנד בייס ב-174 שמזוהה כ-87) היא טווח BPM שלא מתאים למוזיקה. בחרו טווח שמכסה את רוב מה שאתם מנגנים, ותקנו ידנית את היוצאים מן הכלל. שימו לב גם לטראק הלו-פיי <span class="tref" data-id="breadth-10"><code>breadth-10</code></span> (84 BPM): בטווח צר מדי הוא עלול להיות מזוהה כ-168.</p></div></aside>
+<h2 id="beatgrid-לבדוק-לא-לסמוך-בעיוורון">Beatgrid — לבדוק, לא לסמוך בעיוורון<a class="anchor" href="#beatgrid-לבדוק-לא-לסמוך-בעיוורון" title="קישור ישיר לסעיף">#</a></h2>
+<p>ה-Beatgrid הוא הנכס החשוב ביותר בספרייה. רשת לא נכונה גורמת ל-Sync לסנכרן לא נכון, ל-Hot Cues "לקפוץ" מחוץ לקצב, וללופים לצאת עקומים. ב-DJ Lab הרשת תמיד מושלמת: הקצב קבוע לחלוטין והביט הראשון מתחיל בדיוק בשנייה 0.0. בטראקים מסחריים — כדאי לבדוק כל טראק לפני שהוא נכנס לסט.</p>
+<h3 id="איך-בודקים-רשת-ב-30-שניות">איך בודקים רשת ב-30 שניות<a class="anchor" href="#איך-בודקים-רשת-ב-30-שניות" title="קישור ישיר לסעיף">#</a></h3>
+<ol>
+<li>טוענים את הטראק לדק ומגדילים את הווייבפורם (זום).</li>
+<li>בודקים ש<strong>כל קו של ביט יושב על תחילת מכת הבס-דראם</strong> (ה-Kick) — בהתחלה, באמצע ובסוף השיר.</li>
+<li>בודקים שסימן <strong>תחילת התיבה</strong> (הקו המודגש) יושב על ה-"1" האמיתי — המקום שבו השיר מרגיש שהוא "מתחיל משפט". טעות נפוצה: הרשת נכונה, אבל ה-1 נמצא על הביט השני או השלישי.</li>
+<li>מאזינים עם המטרונום של Rekordbox (בפאנל ה-Grid): הקליק צריך להיות "בתוך" ה-Kick, לא לפניו ולא אחריו.</li>
+</ol>
+<h3 id="איך-מתקנים">איך מתקנים<a class="anchor" href="#איך-מתקנים" title="קישור ישיר לסעיף">#</a></h3>
+<aside class="callout callout--rekordbox" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17M12 3.5v17M18 3.5v17"/><rect x="3.5" y="13" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="9.5" y="6.5" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="15.5" y="15" width="5" height="3.2" rx="1" fill="currentColor"/></svg><span>ב-Rekordbox</span></div><div class="callout-body"><p>במצב Export טוענים טראק ופותחים את לשונית GRID בפאנל שמתחת לדק. במצב Performance אותם כלים נמצאים בפאנל GRID EDIT (דרך התפריט הקטן של הדק). הכלים העיקריים:
+- <strong>קביעת הביט הראשון</strong> — מציבים את סמן הנגינה על ה-Kick הנכון ולוחצים על כפתור קביעת תחילת התיבה.
+- <strong>הזזת הרשת שמאלה / ימינה</strong> — כשכל הקווים "מקדימים" או "מאחרים" באותה מידה.
+- <strong>הכפלה / חציה של ה-BPM</strong> — כשהזיהוי יצא כפול או חצי.
+- <strong>מטרונום</strong> — לבדיקה באוזן.
+- <strong>נעילת ניתוח (Analysis Lock)</strong> — כדי שניתוח חוזר לא ימחק את התיקון.</p></div></aside>
+<p>תהליך התיקון המלא:</p>
+<ol>
+<li><strong>ה-BPM לא נכון?</strong> קודם כל תקנו אותו (כפול/חצי, או הקלדה של ערך ידוע מהחנות).</li>
+<li><strong>הקווים זזים בהדרגה</strong> (בהתחלה מדויקים, בסוף מאחרים)? ה-BPM עדיין קצת לא מדויק, או שהטראק בקצב משתנה — נסו ניתוח Dynamic.</li>
+<li><strong>הקווים מוזזים באופן קבוע?</strong> הזיזו את הרשת כולה.</li>
+<li><strong>ה-1 לא במקום?</strong> קבעו מחדש את הביט הראשון על ה-Kick של תחילת הפרייז.</li>
+<li><strong>נעלו</strong> את הניתוח.</li>
+</ol>
+<aside class="callout callout--warn" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.3 4.3 2.8 17.5A2 2 0 0 0 4.5 20.5h15a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v4.5M12 17h.01"/></svg><span>זהירות</span></div><div class="callout-body"><p>אל "תתקנו" רשת של טראק שנשמע מעולה ונראה מעולה. זה בזבוז זמן. עברו טראק-טראק רק על החדשים, וקודם כל על אלה שאתם עומדים לנגן.</p></div></aside>
+<h2 id="הספרייה-collection-פלייליסטים-ותיקיות">הספרייה: Collection, פלייליסטים ותיקיות<a class="anchor" href="#הספרייה-collection-פלייליסטים-ותיקיות" title="קישור ישיר לסעיף">#</a></h2>
+<ul>
+<li><strong>Collection</strong> — כל הטראקים שייבאתם. זה המאגר, לא המקום לנגן ממנו בהופעה.</li>
+<li><strong>Playlists</strong> — רשימות שאתם יוצרים. טראק יכול להופיע בכמה פלייליסטים בלי לשכפל את הקובץ.</li>
+<li><strong>Folders</strong> — תיקיות שמכילות פלייליסטים, לסדר: "ז'אנרים", "אירועים", "תרגול".</li>
+<li><strong>Intelligent Playlists</strong> — פלייליסטים שמתמלאים לבד לפי כללים (למשל: BPM בין 122 ל-126 ודירוג 4 ומעלה). נלמד בפרק 9.</li>
+<li><strong>Histories</strong> — רשימה אוטומטית של מה שניגנתם בכל סשן. מעולה לשחזר סט טוב.</li>
+</ul>
+<aside class="callout callout--rekordbox" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17M12 3.5v17M18 3.5v17"/><rect x="3.5" y="13" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="9.5" y="6.5" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="15.5" y="15" width="5" height="3.2" rx="1" fill="currentColor"/></svg><span>ב-Rekordbox</span></div><div class="callout-body"><p>לחיצה ימנית על Playlists בעץ → יצירת פלייליסט או תיקייה חדשה. גוררים טראקים מה-Collection לפלייליסט. כדי לשנות סדר בפלייליסט, ממיינים לפי עמודת המספור (#) וגוררים.</p></div></aside>
+<p>שמות מומלצים (ממוספרים, כדי שיופיעו בסדר הגיוני):</p>
+<pre dir="ltr"><code>00 תרגול
+   01 שבוע 1 — ספירה
+   02 שבוע 2 — ביטמאצ'ינג
+10 ז'אנרים
+   11 House &amp; Tech House
+   12 Afro House
+   13 Melodic Techno
+   14 Techno
+   15 Mainstream &amp; Hip-Hop
+   16 ים-תיכוני
+20 סטים
+   2026-10-15 מסיבת בית
+90 לבדיקה (Inbox)
+</code></pre>
+<h2 id="הגדרות-מומלצות-למתחילים">הגדרות מומלצות למתחילים<a class="anchor" href="#הגדרות-מומלצות-למתחילים" title="קישור ישיר לסעיף">#</a></h2>
+<p>אלה ההגדרות שאנחנו ממליצים לשנות כבר עכשיו. השמות יכולים להשתנות מעט בין גרסאות; אם לא מוצאים — חפשו את המילה המרכזית בחלון ה-Preferences.</p>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>תחום</th>
+<th>הגדרה</th>
+<th>המלצה</th>
+<th>למה</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ניתוח</td>
+<td>מצב ניתוח</td>
+<td>Normal (ו-Dynamic לטראקים "חיים")</td>
+<td>רשת יציבה</td>
+</tr>
+<tr>
+<td>ניתוח</td>
+<td>BPM Range</td>
+<td>טווח שמכסה את רוב הספרייה שלכם</td>
+<td>פחות BPM כפול/חצי</td>
+</tr>
+<tr>
+<td>ניתוח</td>
+<td>מה לנתח</td>
+<td>BPM / Grid, KEY, Phrase, Vocal — הכול</td>
+<td>מידע מלא</td>
+</tr>
+<tr>
+<td>תצוגה</td>
+<td>תצוגת סולם</td>
+<td>אלפא-נומרית (8A, 9A...) אם קיימת אצלכם</td>
+<td>מיקס הרמוני קל (פרק 10)</td>
+</tr>
+<tr>
+<td>תצוגה</td>
+<td>צבע ווייבפורם</td>
+<td>3Band</td>
+<td>רואים בעיניים איפה הבאס, המיד והגבוהים</td>
+</tr>
+<tr>
+<td>דק</td>
+<td>Quantize</td>
+<td>פועל</td>
+<td>Cues ולופים "נצמדים" לרשת</td>
+</tr>
+<tr>
+<td>דק</td>
+<td>Master Tempo</td>
+<td>פועל</td>
+<td>שינוי מהירות בלי שינוי גובה הצליל</td>
+</tr>
+<tr>
+<td>דק</td>
+<td>טווח Tempo</td>
+<td>±10% (או ±6% לדיוק)</td>
+<td>שליטה עדינה (פרק 4)</td>
+</tr>
+<tr>
+<td>דק</td>
+<td>Sync</td>
+<td>BEAT SYNC</td>
+<td>מסנכרן גם קצב וגם מיקום ביט</td>
+</tr>
+<tr>
+<td>מיקסר</td>
+<td>EQ / Isolator</td>
+<td>EQ בהתחלה</td>
+<td>מעברים רכים יותר (פרק 5)</td>
+</tr>
+<tr>
+<td>אודיו</td>
+<td>Buffer Size</td>
+<td>נמוך ככל שעדיין יציב (בערך 5–10ms)</td>
+<td>פחות השהיה בלי "קליקים"</td>
+</tr>
+</tbody>
+</table></div>
+<aside class="callout callout--tip" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.5 18h5M10.5 21h3M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg><span>טיפ</span></div><div class="callout-body"><p>הגדרות "דק" כמו Quantize ו-Master Tempo מופיעות גם ככפתורים קטנים על המסך ליד כל דק, ועל חלק מהקונטרולרים. לפני כל סשן העיפו מבט ובדקו שהם דולקים.</p></div></aside>
+<h2 id="ייבוא-הספרייה-של-dj-lab-rekordboxxml">ייבוא הספרייה של DJ Lab (rekordbox.xml)<a class="anchor" href="#ייבוא-הספרייה-של-dj-lab-rekordboxxml" title="קישור ישיר לסעיף">#</a></h2>
+<p>זה הרגע שבו כל הרפו "נדלק". קובץ ה-XML של DJ Lab מכיל את כל הטראקים, קבצי התרגול והדמואים, עם BPM, סולם, Beatgrid מדויק, Hot Cues צבעוניים בסלוטים A–H ו-Memory Cues — לפי המוסכמה של DJ Lab — וגם פלייליסטים מסודרים.</p>
+<h3 id="לפני-שמתחילים-איפה-הקובץ">לפני שמתחילים: איפה הקובץ?<a class="anchor" href="#לפני-שמתחילים-איפה-הקובץ" title="קישור ישיר לסעיף">#</a></h3>
+<ul>
+<li><strong>בתוך הרפו:</strong> <code>music/rekordbox/rekordbox.xml</code>.</li>
+<li><strong>באתר של DJ Lab:</strong> יש כלי שמייצר את קובץ ה-XML עם הנתיב של התיקייה במחשב שלכם.</li>
+</ul>
+<aside class="callout callout--warn" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.3 4.3 2.8 17.5A2 2 0 0 0 4.5 20.5h15a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v4.5M12 17h.01"/></svg><span>זהירות</span></div><div class="callout-body"><p>קובץ XML של Rekordbox שומר <strong>נתיב מלא</strong> לכל קובץ שמע. אם שמרתם את הרפו במקום אחר ממה שהקובץ מצפה, הטראקים יופיעו כ"חסרים". הפתרון הקל: לייצר את הקובץ דרך הכלי באתר עם הנתיב שלכם. פתרון חלופי: לייבא בכל זאת, ואז לאתר מחדש את הקבצים (ראו "פתרון בעיות" בהמשך).</p></div></aside>
+<h3 id="צעד-אחר-צעד">צעד אחר צעד<a class="anchor" href="#צעד-אחר-צעד" title="קישור ישיר לסעיף">#</a></h3>
+<ol>
+<li><strong>שמרו את הרפו במקום קבוע.</strong> למשל תיקייה בשם <code>DJ Lab</code> בתוך תיקיית המוזיקה. אל תזיזו אותה אחר כך.</li>
+<li><strong>הציגו את rekordbox xml בעץ.</strong> פתחו Preferences &gt; View &gt; Layout, וסמנו את <code>rekordbox xml</code> ברשימת הפריטים שמוצגים בדפדפן.</li>
+<li><strong>הגדירו את הקובץ.</strong> פתחו Preferences &gt; Advanced &gt; Database. באזור <code>rekordbox xml</code>, לצד Imported Library, לחצו Browse ובחרו את קובץ ה-XML.</li>
+<li><strong>סגרו את ההגדרות.</strong> בעץ (Tree View) יופיע פריט חדש בשם <code>rekordbox xml</code>. אם הוא לא מתעדכן — לחצו על כפתור הרענון שלידו.</li>
+<li><strong>ייבוא כל הטראקים:</strong> פתחו את <code>rekordbox xml</code>, לחצו על All Tracks, סמנו הכול (<code>Ctrl+A</code> או <code>Cmd+A</code>), לחצו ימני ובחרו <strong>Import to Collection</strong>.</li>
+<li><strong>ייבוא הפלייליסטים:</strong> פתחו את Playlists שתחת <code>rekordbox xml</code>, לחצו ימני על פלייליסט (או תיקייה) ובחרו <strong>Import Playlist</strong>. אפשר גם לגרור פלייליסט אל Playlists שבספרייה הראשית.</li>
+<li><strong>בדקו:</strong> טענו את <span class="tref" data-id="house-05"><code>house-05</code></span> לדק. אתם אמורים לראות BPM של 126, סולם 8A (או Am), ושמונה Hot Cues צבעוניים: A ירוק בהתחלה, B תכלת, C כתום, D אדום וכן הלאה.</li>
+</ol>
+<aside class="callout callout--rekordbox" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17M12 3.5v17M18 3.5v17"/><rect x="3.5" y="13" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="9.5" y="6.5" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="15.5" y="15" width="5" height="3.2" rx="1" fill="currentColor"/></svg><span>ב-Rekordbox</span></div><div class="callout-body"><p>אחרי הייבוא, Rekordbox עשוי לנתח את הטראקים (בשביל הווייבפורם). זה תקין. אחרי שהניתוח מסתיים, פתחו טראק אחד וודאו שהרשת עדיין מתחילה בדיוק בתחילת השיר, ושה-Hot Cues במקום. אם הכול תקין — נעלו את הניתוח לטראקים של DJ Lab, כדי שלא ישתנו בטעות.</p></div></aside>
+<h3 id="פתרון-בעיות">פתרון בעיות<a class="anchor" href="#פתרון-בעיות" title="קישור ישיר לסעיף">#</a></h3>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>הבעיה</th>
+<th>מה עושים</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rekordbox xml</code> לא מופיע בעץ</td>
+<td>חזרו לשלב 2 וודאו שסימנתם אותו ב-Layout</td>
+</tr>
+<tr>
+<td>הטראקים מופיעים עם סימן קריאה / אפורים</td>
+<td>הנתיב בקובץ לא תואם. ייצרו XML חדש באתר עם הנתיב שלכם, או השתמשו באפשרות של Rekordbox להציג את כל הקבצים החסרים ולאתר אותם מחדש (Relocate) בתפריט File</td>
+</tr>
+<tr>
+<td>אין Hot Cues</td>
+<td>ודאו שבחרתם Import to Collection (ולא רק גררתם לדק). אם הטראק כבר היה בספרייה, Rekordbox עשוי לשאול אם לדרוס את המידע — אשרו</td>
+</tr>
+<tr>
+<td>הצבעים של ה-Hot Cues אחרים</td>
+<td>בדקו את הגדרת צבעי ה-Hot Cues בתצוגה; הצבעים מהקובץ נשמרים לכל Cue בנפרד</td>
+</tr>
+<tr>
+<td>ייבאתם גרסה חדשה של הקובץ</td>
+<td>הגדירו שוב את הקובץ (שלב 3), רעננו, וייבאו שוב רק את מה שהשתנה</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="גיבוי-עכשיו-לא-אחרי-האסון">גיבוי — עכשיו, לא אחרי האסון<a class="anchor" href="#גיבוי-עכשיו-לא-אחרי-האסון" title="קישור ישיר לסעיף">#</a></h2>
+<p>הספרייה שלכם (Cues, Grids, פלייליסטים, דירוגים) שווה עשרות שעות עבודה. היא נשמרת בנפרד מקבצי המוזיקה.</p>
+<aside class="callout callout--rekordbox" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17M12 3.5v17M18 3.5v17"/><rect x="3.5" y="13" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="9.5" y="6.5" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="15.5" y="15" width="5" height="3.2" rx="1" fill="currentColor"/></svg><span>ב-Rekordbox</span></div><div class="callout-body"><p>בתפריט File יש אפשרות לגבות את הספרייה (Library &gt; Backup Library) ולשחזר ממנה. גבו לפחות פעם בשבוע, ותמיד לפני עדכון גרסה. שמרו את הגיבוי גם על כונן חיצוני או בענן. נרחיב על אסטרטגיית גיבוי בפרק 9.</p></div></aside>
+<h2 id="תרגילים">תרגילים<a class="anchor" href="#תרגילים" title="קישור ישיר לסעיף">#</a></h2>
+<aside class="callout callout--exercise" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 15.5V12a8 8 0 0 1 16 0v3.5"/><rect x="3" y="14" width="5" height="7" rx="2"/><rect x="16" y="14" width="5" height="7" rx="2"/></svg><span>תרגיל 1 — התקנה והגדרות</span></div><div class="callout-body"><p>התקינו את Rekordbox, עברו על טבלת ההגדרות המומלצות ושנו כל הגדרה אחת-אחת. צלמו מסך של ה-Preferences אחרי השינויים — כדי שתוכלו לשחזר אחרי התקנה מחדש.</p>
+<p>🎧 תרגיל 2 — ייבוא DJ Lab: ייבאו את <code>music/rekordbox/rekordbox.xml</code> לפי השלבים. בדקו שלושה טראקים מסגנונות שונים: <span class="tref" data-id="house-05"><code>house-05</code></span> (טק-האוס), <span class="tref" data-id="techno-07"><code>techno-07</code></span> (מלודיק טכנו) ו-<span class="tref" data-id="mainstream-13"><code>mainstream-13</code></span> (ים-תיכוני, 100 BPM). השוו את ה-BPM והסולם שמופיעים ב-Rekordbox לערכים שבקובץ ה-JSON של כל טראק.</p>
+<p>🎧 תרגיל 3 — שני המצבים: עברו למצב Export, טענו את <span class="tref" data-file="music/tracks/house/house-03-hands-up-florentin.mp3" data-missing="1"><code>music/tracks/house/house-03-hands-up-florentin.mp3</code></span> ופתחו את לשונית ה-GRID. הפעילו את המטרונום ושמעו שהקליק יושב על ה-Kick. עברו למצב Performance וודאו שאותו טראק נטען עם אותם Hot Cues.</p>
+<p>🎧 תרגיל 4 — ציד רשתות (למתקדמים קצת): בחרו שלושה טראקים מסחריים שיש לכם — עדיף אחד ים-תיכוני או ישראלי שהוקלט עם מתופף חי. בדקו את הרשת בהתחלה, באמצע ובסוף. מצאתם רשת שזזה? נסו ניתוח Dynamic, ורשמו ביומן מה עבד.</p>
+<p>🎧 תרגיל 5 — פלייליסט ראשון: צרו תיקייה בשם "00 תרגול" ובתוכה פלייליסט "שבוע 1". גררו אליו את <span class="tref" data-file="music/practice/practice-01-phrase-counter-124.mp3" data-missing="1"><code>music/practice/practice-01-phrase-counter-124.mp3</code></span>, <span class="tref" data-file="music/practice/practice-03-drums-124.mp3" data-missing="1"><code>music/practice/practice-03-drums-124.mp3</code></span>, ושלושה טראקים של DJ Lab באותו טווח קצב: <span class="tref" data-id="house-03"><code>house-03</code></span>, <span class="tref" data-id="house-04"><code>house-04</code></span> (שניהם 124) ו-<span class="tref" data-id="mainstream-04"><code>mainstream-04</code></span> (124).</p>
+<p>🎧 תרגיל 6 — גיבוי: בצעו גיבוי ספרייה ראשון, ושמרו אותו מחוץ למחשב.</p></div></aside>
+<h2 id="סיכום">סיכום<a class="anchor" href="#סיכום" title="קישור ישיר לסעיף">#</a></h2>
+<ul>
+<li>מצב Export הוא חדר ההכנות (ספרייה, Grid, Cues, USB); מצב Performance הוא הבמה. הספרייה משותפת.</li>
+<li>התוכנית החינמית + קונטרולר עם Hardware Unlock מספיקים לגמרי למתחילים.</li>
+<li>הניתוח האוטומטי טוב, אבל Beatgrid צריך לבדוק — במיוחד בטראקים עם מתופף חי. בדיקה: הקווים על ה-Kick, וה-1 על תחילת הפרייז.</li>
+<li>הגדירו Quantize, Master Tempo, תצוגת סולם נוחה וטווח BPM מתאים.</li>
+<li>ייבוא ה-XML של DJ Lab: Preferences &gt; View &gt; Layout (להציג rekordbox xml) → Preferences &gt; Advanced &gt; Database (Imported Library) → Import to Collection.</li>
+<li>גבו את הספרייה. באמת.</li>
+</ul>
+<h2 id="בפרק-הבא">בפרק הבא<a class="anchor" href="#בפרק-הבא" title="קישור ישיר לסעיף">#</a></h2>
+<p>יש לנו תוכנה מוכנה וספרייה מלאה. עכשיו נלמד את השפה שבה מדברת המוזיקה שאנחנו מנגנים: ביטים, תיבות ופרייזים — ואיך לספור אותם באוזניים.</p>
+<p>👉 <a href="03-music-structure.html">פרק 3 — מבנה מוזיקלי</a></p>
+      <div class="chapter-done">
+        <button class="btn btn--ghost" type="button" data-mark-read><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>סימון הפרק כנקרא</span></button>
+      </div>
+    </div>
+  </div>
+  <nav class="container pn" aria-label="ניווט בין פרקים"><a class="pn-card pn-prev" href="01-equipment.html"><span class="pn-label"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m0 0-6-6m6 6-6 6"/></svg>הפרק הקודם</span><span class="pn-title"><span class="pn-num">01</span>ציוד לפי תקציב</span></a><a class="pn-card pn-next" href="03-music-structure.html"><span class="pn-label">הפרק הבא<svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5m0 0 6-6m-6 6 6 6"/></svg></span><span class="pn-title"><span class="pn-num">03</span>מבנה מוזיקלי: ביט, תיבה ופרייז</span></a></nav>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><defs><linearGradient id="bm-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2bd6"/><stop offset=".55" stop-color="#8a5cff"/><stop offset="1" stop-color="#22e1ff"/></linearGradient></defs><circle cx="20" cy="20" r="18" fill="none" stroke="url(#bm-g)" stroke-width="3"/><circle cx="20" cy="20" r="11.5" fill="none" stroke="url(#bm-g)" stroke-width="1.5" opacity=".55"/><g fill="url(#bm-g)"><rect x="11" y="16" width="2.6" height="8" rx="1.3"/><rect x="15.4" y="12" width="2.6" height="16" rx="1.3"/><rect x="19.8" y="9.5" width="2.6" height="21" rx="1.3"/><rect x="24.2" y="13.5" width="2.6" height="13" rx="1.3"/><rect x="28.6" y="17" width="2.6" height="6" rx="1.3"/></g></svg><span class="brand-word">DJ<b>Lab</b></span></a>
+      <p>בית הספר לתקלוט שלך: קורס Rekordbox בעברית, מוזיקה מקורית לתרגול וכלים שעובדים ישר בדפדפן.</p>
+    </div>
+    <nav aria-label="ללמוד"><h2>ללמוד</h2><ul>
+      <li><a href="../guide/index.html">הקורס</a></li><li><a href="../practice.html">אימון ומעברים</a></li><li><a href="../sets/index.html">סטים לדוגמה</a></li></ul></nav>
+    <nav aria-label="מוזיקה"><h2>מוזיקה</h2><ul>
+      <li><a href="../library.html">ספריית מוזיקה</a></li><li><a href="../crates/index.html">ארגזים</a></li><li><a href="../tools/rekordbox.html">ייבוא ל-Rekordbox</a></li></ul></nav>
+    <nav aria-label="כלים"><h2>כלים</h2><ul>
+      <li><a href="../tools/mix-trainer.html">מאמן מיקס</a></li><li><a href="../tools/camelot.html">גלגל קאמלוט</a></li><li><a href="../tools/set-builder.html">בונה סטים</a></li></ul></nav>
+  </div>
+  <div class="container footer-legal">
+    <p>המוזיקה המקורית משוחררת ב-<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.he" target="_blank" rel="noopener">CC0</a> · הקוד ב-MIT · הארגזים הם קישורים בלבד - קנו והזרימו ממקורות חוקיים.</p>
+    <p class="muted"><a href="../about.html">אודות ורישיון</a> · © 2026 DJ Lab</p>
+  </div>
+</footer>
+<script src="../data/catalog.js?v=e4c6cf60" defer></script><script src="../data/peaks.js?v=e4c6cf60" defer></script><script src="../data/guide.js?v=e4c6cf60" defer></script><script src="../assets/js/icons.gen.js?v=e4c6cf60" defer></script><script src="../assets/js/core.js?v=e4c6cf60" defer></script><script src="../assets/js/player.js?v=e4c6cf60" defer></script><script src="../assets/js/guide.js?v=e4c6cf60" defer></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 590" width="800" height="590" role="img" aria-labelledby="title desc" font-family="Heebo, Rubik, Arial, sans-serif">
+<title id="title">כמה זמן אפשר לשמוע בכל עוצמה</title>
+<desc id="desc">זמן חשיפה יומי מותר לפי המלצת NIOSH: 85 dBA ל-8 שעות, וכל תוספת של 3 dB חוצה את הזמן.</desc>
+<rect x="1" y="1" width="798" height="588" rx="20" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+<text x="400.0" y="46.0" font-size="26" font-weight="700" fill="#f1f5f9" text-anchor="middle" direction="rtl">כמה זמן מותר בכל עוצמה — לפי NIOSH</text>
+<text x="400.0" y="76.0" font-size="14" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">‎85 dBA ל-8 שעות · כל ‎+3 dB = חצי מהזמן · פלאגים של ‎−20 dB מחזירים לכם שעות</text>
+<rect x="60.0" y="104" width="590.0" height="30" rx="8" fill="#29e047" fill-opacity="0.9"/>
+<text x="716.0" y="125.0" font-size="16" font-weight="800" fill="#f1f5f9" text-anchor="middle">85 dB</text>
+<text x="355.0" y="124.0" font-size="13" font-weight="800" fill="#0b1220" text-anchor="middle" direction="rtl">8 שעות</text>
+<rect x="126.2" y="148" width="523.8" height="30" rx="8" fill="#3be029" fill-opacity="0.9"/>
+<text x="716.0" y="169.0" font-size="16" font-weight="800" fill="#f1f5f9" text-anchor="middle">88 dB</text>
+<text x="388.1" y="168.0" font-size="13" font-weight="800" fill="#0b1220" text-anchor="middle" direction="rtl">4 שעות</text>
+<rect x="192.5" y="192" width="457.5" height="30" rx="8" fill="#6ce029" fill-opacity="0.9"/>
+<text x="716.0" y="213.0" font-size="16" font-weight="800" fill="#f1f5f9" text-anchor="middle">91 dB</text>
+<text x="421.2" y="212.0" font-size="13" font-weight="800" fill="#0b1220" text-anchor="middle" direction="rtl">שעתיים</text>
+<rect x="258.7" y="236" width="391.3" height="30" rx="8" fill="#9de029" fill-opacity="0.9"/>
+<text x="716.0" y="257.0" font-size="16" font-weight="800" fill="#f1f5f9" text-anchor="middle">94 dB</text>
+<text x="454.4" y="256.0" font-size="13" font-weight="800" fill="#0b1220" text-anchor="middle" direction="rtl">שעה</text>
+<rect x="325.0" y="280" width="325.0" height="30" rx="8" fill="#cee029" fill-opacity="0.9"/>
+<text x="716.0" y="301.0" font-size="16" font-weight="800" fill="#f1f5f9" text-anchor="middle">97 dB</text>
+<text x="487.5" y="300.0" font-size="13" font-weight="800" fill="#0b1220" text-anchor="middle" direction="rtl">30 דקות</text>
+<rect x="391.2" y="324" width="258.8" height="30" rx="8" fill="#e0c229" fill-opacity="0.9"/>
+<text x="716.0" y="345.0" font-size="16" font-weight="800" fill="#f1f5f9" text-anchor="middle">100 dB</text>
+<text x="520.6" y="344.0" font-size="13" font-weight="800" fill="#0b1220" text-anchor="middle" direction="rtl">15 דקות</text>
+<rect x="457.4" y="368" width="192.6" height="30" rx="8" fill="#e09129" fill-opacity="0.9"/>
+<text x="716.0" y="389.0" font-size="16" font-weight="800" fill="#f1f5f9" text-anchor="middle">103 dB</text>
+<text x="553.7" y="388.0" font-size="13" font-weight="800" fill="#0b1220" text-anchor="middle" direction="rtl">7.5 דקות</text>
+<rect x="523.7" y="412" width="126.3" height="30" rx="8" fill="#e06029" fill-opacity="0.9"/>
+<text x="716.0" y="433.0" font-size="16" font-weight="800" fill="#f1f5f9" text-anchor="middle">106 dB</text>
+<text x="461.7" y="432.0" font-size="13" font-weight="700" fill="#f1f5f9" text-anchor="middle" direction="rtl">פחות מ-4 דקות</text>
+<rect x="611.3" y="456" width="38.7" height="30" rx="8" fill="#e02f29" fill-opacity="0.9"/>
+<text x="716.0" y="477.0" font-size="16" font-weight="800" fill="#f1f5f9" text-anchor="middle">110 dB</text>
+<text x="549.3" y="476.0" font-size="13" font-weight="700" fill="#f1f5f9" text-anchor="middle" direction="rtl">כדקה וחצי</text>
+<rect x="20" y="504" width="760" height="40" rx="10" fill="#1f2a44" stroke="#f87171" stroke-opacity="0.6"/>
+<text x="400.0" y="530.0" font-size="13" font-weight="600" fill="#fecaca" text-anchor="middle" direction="rtl">רחבה במועדון: לרוב 95-105 dB ומעלה · WHO (2022): עד 100 dB בממוצע ל-15 דקות</text>
+<text x="400.0" y="574.0" font-size="11" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">הסקאלה לוגריתמית · המספרים: המלצת NIOSH לחשיפה יומית במקום עבודה</text>
+</svg>

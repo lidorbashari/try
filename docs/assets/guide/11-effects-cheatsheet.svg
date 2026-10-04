@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 830" width="800" height="830" role="img" aria-labelledby="title desc" font-family="Heebo, Rubik, Arial, sans-serif">
+<title id="title">שליף אפקטים — Beat FX ו-Color FX</title>
+<desc id="desc">כרטיס עזר: מה עושה כל אפקט Beat FX ו-Color FX ב-Rekordbox, מתי משתמשים בו ואיזה אורך Beat מתאים.</desc>
+<rect x="1" y="1" width="798" height="828" rx="20" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+<text x="400.0" y="46.0" font-size="26" font-weight="700" fill="#f1f5f9" text-anchor="middle" direction="rtl">שליף אפקטים — Beat FX ו-Color FX</text>
+<text x="400.0" y="76.0" font-size="14" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">מה כל אפקט עושה · מתי להשתמש · אורך Beat מומלץ להתחלה</text>
+<circle cx="622" cy="98" r="7" fill="#38bdf8"/>
+<text x="560.0" y="103.0" font-size="13" font-weight="400" fill="#cbd5e1" text-anchor="middle" direction="rtl">זמן וחלל</text>
+<circle cx="462" cy="98" r="7" fill="#c084fc"/>
+<text x="400.0" y="103.0" font-size="13" font-weight="400" fill="#cbd5e1" text-anchor="middle" direction="rtl">מודולציה / פילטר</text>
+<circle cx="302" cy="98" r="7" fill="#fb923c"/>
+<text x="240.0" y="103.0" font-size="13" font-weight="400" fill="#cbd5e1" text-anchor="middle" direction="rtl">קצב / חיתוך</text>
+<rect x="536" y="122" width="244" height="84" rx="12" fill="#16213a" stroke="#334155"/>
+<rect x="536" y="122" width="244" height="5" rx="2.5" fill="#38bdf8"/>
+<text x="658.0" y="150.0" font-size="17" font-weight="800" fill="#38bdf8" text-anchor="middle">Echo</text>
+<text x="658.0" y="173.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">חזרות שדועכות; ממשיכות גם אחרי כיבוי</text>
+<text x="658.0" y="193.0" font-size="12" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">Echo Out בסוף טראק · 1/2-1 Beat</text>
+<rect x="278" y="122" width="244" height="84" rx="12" fill="#16213a" stroke="#334155"/>
+<rect x="278" y="122" width="244" height="5" rx="2.5" fill="#38bdf8"/>
+<text x="400.0" y="150.0" font-size="17" font-weight="800" fill="#38bdf8" text-anchor="middle">Delay</text>
+<text x="400.0" y="173.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">חזרה מדויקת של הצליל בקצב</text>
+<text x="400.0" y="193.0" font-size="12" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">קישוט קצר על ווקאל · 1/4-1/2</text>
+<rect x="20" y="122" width="244" height="84" rx="12" fill="#16213a" stroke="#334155"/>
+<rect x="20" y="122" width="244" height="5" rx="2.5" fill="#38bdf8"/>
+<text x="142.0" y="150.0" font-size="17" font-weight="800" fill="#38bdf8" text-anchor="middle">Reverb</text>
+<text x="142.0" y="173.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">חלל ואולם סביב הצליל</text>
+<text x="142.0" y="193.0" font-size="12" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">יציאה רכה / לפני ברייק · 20-50%</text>
+<rect x="536" y="216" width="244" height="84" rx="12" fill="#16213a" stroke="#334155"/>
+<rect x="536" y="216" width="244" height="5" rx="2.5" fill="#38bdf8"/>
+<text x="658.0" y="244.0" font-size="17" font-weight="800" fill="#38bdf8" text-anchor="middle">Ping Pong</text>
+<text x="658.0" y="267.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">דיליי שקופץ בין ימין לשמאל</text>
+<text x="658.0" y="287.0" font-size="12" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">תנועה בסטריאו בברייקים · 1/2-1</text>
+<rect x="278" y="216" width="244" height="84" rx="12" fill="#16213a" stroke="#334155"/>
+<rect x="278" y="216" width="244" height="5" rx="2.5" fill="#38bdf8"/>
+<text x="400.0" y="244.0" font-size="17" font-weight="800" fill="#38bdf8" text-anchor="middle">Spiral</text>
+<text x="400.0" y="267.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">חזרות שמטפסות בגובה הצליל</text>
+<text x="400.0" y="287.0" font-size="12" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">בילד-אפ דרמטי · 1/2-1 Beat</text>
+<rect x="20" y="216" width="244" height="84" rx="12" fill="#16213a" stroke="#334155"/>
+<rect x="20" y="216" width="244" height="5" rx="2.5" fill="#38bdf8"/>
+<text x="142.0" y="244.0" font-size="17" font-weight="800" fill="#38bdf8" text-anchor="middle">Helix</text>
+<text x="142.0" y="267.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">דוגם צליל ומחזיק אותו כמו ענן</text>
+<text x="142.0" y="287.0" font-size="12" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">'הקפאה' רגע לפני מעבר · 1/2-1</text>
+<rect x="536" y="310" width="244" height="84" rx="12" fill="#16213a" stroke="#334155"/>
+<rect x="536" y="310" width="244" height="5" rx="2.5" fill="#c084fc"/>
+<text x="658.0" y="338.0" font-size="17" font-weight="800" fill="#c084fc" text-anchor="middle">Flanger</text>
+<text x="658.0" y="361.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">'מטוס סילון' מתנפנף</text>
+<text x="658.0" y="381.0" font-size="12" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">בילד-אפ של 8-16 תיבות · 16-32 Beats</text>
+<rect x="278" y="310" width="244" height="84" rx="12" fill="#16213a" stroke="#334155"/>
+<rect x="278" y="310" width="244" height="5" rx="2.5" fill="#c084fc"/>
+<text x="400.0" y="338.0" font-size="17" font-weight="800" fill="#c084fc" text-anchor="middle">Phaser</text>
+<text x="400.0" y="361.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">גל רך ומסתחרר</text>
+<text x="400.0" y="381.0" font-size="12" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">צבע עדין על היי-האטים · 8-16 Beats</text>
+<rect x="20" y="310" width="244" height="84" rx="12" fill="#16213a" stroke="#334155"/>
+<rect x="20" y="310" width="244" height="5" rx="2.5" fill="#c084fc"/>
+<text x="142.0" y="338.0" font-size="17" font-weight="800" fill="#c084fc" text-anchor="middle">Filter</text>
+<text x="142.0" y="361.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">פילטר שזז מחזורית בקצב</text>
+<text x="142.0" y="381.0" font-size="12" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">תנועה בגרוב, לא למעבר · 4-16 Beats</text>
+<rect x="536" y="404" width="244" height="84" rx="12" fill="#16213a" stroke="#334155"/>
+<rect x="536" y="404" width="244" height="5" rx="2.5" fill="#c084fc"/>
+<text x="658.0" y="432.0" font-size="17" font-weight="800" fill="#c084fc" text-anchor="middle">Pitch</text>
+<text x="658.0" y="455.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">משנה גובה צליל בלי טמפו</text>
+<text x="658.0" y="475.0" font-size="12" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">ריזר / דאון קצר · במשורה</text>
+<rect x="278" y="404" width="244" height="84" rx="12" fill="#16213a" stroke="#334155"/>
+<rect x="278" y="404" width="244" height="5" rx="2.5" fill="#fb923c"/>
+<text x="400.0" y="432.0" font-size="17" font-weight="800" fill="#fb923c" text-anchor="middle">Trans</text>
+<text x="400.0" y="455.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">חותך את הצליל לסירוגין (גייט)</text>
+<text x="400.0" y="475.0" font-size="12" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">פילים קצרים, היפ-הופ · 1/4-1/2</text>
+<rect x="20" y="404" width="244" height="84" rx="12" fill="#16213a" stroke="#334155"/>
+<rect x="20" y="404" width="244" height="5" rx="2.5" fill="#fb923c"/>
+<text x="142.0" y="432.0" font-size="17" font-weight="800" fill="#fb923c" text-anchor="middle">Roll</text>
+<text x="142.0" y="455.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">חוזר על קטע קצר — לופ רול</text>
+<text x="142.0" y="475.0" font-size="12" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">פיל לפני דרופ · 1/2 ואז 1/4 ואז 1/8</text>
+<rect x="536" y="498" width="244" height="84" rx="12" fill="#16213a" stroke="#334155"/>
+<rect x="536" y="498" width="244" height="5" rx="2.5" fill="#fb923c"/>
+<text x="658.0" y="526.0" font-size="17" font-weight="800" fill="#fb923c" text-anchor="middle">Slip Roll</text>
+<text x="658.0" y="549.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">רול שחוזר למקום הנכון בטראק</text>
+<text x="658.0" y="569.0" font-size="12" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">קישוט בלי לאבד פרייז · 1/4</text>
+<rect x="278" y="498" width="244" height="84" rx="12" fill="#16213a" stroke="#334155"/>
+<rect x="278" y="498" width="244" height="5" rx="2.5" fill="#fb923c"/>
+<text x="400.0" y="526.0" font-size="17" font-weight="800" fill="#fb923c" text-anchor="middle">Vinyl Brake</text>
+<text x="400.0" y="549.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">האטה כמו פלטה שנעצרת</text>
+<text x="400.0" y="569.0" font-size="12" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">סיום דרמטי לפני קאט</text>
+<rect x="20" y="498" width="244" height="84" rx="12" fill="#16213a" stroke="#334155"/>
+<rect x="20" y="498" width="244" height="5" rx="2.5" fill="#facc15"/>
+<text x="142.0" y="526.0" font-size="17" font-weight="800" fill="#facc15" text-anchor="middle">Pad FX · Merge FX</text>
+<text x="142.0" y="549.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">אפקטים מוכנים על הפדים / ידית אחת</text>
+<text x="142.0" y="569.0" font-size="12" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">בילד-אפ מוכן בלחיצה — לא להגזים</text>
+<text x="400.0" y="610.0" font-size="18" font-weight="700" fill="#f1f5f9" text-anchor="middle" direction="rtl">Color FX — ידית אחת לכל ערוץ (שמאלה / ימינה)</text>
+<rect x="536" y="626" width="244" height="58" rx="12" fill="#16213a" stroke="#334155"/>
+<text x="658.0" y="650.0" font-size="16" font-weight="800" fill="#4ade80" text-anchor="middle">Filter</text>
+<text x="658.0" y="671.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">שמאלה LPF (עמום) · ימינה HPF (דק)</text>
+<rect x="278" y="626" width="244" height="58" rx="12" fill="#16213a" stroke="#334155"/>
+<text x="400.0" y="650.0" font-size="16" font-weight="800" fill="#4ade80" text-anchor="middle">Space</text>
+<text x="400.0" y="671.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">ריוורב 'חללי' — בריחה לשמיים</text>
+<rect x="20" y="626" width="244" height="58" rx="12" fill="#16213a" stroke="#334155"/>
+<text x="142.0" y="650.0" font-size="16" font-weight="800" fill="#4ade80" text-anchor="middle">Dub Echo</text>
+<text x="142.0" y="671.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">הד דאב כהה עם זנב ארוך</text>
+<rect x="536" y="694" width="244" height="58" rx="12" fill="#16213a" stroke="#334155"/>
+<text x="658.0" y="718.0" font-size="16" font-weight="800" fill="#4ade80" text-anchor="middle">Sweep</text>
+<text x="658.0" y="739.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">גייט + פס תדרים שזז</text>
+<rect x="278" y="694" width="244" height="58" rx="12" fill="#16213a" stroke="#334155"/>
+<text x="400.0" y="718.0" font-size="16" font-weight="800" fill="#4ade80" text-anchor="middle">Noise</text>
+<text x="400.0" y="739.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">רעש לבן מסונן לבילד-אפ</text>
+<rect x="20" y="694" width="244" height="58" rx="12" fill="#16213a" stroke="#334155"/>
+<text x="142.0" y="718.0" font-size="16" font-weight="800" fill="#4ade80" text-anchor="middle">Crush</text>
+<text x="142.0" y="739.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">עיוות דיגיטלי (Bitcrush)</text>
+<rect x="20" y="768" width="760" height="56" rx="12" fill="#1f2a44" stroke="#facc15" stroke-opacity="0.6"/>
+<text x="400.0" y="791.0" font-size="15" font-weight="700" fill="#fde68a" text-anchor="middle" direction="rtl">חוקי זהב: פחות זה יותר · אפקט אחד בכל פעם · להדליק ולכבות על ה-1</text>
+<text x="400.0" y="812.0" font-size="13" font-weight="400" fill="#cbd5e1" text-anchor="middle" direction="rtl">Level/Depth בין 30% ל-60% · סוף פרייז = הרגע של האפקט · ואם לא בטוחים — בלי</text>
+</svg>

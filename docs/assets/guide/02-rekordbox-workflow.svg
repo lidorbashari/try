@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 390" width="800" height="390" role="img" aria-labelledby="t d" font-family="Heebo, Rubik, Arial, sans-serif">
+<title id="t">זרימת העבודה ב-Rekordbox</title>
+<desc id="d">ייבוא, ניתוח, בדיקת Beatgrid, Cues, תגיות ופלייליסטים במצב Export; ואז ייצוא ל-USB לנגני מועדון או נגינה חיה במצב Performance.</desc>
+<rect x="1" y="1" width="798" height="388" rx="16" fill="#7f7f7f" fill-opacity="0.07" stroke="#7f7f7f" stroke-opacity="0.28"/>
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#858b95"/></marker>
+</defs>
+<text x="400.0" y="36.0" font-size="21" fill="#858b95" text-anchor="middle" direction="rtl" font-weight="bold" >זרימת העבודה ב-Rekordbox</text>
+<rect x="20.0" y="56.0" width="760.0" height="26.0" rx="13" fill="#7f7f7f" fill-opacity="0.14"/>
+<text x="400.0" y="74.0" font-size="13.5" fill="#858b95" text-anchor="middle" direction="rtl" font-weight="bold" >חדר ההכנות — מצב Export, בבית, בלי לחץ</text>
+<rect x="640.0" y="96.0" width="140.0" height="84.0" rx="12" fill="#5b6b82" />
+<circle cx="762" cy="114" r="11" fill="#ffffff" fill-opacity="0.25"/>
+<text x="762.0" y="119.0" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold" >1</text>
+<text x="710.0" y="143.0" font-size="15" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >ייבוא</text>
+<text x="710.0" y="165.0" font-size="11.5" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="normal" >גוררים קבצים</text>
+<line x1="638.0" y1="138.0" x2="628.0" y2="138.0" stroke="#858b95" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="485.0" y="96.0" width="140.0" height="84.0" rx="12" fill="#14857a" />
+<circle cx="607" cy="114" r="11" fill="#ffffff" fill-opacity="0.25"/>
+<text x="607.0" y="119.0" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold" >2</text>
+<text x="555.0" y="143.0" font-size="15" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >ניתוח</text>
+<text x="555.0" y="165.0" font-size="11.5" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="normal" >BPM · Key · Phrase</text>
+<line x1="483.0" y1="138.0" x2="473.0" y2="138.0" stroke="#858b95" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="330.0" y="96.0" width="140.0" height="84.0" rx="12" fill="#1588b8" />
+<circle cx="452" cy="114" r="11" fill="#ffffff" fill-opacity="0.25"/>
+<text x="452.0" y="119.0" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold" >3</text>
+<text x="400.0" y="143.0" font-size="15" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >בדיקת Grid</text>
+<text x="400.0" y="165.0" font-size="11.5" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="normal" >קווים על ה-Kick</text>
+<line x1="328.0" y1="138.0" x2="318.0" y2="138.0" stroke="#858b95" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="175.0" y="96.0" width="140.0" height="84.0" rx="12" fill="#d2621f" />
+<circle cx="297" cy="114" r="11" fill="#ffffff" fill-opacity="0.25"/>
+<text x="297.0" y="119.0" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold" >4</text>
+<text x="245.0" y="143.0" font-size="15" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >Hot Cues</text>
+<text x="245.0" y="165.0" font-size="11.5" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="normal" >A–H + Memory</text>
+<line x1="173.0" y1="138.0" x2="163.0" y2="138.0" stroke="#858b95" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="20.0" y="96.0" width="140.0" height="84.0" rx="12" fill="#7d43c9" />
+<circle cx="142" cy="114" r="11" fill="#ffffff" fill-opacity="0.25"/>
+<text x="142.0" y="119.0" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold" >5</text>
+<text x="90.0" y="143.0" font-size="15" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >תגיות ופלייליסטים</text>
+<text x="90.0" y="165.0" font-size="11.5" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="normal" >דירוג · צבע · My Tag</text>
+<line x1="90.0" y1="182.0" x2="90.0" y2="214.0" stroke="#858b95" stroke-width="2.5" />
+<line x1="90.0" y1="214.0" x2="610.0" y2="214.0" stroke="#858b95" stroke-width="2.5" />
+<line x1="190.0" y1="214.0" x2="190.0" y2="236.0" stroke="#858b95" stroke-width="2.5" marker-end="url(#arr)"/>
+<line x1="610.0" y1="214.0" x2="610.0" y2="236.0" stroke="#858b95" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="440.0" y="242.0" width="340.0" height="86.0" rx="14" fill="#3a5fe0" />
+<text x="610.0" y="270.0" font-size="15.5" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >ייצוא ל-USB ← נגני CDJ / XDJ</text>
+<text x="610.0" y="294.0" font-size="12.5" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >מצב Export — למועדון</text>
+<text x="610.0" y="314.0" font-size="12" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="normal" >ה-Grid, ה-Cues והפלייליסטים עוברים איתכם</text>
+<rect x="20.0" y="242.0" width="340.0" height="86.0" rx="14" fill="#cf3434" />
+<text x="190.0" y="270.0" font-size="15.5" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >נגינה חיה עם קונטרולר</text>
+<text x="190.0" y="294.0" font-size="12.5" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >מצב Performance — לתרגול ולהופעות</text>
+<text x="190.0" y="314.0" font-size="12" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="normal" >EQ, אפקטים, לופים והקלטה</text>
+<rect x="250.0" y="344.0" width="300.0" height="30.0" rx="15" fill="#7f7f7f" fill-opacity="0.16"/>
+<text x="400.0" y="364.0" font-size="13" fill="#858b95" text-anchor="middle" direction="rtl" font-weight="bold" >ספרייה אחת — משותפת לשני המצבים</text>
+</svg>

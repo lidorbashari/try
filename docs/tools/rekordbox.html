@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>מחולל Rekordbox XML · DJ Lab</title>
+<meta name="description" content="מחולל rekordbox.xml: כל טראקי DJ Lab עם BPM, Key, Hot Cues צבעוניים ופלייליסטים, מותאם לנתיב אצלכם.">
+<meta name="djlab-root" content="../../">
+<meta name="djlab-base" content="../">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#07070c">
+<link rel="canonical" href="https://lidorbashari.github.io/try/docs/tools/rekordbox.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DJ Lab">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="מחולל Rekordbox XML · DJ Lab">
+<meta property="og:description" content="מחולל rekordbox.xml: כל טראקי DJ Lab עם BPM, Key, Hot Cues צבעוניים ופלייליסטים, מותאם לנתיב אצלכם.">
+<meta property="og:url" content="https://lidorbashari.github.io/try/docs/tools/rekordbox.html">
+<meta property="og:image" content="https://lidorbashari.github.io/try/docs/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&family=Rubik:wght@400;500;600;700;800&family=Secular+One&display=swap">
+<link rel="stylesheet" href="../assets/css/site.css?v=e4c6cf60">
+<link rel="stylesheet" href="../assets/css/tools.css?v=e4c6cf60">
+<script>(function(){try{var t=localStorage.getItem('djlab:theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+</head>
+<body class="page-tools ">
+<a class="skip-link" href="#main">דלגו לתוכן</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../index.html" aria-label="DJ Lab - דף הבית"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><defs><linearGradient id="bm-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2bd6"/><stop offset=".55" stop-color="#8a5cff"/><stop offset="1" stop-color="#22e1ff"/></linearGradient></defs><circle cx="20" cy="20" r="18" fill="none" stroke="url(#bm-g)" stroke-width="3"/><circle cx="20" cy="20" r="11.5" fill="none" stroke="url(#bm-g)" stroke-width="1.5" opacity=".55"/><g fill="url(#bm-g)"><rect x="11" y="16" width="2.6" height="8" rx="1.3"/><rect x="15.4" y="12" width="2.6" height="16" rx="1.3"/><rect x="19.8" y="9.5" width="2.6" height="21" rx="1.3"/><rect x="24.2" y="13.5" width="2.6" height="13" rx="1.3"/><rect x="28.6" y="17" width="2.6" height="6" rx="1.3"/></g></svg><span class="brand-word">DJ<b>Lab</b></span></a>
+    <nav class="site-nav" id="site-nav" aria-label="ניווט ראשי"><ul><li><a href="../index.html">בית</a></li><li><a href="../guide/index.html">הקורס</a></li><li><a href="../library.html">ספריית מוזיקה</a></li><li><a href="../practice.html">אימון</a></li><li><a href="../crates/index.html">ארגזים</a></li><li><a href="../sets/index.html">סטים</a></li><li><a href="../tools/index.html" aria-current="page">כלים</a></li><li><a href="../about.html">אודות</a></li></ul></nav>
+    <div class="header-actions">
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="החלפה בין מצב כהה למצב בהיר" title="מצב כהה / בהיר"><svg class="icon i-sun" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg><svg class="icon i-moon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.6A8.2 8.2 0 1 1 9.4 4a6.6 6.6 0 0 0 10.6 10.6z"/></svg></button>
+      <a class="icon-btn hide-sm" href="https://github.com/lidorbashari/try" target="_blank" rel="noopener" aria-label="הקוד ב-GitHub" title="GitHub"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2.8a9.3 9.3 0 0 0-2.9 18.1c.5.1.6-.2.6-.5v-1.7c-2.6.6-3.1-1.2-3.1-1.2-.4-1.1-1-1.4-1-1.4-.9-.6 0-.6 0-.6.9.1 1.4 1 1.4 1 .8 1.4 2.2 1 2.7.8.1-.6.3-1 .6-1.2-2-.2-4.2-1-4.2-4.6 0-1 .4-1.8 1-2.5-.1-.2-.4-1.2.1-2.5 0 0 .8-.2 2.6 1a8.9 8.9 0 0 1 4.7 0c1.8-1.2 2.6-1 2.6-1 .5 1.3.2 2.3.1 2.5.6.7 1 1.5 1 2.5 0 3.6-2.2 4.4-4.2 4.6.3.3.6.8.6 1.6v2.4c0 .3.2.6.7.5A9.3 9.3 0 0 0 12 2.8z" fill="currentColor" stroke="none"/></svg></a>
+      <button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="פתיחת תפריט"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+<section class="page-hero page-hero--compact page-hero--tool">
+  <div class="container">
+    <nav class="crumbs" aria-label="פירורי לחם"><a href="../index.html">בית</a><span aria-hidden="true">/</span><a href="index.html">כלים</a><span aria-hidden="true">/</span><span aria-current="page">מחולל Rekordbox XML</span></nav>
+    <p class="eyebrow"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 3H6.5A1.5 1.5 0 0 0 5 4.5v15A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V8z"/><path d="M14 3v5h5M10 12l-2 2.5 2 2.5M14 12l2 2.5-2 2.5"/></svg><span dir="ltr">rekordbox.xml generator</span></p>
+    <h1 class="display">מחולל Rekordbox XML</h1>
+    <p class="lead">מקלידים איפה שמרתם את תיקיית <code>music</code> של DJ Lab - ומקבלים קובץ <code>rekordbox.xml</code> עם כל הטראקים, BPM, Key, Hot Cues צבעוניים ופלייליסטים מסודרים.</p>
+  </div>
+</section><section class="container rbx" data-rekordbox>
+  <div class="rbx-layout">
+    <form class="card rbx-form" data-rbx-form onsubmit="return false">
+      <h2 class="card-title"><span class="step-num">1</span>איפה שמרתם את המוזיקה?</h2>
+      <fieldset class="seg-field"><legend>מערכת הפעלה</legend>
+        <div class="seg seg--lg" role="radiogroup" aria-label="מערכת הפעלה">
+          <label><input type="radio" name="os" value="win" checked><span>Windows</span></label>
+          <label><input type="radio" name="os" value="mac"><span>macOS</span></label>
+        </div>
+      </fieldset>
+      <label class="field"><span>הנתיב המלא לתיקייה <code>music</code></span>
+        <input type="text" dir="ltr" spellcheck="false" autocomplete="off" data-rbx-path placeholder="C:\Users\Name\Music\DJ-Lab\music"></label>
+      <p class="muted small" data-rbx-path-hint></p>
+      <h2 class="card-title"><span class="step-num">2</span>מה להכניס?</h2>
+      <div class="check-grid">
+        <label class="check"><input type="checkbox" checked data-rbx-opt="hotcues"><span>Hot Cues (A-H בצבעים)</span></label>
+        <label class="check"><input type="checkbox" checked data-rbx-opt="memory"><span>Memory Cues</span></label>
+        <label class="check"><input type="checkbox" checked data-rbx-opt="practice"><span>קבצי תרגול</span></label>
+        <label class="check"><input type="checkbox" checked data-rbx-opt="transitions"><span>מעברים לדוגמה</span></label>
+        <label class="check"><input type="checkbox" checked data-rbx-opt="genres"><span>פלייליסט לכל ז'אנר</span></label>
+        <label class="check"><input type="checkbox" checked data-rbx-opt="myset"><span>הסט שלי (מבונה הסטים)</span></label>
+      </div>
+      <div class="rbx-summary" data-rbx-summary aria-live="polite"></div>
+      <div class="btn-row">
+        <button class="btn btn--primary btn--lg" type="button" data-rbx-download><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3.5v11.5m0 0-4.5-4.5M12 15l4.5-4.5M4.5 19.5h15"/></svg><span>הורדת rekordbox.xml</span></button>
+        <button class="btn btn--ghost" type="button" data-rbx-copy><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="8.5" y="8.5" width="11.5" height="11.5" rx="2"/><path d="M15.5 8.5V5.5a1.5 1.5 0 0 0-1.5-1.5H5.5A1.5 1.5 0 0 0 4 5.5V14a1.5 1.5 0 0 0 1.5 1.5h3"/></svg><span>העתקה</span></button>
+      </div>
+    </form>
+    <div class="rbx-side">
+      <div class="card rbx-steps">
+        <h2 class="card-title"><span class="step-num">3</span>הייבוא ל-Rekordbox</h2>
+        <ol class="steps">
+          <li><b>שמרו את הקובץ</b> <code>rekordbox.xml</code> במקום קבוע (למשל ליד תיקיית <code>music</code>).</li>
+          <li>ב-Rekordbox: <b>Preferences</b> (גלגל השיניים) ← <b>Advanced</b> ← <b>Database</b>.</li>
+          <li>תחת <b>rekordbox xml</b> ← <b>Imported Library</b> לחצו <b>Browse</b> ובחרו את הקובץ.</li>
+          <li>ב-<b>View</b> ודאו ש-<b>rekordbox xml</b> מסומן כדי שיופיע בעץ הספרייה (צד שמאל).</li>
+          <li>פתחו את <b>rekordbox xml</b> ← <b>Playlists</b> ← <b>DJ Lab</b>.</li>
+          <li>קליק ימני על פלייליסט (או על התיקייה כולה) ← <b>Import Playlist</b>. הטראקים נכנסים ל-Collection עם BPM, Key וה-Hot Cues.</li>
+          <li>מומלץ: בחרו את כל הטראקים ← קליק ימני ← <b>Analyze Track</b> כדי ש-Rekordbox יבנה Waveform.</li>
+        </ol>
+        <aside class="callout callout--warn" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.3 4.3 2.8 17.5A2 2 0 0 0 4.5 20.5h15a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v4.5M12 17h.01"/></svg><span>זהירות</span></div><div class="callout-body"><p>אם Rekordbox מציג טראקים באדום / "File not found" - הנתיב שהקלדתם לא תואם למיקום האמיתי. תקנו את הנתיב, צרו קובץ חדש וייבאו שוב. אל תשנו שמות קבצים בתוך <code>music</code>.</p></div></aside>
+        <aside class="callout callout--tip" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.5 18h5M10.5 21h3M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg><span>טיפ</span></div><div class="callout-body"><p>ה-Beatgrid נטען מוכן: כל הטראקים שלנו מתחילים בדיוק על הביט הראשון, כך שה-Grid יושב מושלם בלי תיקונים. אם Rekordbox ניתח מחדש ושינה את ה-Grid - אפשר לייבא שוב מה-XML.</p></div></aside>
+      </div>
+      <details class="card rbx-preview"><summary><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 3H6.5A1.5 1.5 0 0 0 5 4.5v15A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V8z"/><path d="M14 3v5h5M10 12l-2 2.5 2 2.5M14 12l2 2.5-2 2.5"/></svg><span>תצוגה מקדימה של ה-XML</span></summary><pre dir="ltr" data-rbx-preview></pre></details>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><defs><linearGradient id="bm-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2bd6"/><stop offset=".55" stop-color="#8a5cff"/><stop offset="1" stop-color="#22e1ff"/></linearGradient></defs><circle cx="20" cy="20" r="18" fill="none" stroke="url(#bm-g)" stroke-width="3"/><circle cx="20" cy="20" r="11.5" fill="none" stroke="url(#bm-g)" stroke-width="1.5" opacity=".55"/><g fill="url(#bm-g)"><rect x="11" y="16" width="2.6" height="8" rx="1.3"/><rect x="15.4" y="12" width="2.6" height="16" rx="1.3"/><rect x="19.8" y="9.5" width="2.6" height="21" rx="1.3"/><rect x="24.2" y="13.5" width="2.6" height="13" rx="1.3"/><rect x="28.6" y="17" width="2.6" height="6" rx="1.3"/></g></svg><span class="brand-word">DJ<b>Lab</b></span></a>
+      <p>בית הספר לתקלוט שלך: קורס Rekordbox בעברית, מוזיקה מקורית לתרגול וכלים שעובדים ישר בדפדפן.</p>
+    </div>
+    <nav aria-label="ללמוד"><h2>ללמוד</h2><ul>
+      <li><a href="../guide/index.html">הקורס</a></li><li><a href="../practice.html">אימון ומעברים</a></li><li><a href="../sets/index.html">סטים לדוגמה</a></li></ul></nav>
+    <nav aria-label="מוזיקה"><h2>מוזיקה</h2><ul>
+      <li><a href="../library.html">ספריית מוזיקה</a></li><li><a href="../crates/index.html">ארגזים</a></li><li><a href="../tools/rekordbox.html">ייבוא ל-Rekordbox</a></li></ul></nav>
+    <nav aria-label="כלים"><h2>כלים</h2><ul>
+      <li><a href="../tools/mix-trainer.html">מאמן מיקס</a></li><li><a href="../tools/camelot.html">גלגל קאמלוט</a></li><li><a href="../tools/set-builder.html">בונה סטים</a></li></ul></nav>
+  </div>
+  <div class="container footer-legal">
+    <p>המוזיקה המקורית משוחררת ב-<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.he" target="_blank" rel="noopener">CC0</a> · הקוד ב-MIT · הארגזים הם קישורים בלבד - קנו והזרימו ממקורות חוקיים.</p>
+    <p class="muted"><a href="../about.html">אודות ורישיון</a> · © 2026 DJ Lab</p>
+  </div>
+</footer>
+<script src="../data/catalog.js?v=e4c6cf60" defer></script><script src="../assets/js/icons.gen.js?v=e4c6cf60" defer></script><script src="../assets/js/core.js?v=e4c6cf60" defer></script><script src="../assets/js/player.js?v=e4c6cf60" defer></script><script src="../assets/js/rekordbox.js?v=e4c6cf60" defer></script>
+</body>
+</html>

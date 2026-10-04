@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>07 · Hot Cues, לופים ו-Beat Jump · DJ Lab</title>
+<meta name="description" content="ההבדל בין CUE, Memory Cue ו-Hot Cue, מוסכמת הצבעים A–H של DJ Lab, לופים ידניים ואוטומטיים, Beat Jump לתיקון פרייזים, Slip ו-Quantize, מצבי הפדים — ושגרת הכנה של חמש דקות לכל טראק.">
+<meta name="djlab-root" content="../../">
+<meta name="djlab-base" content="../">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#07070c">
+<link rel="canonical" href="https://lidorbashari.github.io/try/docs/guide/07-hot-cues-loops.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DJ Lab">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="07 · Hot Cues, לופים ו-Beat Jump · DJ Lab">
+<meta property="og:description" content="ההבדל בין CUE, Memory Cue ו-Hot Cue, מוסכמת הצבעים A–H של DJ Lab, לופים ידניים ואוטומטיים, Beat Jump לתיקון פרייזים, Slip ו-Quantize, מצבי הפדים — ושגרת הכנה של חמש דקות לכל טראק.">
+<meta property="og:url" content="https://lidorbashari.github.io/try/docs/guide/07-hot-cues-loops.html">
+<meta property="og:image" content="https://lidorbashari.github.io/try/docs/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&family=Rubik:wght@400;500;600;700;800&family=Secular+One&display=swap">
+<link rel="stylesheet" href="../assets/css/site.css?v=e4c6cf60">
+<script>(function(){try{var t=localStorage.getItem('djlab:theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+</head>
+<body class="page-guide has-progress">
+<a class="skip-link" href="#main">דלגו לתוכן</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../index.html" aria-label="DJ Lab - דף הבית"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><defs><linearGradient id="bm-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2bd6"/><stop offset=".55" stop-color="#8a5cff"/><stop offset="1" stop-color="#22e1ff"/></linearGradient></defs><circle cx="20" cy="20" r="18" fill="none" stroke="url(#bm-g)" stroke-width="3"/><circle cx="20" cy="20" r="11.5" fill="none" stroke="url(#bm-g)" stroke-width="1.5" opacity=".55"/><g fill="url(#bm-g)"><rect x="11" y="16" width="2.6" height="8" rx="1.3"/><rect x="15.4" y="12" width="2.6" height="16" rx="1.3"/><rect x="19.8" y="9.5" width="2.6" height="21" rx="1.3"/><rect x="24.2" y="13.5" width="2.6" height="13" rx="1.3"/><rect x="28.6" y="17" width="2.6" height="6" rx="1.3"/></g></svg><span class="brand-word">DJ<b>Lab</b></span></a>
+    <nav class="site-nav" id="site-nav" aria-label="ניווט ראשי"><ul><li><a href="../index.html">בית</a></li><li><a href="../guide/index.html" aria-current="page">הקורס</a></li><li><a href="../library.html">ספריית מוזיקה</a></li><li><a href="../practice.html">אימון</a></li><li><a href="../crates/index.html">ארגזים</a></li><li><a href="../sets/index.html">סטים</a></li><li><a href="../tools/index.html">כלים</a></li><li><a href="../about.html">אודות</a></li></ul></nav>
+    <div class="header-actions">
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="החלפה בין מצב כהה למצב בהיר" title="מצב כהה / בהיר"><svg class="icon i-sun" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg><svg class="icon i-moon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.6A8.2 8.2 0 1 1 9.4 4a6.6 6.6 0 0 0 10.6 10.6z"/></svg></button>
+      <a class="icon-btn hide-sm" href="https://github.com/lidorbashari/try" target="_blank" rel="noopener" aria-label="הקוד ב-GitHub" title="GitHub"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2.8a9.3 9.3 0 0 0-2.9 18.1c.5.1.6-.2.6-.5v-1.7c-2.6.6-3.1-1.2-3.1-1.2-.4-1.1-1-1.4-1-1.4-.9-.6 0-.6 0-.6.9.1 1.4 1 1.4 1 .8 1.4 2.2 1 2.7.8.1-.6.3-1 .6-1.2-2-.2-4.2-1-4.2-4.6 0-1 .4-1.8 1-2.5-.1-.2-.4-1.2.1-2.5 0 0 .8-.2 2.6 1a8.9 8.9 0 0 1 4.7 0c1.8-1.2 2.6-1 2.6-1 .5 1.3.2 2.3.1 2.5.6.7 1 1.5 1 2.5 0 3.6-2.2 4.4-4.2 4.6.3.3.6.8.6 1.6v2.4c0 .3.2.6.7.5A9.3 9.3 0 0 0 12 2.8z" fill="currentColor" stroke="none"/></svg></a>
+      <button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="פתיחת תפריט"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+<div class="reading-progress" aria-hidden="true"><span data-reading-bar></span></div>
+<article class="chapter" data-chapter="07-hot-cues-loops" data-chapter-num="07">
+  <header class="chapter-hero">
+    <div class="container">
+      <nav class="crumbs" aria-label="פירורי לחם"><a href="../index.html">בית</a><span aria-hidden="true">/</span><a href="index.html">הקורס</a><span aria-hidden="true">/</span><span aria-current="page">פרק 07</span></nav>
+      <div class="chapter-hero-grid">
+        <div class="chapter-num" aria-hidden="true">07</div>
+        <div>
+          <p class="eyebrow">פרק 07 מתוך 15</p>
+          <h1 class="chapter-title">Hot Cues, לופים ו-Beat Jump</h1>
+          <p class="chapter-en" dir="ltr">Hot Cues, Loops &amp; Beat Jump</p>
+          <p class="lead">ההבדל בין CUE, Memory Cue ו-Hot Cue, מוסכמת הצבעים A–H של DJ Lab, לופים ידניים ואוטומטיים, Beat Jump לתיקון פרייזים, Slip ו-Quantize, מצבי הפדים — ושגרת הכנה של חמש דקות לכל טראק.</p>
+          <div class="chapter-meta">
+            <span class="meta-item"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>15 דק' קריאה</span>
+            <span class="badge badge--level" data-level="מתחיל">מתחיל</span>
+            
+            <span class="meta-item read-state" data-read-state hidden><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>נקרא</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container chapter-layout">
+    <aside class="chapter-toc" aria-label="תוכן הפרק">
+  <details class="toc-box" open data-toc-details>
+    <summary><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg><span>בפרק הזה</span><svg class="icon toc-chev" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9.5 6 6 6-6"/></svg></summary>
+    <nav class="toc-nav"><ol><li><a href="#מה-תלמדו-בפרק" data-toc-link>מה תלמדו בפרק</a></li><li><a href="#שלושה-סוגי-cues" data-toc-link>שלושה סוגי Cues</a><ol><li><a href="#כפתור-ה-cue-בסגנון-cdj" data-toc-link>כפתור ה-CUE (בסגנון CDJ)</a></li><li><a href="#memory-cues" data-toc-link>Memory Cues</a></li><li><a href="#hot-cues" data-toc-link>Hot Cues</a></li></ol></li><li><a href="#מוסכמת-ה-hot-cues-של-dj-lab" data-toc-link>מוסכמת ה-Hot Cues של DJ Lab</a><ol><li><a href="#יצירה-צבע-ושם-ב-rekordbox" data-toc-link>יצירה, צבע ושם ב-Rekordbox</a></li><li><a href="#cues-אוטומטיים" data-toc-link>Cues אוטומטיים</a></li></ol></li><li><a href="#לופים" data-toc-link>לופים</a><ol><li><a href="#סוגי-לופים" data-toc-link>סוגי לופים</a></li><li><a href="#אורכי-לופ-בביטים-בתיבות-ובשניות" data-toc-link>אורכי לופ — בביטים, בתיבות ובשניות</a></li><li><a href="#מה-עושים-עם-לופים" data-toc-link>מה עושים עם לופים</a></li></ol></li><li><a href="#beat-jump" data-toc-link>Beat Jump</a><ol><li><a href="#שלושה-שימושים-שמצילים-מעברים" data-toc-link>שלושה שימושים שמצילים מעברים</a></li></ol></li><li><a href="#slip-ו-quantize-רשתות-הביטחון" data-toc-link>Slip ו-Quantize — רשתות הביטחון</a><ol><li><a href="#slip" data-toc-link>Slip</a></li><li><a href="#quantize" data-toc-link>Quantize</a></li></ol></li><li><a href="#מצבי-הפדים" data-toc-link>מצבי הפדים</a></li><li><a href="#שגרת-הכנה-של-חמש-דקות-לטראק" data-toc-link>שגרת הכנה של חמש דקות לטראק</a><ol><li><a href="#מיינסטרים-היפ-הופ-וים-תיכוני" data-toc-link>מיינסטרים, היפ-הופ וים-תיכוני</a></li></ol></li><li><a href="#תרגילים" data-toc-link>תרגילים</a></li><li><a href="#סיכום" data-toc-link>סיכום</a></li><li><a href="#בפרק-הבא" data-toc-link>בפרק הבא</a></li></ol></nav>
+  </details>
+</aside>
+    <div class="prose" data-prose>
+      <p>תחשבו על Hot Cues כמו על סימניות בספר — רק שלחיצה על הסימנייה מקפיצה אתכם לעמוד הנכון ומתחילה להקריא ממנו, מיד, בדיוק בקצב. DJ שהכין Hot Cues לא מחפש בזמן אמת "איפה מתחיל האאוטרו?" — הוא יודע: זה הכפתור הכחול. לופים הם הכלי השני שמשנה את כל המשחק: הם מאריכים, מקצרים, קונים זמן ובונים מתח. יחד עם Beat Jump ו-Quantize, הם הופכים כל טראק לחומר גלם גמיש. בפרק הזה נלמד את כל הכלים האלה, ונבנה שגרת הכנה שתהפוך כל טראק חדש לטראק "מוכן לבמה" בתוך חמש דקות.</p>
+<h2 id="מה-תלמדו-בפרק">מה תלמדו בפרק<a class="anchor" href="#מה-תלמדו-בפרק" title="קישור ישיר לסעיף">#</a></h2>
+<ul>
+<li>ההבדל בין כפתור CUE, Memory Cue ו-Hot Cue</li>
+<li>מוסכמת ה-Hot Cues של DJ Lab — שמונה סלוטים, שמונה צבעים, שמונה תפקידים</li>
+<li>איך יוצרים, צובעים, נותנים שם ומוחקים Hot Cues ב-Rekordbox</li>
+<li>לופים: ידניים, Auto Beat Loop, הכפלה וחציה, ושמירת לופים</li>
+<li>Beat Jump: לתקן פרייז, לדלג על קטע, לקצר או להאריך</li>
+<li>Slip ו-Quantize — שתי "רשתות ביטחון"</li>
+<li>מצבי הפדים בקונטרולר</li>
+<li>שגרת הכנה מלאה לטראק — כולל מיינסטרים וים-תיכוני</li>
+</ul>
+<h2 id="שלושה-סוגי-cues">שלושה סוגי Cues<a class="anchor" href="#שלושה-סוגי-cues" title="קישור ישיר לסעיף">#</a></h2>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th></th>
+<th>כפתור CUE</th>
+<th>Memory Cue</th>
+<th>Hot Cue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>כמה</strong></td>
+<td>אחד (זמני)</td>
+<td>עד 10 לטראק (כולל לופים)</td>
+<td>8 (A–H) במצב Export ובנגני CDJ; עד 16 במצב Performance</td>
+</tr>
+<tr>
+<td><strong>מה קורה בלחיצה</strong></td>
+<td>חוזר לנקודה ועוצר</td>
+<td>מקפיץ לנקודה ועוצר — צריך ללחוץ Play</td>
+<td><strong>מקפיץ ומנגן מיד</strong></td>
+</tr>
+<tr>
+<td><strong>נשמר?</strong></td>
+<td>לא, רק בזמן הטעינה</td>
+<td>כן, עם הטראק</td>
+<td>כן, עם הטראק</td>
+</tr>
+<tr>
+<td><strong>הכי שימושי ל...</strong></td>
+<td>הכנת השיר הבא באוזניות</td>
+<td>סימני דרך על הווייבפורם, בעיקר ב-CDJ</td>
+<td>ניווט מהיר והופעה חיה</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="כפתור-ה-cue-בסגנון-cdj">כפתור ה-CUE (בסגנון CDJ)<a class="anchor" href="#כפתור-ה-cue-בסגנון-cdj" title="קישור ישיר לסעיף">#</a></h3>
+<ul>
+<li><strong>השיר עצור:</strong> לחיצה על CUE קובעת נקודת Cue במקום הנוכחי.</li>
+<li><strong>השיר מתנגן:</strong> לחיצה על CUE מחזירה לנקודה ועוצרת.</li>
+<li><strong>החזקה כשעומדים על הנקודה:</strong> השיר מתנגן כל עוד מחזיקים, ובשחרור חוזר לנקודה. מעולה כדי "להציץ" ולבדוק שה-1 במקום.</li>
+</ul>
+<h3 id="memory-cues">Memory Cues<a class="anchor" href="#memory-cues" title="קישור ישיר לסעיף">#</a></h3>
+<p>סימני דרך שנשמרים עם הטראק ומופיעים על הווייבפורם. בנגני CDJ הם בולטים במיוחד: על המסך רואים כמה ביטים נשארו עד ה-Memory Cue הבא — עזרה מעולה לספירה. בטראקים של DJ Lab, ה-Memory Cues מסמנים נקודות כמו הברייקדאון.</p>
+<aside class="callout callout--rekordbox" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17M12 3.5v17M18 3.5v17"/><rect x="3.5" y="13" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="9.5" y="6.5" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="15.5" y="15" width="5" height="3.2" rx="1" fill="currentColor"/></svg><span>ב-Rekordbox</span></div><div class="callout-body"><p>במצב Export, בפאנל ה-Cue שמתחת לדק, יש כפתור MEMORY: מציבים את הסמן במקום הנכון ולוחצים. בנגן CDJ זה כפתור MEMORY, וכפתורי CALL מדלגים בין הנקודות.</p></div></aside>
+<h3 id="hot-cues">Hot Cues<a class="anchor" href="#hot-cues" title="קישור ישיר לסעיף">#</a></h3>
+<p>הכלי הכי חשוב בפרק. Hot Cue הוא כפתור (פד) שמקפיץ לנקודה <strong>ומנגן מיד</strong>. אם Quantize דולק, הקפיצה "נצמדת" לביט — כך שאפשר ללחוץ באמצע שיר מתנגן, והשיר ממשיך בקצב בלי לפספס.</p>
+<aside class="callout callout--tip" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.5 18h5M10.5 21h3M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg><span>טיפ</span></div><div class="callout-body"><p>בנגני CDJ יש בדרך כלל שמונה Hot Cues (A–H). גם אם במצב Performance יש לכם 16, תכננו את החשובים בשמונה הראשונים — כך הספרייה שלכם תעבוד בכל מועדון.</p></div></aside>
+<h2 id="מוסכמת-ה-hot-cues-של-dj-lab">מוסכמת ה-Hot Cues של DJ Lab<a class="anchor" href="#מוסכמת-ה-hot-cues-של-dj-lab" title="קישור ישיר לסעיף">#</a></h2>
+<p>כל הטראקים ברפו מגיעים עם Hot Cues לפי אותה שיטה. אנחנו ממליצים לאמץ אותה גם לטראקים שתקנו — עקביות היא מה שמאפשר לנגן בלי לחשוב.</p>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>סלוט</th>
+<th>שם</th>
+<th>צבע</th>
+<th>קוד צבע</th>
+<th>איפה</th>
+<th>למה</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A</strong></td>
+<td>Intro</td>
+<td>🟢 ירוק</td>
+<td><code>#28E214</code></td>
+<td>הביט הראשון (ה-1 של תיבה 1)</td>
+<td>נקודת הכניסה של השיר</td>
+</tr>
+<tr>
+<td><strong>B</strong></td>
+<td>Mix-In / Groove</td>
+<td>🔵 תכלת</td>
+<td><code>#10B1E6</code></td>
+<td>התיבה שבה הבאס או הגרוב המלא נכנסים</td>
+<td>נקודת כניסה "מלאה" או יעד ל-Bass Swap</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td>Breakdown</td>
+<td>🟠 כתום</td>
+<td><code>#E0641B</code></td>
+<td>הברייקדאון הראשון</td>
+<td>לדעת מתי מגיעה "נשימה"</td>
+</tr>
+<tr>
+<td><strong>D</strong></td>
+<td>Drop</td>
+<td>🔴 אדום</td>
+<td><code>#E62828</code></td>
+<td>הדרופ / ההוק הראשי</td>
+<td>קאטים, החלפת דרופים</td>
+</tr>
+<tr>
+<td><strong>E</strong></td>
+<td>Breakdown 2</td>
+<td>🟡 צהוב</td>
+<td><code>#B4BE04</code></td>
+<td>ברייקדאון שני (אם יש)</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>F</strong></td>
+<td>Drop 2</td>
+<td>🩷 ורוד</td>
+<td><code>#DE44CF</code></td>
+<td>דרופ שני (אם יש)</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>G</strong></td>
+<td>Outro</td>
+<td>🔷 כחול</td>
+<td><code>#305AFF</code></td>
+<td>תחילת האאוטרו</td>
+<td>נקודת היציאה — כאן מתחיל המעבר</td>
+</tr>
+<tr>
+<td><strong>H</strong></td>
+<td>Last 16</td>
+<td>🟣 סגול</td>
+<td><code>#8A2BE2</code></td>
+<td>16 תיבות לפני הסוף</td>
+<td>אזהרה אחרונה / לופ חירום</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="figure"><img alt="מיקום שמונת ה-Hot Cues על ציר הזמן של טראק, לפי צבעי DJ Lab" src="../assets/guide/07-hot-cue-layout.svg" loading="lazy" decoding="async"><figcaption>מיקום שמונת ה-Hot Cues על ציר הזמן של טראק, לפי צבעי DJ Lab</figcaption></figure>
+<p>ההיגיון: <strong>ירוק = התחלה, כחול = יציאה, אדום = שיא.</strong> אחרי שבוע של עבודה עם השיטה, העיניים כבר יודעות לבד איפה כל דבר.</p>
+<h3 id="יצירה-צבע-ושם-ב-rekordbox">יצירה, צבע ושם ב-Rekordbox<a class="anchor" href="#יצירה-צבע-ושם-ב-rekordbox" title="קישור ישיר לסעיף">#</a></h3>
+<aside class="callout callout--rekordbox" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17M12 3.5v17M18 3.5v17"/><rect x="3.5" y="13" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="9.5" y="6.5" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="15.5" y="15" width="5" height="3.2" rx="1" fill="currentColor"/></svg><span>ב-Rekordbox</span></div><div class="callout-body"><p>- <strong>יצירה:</strong> בקונטרולר, במצב Hot Cue — לחיצה על פד ריק שומרת את המקום הנוכחי. בתוכנה — לחיצה על סלוט ריק בדק.
+- <strong>מחיקה:</strong> ברוב הקונטרולרים, SHIFT + הפד. בתוכנה — דרך רשימת ה-Cues.
+- <strong>צבע ושם:</strong> לחיצה ימנית על ה-Hot Cue (או בפאנל ה-Cue במצב Export) מאפשרת לבחור צבע מתוך פלטה של 16 צבעים ולכתוב הערה/שם.
+- <strong>צבעי ברירת מחדל:</strong> בהגדרות התצוגה יש כמה ערכות צבעים ל-Hot Cues חדשים. הצבעים שקבעתם ידנית (או שהגיעו מקובץ ה-XML של DJ Lab) נשמרים לכל Cue בנפרד.</p>
+<p>💡 טיפ: הפלטה של Rekordbox לא כוללת בדיוק את קודי הצבע שבטבלה. כשאתם מסמנים ידנית, בחרו את הגוון הקרוב ביותר — ירוק, תכלת, כתום, אדום, צהוב, ורוד, כחול, סגול. מה שחשוב זה העקביות, לא הגוון המדויק.</p></div></aside>
+<h3 id="cues-אוטומטיים">Cues אוטומטיים<a class="anchor" href="#cues-אוטומטיים" title="קישור ישיר לסעיף">#</a></h3>
+<p>גרסאות Rekordbox 7 כוללות כלים ליצירה אוטומטית של Cues, בין השאר על בסיס ניתוח הפרייזים (ובגרסאות האחרונות נוספו גם יכולות של Cues "חכמים"). שווה לנסות — זה חוסך זמן בספרייה גדולה. אבל אל תסמכו בעיוורון: עברו על כל טראק, הקשיבו לכל Cue, ותקנו לפי המוסכמה שלכם.</p>
+<h2 id="לופים">לופים<a class="anchor" href="#לופים" title="קישור ישיר לסעיף">#</a></h2>
+<p>לופ חוזר על קטע קצר שוב ושוב, בלי הפסקה. בגלל שהוא מחובר לרשת, הוא נשאר בקצב.</p>
+<h3 id="סוגי-לופים">סוגי לופים<a class="anchor" href="#סוגי-לופים" title="קישור ישיר לסעיף">#</a></h3>
+<ol>
+<li><strong>לופ ידני:</strong> LOOP IN בתחילת הקטע, LOOP OUT בסופו. EXIT / RELOOP — יציאה מהלופ או חזרה אליו.</li>
+<li><strong>Auto Beat Loop:</strong> לחיצה אחת יוצרת לופ באורך קבוע (למשל 4 ביטים) מהמקום הנוכחי. כפתורי ×2 ו-½ מכפילים או חוצים את האורך תוך כדי.</li>
+<li><strong>Beat Loop בפדים:</strong> כל פד הוא אורך אחר — לחיצה מפעילה, לחיצה נוספת מכבה.</li>
+<li><strong>לופ שמור:</strong> אפשר לשמור לופ כ-Memory Cue או כ-Hot Cue, ולהפעיל אותו בלחיצה.</li>
+</ol>
+<h3 id="אורכי-לופ-בביטים-בתיבות-ובשניות">אורכי לופ — בביטים, בתיבות ובשניות<a class="anchor" href="#אורכי-לופ-בביטים-בתיבות-ובשניות" title="קישור ישיר לסעיף">#</a></h3>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>ביטים</th>
+<th>תיבות</th>
+<th>ב-124 BPM</th>
+<th>שימוש טיפוסי</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1/4 – 1/2</td>
+<td>—</td>
+<td>פחות מרבע שנייה</td>
+<td>Loop Roll, אפקט "טררר"</td>
+</tr>
+<tr>
+<td>1</td>
+<td>רבע תיבה</td>
+<td>0.48 שנ'</td>
+<td>Loop Roll, מתח לפני דרופ</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1</td>
+<td>1.9 שנ'</td>
+<td>"גמגום", בילדאפ קצר</td>
+</tr>
+<tr>
+<td>16</td>
+<td>4</td>
+<td>7.7 שנ'</td>
+<td>הארכת אינטרו/אאוטרו, החזקת גרוב</td>
+</tr>
+<tr>
+<td>32</td>
+<td>8</td>
+<td>15.5 שנ'</td>
+<td>לופ "בטוח" — פרייז שלם</td>
+</tr>
+<tr>
+<td>64</td>
+<td>16</td>
+<td>31 שנ'</td>
+<td>הארכה ארוכה של קטע תופים</td>
+</tr>
+</tbody>
+</table></div>
+<aside class="callout callout--warn" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.3 4.3 2.8 17.5A2 2 0 0 0 4.5 20.5h15a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v4.5M12 17h.01"/></svg><span>זהירות</span></div><div class="callout-body"><p>לופים רק על <strong>קטעים פשוטים</strong> — תופים, גרוב בסיסי. לופ שנחתך באמצע משפט של ווקאל, או על אקורד שאמור להתחלף, נשמע מיד כמו תקלה. ובתחילת לופ — תמיד על ה-1.</p></div></aside>
+<h3 id="מה-עושים-עם-לופים">מה עושים עם לופים<a class="anchor" href="#מה-עושים-עם-לופים" title="קישור ישיר לסעיף">#</a></h3>
+<ul>
+<li><strong>הארכת אינטרו או אאוטרו</strong> — כשהשיר קצר מדי למעבר שתכננתם. קריטי בפופ, בהיפ-הופ ובמזרחית, שבהם האינטרו הוא לפעמים 4 תיבות.</li>
+<li><strong>קניית זמן</strong> — הטלפון צלצל, מישהו ביקש שיר, ה-USB נתקע: לופ של 8 תיבות על קטע תופים, נשימה, ממשיכים.</li>
+<li><strong>בניית מתח</strong> — Loop Roll שהולך ומתקצר לפני דרופ (פרק 6).</li>
+<li><strong>רימיקס חי</strong> — להשאיר גרוב בלופ ולשלב מעליו אלמנטים משיר אחר.</li>
+</ul>
+<h2 id="beat-jump">Beat Jump<a class="anchor" href="#beat-jump" title="קישור ישיר לסעיף">#</a></h2>
+<p>Beat Jump מקפיץ את השיר קדימה או אחורה במספר ביטים קבוע — 1, 2, 4, 8, 16, 32 ועוד — <strong>בלי לצאת מהקצב</strong>. הוא נשען על הרשת, ולכן עובד מושלם כש-Quantize דולק וה-Grid נכון.</p>
+<h3 id="שלושה-שימושים-שמצילים-מעברים">שלושה שימושים שמצילים מעברים<a class="anchor" href="#שלושה-שימושים-שמצילים-מעברים" title="קישור ישיר לסעיף">#</a></h3>
+<ol>
+<li><strong>תיקון פרייזים.</strong> התחלתם את B, והקצב מסונכרן, אבל השינויים ב-B מגיעים 4 תיבות <strong>אחרי</strong> השינויים ב-A? קפיצה של 16 ביטים (4 תיבות) <strong>קדימה</strong> ב-B, והפרייזים מיושרים. בלי לעצור, בלי שהרחבה תשמע.</li>
+<li><strong>דילוג על קטע.</strong> ברייקדאון ארוך מדי לרגע הנוכחי ברחבה? קפיצה של 32 או 64 ביטים קדימה, על ה-1, ואתם קרובים לדרופ.</li>
+<li><strong>הארכה.</strong> רוצים עוד 8 תיבות של גרוב לפני שהשיר נגמר? קפיצה של 32 ביטים אחורה, על ה-1.</li>
+</ol>
+<aside class="callout callout--tip" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.5 18h5M10.5 21h3M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg><span>טיפ</span></div><div class="callout-body"><p>מספרים שכדאי לזכור — <strong>16 ביטים = 4 תיבות, 32 ביטים = 8 תיבות (פרייז), 64 = 16 תיבות, 128 = 32 תיבות.</strong> קפיצות בכפולות של 32 שומרות על היישור של הפרייזים.</p></div></aside>
+<h2 id="slip-ו-quantize-רשתות-הביטחון">Slip ו-Quantize — רשתות הביטחון<a class="anchor" href="#slip-ו-quantize-רשתות-הביטחון" title="קישור ישיר לסעיף">#</a></h2>
+<h3 id="slip">Slip<a class="anchor" href="#slip" title="קישור ישיר לסעיף">#</a></h3>
+<p>כש-Slip דולק, השיר ממשיך "לרוץ בשקט" מתחת לכל מה שאתם עושים: לופ, סקרץ', Reverse או החזקת Hot Cue. ברגע שאתם משחררים, הנגינה חוזרת <strong>למקום שבו השיר היה אמור להיות</strong> — כאילו לא נגעתם.</p>
+<ul>
+<li><strong>Loop Roll + Slip:</strong> "גמגום" של כמה ביטים, וכשמשחררים — השיר ממשיך בדיוק בפרייז שלו.</li>
+<li><strong>Reverse + Slip (צנזורה):</strong> מילה גסה בשיר באירוע? Reverse לשנייה, משחררים, והשיר ממשיך בדיוק בקצב. שימושי מאוד בחתונות ובאירועי חברה.</li>
+</ul>
+<aside class="callout callout--rekordbox" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17M12 3.5v17M18 3.5v17"/><rect x="3.5" y="13" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="9.5" y="6.5" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="15.5" y="15" width="5" height="3.2" rx="1" fill="currentColor"/></svg><span>ב-Rekordbox</span></div><div class="callout-body"><p>מצב SLIP מופעל בכפתור בדק (ובחלק מהקונטרולרים יש לו כפתור או קיצור ייעודי). כשהוא דולק, רואים על הווייבפורם "צל" שממשיך לנוע — המקום שאליו תחזרו.</p></div></aside>
+<h3 id="quantize">Quantize<a class="anchor" href="#quantize" title="קישור ישיר לסעיף">#</a></h3>
+<p>Quantize "מצמיד" כל פעולה לרשת: הפעלת Hot Cue, התחלת לופ, Beat Jump. גם אם לחצתם 50 אלפיות מוקדם, הפעולה תקרה בדיוק על הביט.</p>
+<ul>
+<li><strong>השאירו אותו דולק</strong> כמעט תמיד.</li>
+<li><strong>כבו אותו</strong> כשה-Grid של טראק שגוי (ואין זמן לתקן), או כשאתם רוצים Cue שלא נמצא על ביט — למשל ווקאל שמתחיל "רגע לפני ה-1" (Pickup), כמו "יאללה!" שבא חצי ביט לפני הדרופ.</li>
+<li>אפשר לקבוע בהגדרות את רזולוציית ה-Quantize (ביט שלם או חלקי ביט).</li>
+</ul>
+<h2 id="מצבי-הפדים">מצבי הפדים<a class="anchor" href="#מצבי-הפדים" title="קישור ישיר לסעיף">#</a></h2>
+<p>לרוב הקונטרולרים יש שורה של 8 פדים לכל דק, שמשנים תפקיד לפי מצב. ב-<code>DDJ-FLX4</code>, למשל:</p>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>מצב</th>
+<th>מה הפדים עושים</th>
+<th>חשיבות למתחילים</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hot Cue</strong></td>
+<td>הפעלה ושמירה של Hot Cues A–H</td>
+<td>⭐⭐⭐ — המצב שבו תהיו 80% מהזמן</td>
+</tr>
+<tr>
+<td><strong>Pad FX</strong></td>
+<td>אפקטים "ברגע": Echo, Reverb, Roll, Echo Out ועוד</td>
+<td>⭐⭐ — כולל Echo Out מפרק 6</td>
+</tr>
+<tr>
+<td><strong>Beat Jump</strong></td>
+<td>קפיצות קבועות קדימה/אחורה</td>
+<td>⭐⭐⭐ — תיקון פרייזים</td>
+</tr>
+<tr>
+<td><strong>Sampler</strong></td>
+<td>הפעלת סאמפלים (הורנים, אפקטים קוליים)</td>
+<td>⭐ — במידה</td>
+</tr>
+<tr>
+<td><strong>Beat Loop</strong> (עם SHIFT)</td>
+<td>לופ באורך קבוע לכל פד</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Keyboard</strong> (עם SHIFT)</td>
+<td>מנגן Hot Cue בגבהים שונים</td>
+<td>⭐ — לשלב מתקדם</td>
+</tr>
+<tr>
+<td><strong>Key Shift</strong> (עם SHIFT)</td>
+<td>משנה את הסולם של השיר</td>
+<td>⭐ — פרק 10</td>
+</tr>
+</tbody>
+</table></div>
+<aside class="callout callout--warn" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.3 4.3 2.8 17.5A2 2 0 0 0 4.5 20.5h15a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v4.5M12 17h.01"/></svg><span>זהירות</span></div><div class="callout-body"><p>הטעות הכי נפוצה עם פדים: להיות במצב הלא נכון. לחצתם "Hot Cue" ושמעתם פתאום צופר? הייתם במצב Sampler. לפני כל מעבר — מבט מהיר על מצב הפדים.</p></div></aside>
+<h2 id="שגרת-הכנה-של-חמש-דקות-לטראק">שגרת הכנה של חמש דקות לטראק<a class="anchor" href="#שגרת-הכנה-של-חמש-דקות-לטראק" title="קישור ישיר לסעיף">#</a></h2>
+<p>זה מה שמקצוענים עושים לכל טראק חדש, בבית, לפני שהוא נכנס לסט:</p>
+<ol>
+<li><strong>Beatgrid</strong> — בדיקה בהתחלה, באמצע ובסוף (פרק 2).</li>
+<li><strong>A</strong> — על ה-1 הראשון של השיר (אחרי פתיחה חופשית או Pickup, אם יש).</li>
+<li><strong>B</strong> — איפה שהבאס או הגרוב המלא נכנסים.</li>
+<li><strong>C ו-D</strong> — הברייקדאון הראשון והדרופ הראשון.</li>
+<li><strong>E ו-F</strong> — אם יש ברייקדאון ודרופ שניים.</li>
+<li><strong>G</strong> — תחילת האאוטרו, על גבול פרייז.</li>
+<li><strong>H</strong> — 16 תיבות לפני הסוף (בקפיצת Beat Jump של 64 ביטים אחורה מהסוף, זה קל).</li>
+<li><strong>Memory Cues</strong> — לפחות על C, D ו-G, כדי שיופיעו כסימני דרך גם בנגני CDJ.</li>
+<li><strong>צבע טראק, דירוג ותגיות</strong> — פרק 9.</li>
+<li><strong>נעילת ניתוח</strong>, כדי שהעבודה לא תימחק.</li>
+</ol>
+<h3 id="מיינסטרים-היפ-הופ-וים-תיכוני">מיינסטרים, היפ-הופ וים-תיכוני<a class="anchor" href="#מיינסטרים-היפ-הופ-וים-תיכוני" title="קישור ישיר לסעיף">#</a></h3>
+<p>בשירים בלי מבנה "של DJ", המוסכמה מתגמשת:</p>
+<ul>
+<li><strong>A</strong> — ה-1 הראשון, גם אם יש לפניו פתיחה חופשית (תקסים של עוד או כינור). את הפתיחה עצמה סמנו ב-Memory Cue נפרד — היא יכולה להיות רגע "וואו" באירוע.</li>
+<li><strong>B</strong> — תחילת הבית הראשון, או ה-1 של הגרוב המלא.</li>
+<li><strong>D</strong> — הפזמון / ההוק הראשון. זה ה"דרופ" של שיר פופ.</li>
+<li><strong>F</strong> — הפזמון האחרון (לפעמים הכי חזק).</li>
+<li><strong>G</strong> — תחילת הקטע האחרון שאפשר לצאת ממנו בנוחות.</li>
+<li><strong>Cue פנוי (E או H)</strong> — קטע תופים שמתאים ללופ, למקרה שהאאוטרו קצר.</li>
+</ul>
+<h2 id="תרגילים">תרגילים<a class="anchor" href="#תרגילים" title="קישור ישיר לסעיף">#</a></h2>
+<aside class="callout callout--exercise" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 15.5V12a8 8 0 0 1 16 0v3.5"/><rect x="3" y="14" width="5" height="7" rx="2"/><rect x="16" y="14" width="5" height="7" rx="2"/></svg><span>תרגיל 1 — ציד Hot Cues</span></div><div class="callout-body"><p>נגנו את <span class="tref" data-file="music/practice/practice-13-cue-hunt-126.mp3" data-missing="1"><code>music/practice/practice-13-cue-hunt-126.mp3</code></span>. יש בו אירועים קוליים ברורים בתיבות 1, 17, 33, 49 ו-65. <strong>בלי להסתכל על הווייבפורם</strong>, שמרו Hot Cues A עד E על כל אירוע, ברגע שאתם שומעים אותו (Quantize דולק). אחר כך בדקו בזום שכל Cue יושב בדיוק על קו של תחילת תיבה.</p>
+<p>🎧 תרגיל 2 — אותו דבר בלי רשת: מחקו את ה-Cues, כבו את Quantize וחזרו על תרגיל 1. עכשיו הסתכלו בזום: כמה רחוק מהקו נפלה כל לחיצה שלכם? זה מראה לכם כמה Quantize עוזר — ועד כמה זמן התגובה שלכם ישתפר עם תרגול.</p>
+<p>🎧 תרגיל 3 — לנחש את ה-Cues: בחרו שלושה טראקים של DJ Lab שעוד לא האזנתם להם (למשל <span class="tref" data-file="music/tracks/afro_house/house-10-kalimba-moon.mp3" data-missing="1"><code>music/tracks/afro_house/house-10-kalimba-moon.mp3</code></span>, <span class="tref" data-file="music/tracks/melodic_techno/techno-06-afterglow-protocol.mp3" data-missing="1"><code>music/tracks/melodic_techno/techno-06-afterglow-protocol.mp3</code></span> ו-<span class="tref" data-file="music/tracks/nu_disco/house-12-mirrorball-boulevard.mp3" data-missing="1"><code>music/tracks/nu_disco/house-12-mirrorball-boulevard.mp3</code></span>). כסו את ה-Hot Cues על המסך, האזינו, וסמנו <strong>Memory Cues</strong> במקומות שבהם לדעתכם צריכים להיות B, C, D ו-G. אחר כך השוו ל-Hot Cues שהגיעו מקובץ ה-XML.</p>
+<p>🎧 תרגיל 4 — הארכת אינטרו: טענו את <span class="tref" data-file="music/tracks/house/house-03-hands-up-florentin.mp3" data-missing="1"><code>music/tracks/house/house-03-hands-up-florentin.mp3</code></span>. על ה-1 של תיבה 1 (Hot Cue A), הפעילו לופ של 8 תיבות (32 ביטים). תנו לו להסתובב שלוש פעמים, וצאו ממנו על ה-1. הארכתם את האינטרו ב-24 תיבות — בלי שאף אחד ישמע.</p>
+<p>🎧 תרגיל 5 — תיקון פרייז עם Beat Jump: טענו את <span class="tref" data-id="house-03"><code>house-03</code></span> לדק 1 ואת <span class="tref" data-file="music/tracks/house/house-04-piano-saturday.mp3" data-missing="1"><code>music/tracks/house/house-04-piano-saturday.mp3</code></span> לדק 2, ו-Sync בדק 2. התחילו את <span class="tref" data-id="house-04"><code>house-04</code></span> בכוונה 4 תיבות אחרי ה-1 של פרייז ב-<span class="tref" data-id="house-03"><code>house-03</code></span>. שמעתם את ה"אי-נוחות"? עכשיו, על ה-1 של תיבה כלשהי, Beat Jump של 16 ביטים קדימה ב-<span class="tref" data-id="house-04"><code>house-04</code></span>. הפרייזים מיושרים?</p>
+<p>🎧 תרגיל 6 — Loop Roll עם Slip: טענו את <span class="tref" data-file="music/tracks/techno/techno-02-industrial-heart.mp3" data-missing="1"><code>music/tracks/techno/techno-02-industrial-heart.mp3</code></span>, הדליקו Slip. בתיבה האחרונה של פרייז, הפעילו לופ של ביט אחד והחזיקו/קצרו (1 → 1/2 → 1/4) עד ה-1 הבא, ואז שחררו. השיר ממשיך בדיוק בפרייז הבא? נסו את אותו דבר בלי Slip, ושימו לב להבדל.</p>
+<p>🎧 תרגיל 7 — הכנת טראק מיינסטרים: טענו את <span class="tref" data-file="music/tracks/mediterranean/mainstream-13-darbuka-nights.mp3" data-missing="1"><code>music/tracks/mediterranean/mainstream-13-darbuka-nights.mp3</code></span> (100 BPM). עברו על שגרת ההכנה בגרסת המיינסטרים, וסמנו גם Cue של קטע תופים שמתאים ללופ. השוו ל-Cues הקיימים מה-XML.</p>
+<p>🎧 תרגיל 8 — הכנה אמיתית: קחו חמישה טראקים מסחריים שקניתם (או שתקנו בפרק 9) ועברו על שגרת חמש הדקות המלאה. מדדו כמה זמן לקח לכל אחד. בטראק החמישי אתם אמורים להיות מהירים פי שניים מבראשון.</p></div></aside>
+<h2 id="סיכום">סיכום<a class="anchor" href="#סיכום" title="קישור ישיר לסעיף">#</a></h2>
+<ul>
+<li>CUE = נקודה זמנית. Memory Cue = סימן דרך שעוצר. Hot Cue = קפיצה ונגינה מיידית.</li>
+<li>מוסכמת DJ Lab: A ירוק (התחלה), B תכלת (כניסת גרוב), C כתום, D אדום (דרופ), E צהוב, F ורוד, G כחול (יציאה), H סגול (16 אחרונות).</li>
+<li>לופים רק על קטעים פשוטים ועל ה-1. 16 ביטים = 4 תיבות, 32 ביטים = פרייז.</li>
+<li>Beat Jump מתקן פרייזים, מדלג על קטעים ומאריך — בלי לצאת מהקצב.</li>
+<li>Slip מחזיר אתכם למקום שבו השיר "היה אמור להיות". Quantize מצמיד הכול לרשת.</li>
+<li>שגרת הכנה של חמש דקות לכל טראק — בבית, לא בהופעה.</li>
+</ul>
+<h2 id="בפרק-הבא">בפרק הבא<a class="anchor" href="#בפרק-הבא" title="קישור ישיר לסעיף">#</a></h2>
+<p>כל ההכנה הזו נבדקת בסוף באוזניות. בפרק הבא נלמד לעבוד איתן נכון: Cue Mix, טכניקת האוזן האחת, Split Cue, מוניטור Booth, השהיות — ואיך שומרים על השמיעה.</p>
+<p>👉 <a href="08-headphones-cueing.html">פרק 8 — אוזניות וקיואינג</a></p>
+      <div class="chapter-done">
+        <button class="btn btn--ghost" type="button" data-mark-read><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>סימון הפרק כנקרא</span></button>
+      </div>
+    </div>
+  </div>
+  <nav class="container pn" aria-label="ניווט בין פרקים"><a class="pn-card pn-prev" href="06-first-transitions.html"><span class="pn-label"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m0 0-6-6m6 6-6 6"/></svg>הפרק הקודם</span><span class="pn-title"><span class="pn-num">06</span>המעברים הראשונים</span></a><a class="pn-card pn-next" href="08-headphones-cueing.html"><span class="pn-label">הפרק הבא<svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5m0 0 6-6m-6 6 6 6"/></svg></span><span class="pn-title"><span class="pn-num">08</span>אוזניות וקיואינג</span></a></nav>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><defs><linearGradient id="bm-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2bd6"/><stop offset=".55" stop-color="#8a5cff"/><stop offset="1" stop-color="#22e1ff"/></linearGradient></defs><circle cx="20" cy="20" r="18" fill="none" stroke="url(#bm-g)" stroke-width="3"/><circle cx="20" cy="20" r="11.5" fill="none" stroke="url(#bm-g)" stroke-width="1.5" opacity=".55"/><g fill="url(#bm-g)"><rect x="11" y="16" width="2.6" height="8" rx="1.3"/><rect x="15.4" y="12" width="2.6" height="16" rx="1.3"/><rect x="19.8" y="9.5" width="2.6" height="21" rx="1.3"/><rect x="24.2" y="13.5" width="2.6" height="13" rx="1.3"/><rect x="28.6" y="17" width="2.6" height="6" rx="1.3"/></g></svg><span class="brand-word">DJ<b>Lab</b></span></a>
+      <p>בית הספר לתקלוט שלך: קורס Rekordbox בעברית, מוזיקה מקורית לתרגול וכלים שעובדים ישר בדפדפן.</p>
+    </div>
+    <nav aria-label="ללמוד"><h2>ללמוד</h2><ul>
+      <li><a href="../guide/index.html">הקורס</a></li><li><a href="../practice.html">אימון ומעברים</a></li><li><a href="../sets/index.html">סטים לדוגמה</a></li></ul></nav>
+    <nav aria-label="מוזיקה"><h2>מוזיקה</h2><ul>
+      <li><a href="../library.html">ספריית מוזיקה</a></li><li><a href="../crates/index.html">ארגזים</a></li><li><a href="../tools/rekordbox.html">ייבוא ל-Rekordbox</a></li></ul></nav>
+    <nav aria-label="כלים"><h2>כלים</h2><ul>
+      <li><a href="../tools/mix-trainer.html">מאמן מיקס</a></li><li><a href="../tools/camelot.html">גלגל קאמלוט</a></li><li><a href="../tools/set-builder.html">בונה סטים</a></li></ul></nav>
+  </div>
+  <div class="container footer-legal">
+    <p>המוזיקה המקורית משוחררת ב-<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.he" target="_blank" rel="noopener">CC0</a> · הקוד ב-MIT · הארגזים הם קישורים בלבד - קנו והזרימו ממקורות חוקיים.</p>
+    <p class="muted"><a href="../about.html">אודות ורישיון</a> · © 2026 DJ Lab</p>
+  </div>
+</footer>
+<script src="../data/catalog.js?v=e4c6cf60" defer></script><script src="../data/peaks.js?v=e4c6cf60" defer></script><script src="../data/guide.js?v=e4c6cf60" defer></script><script src="../assets/js/icons.gen.js?v=e4c6cf60" defer></script><script src="../assets/js/core.js?v=e4c6cf60" defer></script><script src="../assets/js/player.js?v=e4c6cf60" defer></script><script src="../assets/js/guide.js?v=e4c6cf60" defer></script>
+</body>
+</html>

@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>04 · BPM וביטמאצ&#x27;ינג · DJ Lab</title>
+<meta name="description" content="מה זה BPM, איך עובדים ה-Tempo Fader וה-Jog Wheel, ושיטה מסודרת צעד-אחר-צעד ליישור שני שירים באוזן — כולל מתי להשתמש ב-Sync, מתי לא, ולמה Master Tempo חייב להיות דולק.">
+<meta name="djlab-root" content="../../">
+<meta name="djlab-base" content="../">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#07070c">
+<link rel="canonical" href="https://lidorbashari.github.io/try/docs/guide/04-bpm-beatmatching.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DJ Lab">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="04 · BPM וביטמאצ&#x27;ינג · DJ Lab">
+<meta property="og:description" content="מה זה BPM, איך עובדים ה-Tempo Fader וה-Jog Wheel, ושיטה מסודרת צעד-אחר-צעד ליישור שני שירים באוזן — כולל מתי להשתמש ב-Sync, מתי לא, ולמה Master Tempo חייב להיות דולק.">
+<meta property="og:url" content="https://lidorbashari.github.io/try/docs/guide/04-bpm-beatmatching.html">
+<meta property="og:image" content="https://lidorbashari.github.io/try/docs/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&family=Rubik:wght@400;500;600;700;800&family=Secular+One&display=swap">
+<link rel="stylesheet" href="../assets/css/site.css?v=e4c6cf60">
+<script>(function(){try{var t=localStorage.getItem('djlab:theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+</head>
+<body class="page-guide has-progress">
+<a class="skip-link" href="#main">דלגו לתוכן</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../index.html" aria-label="DJ Lab - דף הבית"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><defs><linearGradient id="bm-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2bd6"/><stop offset=".55" stop-color="#8a5cff"/><stop offset="1" stop-color="#22e1ff"/></linearGradient></defs><circle cx="20" cy="20" r="18" fill="none" stroke="url(#bm-g)" stroke-width="3"/><circle cx="20" cy="20" r="11.5" fill="none" stroke="url(#bm-g)" stroke-width="1.5" opacity=".55"/><g fill="url(#bm-g)"><rect x="11" y="16" width="2.6" height="8" rx="1.3"/><rect x="15.4" y="12" width="2.6" height="16" rx="1.3"/><rect x="19.8" y="9.5" width="2.6" height="21" rx="1.3"/><rect x="24.2" y="13.5" width="2.6" height="13" rx="1.3"/><rect x="28.6" y="17" width="2.6" height="6" rx="1.3"/></g></svg><span class="brand-word">DJ<b>Lab</b></span></a>
+    <nav class="site-nav" id="site-nav" aria-label="ניווט ראשי"><ul><li><a href="../index.html">בית</a></li><li><a href="../guide/index.html" aria-current="page">הקורס</a></li><li><a href="../library.html">ספריית מוזיקה</a></li><li><a href="../practice.html">אימון</a></li><li><a href="../crates/index.html">ארגזים</a></li><li><a href="../sets/index.html">סטים</a></li><li><a href="../tools/index.html">כלים</a></li><li><a href="../about.html">אודות</a></li></ul></nav>
+    <div class="header-actions">
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="החלפה בין מצב כהה למצב בהיר" title="מצב כהה / בהיר"><svg class="icon i-sun" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg><svg class="icon i-moon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.6A8.2 8.2 0 1 1 9.4 4a6.6 6.6 0 0 0 10.6 10.6z"/></svg></button>
+      <a class="icon-btn hide-sm" href="https://github.com/lidorbashari/try" target="_blank" rel="noopener" aria-label="הקוד ב-GitHub" title="GitHub"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2.8a9.3 9.3 0 0 0-2.9 18.1c.5.1.6-.2.6-.5v-1.7c-2.6.6-3.1-1.2-3.1-1.2-.4-1.1-1-1.4-1-1.4-.9-.6 0-.6 0-.6.9.1 1.4 1 1.4 1 .8 1.4 2.2 1 2.7.8.1-.6.3-1 .6-1.2-2-.2-4.2-1-4.2-4.6 0-1 .4-1.8 1-2.5-.1-.2-.4-1.2.1-2.5 0 0 .8-.2 2.6 1a8.9 8.9 0 0 1 4.7 0c1.8-1.2 2.6-1 2.6-1 .5 1.3.2 2.3.1 2.5.6.7 1 1.5 1 2.5 0 3.6-2.2 4.4-4.2 4.6.3.3.6.8.6 1.6v2.4c0 .3.2.6.7.5A9.3 9.3 0 0 0 12 2.8z" fill="currentColor" stroke="none"/></svg></a>
+      <button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="פתיחת תפריט"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+<div class="reading-progress" aria-hidden="true"><span data-reading-bar></span></div>
+<article class="chapter" data-chapter="04-bpm-beatmatching" data-chapter-num="04">
+  <header class="chapter-hero">
+    <div class="container">
+      <nav class="crumbs" aria-label="פירורי לחם"><a href="../index.html">בית</a><span aria-hidden="true">/</span><a href="index.html">הקורס</a><span aria-hidden="true">/</span><span aria-current="page">פרק 04</span></nav>
+      <div class="chapter-hero-grid">
+        <div class="chapter-num" aria-hidden="true">04</div>
+        <div>
+          <p class="eyebrow">פרק 04 מתוך 15</p>
+          <h1 class="chapter-title">BPM וביטמאצ&#x27;ינג</h1>
+          <p class="chapter-en" dir="ltr">BPM &amp; Beatmatching</p>
+          <p class="lead">מה זה BPM, איך עובדים ה-Tempo Fader וה-Jog Wheel, ושיטה מסודרת צעד-אחר-צעד ליישור שני שירים באוזן — כולל מתי להשתמש ב-Sync, מתי לא, ולמה Master Tempo חייב להיות דולק.</p>
+          <div class="chapter-meta">
+            <span class="meta-item"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>16 דק' קריאה</span>
+            <span class="badge badge--level" data-level="מתחיל">מתחיל</span>
+            <span class="meta-item"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 15.5V12a8 8 0 0 1 16 0v3.5"/><rect x="3" y="14" width="5" height="7" rx="2"/><rect x="16" y="14" width="5" height="7" rx="2"/></svg>2 קטעי שמע</span>
+            <span class="meta-item read-state" data-read-state hidden><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>נקרא</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container chapter-layout">
+    <aside class="chapter-toc" aria-label="תוכן הפרק">
+  <details class="toc-box" open data-toc-details>
+    <summary><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg><span>בפרק הזה</span><svg class="icon toc-chev" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9.5 6 6 6-6"/></svg></summary>
+    <nav class="toc-nav"><ol><li><a href="#מה-תלמדו-בפרק" data-toc-link>מה תלמדו בפרק</a></li><li><a href="#מה-זה-bpm" data-toc-link>מה זה BPM</a><ol><li><a href="#חצי-קצב-וקצב-כפול" data-toc-link>חצי קצב וקצב כפול</a></li></ol></li><li><a href="#ה-tempo-fader" data-toc-link>ה-Tempo Fader</a><ol><li><a href="#טווח-ה-tempo" data-toc-link>טווח ה-Tempo</a></li><li><a href="#master-tempo-key-lock" data-toc-link>Master Tempo (Key Lock)</a></li></ol></li><li><a href="#שתי-בעיות-מהירות-ומיקום" data-toc-link>שתי בעיות: מהירות ומיקום</a><ol><li><a href="#כמה-מדויק-צריך-להיות" data-toc-link>כמה מדויק צריך להיות?</a></li></ol></li><li><a href="#ה-jog-wheel" data-toc-link>ה-Jog Wheel</a></li><li><a href="#שיטת-הביטמאצינג-צעד-אחר-צעד" data-toc-link>שיטת הביטמאצ&#x27;ינג — צעד אחר צעד</a><ol><li><a href="#דחיפת-בדיקה-הטריק-למי-שלא-שומע-מי-מקדים" data-toc-link>דחיפת בדיקה — הטריק למי שלא שומע מי מקדים</a></li><li><a href="#מה-אני-שומע-ומה-לעשות" data-toc-link>מה אני שומע — ומה לעשות</a></li></ol></li><li><a href="#עזרים-חזותיים-בזהירות" data-toc-link>עזרים חזותיים — בזהירות</a></li><li><a href="#sync-מתי-כן-ומתי-לא" data-toc-link>Sync — מתי כן ומתי לא</a><ol><li><a href="#איך-הוא-עובד" data-toc-link>איך הוא עובד</a></li><li><a href="#מתי-sync-הוא-חבר" data-toc-link>מתי Sync הוא חבר</a></li><li><a href="#מתי-sync-הוא-אויב" data-toc-link>מתי Sync הוא אויב</a></li></ol></li><li><a href="#תרגילים" data-toc-link>תרגילים</a></li><li><a href="#סיכום" data-toc-link>סיכום</a></li><li><a href="#בפרק-הבא" data-toc-link>בפרק הבא</a></li></ol></nav>
+  </details>
+</aside>
+    <div class="prose" data-prose>
+      <p>יש רגע שכל DJ זוכר: אחרי דקות של "סוסים דוהרים" באוזניות — שני תופים שמתנגשים, מקדימים, מאחרים — פתאום הכול נועל. שני ה-Kicks הופכים למכה אחת, עבה ושלמה, וזה פשוט נשאר שם. זה Beatmatching. נכון, ל-Rekordbox יש כפתור Sync שעושה את זה בשבריר שנייה. אז למה ללמוד את זה ביד? כי Sync סומך על ה-Beatgrid, וה-Beatgrid לא תמיד צודק; כי ציוד במועדון לא תמיד מחובר כמו שצריך; וכי האוזן שתתאמנו כאן היא אותה אוזן שתשמע בהמשך מתי מעבר "יושב" ומתי לא. בפרק הזה נבנה את המיומנות הזו בהדרגה, עם קבצי תרגול שנבנו בדיוק בשביל זה.</p>
+<h2 id="מה-תלמדו-בפרק">מה תלמדו בפרק<a class="anchor" href="#מה-תלמדו-בפרק" title="קישור ישיר לסעיף">#</a></h2>
+<ul>
+<li>מה זה BPM, אילו קצבים מאפיינים כל ז'אנר, ומה זה "חצי קצב" ו"קצב כפול"</li>
+<li>איך עובד ה-Tempo Fader, מה זה טווח Tempo, ואיך מחשבים אחוזים</li>
+<li>למה Master Tempo (Key Lock) חייב להיות דולק כמעט תמיד</li>
+<li>ההבדל בין <strong>מהירות</strong> (Tempo) ל<strong>מיקום</strong> (Phase), ולמה צריך לתקן את שניהם</li>
+<li>איך משתמשים ב-Jog Wheel לדחיפה עדינה (Pitch Bend)</li>
+<li>שיטת ביטמאצ'ינג באוזן, צעד אחר צעד, וטבלת אבחון "מה אני שומע ומה לעשות"</li>
+<li>Sync: איך הוא עובד, מתי כן ומתי לא</li>
+<li>סדרת תרגילים הדרגתית עם <span class="tref" data-id="practice-02"><code>practice-02</code></span> עד <span class="tref" data-id="practice-07"><code>practice-07</code></span></li>
+</ul>
+<h2 id="מה-זה-bpm">מה זה BPM<a class="anchor" href="#מה-זה-bpm" title="קישור ישיר לסעיף">#</a></h2>
+<p>BPM (Beats Per Minute) — מספר הביטים בדקה. 124 BPM אומר 124 מכות Kick בדקה. ככל שהמספר גבוה יותר, השיר מהיר יותר. כל ז'אנר חי בטווח קצבים אופייני:</p>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>ז'אנר</th>
+<th>טווח טיפוסי</th>
+<th>דוגמאות מ-DJ Lab</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>לו-פיי / דאונטמפו</td>
+<td>70–90</td>
+<td><span class="tref" data-id="breadth-10"><code>breadth-10</code></span> (84)</td>
+</tr>
+<tr>
+<td>היפ-הופ</td>
+<td>85–100</td>
+<td><span class="tref" data-id="mainstream-05"><code>mainstream-05</code></span> (92), <span class="tref" data-id="mainstream-07"><code>mainstream-07</code></span> (95)</td>
+</tr>
+<tr>
+<td>רגאטון</td>
+<td>88–100</td>
+<td><span class="tref" data-id="mainstream-09"><code>mainstream-09</code></span> (92), <span class="tref" data-id="mainstream-08"><code>mainstream-08</code></span> (95)</td>
+</tr>
+<tr>
+<td>ים-תיכוני / מזרחית למסיבות</td>
+<td>95–130 (רחב מאוד)</td>
+<td><span class="tref" data-id="mainstream-13"><code>mainstream-13</code></span> (100), <span class="tref" data-id="mainstream-14"><code>mainstream-14</code></span> (104), <span class="tref" data-id="mainstream-15"><code>mainstream-15</code></span> (124)</td>
+</tr>
+<tr>
+<td>אפרוביטס</td>
+<td>100–115</td>
+<td><span class="tref" data-id="mainstream-11"><code>mainstream-11</code></span> (104), <span class="tref" data-id="mainstream-12"><code>mainstream-12</code></span> (106)</td>
+</tr>
+<tr>
+<td>אמאפיאנו</td>
+<td>110–115</td>
+<td><span class="tref" data-id="house-14"><code>house-14</code></span> (113)</td>
+</tr>
+<tr>
+<td>נו-דיסקו</td>
+<td>110–122</td>
+<td><span class="tref" data-id="house-13"><code>house-13</code></span> (116), <span class="tref" data-id="house-12"><code>house-12</code></span> (118)</td>
+</tr>
+<tr>
+<td>דיפ-האוס / אפרו-האוס</td>
+<td>118–124</td>
+<td><span class="tref" data-id="house-02"><code>house-02</code></span> (121), <span class="tref" data-id="house-01"><code>house-01</code></span> (122), <span class="tref" data-id="house-09"><code>house-09</code></span> (122)</td>
+</tr>
+<tr>
+<td>האוס</td>
+<td>120–126</td>
+<td><span class="tref" data-id="house-03"><code>house-03</code></span>, <span class="tref" data-id="house-04"><code>house-04</code></span> (124)</td>
+</tr>
+<tr>
+<td>מלודיק טכנו</td>
+<td>120–126</td>
+<td><span class="tref" data-id="techno-05"><code>techno-05</code></span> (122), <span class="tref" data-id="techno-07"><code>techno-07</code></span> (124)</td>
+</tr>
+<tr>
+<td>טק-האוס</td>
+<td>124–128</td>
+<td><span class="tref" data-id="house-05"><code>house-05</code></span> (126), <span class="tref" data-id="house-06"><code>house-06</code></span> (127), <span class="tref" data-id="house-07"><code>house-07</code></span> (128)</td>
+</tr>
+<tr>
+<td>ביג רום</td>
+<td>126–130</td>
+<td><span class="tref" data-id="mainstream-01"><code>mainstream-01</code></span>, <span class="tref" data-id="mainstream-02"><code>mainstream-02</code></span> (128)</td>
+</tr>
+<tr>
+<td>טכנו</td>
+<td>128–140</td>
+<td><span class="tref" data-id="techno-04"><code>techno-04</code></span> (129), <span class="tref" data-id="techno-01"><code>techno-01</code></span> (130), <span class="tref" data-id="techno-03"><code>techno-03</code></span> (132)</td>
+</tr>
+<tr>
+<td>טראנס / פסיי-טראנס</td>
+<td>132–148</td>
+<td><span class="tref" data-id="breadth-04"><code>breadth-04</code></span> (134), <span class="tref" data-id="breadth-03"><code>breadth-03</code></span> (138), <span class="tref" data-id="breadth-01"><code>breadth-01</code></span> (142)</td>
+</tr>
+<tr>
+<td>הארד טכנו</td>
+<td>145–160</td>
+<td><span class="tref" data-id="techno-11"><code>techno-11</code></span> (148), <span class="tref" data-id="techno-12"><code>techno-12</code></span> (150)</td>
+</tr>
+<tr>
+<td>דראם אנד בייס</td>
+<td>170–176</td>
+<td><span class="tref" data-id="breadth-06"><code>breadth-06</code></span> (172), <span class="tref" data-id="breadth-05"><code>breadth-05</code></span> (174)</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="חצי-קצב-וקצב-כפול">חצי קצב וקצב כפול<a class="anchor" href="#חצי-קצב-וקצב-כפול" title="קישור ישיר לסעיף">#</a></h3>
+<p>שיר ב-140 BPM יכול להרגיש איטי — כמו טראפ או דאבסטפ, שבהם הסנר מגיע רק פעם בתיבה ("Half-time"). ושיר היפ-הופ ב-87 "מתאים" לדראם אנד בייס ב-174, כי 87 × 2 = 174. זה חשוב לשני דברים: Rekordbox לפעמים מזהה BPM כפול או חצי (פרק 2), ובהמשך, במעברי ז'אנר, אפשר לנצל את היחס הזה (פרק 15).</p>
+<h2 id="ה-tempo-fader">ה-Tempo Fader<a class="anchor" href="#ה-tempo-fader" title="קישור ישיר לסעיף">#</a></h2>
+<p>הפיידר הארוך בצד של כל דק משנה את מהירות השיר. הוא מראה <strong>אחוזים</strong> מהמהירות המקורית:</p>
+<blockquote class="quote"><p><strong>BPM חדש = BPM מקורי × (1 + אחוז ÷ 100)</strong></p>
+<p><strong>האחוז הדרוש = (BPM היעד ÷ BPM המקורי − 1) × 100</strong></p></blockquote>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>מ...</th>
+<th>ל...</th>
+<th>שינוי</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>124</td>
+<td>126</td>
+<td>‎+1.61%‎</td>
+</tr>
+<tr>
+<td>128</td>
+<td>124</td>
+<td>‎−3.13%‎</td>
+</tr>
+<tr>
+<td>120</td>
+<td>124</td>
+<td>‎+3.33%‎</td>
+</tr>
+<tr>
+<td>125.5</td>
+<td>124</td>
+<td>‎−1.20%‎</td>
+</tr>
+<tr>
+<td>122.7</td>
+<td>124</td>
+<td>‎+1.06%‎</td>
+</tr>
+<tr>
+<td>95</td>
+<td>124</td>
+<td>‎+30.5%‎ — יותר מדי! כאן צריך טכניקת מעבר אחרת (פרק 15)</td>
+</tr>
+</tbody>
+</table></div>
+<aside class="callout callout--warn" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.3 4.3 2.8 17.5A2 2 0 0 0 4.5 20.5h15a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v4.5M12 17h.01"/></svg><span>זהירות</span></div><div class="callout-body"><p>בציוד של Pioneer DJ / AlphaTheta, <strong>הזזת הפיידר לכיוונכם (למטה) מאיצה (+)</strong>, והזזה הרחק מכם (למעלה) מאטה (−). זה הפוך ממה שרוב האנשים מצפים בהתחלה. הסתכלו על הסימונים ליד הפיידר.</p></div></aside>
+<h3 id="טווח-ה-tempo">טווח ה-Tempo<a class="anchor" href="#טווח-ה-tempo" title="קישור ישיר לסעיף">#</a></h3>
+<p>אורך הפיידר קבוע, אבל אפשר לקבוע כמה אחוזים הוא מכסה: ±6%, ±10%, ±16% או WIDE (טווח רחב מאוד). ככל שהטווח צר יותר, כל מילימטר של תזוזה משנה פחות — כלומר <strong>שליטה עדינה ומדויקת יותר</strong>.</p>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>טווח</th>
+<th>לשיר של 124 BPM</th>
+<th>מתי</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>±6%</td>
+<td>116.6–131.4</td>
+<td>תרגול דיוק, סטים בתוך ז'אנר אחד</td>
+</tr>
+<tr>
+<td>±10%</td>
+<td>111.6–136.4</td>
+<td>ברירת מחדל טובה לרוב הסטים</td>
+</tr>
+<tr>
+<td>±16%</td>
+<td>104.2–143.8</td>
+<td>מעברי ז'אנר גדולים</td>
+</tr>
+<tr>
+<td>WIDE</td>
+<td>כמעט כל דבר</td>
+<td>אפקטים ותעלולים, לא לביטמאצ'ינג</td>
+</tr>
+</tbody>
+</table></div>
+<aside class="callout callout--rekordbox" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17M12 3.5v17M18 3.5v17"/><rect x="3.5" y="13" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="9.5" y="6.5" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="15.5" y="15" width="5" height="3.2" rx="1" fill="currentColor"/></svg><span>ב-Rekordbox</span></div><div class="callout-body"><p>את טווח ה-Tempo רואים ליד ה-BPM בכל דק, ואפשר ללחוץ עליו כדי לשנות. ב-<code>DDJ-FLX4</code>, לחיצה על BEAT SYNC בזמן החזקת SHIFT מחליפה בין הטווחים ±6% → ±10% → ±16% → WIDE.</p></div></aside>
+<h3 id="master-tempo-key-lock">Master Tempo (Key Lock)<a class="anchor" href="#master-tempo-key-lock" title="קישור ישיר לסעיף">#</a></h3>
+<p>כשמאיצים תקליט ויניל, הקול גם עולה בגובה — כמו "צ'יפמאנקס". שינוי של כ-6% במהירות מזיז את הצליל בערך בחצי טון (Semitone). Master Tempo (נקרא גם Key Lock) שומר על הגובה המקורי גם כשמשנים מהירות.</p>
+<ul>
+<li><strong>השאירו אותו דולק</strong> כמעט תמיד. אחרת הסולם משתנה, ומיקס הרמוני (פרק 10) מפסיק לעבוד.</li>
+<li>בשינויים גדולים (מעל 6–8%), Master Tempo מתחיל לייצר "ארטיפקטים" — צליל קצת מתכתי או מרוח. זה סימן שהשירים רחוקים מדי בקצב.</li>
+</ul>
+<h2 id="שתי-בעיות-מהירות-ומיקום">שתי בעיות: מהירות ומיקום<a class="anchor" href="#שתי-בעיות-מהירות-ומיקום" title="קישור ישיר לסעיף">#</a></h2>
+<p>זה הרעיון הכי חשוב בפרק. כשמנסים ליישר שני שירים, יש <strong>שתי בעיות נפרדות</strong>:</p>
+<ol>
+<li><strong>מהירות (Tempo)</strong> — האם שני השירים רצים באותו BPM? אם לא, הם יתרחקו אחד מהשני עם הזמן. <strong>מתקנים עם ה-Tempo Fader.</strong></li>
+<li><strong>מיקום (Phase)</strong> — גם אם המהירות זהה, האם ה-Kicks נופלים באותו רגע? אולי B מתחיל רבע ביט מוקדם מדי. <strong>מתקנים עם ה-Jog Wheel.</strong></li>
+</ol>
+<p>המשל: שני רצים על מסלול. ה-Tempo Fader קובע את המהירות של כל אחד. ה-Jog Wheel הוא "דחיפה קטנה בגב" או "משיכה בחולצה" — שינוי זמני, שמזיז את הרץ קדימה או אחורה בלי לשנות את המהירות הקבועה שלו.</p>
+<figure class="figure"><img alt="השוואה: מעבר &quot;התנגשות רכבות&quot; מול Kicks מיושרים" src="../assets/guide/04-beatmatching-waveforms.svg" loading="lazy" decoding="async"><figcaption>השוואה: מעבר &quot;התנגשות רכבות&quot; מול Kicks מיושרים</figcaption></figure>
+<h3 id="כמה-מדויק-צריך-להיות">כמה מדויק צריך להיות?<a class="anchor" href="#כמה-מדויק-צריך-להיות" title="קישור ישיר לסעיף">#</a></h3>
+<p>כאן מגיעה הפתעה: הפרש של <strong>1 BPM בלבד</strong> גורם לשירים להתרחק <strong>בביט שלם כל דקה</strong>. ב-124 BPM ביט אחד הוא כמעט חצי שנייה (484 אלפיות). אפילו הפרש של 0.1 BPM יוצר סטייה של כ-48 אלפיות שנייה בדקה — והאוזן מתחילה לשמוע "כפל" ב-Kick כבר בסביבות 15–20 אלפיות. לכן ביטמאצ'ינג ידני הוא לא "פעם אחת וסיימנו": גם אחרי שהמהירות כמעט מושלמת, נוגעים ב-Jog מדי פעם כדי להחזיק את הנעילה.</p>
+<h2 id="ה-jog-wheel">ה-Jog Wheel<a class="anchor" href="#ה-jog-wheel" title="קישור ישיר לסעיף">#</a></h2>
+<p>לגלגל הגדול יש שני אזורים:</p>
+<ul>
+<li><strong>המשטח העליון</strong> — כשמצב Vinyl פועל, נגיעה בו "תופסת" את התקליט: עוצרת אותו או מאפשרת סקרץ'. <strong>לא נוגעים בו בזמן ביטמאצ'ינג</strong> של שיר שמתנגן.</li>
+<li><strong>הטבעת בצד</strong> — סיבוב בכיוון השעון מאיץ לרגע (דוחף קדימה), נגד כיוון השעון מאט לרגע (מושך אחורה). זה ה-Pitch Bend, הכלי לתיקון מיקום.</li>
+</ul>
+<aside class="callout callout--tip" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.5 18h5M10.5 21h3M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg><span>טיפ</span></div><div class="callout-body"><p>דחיפה עדינה עדיפה על דחיפה חזקה. סיבוב קצר וקל של הטבעת — כמו ללטף — ואז מקשיבים. עוד נגיעה קטנה, ושוב מקשיבים. מתחילים נוטים "לנער" את הגלגל ואז לפספס לצד השני.</p></div></aside>
+<h2 id="שיטת-הביטמאצינג-צעד-אחר-צעד">שיטת הביטמאצ'ינג — צעד אחר צעד<a class="anchor" href="#שיטת-הביטמאצינג-צעד-אחר-צעד" title="קישור ישיר לסעיף">#</a></h2>
+<p>הסטאפ: בדק 1 (A) מתנגן שיר דרך ה-Master. בדק 2 (B) טעון השיר החדש. האוזניות על הראש, כפתור ה-CUE של ערוץ 2 דולק, והפיידר של B למטה (הקהל לא שומע אותו).</p>
+<ol>
+<li><strong>כסו את מסך ה-BPM של B</strong> (פתק דביק על המסך, ממש). אנחנו מאמנים אוזניים.</li>
+<li><strong>מצאו את ה-1 של B.</strong> ב-DJ Lab זה פשוט — Hot Cue A. בשירים אחרים: ה-Kick הראשון של פרייז.</li>
+<li><strong>ספרו את A</strong> בקול או בראש: "1-2-3-4, 2-2-3-4…".</li>
+<li><strong>שחררו את B על ה-1</strong> של פרייז ב-A (לחיצה על PLAY בדיוק על ה-Kick).</li>
+<li><strong>הקשיבו לשניהם יחד.</strong> אפשרות אחת: אוזנייה אחת על B, אוזן שנייה פתוחה ל-A ברמקולים. אפשרות שנייה: ידית ה-Headphones Mix באמצע, ושני השירים באוזניות (פרק 8).</li>
+<li><strong>תקנו מיקום.</strong> אם ה-Kicks לא נופלים יחד — דחיפה קטנה ב-Jog של B. לא בטוחים לאיזה כיוון? ראו "דחיפת בדיקה" בהמשך.</li>
+<li><strong>בדקו סחיפה.</strong> אחרי שיישרתם, אל תיגעו כמה שניות. B מתחיל "לברוח קדימה"? הוא מהיר מדי — הזיזו את ה-Tempo Fader של B מעט לכיוון האטה (−). B "נגרר אחורה"? איטי מדי — הזיזו מעט לכיוון האצה (+).</li>
+<li><strong>אחרי כל הזזת פיידר — ישרו שוב עם ה-Jog.</strong> הפיידר תיקן מהירות, אבל בינתיים המיקום כבר זז.</li>
+<li><strong>חזרו על 7–8</strong> בתנועות שהולכות וקטנות, עד ש-B נשאר נעול 16 תיבות בלי לגעת.</li>
+<li><strong>עכשיו הציצו.</strong> הורידו את הפתק. B אמור להראות BPM קרוב מאוד ל-A (למשל 124.0 מול 124.0 או 124.1).</li>
+<li><strong>סבב שני:</strong> חזרו ל-Hot Cue A של B ושחררו אותו שוב על ה-1 הבא של פרייז. המהירות כבר נכונה — רק מיקום. כך מתרגלים את ה"שחרור על ה-1".</li>
+</ol>
+<h3 id="דחיפת-בדיקה-הטריק-למי-שלא-שומע-מי-מקדים">דחיפת בדיקה — הטריק למי שלא שומע מי מקדים<a class="anchor" href="#דחיפת-בדיקה-הטריק-למי-שלא-שומע-מי-מקדים" title="קישור ישיר לסעיף">#</a></h3>
+<p>בהתחלה קשה לשמוע מי מהשניים "ראשון". הפתרון: דחפו את B קצת <strong>קדימה</strong>.</p>
+<ul>
+<li>נהיה <strong>יותר גרוע</strong>? B כבר היה לפני A. דחפו אותו פעמיים אחורה.</li>
+<li>נהיה <strong>יותר טוב</strong>? B היה מאחור. המשיכו בדחיפות קטנות קדימה.</li>
+</ul>
+<p>זה לוקח שנייה, ותוך שבוע תתחילו לשמוע את הכיוון בלי לבדוק.</p>
+<h3 id="מה-אני-שומע-ומה-לעשות">מה אני שומע — ומה לעשות<a class="anchor" href="#מה-אני-שומע-ומה-לעשות" title="קישור ישיר לסעיף">#</a></h3>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>מה שומעים</th>
+<th>מה זה אומר</th>
+<th>מה עושים</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"כפל" קבוע ב-Kick (פלאם) שלא משתנה</td>
+<td>המהירות נכונה, המיקום לא</td>
+<td>Jog בלבד</td>
+</tr>
+<tr>
+<td>"כפל" שהולך וגדל לאט</td>
+<td>מהירות כמעט נכונה</td>
+<td>תזוזה זעירה ב-Fader, ואז Jog</td>
+</tr>
+<tr>
+<td>"סוסים דוהרים" — בלגן שמשתנה מהר</td>
+<td>פער מהירות גדול</td>
+<td>תזוזה משמעותית ב-Fader לכיוון הנכון</td>
+</tr>
+<tr>
+<td>הקלאפים "נמרחים", ה-Kicks נשמעים כמעט יחד</td>
+<td>מיקום כמעט נכון</td>
+<td>נגיעה קטנטנה ב-Jog</td>
+</tr>
+<tr>
+<td>Kick אחד, עבה ויציב, שנשאר כך 16 תיבות</td>
+<td>נעול! 🎉</td>
+<td>להנות, ולהקשיב כל כמה שניות</td>
+</tr>
+<tr>
+<td>הכול נשמע נכון, אבל השינויים בשירים לא נופלים יחד</td>
+<td>ביטים מיושרים, פרייזים לא</td>
+<td>התחילו את B מחדש על ה-1 של פרייז (פרק 3)</td>
+</tr>
+</tbody>
+</table></div>
+<aside class="callout callout--tip" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.5 18h5M10.5 21h3M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg><span>טיפ</span></div><div class="callout-body"><p>כשה-Kicks מתערבבים ולא ברור מה קורה, הקשיבו לצלילים הגבוהים — הקלאפ, הסנר, ההיי-האט הפתוח. הם קצרים וחדים, ולכן קל יותר לשמוע מי מהם מקדים.</p></div></aside>
+<h2 id="עזרים-חזותיים-בזהירות">עזרים חזותיים — בזהירות<a class="anchor" href="#עזרים-חזותיים-בזהירות" title="קישור ישיר לסעיף">#</a></h2>
+<p>Rekordbox מציג את שני הווייבפורמים אחד מעל השני, ואפשר לראות אם ה-Kicks (הפסים הגבוהים) מיושרים. יש גם תצוגות כמו Phase Meter (אם היא מופעלת אצלכם בתצוגה) שמראות אם ה-1 של שני הדקים מיושר. זה עוזר — אבל:</p>
+<ul>
+<li><strong>העיניים משקרות כשה-Beatgrid לא נכון.</strong> בטראק עם מתופף חי, הווייבפורם יכול להיראות מיושר כשהאוזן שומעת אחרת.</li>
+<li><strong>במועדון, המסך רחוק והאור חלש.</strong> האוזן תמיד איתכם.</li>
+</ul>
+<p>השתמשו בעיניים כדי לבדוק את עצמכם אחרי שהאוזן החליטה, לא במקומה.</p>
+<h2 id="sync-מתי-כן-ומתי-לא">Sync — מתי כן ומתי לא<a class="anchor" href="#sync-מתי-כן-ומתי-לא" title="קישור ישיר לסעיף">#</a></h2>
+<h3 id="איך-הוא-עובד">איך הוא עובד<a class="anchor" href="#איך-הוא-עובד" title="קישור ישיר לסעיף">#</a></h3>
+<aside class="callout callout--rekordbox" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17M12 3.5v17M18 3.5v17"/><rect x="3.5" y="13" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="9.5" y="6.5" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="15.5" y="15" width="5" height="3.2" rx="1" fill="currentColor"/></svg><span>ב-Rekordbox</span></div><div class="callout-body"><p>דק אחד מוגדר כ-MASTER (בדרך כלל זה שמתנגן לקהל). לחיצה על SYNC בדק השני מתאימה אותו ל-Master. יש שני סוגים:
+- <strong>BEAT SYNC</strong> — מתאים גם את ה-BPM וגם את מיקום הביטים לפי ה-Beatgrid.
+- <strong>BPM SYNC</strong> — מתאים רק את ה-BPM. את המיקום תצטרכו ליישר בעצמכם עם ה-Jog.</p></div></aside>
+<p>Sync עובד יחד עם <strong>Quantize</strong>: כש-Quantize דולק, Hot Cues, לופים ו-Beat Jump "נצמדים" לקווי הרשת, כך שקפיצה באמצע שיר לא תוציא אותו מהקצב.</p>
+<h3 id="מתי-sync-הוא-חבר">מתי Sync הוא חבר<a class="anchor" href="#מתי-sync-הוא-חבר" title="קישור ישיר לסעיף">#</a></h3>
+<ul>
+<li>כשה-Beatgrid בדוק ונכון (כמו בכל הטראקים של DJ Lab, ובספרייה שהכנתם כמו בפרק 2).</li>
+<li>כשאתם רוצים לפנות קשב ליצירתיות: אפקטים, לופים, Hot Cues, ארבעה דקים.</li>
+<li>בתרגילי פרייזים וספירה (כמו בפרק 3), כשהמטרה היא לא הביטמאצ'ינג.</li>
+<li>בהופעה לחוצה, כגיבוי — אחרי שאתם <strong>יודעים</strong> לעשות את זה ביד.</li>
+</ul>
+<h3 id="מתי-sync-הוא-אויב">מתי Sync הוא אויב<a class="anchor" href="#מתי-sync-הוא-אויב" title="קישור ישיר לסעיף">#</a></h3>
+<ul>
+<li><strong>Beatgrid שגוי</strong> — Sync יסנכרן "בביטחון מלא" לרשת הלא נכונה, והתוצאה תהיה התנגשות.</li>
+<li><strong>הקלטות עם קצב משתנה</strong> — הרבה מזרחית, פופ ישראלי ישן, פאנק, דיסקו. גם עם ניתוח Dynamic, צריך אוזן ששומרת.</li>
+<li><strong>כשאתם עדיין לומדים</strong> — אם תתחילו עם Sync, לא תפתחו את האוזן. התחייבו לשבועיים-שלושה בלי Sync בכלל.</li>
+</ul>
+<aside class="callout callout--warn" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.3 4.3 2.8 17.5A2 2 0 0 0 4.5 20.5h15a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v4.5M12 17h.01"/></svg><span>זהירות</span></div><div class="callout-body"><p>גם עם Sync דולק, <strong>ספירת פרייזים היא באחריותכם.</strong> Sync מיישר ביטים, לא משפטים מוזיקליים. מעבר עם Sync שמתחיל באמצע פרייז נשמע גרוע בדיוק כמו בלי Sync.</p></div></aside>
+<h2 id="תרגילים">תרגילים<a class="anchor" href="#תרגילים" title="קישור ישיר לסעיף">#</a></h2>
+<p>סדר התרגילים כאן חשוב: כל אחד מוסיף רק קושי אחד. אל תדלגו.</p>
+<aside class="callout callout--exercise" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 15.5V12a8 8 0 0 1 16 0v3.5"/><rect x="3" y="14" width="5" height="7" rx="2"/><rect x="16" y="14" width="5" height="7" rx="2"/></svg><span>תרגיל 1 — מיקום בלבד</span></div><div class="callout-body"><p>טענו את <span class="tref" data-file="music/practice/practice-03-drums-124.mp3" data-missing="1"><code>music/practice/practice-03-drums-124.mp3</code></span> <strong>לשני הדקים</strong>. נגנו את דק 1. התחילו את דק 2 בכוונה "לא בזמן" (לחצו PLAY סתם, באמצע ביט). עכשיו, רק עם ה-Jog של דק 2, ישרו את ה-Kicks. המהירות זהה, אז ברגע שמיישרים — זה נשאר. חזרו על זה 20 פעמים, ונסו להשתמש בדחיפת בדיקה עד שאתם שומעים את הכיוון בלי לנסות.</p>
+<p>🎧 תרגיל 2 — המהירות הראשונה: דק 1: <span class="tref" data-id="practice-03"><code>practice-03</code></span> (124). דק 2: <span class="tref" data-file="music/practice/practice-04-drums-128.mp3" data-missing="1"><code>music/practice/practice-04-drums-128.mp3</code></span> (128). כסו את מסך ה-BPM של דק 2 ועברו על שיטת 11 השלבים. היעד: לנעול את דק 2 על 124 (כלומר בערך ‎−3.1%‎). אחר כך הציצו — כמה קרוב הייתם?</p>
+<p>🎧 תרגיל 3 — הכיוון ההפוך: עכשיו <span class="tref" data-id="practice-04"><code>practice-04</code></span> (128) בדק 1, ו-<span class="tref" data-id="practice-03"><code>practice-03</code></span> (124) בדק 2. הפעם צריך להאיץ את דק 2 (בערך ‎+3.2%‎). שימו לב איך "בורח קדימה" ו"נגרר אחורה" מתהפכים.</p>
+<p>🎧 תרגיל 4 — פערים גדולים יותר: <span class="tref" data-file="music/practice/practice-02-drums-120.mp3" data-missing="1"><code>music/practice/practice-02-drums-120.mp3</code></span> מול <span class="tref" data-file="music/practice/practice-05-drums-132.mp3" data-missing="1"><code>music/practice/practice-05-drums-132.mp3</code></span>. פער של 10% — תצטרכו טווח Tempo של ±10% לפחות, ואולי ±16%. שימו לב כמה הפיידר רגיש בטווח הרחב.</p>
+<p>🎧 תרגיל 5 — טמפו עקום: <span class="tref" data-id="practice-03"><code>practice-03</code></span> (124) בדק 1, ו-<span class="tref" data-file="music/practice/practice-06-odd-tempo-125_5.mp3" data-missing="1"><code>music/practice/practice-06-odd-tempo-125_5.mp3</code></span> (125.5) בדק 2. מספר לא עגול מכריח אתכם להקשיב ולא "לכוון למספר". אחר כך אותו דבר עם <span class="tref" data-file="music/practice/practice-07-odd-tempo-122_7.mp3" data-missing="1"><code>music/practice/practice-07-odd-tempo-122_7.mp3</code></span> (122.7) — כאן ההבדל קטן מאוד, ותצטרכו תזוזות פיידר זעירות ועבודת Jog עדינה.</p>
+<p>🎧 תרגיל 6 — מוזיקה אמיתית: עכשיו עם טראקים שלמים, ולכל זוג שחררו את השיר השני על ה-1 של פרייז:
+- <span class="tref" data-file="music/tracks/house/house-03-hands-up-florentin.mp3" data-missing="1"><code>music/tracks/house/house-03-hands-up-florentin.mp3</code></span> ו-<span class="tref" data-file="music/tracks/house/house-04-piano-saturday.mp3" data-missing="1"><code>music/tracks/house/house-04-piano-saturday.mp3</code></span> (124 / 124 — מיקום בלבד).
+- <span class="tref" data-file="music/tracks/tech_house/house-05-groove-machine.mp3"><code>music/tracks/tech_house/house-05-groove-machine.mp3</code></span> ו-<span class="tref" data-file="music/tracks/tech_house/house-06-bassline-bandit.mp3" data-missing="1"><code>music/tracks/tech_house/house-06-bassline-bandit.mp3</code></span> (126 / 127).
+- <span class="tref" data-file="music/tracks/afro_house/house-09-desert-drums.mp3" data-missing="1"><code>music/tracks/afro_house/house-09-desert-drums.mp3</code></span> ו-<span class="tref" data-file="music/tracks/afro_house/house-11-spirit-dance.mp3" data-missing="1"><code>music/tracks/afro_house/house-11-spirit-dance.mp3</code></span> (122 / 122 — שימו לב, בכלי הקשה אפריקאיים קשה יותר לשמוע את ה-Kick!).
+- <span class="tref" data-file="music/tracks/techno/techno-01-concrete-pulse.mp3"><code>music/tracks/techno/techno-01-concrete-pulse.mp3</code></span> ו-<span class="tref" data-file="music/tracks/techno/techno-04-night-shift.mp3" data-missing="1"><code>music/tracks/techno/techno-04-night-shift.mp3</code></span> (130 / 129).</p>
+<p>🎧 תרגיל 7 — שעון עצר: בכל סשן, מדדו כמה זמן לוקח לכם מלחיצת PLAY על B עד נעילה שמחזיקה 8 תיבות בלי לגעת. רשמו ביומן. יעד סביר: פחות מ-30 שניות בסוף השבוע השני, פחות מ-15 שניות אחרי חודש.</p>
+<p>🎧 תרגיל 8 — לשמוע את Master Tempo: טענו את <span class="tref" data-id="house-04"><code>house-04</code></span> והזיזו את ה-Tempo ל-‎+8%‎. כבו והדליקו את Master Tempo והקשיבו לפסנתר: מה קורה לגובה הצליל? ומה קורה לאיכות הצליל כשהוא דולק בשינוי כזה גדול? החזירו ל-0 בסיום.</p>
+<p>💡 טיפ: עשרים דקות ביום של תרגילים 1–5 במשך שבועיים יעשו יותר מכל סרטון ביוטיוב. ביום שבו תשמעו את הנעילה בלי לחשוב — תדעו.</p></div></aside>
+<h2 id="סיכום">סיכום<a class="anchor" href="#סיכום" title="קישור ישיר לסעיף">#</a></h2>
+<ul>
+<li>BPM = ביטים לדקה. לכל ז'אנר טווח משלו; שימו לב לחצי קצב וקצב כפול.</li>
+<li>ה-Tempo Fader משנה מהירות באחוזים. טווח צר = דיוק. בציוד Pioneer, למטה = מהר יותר.</li>
+<li>Master Tempo דולק כמעט תמיד, כדי שהסולם לא ישתנה.</li>
+<li>ביטמאצ'ינג = שתי בעיות: <strong>מהירות</strong> (Fader) ו<strong>מיקום</strong> (Jog). אחרי כל תיקון מהירות — מיישרים מיקום מחדש.</li>
+<li>לא בטוחים מי מקדים? דחיפת בדיקה קדימה: גרוע יותר = B היה לפני.</li>
+<li>Sync מצוין כשה-Grid נכון, מסוכן כשהוא לא. ספירת פרייזים תמיד עליכם.</li>
+</ul>
+<h2 id="בפרק-הבא">בפרק הבא<a class="anchor" href="#בפרק-הבא" title="קישור ישיר לסעיף">#</a></h2>
+<p>שני שירים רצים יחד — אבל אם פשוט נעלה את שני הפיידרים, נקבל בוץ: שני באסים, עוצמה שעולה לאדום, ומערכת שצועקת. בפרק הבא נלמד לשלוט במיקסר: Gain, מטרים, EQ ופילטר.</p>
+<p>👉 <a href="05-mixer-gain-eq.html">פרק 5 — מיקסר, Gain ו-EQ</a></p>
+      <div class="chapter-done">
+        <button class="btn btn--ghost" type="button" data-mark-read><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>סימון הפרק כנקרא</span></button>
+      </div>
+    </div>
+  </div>
+  <nav class="container pn" aria-label="ניווט בין פרקים"><a class="pn-card pn-prev" href="03-music-structure.html"><span class="pn-label"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m0 0-6-6m6 6-6 6"/></svg>הפרק הקודם</span><span class="pn-title"><span class="pn-num">03</span>מבנה מוזיקלי: ביט, תיבה ופרייז</span></a><a class="pn-card pn-next" href="05-mixer-gain-eq.html"><span class="pn-label">הפרק הבא<svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5m0 0 6-6m-6 6 6 6"/></svg></span><span class="pn-title"><span class="pn-num">05</span>המיקסר: Gain, מטרים, EQ ופילטר</span></a></nav>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><defs><linearGradient id="bm-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2bd6"/><stop offset=".55" stop-color="#8a5cff"/><stop offset="1" stop-color="#22e1ff"/></linearGradient></defs><circle cx="20" cy="20" r="18" fill="none" stroke="url(#bm-g)" stroke-width="3"/><circle cx="20" cy="20" r="11.5" fill="none" stroke="url(#bm-g)" stroke-width="1.5" opacity=".55"/><g fill="url(#bm-g)"><rect x="11" y="16" width="2.6" height="8" rx="1.3"/><rect x="15.4" y="12" width="2.6" height="16" rx="1.3"/><rect x="19.8" y="9.5" width="2.6" height="21" rx="1.3"/><rect x="24.2" y="13.5" width="2.6" height="13" rx="1.3"/><rect x="28.6" y="17" width="2.6" height="6" rx="1.3"/></g></svg><span class="brand-word">DJ<b>Lab</b></span></a>
+      <p>בית הספר לתקלוט שלך: קורס Rekordbox בעברית, מוזיקה מקורית לתרגול וכלים שעובדים ישר בדפדפן.</p>
+    </div>
+    <nav aria-label="ללמוד"><h2>ללמוד</h2><ul>
+      <li><a href="../guide/index.html">הקורס</a></li><li><a href="../practice.html">אימון ומעברים</a></li><li><a href="../sets/index.html">סטים לדוגמה</a></li></ul></nav>
+    <nav aria-label="מוזיקה"><h2>מוזיקה</h2><ul>
+      <li><a href="../library.html">ספריית מוזיקה</a></li><li><a href="../crates/index.html">ארגזים</a></li><li><a href="../tools/rekordbox.html">ייבוא ל-Rekordbox</a></li></ul></nav>
+    <nav aria-label="כלים"><h2>כלים</h2><ul>
+      <li><a href="../tools/mix-trainer.html">מאמן מיקס</a></li><li><a href="../tools/camelot.html">גלגל קאמלוט</a></li><li><a href="../tools/set-builder.html">בונה סטים</a></li></ul></nav>
+  </div>
+  <div class="container footer-legal">
+    <p>המוזיקה המקורית משוחררת ב-<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.he" target="_blank" rel="noopener">CC0</a> · הקוד ב-MIT · הארגזים הם קישורים בלבד - קנו והזרימו ממקורות חוקיים.</p>
+    <p class="muted"><a href="../about.html">אודות ורישיון</a> · © 2026 DJ Lab</p>
+  </div>
+</footer>
+<script src="../data/catalog.js?v=e4c6cf60" defer></script><script src="../data/peaks.js?v=e4c6cf60" defer></script><script src="../data/guide.js?v=e4c6cf60" defer></script><script src="../assets/js/icons.gen.js?v=e4c6cf60" defer></script><script src="../assets/js/core.js?v=e4c6cf60" defer></script><script src="../assets/js/player.js?v=e4c6cf60" defer></script><script src="../assets/js/guide.js?v=e4c6cf60" defer></script>
+</body>
+</html>

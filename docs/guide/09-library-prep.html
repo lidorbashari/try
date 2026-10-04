@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>09 · הכנת ספרייה · DJ Lab</title>
+<meta name="description" content="הסוד של DJs מקצועיים: פורמטים ואיכות, איפה קונים מוזיקה כחוק, סטרימינג בתוך Rekordbox ומגבלותיו, תגיות, דירוגים, צבעים ו-My Tag, פלייליסטים חכמים, מבנה תיקיות ושמות קבצים, גיבויים וייצוא ל-USB.">
+<meta name="djlab-root" content="../../">
+<meta name="djlab-base" content="../">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#07070c">
+<link rel="canonical" href="https://lidorbashari.github.io/try/docs/guide/09-library-prep.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DJ Lab">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="09 · הכנת ספרייה · DJ Lab">
+<meta property="og:description" content="הסוד של DJs מקצועיים: פורמטים ואיכות, איפה קונים מוזיקה כחוק, סטרימינג בתוך Rekordbox ומגבלותיו, תגיות, דירוגים, צבעים ו-My Tag, פלייליסטים חכמים, מבנה תיקיות ושמות קבצים, גיבויים וייצוא ל-USB.">
+<meta property="og:url" content="https://lidorbashari.github.io/try/docs/guide/09-library-prep.html">
+<meta property="og:image" content="https://lidorbashari.github.io/try/docs/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&family=Rubik:wght@400;500;600;700;800&family=Secular+One&display=swap">
+<link rel="stylesheet" href="../assets/css/site.css?v=e4c6cf60">
+<script>(function(){try{var t=localStorage.getItem('djlab:theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+</head>
+<body class="page-guide has-progress">
+<a class="skip-link" href="#main">דלגו לתוכן</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../index.html" aria-label="DJ Lab - דף הבית"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><defs><linearGradient id="bm-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2bd6"/><stop offset=".55" stop-color="#8a5cff"/><stop offset="1" stop-color="#22e1ff"/></linearGradient></defs><circle cx="20" cy="20" r="18" fill="none" stroke="url(#bm-g)" stroke-width="3"/><circle cx="20" cy="20" r="11.5" fill="none" stroke="url(#bm-g)" stroke-width="1.5" opacity=".55"/><g fill="url(#bm-g)"><rect x="11" y="16" width="2.6" height="8" rx="1.3"/><rect x="15.4" y="12" width="2.6" height="16" rx="1.3"/><rect x="19.8" y="9.5" width="2.6" height="21" rx="1.3"/><rect x="24.2" y="13.5" width="2.6" height="13" rx="1.3"/><rect x="28.6" y="17" width="2.6" height="6" rx="1.3"/></g></svg><span class="brand-word">DJ<b>Lab</b></span></a>
+    <nav class="site-nav" id="site-nav" aria-label="ניווט ראשי"><ul><li><a href="../index.html">בית</a></li><li><a href="../guide/index.html" aria-current="page">הקורס</a></li><li><a href="../library.html">ספריית מוזיקה</a></li><li><a href="../practice.html">אימון</a></li><li><a href="../crates/index.html">ארגזים</a></li><li><a href="../sets/index.html">סטים</a></li><li><a href="../tools/index.html">כלים</a></li><li><a href="../about.html">אודות</a></li></ul></nav>
+    <div class="header-actions">
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="החלפה בין מצב כהה למצב בהיר" title="מצב כהה / בהיר"><svg class="icon i-sun" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg><svg class="icon i-moon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.6A8.2 8.2 0 1 1 9.4 4a6.6 6.6 0 0 0 10.6 10.6z"/></svg></button>
+      <a class="icon-btn hide-sm" href="https://github.com/lidorbashari/try" target="_blank" rel="noopener" aria-label="הקוד ב-GitHub" title="GitHub"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2.8a9.3 9.3 0 0 0-2.9 18.1c.5.1.6-.2.6-.5v-1.7c-2.6.6-3.1-1.2-3.1-1.2-.4-1.1-1-1.4-1-1.4-.9-.6 0-.6 0-.6.9.1 1.4 1 1.4 1 .8 1.4 2.2 1 2.7.8.1-.6.3-1 .6-1.2-2-.2-4.2-1-4.2-4.6 0-1 .4-1.8 1-2.5-.1-.2-.4-1.2.1-2.5 0 0 .8-.2 2.6 1a8.9 8.9 0 0 1 4.7 0c1.8-1.2 2.6-1 2.6-1 .5 1.3.2 2.3.1 2.5.6.7 1 1.5 1 2.5 0 3.6-2.2 4.4-4.2 4.6.3.3.6.8.6 1.6v2.4c0 .3.2.6.7.5A9.3 9.3 0 0 0 12 2.8z" fill="currentColor" stroke="none"/></svg></a>
+      <button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="פתיחת תפריט"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+<div class="reading-progress" aria-hidden="true"><span data-reading-bar></span></div>
+<article class="chapter" data-chapter="09-library-prep" data-chapter-num="09">
+  <header class="chapter-hero">
+    <div class="container">
+      <nav class="crumbs" aria-label="פירורי לחם"><a href="../index.html">בית</a><span aria-hidden="true">/</span><a href="index.html">הקורס</a><span aria-hidden="true">/</span><span aria-current="page">פרק 09</span></nav>
+      <div class="chapter-hero-grid">
+        <div class="chapter-num" aria-hidden="true">09</div>
+        <div>
+          <p class="eyebrow">פרק 09 מתוך 15</p>
+          <h1 class="chapter-title">הכנת ספרייה</h1>
+          <p class="chapter-en" dir="ltr">Library Preparation</p>
+          <p class="lead">הסוד של DJs מקצועיים: פורמטים ואיכות, איפה קונים מוזיקה כחוק, סטרימינג בתוך Rekordbox ומגבלותיו, תגיות, דירוגים, צבעים ו-My Tag, פלייליסטים חכמים, מבנה תיקיות ושמות קבצים, גיבויים וייצוא ל-USB.</p>
+          <div class="chapter-meta">
+            <span class="meta-item"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>17 דק' קריאה</span>
+            <span class="badge badge--level" data-level="מתחיל">מתחיל</span>
+            <span class="meta-item"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 15.5V12a8 8 0 0 1 16 0v3.5"/><rect x="3" y="14" width="5" height="7" rx="2"/><rect x="16" y="14" width="5" height="7" rx="2"/></svg>1 קטעי שמע</span>
+            <span class="meta-item read-state" data-read-state hidden><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>נקרא</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container chapter-layout">
+    <aside class="chapter-toc" aria-label="תוכן הפרק">
+  <details class="toc-box" open data-toc-details>
+    <summary><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg><span>בפרק הזה</span><svg class="icon toc-chev" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9.5 6 6 6-6"/></svg></summary>
+    <nav class="toc-nav"><ol><li><a href="#מה-תלמדו-בפרק" data-toc-link>מה תלמדו בפרק</a></li><li><a href="#פורמטים-ואיכות" data-toc-link>פורמטים ואיכות</a></li><li><a href="#איפה-קונים-מוזיקה-כחוק" data-toc-link>איפה קונים מוזיקה כחוק</a><ol><li><a href="#מוזיקה-ישראלית-וים-תיכונית" data-toc-link>מוזיקה ישראלית וים-תיכונית</a></li><li><a href="#והטראקים-של-dj-lab" data-toc-link>והטראקים של DJ Lab?</a></li></ol></li><li><a href="#סטרימינג-בתוך-rekordbox" data-toc-link>סטרימינג בתוך Rekordbox</a><ol><li><a href="#המגבלות-חשוב-לדעת" data-toc-link>המגבלות — חשוב לדעת</a></li></ol></li><li><a href="#תגיות-tags-המידע-שעל-הטראק" data-toc-link>תגיות (Tags) — המידע שעל הטראק</a><ol><li><a href="#extended-mix-מול-radio-edit" data-toc-link>Extended Mix מול Radio Edit</a></li><li><a href="#אנרגיה-בשדה-ההערות" data-toc-link>אנרגיה בשדה ההערות</a></li></ol></li><li><a href="#דירוגים-צבעים-ו-my-tag" data-toc-link>דירוגים, צבעים ו-My Tag</a><ol><li><a href="#דירוג-rating-כמה-אני-אוהב-את-זה" data-toc-link>דירוג (Rating) — &quot;כמה אני אוהב את זה?&quot;</a></li><li><a href="#צבע-טראק-מה-התפקיד-שלו-בסט" data-toc-link>צבע טראק — &quot;מה התפקיד שלו בסט?&quot;</a></li><li><a href="#my-tag-באילו-מצבים-הוא-עובד" data-toc-link>My Tag — &quot;באילו מצבים הוא עובד?&quot;</a></li></ol></li><li><a href="#פלייליסטים-חכמים-ו-related-tracks" data-toc-link>פלייליסטים חכמים ו-Related Tracks</a><ol><li><a href="#intelligent-playlists" data-toc-link>Intelligent Playlists</a></li><li><a href="#related-tracks" data-toc-link>Related Tracks</a></li></ol></li><li><a href="#מבנה-תיקיות-ושמות-קבצים" data-toc-link>מבנה תיקיות ושמות קבצים</a><ol><li><a href="#מבנה-פלייליסטים-מומלץ" data-toc-link>מבנה פלייליסטים מומלץ</a></li></ol></li><li><a href="#גיבויים-הכלל-של-3-2-1" data-toc-link>גיבויים — הכלל של 3-2-1</a></li><li><a href="#ייצוא-ל-usb-לנגני-cdj-ו-xdj" data-toc-link>ייצוא ל-USB לנגני CDJ ו-XDJ</a></li><li><a href="#שגרה-שבועית-שעה-אחת" data-toc-link>שגרה שבועית: שעה אחת</a></li><li><a href="#תרגילים" data-toc-link>תרגילים</a></li><li><a href="#סיכום" data-toc-link>סיכום</a></li><li><a href="#בפרק-הבא" data-toc-link>בפרק הבא</a></li></ol></nav>
+  </details>
+</aside>
+    <div class="prose" data-prose>
+      <p>שאלו DJ מנוסה מה ההבדל בינו לבין מתחיל, ורוב הסיכויים שהוא לא יגיד "המעברים". הוא יגיד: "אני מכיר את המוזיקה שלי". באמצע סט יש לכם בערך שלוש-ארבע דקות לבחור את השיר הבא, להכין אותו ולערבב — ובזמן הזה אין מקום לגלילה אינסופית בין 3,000 קבצים בשם <code>track_final_2.mp3</code>. ספרייה מסודרת היא מה שמאפשר לכם להיות נוכחים מול הקהל, במקום מול המסך. החדשות הטובות: זו עבודה שעושים בבית, בשקט, עם קפה. והיא אחת הדרכים הכי טובות להכיר מוזיקה לעומק.</p>
+<h2 id="מה-תלמדו-בפרק">מה תלמדו בפרק<a class="anchor" href="#מה-תלמדו-בפרק" title="קישור ישיר לסעיף">#</a></h2>
+<ul>
+<li>פורמטים ואיכות: MP3, AAC, WAV, AIFF, FLAC — מה לבחור ולמה</li>
+<li>איפה קונים מוזיקה כחוק — לכל הז'אנרים שלכם, כולל מיינסטרים ומוזיקה ישראלית</li>
+<li>סטרימינג בתוך Rekordbox: מה זמין, מה עובד ומה המגבלות</li>
+<li>תגיות, דירוגים, צבעים ו-My Tag — שיטה מלאה</li>
+<li>פלייליסטים חכמים (Intelligent Playlists) ו-Related Tracks</li>
+<li>מבנה תיקיות ושמות קבצים שלא יתפרקו לכם</li>
+<li>גיבויים — הכלל של 3-2-1</li>
+<li>ייצוא ל-USB לנגני CDJ ו-XDJ</li>
+<li>שגרה שבועית של שעה</li>
+</ul>
+<h2 id="פורמטים-ואיכות">פורמטים ואיכות<a class="anchor" href="#פורמטים-ואיכות" title="קישור ישיר לסעיף">#</a></h2>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>פורמט</th>
+<th>סוג</th>
+<th>נפח לדקה (בערך)</th>
+<th>תגיות ועטיפה</th>
+<th>הערות</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MP3 320 kbps</strong></td>
+<td>דחוס (Lossy)</td>
+<td>2.4MB</td>
+<td>✅ מלא</td>
+<td>נתמך בכל מקום. איכות מצוינת למועדון</td>
+</tr>
+<tr>
+<td><strong>AAC 256 kbps</strong> (M4A)</td>
+<td>דחוס</td>
+<td>1.9MB</td>
+<td>✅ מלא</td>
+<td>הפורמט של חנות iTunes. איכות דומה ל-MP3 320</td>
+</tr>
+<tr>
+<td><strong>WAV</strong> 16-bit / 44.1kHz</td>
+<td>לא דחוס (Lossless)</td>
+<td>10MB</td>
+<td>⚠️ חלקי</td>
+<td>איכות מלאה, אבל תגיות ועטיפות לא תמיד נשמרות או מוצגות בנגנים</td>
+</tr>
+<tr>
+<td><strong>AIFF</strong> 16-bit / 44.1kHz</td>
+<td>לא דחוס</td>
+<td>10MB</td>
+<td>✅ מלא</td>
+<td>איכות מלאה + תגיות. הבחירה הלא-דחוסה המומלצת לציוד Pioneer</td>
+</tr>
+<tr>
+<td><strong>FLAC / ALAC</strong></td>
+<td>דחוס ללא אובדן</td>
+<td>5–6MB</td>
+<td>✅ מלא</td>
+<td>נתמך ב-Rekordbox ובנגנים מודרניים — <strong>לא</strong> בכל הנגנים הוותיקים</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>ההמלצה שלנו:</strong> MP3 320 או AIFF. אם אתם קונים בחנות שמוכרת גם וגם — MP3 320 מספיק לגמרי בשלב הזה. כל הטראקים של DJ Lab הם MP3 ב-320 kbps.</p>
+<aside class="callout callout--warn" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.3 4.3 2.8 17.5A2 2 0 0 0 4.5 20.5h15a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v4.5M12 17h.01"/></svg><span>זהירות</span></div><div class="callout-body"><p>הימנעו מ:
+- <strong>"הורדות" מיוטיוב</strong> — איכות נמוכה (ולא חוקי). במערכת של מועדון זה נשמע עמום ושטוח, ליד טראק אמיתי ההבדל צורם.
+- <strong>MP3 ב-128 kbps</strong> — אותה בעיה.
+- <strong>"320 מזויף"</strong> — קובץ 128 שהומר ל-320. המספר משקר, האיכות לא. מקור חוקי ואמין = אין בעיה.
+- <strong>קבצים ב-24-bit / 96kHz</strong> — לא כל הנגנים תומכים. 16-bit / 44.1kHz הוא הבטוח.</p></div></aside>
+<h2 id="איפה-קונים-מוזיקה-כחוק">איפה קונים מוזיקה כחוק<a class="anchor" href="#איפה-קונים-מוזיקה-כחוק" title="קישור ישיר לסעיף">#</a></h2>
+<p>כשאתם קונים טראק, אתם תומכים באמנים שאתם מנגנים — וזה גם מה שמבטיח איכות. המחירים בטבלה מוערכים ומשתנים.</p>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>חנות</th>
+<th>הכי טובה ל...</th>
+<th>מחיר לטראק (בערך)</th>
+<th>פורמטים</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Beatport</strong></td>
+<td>האוס, טק-האוס, אפרו-האוס, טכנו, מלודיק, טראנס</td>
+<td>1.49–2.49$ (~6–9 ₪), Lossless בתוספת</td>
+<td>MP3, WAV, AIFF</td>
+</tr>
+<tr>
+<td><strong>Traxsource</strong></td>
+<td>האוס, דיפ, סולפול, אפרו-האוס</td>
+<td>~1.49–1.99$</td>
+<td>MP3, WAV, AIFF</td>
+</tr>
+<tr>
+<td><strong>Bandcamp</strong></td>
+<td>אמנים ולייבלים עצמאיים, כולל ישראלים</td>
+<td>משתנה, האמן קובע</td>
+<td>MP3 320, FLAC, WAV, AIFF, ALAC ועוד</td>
+</tr>
+<tr>
+<td><strong>Juno Download</strong></td>
+<td>מגוון רחב של מוזיקה אלקטרונית</td>
+<td>דומה ל-Beatport</td>
+<td>MP3, WAV, AIFF</td>
+</tr>
+<tr>
+<td><strong>iTunes Store</strong></td>
+<td>מיינסטרים, היפ-הופ, פופ, מוזיקה ישראלית ומזרחית</td>
+<td>~1–1.5$</td>
+<td>AAC 256</td>
+</tr>
+<tr>
+<td><strong>Record Pools</strong> (DJcity, BPM Supreme ודומים)</td>
+<td>מיינסטרים, היפ-הופ, לטיני — כולל גרסאות DJ עם אינטרו ואאוטרו נקיים</td>
+<td>מנוי חודשי</td>
+<td>MP3</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="מוזיקה-ישראלית-וים-תיכונית">מוזיקה ישראלית וים-תיכונית<a class="anchor" href="#מוזיקה-ישראלית-וים-תיכונית" title="קישור ישיר לסעיף">#</a></h3>
+<p>כאן החיים מורכבים יותר. הרבה להיטים ישראליים זמינים בחנות iTunes, חלק מהאמנים והלייבלים מוכרים ב-Bandcamp, ומפיקים ישראליים של האוס, טכנו ופסיי מוכרים ב-Beatport. בקבוצות WhatsApp וטלגרם מסתובבים הרבה "עריכות DJ" — חלקן מעולות, אבל רבות מהן בלי רישיון ובאיכות נמוכה. העדיפו מקורות רשמיים, ואם עריכה מגיעה ישירות מהמפיק — בקשו את הקובץ באיכות מלאה.</p>
+<aside class="callout callout--tip" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.5 18h5M10.5 21h3M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg><span>טיפ</span></div><div class="callout-body"><p>קניית טראק נותנת לכם רישיון שימוש אישי. השמעה בפומבי (מועדון, בר, אירוע) כרוכה ברישוי נפרד — בישראל, דרך ארגוני זכויות כמו אקו"ם (ליוצרים) וגופים נוספים (לבעלי ההקלטות והמבצעים). ברוב המקומות הקבועים, המקום הוא שמחזיק ברישיון. באירועים פרטיים כדאי לברר מראש עם המארגן. זה לא ייעוץ משפטי — נרחיב בפרק 18.</p></div></aside>
+<h3 id="והטראקים-של-dj-lab">והטראקים של DJ Lab?<a class="anchor" href="#והטראקים-של-dj-lab" title="קישור ישיר לסעיף">#</a></h3>
+<p>ברישיון <code>CC0</code> — שלכם לגמרי, לכל שימוש, כולל הקלטות שתעלו לרשת. הם מושלמים לתרגול, למיקסים ראשונים שאתם רוצים לשתף, ולשלב בסטים כ"כלים" (אינטרואים, גשרים בין ז'אנרים).</p>
+<h2 id="סטרימינג-בתוך-rekordbox">סטרימינג בתוך Rekordbox<a class="anchor" href="#סטרימינג-בתוך-rekordbox" title="קישור ישיר לסעיף">#</a></h2>
+<p>Rekordbox מתחבר לכמה שירותי סטרימינג, כך שאפשר לנגן טראקים בלי להחזיק את הקובץ. נכון לסתיו 2026:</p>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>שירות</th>
+<th>הערות</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Beatport Streaming</strong></td>
+<td>הקטלוג האלקטרוני הגדול. נדרש מנוי ברמה שכוללת חיבור לתוכנות DJ (בערך 16$ לחודש ומעלה). ברמה הגבוהה (בערך 30$) — איכות גבוהה יותר וספריית Offline של עד 1,000 טראקים</td>
+</tr>
+<tr>
+<td><strong>Beatsource</strong></td>
+<td>שירות שמתמזג ל-Beatport — מי שמשתמש בו, יעבור לשם</td>
+</tr>
+<tr>
+<td><strong>SoundCloud</strong> (Go+)</td>
+<td>הרבה רימיקסים ועריכות; אפשרות לשמירה במטמון</td>
+</tr>
+<tr>
+<td><strong>TIDAL</strong></td>
+<td>קטלוג מיינסטרים גדול; בדקו זמינות בישראל</td>
+</tr>
+<tr>
+<td><strong>Apple Music</strong></td>
+<td>קטלוג מיינסטרים ענק, כולל מוזיקה ישראלית</td>
+</tr>
+<tr>
+<td><strong>Spotify</strong></td>
+<td>נתמך ב-Rekordbox למחשב מסוף 2025; בגרסאות 2026 נוספו גם תמיכה במצב Export והתחברות בנגנים תואמים</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="המגבלות-חשוב-לדעת">המגבלות — חשוב לדעת<a class="anchor" href="#המגבלות-חשוב-לדעת" title="קישור ישיר לסעיף">#</a></h3>
+<ol>
+<li><strong>צריך אינטרנט.</strong> חיבור שנופל באמצע סט = שיר שנעצר. רק חלק מהשירותים (ורק בחלק מהמנויים) מאפשרים שמירה מקומית (Offline / Cache).</li>
+<li><strong>אי אפשר לייצא ל-USB</strong> טראקים מסטרימינג כמו קבצים רגילים. בנגני מועדון, סטרימינג עובד רק בנגנים חדשים ומחוברים לרשת.</li>
+<li><strong>הקלטה</strong> של סט עם טראקים מסטרימינג מוגבלת או חסומה ב-Rekordbox.</li>
+<li><strong>איכות</strong> תלויה בשירות ובמנוי — לפעמים נמוכה מ-MP3 320.</li>
+<li><strong>הקטלוג משתנה</strong> — טראק שבניתם עליו סט יכול להיעלם מחר.</li>
+<li><strong>מנוי שמסתיים = ספרייה שנעלמת.</strong></li>
+</ol>
+<aside class="callout callout--tip" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.5 18h5M10.5 21h3M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg><span>טיפ</span></div><div class="callout-body"><p>סטרימינג מעולה <strong>לגילוי מוזיקה</strong> ולבקשות חריגות ("יש לך את...?"). את <strong>הליבה</strong> של הספרייה — הטראקים שאתם מנגנים כל שבוע — קנו. ככה הם שלכם, באיכות מלאה, ועובדים בכל עמדה.</p></div></aside>
+<h2 id="תגיות-tags-המידע-שעל-הטראק">תגיות (Tags) — המידע שעל הטראק<a class="anchor" href="#תגיות-tags-המידע-שעל-הטראק" title="קישור ישיר לסעיף">#</a></h2>
+<p>לפני שמסדרים פלייליסטים, מסדרים את המידע. השדות החשובים:</p>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>שדה</th>
+<th>למה</th>
+<th>טיפ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Title</strong></td>
+<td>שם השיר</td>
+<td>כולל שם הגרסה, למשל <code>(Extended Mix)</code></td>
+</tr>
+<tr>
+<td><strong>Artist</strong></td>
+<td>אמן</td>
+<td>אחידות! לא "Artist feat. X" פעם אחת ו-"Artist &amp; X" פעם אחרת</td>
+</tr>
+<tr>
+<td><strong>Genre</strong></td>
+<td>ז'אנר</td>
+<td>רשימה קבועה וקצרה, לא 40 וריאציות</td>
+</tr>
+<tr>
+<td><strong>BPM / Key</strong></td>
+<td>מהניתוח</td>
+<td>בדקו מול החנות אם משהו נראה חשוד</td>
+</tr>
+<tr>
+<td><strong>Label / Year</strong></td>
+<td>לייבל ושנה</td>
+<td>עוזר למצוא "צלילים" דומים</td>
+</tr>
+<tr>
+<td><strong>Comments</strong></td>
+<td>הערות חופשיות</td>
+<td>אנרגיה, מתי לנגן, עם מה מתחבר</td>
+</tr>
+</tbody>
+</table></div>
+<aside class="callout callout--rekordbox" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17M12 3.5v17M18 3.5v17"/><rect x="3.5" y="13" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="9.5" y="6.5" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="15.5" y="15" width="5" height="3.2" rx="1" fill="currentColor"/></svg><span>ב-Rekordbox</span></div><div class="callout-body"><p>עריכת תגיות נעשית מחלון המידע של הטראק (לחיצה ימנית → מידע) או ישירות בעמודות. אפשר לבחור כמה טראקים יחד ולשנות שדה לכולם. שינויים נשמרים בספרייה; לחלק מהשדות יש גם אפשרות לכתוב אותם לקובץ עצמו.</p></div></aside>
+<h3 id="extended-mix-מול-radio-edit">Extended Mix מול Radio Edit<a class="anchor" href="#extended-mix-מול-radio-edit" title="קישור ישיר לסעיף">#</a></h3>
+<p>כשקונים, בחרו כמעט תמיד <strong>Extended Mix</strong> או <strong>Original Mix</strong> — גרסאות עם אינטרו ואאוטרו ארוכים, שבנויים למעברים. <strong>Radio Edit</strong> קצר, מתחיל ישר בשירה, ומתאים בעיקר לרדיו. במיינסטרים, חפשו גרסאות <strong>DJ / Intro / Clean</strong> במאגרי DJ.</p>
+<h3 id="אנרגיה-בשדה-ההערות">אנרגיה בשדה ההערות<a class="anchor" href="#אנרגיה-בשדה-ההערות" title="קישור ישיר לסעיף">#</a></h3>
+<p>לכל טראק של DJ Lab יש דירוג אנרגיה מ-1 עד 10, והוא כתוב גם בשדה ההערות של הקובץ (למשל: <code>Camelot 8A · Energy 7 · CC0</code>). אמצו את השיטה גם לטראקים שלכם: כתבו <code>Energy 6</code> בהערות. כשתבנו סטים (פרק 12), זה יהיה הכלי הכי שימושי שלכם — אפשר למיין ולסנן לפי זה.</p>
+<h2 id="דירוגים-צבעים-ו-my-tag">דירוגים, צבעים ו-My Tag<a class="anchor" href="#דירוגים-צבעים-ו-my-tag" title="קישור ישיר לסעיף">#</a></h2>
+<p>שלושה כלים, שלושה תפקידים. אל תערבבו ביניהם.</p>
+<h3 id="דירוג-rating-כמה-אני-אוהב-את-זה">דירוג (Rating) — "כמה אני אוהב את זה?"<a class="anchor" href="#דירוג-rating-כמה-אני-אוהב-את-זה" title="קישור ישיר לסעיף">#</a></h3>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>כוכבים</th>
+<th>משמעות</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>★★★★★</td>
+<td>פצצה. עובד תמיד, אני סומך עליו בעיניים עצומות</td>
+</tr>
+<tr>
+<td>★★★★</td>
+<td>טראק חזק, עובד ברוב הסטים</td>
+</tr>
+<tr>
+<td>★★★</td>
+<td>טוב במצבים מסוימים</td>
+</tr>
+<tr>
+<td>★★</td>
+<td>לבדוק שוב — אולי לא בשבילי</td>
+</tr>
+<tr>
+<td>★</td>
+<td>למחוק מהסטים</td>
+</tr>
+<tr>
+<td>ללא</td>
+<td>חדש, עוד לא דורג</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="צבע-טראק-מה-התפקיד-שלו-בסט">צבע טראק — "מה התפקיד שלו בסט?"<a class="anchor" href="#צבע-טראק-מה-התפקיד-שלו-בסט" title="קישור ישיר לסעיף">#</a></h3>
+<p>ל-Rekordbox יש סט קבוע של צבעים לטראקים (אפשר לתת להם שמות). הצעה לשיטה לפי תפקיד:</p>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>צבע</th>
+<th>תפקיד</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🟢 ירוק</td>
+<td>וורם-אפ</td>
+</tr>
+<tr>
+<td>🔵 כחול</td>
+<td>בנייה (Build)</td>
+</tr>
+<tr>
+<td>🔴 אדום</td>
+<td>שיא (Peak)</td>
+</tr>
+<tr>
+<td>🟣 סגול</td>
+<td>סגירה / אפטר</td>
+</tr>
+<tr>
+<td>🟡 צהוב</td>
+<td>"כולם שרים" — להיטים וקהל</td>
+</tr>
+<tr>
+<td>🟠 כתום</td>
+<td>לבדיקה</td>
+</tr>
+</tbody>
+</table></div>
+<aside class="callout callout--tip" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.5 18h5M10.5 21h3M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg><span>טיפ</span></div><div class="callout-body"><p>צבע הטראק הוא דבר אחד, וצבע ה-Hot Cue (פרק 7) הוא דבר אחר. אדום על הטראק = "שיר שיא"; אדום על Hot Cue D = "כאן הדרופ". אין התנגשות — הם מופיעים במקומות שונים במסך.</p></div></aside>
+<h3 id="my-tag-באילו-מצבים-הוא-עובד">My Tag — "באילו מצבים הוא עובד?"<a class="anchor" href="#my-tag-באילו-מצבים-הוא-עובד" title="קישור ישיר לסעיף">#</a></h3>
+<p>My Tag הוא מערכת התגיות האישית של Rekordbox. יש בה קבוצות (ברירת המחדל: Genre, Components, Situation), ואפשר לשנות ולהוסיף קבוצות ותגיות. טראק יכול לקבל כמה תגיות מכל קבוצה. בזמן נגינה, פותחים את פאנל הסינון ובוחרים — ו-3,000 טראקים הופכים ל-15.</p>
+<p>הצעה ל-My Tag שמתאים לכם — מועדונים וגם אירועים:</p>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>קבוצה</th>
+<th>תגיות לדוגמה</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Situation</strong> (מצב)</td>
+<td>וורם-אפ, שיא, סגירה, קבלת פנים, ריקודים, חופה/טקס, סלואו, אפטר</td>
+</tr>
+<tr>
+<td><strong>Components</strong> (רכיבים)</td>
+<td>ווקאל, אינסטרומנטלי, פסנתר, דרבוקה, עוד, Acapella באינטרו, אינטרו ארוך, אינטרו קצר</td>
+</tr>
+<tr>
+<td><strong>Mood</strong> (אווירה — קבוצה חדשה)</td>
+<td>שמח, אפל, רגשי, היפנוטי, סקסי, אופורי</td>
+</tr>
+<tr>
+<td><strong>Genre</strong> (משלים לשדה הז'אנר)</td>
+<td>תת-ז'אנרים: אפרו-טק, אורגני, רייב, ים-תיכוני מודרני</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="פלייליסטים-חכמים-ו-related-tracks">פלייליסטים חכמים ו-Related Tracks<a class="anchor" href="#פלייליסטים-חכמים-ו-related-tracks" title="קישור ישיר לסעיף">#</a></h2>
+<h3 id="intelligent-playlists">Intelligent Playlists<a class="anchor" href="#intelligent-playlists" title="קישור ישיר לסעיף">#</a></h3>
+<p>פלייליסט שמתמלא לבד לפי כללים — וכל טראק חדש שמתאים לכללים נכנס אליו אוטומטית. דוגמאות שימושיות:</p>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>שם</th>
+<th>הכללים</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>חדשים — 30 יום</strong></td>
+<td>Date Added בתוך 30 הימים האחרונים</td>
+</tr>
+<tr>
+<td><strong>וורם-אפ האוס</strong></td>
+<td>BPM בין 118 ל-124 · דירוג 3 ומעלה · Genre מכיל House</td>
+</tr>
+<tr>
+<td><strong>שיא טכנו</strong></td>
+<td>BPM בין 128 ל-135 · My Tag: שיא · דירוג 4 ומעלה</td>
+</tr>
+<tr>
+<td><strong>משפחת 8A</strong></td>
+<td>Key הוא 7A, 8A, 9A או 8B (פרק 10)</td>
+</tr>
+<tr>
+<td><strong>ריקודים — אירועים</strong></td>
+<td>My Tag: ריקודים · My Tag: ווקאל</td>
+</tr>
+<tr>
+<td><strong>לבדיקה</strong></td>
+<td>אין דירוג, או צבע כתום</td>
+</tr>
+</tbody>
+</table></div>
+<aside class="callout callout--rekordbox" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17M12 3.5v17M18 3.5v17"/><rect x="3.5" y="13" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="9.5" y="6.5" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="15.5" y="15" width="5" height="3.2" rx="1" fill="currentColor"/></svg><span>ב-Rekordbox</span></div><div class="callout-body"><p>לחיצה ימנית על Playlists בעץ → יצירת Intelligent Playlist. מוסיפים תנאים (שדה + תנאי + ערך), ובוחרים אם כולם צריכים להתקיים או מספיק אחד.</p></div></aside>
+<h3 id="related-tracks">Related Tracks<a class="anchor" href="#related-tracks" title="קישור ישיר לסעיף">#</a></h3>
+<p>כשטראק טעון בדק, Rekordbox יכול להציג טראקים "קשורים" מהספרייה שלכם — לפי BPM וסולם תואמים, ז'אנר, אמן ושיקולים נוספים. זה כלי מצוין לגלות חיבורים שלא חשבתם עליהם. אבל זכרו: התוכנה מכירה מספרים; אתם מכירים את הרחבה.</p>
+<h2 id="מבנה-תיקיות-ושמות-קבצים">מבנה תיקיות ושמות קבצים<a class="anchor" href="#מבנה-תיקיות-ושמות-קבצים" title="קישור ישיר לסעיף">#</a></h2>
+<p>Rekordbox זוכר כל קובץ לפי <strong>המיקום שלו בדיסק</strong>. אם תזיזו קובץ או תשנו לו שם — הוא "ייעלם" מהספרייה (Missing File), יחד עם ה-Cues שלו, עד שתאתרו אותו מחדש. לכן מחליטים על מבנה פעם אחת, ולא נוגעים.</p>
+<pre dir="ltr"><code>Music/DJ/
+├── _Inbox/                 ← הורדות חדשות שעוד לא הוכנו
+├── 2026/
+│   ├── 2026-09/
+│   └── 2026-10/            ← כל קנייה נכנסת לחודש שבו נקנתה
+│       ├── Artist - Title (Extended Mix).aiff
+│       └── Artist - Title (Original Mix).mp3
+└── DJ Lab/                 ← הרפו הזה
+</code></pre>
+<p>למה לפי תאריך ולא לפי ז'אנר? כי ז'אנר זה עניין של דעה ומשתנה, ותאריך לא. את הסידור לפי ז'אנר, אווירה ותפקיד עושים <strong>בפלייליסטים</strong> — שם אפשר לשנות בלי לשבור כלום.</p>
+<p><strong>שמות קבצים:</strong></p>
+<ul>
+<li><code>Artist - Title (Mix Name).ext</code></li>
+<li>בלי תווים בעייתיים: <code>/ \ : * ? " &lt; &gt; |</code>, ובלי אמוג'י.</li>
+<li>שמות בעברית עובדים ב-Rekordbox, אבל בחלק מהנגנים והמערכות הוותיקים התצוגה עלולה להשתבש. פתרון בטוח: שם קובץ בתעתיק לאנגלית, ועברית בתגית Title.</li>
+</ul>
+<figure class="figure"><img alt="מבנה הספרייה: מהתיבה הנכנסת, דרך הכנה ופלייליסטים, ועד USB" src="../assets/guide/09-library-structure.svg" loading="lazy" decoding="async"><figcaption>מבנה הספרייה: מהתיבה הנכנסת, דרך הכנה ופלייליסטים, ועד USB</figcaption></figure>
+<h3 id="מבנה-פלייליסטים-מומלץ">מבנה פלייליסטים מומלץ<a class="anchor" href="#מבנה-פלייליסטים-מומלץ" title="קישור ישיר לסעיף">#</a></h3>
+<pre dir="ltr"><code>00 תרגול
+10 ז'אנרים
+   11 House &amp; Tech House
+   12 Afro House
+   13 Melodic Techno
+   14 Techno
+   15 Mainstream &amp; Hip-Hop
+   16 ים-תיכוני ומזרחית
+20 חכמים (Intelligent)
+30 סטים
+   2026-10-24 מסיבת גג — תל אביב
+40 אירועים
+   חתונה — קבלת פנים
+   חתונה — ריקודים
+   חתונה — חופה
+90 לבדיקה
+</code></pre>
+<h2 id="גיבויים-הכלל-של-3-2-1">גיבויים — הכלל של 3-2-1<a class="anchor" href="#גיבויים-הכלל-של-3-2-1" title="קישור ישיר לסעיף">#</a></h2>
+<p>אובדן ספרייה הוא אחד הדברים הכואבים שיכולים לקרות ל-DJ: מאות שעות של Cues, תגיות ופלייליסטים. הכלל:</p>
+<ul>
+<li><strong>3</strong> עותקים של כל דבר,</li>
+<li>על <strong>2</strong> סוגי אחסון שונים (מחשב + כונן חיצוני),</li>
+<li><strong>1</strong> מהם מחוץ לבית (ענן).</li>
+</ul>
+<p>מה מגבים — <strong>שני דברים נפרדים</strong>:</p>
+<ol>
+<li><strong>קבצי המוזיקה</strong> — כל תיקיית <code>Music/DJ</code>.</li>
+<li><strong>הספרייה של Rekordbox</strong> — שם נמצאים ה-Cues, ה-Grids, הפלייליסטים והדירוגים.</li>
+</ol>
+<aside class="callout callout--rekordbox" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17M12 3.5v17M18 3.5v17"/><rect x="3.5" y="13" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="9.5" y="6.5" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="15.5" y="15" width="5" height="3.2" rx="1" fill="currentColor"/></svg><span>ב-Rekordbox</span></div><div class="callout-body"><p>גיבוי הספרייה נעשה מתפריט File (Library &gt; Backup Library). מומלץ פעם בשבוע ולפני כל עדכון גרסה. מי שיש לו תוכנית Creative או Professional (או תוסף ענן) יכול להשתמש גם ב-Cloud Library Sync, שמסנכרן את הספרייה בין מחשבים דרך Dropbox או Google Drive — זה נוח, אבל זה לא תחליף לגיבוי.</p></div></aside>
+<h2 id="ייצוא-ל-usb-לנגני-cdj-ו-xdj">ייצוא ל-USB לנגני CDJ ו-XDJ<a class="anchor" href="#ייצוא-ל-usb-לנגני-cdj-ו-xdj" title="קישור ישיר לסעיף">#</a></h2>
+<p>כשתנגנו בקורס או במועדון על נגני Pioneer DJ / AlphaTheta, תביאו USB מוכן:</p>
+<ol>
+<li><strong>פרמטו את ה-USB.</strong> FAT32 עובד כמעט בכל הנגנים. exFAT נתמך רק בנגנים חדשים יותר (כמו <code>CDJ-3000</code>, <code>CDJ-3000X</code>, <code>XDJ-AZ</code>, <code>XDJ-RX3</code>). לא בטוחים מה מחכה לכם? FAT32.</li>
+<li><strong>עדכנו את Rekordbox.</strong> הנגנים החדשים ביותר (כמו <code>CDJ-3000X</code>) קוראים את פורמט הספרייה החדש — OneLibrary — וגרסאות 7.2 העדכניות של Rekordbox כותבות ל-USB גם את הפורמט הישן וגם את החדש. ככה USB אחד עובד גם על נגן ותיק וגם על חדש.</li>
+<li><strong>במצב Export,</strong> חברו את ה-USB. הוא יופיע בעץ תחת ההתקנים (Devices).</li>
+<li><strong>גררו פלייליסטים</strong> אל ה-USB. Rekordbox יעתיק את הקבצים יחד עם כל המידע: Grid, Hot Cues, Memory Cues, צבעים ודירוגים.</li>
+<li><strong>הגדרות נגן (My Settings):</strong> אפשר לשמור על ה-USB העדפות לנגנים — Quantize, טווח Tempo, טעינה אוטומטית של Hot Cues ועוד. כשמכניסים את ה-USB לנגן, ההגדרות נטענות.</li>
+<li><strong>Hot Cue Auto Load</strong> — ודאו שהאפשרות דולקת, כדי שה-Hot Cues ייטענו אוטומטית עם כל טראק בנגן.</li>
+<li><strong>הוציאו את ה-USB בבטחה</strong> (Eject), ולא פשוט שולפים.</li>
+<li><strong>בדקו</strong> על הציוד האמיתי — בקורס, בחדר חזרות או אצל חבר — לפני ההופעה הראשונה.</li>
+</ol>
+<aside class="callout callout--warn" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.3 4.3 2.8 17.5A2 2 0 0 0 4.5 20.5h15a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v4.5M12 17h.01"/></svg><span>זהירות</span></div><div class="callout-body"><p><strong>תמיד שני USB עם אותו תוכן.</strong> ה-USB הוא לא גיבוי — הוא עותק עבודה. ולעולם אל תמחקו קבצים מהמחשב "כי הם כבר על ה-USB".</p></div></aside>
+<h2 id="שגרה-שבועית-שעה-אחת">שגרה שבועית: שעה אחת<a class="anchor" href="#שגרה-שבועית-שעה-אחת" title="קישור ישיר לסעיף">#</a></h2>
+<ol>
+<li><strong>10 דקות — קנייה וגילוי.</strong> עברו על צ'ארטים, סטים ששמעתם, והמלצות. קנו 5–10 טראקים.</li>
+<li><strong>5 דקות — ייבוא.</strong> ל-<code>_Inbox</code>, ואז לתיקיית החודש. ייבוא ל-Rekordbox וניתוח.</li>
+<li><strong>30 דקות — הכנה.</strong> לכל טראק: Grid, Hot Cues לפי המוסכמה, Memory Cues (פרק 7).</li>
+<li><strong>10 דקות — מידע.</strong> תגיות, אנרגיה בהערות, דירוג, צבע, My Tag.</li>
+<li><strong>5 דקות — סדר וגיבוי.</strong> פלייליסטים, גיבוי ספרייה, ועדכון ה-USB.</li>
+</ol>
+<h2 id="תרגילים">תרגילים<a class="anchor" href="#תרגילים" title="קישור ישיר לסעיף">#</a></h2>
+<aside class="callout callout--exercise" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 15.5V12a8 8 0 0 1 16 0v3.5"/><rect x="3" y="14" width="5" height="7" rx="2"/><rect x="16" y="14" width="5" height="7" rx="2"/></svg><span>תרגיל 1 — לתייג את DJ Lab</span></div><div class="callout-body"><p>בחרו 20 טראקים של DJ Lab מהז'אנרים שאתם אוהבים. לכל אחד פתחו את קובץ ה-JSON, ותנו לו צבע לפי <code>role</code> (וורם-אפ / בנייה / שיא / סגירה), תגית Situation ב-My Tag בהתאם, ותגיות Components לפי מה שאתם שומעים (למשל דרבוקה ב-<span class="tref" data-file="music/tracks/mediterranean/mainstream-13-darbuka-nights.mp3" data-missing="1"><code>music/tracks/mediterranean/mainstream-13-darbuka-nights.mp3</code></span>, קלימבה ב-<span class="tref" data-file="music/tracks/afro_house/house-10-kalimba-moon.mp3" data-missing="1"><code>music/tracks/afro_house/house-10-kalimba-moon.mp3</code></span>). דרגו כל אחד לפי הטעם <strong>שלכם</strong>.</p>
+<p>🎧 תרגיל 2 — שלושה פלייליסטים חכמים: צרו "וורם-אפ 118–124", "שיא 126 ומעלה" ו"משפחת 8A" (סולמות 7A, 8A, 9A, 8B). בדקו: האם <span class="tref" data-id="house-01"><code>house-01</code></span>, <span class="tref" data-id="house-05"><code>house-05</code></span> ו-<span class="tref" data-id="techno-08"><code>techno-08</code></span> נכנסו לפלייליסטים הנכונים? למה כן או למה לא?</p>
+<p>🎧 תרגיל 3 — Related Tracks: טענו את <span class="tref" data-file="music/tracks/tech_house/house-05-groove-machine.mp3"><code>music/tracks/tech_house/house-05-groove-machine.mp3</code></span> (126, 8A) ופתחו את תצוגת הטראקים הקשורים. אילו טראקים של DJ Lab Rekordbox מציע? נסו מעבר לאחד מהם, ורשמו ביומן אם ההצעה עבדה.</p>
+<p>🎧 תרגיל 4 — קנייה ראשונה: קבעו תקציב קטן (בערך 50 ₪) וקנו 5–6 טראקים בחנויות שבטבלה — לפחות אחד מכל אחד מהז'אנרים האהובים עליכם. העדיפו Extended Mix. ייבאו, ועברו על שגרת ההכנה המלאה מפרק 7.</p>
+<p>🎧 תרגיל 5 — מבנה וגיבוי: בנו את מבנה התיקיות בדיסק ואת מבנה הפלייליסטים ב-Rekordbox. בצעו גיבוי ספרייה, והעתיקו גם את תיקיית המוזיקה לכונן חיצוני. כתבו ביומן תאריך ותזכורת לגיבוי הבא.</p>
+<p>🎧 תרגיל 6 — USB ראשון: פרמטו דיסק-און-קי ל-FAT32 וייצאו אליו את הפלייליסט "שבוע 1" מפרק 2 ופלייליסט של 10 טראקים מוכנים. אם יש לכם גישה לנגן CDJ או XDJ בקורס — הכניסו ובדקו שה-Hot Cues נטענים בצבעים הנכונים.</p></div></aside>
+<h2 id="סיכום">סיכום<a class="anchor" href="#סיכום" title="קישור ישיר לסעיף">#</a></h2>
+<ul>
+<li>MP3 320 או AIFF. בלי הורדות מיוטיוב ובלי 128.</li>
+<li>קונים בחנויות חוקיות: Beatport ו-Traxsource לאלקטרוני, Bandcamp לעצמאיים, iTunes ומאגרי DJ למיינסטרים ולמוזיקה ישראלית.</li>
+<li>סטרימינג בתוך Rekordbox — מעולה לגילוי ולבקשות, עם מגבלות של אינטרנט, ייצוא והקלטה. את הליבה קונים.</li>
+<li>תגיות אחידות, אנרגיה בהערות, דירוג = כמה אני אוהב, צבע = תפקיד בסט, My Tag = באילו מצבים.</li>
+<li>פלייליסטים חכמים חוסכים שעות. Related Tracks מציע — אתם מחליטים.</li>
+<li>לא מזיזים קבצים אחרי ייבוא. מבנה לפי תאריך בדיסק, לפי ז'אנר בפלייליסטים.</li>
+<li>גיבוי 3-2-1, גם למוזיקה וגם לספרייה. שני USB, FAT32 אם לא בטוחים, Rekordbox מעודכן.</li>
+</ul>
+<h2 id="בפרק-הבא">בפרק הבא<a class="anchor" href="#בפרק-הבא" title="קישור ישיר לסעיף">#</a></h2>
+<p>סיימתם את החצי הראשון של הקורס — מזל טוב! יש לכם ספרייה, מעברים וכלים. בחלק הבא נלמד את מה שהופך מעבר "נכון" למעבר <strong>יפה</strong>: מיקס הרמוני וגלגל Camelot.</p>
+<p>👉 <a href="10-harmonic-mixing.html">פרק 10 — מיקס הרמוני</a></p>
+      <div class="chapter-done">
+        <button class="btn btn--ghost" type="button" data-mark-read><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>סימון הפרק כנקרא</span></button>
+      </div>
+    </div>
+  </div>
+  <nav class="container pn" aria-label="ניווט בין פרקים"><a class="pn-card pn-prev" href="08-headphones-cueing.html"><span class="pn-label"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m0 0-6-6m6 6-6 6"/></svg>הפרק הקודם</span><span class="pn-title"><span class="pn-num">08</span>אוזניות וקיואינג</span></a><a class="pn-card pn-next" href="10-harmonic-mixing.html"><span class="pn-label">הפרק הבא<svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5m0 0 6-6m-6 6 6 6"/></svg></span><span class="pn-title"><span class="pn-num">10</span>מיקס הרמוני</span></a></nav>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><defs><linearGradient id="bm-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2bd6"/><stop offset=".55" stop-color="#8a5cff"/><stop offset="1" stop-color="#22e1ff"/></linearGradient></defs><circle cx="20" cy="20" r="18" fill="none" stroke="url(#bm-g)" stroke-width="3"/><circle cx="20" cy="20" r="11.5" fill="none" stroke="url(#bm-g)" stroke-width="1.5" opacity=".55"/><g fill="url(#bm-g)"><rect x="11" y="16" width="2.6" height="8" rx="1.3"/><rect x="15.4" y="12" width="2.6" height="16" rx="1.3"/><rect x="19.8" y="9.5" width="2.6" height="21" rx="1.3"/><rect x="24.2" y="13.5" width="2.6" height="13" rx="1.3"/><rect x="28.6" y="17" width="2.6" height="6" rx="1.3"/></g></svg><span class="brand-word">DJ<b>Lab</b></span></a>
+      <p>בית הספר לתקלוט שלך: קורס Rekordbox בעברית, מוזיקה מקורית לתרגול וכלים שעובדים ישר בדפדפן.</p>
+    </div>
+    <nav aria-label="ללמוד"><h2>ללמוד</h2><ul>
+      <li><a href="../guide/index.html">הקורס</a></li><li><a href="../practice.html">אימון ומעברים</a></li><li><a href="../sets/index.html">סטים לדוגמה</a></li></ul></nav>
+    <nav aria-label="מוזיקה"><h2>מוזיקה</h2><ul>
+      <li><a href="../library.html">ספריית מוזיקה</a></li><li><a href="../crates/index.html">ארגזים</a></li><li><a href="../tools/rekordbox.html">ייבוא ל-Rekordbox</a></li></ul></nav>
+    <nav aria-label="כלים"><h2>כלים</h2><ul>
+      <li><a href="../tools/mix-trainer.html">מאמן מיקס</a></li><li><a href="../tools/camelot.html">גלגל קאמלוט</a></li><li><a href="../tools/set-builder.html">בונה סטים</a></li></ul></nav>
+  </div>
+  <div class="container footer-legal">
+    <p>המוזיקה המקורית משוחררת ב-<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.he" target="_blank" rel="noopener">CC0</a> · הקוד ב-MIT · הארגזים הם קישורים בלבד - קנו והזרימו ממקורות חוקיים.</p>
+    <p class="muted"><a href="../about.html">אודות ורישיון</a> · © 2026 DJ Lab</p>
+  </div>
+</footer>
+<script src="../data/catalog.js?v=e4c6cf60" defer></script><script src="../data/peaks.js?v=e4c6cf60" defer></script><script src="../data/guide.js?v=e4c6cf60" defer></script><script src="../assets/js/icons.gen.js?v=e4c6cf60" defer></script><script src="../assets/js/core.js?v=e4c6cf60" defer></script><script src="../assets/js/player.js?v=e4c6cf60" defer></script><script src="../assets/js/guide.js?v=e4c6cf60" defer></script>
+</body>
+</html>

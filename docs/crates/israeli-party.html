@@ -1,0 +1,780 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>להיטי מסיבות ישראליים · DJ Lab</title>
+<meta name="description" content="ארגז להיטי מסיבות ישראליים (Israeli Party Hits): 48 טראקים עם BPM, Key ו-Camelot.">
+<meta name="djlab-root" content="../../">
+<meta name="djlab-base" content="../">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#07070c">
+<link rel="canonical" href="https://lidorbashari.github.io/try/docs/crates/israeli-party.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DJ Lab">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="להיטי מסיבות ישראליים · DJ Lab">
+<meta property="og:description" content="ארגז להיטי מסיבות ישראליים (Israeli Party Hits): 48 טראקים עם BPM, Key ו-Camelot.">
+<meta property="og:url" content="https://lidorbashari.github.io/try/docs/crates/israeli-party.html">
+<meta property="og:image" content="https://lidorbashari.github.io/try/docs/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&family=Rubik:wght@400;500;600;700;800&family=Secular+One&display=swap">
+<link rel="stylesheet" href="../assets/css/site.css?v=e4c6cf60">
+<script>(function(){try{var t=localStorage.getItem('djlab:theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+</head>
+<body class="page-crates ">
+<a class="skip-link" href="#main">דלגו לתוכן</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../index.html" aria-label="DJ Lab - דף הבית"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><defs><linearGradient id="bm-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2bd6"/><stop offset=".55" stop-color="#8a5cff"/><stop offset="1" stop-color="#22e1ff"/></linearGradient></defs><circle cx="20" cy="20" r="18" fill="none" stroke="url(#bm-g)" stroke-width="3"/><circle cx="20" cy="20" r="11.5" fill="none" stroke="url(#bm-g)" stroke-width="1.5" opacity=".55"/><g fill="url(#bm-g)"><rect x="11" y="16" width="2.6" height="8" rx="1.3"/><rect x="15.4" y="12" width="2.6" height="16" rx="1.3"/><rect x="19.8" y="9.5" width="2.6" height="21" rx="1.3"/><rect x="24.2" y="13.5" width="2.6" height="13" rx="1.3"/><rect x="28.6" y="17" width="2.6" height="6" rx="1.3"/></g></svg><span class="brand-word">DJ<b>Lab</b></span></a>
+    <nav class="site-nav" id="site-nav" aria-label="ניווט ראשי"><ul><li><a href="../index.html">בית</a></li><li><a href="../guide/index.html">הקורס</a></li><li><a href="../library.html">ספריית מוזיקה</a></li><li><a href="../practice.html">אימון</a></li><li><a href="../crates/index.html" aria-current="page">ארגזים</a></li><li><a href="../sets/index.html">סטים</a></li><li><a href="../tools/index.html">כלים</a></li><li><a href="../about.html">אודות</a></li></ul></nav>
+    <div class="header-actions">
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="החלפה בין מצב כהה למצב בהיר" title="מצב כהה / בהיר"><svg class="icon i-sun" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg><svg class="icon i-moon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.6A8.2 8.2 0 1 1 9.4 4a6.6 6.6 0 0 0 10.6 10.6z"/></svg></button>
+      <a class="icon-btn hide-sm" href="https://github.com/lidorbashari/try" target="_blank" rel="noopener" aria-label="הקוד ב-GitHub" title="GitHub"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2.8a9.3 9.3 0 0 0-2.9 18.1c.5.1.6-.2.6-.5v-1.7c-2.6.6-3.1-1.2-3.1-1.2-.4-1.1-1-1.4-1-1.4-.9-.6 0-.6 0-.6.9.1 1.4 1 1.4 1 .8 1.4 2.2 1 2.7.8.1-.6.3-1 .6-1.2-2-.2-4.2-1-4.2-4.6 0-1 .4-1.8 1-2.5-.1-.2-.4-1.2.1-2.5 0 0 .8-.2 2.6 1a8.9 8.9 0 0 1 4.7 0c1.8-1.2 2.6-1 2.6-1 .5 1.3.2 2.3.1 2.5.6.7 1 1.5 1 2.5 0 3.6-2.2 4.4-4.2 4.6.3.3.6.8.6 1.6v2.4c0 .3.2.6.7.5A9.3 9.3 0 0 0 12 2.8z" fill="currentColor" stroke="none"/></svg></a>
+      <button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="פתיחת תפריט"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+<section class="page-hero page-hero--crate">
+  <div class="container">
+    <nav class="crumbs" aria-label="פירורי לחם"><a href="../index.html">בית</a><span aria-hidden="true">/</span><a href="index.html">ארגזים</a><span aria-hidden="true">/</span><span aria-current="page">להיטי מסיבות ישראליים</span></nav>
+    <p class="eyebrow"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 8 12 3l9 5v8l-9 5-9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg>ארגז · <span dir="ltr">Israeli Party Hits</span></p>
+    <h1 class="display">להיטי מסיבות ישראליים</h1>
+    <div class="chip-row"><span class="chip chip--static">mediterranean</span><span class="chip chip--static">pop_dance</span></div>
+    <div class="chapter-meta">
+      <span class="meta-item"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M12 6.5a5.5 5.5 0 0 1 5.5 5.5"/></svg>48 טראקים</span>
+      <span class="meta-item"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>40 מאומתים</span>
+      <span class="meta-item"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 21 9.8 3.8A1 1 0 0 1 10.8 3h2.4a1 1 0 0 1 1 .8L17 21z"/><path d="m12 16 6.5-9.5M8.3 15.5h7.4"/></svg>90–140 BPM</span>
+      <a class="btn btn--ghost btn--sm" href="../../crates/israeli-party.csv" download><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3.5v11.5m0 0-4.5-4.5M12 15l4.5-4.5M4.5 19.5h15"/></svg><span>הורדת CSV</span></a>
+    </div>
+  </div>
+</section>
+<section class="container crate-page">
+  <div class="callout callout--note crate-legal" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.8h.01"/></svg><span>שירים אמיתיים - קישורים בלבד</span></div>
+  <div class="callout-body"><p>הארגז הזה הוא רשימת קניות: אין כאן קבצי אודיו. קנו ב-Beatport / Bandcamp / Traxsource או הזרימו מתוך Rekordbox (Beatport Streaming, SoundCloud, TIDAL). ערכי BPM ו-Key עם תג <b>מאומת</b> נבדקו מול מקור אמין.</p></div></div>
+  <div class="prose prose--wide"><p>הארגז הזה הוא הלב של כל אירוע ישראלי: פופ ים-תיכוני, מזרחית-פופ, להיטי אירוויזיון ורגאטון בעברית — השירים שהקהל מחכה לשמוע ושר בקול. רוב הלהיטים יושבים בשני "בלוקים" של טמפו: <strong><code>124–136 BPM</code></strong> (פופ-דאנס ומזרחית קצבית; הרבה מהם בדיוק על <code>130</code>), ו-<strong><code>90–105 BPM</code></strong> (רגאטון/היפ-הופ-פופ כמו סטטיק ובן אל).</p>
+<p>איך מתקלטים את זה באירועים בישראל: פחות מעברים ארוכים ויותר <strong>קאטים מהירים על הפזמון</strong>, <code>Echo Out</code> לשיר הבא, ומחרוזות של 60–90 שניות לכל שיר. הקהל רוצה את הפזמון ואת הדרופ שאפשר לשיר — לא את הבית השני. כשה-<code>BPM</code> והמפתח מתאימים (למשל <code>תל אביב</code> ← <code>Toy</code>, שניהם <code>130</code> ו-<code>2A</code>) אפשר גם לעשות בלנד נקי של 8–16 תיבות.</p>
+<p><strong>כתיבת השמות:</strong> בעמודת <code>title</code> מופיע השם הרשמי בדיוק כפי שהוא מופיע בחנויות וב-<code>Tunebat</code> (לרוב בעברית; בלועזית כשזה השם הרשמי, כמו <code>Tudo Bom</code>). כששם השיר בעברית — <code>notes_he</code> מתחיל ב"תעתיק:" עם התעתיק הלועזי, כדי שיהיה קל לחפש בחנויות. שמות האמנים כתובים כפי שהם מופיעים בחנויות הדיגיטליות (באנגלית).</p>
+<h2 id="איך-להשתמש-בארגז">איך להשתמש בארגז<a class="anchor" href="#איך-להשתמש-בארגז" title="קישור ישיר לסעיף">#</a></h2>
+<ul>
+<li>בנו "בלוקים" לפי טמפו: בלוק <code>90–105</code> (סטטיק ובן אל, נועה קירל ואגם בוחבוט) לפני ארוחה או בתחילת הרחבה, ובלוק <code>124–136</code> לשיא.</li>
+<li>סמנו <code>Hot Cue</code> על <strong>תחילת הפזמון</strong> ועל הדרופ — במחרוזת מהירה קופצים פזמון-לפזמון.</li>
+<li>בין שירים באותו <code>BPM</code> ובאותו <code>Camelot</code> — בלנד; בין שירים רחוקים — <code>Echo Out</code> או קאט חד על סוף משפט (8 תיבות).</li>
+<li>בשירים עם <code>BPM</code> כפול/חצוי (למשל <code>שני משוגעים</code> <code>117</code>, <code>עם ישראל חי</code> <code>105</code>) בדקו שה-<code>Beat Grid</code> של <code>Rekordbox</code> לא הוכפל.</li>
+<li>שנת יציאה ריקה = לא אומתה בסשן הזה (לא ניחשנו). מפתח עם ≈ — בדקו ב-<code>Rekordbox</code>.</li>
+</ul>
+<h2 id="הטראקים">הטראקים<a class="anchor" href="#הטראקים" title="קישור ישיר לסעיף">#</a></h2>
+<p>סה"כ 48 טראקים · 40 מאומתים במלואם · 8 מאומתים חלקית · 0 לא אומתו.</p>
+<blockquote class="quote"><p><strong>מקרא עמודת אימות:</strong> ✔ = <code>BPM</code> ומפתח אומתו ממקור אמין (<code>Tunebat</code> / <code>SongBPM</code> / <code>Musicstax</code>, או נתוני ניתוח האודיו של <code>Spotify</code> שעליהם הם מבוססים); ≈ = אומת חלקית (בדרך כלל רק ה-<code>BPM</code>, או שהמקורות חלוקים על המפתח); ? = לא אומת — השדות נשארו ריקים במכוון ולא נוחשו. <strong>אחרי קנייה הריצו <code>Analyze</code> ב-<code>Rekordbox</code> ובדקו את ה-<code>Beat Grid</code>.</strong> גרסאות שונות (<code>Radio Edit</code>, <code>Extended</code>, לייב, רמיקס) יכולות להיות בטמפו/מפתח אחרים — קנו את ה-<code>Mix</code> שבטבלה.</p></blockquote>
+<h3 id="עומר-אדם-משה-פרץ-והחברים">עומר אדם, משה פרץ והחברים<a class="anchor" href="#עומר-אדם-משה-פרץ-והחברים" title="קישור ישיר לסעיף">#</a></h3>
+<div class="crate-table" id="crate-table" data-crate="israeli-party"></div>
+<h3 id="סטטיק-ובן-אל">סטטיק ובן אל<a class="anchor" href="#סטטיק-ובן-אל" title="קישור ישיר לסעיף">#</a></h3>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>אמן</th>
+<th>שם</th>
+<th>מיקס</th>
+<th>שנה</th>
+<th>BPM</th>
+<th>מפתח</th>
+<th>Camelot</th>
+<th>אנרגיה</th>
+<th>תפקיד</th>
+<th>אומת</th>
+<th>הערות</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td>Static &amp; Ben El</td>
+<td>Tudo Bom</td>
+<td>Original</td>
+<td>2018</td>
+<td>130</td>
+<td><code>A</code></td>
+<td><code>11B</code></td>
+<td>9</td>
+<td>המנון</td>
+<td>✔</td>
+<td>שם רשמי בלועזית · להיט ענק; יש גם רמיקס עם J Balvin</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Static &amp; Ben El</td>
+<td>Silsulim</td>
+<td>Original</td>
+<td>2016</td>
+<td>95</td>
+<td><code>F#m</code></td>
+<td><code>11A</code></td>
+<td>6</td>
+<td>בנייה</td>
+<td>✔</td>
+<td>שם רשמי בלועזית (סילסולים) · רגאטון/פופ — בלוק 90–105</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Static &amp; Ben El</td>
+<td>Barbie</td>
+<td>Original</td>
+<td>2015</td>
+<td>97</td>
+<td><code>Am</code></td>
+<td><code>8A</code></td>
+<td>6</td>
+<td>בנייה</td>
+<td>✔</td>
+<td>שם רשמי בלועזית (ברבי)</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Static &amp; Ben El</td>
+<td>Hakol Letova</td>
+<td>Original</td>
+<td>2017</td>
+<td>90</td>
+<td><code>Cm</code></td>
+<td><code>5A</code></td>
+<td>6</td>
+<td>חימום</td>
+<td>✔</td>
+<td>שם רשמי בלועזית (הכל לטובה)</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Static &amp; Ben El, Pitbull</td>
+<td>Further Up (Na, Na, Na, Na, Na)</td>
+<td>Original</td>
+<td>2020</td>
+<td>100</td>
+<td><code>F#</code></td>
+<td><code>2B</code></td>
+<td>8</td>
+<td>שיא</td>
+<td>✔</td>
+<td>באנגלית; גרסה ספרדית בשם Subelo</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Static &amp; Ben El</td>
+<td>Zahav</td>
+<td>Original</td>
+<td>2017</td>
+<td>100</td>
+<td><code>F#</code></td>
+<td><code>2B</code></td>
+<td>7</td>
+<td>בנייה</td>
+<td>≈</td>
+<td>שם רשמי בלועזית (זהב) · המקורות חלוקים על ה-BPM (Tunebat 100 מול Spotify 140) — בדקו</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Static &amp; Ben El, Black Eyed Peas</td>
+<td>Shake Ya Boom Boom</td>
+<td>Original</td>
+<td>2020</td>
+<td>105</td>
+<td><code>Db</code></td>
+<td><code>3B</code></td>
+<td>7</td>
+<td>בנייה</td>
+<td>✔</td>
+<td>באנגלית · מאומת גם מול נתוני Spotify</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="אירוויזיון-ופופ">אירוויזיון ופופ<a class="anchor" href="#אירוויזיון-ופופ" title="קישור ישיר לסעיף">#</a></h3>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>אמן</th>
+<th>שם</th>
+<th>מיקס</th>
+<th>שנה</th>
+<th>BPM</th>
+<th>מפתח</th>
+<th>Camelot</th>
+<th>אנרגיה</th>
+<th>תפקיד</th>
+<th>אומת</th>
+<th>הערות</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>16</td>
+<td>Netta</td>
+<td>Toy</td>
+<td>Original</td>
+<td>2018</td>
+<td>130</td>
+<td><code>Ebm</code></td>
+<td><code>2A</code></td>
+<td>9</td>
+<td>המנון</td>
+<td>✔</td>
+<td>זוכת אירוויזיון 2018 · באותו מפתח ו-BPM כמו 'תל אביב'</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Netta</td>
+<td>Bassa Sababa</td>
+<td>Original</td>
+<td>2019</td>
+<td>124</td>
+<td><code>Ebm</code></td>
+<td><code>2A</code></td>
+<td>8</td>
+<td>שיא</td>
+<td>✔</td>
+<td>יש רמיקס Gromee (120) ו-Mike Cruz (128)</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Dana International</td>
+<td>Diva</td>
+<td>Original</td>
+<td>1998</td>
+<td>134</td>
+<td><code>Em</code></td>
+<td><code>9A</code></td>
+<td>8</td>
+<td>המנון</td>
+<td>✔</td>
+<td>זוכת אירוויזיון 1998 · שירה בציבור</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Nadav Guedj</td>
+<td>Golden Boy</td>
+<td>Original</td>
+<td>2015</td>
+<td>115</td>
+<td><code>C#m</code></td>
+<td><code>12A</code></td>
+<td>7</td>
+<td>בנייה</td>
+<td>✔</td>
+<td>אירוויזיון 2015</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Noa Kirel</td>
+<td>Unicorn</td>
+<td>Original</td>
+<td>2023</td>
+<td>130</td>
+<td><code>F#m</code></td>
+<td><code>11A</code></td>
+<td>8</td>
+<td>שיא</td>
+<td>≈</td>
+<td>אירוויזיון 2023 · BPM אומת; המוד לא הוצג במקור, רמיקס Sagi Kariv &amp; Itay Galo רשום 11A — לבדוק</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Noa Kirel, Agam Buhbut</td>
+<td>אצל הדודה והדוד</td>
+<td>Original</td>
+<td>2017</td>
+<td>103</td>
+<td><code>F#m</code></td>
+<td><code>11A</code></td>
+<td>7</td>
+<td>בנייה</td>
+<td>✔</td>
+<td>תעתיק: Etzel Ha'doda Ve'ha'dod · באותו מפתח כמו Silsulim</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="עדן-בן-זקן">עדן בן זקן<a class="anchor" href="#עדן-בן-זקן" title="קישור ישיר לסעיף">#</a></h3>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>אמן</th>
+<th>שם</th>
+<th>מיקס</th>
+<th>שנה</th>
+<th>BPM</th>
+<th>מפתח</th>
+<th>Camelot</th>
+<th>אנרגיה</th>
+<th>תפקיד</th>
+<th>אומת</th>
+<th>הערות</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>22</td>
+<td>Eden Ben Zaken</td>
+<td>חמסה</td>
+<td>Original</td>
+<td>2023</td>
+<td>124</td>
+<td><code>D</code></td>
+<td><code>10B</code></td>
+<td>8</td>
+<td>שיא</td>
+<td>✔</td>
+<td>תעתיק: Hamsa · קצר (2:17) — טוב לקאט מהיר</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Eden Ben Zaken</td>
+<td>שיכורים מאהבה</td>
+<td>Original</td>
+<td>2015</td>
+<td>128</td>
+<td><code>Gm</code></td>
+<td><code>6A</code></td>
+<td>8</td>
+<td>שיא</td>
+<td>✔</td>
+<td>תעתיק: Shikorim Me'ahava · מאומת גם מול נתוני Spotify</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Eden Ben Zaken</td>
+<td>בסיבוב הבא</td>
+<td>Original</td>
+<td>—</td>
+<td>140</td>
+<td><code>Gm</code></td>
+<td><code>6A</code></td>
+<td>8</td>
+<td>שיא</td>
+<td>✔</td>
+<td>תעתיק: Ba'sivuv Haba · שנת יציאה לא אומתה</td>
+</tr>
+<tr>
+<td>25</td>
+<td>Eden Ben Zaken</td>
+<td>הגענו הבנות</td>
+<td>Original</td>
+<td>2021</td>
+<td>108</td>
+<td><code>A</code></td>
+<td><code>11B</code></td>
+<td>7</td>
+<td>בנייה</td>
+<td>≈</td>
+<td>תעתיק: Higanu Ha'banot · המקורות חלוקים על ה-BPM (108 מול 75) — בדקו ב-Rekordbox</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Eden Ben Zaken</td>
+<td>אגרוף</td>
+<td>Original</td>
+<td>2019</td>
+<td>120</td>
+<td><code>Ab</code></td>
+<td><code>4B</code></td>
+<td>7</td>
+<td>בנייה</td>
+<td>≈</td>
+<td>תעתיק: Egrof · Tunebat: Ab, Spotify: Fm — מז'ור/מינור יחסיים (אותו מספר Camelot 4)</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="מזרחית-פופ-למסיבה">מזרחית-פופ למסיבה<a class="anchor" href="#מזרחית-פופ-למסיבה" title="קישור ישיר לסעיף">#</a></h3>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>אמן</th>
+<th>שם</th>
+<th>מיקס</th>
+<th>שנה</th>
+<th>BPM</th>
+<th>מפתח</th>
+<th>Camelot</th>
+<th>אנרגיה</th>
+<th>תפקיד</th>
+<th>אומת</th>
+<th>הערות</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>27</td>
+<td>Lior Narkis, Moshe Peretz</td>
+<td>מול כל העולם</td>
+<td>Original</td>
+<td>2013</td>
+<td>135</td>
+<td><code>Ebm</code></td>
+<td><code>2A</code></td>
+<td>8</td>
+<td>שיא</td>
+<td>✔</td>
+<td>תעתיק: Mul Kol Ha'olam · מאומת גם מול נתוני Spotify</td>
+</tr>
+<tr>
+<td>28</td>
+<td>Narkis, Sharon Yosefov</td>
+<td>הולכת איתך</td>
+<td>DJ Sharon Yosefov Official Remix</td>
+<td>—</td>
+<td>130</td>
+<td><code>F#m</code></td>
+<td><code>11A</code></td>
+<td>8</td>
+<td>שיא</td>
+<td>✔</td>
+<td>תעתיק: Holechet Itach · רמיקס מועדונים רשמי</td>
+</tr>
+<tr>
+<td>29</td>
+<td>Sarit Hadad</td>
+<td>קצת משוגעת</td>
+<td>Original</td>
+<td>2003</td>
+<td>123</td>
+<td><code>F#m</code></td>
+<td><code>11A</code></td>
+<td>7</td>
+<td>בנייה</td>
+<td>✔</td>
+<td>תעתיק: Ktzat Meshuga'at · מאומת גם מול נתוני Spotify</td>
+</tr>
+<tr>
+<td>30</td>
+<td>Sarit Hadad, Arisa</td>
+<td>קרקס</td>
+<td>Original</td>
+<td>—</td>
+<td>128</td>
+<td><code>B</code></td>
+<td><code>1B</code></td>
+<td>8</td>
+<td>שיא</td>
+<td>✔</td>
+<td>תעתיק: Kirkas · שנת יציאה לא אומתה</td>
+</tr>
+<tr>
+<td>31</td>
+<td>Sarit Hadad</td>
+<td>Shir Ha'frecha (Bimbo's Song)</td>
+<td>Original</td>
+<td>—</td>
+<td>132</td>
+<td><code>A</code></td>
+<td><code>11B</code></td>
+<td>7</td>
+<td>שיא</td>
+<td>≈</td>
+<td>שיר הפרחה · BPM אומת; המוד לא הוצג במקור</td>
+</tr>
+<tr>
+<td>32</td>
+<td>Stephane Legar</td>
+<td>Vida Loca</td>
+<td>Original</td>
+<td>2020</td>
+<td>130</td>
+<td><code>Db</code></td>
+<td><code>3B</code></td>
+<td>8</td>
+<td>שיא</td>
+<td>✔</td>
+<td>בשילוב ספרדית/עברית</td>
+</tr>
+<tr>
+<td>33</td>
+<td>Stephane Legar</td>
+<td>אני בדובאי</td>
+<td>Original</td>
+<td>—</td>
+<td>133</td>
+<td><code>D</code></td>
+<td><code>10B</code></td>
+<td>8</td>
+<td>שיא</td>
+<td>✔</td>
+<td>תעתיק: Ani Be'Dubai · שנת יציאה לא אומתה</td>
+</tr>
+<tr>
+<td>34</td>
+<td>Anna Zak</td>
+<td>Tik Tok</td>
+<td>Original</td>
+<td>—</td>
+<td>118</td>
+<td><code>C#m</code></td>
+<td><code>12A</code></td>
+<td>7</td>
+<td>בנייה</td>
+<td>✔</td>
+<td>שנת יציאה לא אומתה</td>
+</tr>
+<tr>
+<td>35</td>
+<td>Osher Cohen</td>
+<td>בסוף נרקוד</td>
+<td>Original</td>
+<td>—</td>
+<td>125</td>
+<td><code>Bm</code></td>
+<td><code>10A</code></td>
+<td>7</td>
+<td>בנייה</td>
+<td>✔</td>
+<td>תעתיק: Ba'sof Nirkod · שנת יציאה לא אומתה</td>
+</tr>
+<tr>
+<td>36</td>
+<td>Peer Tasi</td>
+<td>היי מאמא</td>
+<td>Original</td>
+<td>—</td>
+<td>110</td>
+<td><code>Em</code></td>
+<td><code>9A</code></td>
+<td>8</td>
+<td>שיא</td>
+<td>✔</td>
+<td>תעתיק: Hi Mama · אנרגיה גבוהה, ריקודי מאוד</td>
+</tr>
+<tr>
+<td>37</td>
+<td>Dudu Aharon</td>
+<td>Al Tisgeri Li Tadelet</td>
+<td>Original</td>
+<td>—</td>
+<td>100</td>
+<td><code>Em</code></td>
+<td><code>9A</code></td>
+<td>6</td>
+<td>חימום</td>
+<td>✔</td>
+<td>אל תסגרי לי ת'דלת · שנת יציאה לא אומתה</td>
+</tr>
+<tr>
+<td>38</td>
+<td>Eyal Golan</td>
+<td>עם ישראל חי</td>
+<td>Original</td>
+<td>—</td>
+<td>105</td>
+<td><code>F</code></td>
+<td><code>7B</code></td>
+<td>7</td>
+<td>המנון</td>
+<td>✔</td>
+<td>תעתיק: Am Yisrael Chai · שירה בציבור; אפשר בחצי טמפו (53)</td>
+</tr>
+<tr>
+<td>39</td>
+<td>Nasrin Kadri</td>
+<td>רוצי עם הלב</td>
+<td>Original</td>
+<td>—</td>
+<td>124</td>
+<td><code>A</code></td>
+<td><code>11B</code></td>
+<td>7</td>
+<td>בנייה</td>
+<td>≈</td>
+<td>תעתיק: Rutzi Im Ha'lev · BPM אומת; המוד לא הוצג במקור</td>
+</tr>
+<tr>
+<td>40</td>
+<td>Eden Hason</td>
+<td>את חסרה לי</td>
+<td>Original</td>
+<td>2020</td>
+<td>130</td>
+<td><code>Em</code></td>
+<td><code>9A</code></td>
+<td>7</td>
+<td>בנייה</td>
+<td>✔</td>
+<td>תעתיק: At Chasera Li · מאומת גם מול נתוני Spotify</td>
+</tr>
+<tr>
+<td>41</td>
+<td>Itay Levi</td>
+<td>12 בלילה</td>
+<td>Original</td>
+<td>—</td>
+<td>127</td>
+<td><code>Db</code></td>
+<td><code>3B</code></td>
+<td>7</td>
+<td>בנייה</td>
+<td>≈</td>
+<td>תעתיק: 12 Ba'layla · BPM אומת; המוד לא הוצג במקור</td>
+</tr>
+<tr>
+<td>42</td>
+<td>Sarit Hadad</td>
+<td>Haim Shelcha</td>
+<td>Original</td>
+<td>—</td>
+<td>140</td>
+<td><code>Am</code></td>
+<td><code>8A</code></td>
+<td>8</td>
+<td>שיא</td>
+<td>✔</td>
+<td>חיים שלך · שנת יציאה לא אומתה</td>
+</tr>
+<tr>
+<td>43</td>
+<td>Moshe Peretz, Nasrin Kadri</td>
+<td>היינו שניים</td>
+<td>Original</td>
+<td>2018</td>
+<td>123</td>
+<td><code>Dm</code></td>
+<td><code>7A</code></td>
+<td>7</td>
+<td>בנייה</td>
+<td>✔</td>
+<td>תעתיק: Hayinu Shnayim · Spotify</td>
+</tr>
+<tr>
+<td>44</td>
+<td>Itay Levi, Stephane Legar</td>
+<td>רק בנות</td>
+<td>Original</td>
+<td>2020</td>
+<td>126</td>
+<td><code>Bbm</code></td>
+<td><code>3A</code></td>
+<td>8</td>
+<td>שיא</td>
+<td>✔</td>
+<td>תעתיק: Rak Banot · Spotify</td>
+</tr>
+<tr>
+<td>45</td>
+<td>Itay Levi</td>
+<td>רוקדים עם הדמעות</td>
+<td>Original</td>
+<td>2020</td>
+<td>138</td>
+<td><code>Db</code></td>
+<td><code>3B</code></td>
+<td>8</td>
+<td>שיא</td>
+<td>✔</td>
+<td>תעתיק: Rokdim Im Ha'dma'ot · Spotify</td>
+</tr>
+<tr>
+<td>46</td>
+<td>Noa Kirel, Mergui</td>
+<td>אמבולנס</td>
+<td>Original</td>
+<td>2020</td>
+<td>124</td>
+<td><code>C</code></td>
+<td><code>8B</code></td>
+<td>8</td>
+<td>שיא</td>
+<td>✔</td>
+<td>תעתיק: Ambulance · Spotify</td>
+</tr>
+<tr>
+<td>47</td>
+<td>Eden Ben Zaken, Peer Tasi</td>
+<td>כל העיר שלנו</td>
+<td>Original</td>
+<td>2016</td>
+<td>128</td>
+<td><code>F</code></td>
+<td><code>7B</code></td>
+<td>8</td>
+<td>שיא</td>
+<td>✔</td>
+<td>תעתיק: Kol Ha'ir Shelanu · Spotify</td>
+</tr>
+<tr>
+<td>48</td>
+<td>Mergui</td>
+<td>לא יוצא למסיבות</td>
+<td>Original</td>
+<td>2020</td>
+<td>118</td>
+<td><code>C</code></td>
+<td><code>8B</code></td>
+<td>7</td>
+<td>בנייה</td>
+<td>✔</td>
+<td>תעתיק: Lo Yotze La'mesibot · Spotify</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="מעברים-מומלצים-בתוך-הארגז">מעברים מומלצים בתוך הארגז<a class="anchor" href="#מעברים-מומלצים-בתוך-הארגז" title="קישור ישיר לסעיף">#</a></h2>
+<ol>
+<li><strong>Omer Adam – תל אביב ← Netta – Toy</strong> — שניהם <code>130</code> ו-<code>2A</code>: בלנד מושלם, אפשר 16 תיבות.</li>
+<li><strong>Lior Narkis &amp; Moshe Peretz – מול כל העולם ← Netta – Toy</strong> — אותו מפתח (<code>2A</code>); הורידו את הטמפו בהדרגה מ-<code>135</code> או עשו קאט על הפזמון.</li>
+<li><strong>Netta – Toy ← Netta – Bassa Sababa</strong> — אותו <code>2A</code>, ירידה ל-<code>124</code>: <code>Echo Out</code> על סוף הפזמון והכניסו את <code>Bassa Sababa</code> מהדרופ.</li>
+<li><strong>Static &amp; Ben El – Tudo Bom ← Narkis – הולכת איתך (רמיקס)</strong> — <code>11B</code> ← <code>11A</code> (המינור היחסי), שניהם <code>130</code>: מעבר רך שמכניס צבע מזרחי.</li>
+<li><strong>Narkis – הולכת איתך (רמיקס) ← Noa Kirel – Unicorn</strong> — שניהם <code>130</code> ו-<code>11A</code> (ה-<code>Unicorn</code> מסומן ≈ — אשרו מפתח ב-<code>Rekordbox</code>).</li>
+<li><strong>Omer Adam – בוקרשט ← Eden Ben Zaken – שיכורים מאהבה</strong> — <code>5A</code> ← <code>6A</code> (+1 = עליית אנרגיה), <code>130</code> ← <code>128</code>.</li>
+<li><strong>Moshe Peretz &amp; Omer Adam – Hopa / Ein Kamoch / Tel Aviv ← Stephane Legar – Vida Loca</strong> — <code>3A</code> ← <code>3B</code> (מז'ור יחסי), שניהם <code>130</code>.</li>
+<li><strong>Static &amp; Ben El – Silsulim ← Noa Kirel &amp; Agam Buhbut – אצל הדודה והדוד</strong> — שניהם <code>11A</code>; עלייה מ-<code>95</code> ל-<code>103</code> — קאט על פזמון או <code>Tempo</code> הדרגתי.</li>
+<li><strong>Static &amp; Ben El x Pitbull – Further Up ← Static &amp; Ben El – Zahav</strong> — שניהם <code>2B</code> (F#); ה-<code>BPM</code> של <code>Zahav</code> שנוי במחלוקת (100/140) — בדקו את ה-<code>Beat Grid</code> לפני בלנד.</li>
+<li><strong>Omer Adam &amp; Moshe Peretz – היא רק רוצה לרקוד ← Osher Cohen – בסוף נרקוד</strong> — שניהם <code>10A</code>; <code>130</code> ← <code>125</code> (או ← <code>חמסה</code> של עדן בן זקן, <code>10B</code>, <code>124</code>).</li>
+</ol>
+<h2 id="איפה-לקנות-ולהזרים-חוקית">איפה לקנות ולהזרים חוקית<a class="anchor" href="#איפה-לקנות-ולהזרים-חוקית" title="קישור ישיר לסעיף">#</a></h2>
+<ul>
+<li><strong><code>Apple Music</code> / <code>iTunes Store</code></strong> — המקום הכי אמין לקנות להיטים ישראליים כקובץ (<code>AAC 256</code>). חפשו גם בעברית וגם בתעתיק. קובץ שנקנה נטען ישירות ל-<code>Rekordbox</code>; שירים מהמנוי של <code>Apple Music</code> (סטרימינג) <strong>לא</strong> ניתנים לייבוא לתוכנת דיג'יי.</li>
+<li><strong><code>Beatport</code> / <code>Beatsource</code></strong> — רמיקסים רשמיים של מפיקים ישראלים יוצאים לעיתים בחנויות האלה; <code>Beatsource</code> מיועד לדיג'יים של פופ/היפ-הופ/לטיני, אבל ההיצע הישראלי שם מוגבל.</li>
+<li><strong>סטרימינג בתוך <code>Rekordbox</code></strong> — <code>Rekordbox</code> תומך בשירותים כמו <code>TIDAL</code>, <code>SoundCloud Go+</code>, <code>Beatport Streaming</code> ו-<code>Beatsource Streaming</code> (בכפוף למנוי ולתוכנית ה-<code>Rekordbox</code> שלכם). בדקו שהשיר זמין שם לפני האירוע, והכינו גיבוי מקומי — אינטרנט באולם הוא לא דבר שסומכים עליו.</li>
+<li><strong><code>Spotify</code> ו-<code>YouTube</code> לא מתאימים לתקלוט</strong>: <code>Spotify</code> הפסיק את האינטגרציה עם תוכנות דיג'יי, והורדה/"ריפ" מ-<code>YouTube</code> מפרה את תנאי השימוש וזכויות היוצרים — וגם נשמעת גרוע במערכת של אולם.</li>
+<li><strong>מאגרי עריכות (<code>DJ Pools</code>)</strong> — מאגרים מורשים כמו <code>Beatsource</code>, <code>BPM Supreme</code> או <code>DJcity</code> מציעים <code>Intro/Outro edits</code> חוקיים, אבל בעיקר לחומר בינלאומי. לא מצאנו (ולא הצלחנו לאמת בסשן הזה) מאגר עריכות ישראלי מורשה; היזהרו מאתרי "הורדת להיטים" או קבוצות טלגרם — אלה בדרך כלל פיראטיות.</li>
+<li><strong>רישוי השמעה ציבורית בישראל</strong> — השמעת מוזיקה באירוע ציבורי מחייבת רישיון מ<strong>אקו"ם</strong> (זכויות כותבים, מלחינים ומו"לים), ובדרך כלל גם מגופי התמלוגים של המבצעים ושל חברות התקליטים. ברוב אולמות האירועים והמועדונים הרישיון מוסדר דרך המקום — אבל כשאתם מתקלטים במקום "פרטי" (וילה, חוף, גינה) שאלו את המפיק מי מחזיק ברישיון. (הפרטים המדויקים לא אומתו בסשן הזה — בדקו באתר אקו"ם.)</li>
+</ul>
+<h2 id="קישורי-חיפוש-10-טראקים-מרכזיים">קישורי חיפוש — 10 טראקים מרכזיים<a class="anchor" href="#קישורי-חיפוש-10-טראקים-מרכזיים" title="קישור ישיר לסעיף">#</a></h2>
+<ul>
+<li><a href="https://music.apple.com/il/search?term=Omer%20Adam%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91" target="_blank" rel="noopener">Omer Adam – תל אביב</a> · <a href="https://www.beatsource.com/search?q=Omer%20Adam%20%D7%AA%D7%9C%20%D7%90%D7%91%D7%99%D7%91" target="_blank" rel="noopener">Beatsource</a></li>
+<li><a href="https://music.apple.com/il/search?term=Static%20%26%20Ben%20El%20Tudo%20Bom" target="_blank" rel="noopener">Static &amp; Ben El – Tudo Bom</a> · <a href="https://www.beatsource.com/search?q=Static%20%26%20Ben%20El%20Tudo%20Bom" target="_blank" rel="noopener">Beatsource</a></li>
+<li><a href="https://music.apple.com/il/search?term=Netta%20Toy" target="_blank" rel="noopener">Netta – Toy</a> · <a href="https://www.beatsource.com/search?q=Netta%20Toy" target="_blank" rel="noopener">Beatsource</a></li>
+<li><a href="https://music.apple.com/il/search?term=Omer%20Adam%20%D7%91%D7%95%D7%A7%D7%A8%D7%A9%D7%98" target="_blank" rel="noopener">Omer Adam – בוקרשט</a> · <a href="https://www.beatsource.com/search?q=Omer%20Adam%20%D7%91%D7%95%D7%A7%D7%A8%D7%A9%D7%98" target="_blank" rel="noopener">Beatsource</a></li>
+<li><a href="https://music.apple.com/il/search?term=Eden%20Ben%20Zaken%20%D7%97%D7%9E%D7%A1%D7%94" target="_blank" rel="noopener">Eden Ben Zaken – חמסה</a> · <a href="https://www.beatsource.com/search?q=Eden%20Ben%20Zaken%20%D7%97%D7%9E%D7%A1%D7%94" target="_blank" rel="noopener">Beatsource</a></li>
+<li><a href="https://music.apple.com/il/search?term=Dana%20International%20Diva" target="_blank" rel="noopener">Dana International – Diva</a> · <a href="https://www.beatsource.com/search?q=Dana%20International%20Diva" target="_blank" rel="noopener">Beatsource</a></li>
+<li><a href="https://music.apple.com/il/search?term=Omer%20Adam%20%D7%94%D7%99%D7%90%20%D7%A8%D7%A7%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A8%D7%A7%D7%95%D7%93" target="_blank" rel="noopener">Omer Adam, Moshe Peretz – היא רק רוצה לרקוד</a> · <a href="https://www.beatsource.com/search?q=Omer%20Adam%20%D7%94%D7%99%D7%90%20%D7%A8%D7%A7%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A8%D7%A7%D7%95%D7%93" target="_blank" rel="noopener">Beatsource</a></li>
+<li><a href="https://music.apple.com/il/search?term=Lior%20Narkis%20%D7%9E%D7%95%D7%9C%20%D7%9B%D7%9C%20%D7%94%D7%A2%D7%95%D7%9C%D7%9D" target="_blank" rel="noopener">Lior Narkis, Moshe Peretz – מול כל העולם</a> · <a href="https://www.beatsource.com/search?q=Lior%20Narkis%20%D7%9E%D7%95%D7%9C%20%D7%9B%D7%9C%20%D7%94%D7%A2%D7%95%D7%9C%D7%9D" target="_blank" rel="noopener">Beatsource</a></li>
+<li><a href="https://music.apple.com/il/search?term=Static%20%26%20Ben%20El%20Further%20Up%20%28Na%2C%20Na%2C%20Na%2C%20Na%2C%20Na%29" target="_blank" rel="noopener">Static &amp; Ben El, Pitbull – Further Up (Na, Na, Na, Na, Na)</a> · <a href="https://www.beatsource.com/search?q=Static%20%26%20Ben%20El%20Further%20Up%20%28Na%2C%20Na%2C%20Na%2C%20Na%2C%20Na%29" target="_blank" rel="noopener">Beatsource</a></li>
+<li><a href="https://music.apple.com/il/search?term=Noa%20Kirel%20Unicorn" target="_blank" rel="noopener">Noa Kirel – Unicorn</a> · <a href="https://www.beatsource.com/search?q=Noa%20Kirel%20Unicorn" target="_blank" rel="noopener">Beatsource</a></li>
+</ul>
+<h2 id="מקורות-ואימות">מקורות ואימות<a class="anchor" href="#מקורות-ואימות" title="קישור ישיר לסעיף">#</a></h2>
+<p>ערכי <code>BPM</code>/מפתח נאספו מ-<code>Tunebat</code>, <code>SongBPM</code> ו-<code>Musicstax</code> (תוצאות חיפוש), ומקבצי נתונים פומביים של ניתוח האודיו של <code>Spotify</code> (<code>tidytuesday</code>: <code>spotify_songs</code> ו-<code>Billboard audio features</code>) — אותו מקור שעליו <code>Tunebat</code> ו-<code>SongBPM</code> מבוססים. אלה ערכים <strong>אלגוריתמיים</strong>: לפעמים המפתח שגוי (לרוב בבלבול בין טון למינור/מז'ור היחסי), וה-<code>BPM</code> עשוי להופיע כפול או חצוי. ה-<code>Analyze</code> של <code>Rekordbox</code> על הקובץ שקניתם הוא הבדיקה הסופית.</p></div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><defs><linearGradient id="bm-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2bd6"/><stop offset=".55" stop-color="#8a5cff"/><stop offset="1" stop-color="#22e1ff"/></linearGradient></defs><circle cx="20" cy="20" r="18" fill="none" stroke="url(#bm-g)" stroke-width="3"/><circle cx="20" cy="20" r="11.5" fill="none" stroke="url(#bm-g)" stroke-width="1.5" opacity=".55"/><g fill="url(#bm-g)"><rect x="11" y="16" width="2.6" height="8" rx="1.3"/><rect x="15.4" y="12" width="2.6" height="16" rx="1.3"/><rect x="19.8" y="9.5" width="2.6" height="21" rx="1.3"/><rect x="24.2" y="13.5" width="2.6" height="13" rx="1.3"/><rect x="28.6" y="17" width="2.6" height="6" rx="1.3"/></g></svg><span class="brand-word">DJ<b>Lab</b></span></a>
+      <p>בית הספר לתקלוט שלך: קורס Rekordbox בעברית, מוזיקה מקורית לתרגול וכלים שעובדים ישר בדפדפן.</p>
+    </div>
+    <nav aria-label="ללמוד"><h2>ללמוד</h2><ul>
+      <li><a href="../guide/index.html">הקורס</a></li><li><a href="../practice.html">אימון ומעברים</a></li><li><a href="../sets/index.html">סטים לדוגמה</a></li></ul></nav>
+    <nav aria-label="מוזיקה"><h2>מוזיקה</h2><ul>
+      <li><a href="../library.html">ספריית מוזיקה</a></li><li><a href="../crates/index.html">ארגזים</a></li><li><a href="../tools/rekordbox.html">ייבוא ל-Rekordbox</a></li></ul></nav>
+    <nav aria-label="כלים"><h2>כלים</h2><ul>
+      <li><a href="../tools/mix-trainer.html">מאמן מיקס</a></li><li><a href="../tools/camelot.html">גלגל קאמלוט</a></li><li><a href="../tools/set-builder.html">בונה סטים</a></li></ul></nav>
+  </div>
+  <div class="container footer-legal">
+    <p>המוזיקה המקורית משוחררת ב-<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.he" target="_blank" rel="noopener">CC0</a> · הקוד ב-MIT · הארגזים הם קישורים בלבד - קנו והזרימו ממקורות חוקיים.</p>
+    <p class="muted"><a href="../about.html">אודות ורישיון</a> · © 2026 DJ Lab</p>
+  </div>
+</footer>
+<script src="../data/catalog.js?v=e4c6cf60" defer></script><script src="../data/crates.js?v=e4c6cf60" defer></script><script src="../assets/js/icons.gen.js?v=e4c6cf60" defer></script><script src="../assets/js/core.js?v=e4c6cf60" defer></script><script src="../assets/js/player.js?v=e4c6cf60" defer></script><script src="../assets/js/crates.js?v=e4c6cf60" defer></script>
+</body>
+</html>

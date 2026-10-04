@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>11 · אפקטים · DJ Lab</title>
+<meta name="description" content="מדריך מעשי לאפקטים ב-Rekordbox: כל ה-Beat FX וה-Color FX, מה כל אחד עושה, איך בוחרים אורך Beat, Pad FX ו-Merge FX, מתכונים לפי ז&#x27;אנר — ולמה פחות זה כמעט תמיד יותר.">
+<meta name="djlab-root" content="../../">
+<meta name="djlab-base" content="../">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#07070c">
+<link rel="canonical" href="https://lidorbashari.github.io/try/docs/guide/11-effects.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DJ Lab">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="11 · אפקטים · DJ Lab">
+<meta property="og:description" content="מדריך מעשי לאפקטים ב-Rekordbox: כל ה-Beat FX וה-Color FX, מה כל אחד עושה, איך בוחרים אורך Beat, Pad FX ו-Merge FX, מתכונים לפי ז&#x27;אנר — ולמה פחות זה כמעט תמיד יותר.">
+<meta property="og:url" content="https://lidorbashari.github.io/try/docs/guide/11-effects.html">
+<meta property="og:image" content="https://lidorbashari.github.io/try/docs/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&family=Rubik:wght@400;500;600;700;800&family=Secular+One&display=swap">
+<link rel="stylesheet" href="../assets/css/site.css?v=e4c6cf60">
+<script>(function(){try{var t=localStorage.getItem('djlab:theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+</head>
+<body class="page-guide has-progress">
+<a class="skip-link" href="#main">דלגו לתוכן</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../index.html" aria-label="DJ Lab - דף הבית"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><defs><linearGradient id="bm-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2bd6"/><stop offset=".55" stop-color="#8a5cff"/><stop offset="1" stop-color="#22e1ff"/></linearGradient></defs><circle cx="20" cy="20" r="18" fill="none" stroke="url(#bm-g)" stroke-width="3"/><circle cx="20" cy="20" r="11.5" fill="none" stroke="url(#bm-g)" stroke-width="1.5" opacity=".55"/><g fill="url(#bm-g)"><rect x="11" y="16" width="2.6" height="8" rx="1.3"/><rect x="15.4" y="12" width="2.6" height="16" rx="1.3"/><rect x="19.8" y="9.5" width="2.6" height="21" rx="1.3"/><rect x="24.2" y="13.5" width="2.6" height="13" rx="1.3"/><rect x="28.6" y="17" width="2.6" height="6" rx="1.3"/></g></svg><span class="brand-word">DJ<b>Lab</b></span></a>
+    <nav class="site-nav" id="site-nav" aria-label="ניווט ראשי"><ul><li><a href="../index.html">בית</a></li><li><a href="../guide/index.html" aria-current="page">הקורס</a></li><li><a href="../library.html">ספריית מוזיקה</a></li><li><a href="../practice.html">אימון</a></li><li><a href="../crates/index.html">ארגזים</a></li><li><a href="../sets/index.html">סטים</a></li><li><a href="../tools/index.html">כלים</a></li><li><a href="../about.html">אודות</a></li></ul></nav>
+    <div class="header-actions">
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="החלפה בין מצב כהה למצב בהיר" title="מצב כהה / בהיר"><svg class="icon i-sun" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg><svg class="icon i-moon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.6A8.2 8.2 0 1 1 9.4 4a6.6 6.6 0 0 0 10.6 10.6z"/></svg></button>
+      <a class="icon-btn hide-sm" href="https://github.com/lidorbashari/try" target="_blank" rel="noopener" aria-label="הקוד ב-GitHub" title="GitHub"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2.8a9.3 9.3 0 0 0-2.9 18.1c.5.1.6-.2.6-.5v-1.7c-2.6.6-3.1-1.2-3.1-1.2-.4-1.1-1-1.4-1-1.4-.9-.6 0-.6 0-.6.9.1 1.4 1 1.4 1 .8 1.4 2.2 1 2.7.8.1-.6.3-1 .6-1.2-2-.2-4.2-1-4.2-4.6 0-1 .4-1.8 1-2.5-.1-.2-.4-1.2.1-2.5 0 0 .8-.2 2.6 1a8.9 8.9 0 0 1 4.7 0c1.8-1.2 2.6-1 2.6-1 .5 1.3.2 2.3.1 2.5.6.7 1 1.5 1 2.5 0 3.6-2.2 4.4-4.2 4.6.3.3.6.8.6 1.6v2.4c0 .3.2.6.7.5A9.3 9.3 0 0 0 12 2.8z" fill="currentColor" stroke="none"/></svg></a>
+      <button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="פתיחת תפריט"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+<div class="reading-progress" aria-hidden="true"><span data-reading-bar></span></div>
+<article class="chapter" data-chapter="11-effects" data-chapter-num="11">
+  <header class="chapter-hero">
+    <div class="container">
+      <nav class="crumbs" aria-label="פירורי לחם"><a href="../index.html">בית</a><span aria-hidden="true">/</span><a href="index.html">הקורס</a><span aria-hidden="true">/</span><span aria-current="page">פרק 11</span></nav>
+      <div class="chapter-hero-grid">
+        <div class="chapter-num" aria-hidden="true">11</div>
+        <div>
+          <p class="eyebrow">פרק 11 מתוך 15</p>
+          <h1 class="chapter-title">אפקטים</h1>
+          <p class="chapter-en" dir="ltr">Effects</p>
+          <p class="lead">מדריך מעשי לאפקטים ב-Rekordbox: כל ה-Beat FX וה-Color FX, מה כל אחד עושה, איך בוחרים אורך Beat, Pad FX ו-Merge FX, מתכונים לפי ז&#x27;אנר — ולמה פחות זה כמעט תמיד יותר.</p>
+          <div class="chapter-meta">
+            <span class="meta-item"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>14 דק' קריאה</span>
+            <span class="badge badge--level" data-level="מתחיל-מתקדם">מתחיל-מתקדם</span>
+            
+            <span class="meta-item read-state" data-read-state hidden><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>נקרא</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container chapter-layout">
+    <aside class="chapter-toc" aria-label="תוכן הפרק">
+  <details class="toc-box" open data-toc-details>
+    <summary><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg><span>בפרק הזה</span><svg class="icon toc-chev" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9.5 6 6 6-6"/></svg></summary>
+    <nav class="toc-nav"><ol><li><a href="#מה-תלמדו-בפרק" data-toc-link>מה תלמדו בפרק</a></li><li><a href="#איפה-האפקטים-נמצאים" data-toc-link>איפה האפקטים נמצאים</a><ol><li><a href="#beat-fx-אפקטים-מסונכרנים-לקצב" data-toc-link>Beat FX — אפקטים מסונכרנים לקצב</a></li><li><a href="#color-fx-ידית-אחת-לכל-ערוץ" data-toc-link>Color FX — ידית אחת לכל ערוץ</a></li><li><a href="#pad-fx-ו-release-fx" data-toc-link>Pad FX ו-Release FX</a></li><li><a href="#merge-fx" data-toc-link>Merge FX</a></li></ol></li><li><a href="#כל-ה-beat-fx-אחד-אחד" data-toc-link>כל ה-Beat FX, אחד-אחד</a></li><li><a href="#אורך-beat-בלי-לנחש" data-toc-link>אורך Beat — בלי לנחש</a></li><li><a href="#color-fx-אחד-אחד" data-toc-link>Color FX, אחד-אחד</a></li><li><a href="#שלושה-מעברים-עם-אפקטים-שכל-dj-חייב-לדעת" data-toc-link>שלושה מעברים עם אפקטים שכל DJ חייב לדעת</a><ol><li><a href="#1-echo-out-יציאה-נקייה-מכל-מצב" data-toc-link>1. Echo Out — יציאה נקייה מכל מצב</a></li><li><a href="#2-מעבר-פילטר-להחליף-מאחורי-הקלעים" data-toc-link>2. מעבר פילטר — &quot;להחליף מאחורי הקלעים&quot;</a></li><li><a href="#3-loop-roll-לפני-דרופ" data-toc-link>3. Loop Roll לפני דרופ</a></li><li><a href="#בונוס-בילד-אפ-של-16-תיבות-צעד-אחר-צעד" data-toc-link>בונוס: בילד-אפ של 16 תיבות, צעד אחר צעד</a></li></ol></li><li><a href="#פחות-זה-יותר-חוקי-הזהב" data-toc-link>פחות זה יותר — חוקי הזהב</a><ol><li><a href="#אפקטים-ו-eq-מי-עושה-מה" data-toc-link>אפקטים ו-EQ — מי עושה מה</a></li></ol></li><li><a href="#מתכונים-לפי-זאנר" data-toc-link>מתכונים לפי ז&#x27;אנר</a><ol><li><a href="#דיפ-האוס-ואפרו-האוס" data-toc-link>דיפ האוס ואפרו האוס</a></li><li><a href="#טק-האוס" data-toc-link>טק האוס</a></li><li><a href="#מלודיק-טכנו" data-toc-link>מלודיק טכנו</a></li><li><a href="#טכנו-של-שיא-והארד-טכנו" data-toc-link>טכנו של שיא והארד טכנו</a></li><li><a href="#היפ-הופ-רגאטון-וים-תיכוני" data-toc-link>היפ-הופ, רגאטון וים-תיכוני</a></li><li><a href="#ביג-רום-edm" data-toc-link>ביג רום / EDM</a></li><li><a href="#פסיכדלי-טראנס" data-toc-link>פסיכדלי טראנס</a></li></ol></li><li><a href="#טעויות-נפוצות" data-toc-link>טעויות נפוצות</a></li><li><a href="#תרגילים" data-toc-link>תרגילים</a></li><li><a href="#סיכום" data-toc-link>סיכום</a></li></ol></nav>
+  </details>
+</aside>
+    <div class="prose" data-prose>
+      <p>אפקטים הם כמו תבלינים. קורט מלח הופך מנה טובה למעולה; חצי צנצנת — והמנה הלכה. ברוב הסטים הטובים שתשמעו, האפקטים כמעט לא מורגשים: Echo קטן שסוגר טראק, פילטר שמרים מתח לפני דרופ, Reverb שנותן לברייקדאון "לנשום". ודווקא אצל מתחילים, האפקטים הם הדבר הכי רועש בסט.</p>
+<p>בפרק הזה נעבור על כל האפקטים של Rekordbox אחד-אחד, נלמד לבחור אורך Beat בלי לנחש, ונבנה "מתכונים" מוכנים לכל ז'אנר שאתם אוהבים — מאפרו האוס ועד ים-תיכוני.</p>
+<h2 id="מה-תלמדו-בפרק">מה תלמדו בפרק<a class="anchor" href="#מה-תלמדו-בפרק" title="קישור ישיר לסעיף">#</a></h2>
+<ul>
+<li>איפה האפקטים ב-Rekordbox ומה ההבדל בין <code>Beat FX</code>, <code>Color FX</code>, <code>Pad FX</code> ו-<code>Merge FX</code>.</li>
+<li>מה עושה כל אחד מה-Beat FX (Echo, Delay, Reverb, Spiral, Roll, Trans ועוד).</li>
+<li>איך מחשבים אורך Beat, ולמה Echo של פעמה אחת נשמע אחרת מ-Echo של 3/4.</li>
+<li>שלושה מעברים "חובה" עם אפקטים: Echo Out, מעבר פילטר, ו-Loop Roll לפני דרופ.</li>
+<li>מתכונים לפי ז'אנר, וטעויות נפוצות.</li>
+</ul>
+<figure class="figure"><img alt="שליף אפקטים — Beat FX ו-Color FX: מה כל אפקט עושה ומתי" src="../assets/guide/11-effects-cheatsheet.svg" loading="lazy" decoding="async"><figcaption>שליף אפקטים — Beat FX ו-Color FX: מה כל אפקט עושה ומתי</figcaption></figure>
+<h2 id="איפה-האפקטים-נמצאים">איפה האפקטים נמצאים<a class="anchor" href="#איפה-האפקטים-נמצאים" title="קישור ישיר לסעיף">#</a></h2>
+<h3 id="beat-fx-אפקטים-מסונכרנים-לקצב">Beat FX — אפקטים מסונכרנים לקצב<a class="anchor" href="#beat-fx-אפקטים-מסונכרנים-לקצב" title="קישור ישיר לסעיף">#</a></h3>
+<p>ה-<code>Beat FX</code> הם אפקטים שה"זמן" שלהם נמדד בפעמות (<code>Beats</code>) של הטראק. אם הטראק ב-124 BPM ובחרתם Echo של פעמה אחת — כל חזרה תגיע בדיוק על הפעמה הבאה. זה מה שהופך אותם למוזיקליים.</p>
+<aside class="callout callout--rekordbox" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17M12 3.5v17M18 3.5v17"/><rect x="3.5" y="13" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="9.5" y="6.5" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="15.5" y="15" width="5" height="3.2" rx="1" fill="currentColor"/></svg><span>ב-Rekordbox</span></div><div class="callout-body"><p>במצב <code>PERFORMANCE</code> פותחים את פאנל ה-<code>FX</code> (אם הוא לא מוצג — דרך תפריט התצוגה של המסך). בכל יחידת FX בוחרים: <strong>סוג אפקט</strong> מרשימה, <strong>אורך Beat</strong> (חיצים או ערכים כמו 1/2, 1, 2), <strong>ערוץ</strong> שעליו האפקט פועל (דק 1, דק 2 או <code>Master</code>), ידית <strong><code>Level/Depth</code></strong> (כמה מהאפקט נשמע), וכפתור <strong>הפעלה</strong>. יש מצב של אפקט יחיד ומצב של כמה אפקטים במקביל — למתחילים, תתחילו עם אפקט אחד.</p>
+<p>🎚️ בקונטרולר: ברוב הקונטרולרים של Pioneer DJ — כמו <code>DDJ-FLX4</code> — יש אזור <code>BEAT FX</code> עם כפתור בחירת אפקט, כפתורי Beat שמאלה/ימינה, בורר ערוץ, ידית <code>LEVEL/DEPTH</code> וכפתור <code>ON</code>. ככה לא צריך לגעת במחשב בזמן הופעה.</p></div></aside>
+<h3 id="color-fx-ידית-אחת-לכל-ערוץ">Color FX — ידית אחת לכל ערוץ<a class="anchor" href="#color-fx-ידית-אחת-לכל-ערוץ" title="קישור ישיר לסעיף">#</a></h3>
+<p>ה-<code>Color FX</code> (ב-Rekordbox נקראים גם <code>Sound Color FX</code>) עובדים אחרת: ידית אחת לכל ערוץ במיקסר. מרכז = כבוי. מסובבים שמאלה או ימינה — והאפקט גדל. סוג האפקט (Filter, Space וכו') נבחר במסך, והוא אותו סוג לכל הערוצים.</p>
+<p>ב-<code>DDJ-FLX4</code> הידית הזו מסומנת <code>CFX</code>, וכברירת מחדל היא פילטר. יש לו גם מצב <code>Smart CFX</code>, שבו ידית אחת מפעילה שילוב של כמה אפקטים.</p>
+<h3 id="pad-fx-ו-release-fx">Pad FX ו-Release FX<a class="anchor" href="#pad-fx-ו-release-fx" title="קישור ישיר לסעיף">#</a></h3>
+<p>ב-<code>Pad FX</code> כל פד בקונטרולר הוא אפקט מוכן מראש — סוג, אורך Beat ועוצמה. לוחצים ומחזיקים — האפקט פועל; משחררים — הוא נעלם. זו דרך מהירה ומדויקת להשתמש באפקטים בלי לסובב ידיות.</p>
+<p>חלק מהפדים הם <code>Release FX</code> — אפקטי "סיום" כמו Echo ארוך, Backspin או בלימת פלטה, שנועדו להוציא טראק בצורה דרמטית לפני שהבא נכנס.</p>
+<h3 id="merge-fx">Merge FX<a class="anchor" href="#merge-fx" title="קישור ישיר לסעיף">#</a></h3>
+<p><code>Merge FX</code> הוא אפקט "בילד-אפ" שמשלב כמה אפקטים (פילטר, נויז, רול ועוד) על ידית אחת: מסובבים — והמתח עולה בהדרגה. זה זמין ב-Rekordbox עם חלק מהקונטרולרים (גם ב-<code>DDJ-FLX4</code>, דרך ה-Hardware Unlock). זה מהנה מאוד — ובדיוק בגלל זה קל להגזים.</p>
+<aside class="callout callout--warn" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.3 4.3 2.8 17.5A2 2 0 0 0 4.5 20.5h15a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v4.5M12 17h.01"/></svg><span>זהירות</span></div><div class="callout-body"><p>שמות, מיקומים ופריסות משתנים בין גרסאות ובין קונטרולרים. אם אתם לא מוצאים כפתור — חפשו במדריך החומרה של הקונטרולר שלכם (<code>Hardware Diagram</code>), ולא בפורומים ישנים.</p></div></aside>
+<h2 id="כל-ה-beat-fx-אחד-אחד">כל ה-Beat FX, אחד-אחד<a class="anchor" href="#כל-ה-beat-fx-אחד-אחד" title="קישור ישיר לסעיף">#</a></h2>
+<p>ברשימה הבסיסית של Rekordbox יש את האפקטים הבאים (בגרסאות חדשות יש לעיתים עוד כמה):</p>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>אפקט</th>
+<th>מה הוא עושה</th>
+<th>Beat מומלץ להתחלה</th>
+<th>מתי להשתמש</th>
+<th>זהירות</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Echo</code></td>
+<td>חזרות שדועכות בהדרגה; <strong>ממשיכות גם אחרי שמכבים</strong></td>
+<td>1/2 או 1</td>
+<td>Echo Out בסוף טראק, סגירת משפט ווקאלי</td>
+<td>יותר מ-60% Level מייצר "בוץ"</td>
+</tr>
+<tr>
+<td><code>Delay</code></td>
+<td>חזרה מדויקת של הצליל בקצב, בלי זנב ארוך</td>
+<td>1/4, 1/2, 3/4</td>
+<td>קישוט קצר על ווקאל, סנר או היי-האט</td>
+<td>מתנגש עם סינקופות</td>
+</tr>
+<tr>
+<td><code>Ping Pong</code></td>
+<td>דיליי שקופץ בין ימין לשמאל</td>
+<td>1/2 או 1</td>
+<td>תנועה בסטריאו בברייקדאון</td>
+<td>ברחבה עם רמקול מונו — לא מורגש</td>
+</tr>
+<tr>
+<td><code>Spiral</code></td>
+<td>חזרות שמשנות גובה צליל ו"מסתחררות"</td>
+<td>1/2 או 1</td>
+<td>בילד-אפ דרמטי, מעבר בין ז'אנרים</td>
+<td>מהר מאוד נשמע "טריקי"</td>
+</tr>
+<tr>
+<td><code>Reverb</code></td>
+<td>חלל, אולם, הד של חדר</td>
+<td>Level 20-50%</td>
+<td>ריכוך יציאה, הכנה לברייקדאון</td>
+<td>על באס — מטשטש הכול</td>
+</tr>
+<tr>
+<td><code>Trans</code></td>
+<td>חותך את הצליל לסירוגין (גייט קצבי)</td>
+<td>1/4 או 1/2</td>
+<td>פילים קצרים, היפ-הופ, אפקט "סקרץ'"</td>
+<td>מעייף אחרי 2 תיבות</td>
+</tr>
+<tr>
+<td><code>Filter</code></td>
+<td>פילטר שזז מחזורית בקצב</td>
+<td>4-16</td>
+<td>תנועה עדינה בתוך גרוב</td>
+<td>לא מחליף פילטר של מעבר</td>
+</tr>
+<tr>
+<td><code>Flanger</code></td>
+<td>צליל "מטוס סילון" מתנפנף</td>
+<td>16-32</td>
+<td>בילד-אפ של 8-16 תיבות</td>
+<td>קלישאה אם בכל דרופ</td>
+</tr>
+<tr>
+<td><code>Phaser</code></td>
+<td>גל רך ומסתחרר</td>
+<td>8-16</td>
+<td>צבע עדין על היי-האטים</td>
+<td>על ווקאל — מוזר</td>
+</tr>
+<tr>
+<td><code>Pitch</code></td>
+<td>משנה גובה צליל בלי לשנות טמפו</td>
+<td>—</td>
+<td>ריזר קצר או "דאון" לפני קאט</td>
+<td>מזייף מול הדק השני</td>
+</tr>
+<tr>
+<td><code>Roll</code></td>
+<td>דוגם קטע קצר וחוזר עליו (לופ רול)</td>
+<td>1/2, אחר כך 1/4, אחר כך 1/8</td>
+<td>פיל לפני דרופ, בילד-אפ</td>
+<td>לכבות <strong>בדיוק</strong> על ה-1</td>
+</tr>
+<tr>
+<td><code>Slip Roll</code></td>
+<td>כמו Roll, אבל הטראק ממשיך "ברקע" וחוזר למקום הנכון</td>
+<td>1/4</td>
+<td>קישוט בלי לאבד את הפרייז</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>Vinyl Brake</code></td>
+<td>האטה עד עצירה, כמו פלטה שכובתה</td>
+<td>—</td>
+<td>סיום דרמטי לפני קאט</td>
+<td>פעם בערב, לא בכל מעבר</td>
+</tr>
+<tr>
+<td><code>Helix</code></td>
+<td>דוגם את הצליל ומחזיק אותו כמו "ענן" מתמשך</td>
+<td>1/2 או 1</td>
+<td>הקפאת רגע לפני מעבר</td>
+<td>זנב ארוך — לכבות בזמן</td>
+</tr>
+</tbody>
+</table></div>
+<aside class="callout callout--tip" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.5 18h5M10.5 21h3M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg><span>טיפ</span></div><div class="callout-body"><p>הכלל הכי חשוב לאפקטי זמן (Echo, Delay, Spiral, Helix): <strong>הזנב.</strong> כשמכבים אותם, ההד ממשיך לדעוך עוד כמה שניות. זה בדיוק מה שהופך את Echo Out לקסם — הטראק נעלם, וההד "נושא" אתכם אל הטראק הבא.</p></div></aside>
+<h2 id="אורך-beat-בלי-לנחש">אורך Beat — בלי לנחש<a class="anchor" href="#אורך-beat-בלי-לנחש" title="קישור ישיר לסעיף">#</a></h2>
+<p>ה-Beat הוא יחידת הזמן של האפקט. הנה מה שזה אומר בשניות, ב-124 BPM (קצב האוס טיפוסי):</p>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>Beat</th>
+<th>מה זה מוזיקלית</th>
+<th>אורך ב-124 BPM</th>
+<th>איך זה נשמע</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1/8</td>
+<td>שלושים-ושתיים</td>
+<td>0.06 שנ'</td>
+<td>רטט, "זמזום"</td>
+</tr>
+<tr>
+<td>1/4</td>
+<td>שש-עשרה</td>
+<td>0.12 שנ'</td>
+<td>מהיר, קצבי</td>
+</tr>
+<tr>
+<td>1/2</td>
+<td>שמינית</td>
+<td>0.24 שנ'</td>
+<td>חי, נושם</td>
+</tr>
+<tr>
+<td>3/4</td>
+<td>שמינית מנוקדת</td>
+<td>0.36 שנ'</td>
+<td>"מתנדנד", מוסיף גרוב</td>
+</tr>
+<tr>
+<td>1</td>
+<td>פעמה (רבע)</td>
+<td>0.48 שנ'</td>
+<td>ההד הכי "ברור"</td>
+</tr>
+<tr>
+<td>2</td>
+<td>חצי תיבה</td>
+<td>0.97 שנ'</td>
+<td>מרווח, דרמטי</td>
+</tr>
+<tr>
+<td>4</td>
+<td>תיבה</td>
+<td>1.94 שנ'</td>
+<td>הד של משפט שלם</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>הנוסחה:</strong> אורך במילישניות = 60,000 ÷ BPM × מספר הפעמות. ב-124 BPM, פעמה = ‎60,000 ÷ 124 ≈ 484 מילישניות.</p>
+<aside class="callout callout--tip" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.5 18h5M10.5 21h3M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg><span>טיפ</span></div><div class="callout-body"><p>באפקטי <strong>מודולציה</strong> (Flanger, Phaser, Filter) ה-Beat הוא אורך <strong>מחזור</strong> שלם של התנודה. Flanger של 32 פעמות = 8 תיבות מקצה לקצה — מושלם לבילד-אפ של 8 תיבות.</p>
+<p>🎚️ ב-Rekordbox: ה-Beat FX מסתנכרנים ל-BPM של הטראק שבערוץ (או ל-BPM של המאסטר). אם הגריד של הטראק שגוי — גם האפקט יישמע "מחוץ לקצב". עוד סיבה לוודא גריד נכון (ראו <a href="04-bpm-beatmatching.html">פרק 4</a>).</p></div></aside>
+<h2 id="color-fx-אחד-אחד">Color FX, אחד-אחד<a class="anchor" href="#color-fx-אחד-אחד" title="קישור ישיר לסעיף">#</a></h2>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>אפקט</th>
+<th>שמאלה</th>
+<th>ימינה</th>
+<th>שימוש קלאסי</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Filter</code></td>
+<td><code>LPF</code> — חותך גבוהים, הצליל נהיה עמום ו"מתחת למים"</td>
+<td><code>HPF</code> — חותך נמוכים, הצליל נהיה דק ו"מרחף"</td>
+<td>מעבר פילטר, בילד-אפ, הכנסת טראק "מאחורי" אחר</td>
+</tr>
+<tr>
+<td><code>Space</code></td>
+<td>ריוורב "חללי" עם דגש על נמוכים</td>
+<td>ריוורב עם דגש על גבוהים</td>
+<td>"בריחה לשמיים" בסוף פרייז</td>
+</tr>
+<tr>
+<td><code>Dub Echo</code></td>
+<td>הד דאב כהה</td>
+<td>הד דאב בהיר</td>
+<td>זנב דאבי לטכנו, דיפ ואפרו</td>
+</tr>
+<tr>
+<td><code>Sweep</code></td>
+<td>אפקט גייט שמהדק את הצליל</td>
+<td>פס תדרים שזז</td>
+<td>תנועה ומתח בגרוב</td>
+</tr>
+<tr>
+<td><code>Noise</code></td>
+<td>רעש לבן מסונן לנמוכים</td>
+<td>רעש לבן מסונן לגבוהים</td>
+<td>בילד-אפ בסגנון EDM</td>
+</tr>
+<tr>
+<td><code>Crush</code></td>
+<td>עיוות דיגיטלי עדין</td>
+<td>עיוות חזק יותר</td>
+<td>"לכלוך" לטכנו והארד טכנו</td>
+</tr>
+</tbody>
+</table></div>
+<aside class="callout callout--tip" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.5 18h5M10.5 21h3M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg><span>טיפ</span></div><div class="callout-body"><p>הפילטר הוא האפקט הכי שימושי שיש. אם אתם לומדים רק אפקט אחד החודש — תלמדו לסובב פילטר <strong>לאט</strong>: 8 תיבות לכיוון אחד, לא 2 שניות.</p></div></aside>
+<h2 id="שלושה-מעברים-עם-אפקטים-שכל-dj-חייב-לדעת">שלושה מעברים עם אפקטים שכל DJ חייב לדעת<a class="anchor" href="#שלושה-מעברים-עם-אפקטים-שכל-dj-חייב-לדעת" title="קישור ישיר לסעיף">#</a></h2>
+<h3 id="1-echo-out-יציאה-נקייה-מכל-מצב">1. Echo Out — יציאה נקייה מכל מצב<a class="anchor" href="#1-echo-out-יציאה-נקייה-מכל-מצב" title="קישור ישיר לסעיף">#</a></h3>
+<p>זה הכלי הכי שימושי בארגז: מעבר בין טמפואים, בין ז'אנרים, בין סולמות רחוקים — ואפילו "חילוץ" ממעבר שהשתבש.</p>
+<ol>
+<li>בחרו <code>Echo</code>, Beat של <strong>1/2</strong> או <strong>1</strong>, <code>Level/Depth</code> בסביבות 50%, על הערוץ של הטראק היוצא.</li>
+<li>הכינו את הטראק הבא בדק השני — עם Hot Cue בנקודת הכניסה (אינטרו או דרופ).</li>
+<li>ספרו לסוף פרייז (32 תיבות). בפעמה האחרונה של התיבה האחרונה — <strong>הדליקו</strong> את ה-Echo.</li>
+<li><strong>מיד</strong> אחרי — על ה-1 של התיבה הבאה — הורידו את הפיידר של הטראק היוצא (או כבו אותו), וההד ממשיך לבד.</li>
+<li>על אותו 1, או פעמה-שתיים אחרי, הפעילו את הטראק החדש.</li>
+<li>כבו את ה-Echo (הזנב ידעך בעצמו) והחזירו את ה-Level לאפס לקראת הפעם הבאה.</li>
+</ol>
+<aside class="callout callout--exercise" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 15.5V12a8 8 0 0 1 16 0v3.5"/><rect x="3" y="14" width="5" height="7" rx="2"/><rect x="16" y="14" width="5" height="7" rx="2"/></svg><span>האזינו</span></div><div class="callout-body"><p><span class="tref" data-id="transition-04"><code>transition-04</code></span> (house-07 אל techno-01) הוא Echo Out קלאסי מטק האוס לטכנו. <span class="tref" data-id="transition-08"><code>transition-08</code></span> הוא Echo Out שמשמש לקפיצת טמפו מ-95 ל-124.</p></div></aside>
+<h3 id="2-מעבר-פילטר-להחליף-מאחורי-הקלעים">2. מעבר פילטר — "להחליף מאחורי הקלעים"<a class="anchor" href="#2-מעבר-פילטר-להחליף-מאחורי-הקלעים" title="קישור ישיר לסעיף">#</a></h3>
+<ol>
+<li>הכניסו את הטראק החדש כשה-<code>Color FX</code> שלו על <code>HPF</code> כמעט עד הסוף (ימינה) — שומעים רק היי-האטים דקים.</li>
+<li>לאורך 16 תיבות, פתחו לאט את הפילטר של החדש לכיוון המרכז.</li>
+<li>במקביל, סובבו את הטראק הישן לכיוון <code>HPF</code> (או <code>LPF</code>, לטעמכם) — הוא "מתרחק".</li>
+<li>על תחילת פרייז — החלפה: החדש במרכז (נקי), הישן מסונן לגמרי, ואז הפיידר שלו למטה.</li>
+</ol>
+<aside class="callout callout--exercise" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 15.5V12a8 8 0 0 1 16 0v3.5"/><rect x="3" y="14" width="5" height="7" rx="2"/><rect x="16" y="14" width="5" height="7" rx="2"/></svg><span>האזינו</span></div><div class="callout-body"><p><span class="tref" data-id="transition-03"><code>transition-03</code></span> (techno-05 אל techno-08) — מעבר פילטר במלודיק טכנו. שימו לב: הסולמות שם (10A ו-8A) רחוקים בשני צעדים, והפילטר עוזר להסתיר את זה.</p></div></aside>
+<h3 id="3-loop-roll-לפני-דרופ">3. Loop Roll לפני דרופ<a class="anchor" href="#3-loop-roll-לפני-דרופ" title="קישור ישיר לסעיף">#</a></h3>
+<ol>
+<li>כמה פעמות לפני סוף הבילד-אפ, הפעילו <code>Roll</code> של 1/2 (או <code>Slip Roll</code>).</li>
+<li>אחרי פעמה-שתיים, קצרו ל-1/4, ואז ל-1/8 — המתח עולה.</li>
+<li><strong>בדיוק על ה-1</strong> של הדרופ — כבו. הדרופ נכנס בעוצמה מלאה.</li>
+</ol>
+<aside class="callout callout--exercise" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 15.5V12a8 8 0 0 1 16 0v3.5"/><rect x="3" y="14" width="5" height="7" rx="2"/><rect x="16" y="14" width="5" height="7" rx="2"/></svg><span>האזינו</span></div><div class="callout-body"><p><span class="tref" data-id="transition-06"><code>transition-06</code></span> (techno-02 אל techno-03) — מעבר עם Loop Roll בטכנו של שיא.</p>
+<p>⚠️ זהירות: Roll שנגמר חצי פעמה מאוחר יותר הורס את הדרופ. עדיף Roll קצר ומדויק מארוך ומרשים. אם <code>Quantize</code> דולק ב-Rekordbox, ההפעלה והכיבוי "נתפסים" לגריד — זה עוזר מאוד בהתחלה.</p></div></aside>
+<h3 id="בונוס-בילד-אפ-של-16-תיבות-צעד-אחר-צעד">בונוס: בילד-אפ של 16 תיבות, צעד אחר צעד<a class="anchor" href="#בונוס-בילד-אפ-של-16-תיבות-צעד-אחר-צעד" title="קישור ישיר לסעיף">#</a></h3>
+<p>כשהטראק עצמו לא מספיק דרמטי, אפשר "לבנות" מתח בעצמכם. ספרו מתחילת פרייז של 16 תיבות לפני הדרופ (בטראקים שלנו: 16 תיבות לפני Hot Cue <strong>D</strong>):</p>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>תיבות</th>
+<th>מה עושים</th>
+<th>למה</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1-8</td>
+<td><code>Color FX</code> → <code>Filter</code> מסתובב לאט ימינה (HPF) עד בערך שעה 2</td>
+<td>הבאס מתחיל להיעלם, הקהל מרגיש "ציפייה"</td>
+</tr>
+<tr>
+<td>9-12</td>
+<td>מוסיפים <code>Flanger</code> של 16 פעמות על Level נמוך (30%)</td>
+<td>תנועה ועלייה</td>
+</tr>
+<tr>
+<td>13-14</td>
+<td>מעלים את ה-Level של ה-Flanger ל-50-60%, ה-HPF ממשיך לעלות</td>
+<td>שיא המתח</td>
+</tr>
+<tr>
+<td>15</td>
+<td>מחליפים ל-<code>Roll</code> של 1/4 (או מכבים Flanger ומפעילים Roll)</td>
+<td>"מתופף" שמגביר קצב</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Roll של 1/8 בשתי הפעמות האחרונות</td>
+<td>הצעקה שלפני הדרופ</td>
+</tr>
+<tr>
+<td>1 (הדרופ)</td>
+<td><strong>הכול נכבה בבת אחת</strong>: Roll כבוי, Filter למרכז, Flanger כבוי</td>
+<td>הדרופ חוזר בעוצמה מלאה עם באס</td>
+</tr>
+</tbody>
+</table></div>
+<aside class="callout callout--tip" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.5 18h5M10.5 21h3M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg><span>טיפ</span></div><div class="callout-body"><p>הסוד הוא בשורה האחרונה. בילד-אפ טוב נמדד ברגע שהוא נגמר — אם הפילטר חוזר למרכז שנייה אחרי הדרופ, כל העבודה הלכה. תרגלו קודם רק את "הכול נכבה על ה-1", בלי הבילד-אפ.</p>
+<p>🎚️ ב-Rekordbox: בגרסאות עם <code>Stems</code> (הפרדת ערוצים: ווקאל, תופים, כלים) אפשר להשתיק לרגע את התופים או את הווקאל של טראק. זה לא אפקט במובן הקלאסי, אבל זה עובד דומה: "ברייקדאון" מלאכותי של 4 תיבות בלי תופים לפני דרופ הוא כלי חזק. הפרדת Stems כבדה למעבד — בדקו שהמחשב עומד בזה לפני הופעה.</p></div></aside>
+<h2 id="פחות-זה-יותר-חוקי-הזהב">פחות זה יותר — חוקי הזהב<a class="anchor" href="#פחות-זה-יותר-חוקי-הזהב" title="קישור ישיר לסעיף">#</a></h2>
+<ol>
+<li><strong>אפקט אחד בכל פעם.</strong> Echo + Flanger + Reverb יחד = רעש.</li>
+<li><strong>להדליק ולכבות על ה-1.</strong> אפקט שמתחיל באמצע תיבה נשמע כמו טעות.</li>
+<li><strong>סוף פרייז הוא הרגע.</strong> אפקטים עובדים הכי טוב במעברים בין חלקים (כל 8, 16 או 32 תיבות).</li>
+<li><strong><code>Level/Depth</code> בין 30% ל-60%</strong> כמעט תמיד מספיק. 100% זה לרגעים מיוחדים.</li>
+<li><strong>אל תשאירו אפקט דלוק "בטעות".</strong> סמנו לעצמכם: הדלקתי → אני אחראי לכבות.</li>
+<li><strong>אפקטים מוסיפים ווליום.</strong> Reverb ו-Echo מצטברים. עקבו אחרי המטרים — אל תיכנסו לאדום (ראו <a href="05-mixer-gain-eq.html">פרק 5</a>).</li>
+<li><strong>אפקט לא מתקן ביטמאץ'.</strong> אבל Echo Out יכול <strong>לחלץ</strong> אתכם ממעבר שהשתבש — וזה לגיטימי לגמרי.</li>
+<li><strong>בחתונות ובאירועים — במשורה.</strong> הקהל רוצה לשמוע את השיר שהוא אוהב, לא את הפלאנג'ר שלכם על המילים.</li>
+</ol>
+<aside class="callout callout--tip" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.5 18h5M10.5 21h3M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg><span>טיפ</span></div><div class="callout-body"><p>הקליטו סט, ואז ספרו כמה פעמים השתמשתם באפקט. אם זה יותר מפעם אחת בכל שני מעברים — כנראה שזה יותר מדי.</p></div></aside>
+<h3 id="אפקטים-ו-eq-מי-עושה-מה">אפקטים ו-EQ — מי עושה מה<a class="anchor" href="#אפקטים-ו-eq-מי-עושה-מה" title="קישור ישיר לסעיף">#</a></h3>
+<p>הרבה מתחילים משתמשים בפילטר במקום ב-EQ ולהפך. הנה ההבדל המעשי:</p>
+<ul>
+<li><strong>EQ</strong> (Low/Mid/High) הוא "ניהול תנועה": מי מהשניים מחזיק את הבאס עכשיו, למי יש את הסנר. הוא קבוע, שקט, ולא אמור להישמע כמו אפקט.</li>
+<li><strong>פילטר</strong> הוא "תנועה מוזיקלית": הקהל <strong>אמור</strong> לשמוע אותו זז. הוא יוצר מתח ושחרור.</li>
+<li><strong>אפקטי זמן</strong> (Echo, Reverb) מוסיפים צליל חדש שלא היה בטראק — ולכן גם ווליום חדש.</li>
+</ul>
+<aside class="callout callout--warn" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.3 4.3 2.8 17.5A2 2 0 0 0 4.5 20.5h15a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v4.5M12 17h.01"/></svg><span>זהירות</span></div><div class="callout-body"><p>כשהפילטר של ה-Color FX מסובב ל-<code>LPF</code> עמוק, הבאס של הטראק עדיין שם (ה-LPF משאיר דווקא את הנמוכים!). אם אתם מכניסים טראק שני עם באס — תורידו גם את ה-Low ב-EQ, אחרת יהיו שני באסים.</p></div></aside>
+<h2 id="מתכונים-לפי-זאנר">מתכונים לפי ז'אנר<a class="anchor" href="#מתכונים-לפי-זאנר" title="קישור ישיר לסעיף">#</a></h2>
+<h3 id="דיפ-האוס-ואפרו-האוס">דיפ האוס ואפרו האוס<a class="anchor" href="#דיפ-האוס-ואפרו-האוס" title="קישור ישיר לסעיף">#</a></h3>
+<ul>
+<li><strong>Reverb או <code>Space</code></strong> עדין על פיל של פרקשן בסוף פרייז — נותן "אוויר".</li>
+<li><strong><code>Dub Echo</code></strong> על צ'אנט או ווקאל קצר: חצי סיבוב ידית, ובחזרה.</li>
+<li><strong>פילטר ארוך</strong> (16 תיבות) במעבר בין שני טראקים של פרקשן.</li>
+<li><strong>Echo Out של פעמה אחת</strong> בסוף סט שקיעה — יציאה רכה.</li>
+<li>טראקים לתרגול: house-01, house-02, house-09, house-10, house-11.</li>
+</ul>
+<h3 id="טק-האוס">טק האוס<a class="anchor" href="#טק-האוס" title="קישור ישיר לסעיף">#</a></h3>
+<ul>
+<li><strong><code>HPF</code> + <code>Roll</code></strong> של 1/2 ואחר כך 1/4 בשתי הפעמות שלפני הדרופ.</li>
+<li><strong><code>Trans</code> של 1/4</strong> לתיבה אחת על הלופ של הבאסליין — אפקט "גמגום" שהקהל אוהב.</li>
+<li><strong><code>Delay</code> של 3/4</strong> על היי-האטים — מוסיף שאפל.</li>
+<li><strong>חיתוך באס עם EQ</strong> חשוב יותר מכל אפקט. האפקט הוא קישוט.</li>
+<li>טראקים לתרגול: house-05 עד house-08.</li>
+</ul>
+<h3 id="מלודיק-טכנו">מלודיק טכנו<a class="anchor" href="#מלודיק-טכנו" title="קישור ישיר לסעיף">#</a></h3>
+<ul>
+<li><strong><code>Reverb</code> + <code>Spiral</code></strong> בכניסה לברייקדאון — "פתיחת שמיים".</li>
+<li><strong><code>Ping Pong</code></strong> של 1 על ארפג'יו בברייקדאון.</li>
+<li><strong>Echo Out של 2 פעמות</strong> מברייקדאון לברייקדאון (ראו <span class="tref" data-id="transition-10"><code>transition-10</code></span>).</li>
+<li><strong><code>Space</code></strong> כדי "להרחיק" טראק לפני שהבא נכנס.</li>
+<li>טראקים לתרגול: techno-05 עד techno-08.</li>
+</ul>
+<h3 id="טכנו-של-שיא-והארד-טכנו">טכנו של שיא והארד טכנו<a class="anchor" href="#טכנו-של-שיא-והארד-טכנו" title="קישור ישיר לסעיף">#</a></h3>
+<ul>
+<li><strong><code>Flanger</code> של 32 פעמות</strong> לאורך 8 תיבות של בילד-אפ.</li>
+<li><strong><code>Noise</code></strong> (Color FX) שעולה לאורך 16 תיבות, ונחתך על ה-1.</li>
+<li><strong><code>Crush</code></strong> עדין על הקיק לפני הדרופ — "לכלוך".</li>
+<li><strong><code>Roll</code> קצר מאוד</strong> (1/8) לפעמה אחת — כמו פיל של מתופף.</li>
+<li>טראקים לתרגול: techno-01 עד techno-04, techno-11, techno-12.</li>
+</ul>
+<h3 id="היפ-הופ-רגאטון-וים-תיכוני">היפ-הופ, רגאטון וים-תיכוני<a class="anchor" href="#היפ-הופ-רגאטון-וים-תיכוני" title="קישור ישיר לסעיף">#</a></h3>
+<ul>
+<li><strong>Echo Out של 1/2</strong> על המילה האחרונה של משפט — ואז קאט לשיר הבא. זה המעבר הכי נפוץ ב-Open Format.</li>
+<li><strong><code>Vinyl Brake</code></strong> או Backspin (מ-<code>Pad FX</code>) כסיום דרמטי — פעם-פעמיים בערב, לא יותר.</li>
+<li><strong><code>Trans</code></strong> קצר על הוק של היפ-הופ — נותן תחושת סקרץ'.</li>
+<li><strong>Reverb</strong> על הצליל האחרון של שיר ים-תיכוני לפני מעבר לרמיקס האוס.</li>
+<li>טראקים לתרגול: mainstream-05 עד mainstream-09, mainstream-13, mainstream-14.</li>
+</ul>
+<h3 id="ביג-רום-edm">ביג רום / EDM<a class="anchor" href="#ביג-רום-edm" title="קישור ישיר לסעיף">#</a></h3>
+<ul>
+<li><strong>בילד-אפ קלאסי:</strong> <code>Noise</code> + פילטר <code>HPF</code> שעולים יחד, ו-<code>Roll</code> של 1/4 ואז 1/8 בשתי הפעמות האחרונות. הכול נחתך על ה-1 של הדרופ.</li>
+<li><strong><code>Merge FX</code></strong> בדיוק בשביל זה — אבל רק כשהטראק עצמו לא מכיל כבר בילד-אפ ענק.</li>
+<li>טראקים לתרגול: mainstream-01, mainstream-02 (וגם <span class="tref" data-id="transition-05"><code>transition-05</code></span> — קאט).</li>
+</ul>
+<h3 id="פסיכדלי-טראנס">פסיכדלי טראנס<a class="anchor" href="#פסיכדלי-טראנס" title="קישור ישיר לסעיף">#</a></h3>
+<ul>
+<li><strong><code>Phaser</code> או <code>Flanger</code></strong> איטי על ההיי-האטים בזמן לופ.</li>
+<li><strong><code>Delay</code> של 3/4</strong> על ליד — מוסיף את ה"פסיכדליה".</li>
+<li><strong>זהירות עם Reverb על הבאס המתגלגל</strong> — הוא כבר מספיק צפוף.</li>
+<li>טראקים לתרגול: breadth-01, breadth-02.</li>
+</ul>
+<h2 id="טעויות-נפוצות">טעויות נפוצות<a class="anchor" href="#טעויות-נפוצות" title="קישור ישיר לסעיף">#</a></h2>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>טעות</th>
+<th>איך זה נשמע</th>
+<th>התיקון</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>אפקט על הערוץ הלא נכון</td>
+<td>האפקט "לא עובד", או עובד על השיר הלא נכון</td>
+<td>בדקו את בורר הערוץ לפני ההדלקה</td>
+</tr>
+<tr>
+<td>אפקט על <code>Master</code> כל הערב</td>
+<td>הסט כולו נשמע מעובד ושטוח</td>
+<td>השתמשו ב-Master רק לרגעים מיוחדים</td>
+</tr>
+<tr>
+<td>Level של 100%</td>
+<td>הצליל המקורי נעלם, הכול "רטוב"</td>
+<td>30-60%</td>
+</tr>
+<tr>
+<td>Reverb ארוך על באס</td>
+<td>בוץ בנמוכים</td>
+<td>פחות Level, או אפקט על טראק בלי באס</td>
+</tr>
+<tr>
+<td>Roll שלא נכבה בזמן</td>
+<td>הדרופ "מאחר"</td>
+<td><code>Quantize</code> דולק, ותרגלו את הכיבוי על ה-1</td>
+</tr>
+<tr>
+<td>Echo שנשכח דלוק</td>
+<td>הטראק הבא נשמע עם הד מוזר</td>
+<td>אחרי Echo Out — Level חזרה לאפס</td>
+</tr>
+<tr>
+<td>אפקטים במקום מעבר טוב</td>
+<td>נשמע כמו כיסוי</td>
+<td>קודם מעבר נקי עם EQ, אחר כך תבלין</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="תרגילים">תרגילים<a class="anchor" href="#תרגילים" title="קישור ישיר לסעיף">#</a></h2>
+<aside class="callout callout--exercise" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 15.5V12a8 8 0 0 1 16 0v3.5"/><rect x="3" y="14" width="5" height="7" rx="2"/><rect x="16" y="14" width="5" height="7" rx="2"/></svg><span>תרגיל</span></div><div class="callout-body"><p>תרגיל 1 — סיור אפקטים (20 דקות)
+טענו את <span class="tref" data-file="music/practice/practice-03-drums-124.mp3" data-missing="1"><code>music/practice/practice-03-drums-124.mp3</code></span> (לופ תופים נקי ב-124). עברו על כל אחד מה-Beat FX בטבלה: 4 תיבות כבוי, 4 תיבות דלוק, ושוב כבוי. נסו שלושה ערכי Beat לכל אפקט. רשמו במשפט אחד איך כל אפקט נשמע לכם.</p>
+<p>🎧 תרגיל 2 — Echo Out על ה-1 (15 דקות)
+טענו את <span class="tref" data-id="practice-03"><code>practice-03</code></span> לדק 1 ואת <span class="tref" data-file="music/practice/practice-04-drums-128.mp3" data-missing="1"><code>music/practice/practice-04-drums-128.mp3</code></span> לדק 2. תרגלו Echo Out מדק 1 וכניסה של דק 2 על ה-1 — <strong>בלי</strong> לסנכרן ביניהם (128 ו-124). חזרו 10 פעמים, עד שזה טבעי. זה הבסיס של <a href="15-tempo-genre-switching.html">פרק 15</a>.</p>
+<p>🎧 תרגיל 3 — שחזור מעברים (30 דקות)
+האזינו ל-<span class="tref" data-id="transition-03"><code>transition-03</code></span> (פילטר), <span class="tref" data-id="transition-04"><code>transition-04</code></span> (Echo Out) ו-<span class="tref" data-id="transition-06"><code>transition-06</code></span> (Loop Roll) בתיקייה <code>music/transitions/</code>. אחר כך שחזרו כל אחד מהם בעצמכם עם אותם שני טראקים:
+- techno-05 ← techno-08 (פילטר)
+- house-07 ← techno-01 (Echo Out; שימו לב לפער הטמפו 128 מול 130)
+- techno-02 ← techno-03 (Loop Roll)
+הקליטו את הגרסה שלכם והשוו.</p>
+<p>🎧 תרגיל 4 — אימון אוזן לפילטר (10 דקות)
+טענו את <span class="tref" data-file="music/practice/practice-14-eq-ear-training.mp3" data-missing="1"><code>music/practice/practice-14-eq-ear-training.mp3</code></span>. בכל 8 תיבות מודגש תחום תדרים אחר. נחשו איזה (Low/Mid/High). אחר כך נסו "לחקות" את אותו צבע עם ידית ה-Filter של ה-Color FX — שמאלה (LPF) או ימינה (HPF).</p>
+<p>🎧 תרגיל 5 — אתגר "אפקט אחד ביום" (שבוע)
+כל יום בשבוע הקרוב בחרו אפקט אחד בלבד, ובנו איתו מעבר אחד בין שני טראקים מהרפו. ביום השביעי — סט של 15 דקות שבו מותר להשתמש בכל האפקטים, אבל לא יותר מ-5 פעמים בסך הכול.</p></div></aside>
+<h2 id="סיכום">סיכום<a class="anchor" href="#סיכום" title="קישור ישיר לסעיף">#</a></h2>
+<ul>
+<li><code>Beat FX</code> מסונכרנים לקצב; <code>Color FX</code> הם ידית אחת לכל ערוץ; <code>Pad FX</code> ו-<code>Merge FX</code> הם קיצורי דרך מוכנים מראש.</li>
+<li>אורך Beat = זמן. פעמה ב-124 BPM היא כחצי שנייה. Flanger של 32 פעמות = 8 תיבות.</li>
+<li>שלושת המעברים הכי חשובים: Echo Out, מעבר פילטר ו-Loop Roll.</li>
+<li>להדליק ולכבות על ה-1, אפקט אחד בכל פעם, 30-60% Level.</li>
+<li>אפקט הוא תבלין, לא המנה.</li>
+</ul>
+<p>עכשיו כשיש לכם את כל הכלים למעבר בודד — הגיע הזמן לחשוב בגדול: איך בונים <strong>סט שלם</strong> עם התחלה, אמצע וסוף. ← <a href="12-set-building.html">פרק 12: בניית סט</a></p>
+      <div class="chapter-done">
+        <button class="btn btn--ghost" type="button" data-mark-read><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>סימון הפרק כנקרא</span></button>
+      </div>
+    </div>
+  </div>
+  <nav class="container pn" aria-label="ניווט בין פרקים"><a class="pn-card pn-prev" href="10-harmonic-mixing.html"><span class="pn-label"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m0 0-6-6m6 6-6 6"/></svg>הפרק הקודם</span><span class="pn-title"><span class="pn-num">10</span>מיקס הרמוני</span></a><a class="pn-card pn-next" href="12-set-building.html"><span class="pn-label">הפרק הבא<svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5m0 0 6-6m-6 6 6 6"/></svg></span><span class="pn-title"><span class="pn-num">12</span>בניית סט</span></a></nav>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><defs><linearGradient id="bm-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2bd6"/><stop offset=".55" stop-color="#8a5cff"/><stop offset="1" stop-color="#22e1ff"/></linearGradient></defs><circle cx="20" cy="20" r="18" fill="none" stroke="url(#bm-g)" stroke-width="3"/><circle cx="20" cy="20" r="11.5" fill="none" stroke="url(#bm-g)" stroke-width="1.5" opacity=".55"/><g fill="url(#bm-g)"><rect x="11" y="16" width="2.6" height="8" rx="1.3"/><rect x="15.4" y="12" width="2.6" height="16" rx="1.3"/><rect x="19.8" y="9.5" width="2.6" height="21" rx="1.3"/><rect x="24.2" y="13.5" width="2.6" height="13" rx="1.3"/><rect x="28.6" y="17" width="2.6" height="6" rx="1.3"/></g></svg><span class="brand-word">DJ<b>Lab</b></span></a>
+      <p>בית הספר לתקלוט שלך: קורס Rekordbox בעברית, מוזיקה מקורית לתרגול וכלים שעובדים ישר בדפדפן.</p>
+    </div>
+    <nav aria-label="ללמוד"><h2>ללמוד</h2><ul>
+      <li><a href="../guide/index.html">הקורס</a></li><li><a href="../practice.html">אימון ומעברים</a></li><li><a href="../sets/index.html">סטים לדוגמה</a></li></ul></nav>
+    <nav aria-label="מוזיקה"><h2>מוזיקה</h2><ul>
+      <li><a href="../library.html">ספריית מוזיקה</a></li><li><a href="../crates/index.html">ארגזים</a></li><li><a href="../tools/rekordbox.html">ייבוא ל-Rekordbox</a></li></ul></nav>
+    <nav aria-label="כלים"><h2>כלים</h2><ul>
+      <li><a href="../tools/mix-trainer.html">מאמן מיקס</a></li><li><a href="../tools/camelot.html">גלגל קאמלוט</a></li><li><a href="../tools/set-builder.html">בונה סטים</a></li></ul></nav>
+  </div>
+  <div class="container footer-legal">
+    <p>המוזיקה המקורית משוחררת ב-<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.he" target="_blank" rel="noopener">CC0</a> · הקוד ב-MIT · הארגזים הם קישורים בלבד - קנו והזרימו ממקורות חוקיים.</p>
+    <p class="muted"><a href="../about.html">אודות ורישיון</a> · © 2026 DJ Lab</p>
+  </div>
+</footer>
+<script src="../data/catalog.js?v=e4c6cf60" defer></script><script src="../data/peaks.js?v=e4c6cf60" defer></script><script src="../data/guide.js?v=e4c6cf60" defer></script><script src="../assets/js/icons.gen.js?v=e4c6cf60" defer></script><script src="../assets/js/core.js?v=e4c6cf60" defer></script><script src="../assets/js/player.js?v=e4c6cf60" defer></script><script src="../assets/js/guide.js?v=e4c6cf60" defer></script>
+</body>
+</html>

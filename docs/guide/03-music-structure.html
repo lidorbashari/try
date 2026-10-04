@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>03 · מבנה מוזיקלי: ביט, תיבה ופרייז · DJ Lab</title>
+<meta name="description" content="השפה הסודית של DJs: איך מוזיקה לריקודים בנויה בבלוקים של 8, 16 ו-32 תיבות, מה זה אינטרו, ברייקדאון, בילדאפ, דרופ ואאוטרו — ואיך לספור באוזן כדי שכל מעבר ייפול בדיוק במקום.">
+<meta name="djlab-root" content="../../">
+<meta name="djlab-base" content="../">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#07070c">
+<link rel="canonical" href="https://lidorbashari.github.io/try/docs/guide/03-music-structure.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DJ Lab">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="03 · מבנה מוזיקלי: ביט, תיבה ופרייז · DJ Lab">
+<meta property="og:description" content="השפה הסודית של DJs: איך מוזיקה לריקודים בנויה בבלוקים של 8, 16 ו-32 תיבות, מה זה אינטרו, ברייקדאון, בילדאפ, דרופ ואאוטרו — ואיך לספור באוזן כדי שכל מעבר ייפול בדיוק במקום.">
+<meta property="og:url" content="https://lidorbashari.github.io/try/docs/guide/03-music-structure.html">
+<meta property="og:image" content="https://lidorbashari.github.io/try/docs/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&family=Rubik:wght@400;500;600;700;800&family=Secular+One&display=swap">
+<link rel="stylesheet" href="../assets/css/site.css?v=e4c6cf60">
+<script>(function(){try{var t=localStorage.getItem('djlab:theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+</head>
+<body class="page-guide has-progress">
+<a class="skip-link" href="#main">דלגו לתוכן</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../index.html" aria-label="DJ Lab - דף הבית"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><defs><linearGradient id="bm-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2bd6"/><stop offset=".55" stop-color="#8a5cff"/><stop offset="1" stop-color="#22e1ff"/></linearGradient></defs><circle cx="20" cy="20" r="18" fill="none" stroke="url(#bm-g)" stroke-width="3"/><circle cx="20" cy="20" r="11.5" fill="none" stroke="url(#bm-g)" stroke-width="1.5" opacity=".55"/><g fill="url(#bm-g)"><rect x="11" y="16" width="2.6" height="8" rx="1.3"/><rect x="15.4" y="12" width="2.6" height="16" rx="1.3"/><rect x="19.8" y="9.5" width="2.6" height="21" rx="1.3"/><rect x="24.2" y="13.5" width="2.6" height="13" rx="1.3"/><rect x="28.6" y="17" width="2.6" height="6" rx="1.3"/></g></svg><span class="brand-word">DJ<b>Lab</b></span></a>
+    <nav class="site-nav" id="site-nav" aria-label="ניווט ראשי"><ul><li><a href="../index.html">בית</a></li><li><a href="../guide/index.html" aria-current="page">הקורס</a></li><li><a href="../library.html">ספריית מוזיקה</a></li><li><a href="../practice.html">אימון</a></li><li><a href="../crates/index.html">ארגזים</a></li><li><a href="../sets/index.html">סטים</a></li><li><a href="../tools/index.html">כלים</a></li><li><a href="../about.html">אודות</a></li></ul></nav>
+    <div class="header-actions">
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="החלפה בין מצב כהה למצב בהיר" title="מצב כהה / בהיר"><svg class="icon i-sun" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg><svg class="icon i-moon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.6A8.2 8.2 0 1 1 9.4 4a6.6 6.6 0 0 0 10.6 10.6z"/></svg></button>
+      <a class="icon-btn hide-sm" href="https://github.com/lidorbashari/try" target="_blank" rel="noopener" aria-label="הקוד ב-GitHub" title="GitHub"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2.8a9.3 9.3 0 0 0-2.9 18.1c.5.1.6-.2.6-.5v-1.7c-2.6.6-3.1-1.2-3.1-1.2-.4-1.1-1-1.4-1-1.4-.9-.6 0-.6 0-.6.9.1 1.4 1 1.4 1 .8 1.4 2.2 1 2.7.8.1-.6.3-1 .6-1.2-2-.2-4.2-1-4.2-4.6 0-1 .4-1.8 1-2.5-.1-.2-.4-1.2.1-2.5 0 0 .8-.2 2.6 1a8.9 8.9 0 0 1 4.7 0c1.8-1.2 2.6-1 2.6-1 .5 1.3.2 2.3.1 2.5.6.7 1 1.5 1 2.5 0 3.6-2.2 4.4-4.2 4.6.3.3.6.8.6 1.6v2.4c0 .3.2.6.7.5A9.3 9.3 0 0 0 12 2.8z" fill="currentColor" stroke="none"/></svg></a>
+      <button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="פתיחת תפריט"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+<div class="reading-progress" aria-hidden="true"><span data-reading-bar></span></div>
+<article class="chapter" data-chapter="03-music-structure" data-chapter-num="03">
+  <header class="chapter-hero">
+    <div class="container">
+      <nav class="crumbs" aria-label="פירורי לחם"><a href="../index.html">בית</a><span aria-hidden="true">/</span><a href="index.html">הקורס</a><span aria-hidden="true">/</span><span aria-current="page">פרק 03</span></nav>
+      <div class="chapter-hero-grid">
+        <div class="chapter-num" aria-hidden="true">03</div>
+        <div>
+          <p class="eyebrow">פרק 03 מתוך 15</p>
+          <h1 class="chapter-title">מבנה מוזיקלי: ביט, תיבה ופרייז</h1>
+          <p class="chapter-en" dir="ltr">Music Structure: Beats, Bars &amp; Phrases</p>
+          <p class="lead">השפה הסודית של DJs: איך מוזיקה לריקודים בנויה בבלוקים של 8, 16 ו-32 תיבות, מה זה אינטרו, ברייקדאון, בילדאפ, דרופ ואאוטרו — ואיך לספור באוזן כדי שכל מעבר ייפול בדיוק במקום.</p>
+          <div class="chapter-meta">
+            <span class="meta-item"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>14 דק' קריאה</span>
+            <span class="badge badge--level" data-level="מתחיל">מתחיל</span>
+            
+            <span class="meta-item read-state" data-read-state hidden><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>נקרא</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container chapter-layout">
+    <aside class="chapter-toc" aria-label="תוכן הפרק">
+  <details class="toc-box" open data-toc-details>
+    <summary><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg><span>בפרק הזה</span><svg class="icon toc-chev" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9.5 6 6 6-6"/></svg></summary>
+    <nav class="toc-nav"><ol><li><a href="#מה-תלמדו-בפרק" data-toc-link>מה תלמדו בפרק</a></li><li><a href="#ביט-תיבה-פרייז" data-toc-link>ביט, תיבה, פרייז</a><ol><li><a href="#ביט-beat" data-toc-link>ביט (Beat)</a></li><li><a href="#תיבה-bar" data-toc-link>תיבה (Bar)</a></li><li><a href="#פרייז-phrase" data-toc-link>פרייז (Phrase)</a></li><li><a href="#כמה-זמן-זה-לוקח" data-toc-link>כמה זמן זה לוקח?</a></li></ol></li><li><a href="#איך-סופרים" data-toc-link>איך סופרים</a></li><li><a href="#הקטעים-של-טראק-אלקטרוני" data-toc-link>הקטעים של טראק אלקטרוני</a></li><li><a href="#איך-נראה-טראק-של-dj-lab-מבפנים" data-toc-link>איך נראה טראק של DJ Lab מבפנים</a><ol><li><a href="#לקרוא-את-ה-json" data-toc-link>לקרוא את ה-JSON</a></li></ol></li><li><a href="#ומה-עם-מיינסטרים-היפ-הופ-ומוזיקה-ים-תיכונית" data-toc-link>ומה עם מיינסטרים, היפ-הופ ומוזיקה ים-תיכונית?</a><ol><li><a href="#פופ-ודאנס-פופ" data-toc-link>פופ ודאנס-פופ</a></li><li><a href="#היפ-הופ-ו-rb" data-toc-link>היפ-הופ ו-R&amp;B</a></li><li><a href="#רגאטון-ואפרוביטס" data-toc-link>רגאטון ואפרוביטס</a></li><li><a href="#ים-תיכוני-ומזרחית" data-toc-link>ים-תיכוני ומזרחית</a></li></ol></li><li><a href="#למה-זה-חשוב-phrase-mixing" data-toc-link>למה זה חשוב: Phrase Mixing</a><ol><li><a href="#נקודת-הכניסה-הקלאסית" data-toc-link>נקודת הכניסה הקלאסית</a></li><li><a href="#נקודת-כניסה-מחושבת" data-toc-link>נקודת כניסה מחושבת</a></li></ol></li><li><a href="#תרגילים" data-toc-link>תרגילים</a></li><li><a href="#סיכום" data-toc-link>סיכום</a></li><li><a href="#בפרק-הבא" data-toc-link>בפרק הבא</a></li></ol></nav>
+  </details>
+</aside>
+    <div class="prose" data-prose>
+      <p>שמתם לב פעם שבמסיבה טובה כל הרחבה "יודעת" מתי הדרופ מגיע? אנשים מרימים ידיים שנייה לפני, מישהו צועק, והבאס נוחת בדיוק כשציפו לו. זה לא קסם — זה מבנה. מוזיקה לריקודים בנויה כמו לגו: בלוקים קבועים של 8, 16 ו-32 תיבות. ברגע שתלמדו לשמוע את הבלוקים האלה, תדעו תמיד איפה אתם נמצאים בשיר, מה עומד לקרות, ומתי בדיוק להכניס את השיר הבא. זה הפרק הכי חשוב בחלק הראשון של המדריך — יותר אפילו מביטמאצ'ינג.</p>
+<h2 id="מה-תלמדו-בפרק">מה תלמדו בפרק<a class="anchor" href="#מה-תלמדו-בפרק" title="קישור ישיר לסעיף">#</a></h2>
+<ul>
+<li>מה זה ביט (Beat), תיבה (Bar) ופרייז (Phrase), ואיך הם בנויים אחד על השני</li>
+<li>כמה זמן נמשכים 8, 16 ו-32 תיבות בקצבים שונים</li>
+<li>הקטעים של טראק אלקטרוני: אינטרו, גרוב, ברייקדאון, בילדאפ, דרופ, אאוטרו</li>
+<li>איך נראה טראק של DJ Lab מבפנים, ואיך לקרוא את קובץ ה-JSON שלו</li>
+<li>איך בנויים שירי מיינסטרים, היפ-הופ ומוזיקה ים-תיכונית — ולמה הם מסובכים יותר</li>
+<li>שיטת ספירה שעובדת, ואיך מוצאים את ה-"1" גם מאמצע שיר</li>
+<li>למה מעבר שמתחיל באמצע פרייז נשמע "לא נכון", ואיך מחשבים נקודת כניסה</li>
+</ul>
+<h2 id="ביט-תיבה-פרייז">ביט, תיבה, פרייז<a class="anchor" href="#ביט-תיבה-פרייז" title="קישור ישיר לסעיף">#</a></h2>
+<h3 id="ביט-beat">ביט (Beat)<a class="anchor" href="#ביט-beat" title="קישור ישיר לסעיף">#</a></h3>
+<p>הדופק של השיר — מה שהרגל שלכם רוקעת עליו. בהאוס, טכנו ורוב המוזיקה האלקטרונית, יש מכת בס-דראם (Kick) על <strong>כל</strong> ביט. לזה קוראים Four-on-the-floor ("ארבע על הרצפה"). מעל ה-Kick יש בדרך כלל:</p>
+<ul>
+<li><strong>קלאפ או סנר</strong> על ביטים 2 ו-4,</li>
+<li><strong>היי-האט פתוח</strong> בין הביטים (ה-"אנד" — Off-beat), זה ה"צ'ה" שגורם להאוס להרגיש שהוא קופץ.</li>
+</ul>
+<h3 id="תיבה-bar">תיבה (Bar)<a class="anchor" href="#תיבה-bar" title="קישור ישיר לסעיף">#</a></h3>
+<p>ארבעה ביטים יוצרים תיבה אחת (במשקל 4/4, שהוא המשקל של כמעט כל מוזיקת הריקודים). הביט הראשון בתיבה — <strong>ה-"1"</strong> או ה-Downbeat — הוא החזק ביותר. שם קורים השינויים.</p>
+<h3 id="פרייז-phrase">פרייז (Phrase)<a class="anchor" href="#פרייז-phrase" title="קישור ישיר לסעיף">#</a></h3>
+<p>קבוצה של תיבות שיוצרת "משפט" מוזיקלי. במוזיקה אלקטרונית הפרייז הבסיסי הוא <strong>8 תיבות</strong>, ופרייזים מתחברים לבלוקים גדולים יותר של <strong>16</strong> ו-<strong>32</strong> תיבות. כמעט כל שינוי משמעותי — כניסת באס, כניסת ווקאל, ברייקדאון, דרופ — קורה בתחילת בלוק כזה.</p>
+<figure class="figure"><img alt="ההיררכיה: 4 ביטים = תיבה, 8 תיבות = פרייז, 32 תיבות = קטע" src="../assets/guide/03-beat-bar-phrase.svg" loading="lazy" decoding="async"><figcaption>ההיררכיה: 4 ביטים = תיבה, 8 תיבות = פרייז, 32 תיבות = קטע</figcaption></figure>
+<h3 id="כמה-זמן-זה-לוקח">כמה זמן זה לוקח?<a class="anchor" href="#כמה-זמן-זה-לוקח" title="קישור ישיר לסעיף">#</a></h3>
+<p>הנוסחה שכדאי לזכור: <strong>שניות לתיבה = 240 ÷ BPM</strong>. (60 שניות לדקה, כפול 4 ביטים בתיבה.)</p>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>BPM</th>
+<th>תיבה אחת</th>
+<th>8 תיבות</th>
+<th>16 תיבות</th>
+<th>32 תיבות</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>95 (רגאטון / היפ-הופ)</td>
+<td>2.5 שנ'</td>
+<td>20.2 שנ'</td>
+<td>40.4 שנ'</td>
+<td>1:21 דק'</td>
+</tr>
+<tr>
+<td>100 (ים-תיכוני)</td>
+<td>2.4 שנ'</td>
+<td>19.2 שנ'</td>
+<td>38.4 שנ'</td>
+<td>1:17 דק'</td>
+</tr>
+<tr>
+<td>120</td>
+<td>2.0 שנ'</td>
+<td>16.0 שנ'</td>
+<td>32.0 שנ'</td>
+<td>1:04 דק'</td>
+</tr>
+<tr>
+<td>124 (האוס)</td>
+<td>1.94 שנ'</td>
+<td>15.5 שנ'</td>
+<td>31.0 שנ'</td>
+<td>1:02 דק'</td>
+</tr>
+<tr>
+<td>128 (טק-האוס / ביג רום)</td>
+<td>1.88 שנ'</td>
+<td>15.0 שנ'</td>
+<td>30.0 שנ'</td>
+<td>1:00 דק'</td>
+</tr>
+<tr>
+<td>132 (טכנו)</td>
+<td>1.82 שנ'</td>
+<td>14.5 שנ'</td>
+<td>29.1 שנ'</td>
+<td>58 שנ'</td>
+</tr>
+</tbody>
+</table></div>
+<aside class="callout callout--tip" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.5 18h5M10.5 21h3M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg><span>טיפ</span></div><div class="callout-body"><p>כלל אצבע להאוס וטק-האוס: <strong>32 תיבות ≈ דקה אחת.</strong> מעבר "ארוך" של 32 תיבות לוקח בערך דקה; ברייקדאון של 16 תיבות הוא חצי דקה. זה עוזר לתכנן זמנים בלי מחשבון.</p></div></aside>
+<h2 id="איך-סופרים">איך סופרים<a class="anchor" href="#איך-סופרים" title="קישור ישיר לסעיף">#</a></h2>
+<p>השיטה הקלאסית: סופרים את הביטים, אבל במקום להגיד "1" בכל תיבה, אומרים את <strong>מספר התיבה</strong>:</p>
+<pre dir="ltr"><code>1-2-3-4, 2-2-3-4, 3-2-3-4, 4-2-3-4, 5-2-3-4, 6-2-3-4, 7-2-3-4, 8-2-3-4
+</code></pre>
+<p>וכך אחרי 8 תיבות יודעים שנגמר פרייז, ומתחילים שוב מ-1. כדי לא לאבד את הספירה של הבלוק הגדול, אפשר לסמן על האצבעות: כל פרייז של 8 — אצבע אחת. ארבע אצבעות = 32 תיבות.</p>
+<p>איך לא לאבד את ה-1:</p>
+<ol>
+<li><strong>תקשיבו לסימני פרייז.</strong> בסוף כמעט כל פרייז יש "סימן": מצילת קראש בתחילת הפרייז הבא, תיפוף קצר (Fill), רעש לבן שעולה, אלמנט שנכנס או נעלם.</li>
+<li><strong>הזיזו את הגוף.</strong> נענוע ראש על כל ביט, רקיעה חזקה יותר על ה-1. הספירה עוברת לגוף מהר יותר ממה שנדמה.</li>
+<li><strong>השתמשו בעיניים — אבל רק כעזר.</strong> בווייבפורם של Rekordbox רואים את הקווים של תחילת התיבות ושינויים בצבע ובגובה כשהבאס נכנס או יוצא. ה-Phrase analysis מוסיף מעל הווייבפורם פסים צבעוניים לפי קטעים. אבל המטרה היא לשמוע את זה, כי באמצע סט אין זמן לבהות במסך.</li>
+</ol>
+<aside class="callout callout--warn" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.3 4.3 2.8 17.5A2 2 0 0 0 4.5 20.5h15a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v4.5M12 17h.01"/></svg><span>זהירות</span></div><div class="callout-body"><p>טעות המתחילים מספר 1 — לספור מה-Kick הראשון ששומעים, ולא מה-1 האמיתי. אם התחלתם לנגן שיר מאמצע, או שהשיר מתחיל ב-Fill קצר (מה שנקרא Pickup), אתם עלולים לספור "1" על הביט השלישי. הבדיקה: האם השינוי הבא בשיר נופל על ה-1 שלכם? אם הוא נופל על ה-3 — טעיתם, ותזיזו את הספירה.</p></div></aside>
+<h2 id="הקטעים-של-טראק-אלקטרוני">הקטעים של טראק אלקטרוני<a class="anchor" href="#הקטעים-של-טראק-אלקטרוני" title="קישור ישיר לסעיף">#</a></h2>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>קטע</th>
+<th>מה קורה</th>
+<th>אורך טיפוסי</th>
+<th>למה זה חשוב ל-DJ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Intro</strong> — אינטרו</td>
+<td>תופים בלבד או כמעט בלבד, אלמנטים נכנסים בהדרגה</td>
+<td>16–32 תיבות</td>
+<td>המקום להכניס את השיר החדש מתחת לשיר הקודם</td>
+</tr>
+<tr>
+<td><strong>Groove / Verse</strong> — גרוב</td>
+<td>הבאס נכנס, הגרוב המלא, לפעמים ווקאל</td>
+<td>16–32</td>
+<td>הלב של הטראק — כאן הרחבה רוקדת</td>
+</tr>
+<tr>
+<td><strong>Breakdown</strong> — ברייקדאון</td>
+<td>הבס-דראם והבאס יוצאים, נשארים מלודיה, פדים, ווקאל</td>
+<td>8–32</td>
+<td>"נשימה". רגע רגשי, המתח עולה</td>
+</tr>
+<tr>
+<td><strong>Build-up</strong> — בילדאפ</td>
+<td>תיפוף מתגבר, רעש עולה, פילטר נפתח</td>
+<td>4–16</td>
+<td>מבטיח לרחבה שמשהו גדול מגיע</td>
+</tr>
+<tr>
+<td><strong>Drop</strong> — דרופ</td>
+<td>הכול חוזר במלוא העוצמה</td>
+<td>16–32</td>
+<td>שיא האנרגיה</td>
+</tr>
+<tr>
+<td><strong>Outro</strong> — אאוטרו</td>
+<td>אלמנטים יוצאים בהדרגה, בסוף תופים בלבד</td>
+<td>16–32</td>
+<td>המקום לצאת מהשיר לטובת הבא</td>
+</tr>
+</tbody>
+</table></div>
+<p>לא לכל טראק יש את כל הקטעים, ולא תמיד באותו סדר. בטכנו היפנוטי, למשל, אין דרופ "קלאסי" — הטראק משתנה באיטיות, אלמנט נכנס ואלמנט יוצא כל 8 או 16 תיבות. במלודיק טכנו יש בדרך כלל ברייקדאון ארוך ודרמטי באמצע. בביג רום יש בילדאפ קצר וחזק ודרופ מתפוצץ.</p>
+<h2 id="איך-נראה-טראק-של-dj-lab-מבפנים">איך נראה טראק של DJ Lab מבפנים<a class="anchor" href="#איך-נראה-טראק-של-dj-lab-מבפנים" title="קישור ישיר לסעיף">#</a></h2>
+<p>כל הטראקים של DJ Lab בנויים לפי כללים קבועים שמתאימים ל-DJs:</p>
+<ul>
+<li>הביט הראשון בשנייה 0.0 — ה-1 הראשון הוא תחילת הקובץ.</li>
+<li><strong>אינטרו של לפחות 16 תיבות (בדרך כלל 32)</strong> של תופים וכלי הקשה, <strong>בלי באס ובלי מלודיה ב-16 התיבות הראשונות.</strong></li>
+<li><strong>אאוטרו של לפחות 16 תיבות (בדרך כלל 32)</strong> שהוא תמונת מראה של האינטרו: הבאס יוצא, ובסוף נשארים רק תופים.</li>
+<li>כל גבול בין קטעים נופל על כפולה של 8 תיבות.</li>
+<li>סימן פרייז עדין (קראש או תיפוף) כל 8 או 16 תיבות.</li>
+</ul>
+<p>כך נראה טראק טיפוסי בסגנון האוס / טק-האוס (הדוגמה סכמטית — לכל טראק החלוקה המדויקת שלו):</p>
+<figure class="figure"><img alt="מבנה טיפוסי של טראק האוס: אינטרו, גרוב, ברייקדאון ובילדאפ, דרופ ואאוטרו, עם Hot Cues" src="../assets/guide/03-phrase-structure.svg" loading="lazy" decoding="async"><figcaption>מבנה טיפוסי של טראק האוס: אינטרו, גרוב, ברייקדאון ובילדאפ, דרופ ואאוטרו, עם Hot Cues</figcaption></figure>
+<h3 id="לקרוא-את-ה-json">לקרוא את ה-JSON<a class="anchor" href="#לקרוא-את-ה-json" title="קישור ישיר לסעיף">#</a></h3>
+<p>בקובץ ה-JSON של כל טראק יש שדה <code>sections</code> — רשימת הקטעים:</p>
+<pre dir="ltr"><code class="language-json">&quot;sections&quot;: [
+  {&quot;name&quot;: &quot;Intro&quot;,     &quot;start_bar&quot;: 0,  &quot;bars&quot;: 32, &quot;start_sec&quot;: 0.0,   &quot;energy&quot;: 4},
+  {&quot;name&quot;: &quot;Groove&quot;,    &quot;start_bar&quot;: 32, &quot;bars&quot;: 32, &quot;start_sec&quot;: 61.0,  &quot;energy&quot;: 6},
+  {&quot;name&quot;: &quot;Breakdown&quot;, &quot;start_bar&quot;: 64, &quot;bars&quot;: 16, &quot;start_sec&quot;: 121.9, &quot;energy&quot;: 5}
+]
+</code></pre>
+<p>(זו דוגמה. את הערכים האמיתיים תמצאו בקובץ של כל טראק.)</p>
+<p>שימו לב: ב-JSON הספירה מתחילה מ-0. <code>"start_bar": 64</code> אומר שהברייקדאון מתחיל ב<strong>תיבה 65</strong> בספירה הרגילה. ולמה 121.9 שניות? כי ב-126 BPM כל תיבה היא 240÷126 = 1.905 שניות, ו-64 תיבות שלמות עברו לפני כן: 64 × 1.905 ≈ 121.9.</p>
+<h2 id="ומה-עם-מיינסטרים-היפ-הופ-ומוזיקה-ים-תיכונית">ומה עם מיינסטרים, היפ-הופ ומוזיקה ים-תיכונית?<a class="anchor" href="#ומה-עם-מיינסטרים-היפ-הופ-ומוזיקה-ים-תיכונית" title="קישור ישיר לסעיף">#</a></h2>
+<p>כאן החיים פחות מסודרים, וחשוב להכיר את זה כבר עכשיו, כי באירועים ישראליים תנגנו הרבה מזה.</p>
+<h3 id="פופ-ודאנס-פופ">פופ ודאנס-פופ<a class="anchor" href="#פופ-ודאנס-פופ" title="קישור ישיר לסעיף">#</a></h3>
+<p>מבנה של בית–פזמון (Verse–Chorus): אינטרו קצר, בית (8 או 16 תיבות), Pre-Chorus (לפעמים 4 תיבות!), פזמון, וחוזר חלילה. גרסאות הרדיו (Radio Edit) מתחילות כמעט מיד בשירה — אינטרו של 4 או 8 תיבות בלבד. לכן DJs מחפשים <strong>Extended Mix</strong> או גרסאות DJ עם אינטרו ואאוטרו ארוכים, או משתמשים בלופים (פרק 7).</p>
+<h3 id="היפ-הופ-ו-rb">היפ-הופ ו-R&amp;B<a class="anchor" href="#היפ-הופ-ו-rb" title="קישור ישיר לסעיף">#</a></h3>
+<p>הפרייזים הם לרוב של <strong>4 תיבות</strong> (שורה של ראפ = תיבה אחת, ארבע שורות = "בית קטן"). בית קלאסי בהיפ-הופ הוא 16 תיבות — מכאן הביטוי "16 Bars". הפזמון (Hook) בדרך כלל 8 תיבות. האינטרו קצר, ולפעמים מתחיל ישר בראפ. אין בס-דראם על כל ביט, ולכן "לשמוע את ה-1" דורש להקשיב ל-Kick החזק ולסנר על 2 ו-4.</p>
+<h3 id="רגאטון-ואפרוביטס">רגאטון ואפרוביטס<a class="anchor" href="#רגאטון-ואפרוביטס" title="קישור ישיר לסעיף">#</a></h3>
+<p>הקצב בנוי על דפוס חוזר (בדמבו של הרגאטון: "בום — צ'יק — בום-צ'יק") שחוזר כל תיבה. פרייזים של 8 תיבות, קטעים קצרים, שינויים מהירים. כאן "ה-1" נשמע ב-Kick הראשון של הדפוס.</p>
+<h3 id="ים-תיכוני-ומזרחית">ים-תיכוני ומזרחית<a class="anchor" href="#ים-תיכוני-ומזרחית" title="קישור ישיר לסעיף">#</a></h3>
+<p>שלושה דברים מיוחדים:</p>
+<ol>
+<li><strong>פתיחה חופשית (תקסים).</strong> הרבה שירים נפתחים בסולו של עוד, כינור או קול — בלי קצב קבוע. אי אפשר לעשות ביטמאצ'ינג לקטע כזה. או שמתחילים את השיר אחרי הפתיחה, או שעושים מעבר "קאט" ומשאירים את הפתיחה לרגע של "וואו" (פרק 6).</li>
+<li><strong>הקלטות "חיות".</strong> מתופף או דרבוקאי אמיתי = קצב שזז מעט. ה-Beatgrid צריך ניתוח Dynamic, ו-Sync עלול לא לעבוד טוב (פרק 2, פרק 4).</li>
+<li><strong>פרייזים של 8 תיבות, אבל עם מילוי של דרבוקה</strong> שמסמן מעבר — אוזן מאומנת שומעת אותו מרחוק.</li>
+</ol>
+<p>בטראקים של DJ Lab בסגנונות האלה (<span class="tref" data-id="mainstream-05"><code>mainstream-05</code></span> עד <span class="tref" data-id="mainstream-16"><code>mainstream-16</code></span>) האינטרו והאאוטרו קצרים יותר (8–16 תיבות) — כמו במוזיקה האמיתית — אבל עדיין מיושרים לפרייזים. זה מקום מצוין להתאמן על הסגנונות האלה בלי הכאב של הקלטות חיות.</p>
+<h2 id="למה-זה-חשוב-phrase-mixing">למה זה חשוב: Phrase Mixing<a class="anchor" href="#למה-זה-חשוב-phrase-mixing" title="קישור ישיר לסעיף">#</a></h2>
+<p>אם תכניסו שיר חדש בדיוק על ה-1 של פרייז בשיר הנוכחי, השינויים בשני השירים יקרו <strong>באותו רגע</strong>: כשבשיר הישן נכנס קראש, גם בחדש מתחיל פרייז. האוזן של הרחבה שומעת יצירה אחת שזורמת. אם תכניסו אותו 4 תיבות "מאוחר", השינויים ייפלו באמצע משפט של השיר השני — וגם אם התופים מסונכרנים בצורה מושלמת, המעבר ירגיש מבולבל. זו הסיבה שמתחילים רבים עושים Sync מושלם ועדיין נשמעים "לא נכון".</p>
+<h3 id="נקודת-הכניסה-הקלאסית">נקודת הכניסה הקלאסית<a class="anchor" href="#נקודת-הכניסה-הקלאסית" title="קישור ישיר לסעיף">#</a></h3>
+<p>הטראקים של DJ Lab בנויים כך שהשיטה הפשוטה ביותר עובדת מושלם:</p>
+<ol>
+<li>בשיר היוצא (A) מגיעים לתחילת האאוטרו — <strong>Hot Cue G</strong>.</li>
+<li>על ה-1 של אותה תיבה מתחילים את השיר הנכנס (B) מתחילתו — <strong>Hot Cue A</strong>.</li>
+<li>32 תיבות האאוטרו של A חופפות ל-32 תיבות האינטרו של B. גבולות הפרייזים נופלים יחד.</li>
+<li>בבונוס: ברוב הטראקים, בדיוק באמצע (תיבה 17 של המעבר) הבאס של A יוצא והבאס של B נכנס. זה כמעט Bass Swap אוטומטי — נלמד לעשות אותו כמו שצריך בפרק 6.</li>
+</ol>
+<h3 id="נקודת-כניסה-מחושבת">נקודת כניסה מחושבת<a class="anchor" href="#נקודת-כניסה-מחושבת" title="קישור ישיר לסעיף">#</a></h3>
+<p>לפעמים רוצים שמשהו מסוים בשיר החדש — נניח הדרופ — ינחת ברגע מסוים בשיר הישן. החישוב:</p>
+<blockquote class="quote"><p><strong>תיבת ההתחלה של B (בתוך A) = התיבה ב-A שבה הדרופ צריך לנחות − (תיבת הדרופ ב-B − 1)</strong></p></blockquote>
+<p>דוגמה: אתם רוצים שהדרופ של B, שנמצא בתיבה 65 של B, ינחת בדיוק כשהאאוטרו של A מתחיל בתיבה 113 של A. אז מתחילים את B כש-A נמצא בתיבה 113 − 64 = <strong>49</strong>. כלומר: מתחילים את B על ה-1 של תיבה 49 ב-A, ונותנים לשניהם לרוץ יחד (עם הרבה עבודת EQ, פרק 5–6).</p>
+<aside class="callout callout--tip" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.5 18h5M10.5 21h3M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg><span>טיפ</span></div><div class="callout-body"><p>לא צריך לחשב בזמן הסט. בדיוק בשביל זה יש Hot Cues ו-Memory Cues על גבולות הקטעים (פרק 7) — סופרים מהם, לא מתחילת השיר.</p></div></aside>
+<h2 id="תרגילים">תרגילים<a class="anchor" href="#תרגילים" title="קישור ישיר לסעיף">#</a></h2>
+<aside class="callout callout--exercise" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 15.5V12a8 8 0 0 1 16 0v3.5"/><rect x="3" y="14" width="5" height="7" rx="2"/><rect x="16" y="14" width="5" height="7" rx="2"/></svg><span>תרגיל 1 — הספירה הראשונה (10 דקות)</span></div><div class="callout-body"><p>נגנו את <span class="tref" data-file="music/practice/practice-01-phrase-counter-124.mp3" data-missing="1"><code>music/practice/practice-01-phrase-counter-124.mp3</code></span>. יש בו מצילת קראש כל 8 תיבות וצליל "פעמון" כל 32 תיבות. ספרו בקול "1-2-3-4, 2-2-3-4…" עד 8, ובדקו שהקראש נופל בדיוק כשאתם חוזרים ל-1. אחרי שזה עובד, ספרו גם את הפרייזים על האצבעות, ובדקו שהפעמון מגיע אחרי ארבע אצבעות.</p>
+<p>🎧 תרגיל 2 — בעיניים עצומות: אותו קובץ, אבל הפעם עצמו עיניים ונסו <strong>לחזות</strong> את הקראש: הרימו יד חצי שנייה לפני שהוא מגיע. כשתצליחו 8 פעמים ברצף — המוח שלכם כבר סופר לבד.</p>
+<p>🎧 תרגיל 3 — מיפוי טראק: נגנו את <span class="tref" data-file="music/tracks/house/house-03-hands-up-florentin.mp3" data-missing="1"><code>music/tracks/house/house-03-hands-up-florentin.mp3</code></span> מההתחלה וספרו. רשמו ביומן: באיזו תיבה נכנס הבאס? מתי הברייקדאון? מתי הדרופ? מתי האאוטרו? אחר כך פתחו את <code>house-03-hands-up-florentin.json</code> והשוו לשדה <code>sections</code>. כמה פגעתם?</p>
+<p>🎧 תרגיל 4 — מלודיק טכנו: עשו את אותו מיפוי ל-<span class="tref" data-file="music/tracks/melodic_techno/techno-05-neon-cathedral.mp3" data-missing="1"><code>music/tracks/melodic_techno/techno-05-neon-cathedral.mp3</code></span>. שימו לב כמה הברייקדאון ארוך יותר, ואיך הבילדאפ "מבטיח" את הדרופ.</p>
+<p>🎧 תרגיל 5 — למצוא את ה-1 מהאמצע: טענו את <span class="tref" data-file="music/tracks/afro_house/house-09-desert-drums.mp3" data-missing="1"><code>music/tracks/afro_house/house-09-desert-drums.mp3</code></span>, קפצו לנקודה אקראית באמצע (לחיצה על הווייבפורם הכללי) ונגנו. תוך 16 תיבות לכל היותר, מצאו את תחילת הפרייז הבא — על פי קראש, תיפוף או כניסה של כלי. לחצו CUE כשאתם בטוחים, והשוו לקווים של תחילת התיבות ב-Rekordbox. חזרו על זה 10 פעמים בנקודות שונות.</p>
+<p>🎧 תרגיל 6 — פרייזים של היפ-הופ: נגנו את <span class="tref" data-file="music/tracks/hip_hop/mainstream-05-boom-bap-avenue.mp3" data-missing="1"><code>music/tracks/hip_hop/mainstream-05-boom-bap-avenue.mp3</code></span> (92 BPM). ספרו פרייזים של 4 תיבות. האם אתם שומעים איפה מתחיל ונגמר "בית" של 16 תיבות? שימו לב: אין Kick על כל ביט — הקשיבו לסנר על 2 ו-4.</p>
+<p>🎧 תרגיל 7 — לשמוע פרייז נכון ולא נכון (מותר להשתמש ב-Sync!): טענו את <span class="tref" data-id="practice-01"><code>practice-01</code></span> לדק 1 ואת <span class="tref" data-file="music/tracks/house/house-04-piano-saturday.mp3" data-missing="1"><code>music/tracks/house/house-04-piano-saturday.mp3</code></span> לדק 2, והפעילו Sync בדק 2 (ביטמאצ'ינג ידני נלמד רק בפרק הבא). נגנו את <span class="tref" data-id="practice-01"><code>practice-01</code></span>, ובדיוק על הפעמון (תחילת תיבה 33) הפעילו את <span class="tref" data-id="house-04"><code>house-04</code></span> מ-Hot Cue A. העלו את שני הפיידרים ושימו לב איך הקראשים והשינויים נופלים יחד. עכשיו חזרו על זה, אבל הפעילו את <span class="tref" data-id="house-04"><code>house-04</code></span> ארבע תיבות אחרי הפעמון. שמעתם את ההבדל? זה ההבדל בין מעבר שזורם למעבר ש"מתנגש".</p></div></aside>
+<h2 id="סיכום">סיכום<a class="anchor" href="#סיכום" title="קישור ישיר לסעיף">#</a></h2>
+<ul>
+<li>4 ביטים = תיבה. 8 תיבות = פרייז. 16 ו-32 תיבות = קטעים. כמעט כל שינוי קורה על ה-1 של פרייז.</li>
+<li>הנוסחה: שניות לתיבה = 240 ÷ BPM. בהאוס, 32 תיבות ≈ דקה.</li>
+<li>טראק אלקטרוני: אינטרו → גרוב → ברייקדאון → בילדאפ → דרופ → אאוטרו. מיינסטרים, היפ-הופ ומזרחית בנויים אחרת, עם אינטרו קצר יותר.</li>
+<li>טראקים של DJ Lab: אינטרו ואאוטרו נקיים של 16–32 תיבות, גבולות על כפולות של 8, וה-JSON מפרט את כל הקטעים (ספירה מ-0).</li>
+<li>מעבר טוב מיישר פרייזים: Hot Cue G של השיר היוצא ↔ Hot Cue A של השיר הנכנס.</li>
+<li>ספרו בקול, הזיזו את הגוף, והשתמשו במסך רק כעזר.</li>
+</ul>
+<h2 id="בפרק-הבא">בפרק הבא<a class="anchor" href="#בפרק-הבא" title="קישור ישיר לסעיף">#</a></h2>
+<p>יודעים לספור? מעולה. עכשיו נגרום לשני שירים לרוץ באותה מהירות בדיוק — באוזניים, בלי Sync: BPM, Tempo Fader, Jog Wheel, ושיטת הביטמאצ'ינג צעד אחר צעד.</p>
+<p>👉 <a href="04-bpm-beatmatching.html">פרק 4 — BPM וביטמאצ'ינג</a></p>
+      <div class="chapter-done">
+        <button class="btn btn--ghost" type="button" data-mark-read><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>סימון הפרק כנקרא</span></button>
+      </div>
+    </div>
+  </div>
+  <nav class="container pn" aria-label="ניווט בין פרקים"><a class="pn-card pn-prev" href="02-rekordbox-basics.html"><span class="pn-label"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m0 0-6-6m6 6-6 6"/></svg>הפרק הקודם</span><span class="pn-title"><span class="pn-num">02</span>יסודות Rekordbox</span></a><a class="pn-card pn-next" href="04-bpm-beatmatching.html"><span class="pn-label">הפרק הבא<svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5m0 0 6-6m-6 6 6 6"/></svg></span><span class="pn-title"><span class="pn-num">04</span>BPM וביטמאצ&#x27;ינג</span></a></nav>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><defs><linearGradient id="bm-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2bd6"/><stop offset=".55" stop-color="#8a5cff"/><stop offset="1" stop-color="#22e1ff"/></linearGradient></defs><circle cx="20" cy="20" r="18" fill="none" stroke="url(#bm-g)" stroke-width="3"/><circle cx="20" cy="20" r="11.5" fill="none" stroke="url(#bm-g)" stroke-width="1.5" opacity=".55"/><g fill="url(#bm-g)"><rect x="11" y="16" width="2.6" height="8" rx="1.3"/><rect x="15.4" y="12" width="2.6" height="16" rx="1.3"/><rect x="19.8" y="9.5" width="2.6" height="21" rx="1.3"/><rect x="24.2" y="13.5" width="2.6" height="13" rx="1.3"/><rect x="28.6" y="17" width="2.6" height="6" rx="1.3"/></g></svg><span class="brand-word">DJ<b>Lab</b></span></a>
+      <p>בית הספר לתקלוט שלך: קורס Rekordbox בעברית, מוזיקה מקורית לתרגול וכלים שעובדים ישר בדפדפן.</p>
+    </div>
+    <nav aria-label="ללמוד"><h2>ללמוד</h2><ul>
+      <li><a href="../guide/index.html">הקורס</a></li><li><a href="../practice.html">אימון ומעברים</a></li><li><a href="../sets/index.html">סטים לדוגמה</a></li></ul></nav>
+    <nav aria-label="מוזיקה"><h2>מוזיקה</h2><ul>
+      <li><a href="../library.html">ספריית מוזיקה</a></li><li><a href="../crates/index.html">ארגזים</a></li><li><a href="../tools/rekordbox.html">ייבוא ל-Rekordbox</a></li></ul></nav>
+    <nav aria-label="כלים"><h2>כלים</h2><ul>
+      <li><a href="../tools/mix-trainer.html">מאמן מיקס</a></li><li><a href="../tools/camelot.html">גלגל קאמלוט</a></li><li><a href="../tools/set-builder.html">בונה סטים</a></li></ul></nav>
+  </div>
+  <div class="container footer-legal">
+    <p>המוזיקה המקורית משוחררת ב-<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.he" target="_blank" rel="noopener">CC0</a> · הקוד ב-MIT · הארגזים הם קישורים בלבד - קנו והזרימו ממקורות חוקיים.</p>
+    <p class="muted"><a href="../about.html">אודות ורישיון</a> · © 2026 DJ Lab</p>
+  </div>
+</footer>
+<script src="../data/catalog.js?v=e4c6cf60" defer></script><script src="../data/peaks.js?v=e4c6cf60" defer></script><script src="../data/guide.js?v=e4c6cf60" defer></script><script src="../assets/js/icons.gen.js?v=e4c6cf60" defer></script><script src="../assets/js/core.js?v=e4c6cf60" defer></script><script src="../assets/js/player.js?v=e4c6cf60" defer></script><script src="../assets/js/guide.js?v=e4c6cf60" defer></script>
+</body>
+</html>

@@ -257,6 +257,21 @@
       var item = DJ.byFile.get(src) || { id: src, file: src, title: host.getAttribute('data-title') || src, has_audio: !host.dataset.missing };
       DJ.miniPlayer(host, item, { title: host.getAttribute('data-title') || null });
     });
+    DJ.$$('.tref[data-file]').forEach(function (el) {
+      var f = el.getAttribute('data-file'), t = DJ.byFile.get(f);
+      if (t && DJ.playable(t)) {
+        var b = DJ.h('<button type="button" class="tref-btn" title="' + esc(f) + '"><span class="ico">' + I('play') + '</span><span class="t">' + esc(t.title || f.split('/').pop()) + '</span></button>');
+        b.addEventListener('click', function () { DJ.player.play(t); });
+        el.replaceWith(b);
+      } else if (!el.dataset.missing) {
+        var it = { id: f, file: f, title: f.split('/').pop().replace(/\.[^.]+$/, ''), has_audio: true };
+        var b2 = DJ.h('<button type="button" class="tref-btn" title="' + esc(f) + '"><span class="ico">' + I('play') + '</span><span class="t">' + esc(it.title) + '</span></button>');
+        b2.addEventListener('click', function () { DJ.player.play(it); });
+        el.replaceWith(b2);
+      } else {
+        el.title = 'הקובץ עדיין ברינדור - בקרוב';
+      }
+    });
     DJ.$$('.tref[data-id]').forEach(function (el) {
       var id = el.getAttribute('data-id'), t = DJ.byId.get(id), p = t || DJ.planById.get(id);
       if (!p) return;

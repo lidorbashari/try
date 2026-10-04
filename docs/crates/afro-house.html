@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>אפרו-האוס · DJ Lab</title>
+<meta name="description" content="ארגז אפרו-האוס (Afro House): 39 טראקים עם BPM, Key ו-Camelot.">
+<meta name="djlab-root" content="../../">
+<meta name="djlab-base" content="../">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#07070c">
+<link rel="canonical" href="https://lidorbashari.github.io/try/docs/crates/afro-house.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DJ Lab">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="אפרו-האוס · DJ Lab">
+<meta property="og:description" content="ארגז אפרו-האוס (Afro House): 39 טראקים עם BPM, Key ו-Camelot.">
+<meta property="og:url" content="https://lidorbashari.github.io/try/docs/crates/afro-house.html">
+<meta property="og:image" content="https://lidorbashari.github.io/try/docs/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&family=Rubik:wght@400;500;600;700;800&family=Secular+One&display=swap">
+<link rel="stylesheet" href="../assets/css/site.css?v=e4c6cf60">
+<script>(function(){try{var t=localStorage.getItem('djlab:theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+</head>
+<body class="page-crates ">
+<a class="skip-link" href="#main">דלגו לתוכן</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../index.html" aria-label="DJ Lab - דף הבית"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><defs><linearGradient id="bm-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2bd6"/><stop offset=".55" stop-color="#8a5cff"/><stop offset="1" stop-color="#22e1ff"/></linearGradient></defs><circle cx="20" cy="20" r="18" fill="none" stroke="url(#bm-g)" stroke-width="3"/><circle cx="20" cy="20" r="11.5" fill="none" stroke="url(#bm-g)" stroke-width="1.5" opacity=".55"/><g fill="url(#bm-g)"><rect x="11" y="16" width="2.6" height="8" rx="1.3"/><rect x="15.4" y="12" width="2.6" height="16" rx="1.3"/><rect x="19.8" y="9.5" width="2.6" height="21" rx="1.3"/><rect x="24.2" y="13.5" width="2.6" height="13" rx="1.3"/><rect x="28.6" y="17" width="2.6" height="6" rx="1.3"/></g></svg><span class="brand-word">DJ<b>Lab</b></span></a>
+    <nav class="site-nav" id="site-nav" aria-label="ניווט ראשי"><ul><li><a href="../index.html">בית</a></li><li><a href="../guide/index.html">הקורס</a></li><li><a href="../library.html">ספריית מוזיקה</a></li><li><a href="../practice.html">אימון</a></li><li><a href="../crates/index.html" aria-current="page">ארגזים</a></li><li><a href="../sets/index.html">סטים</a></li><li><a href="../tools/index.html">כלים</a></li><li><a href="../about.html">אודות</a></li></ul></nav>
+    <div class="header-actions">
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="החלפה בין מצב כהה למצב בהיר" title="מצב כהה / בהיר"><svg class="icon i-sun" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg><svg class="icon i-moon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.6A8.2 8.2 0 1 1 9.4 4a6.6 6.6 0 0 0 10.6 10.6z"/></svg></button>
+      <a class="icon-btn hide-sm" href="https://github.com/lidorbashari/try" target="_blank" rel="noopener" aria-label="הקוד ב-GitHub" title="GitHub"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2.8a9.3 9.3 0 0 0-2.9 18.1c.5.1.6-.2.6-.5v-1.7c-2.6.6-3.1-1.2-3.1-1.2-.4-1.1-1-1.4-1-1.4-.9-.6 0-.6 0-.6.9.1 1.4 1 1.4 1 .8 1.4 2.2 1 2.7.8.1-.6.3-1 .6-1.2-2-.2-4.2-1-4.2-4.6 0-1 .4-1.8 1-2.5-.1-.2-.4-1.2.1-2.5 0 0 .8-.2 2.6 1a8.9 8.9 0 0 1 4.7 0c1.8-1.2 2.6-1 2.6-1 .5 1.3.2 2.3.1 2.5.6.7 1 1.5 1 2.5 0 3.6-2.2 4.4-4.2 4.6.3.3.6.8.6 1.6v2.4c0 .3.2.6.7.5A9.3 9.3 0 0 0 12 2.8z" fill="currentColor" stroke="none"/></svg></a>
+      <button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="פתיחת תפריט"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+<section class="page-hero page-hero--crate">
+  <div class="container">
+    <nav class="crumbs" aria-label="פירורי לחם"><a href="../index.html">בית</a><span aria-hidden="true">/</span><a href="index.html">ארגזים</a><span aria-hidden="true">/</span><span aria-current="page">אפרו-האוס</span></nav>
+    <p class="eyebrow"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 8 12 3l9 5v8l-9 5-9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg>ארגז · <span dir="ltr">Afro House</span></p>
+    <h1 class="display">אפרו-האוס</h1>
+    <div class="chip-row"><span class="chip chip--static">afro_house</span><span class="chip chip--static">organic_house</span><span class="chip chip--static">amapiano</span></div>
+    <div class="chapter-meta">
+      <span class="meta-item"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M12 6.5a5.5 5.5 0 0 1 5.5 5.5"/></svg>39 טראקים</span>
+      <span class="meta-item"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>38 מאומתים</span>
+      <span class="meta-item"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 21 9.8 3.8A1 1 0 0 1 10.8 3h2.4a1 1 0 0 1 1 .8L17 21z"/><path d="m12 16 6.5-9.5M8.3 15.5h7.4"/></svg>105–126 BPM</span>
+      <a class="btn btn--ghost btn--sm" href="../../crates/afro-house.csv" download><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3.5v11.5m0 0-4.5-4.5M12 15l4.5-4.5M4.5 19.5h15"/></svg><span>הורדת CSV</span></a>
+    </div>
+  </div>
+</section>
+<section class="container crate-page">
+  <div class="callout callout--note crate-legal" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.8h.01"/></svg><span>שירים אמיתיים - קישורים בלבד</span></div>
+  <div class="callout-body"><p>הארגז הזה הוא רשימת קניות: אין כאן קבצי אודיו. קנו ב-Beatport / Bandcamp / Traxsource או הזרימו מתוך Rekordbox (Beatport Streaming, SoundCloud, TIDAL). ערכי BPM ו-Key עם תג <b>מאומת</b> נבדקו מול מקור אמין.</p></div></div>
+  <div class="prose prose--wide"><p>אפרו-האוס נולד בדרום אפריקה בשנות ה-2000 (Black Coffee, Culoe De Song, Da Capo, Enoo Napa) והתפוצץ בעולם בזכות קולקטיבים כמו <code>Keinemusik</code> (&amp;ME, Rampa, Adam Port). הטמפו נע בין <code>118</code> ל-<code>124 BPM</code>. <strong>אורגני האוס</strong> הוא האח האיטי (<code>110–120</code>) עם כלים אקוסטיים, ו-<strong>אמפיאנו</strong> (<code>Amapiano</code>) הוא סגנון דרום-אפריקאי נפרד (<code>108–115</code>) עם "לוג דראם" — באס כלי הקשה עמוק.</p>
+<p>מה מגדיר את הסאונד: תופים ופרקשן אפריקאיים (שייקרים, קונגות, דג'מבה), גרוב "מתנדנד" עם סווינג, ווקאלים בזולו, יורובה ושפות אחרות, פדים מלודיים ובאס עמוק. האנרגיה נבנית דרך שכבות של תופים, לא דרך דרופים.</p>
+<p>איך מערבבים: ערבבו ארוך ובעדינות — שכבות הפרקשן של שני הטראקים יכולות להתנגש, אז הורידו <code>Mid</code>/<code>High</code> של היוצא. בגלל הסווינג, ודאו שה-<code>Beat Grid</code> מדויק. מעבר לאמפיאנו דורש קפיצת טמפו — עשו אותו דרך ברייקדאון או <code>Echo Out</code>.</p>
+<h2 id="איך-להשתמש-בארגז">איך להשתמש בארגז<a class="anchor" href="#איך-להשתמש-בארגז" title="קישור ישיר לסעיף">#</a></h2>
+<ul>
+<li>התחילו ב-<code>118</code> (Milkshake, My Neck My Back) ועלו ל-<code>122–124</code> לשיא.</li>
+<li>ייבאו ל-<code>Rekordbox</code> והריצו <code>Analyze</code>; בגלל הפרקשן הסווינגי, בדקו ידנית שה-<code>Beat Grid</code> לא "מחליק".</li>
+<li>השתמשו ב-<code>EQ</code> על ה-<code>High</code> של הטראק היוצא כדי ששני סטים של שייקרים לא ייצרו רעש.</li>
+<li>ווקאלים בשפות אפריקאיות הם חלק מהקסם — אל תחתכו אותם באמצע משפט.</li>
+<li>לאמפיאנו: עדיף בלוק נפרד בסט (למשל 3–4 טראקים) ולא לערבב טראק בודד בין טראקים של 124.</li>
+</ul>
+<h2 id="הטראקים">הטראקים<a class="anchor" href="#הטראקים" title="קישור ישיר לסעיף">#</a></h2>
+<p>סה"כ 39 טראקים · 38 מאומתים במלואם · 1 מאומתים חלקית.</p>
+<blockquote class="quote"><p><strong>מקרא עמודת אימות:</strong> ✔ = <code>BPM</code> ומפתח אומתו ממקור אמין (בעיקר <code>Beatport</code>, <code>Tunebat</code>/<code>SongBPM</code>); ≈ = אומת חלקית (המקורות חלוקים במפתח, או רק ה-<code>BPM</code> אומת); ? = הערכה — <strong>חובה לבדוק אחרי <code>Analyze</code> ב-<code>Rekordbox</code></strong>. גרסאות שונות (<code>Radio Edit</code>, <code>Extended</code>, רמיקס) יכולות להיות במפתח/טמפו אחרים — קנו בדיוק את ה-<code>Mix</code> שבטבלה.</p></blockquote>
+<h3 id="אפרו-האוס-120124">אפרו-האוס (120–124)<a class="anchor" href="#אפרו-האוס-120124" title="קישור ישיר לסעיף">#</a></h3>
+<div class="crate-table" id="crate-table" data-crate="afro-house"></div>
+<h3 id="אורגני-איטי-118">אורגני / איטי (118)<a class="anchor" href="#אורגני-איטי-118" title="קישור ישיר לסעיף">#</a></h3>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Artist</th>
+<th>Title</th>
+<th>Mix</th>
+<th>BPM</th>
+<th>Key</th>
+<th>Camelot</th>
+<th>Energy</th>
+<th>Role</th>
+<th>✔</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10</td>
+<td>Alex Wann</td>
+<td>Milkshake</td>
+<td>Original Mix</td>
+<td>118</td>
+<td>Dm</td>
+<td>7A</td>
+<td>5</td>
+<td>warmup</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Tayllor</td>
+<td>My Neck, My Back (Lick It)</td>
+<td>Original Mix</td>
+<td>118</td>
+<td>E</td>
+<td>12B</td>
+<td>6</td>
+<td>build</td>
+<td>✔</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="אפרו-האוס-דרום-אפריקאי-ואורגני-118126">אפרו-האוס דרום-אפריקאי ואורגני (118–126)<a class="anchor" href="#אפרו-האוס-דרום-אפריקאי-ואורגני-118126" title="קישור ישיר לסעיף">#</a></h3>
+<blockquote class="quote"><p>נוסף בסבב אימות מול נתוני ניתוח האודיו של <code>Spotify</code> (קבצי נתונים פומביים — אותו מקור ש-<code>Tunebat</code>/<code>SongBPM</code> מציגים). ✔ = שורה שתואמת אמן + שם; ≈ = גרסאות שונות במקור מזוהות אחרת.</p></blockquote>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Artist</th>
+<th>Title</th>
+<th>Mix</th>
+<th>BPM</th>
+<th>Key</th>
+<th>Camelot</th>
+<th>Energy</th>
+<th>Role</th>
+<th>✔</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>12</td>
+<td>Black Coffee, Nakhane</td>
+<td>We Dance Again</td>
+<td>Original</td>
+<td>122</td>
+<td><code>G</code></td>
+<td><code>9B</code></td>
+<td>7</td>
+<td>build</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Black Coffee, Bucie</td>
+<td>Turn Me On</td>
+<td>Original</td>
+<td>123</td>
+<td><code>Fm</code></td>
+<td><code>4A</code></td>
+<td>7</td>
+<td>build</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Mi Casa, Black Coffee</td>
+<td>Africa Shine</td>
+<td>Original</td>
+<td>125</td>
+<td><code>Gm</code></td>
+<td><code>6A</code></td>
+<td>7</td>
+<td>build</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Black Coffee, David Guetta, Delilah Montagu</td>
+<td>Drive</td>
+<td>Radio Edit</td>
+<td>118</td>
+<td><code>Bm</code></td>
+<td><code>10A</code></td>
+<td>6</td>
+<td>warmup</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Master KG, Nomcebo Zikode</td>
+<td>Jerusalema</td>
+<td>Original</td>
+<td>124</td>
+<td><code>Db</code></td>
+<td><code>3B</code></td>
+<td>8</td>
+<td>anthem</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Prince Kaybee, Shimza, Black Motion, Ami Faku</td>
+<td>Uwrongo</td>
+<td>Edit</td>
+<td>123</td>
+<td><code>Fm</code></td>
+<td><code>4A</code></td>
+<td>7</td>
+<td>build</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Black Motion, Nokwazi</td>
+<td>Imali</td>
+<td>Original</td>
+<td>123</td>
+<td><code>F#m</code></td>
+<td><code>11A</code></td>
+<td>7</td>
+<td>build</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Prince Kaybee, Busiswa, TNS</td>
+<td>Banomoya</td>
+<td>Original</td>
+<td>124</td>
+<td><code>Ebm</code></td>
+<td><code>2A</code></td>
+<td>8</td>
+<td>peak</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Simmy, Da Capo, Sun-El Musician</td>
+<td>Emakhaya</td>
+<td>Original</td>
+<td>120</td>
+<td><code>Bm</code></td>
+<td><code>10A</code></td>
+<td>6</td>
+<td>warmup</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Sun-El Musician, Simmy</td>
+<td>Ntaba Ezikude</td>
+<td>Original</td>
+<td>122</td>
+<td><code>A</code></td>
+<td><code>11B</code></td>
+<td>6</td>
+<td>warmup</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Guy Gerber, &amp;ME</td>
+<td>What To Do</td>
+<td>&amp;ME Remix</td>
+<td>122</td>
+<td><code>Gm</code></td>
+<td><code>6A</code></td>
+<td>7</td>
+<td>build</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Damian Lazarus &amp; The Ancient Moons, &amp;ME</td>
+<td>Vermillion</td>
+<td>&amp;ME Remix</td>
+<td>126</td>
+<td><code>Gm</code></td>
+<td><code>6A</code></td>
+<td>8</td>
+<td>peak</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Sun-El Musician, Samthing Soweto</td>
+<td>Akanamali</td>
+<td>Original</td>
+<td>105</td>
+<td><code>C#m</code></td>
+<td><code>12A</code></td>
+<td>5</td>
+<td>warmup</td>
+<td>✔</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="אמפיאנו-112116">אמפיאנו (112–116)<a class="anchor" href="#אמפיאנו-112116" title="קישור ישיר לסעיף">#</a></h3>
+<blockquote class="quote"><p>נוסף בסבב אימות מול נתוני ניתוח האודיו של <code>Spotify</code> (קבצי נתונים פומביים — אותו מקור ש-<code>Tunebat</code>/<code>SongBPM</code> מציגים). ✔ = שורה שתואמת אמן + שם; ≈ = גרסאות שונות במקור מזוהות אחרת.</p></blockquote>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Artist</th>
+<th>Title</th>
+<th>Mix</th>
+<th>BPM</th>
+<th>Key</th>
+<th>Camelot</th>
+<th>Energy</th>
+<th>Role</th>
+<th>✔</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>25</td>
+<td>DJ Maphorisa, Kabza De Small, Samthing Soweto, Mfr Souls</td>
+<td>Amantombazane</td>
+<td>Original</td>
+<td>116</td>
+<td><code>Ab</code></td>
+<td><code>4B</code></td>
+<td>7</td>
+<td>build</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Samthing Soweto, Sha Sha, DJ Maphorisa, Kabza De Small</td>
+<td>Akulaleki</td>
+<td>Original</td>
+<td>116</td>
+<td><code>G</code></td>
+<td><code>9B</code></td>
+<td>7</td>
+<td>build</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>27</td>
+<td>Kabza De Small, DJ Maphorisa, Focalistic, Kamo Mphela</td>
+<td>Sandton</td>
+<td>Original</td>
+<td>113</td>
+<td><code>Ab</code></td>
+<td><code>4B</code></td>
+<td>8</td>
+<td>peak</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>28</td>
+<td>DJ Maphorisa, Kabza De Small, Nokwazi, Vigro Deep</td>
+<td>Vula Vala</td>
+<td>Original</td>
+<td>113</td>
+<td><code>Db</code></td>
+<td><code>3B</code></td>
+<td>7</td>
+<td>build</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>29</td>
+<td>Focalistic, Vigro Deep</td>
+<td>Ke Star</td>
+<td>Original</td>
+<td>112</td>
+<td><code>Bbm</code></td>
+<td><code>3A</code></td>
+<td>8</td>
+<td>peak</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>30</td>
+<td>Focalistic, Davido, Vigro Deep</td>
+<td>Ke Star</td>
+<td>Remix</td>
+<td>112</td>
+<td><code>Bbm</code></td>
+<td><code>3A</code></td>
+<td>9</td>
+<td>anthem</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>31</td>
+<td>Focalistic, Vigro Deep</td>
+<td>Vrr Phaa</td>
+<td>Original</td>
+<td>113</td>
+<td><code>D</code></td>
+<td><code>10B</code></td>
+<td>8</td>
+<td>peak</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>32</td>
+<td>Mr JazziQ, Kabza De Small, Lady Du, Boohle</td>
+<td>Woza</td>
+<td>Original</td>
+<td>113</td>
+<td><code>F#</code></td>
+<td><code>2B</code></td>
+<td>8</td>
+<td>peak</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>33</td>
+<td>Busta 929, Mpura, Zuma, Mr JazziQ, Lady Du, Reece Madlisa</td>
+<td>Umsebenzi Wethu</td>
+<td>Original</td>
+<td>114</td>
+<td><code>Bbm</code></td>
+<td><code>3A</code></td>
+<td>8</td>
+<td>peak</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>34</td>
+<td>Lady Du, DBN Gogo, Mr JazziQ, Seekay, Busta 929</td>
+<td>Dakiwe</td>
+<td>Original</td>
+<td>114</td>
+<td><code>Abm</code></td>
+<td><code>1A</code></td>
+<td>8</td>
+<td>peak</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>35</td>
+<td>Mfr Souls, Major League Djz, Kamo Mphela, Bontle Smith</td>
+<td>Amanikiniki</td>
+<td>Original</td>
+<td>113</td>
+<td><code>Bbm</code></td>
+<td><code>3A</code></td>
+<td>8</td>
+<td>peak</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>36</td>
+<td>Major League Djz, Abidoza, Mpho Sebina</td>
+<td>Dinaledi</td>
+<td>Original</td>
+<td>113</td>
+<td><code>Ebm</code></td>
+<td><code>2A</code></td>
+<td>7</td>
+<td>build</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>37</td>
+<td>DJ Stokie, Kabza De Small, Masterpiece YVK, Madumane</td>
+<td>Superman</td>
+<td>Original</td>
+<td>112</td>
+<td><code>Fm</code></td>
+<td><code>4A</code></td>
+<td>7</td>
+<td>build</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>38</td>
+<td>Tyler ICU, Nicole Elocin, Kabza De Small, DJ Maphorisa</td>
+<td>Bella Ciao</td>
+<td>Original</td>
+<td>112</td>
+<td><code>Bm</code></td>
+<td><code>10A</code></td>
+<td>8</td>
+<td>peak</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>39</td>
+<td>Kamo Mphela</td>
+<td>Nkulunkulu</td>
+<td>Original</td>
+<td>112</td>
+<td><code>Db</code></td>
+<td><code>3B</code></td>
+<td>8</td>
+<td>peak</td>
+<td>✔</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="מעברים-מומלצים-בתוך-הארגז">מעברים מומלצים בתוך הארגז<a class="anchor" href="#מעברים-מומלצים-בתוך-הארגז" title="קישור ישיר לסעיף">#</a></h2>
+<ul>
+<li>מ-<strong>Moderat – More Love</strong> (<code>122 BPM</code>, <code>10A</code>) אל <strong>Eran Hersh &amp; Neil Amarey – Rej</strong> (<code>124 BPM</code>, <code>10A</code>): שניהם <code>10A</code>: מ-More Love (122) ל-Rej של ערן הרש (124) — Keinemusik לגרסת האפרו לקלאסיקה.</li>
+<li>מ-<strong>Emmanuel Jal &amp; Nitefreak – Gorah</strong> (<code>120 BPM</code>, <code>12A</code>) אל <strong>Rosalie, James Mac &amp; VALL – The Boy Is Mine</strong> (<code>123 BPM</code>, <code>12A</code>): שניהם <code>12A</code>: מ-Gorah (120) ל-The Boy Is Mine (123) — העלו טמפו בהדרגה.</li>
+<li>מ-<strong>Alex Wann – Milkshake</strong> (<code>118 BPM</code>, <code>7A</code>) אל <strong>Antdot, Paulo Novaes &amp; Nina Oliveira – Viagem Ao Centro Do Eu (Coragem)</strong> (<code>122 BPM</code>, <code>7A</code>): שניהם <code>7A</code>: מ-Milkshake (118) ל-Viagem (122) — מאורגני לאפרו.</li>
+<li>מ-<strong>&amp;ME, Black Coffee &amp; Keinemusik – The Rapture Pt.III</strong> (<code>120 BPM</code>, <code>9A</code>) אל <strong>Moderat – More Love</strong> (<code>122 BPM</code>, <code>10A</code>): <code>9A</code> ל-<code>10A</code> (צעד אחד בגלגל): מ-The Rapture Pt.III ל-More Love — שני טראקים של Keinemusik.</li>
+<li>מ-<strong>Samuel Cosmic, &amp;friends &amp; Oluwadamvic – Halele</strong> (<code>120 BPM</code>, <code>6A</code>) אל <strong>Cato Anaya &amp; Lohrasp Kansara – Carnaval</strong> (<code>124 BPM</code>, <code>5A</code>): <code>6A</code> ל-<code>5A</code> (צעד אחד בגלגל): מ-Halele (120) ל-Carnaval (124) — בנייה לשיא עם פרקשן.</li>
+</ul>
+<h2 id="קלאסיקות-אפרו-האוס-ואמפיאנו-להוספה-לא-אומתו-בדקו-ב-rekordbox">קלאסיקות אפרו-האוס ואמפיאנו להוספה (לא אומתו — בדקו ב-<code>Rekordbox</code>)<a class="anchor" href="#קלאסיקות-אפרו-האוס-ואמפיאנו-להוספה-לא-אומתו-בדקו-ב-rekordbox" title="קישור ישיר לסעיף">#</a></h2>
+<p>לטראקים הבאים לא הצלחנו לאמת <code>BPM</code>/מפתח ממקור אמין בזמן הכנת הארגז, ולכן הם לא בטבלה:</p>
+<p><strong>קלאסיקות אפרו-האוס:</strong>
+- Black Coffee feat. Bucie – Superman (Soulistic Music)
+- Culoe De Song – The Bright Forest (Innervisions)
+- Adam Port, Stryv &amp; Keinemusik – Move (2024) — ההמנון הגדול של Keinemusik</p>
+<p><strong>אמפיאנו (בלוק נפרד, <code>108–115 BPM</code>):</strong>
+- Tyla – Water (2023)
+- Uncle Waffles – Tanzania (2022)</p>
+<p><strong>מהסצנה הישראלית:</strong> ערן הרש (Eran Hersh) בטבלה; חפשו גם את Guy Mantzur (רמיקס ל-Black Coffee – Wish You Were Here) ו-Adam Ten.</p>
+<blockquote class="quote"><p><strong>פער ידוע:</strong> בסבב האימות נוספו 13 טראקי אפרו-האוס ו-15 טראקי אמפיאנו מאומתים (מנתוני <code>Spotify</code>). הלהיטים של 2022–2024 (Tyla, Uncle Waffles, Keinemusik) עדיין לא אומתו — הם ברשימה למעלה.</p></blockquote>
+<h2 id="איפה-לקנות-ולהזרים-חוקית">איפה לקנות ולהזרים חוקית<a class="anchor" href="#איפה-לקנות-ולהזרים-חוקית" title="קישור ישיר לסעיף">#</a></h2>
+<p><strong>קנייה (קבצים שלכם לתמיד):</strong>
+- <code>Beatport</code> — החנות המרכזית למוזיקה אלקטרונית; ברוב הטראקים מופיעים שם <code>BPM</code> ו-<code>Key</code> רשמיים, ויש גרסאות <code>Extended</code>/<code>Original Mix</code>.
+- <code>Traxsource</code> — חזקה במיוחד בהאוס, דיפ-האוס, אפרו-האוס וסול.
+- <code>Bandcamp</code> — קנייה ישירה מהאמן/הלייבל (הכי הרבה כסף מגיע ליוצרים), מצוין ללייבלים עצמאיים ולקלאסיקות שהודפסו מחדש.
+- <code>Juno Download</code> — קטלוג רחב, כולל ריליסים ישנים.
+- <code>Apple Music / iTunes Store</code> — לפעמים יש רק <code>Radio Edit</code>; לדיג'יי עדיף לחפש <code>Extended</code>/<code>Original Mix</code>.</p>
+<p><strong>סטרימינג בתוך <code>Rekordbox</code> (נכון ל-2026):</strong> <code>Beatport Streaming</code>, <code>Beatsource Streaming</code>, <code>SoundCloud</code> (מנוי <code>Go+</code>/<code>DJ</code>), <code>TIDAL</code>, ובשנים האחרונות נוספו גם <code>Apple Music</code> ו-<code>Spotify</code> (Premium). שימו לב למגבלות: סטרימינג דורש אינטרנט יציב, ב-<code>Spotify</code> אין שמירה אופליין (<code>Offline Cache</code> זמין ב-<code>TIDAL</code>, <code>Beatport</code>, <code>Beatsource</code> ו-<code>SoundCloud</code>), ובחלק מהשירותים אין <code>Stems</code>. אי אפשר לייצא טראקים מסטרימינג ל-USB לנגני <code>CDJ</code>/<code>XDJ</code> — להופעה במועדון צריך קבצים שקניתם.</p>
+<p><strong>חשוב:</strong>
+- תמיד לקנות <code>MP3 320kbps</code>, <code>WAV</code> או <code>AIFF</code> (עדיף <code>WAV</code>/<code>AIFF</code> אם יש מקום). לא <code>MP3 128</code>.
+- <code>YouTube</code> (וממירי "YouTube ל-MP3") לא חוקיים ולא מתאימים לדיג'יי — איכות נמוכה והפרת זכויות.
+- אפליקציית <code>Spotify</code> הרגילה לא מתאימה לדיג'יי; רק האינטגרציה הרשמית בתוך תוכנת הדיג'יי, ורק לאימון/סטרימינג — לא לקובץ ב-USB.
+- אחרי קנייה: לייבא ל-<code>Rekordbox</code>, להריץ <code>Analyze</code> ולבדוק <code>Beat Grid</code> ומפתח — ערכים מהאינטרנט הם נקודת התחלה, האוזן שלכם היא השופטת.</p>
+<h2 id="קישורי-חיפוש-10-טראקים-מרכזיים">קישורי חיפוש — 10 טראקים מרכזיים<a class="anchor" href="#קישורי-חיפוש-10-טראקים-מרכזיים" title="קישור ישיר לסעיף">#</a></h2>
+<ul>
+<li><a href="https://www.beatport.com/search?q=%26ME%2C+Black+Coffee+%26+Keinemusik+The+Rapture+Pt.III" target="_blank" rel="noopener">&amp;ME, Black Coffee &amp; Keinemusik – The Rapture Pt.III (Original Mix)</a></li>
+<li><a href="https://www.beatport.com/search?q=Eran+Hersh+%26+Neil+Amarey+Rej" target="_blank" rel="noopener">Eran Hersh &amp; Neil Amarey – Rej (Extended Mix)</a></li>
+<li><a href="https://www.beatport.com/search?q=Moderat+More+Love" target="_blank" rel="noopener">Moderat – More Love (Rampa &amp; &amp;ME Remix)</a></li>
+<li><a href="https://www.beatport.com/search?q=Rosalie%2C+James+Mac+%26+VALL+The+Boy+Is+Mine" target="_blank" rel="noopener">Rosalie, James Mac &amp; VALL – The Boy Is Mine (Club Mix)</a></li>
+<li><a href="https://www.beatport.com/search?q=Emmanuel+Jal+%26+Nitefreak+Gorah" target="_blank" rel="noopener">Emmanuel Jal &amp; Nitefreak – Gorah (Extended)</a></li>
+<li><a href="https://www.beatport.com/search?q=Samuel+Cosmic%2C+%26friends+%26+Oluwadamvic+Halele" target="_blank" rel="noopener">Samuel Cosmic, &amp;friends &amp; Oluwadamvic – Halele (Alex Wann Extended Remix)</a></li>
+<li><a href="https://www.beatport.com/search?q=Antdot%2C+Paulo+Novaes+%26+Nina+Oliveira+Viagem+Ao+Centro+Do+Eu+%28Coragem%29" target="_blank" rel="noopener">Antdot, Paulo Novaes &amp; Nina Oliveira – Viagem Ao Centro Do Eu (Coragem) (Extended Mix)</a></li>
+<li><a href="https://www.beatport.com/search?q=Cato+Anaya+%26+Lohrasp+Kansara+Carnaval" target="_blank" rel="noopener">Cato Anaya &amp; Lohrasp Kansara – Carnaval (Extended)</a></li>
+<li><a href="https://www.beatport.com/search?q=Carlos+Vives+%26+Wakyin+Beso+%28Fruta+Fresca%29" target="_blank" rel="noopener">Carlos Vives &amp; Wakyin – Beso (Fruta Fresca) (Extended Mix)</a></li>
+<li><a href="https://www.beatport.com/search?q=Alex+Wann+Milkshake" target="_blank" rel="noopener">Alex Wann – Milkshake (Original Mix)</a></li>
+</ul></div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><defs><linearGradient id="bm-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2bd6"/><stop offset=".55" stop-color="#8a5cff"/><stop offset="1" stop-color="#22e1ff"/></linearGradient></defs><circle cx="20" cy="20" r="18" fill="none" stroke="url(#bm-g)" stroke-width="3"/><circle cx="20" cy="20" r="11.5" fill="none" stroke="url(#bm-g)" stroke-width="1.5" opacity=".55"/><g fill="url(#bm-g)"><rect x="11" y="16" width="2.6" height="8" rx="1.3"/><rect x="15.4" y="12" width="2.6" height="16" rx="1.3"/><rect x="19.8" y="9.5" width="2.6" height="21" rx="1.3"/><rect x="24.2" y="13.5" width="2.6" height="13" rx="1.3"/><rect x="28.6" y="17" width="2.6" height="6" rx="1.3"/></g></svg><span class="brand-word">DJ<b>Lab</b></span></a>
+      <p>בית הספר לתקלוט שלך: קורס Rekordbox בעברית, מוזיקה מקורית לתרגול וכלים שעובדים ישר בדפדפן.</p>
+    </div>
+    <nav aria-label="ללמוד"><h2>ללמוד</h2><ul>
+      <li><a href="../guide/index.html">הקורס</a></li><li><a href="../practice.html">אימון ומעברים</a></li><li><a href="../sets/index.html">סטים לדוגמה</a></li></ul></nav>
+    <nav aria-label="מוזיקה"><h2>מוזיקה</h2><ul>
+      <li><a href="../library.html">ספריית מוזיקה</a></li><li><a href="../crates/index.html">ארגזים</a></li><li><a href="../tools/rekordbox.html">ייבוא ל-Rekordbox</a></li></ul></nav>
+    <nav aria-label="כלים"><h2>כלים</h2><ul>
+      <li><a href="../tools/mix-trainer.html">מאמן מיקס</a></li><li><a href="../tools/camelot.html">גלגל קאמלוט</a></li><li><a href="../tools/set-builder.html">בונה סטים</a></li></ul></nav>
+  </div>
+  <div class="container footer-legal">
+    <p>המוזיקה המקורית משוחררת ב-<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.he" target="_blank" rel="noopener">CC0</a> · הקוד ב-MIT · הארגזים הם קישורים בלבד - קנו והזרימו ממקורות חוקיים.</p>
+    <p class="muted"><a href="../about.html">אודות ורישיון</a> · © 2026 DJ Lab</p>
+  </div>
+</footer>
+<script src="../data/catalog.js?v=e4c6cf60" defer></script><script src="../data/crates.js?v=e4c6cf60" defer></script><script src="../assets/js/icons.gen.js?v=e4c6cf60" defer></script><script src="../assets/js/core.js?v=e4c6cf60" defer></script><script src="../assets/js/player.js?v=e4c6cf60" defer></script><script src="../assets/js/crates.js?v=e4c6cf60" defer></script>
+</body>
+</html>

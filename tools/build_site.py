@@ -747,6 +747,16 @@ def postprocess(h: str, ctx: Ctx) -> str:
         return m.group(0)
 
     h = re.sub(r"<code>((?:house|techno|mainstream|breadth|practice|transition)-\d\d)</code>", code_repl, h)
+
+    # inline code that names an audio file in the repo: <code>music/tracks/x/y.mp3</code> -> inline play chip
+    def file_repl(m):
+        rp = html.unescape(m.group(1)).lstrip("./")
+        if not (ROOT / rp).is_file() and rp not in ctx.files:
+            return f'<span class="tref" data-file="{esc(rp)}" data-missing="1">{m.group(0)}</span>'
+        ctx.audio_refs.append(rp)
+        return f'<span class="tref" data-file="{esc(rp)}">{m.group(0)}</span>'
+
+    h = re.sub(r"<code>((?:\.\./)?music/[^<\s]+\.(?:mp3|wav|ogg))</code>", file_repl, h)
     return h
 
 

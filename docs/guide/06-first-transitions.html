@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>06 · המעברים הראשונים · DJ Lab</title>
+<meta name="description" content="שישה מעברים שכל DJ חייב לדעת — Blend ארוך, Bass Swap, פילטר, Echo Out, קאט ולופ — כל אחד עם מתכון מדויק לפי תיבות, הטעויות הנפוצות, ודמו מהרפו ששומעים ואז משחזרים.">
+<meta name="djlab-root" content="../../">
+<meta name="djlab-base" content="../">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#07070c">
+<link rel="canonical" href="https://lidorbashari.github.io/try/docs/guide/06-first-transitions.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DJ Lab">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="06 · המעברים הראשונים · DJ Lab">
+<meta property="og:description" content="שישה מעברים שכל DJ חייב לדעת — Blend ארוך, Bass Swap, פילטר, Echo Out, קאט ולופ — כל אחד עם מתכון מדויק לפי תיבות, הטעויות הנפוצות, ודמו מהרפו ששומעים ואז משחזרים.">
+<meta property="og:url" content="https://lidorbashari.github.io/try/docs/guide/06-first-transitions.html">
+<meta property="og:image" content="https://lidorbashari.github.io/try/docs/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&family=Rubik:wght@400;500;600;700;800&family=Secular+One&display=swap">
+<link rel="stylesheet" href="../assets/css/site.css?v=e4c6cf60">
+<script>(function(){try{var t=localStorage.getItem('djlab:theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+</head>
+<body class="page-guide has-progress">
+<a class="skip-link" href="#main">דלגו לתוכן</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../index.html" aria-label="DJ Lab - דף הבית"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><defs><linearGradient id="bm-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2bd6"/><stop offset=".55" stop-color="#8a5cff"/><stop offset="1" stop-color="#22e1ff"/></linearGradient></defs><circle cx="20" cy="20" r="18" fill="none" stroke="url(#bm-g)" stroke-width="3"/><circle cx="20" cy="20" r="11.5" fill="none" stroke="url(#bm-g)" stroke-width="1.5" opacity=".55"/><g fill="url(#bm-g)"><rect x="11" y="16" width="2.6" height="8" rx="1.3"/><rect x="15.4" y="12" width="2.6" height="16" rx="1.3"/><rect x="19.8" y="9.5" width="2.6" height="21" rx="1.3"/><rect x="24.2" y="13.5" width="2.6" height="13" rx="1.3"/><rect x="28.6" y="17" width="2.6" height="6" rx="1.3"/></g></svg><span class="brand-word">DJ<b>Lab</b></span></a>
+    <nav class="site-nav" id="site-nav" aria-label="ניווט ראשי"><ul><li><a href="../index.html">בית</a></li><li><a href="../guide/index.html" aria-current="page">הקורס</a></li><li><a href="../library.html">ספריית מוזיקה</a></li><li><a href="../practice.html">אימון</a></li><li><a href="../crates/index.html">ארגזים</a></li><li><a href="../sets/index.html">סטים</a></li><li><a href="../tools/index.html">כלים</a></li><li><a href="../about.html">אודות</a></li></ul></nav>
+    <div class="header-actions">
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="החלפה בין מצב כהה למצב בהיר" title="מצב כהה / בהיר"><svg class="icon i-sun" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg><svg class="icon i-moon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.6A8.2 8.2 0 1 1 9.4 4a6.6 6.6 0 0 0 10.6 10.6z"/></svg></button>
+      <a class="icon-btn hide-sm" href="https://github.com/lidorbashari/try" target="_blank" rel="noopener" aria-label="הקוד ב-GitHub" title="GitHub"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2.8a9.3 9.3 0 0 0-2.9 18.1c.5.1.6-.2.6-.5v-1.7c-2.6.6-3.1-1.2-3.1-1.2-.4-1.1-1-1.4-1-1.4-.9-.6 0-.6 0-.6.9.1 1.4 1 1.4 1 .8 1.4 2.2 1 2.7.8.1-.6.3-1 .6-1.2-2-.2-4.2-1-4.2-4.6 0-1 .4-1.8 1-2.5-.1-.2-.4-1.2.1-2.5 0 0 .8-.2 2.6 1a8.9 8.9 0 0 1 4.7 0c1.8-1.2 2.6-1 2.6-1 .5 1.3.2 2.3.1 2.5.6.7 1 1.5 1 2.5 0 3.6-2.2 4.4-4.2 4.6.3.3.6.8.6 1.6v2.4c0 .3.2.6.7.5A9.3 9.3 0 0 0 12 2.8z" fill="currentColor" stroke="none"/></svg></a>
+      <button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="פתיחת תפריט"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+<div class="reading-progress" aria-hidden="true"><span data-reading-bar></span></div>
+<article class="chapter" data-chapter="06-first-transitions" data-chapter-num="06">
+  <header class="chapter-hero">
+    <div class="container">
+      <nav class="crumbs" aria-label="פירורי לחם"><a href="../index.html">בית</a><span aria-hidden="true">/</span><a href="index.html">הקורס</a><span aria-hidden="true">/</span><span aria-current="page">פרק 06</span></nav>
+      <div class="chapter-hero-grid">
+        <div class="chapter-num" aria-hidden="true">06</div>
+        <div>
+          <p class="eyebrow">פרק 06 מתוך 15</p>
+          <h1 class="chapter-title">המעברים הראשונים</h1>
+          <p class="chapter-en" dir="ltr">Your First Transitions</p>
+          <p class="lead">שישה מעברים שכל DJ חייב לדעת — Blend ארוך, Bass Swap, פילטר, Echo Out, קאט ולופ — כל אחד עם מתכון מדויק לפי תיבות, הטעויות הנפוצות, ודמו מהרפו ששומעים ואז משחזרים.</p>
+          <div class="chapter-meta">
+            <span class="meta-item"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>18 דק' קריאה</span>
+            <span class="badge badge--level" data-level="מתחיל">מתחיל</span>
+            <span class="meta-item"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 15.5V12a8 8 0 0 1 16 0v3.5"/><rect x="3" y="14" width="5" height="7" rx="2"/><rect x="16" y="14" width="5" height="7" rx="2"/></svg>2 קטעי שמע</span>
+            <span class="meta-item read-state" data-read-state hidden><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>נקרא</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container chapter-layout">
+    <aside class="chapter-toc" aria-label="תוכן הפרק">
+  <details class="toc-box" open data-toc-details>
+    <summary><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg><span>בפרק הזה</span><svg class="icon toc-chev" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9.5 6 6 6-6"/></svg></summary>
+    <nav class="toc-nav"><ol><li><a href="#מה-תלמדו-בפרק" data-toc-link>מה תלמדו בפרק</a></li><li><a href="#אנטומיה-של-מעבר" data-toc-link>אנטומיה של מעבר</a><ol><li><a href="#רשימת-הכנה-לפני-כל-מעבר" data-toc-link>רשימת הכנה — לפני כל מעבר</a></li><li><a href="#שלושה-כללי-זהב" data-toc-link>שלושה כללי זהב</a></li></ol></li><li><a href="#1-blend-ארוך-המעבר-הבלתי-מורגש" data-toc-link>1. Blend ארוך — המעבר הבלתי מורגש</a></li><li><a href="#2-bass-swap-החלפת-באסים-על-ה-1" data-toc-link>2. Bass Swap — החלפת באסים על ה-1</a><ol><li><a href="#שתי-דרכים-לבצע-את-ההחלפה" data-toc-link>שתי דרכים לבצע את ההחלפה</a></li></ol></li><li><a href="#3-מעבר-פילטר-להעלים-ולחשוף" data-toc-link>3. מעבר פילטר — להעלים ולחשוף</a></li><li><a href="#4-echo-out-יציאה-נקייה" data-toc-link>4. Echo Out — יציאה נקייה</a></li><li><a href="#5-קאט-סלאם-רגע-אחד-חד" data-toc-link>5. קאט / סלאם — רגע אחד חד</a></li><li><a href="#6-מעבר-לופ-לקנות-זמן-וליצור-מתח" data-toc-link>6. מעבר לופ — לקנות זמן וליצור מתח</a><ol><li><a href="#א-לופ-שמאריך-את-a" data-toc-link>א. לופ שמאריך את A</a></li><li><a href="#ב-loop-roll-מתח-לפני-דרופ" data-toc-link>ב. Loop Roll — מתח לפני דרופ</a></li></ol></li><li><a href="#טבלת-סיכום" data-toc-link>טבלת סיכום</a><ol><li><a href="#רכיבה-על-הטמפו-אחרי-מעבר" data-toc-link>&quot;רכיבה&quot; על הטמפו אחרי מעבר</a></li></ol></li><li><a href="#איך-מתרגלים-עם-הדמואים" data-toc-link>איך מתרגלים עם הדמואים</a></li><li><a href="#תרגילים" data-toc-link>תרגילים</a></li><li><a href="#סיכום" data-toc-link>סיכום</a></li><li><a href="#בפרק-הבא" data-toc-link>בפרק הבא</a></li></ol></nav>
+  </details>
+</aside>
+    <div class="prose" data-prose>
+      <p>זה הפרק שחיכיתם לו. כל מה שלמדתם עד עכשיו — ספירת פרייזים, ביטמאצ'ינג, Gain ו-EQ — מתחבר כאן לכלי אחד: <strong>המעבר</strong>. מעבר טוב הוא לא "טריק"; הוא החלטה מוזיקלית. איך אני רוצה שהרחבה תרגיש ברגע הזה? להמשיך לזרום בלי לשים לב? לקבל מכה? לנשום? בפרק נלמד שישה מעברים בסיסיים. לכל אחד יש מתכון מדויק לפי תיבות, וכל אחד מגיע עם דמו מוכן ברפו: קודם שומעים איך זה אמור להישמע — ואז משחזרים עם אותם שני טראקים בדיוק.</p>
+<h2 id="מה-תלמדו-בפרק">מה תלמדו בפרק<a class="anchor" href="#מה-תלמדו-בפרק" title="קישור ישיר לסעיף">#</a></h2>
+<ul>
+<li>האנטומיה של כל מעבר, ורשימת הכנה של 7 צעדים</li>
+<li><strong>Blend ארוך</strong> — המעבר ה"בלתי מורגש"</li>
+<li><strong>Bass Swap</strong> — החלפת באסים על ה-1</li>
+<li><strong>מעבר פילטר</strong> — להעלים שיר אחד ולחשוף את השני</li>
+<li><strong>Echo Out</strong> — יציאה נקייה, גם בין ז'אנרים וקצבים</li>
+<li><strong>קאט / סלאם</strong> — מעבר חד ברגע אחד</li>
+<li><strong>מעבר לופ</strong> — לקנות זמן וליצור מתח</li>
+<li>איך מתרגלים עם הדמואים שב-<code>music/transitions/</code></li>
+</ul>
+<h2 id="אנטומיה-של-מעבר">אנטומיה של מעבר<a class="anchor" href="#אנטומיה-של-מעבר" title="קישור ישיר לסעיף">#</a></h2>
+<p>נקרא לשיר שמתנגן עכשיו <strong>A</strong> (היוצא), ולשיר החדש <strong>B</strong> (הנכנס). כל מעבר בנוי משלושה חלקים:</p>
+<ol>
+<li><strong>הכנה</strong> — באוזניות, לפני שהקהל שומע משהו.</li>
+<li><strong>חלון המעבר</strong> — הזמן שבו שני השירים נשמעים יחד. אצלנו נספור אותו ב"תיבות מעבר": <strong>תיבה 1 של המעבר</strong> היא התיבה שבה B מתחיל להישמע.</li>
+<li><strong>יציאה</strong> — A נעלם, ה-EQ שלו חוזר לאמצע, ו-B הוא השיר החדש.</li>
+</ol>
+<figure class="figure"><img alt="חלון המעבר: האאוטרו של A חופף לאינטרו של B, פרייז מול פרייז" src="../assets/guide/06-mix-window.svg" loading="lazy" decoding="async"><figcaption>חלון המעבר: האאוטרו של A חופף לאינטרו של B, פרייז מול פרייז</figcaption></figure>
+<h3 id="רשימת-הכנה-לפני-כל-מעבר">רשימת הכנה — לפני כל מעבר<a class="anchor" href="#רשימת-הכנה-לפני-כל-מעבר" title="קישור ישיר לסעיף">#</a></h3>
+<ol>
+<li><strong>בחרתם B?</strong> BPM קרוב, אנרגיה בכיוון הנכון (על הרמוניה — פרק 10).</li>
+<li><strong>B טעון ובדוק</strong> — Beatgrid תקין, Hot Cues במקום.</li>
+<li><strong>Trim</strong> של B מכוון באוזניות (פרק 5).</li>
+<li><strong>EQ</strong> של B מוכן — בדרך כלל Low למטה.</li>
+<li><strong>ביטמאצ'ינג</strong> של B — באוזן או ב-Sync.</li>
+<li><strong>אתם יודעים איפה אתם ב-A.</strong> כמה תיבות נשארו עד האאוטרו? (Hot Cue G, ו-Memory Cues עוזרים.)</li>
+<li><strong>מתחילים את B על ה-1</strong> של פרייז ב-A.</li>
+</ol>
+<aside class="callout callout--tip" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.5 18h5M10.5 21h3M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg><span>טיפ</span></div><div class="callout-body"><p>הכנה טובה היא 80% מהמעבר. אם הגעתם לחלון המעבר וכל שבעת הצעדים מוכנים, הידיים צריכות לעשות רק שניים-שלושה דברים פשוטים. אם הגעתם לא מוכנים — אף טכניקה לא תציל.</p></div></aside>
+<h3 id="שלושה-כללי-זהב">שלושה כללי זהב<a class="anchor" href="#שלושה-כללי-זהב" title="קישור ישיר לסעיף">#</a></h3>
+<ul>
+<li><strong>מתחילים על ה-1 של פרייז.</strong> תמיד.</li>
+<li><strong>באס אחד בכל רגע.</strong> אף פעם לא שני Lows מלאים יחד.</li>
+<li><strong>מעבר לוקח 8, 16 או 32 תיבות</strong> — לא "בערך חצי דקה". סופרים.</li>
+</ul>
+<h2 id="1-blend-ארוך-המעבר-הבלתי-מורגש">1. Blend ארוך — המעבר הבלתי מורגש<a class="anchor" href="#1-blend-ארוך-המעבר-הבלתי-מורגש" title="קישור ישיר לסעיף">#</a></h2>
+<p><strong>מתי:</strong> דיפ-האוס, מלודיק טכנו, אפרו-האוס, וורם-אפ. כשהשירים דומים באופי, ואתם רוצים שהרחבה לא תרגיש שהשיר התחלף.
+<strong>אורך:</strong> 32 תיבות (כדקה ב-124 BPM).
+<strong>דמו:</strong> <span class="tref" data-id="transition-01"><code>transition-01</code></span> (בתיקייה <code>music/transitions/</code>) — מ-<span class="tref" data-id="house-01"><code>house-01</code></span> ("שקיעה ביפו", 122) ל-<span class="tref" data-id="house-02"><code>house-02</code></span> ("גג קטיפה", 121).</p>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>תיבות מעבר</th>
+<th>A (יוצא)</th>
+<th>B (נכנס)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>הכנה</td>
+<td>מתנגן, EQ באמצע</td>
+<td>ב-Hot Cue A, Low למטה לגמרי, High מעט למטה (שעה 10), פיידר למטה</td>
+</tr>
+<tr>
+<td>1</td>
+<td>מגיע ל-Hot Cue G (אאוטרו)</td>
+<td><strong>מתחיל</strong>, פיידר עולה לאט</td>
+</tr>
+<tr>
+<td>1–8</td>
+<td>ללא שינוי</td>
+<td>פיידר עולה בהדרגה עד כ-75%</td>
+</tr>
+<tr>
+<td>9–16</td>
+<td>High יורד מעט (לשעה 10)</td>
+<td>פיידר 100%, High חוזר לאמצע</td>
+</tr>
+<tr>
+<td>17–20</td>
+<td>Low יורד בהדרגה עד למטה</td>
+<td>Low עולה בהדרגה לאמצע (מתחלפים "באמצע הדרך")</td>
+</tr>
+<tr>
+<td>21–28</td>
+<td>Mid יורד מעט, פיידר יורד לאט</td>
+<td>מלא</td>
+</tr>
+<tr>
+<td>29–32</td>
+<td>פיידר מגיע ל-0</td>
+<td>מלא</td>
+</tr>
+<tr>
+<td>אחרי</td>
+<td>EQ ופיידר חוזרים לאמצע/אפס</td>
+<td>השיר החדש</td>
+</tr>
+</tbody>
+</table></div>
+<aside class="callout callout--warn" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.3 4.3 2.8 17.5A2 2 0 0 0 4.5 20.5h15a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v4.5M12 17h.01"/></svg><span>זהירות</span></div><div class="callout-body"><p>ב-Blend, הבאסים מתחלפים <strong>בהדרגה</strong> לאורך 4 תיבות — אבל שני ה-Lows אף פעם לא מלאים יחד. כשאחד בשעה 12, השני חייב להיות למטה. ב"אמצע הדרך" שניהם בערך בשעה 9–10.</p></div></aside>
+<p><strong>טעויות נפוצות:</strong> להעלות את B מהר מדי; לשכוח להחזיר את ה-High של B; להשאיר את A עד הסוף כשהוא כבר "מת" באאוטרו.</p>
+<h2 id="2-bass-swap-החלפת-באסים-על-ה-1">2. Bass Swap — החלפת באסים על ה-1<a class="anchor" href="#2-bass-swap-החלפת-באסים-על-ה-1" title="קישור ישיר לסעיף">#</a></h2>
+<p><strong>מתי:</strong> האוס, טק-האוס, טכנו, אפרו-האוס — כמעט תמיד. זה המעבר הכי שימושי במוזיקה אלקטרונית.
+<strong>אורך:</strong> 32 תיבות (אפשר לקצר ל-16).
+<strong>דמו:</strong> <span class="tref" data-id="transition-02"><code>transition-02</code></span> — מ-<span class="tref" data-id="house-05"><code>house-05</code></span> ("מכונת גרוב", 126) ל-<span class="tref" data-id="house-06"><code>house-06</code></span> ("שודד הבאסליין", 127).
+<strong>תרגול יבש:</strong> <span class="tref" data-id="practice-08"><code>practice-08</code></span> ו-<span class="tref" data-id="practice-09"><code>practice-09</code></span> — שני לופים עם באס דומיננטי, באותו קצב (124).</p>
+<p>ההבדל מ-Blend: ההחלפה קורית <strong>ברגע אחד</strong>, בדיוק על ה-1 של פרייז. הרחבה מרגישה "בעיטה" חדשה של באס — וזה חלק מהקסם.</p>
+<figure class="figure"><img alt="ציר זמן של Bass Swap לאורך 32 תיבות: מיקום ידיות ה-Low והפיידרים" src="../assets/guide/06-bass-swap-timeline.svg" loading="lazy" decoding="async"><figcaption>ציר זמן של Bass Swap לאורך 32 תיבות: מיקום ידיות ה-Low והפיידרים</figcaption></figure>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>תיבות מעבר</th>
+<th>A (יוצא)</th>
+<th>B (נכנס)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>הכנה</td>
+<td>מתנגן</td>
+<td>ב-Hot Cue A, <strong>Low למטה לגמרי</strong>, פיידר למטה</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Hot Cue G</td>
+<td><strong>מתחיל</strong></td>
+</tr>
+<tr>
+<td>1–8</td>
+<td>ללא שינוי</td>
+<td>פיידר עולה עד 100% (בלי באס — רק התופים והגבוהים של B)</td>
+</tr>
+<tr>
+<td>9–16</td>
+<td>אפשר להוריד מעט High (שעה 10–11)</td>
+<td>מלא, בלי Low</td>
+</tr>
+<tr>
+<td><strong>17 — על ה-1</strong></td>
+<td><strong>Low למטה בבת אחת</strong></td>
+<td><strong>Low לאמצע בבת אחת</strong></td>
+</tr>
+<tr>
+<td>17–24</td>
+<td>Mid ו-High יורדים בהדרגה</td>
+<td>מלא</td>
+</tr>
+<tr>
+<td>25–32</td>
+<td>פיידר יורד ל-0</td>
+<td>מלא</td>
+</tr>
+<tr>
+<td>אחרי</td>
+<td>EQ ופיידר מתאפסים</td>
+<td>השיר החדש</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="שתי-דרכים-לבצע-את-ההחלפה">שתי דרכים לבצע את ההחלפה<a class="anchor" href="#שתי-דרכים-לבצע-את-ההחלפה" title="קישור ישיר לסעיף">#</a></h3>
+<ol>
+<li><strong>שתי ידיים בבת אחת:</strong> יד שמאל על ה-Low של A, יד ימין על ה-Low של B, ובדיוק על ה-1 — שתיהן זזות יחד. הכי מדויק, אבל דורש קואורדינציה.</li>
+<li><strong>"יציאה ואז כניסה":</strong> על ביט 4 של תיבה 16 — Low של A למטה. על ה-1 של תיבה 17 — Low של B למעלה. רבע ביט בלי באס, שבדרך כלל אף אחד לא שם לב אליו — ולפעמים אפילו מוסיף "נשימה".</li>
+</ol>
+<aside class="callout callout--tip" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.5 18h5M10.5 21h3M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg><span>טיפ</span></div><div class="callout-body"><p>בטראקים של DJ Lab, החלפת הבאס בתיבה 17 של המעבר קורית כמעט מעצמה: באאוטרו של A הבאס יוצא אחרי 16 תיבות (Hot Cue H), ובאינטרו של B הבאס נכנס אחרי 16 תיבות (Hot Cue B). אתם רק "מחזקים" את מה שהמבנה כבר עושה. בטראקים מסחריים זה לא תמיד כך — לכן ה-EQ.</p></div></aside>
+<p><strong>טעויות נפוצות:</strong> להחליף באסים באמצע פרייז; להעלות את ה-Low של B לפני שהורדתם את של A ("רגע של בוץ"); לשכוח ש-B עדיין בלי באס, ולתהות למה המעבר "דק".</p>
+<h2 id="3-מעבר-פילטר-להעלים-ולחשוף">3. מעבר פילטר — להעלים ולחשוף<a class="anchor" href="#3-מעבר-פילטר-להעלים-ולחשוף" title="קישור ישיר לסעיף">#</a></h2>
+<p><strong>מתי:</strong> טכנו ומלודיק טכנו, וגם כשהשירים לא ממש "מסתדרים" ורוצים להסתיר את החפיפה. מעולה כשאין לשיר B אינטרו נקי.
+<strong>אורך:</strong> 16 תיבות.
+<strong>דמו:</strong> <span class="tref" data-id="transition-03"><code>transition-03</code></span> — מ-<span class="tref" data-id="techno-05"><code>techno-05</code></span> ("קתדרלת ניאון", 122) ל-<span class="tref" data-id="techno-08"><code>techno-08</code></span> ("מסלול שקט", 122).</p>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>תיבות מעבר</th>
+<th>A (יוצא)</th>
+<th>B (נכנס)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>הכנה</td>
+<td>מתנגן, פילטר באמצע</td>
+<td>ב-Hot Cue A או B, Low למטה, פיידר למטה</td>
+</tr>
+<tr>
+<td>1</td>
+<td>—</td>
+<td><strong>מתחיל</strong>, פיידר עולה ל-80% במשך 4 תיבות</td>
+</tr>
+<tr>
+<td>1–12</td>
+<td><strong>פילטר HPF עולה לאט</strong> משעה 12 לשעה 3 — הבאס והגוף נעלמים</td>
+<td>עולה</td>
+</tr>
+<tr>
+<td>13–16</td>
+<td>פיידר יורד ל-0 (הפילטר עדיין פתוח)</td>
+<td>Low חוזר לאמצע על ה-1 של תיבה 13 או 17</td>
+</tr>
+<tr>
+<td>17</td>
+<td>—</td>
+<td>מלא</td>
+</tr>
+<tr>
+<td>אחרי</td>
+<td><strong>רק עכשיו</strong> הפילטר חוזר לאמצע</td>
+<td>השיר החדש</td>
+</tr>
+</tbody>
+</table></div>
+<aside class="callout callout--warn" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.3 4.3 2.8 17.5A2 2 0 0 0 4.5 20.5h15a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v4.5M12 17h.01"/></svg><span>זהירות</span></div><div class="callout-body"><p>אל תחזירו את הפילטר של A לאמצע כשהפיידר שלו עדיין למעלה — אחרת השיר "יקפוץ" בחזרה לרגע עם באס מלא. קודם פיידר למטה, אחר כך פילטר.</p></div></aside>
+<p><strong>וריאציה — פילטר על B:</strong> מתחילים את B עם LPF כמעט סגור (נשמע עמום ורחוק), ופותחים אותו לאט לאורך 16 תיבות בזמן ש-A יוצא. יוצר תחושה של "משהו מתקרב".</p>
+<h2 id="4-echo-out-יציאה-נקייה">4. Echo Out — יציאה נקייה<a class="anchor" href="#4-echo-out-יציאה-נקייה" title="קישור ישיר לסעיף">#</a></h2>
+<p><strong>מתי:</strong> כשרוצים לעבור בין ז'אנרים או קצבים שונים, כשלשיר B אין אינטרו נוח, כשמשהו השתבש ורוצים "לאפס" — או סתם כשרוצים רגע דרמטי.
+<strong>אורך:</strong> 1–4 תיבות.
+<strong>דמו:</strong> <span class="tref" data-id="transition-04"><code>transition-04</code></span> — מ-<span class="tref" data-id="house-07"><code>house-07</code></span> ("מחסן 26", טק-האוס, 128) ל-<span class="tref" data-id="techno-01"><code>techno-01</code></span> ("דופק בטון", טכנו, 130).</p>
+<p>היתרון הגדול: אין חפיפה ארוכה, ולכן <strong>לא חייבים ביטמאצ'ינג</strong>. B יכול להישאר בקצב שלו.</p>
+<ol>
+<li><strong>הכנה:</strong> בחרו את אפקט ה-ECHO ב-Beat FX, עם ערך ביט של 1/2 או 3/4 (או ביט אחד), וכוונו את עוצמת האפקט לבערך 50%. הקצו אותו לערוץ של A. את B טענו ל-Hot Cue A (או D, אם רוצים להיכנס ישר לדרופ), עם Trim מכוון.</li>
+<li><strong>ספרו את A</strong> עד התיבה האחרונה של פרייז (תיבה 8, 16 או 32 שלו).</li>
+<li><strong>על ה-1 של התיבה האחרונה</strong> — הפעילו את האקו.</li>
+<li><strong>על ביט 3 או 4 של אותה תיבה</strong> — הורידו את הפיידר של A בבת אחת. הזנב של האקו ממשיך להדהד ולהתפוגג.</li>
+<li><strong>על ה-1 הבא</strong> — נגנו את B והעלו את הפיידר שלו.</li>
+<li>כבו את האקו אחרי שהזנב נגמר, והחזירו את ה-EQ של A לאמצע (הפיידר שלו כבר למטה).</li>
+</ol>
+<aside class="callout callout--rekordbox" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3.5v17M12 3.5v17M18 3.5v17"/><rect x="3.5" y="13" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="9.5" y="6.5" width="5" height="3.2" rx="1" fill="currentColor"/><rect x="15.5" y="15" width="5" height="3.2" rx="1" fill="currentColor"/></svg><span>ב-Rekordbox</span></div><div class="callout-body"><p>ברוב הציוד של Pioneer DJ, הזנב של האקו ממשיך להישמע גם אחרי שהפיידר ירד. אם אצלכם הוא נקטע — נסו את מצב Pad FX: ב-<code>DDJ-FLX4</code> יש פד ייעודי של Echo Out שעושה את כל הפעולה בלחיצה אחת. כדאי להכיר את שתי הדרכים.</p></div></aside>
+<p><strong>טעויות נפוצות:</strong> להפעיל את האקו באמצע פרייז; לשכוח לכבות אותו (והאקו "נדבק" לשיר הבא); אקו חזק מדי שממלא את הרחבה בבוץ.</p>
+<h2 id="5-קאט-סלאם-רגע-אחד-חד">5. קאט / סלאם — רגע אחד חד<a class="anchor" href="#5-קאט-סלאם-רגע-אחד-חד" title="קישור ישיר לסעיף">#</a></h2>
+<p><strong>מתי:</strong> מיינסטרים, ביג רום, היפ-הופ, רגאטון, מזרחית ואירועים — כל מקום שבו השירים קצרים, האינטרו קצר, והאנרגיה צריכה להישאר בשיא. גם בטכנו, כשרוצים "להכות".
+<strong>אורך:</strong> ביט אחד.
+<strong>דמו:</strong> <span class="tref" data-id="transition-05"><code>transition-05</code></span> — מ-<span class="tref" data-id="mainstream-01"><code>mainstream-01</code></span> ("הבמה הראשית", 128) ל-<span class="tref" data-id="mainstream-02"><code>mainstream-02</code></span> ("ידיים לשמיים", 128).</p>
+<p>הרעיון: A ו-B מתחלפים <strong>על ה-1</strong>, בלי חפיפה. בדרך כלל ברגע הכי חזק — בסוף בילדאפ, במקום שבו הקהל מצפה לדרופ של A, הוא מקבל את הדרופ של B.</p>
+<ol>
+<li><strong>הכנה:</strong> קבעו עקומת Crossfader חדה (פרק 5). A בצד שמאל, B בצד ימין, שני ה-Channel Faders למעלה, ה-Crossfader בצד של A. אם תשתמשו בפיידרים בלבד — B למטה.</li>
+<li><strong>B בקצב:</strong> ישרו את B ל-A (ביד או ב-Sync), ועצרו אותו על Hot Cue D (הדרופ).</li>
+<li><strong>ספרו את הבילדאפ של A</strong> — בדרך כלל 8 תיבות לפני הדרופ.</li>
+<li><strong>על ה-1 של הדרופ</strong> — הפעילו את Hot Cue D של B והעבירו את ה-Crossfader ל-B <strong>באותה תנועה</strong>.</li>
+</ol>
+<aside class="callout callout--tip" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.5 18h5M10.5 21h3M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg><span>טיפ</span></div><div class="callout-body"><p>כאן Quantize ו-Sync הם חברים טובים: כשהם דולקים, לחיצה על Hot Cue "נצמדת" לביט, גם אם לחצתם קצת מוקדם או מאוחר. לקאטים בהופעה, מותר — ומומלץ — להשתמש בהם.</p></div></aside>
+<p><strong>וריאציה — "סלאם" לבילדאפ:</strong> קאט מ-A ישר לתחילת הבילדאפ של B (Hot Cue שסימנתם 8 תיבות לפני הדרופ שלו). הקהל מקבל עוד בילדאפ, והדרופ של B מגיע עם כל המתח.</p>
+<p><strong>טעויות נפוצות:</strong> קאט באמצע תיבה; שכחה של B ב-Low חתוך מהכנה קודמת (הדרופ נוחת בלי באס); Trim לא מכוון — הדרופ של B "קופץ" חזק מדי.</p>
+<h2 id="6-מעבר-לופ-לקנות-זמן-וליצור-מתח">6. מעבר לופ — לקנות זמן וליצור מתח<a class="anchor" href="#6-מעבר-לופ-לקנות-זמן-וליצור-מתח" title="קישור ישיר לסעיף">#</a></h2>
+<p><strong>מתי:</strong> כשהאאוטרו של A קצר מדי (קורה הרבה בפופ, היפ-הופ ומזרחית), כשצריך עוד כמה שניות כדי להכין את B, או כשרוצים לבנות מתח לפני דרופ.
+<strong>אורך:</strong> גמיש.
+<strong>דמו:</strong> <span class="tref" data-id="transition-06"><code>transition-06</code></span> — מ-<span class="tref" data-id="techno-02"><code>techno-02</code></span> ("לב תעשייתי", 131) ל-<span class="tref" data-id="techno-03"><code>techno-03</code></span> ("טקס סטרובוסקופ", 132), עם Loop Roll.</p>
+<h3 id="א-לופ-שמאריך-את-a">א. לופ שמאריך את A<a class="anchor" href="#א-לופ-שמאריך-את-a" title="קישור ישיר לסעיף">#</a></h3>
+<ol>
+<li>כש-A מגיע לקטע של תופים בלבד (בטראקים של DJ Lab — Hot Cue H, "16 האחרונות"), <strong>על ה-1</strong> הפעילו לופ של 4 תיבות (16 ביטים).</li>
+<li>A מתנגן עכשיו בלולאה, בלי סוף. יש לכם זמן.</li>
+<li>הכניסו את B על ה-1 של הלופ, וערבבו כמו ב-Bass Swap: B עולה בלי באס, החלפת באסים על ה-1 של מחזור לופ, A יוצא.</li>
+<li>אם רוצים לחזור ל-A — יציאה מהלופ (Exit) על ה-1.</li>
+</ol>
+<h3 id="ב-loop-roll-מתח-לפני-דרופ">ב. Loop Roll — מתח לפני דרופ<a class="anchor" href="#ב-loop-roll-מתח-לפני-דרופ" title="קישור ישיר לסעיף">#</a></h3>
+<ol>
+<li>בתיבה האחרונה לפני הנקודה שבה B נוחת (או לפני שאתם יוצאים מ-A), הפעילו לופ של תיבה אחת.</li>
+<li><strong>קצרו אותו בהדרגה:</strong> תיבה → חצי תיבה → ביט → חצי ביט → רבע ביט. כל קיצור על ביט — "טררררר" שמאיץ.</li>
+<li><strong>על ה-1</strong> — צאו מהלופ, הורידו את A, ו-B נוחת (או נכנס לדרופ).</li>
+</ol>
+<aside class="callout callout--warn" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.3 4.3 2.8 17.5A2 2 0 0 0 4.5 20.5h15a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v4.5M12 17h.01"/></svg><span>זהירות</span></div><div class="callout-body"><p>עשו לופים רק על קטעים של תופים או גרוב פשוט. לופ על ווקאל באמצע משפט, או על אקורד שמתחלף, נשמע כמו תקלה. ו-Quantize דולק — כדי שהלופ יתחיל ויסתיים בדיוק על הרשת.</p></div></aside>
+<h2 id="טבלת-סיכום">טבלת סיכום<a class="anchor" href="#טבלת-סיכום" title="קישור ישיר לסעיף">#</a></h2>
+<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>
+<thead>
+<tr>
+<th>מעבר</th>
+<th>אורך</th>
+<th>קושי</th>
+<th>הכי מתאים ל...</th>
+<th>דמו</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blend ארוך</td>
+<td>32 תיבות</td>
+<td>⭐⭐</td>
+<td>דיפ-האוס, מלודיק, וורם-אפ</td>
+<td><span class="tref" data-id="transition-01"><code>transition-01</code></span></td>
+</tr>
+<tr>
+<td>Bass Swap</td>
+<td>16–32</td>
+<td>⭐⭐</td>
+<td>האוס, טק-האוס, טכנו, אפרו</td>
+<td><span class="tref" data-id="transition-02"><code>transition-02</code></span></td>
+</tr>
+<tr>
+<td>פילטר</td>
+<td>16</td>
+<td>⭐⭐</td>
+<td>טכנו, מלודיק, להסתרת חפיפה</td>
+<td><span class="tref" data-id="transition-03"><code>transition-03</code></span></td>
+</tr>
+<tr>
+<td>Echo Out</td>
+<td>1–4</td>
+<td>⭐</td>
+<td>מעברי ז'אנר וקצב, חירום</td>
+<td><span class="tref" data-id="transition-04"><code>transition-04</code></span></td>
+</tr>
+<tr>
+<td>קאט / סלאם</td>
+<td>ביט</td>
+<td>⭐ (תזמון ⭐⭐⭐)</td>
+<td>מיינסטרים, היפ-הופ, אירועים</td>
+<td><span class="tref" data-id="transition-05"><code>transition-05</code></span></td>
+</tr>
+<tr>
+<td>לופ / Loop Roll</td>
+<td>גמיש</td>
+<td>⭐⭐⭐</td>
+<td>אאוטרו קצר, בניית מתח</td>
+<td><span class="tref" data-id="transition-06"><code>transition-06</code></span></td>
+</tr>
+</tbody>
+</table></div>
+<p>ובתיקייה מחכים עוד ארבעה דמואים לפרקים הבאים: <span class="tref" data-id="transition-07"><code>transition-07</code></span> (קפיצת אנרגיה הרמונית — פרק 10), <span class="tref" data-id="transition-08"><code>transition-08</code></span> (מעבר טמפו מ-95 ל-124 עם אקו — פרק 15), <span class="tref" data-id="transition-09"><code>transition-09</code></span> (החלפת דרופים בים-תיכוני) ו-<span class="tref" data-id="transition-10"><code>transition-10</code></span> (כניסה בברייקדאון במלודיק טכנו). שווה להקשיב להם כבר עכשיו, רק כדי לשמוע מה מחכה.</p>
+<h3 id="רכיבה-על-הטמפו-אחרי-מעבר">"רכיבה" על הטמפו אחרי מעבר<a class="anchor" href="#רכיבה-על-הטמפו-אחרי-מעבר" title="קישור ישיר לסעיף">#</a></h3>
+<p>נניח שעברתם מ-<span class="tref" data-id="house-02"><code>house-02</code></span> (121) ל-<span class="tref" data-id="house-03"><code>house-03</code></span> (124). בזמן המעבר, B רץ ב-121 כדי להתאים ל-A. אחרי ש-A יצא, אפשר להשאיר את B ב-121 — או להחזיר אותו בהדרגה לקצב המקורי שלו: הזזה זעירה של ה-Tempo Fader כל כמה תיבות, עד שמגיעים ל-124. כך מעלים אנרגיה לאט בלי שהרחבה תרגיש "קפיצה". הכלל: לא יותר מבערך 1 BPM בכל פרייז של 16–32 תיבות.</p>
+<h2 id="איך-מתרגלים-עם-הדמואים">איך מתרגלים עם הדמואים<a class="anchor" href="#איך-מתרגלים-עם-הדמואים" title="קישור ישיר לסעיף">#</a></h2>
+<ol>
+<li><strong>הקשיבו לדמו</strong> פעמיים, בלי לעשות כלום.</li>
+<li><strong>בהאזנה השלישית — רשמו</strong>: באיזה זמן B נכנס? מתי הבאס התחלף? מתי A נעלם? השוו לשדה <code>steps_he</code> בקובץ ה-JSON של הדמו.</li>
+<li><strong>שחזרו</strong> עם אותם שני טראקים בדיוק.</li>
+<li><strong>הקליטו</strong> את הניסיון שלכם.</li>
+<li><strong>השוו</strong> את ההקלטה שלכם לדמו. מה שונה?</li>
+<li><strong>חזרו</strong> עד שקשה להבדיל.</li>
+</ol>
+<h2 id="תרגילים">תרגילים<a class="anchor" href="#תרגילים" title="קישור ישיר לסעיף">#</a></h2>
+<aside class="callout callout--exercise" role="note"><div class="callout-head"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 15.5V12a8 8 0 0 1 16 0v3.5"/><rect x="3" y="14" width="5" height="7" rx="2"/><rect x="16" y="14" width="5" height="7" rx="2"/></svg><span>תרגיל 1 — Bass Swap יבש (15 דקות)</span></div><div class="callout-body"><p>טענו את <span class="tref" data-file="music/practice/practice-08-bass-swap-a-124.mp3" data-missing="1"><code>music/practice/practice-08-bass-swap-a-124.mp3</code></span> לדק 1 ואת <span class="tref" data-file="music/practice/practice-09-bass-swap-b-124.mp3" data-missing="1"><code>music/practice/practice-09-bass-swap-b-124.mp3</code></span> לדק 2. ישרו (שניהם 124). עם הפיידרים למעלה, החליפו את ה-Lows הלוך-חזור <strong>על ה-1 של כל פרייז של 8 תיבות</strong>. עשרים החלפות. אחר כך עם עיניים עצומות. המטרה: שלא יהיה אף רגע של "שני באסים" או "אף באס".</p>
+<p>🎧 תרגיל 2 — Blend: שחזרו את <span class="tref" data-id="transition-01"><code>transition-01</code></span>: מ-<span class="tref" data-file="music/tracks/deep_house/house-01-sunset-over-jaffa.mp3" data-missing="1"><code>music/tracks/deep_house/house-01-sunset-over-jaffa.mp3</code></span> ל-<span class="tref" data-file="music/tracks/deep_house/house-02-velvet-rooftop.mp3" data-missing="1"><code>music/tracks/deep_house/house-02-velvet-rooftop.mp3</code></span> לפי הטבלה של Blend ארוך. שימו לב: B ב-121 ו-A ב-122 — צריך להתאים.</p>
+<p>🎧 תרגיל 3 — Bass Swap אמיתי: שחזרו את <span class="tref" data-id="transition-02"><code>transition-02</code></span>: מ-<span class="tref" data-file="music/tracks/tech_house/house-05-groove-machine.mp3"><code>music/tracks/tech_house/house-05-groove-machine.mp3</code></span> ל-<span class="tref" data-file="music/tracks/tech_house/house-06-bassline-bandit.mp3" data-missing="1"><code>music/tracks/tech_house/house-06-bassline-bandit.mp3</code></span>. Hot Cue G של A ↔ Hot Cue A של B, החלפה בתיבה 17.</p>
+<p>🎧 תרגיל 4 — פילטר: שחזרו את <span class="tref" data-id="transition-03"><code>transition-03</code></span>: מ-<span class="tref" data-file="music/tracks/melodic_techno/techno-05-neon-cathedral.mp3" data-missing="1"><code>music/tracks/melodic_techno/techno-05-neon-cathedral.mp3</code></span> ל-<span class="tref" data-file="music/tracks/melodic_techno/techno-08-silent-orbit.mp3" data-missing="1"><code>music/tracks/melodic_techno/techno-08-silent-orbit.mp3</code></span>. נסו גם את הווריאציה עם LPF על B.</p>
+<p>🎧 תרגיל 5 — Echo Out: שחזרו את <span class="tref" data-id="transition-04"><code>transition-04</code></span>: מ-<span class="tref" data-file="music/tracks/tech_house/house-07-warehouse-26.mp3" data-missing="1"><code>music/tracks/tech_house/house-07-warehouse-26.mp3</code></span> ל-<span class="tref" data-file="music/tracks/techno/techno-01-concrete-pulse.mp3"><code>music/tracks/techno/techno-01-concrete-pulse.mp3</code></span>. השאירו את B ב-130 — בלי ביטמאצ'ינג. נסו ערכי ביט שונים לאקו (1/2, 3/4, 1) ובחרו את האהוב עליכם.</p>
+<p>🎧 תרגיל 6 — קאט: שחזרו את <span class="tref" data-id="transition-05"><code>transition-05</code></span>: מ-<span class="tref" data-file="music/tracks/big_room/mainstream-01-festival-main-stage.mp3" data-missing="1"><code>music/tracks/big_room/mainstream-01-festival-main-stage.mp3</code></span> ל-<span class="tref" data-file="music/tracks/big_room/mainstream-02-hands-in-the-sky.mp3" data-missing="1"><code>music/tracks/big_room/mainstream-02-hands-in-the-sky.mp3</code></span>. נסו פעם אחת עם Quantize ופעם בלי. מרגישים את ההבדל בתזמון?</p>
+<p>🎧 תרגיל 7 — לופ: שחזרו את <span class="tref" data-id="transition-06"><code>transition-06</code></span>: מ-<span class="tref" data-file="music/tracks/techno/techno-02-industrial-heart.mp3" data-missing="1"><code>music/tracks/techno/techno-02-industrial-heart.mp3</code></span> ל-<span class="tref" data-file="music/tracks/techno/techno-03-strobe-ritual.mp3" data-missing="1"><code>music/tracks/techno/techno-03-strobe-ritual.mp3</code></span>. קודם הלופ שמאריך את A, ואחר כך Loop Roll.</p>
+<p>🎧 תרגיל 8 — מיני-סט ראשון (20 דקות): הקליטו רצף של ארבעה טראקים עם שלושה סוגי מעברים שונים: <span class="tref" data-id="house-01"><code>house-01</code></span> → (Blend) → <span class="tref" data-id="house-02"><code>house-02</code></span> → (Bass Swap) → <span class="tref" data-file="music/tracks/house/house-03-hands-up-florentin.mp3" data-missing="1"><code>music/tracks/house/house-03-hands-up-florentin.mp3</code></span> → (Echo Out) → <span class="tref" data-file="music/tracks/tech_house/house-08-shuffle-theory.mp3" data-missing="1"><code>music/tracks/tech_house/house-08-shuffle-theory.mp3</code></span>. אחרי המעבר ל-<span class="tref" data-id="house-03"><code>house-03</code></span>, "רכבו" לאט על הטמפו מ-121 ל-124. האזינו להקלטה למחרת, ורשמו ביומן מעבר אחד שהצליח ומעבר אחד לשיפור.</p></div></aside>
+<h2 id="סיכום">סיכום<a class="anchor" href="#סיכום" title="קישור ישיר לסעיף">#</a></h2>
+<ul>
+<li>כל מעבר: הכנה → חלון מעבר → יציאה. רוב העבודה בהכנה (7 צעדים).</li>
+<li>מתחילים על ה-1 של פרייז, באס אחד בכל רגע, סופרים תיבות.</li>
+<li><strong>Blend</strong> — הדרגתי ובלתי מורגש. <strong>Bass Swap</strong> — החלפה על ה-1. <strong>פילטר</strong> — מעלים את A וחושף את B.</li>
+<li><strong>Echo Out</strong> — יציאה נקייה בלי צורך בביטמאצ'ינג. <strong>קאט</strong> — רגע אחד חד, מושלם למיינסטרים ואירועים. <strong>לופ</strong> — קונה זמן ובונה מתח.</li>
+<li>תרגלו עם הדמואים: מקשיבים, רושמים, משחזרים, מקליטים, משווים.</li>
+</ul>
+<h2 id="בפרק-הבא">בפרק הבא<a class="anchor" href="#בפרק-הבא" title="קישור ישיר לסעיף">#</a></h2>
+<p>שמתם לב כמה פעמים כתבנו "Hot Cue G" ו"Hot Cue A"? בפרק הבא נלמד לעבוד עם Hot Cues, Memory Cues, לופים, Beat Jump ו-Quantize כמו מקצוענים — ולהכין כל טראק בספרייה כך שהמעברים יהיו קלים.</p>
+<p>👉 <a href="07-hot-cues-loops.html">פרק 7 — Hot Cues ולופים</a></p>
+      <div class="chapter-done">
+        <button class="btn btn--ghost" type="button" data-mark-read><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>סימון הפרק כנקרא</span></button>
+      </div>
+    </div>
+  </div>
+  <nav class="container pn" aria-label="ניווט בין פרקים"><a class="pn-card pn-prev" href="05-mixer-gain-eq.html"><span class="pn-label"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m0 0-6-6m6 6-6 6"/></svg>הפרק הקודם</span><span class="pn-title"><span class="pn-num">05</span>המיקסר: Gain, מטרים, EQ ופילטר</span></a><a class="pn-card pn-next" href="07-hot-cues-loops.html"><span class="pn-label">הפרק הבא<svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5m0 0 6-6m-6 6 6 6"/></svg></span><span class="pn-title"><span class="pn-num">07</span>Hot Cues, לופים ו-Beat Jump</span></a></nav>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><defs><linearGradient id="bm-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2bd6"/><stop offset=".55" stop-color="#8a5cff"/><stop offset="1" stop-color="#22e1ff"/></linearGradient></defs><circle cx="20" cy="20" r="18" fill="none" stroke="url(#bm-g)" stroke-width="3"/><circle cx="20" cy="20" r="11.5" fill="none" stroke="url(#bm-g)" stroke-width="1.5" opacity=".55"/><g fill="url(#bm-g)"><rect x="11" y="16" width="2.6" height="8" rx="1.3"/><rect x="15.4" y="12" width="2.6" height="16" rx="1.3"/><rect x="19.8" y="9.5" width="2.6" height="21" rx="1.3"/><rect x="24.2" y="13.5" width="2.6" height="13" rx="1.3"/><rect x="28.6" y="17" width="2.6" height="6" rx="1.3"/></g></svg><span class="brand-word">DJ<b>Lab</b></span></a>
+      <p>בית הספר לתקלוט שלך: קורס Rekordbox בעברית, מוזיקה מקורית לתרגול וכלים שעובדים ישר בדפדפן.</p>
+    </div>
+    <nav aria-label="ללמוד"><h2>ללמוד</h2><ul>
+      <li><a href="../guide/index.html">הקורס</a></li><li><a href="../practice.html">אימון ומעברים</a></li><li><a href="../sets/index.html">סטים לדוגמה</a></li></ul></nav>
+    <nav aria-label="מוזיקה"><h2>מוזיקה</h2><ul>
+      <li><a href="../library.html">ספריית מוזיקה</a></li><li><a href="../crates/index.html">ארגזים</a></li><li><a href="../tools/rekordbox.html">ייבוא ל-Rekordbox</a></li></ul></nav>
+    <nav aria-label="כלים"><h2>כלים</h2><ul>
+      <li><a href="../tools/mix-trainer.html">מאמן מיקס</a></li><li><a href="../tools/camelot.html">גלגל קאמלוט</a></li><li><a href="../tools/set-builder.html">בונה סטים</a></li></ul></nav>
+  </div>
+  <div class="container footer-legal">
+    <p>המוזיקה המקורית משוחררת ב-<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.he" target="_blank" rel="noopener">CC0</a> · הקוד ב-MIT · הארגזים הם קישורים בלבד - קנו והזרימו ממקורות חוקיים.</p>
+    <p class="muted"><a href="../about.html">אודות ורישיון</a> · © 2026 DJ Lab</p>
+  </div>
+</footer>
+<script src="../data/catalog.js?v=e4c6cf60" defer></script><script src="../data/peaks.js?v=e4c6cf60" defer></script><script src="../data/guide.js?v=e4c6cf60" defer></script><script src="../assets/js/icons.gen.js?v=e4c6cf60" defer></script><script src="../assets/js/core.js?v=e4c6cf60" defer></script><script src="../assets/js/player.js?v=e4c6cf60" defer></script><script src="../assets/js/guide.js?v=e4c6cf60" defer></script>
+</body>
+</html>
