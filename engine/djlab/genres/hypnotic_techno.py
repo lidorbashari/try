@@ -285,5 +285,6 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
                 "סטאב דאב בודד ומיקרו-וריאציות בכל תיבה — הגרוב משתנה בלי שתשימו לב")
     song.description_he = f"{desc}. {int(song.bpm)} BPM בסולם {plan['key']}, דרופ אחד בלבד אחרי ברייקדאון קצר."
     song.mix_tips_he = (song.auto_mix_tips_he() +
-                        " טראק לופי שמושלם לבלנד ארוך: אפשר להחזיק את שני הטראקים יחד 32 תיבות ולשחק רק עם ה-EQ.")
+                        " טראק לופי שמושלם לבלנד ארוך: אפשר להחזיק את שני הטראקים יחד 32 תיבות ולשחק רק עם ה-EQ. "
+                        + xt.neighbours_he(plan))
     return song

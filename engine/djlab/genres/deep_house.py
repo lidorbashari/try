@@ -130,8 +130,8 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
               else None, gain_db=-14.0, pan=0.1, sends={"reverb": 0.3})
 
     if rhodes_style:
-        congas = [drums.conga(float(rng.uniform(200, 230)), "open", rng=rng),
-                  drums.conga(float(rng.uniform(280, 310)), "mute", rng=rng)]
+        congas = [drums.conga(eh.key_hz(key, 190, 240, rng), "open", rng=rng),
+                  drums.conga(eh.key_hz(key, 270, 330, rng), "mute", rng=rng)]
         cp = ["......x...x..x..", "...x......x.x..."][int(rng.integers(2))]
         song.hits("conga", congas, lambda c: cp if c.kind in ("drop",) or (c.kind == "groove" and c.i >= 16)
                   or (c.kind == "intro" and c.i >= 24) else None, gain_db=-16.0, pan=-0.5, humanize=0.15,
@@ -140,7 +140,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
         ride = drums.ride(decay=1.4, bell=0.3, rng=rng)
         song.hits("ride", ride, lambda c: "..x...x...x...x." if c.kind == "drop" else None, gain_db=-21.0, pan=0.35,
                   lp=12000.0)
-        tops = drums.perc_blip(float(rng.uniform(900, 1200)), 0.03, fm_index=1.2, rng=rng)
+        tops = drums.perc_blip(eh.key_hz(key, 880, 1250, rng), 0.03, fm_index=1.2, rng=rng)
         song.hits("perc", tops, lambda c: "......x.......x." if c.kind in ("groove", "drop") or
                   (c.kind == "intro" and c.i >= 24) else None, gain_db=-18.0, pan=0.55, sends={"delay": 0.2})
 

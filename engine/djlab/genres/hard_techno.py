@@ -252,5 +252,5 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
                            f"קלאפ קשה והיי-האטים מהירים; {desc}. בלתי מתפשר — לשיא של הסט.")
     song.mix_tips_he = (song.auto_mix_tips_he() +
                         " ב-148–150 BPM המעבר מטכנו רגיל דורש קפיצת טמפו: עדיף להיכנס מטראק הארד אחר או לעשות Cut חד על "
-                        "תחילת פרייז.")
+                        "תחילת פרייז. " + xt.neighbours_he(plan))
     return song

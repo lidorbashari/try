@@ -165,10 +165,11 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     # three congas, interlocking 2-bar parts
     ci = int(rng.integers(len(CONGA_LO)))
     p_lo, p_mid, p_hi = CONGA_LO[ci], CONGA_MID[int(rng.integers(len(CONGA_MID)))], CONGA_HI[ci]
-    base = float(rng.uniform(170, 195))
-    c_lo = [drums.conga(base, "open", rng=rng), drums.conga(base * 1.01, "open", rng=rng)]
-    c_mid = [drums.conga(base * 1.32, "open", rng=rng), drums.conga(base * 1.33, "mute", rng=rng)]
-    c_hi = [drums.conga(base * 1.75, "slap", rng=rng), drums.conga(base * 1.76, "slap", rng=rng)]
+    # hand drums are tuned to scale tones so they reinforce the key instead of blurring it
+    f_lo, f_mid, f_hi = eh.key_hz(key, 160, 205, rng), eh.key_hz(key, 210, 270, rng), eh.key_hz(key, 280, 360, rng)
+    c_lo = [drums.conga(f_lo, "open", rng=rng), drums.conga(f_lo, "open", rng=rng)]
+    c_mid = [drums.conga(f_mid, "open", rng=rng), drums.conga(f_mid, "mute", rng=rng)]
+    c_hi = [drums.conga(f_hi, "slap", rng=rng), drums.conga(f_hi, "slap", rng=rng)]
     conga_gain = -11.0 if not soft else -13.0
 
     def conga_when(c, start=8):
@@ -186,25 +187,25 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
               gain_db=conga_gain - 2, pan=0.3, humanize=0.12, timing_ms=2.5, sends={"room": 0.15})
 
     bongo_p = BONGO[int(rng.integers(len(BONGO)))]
-    bongos = [drums.bongo(float(rng.uniform(470, 520)), "open", rng=rng),
-              drums.bongo(float(rng.uniform(620, 680)), "mute", rng=rng)]
+    bongos = [drums.bongo(eh.key_hz(key, 440, 540, rng), "open", rng=rng),
+              drums.bongo(eh.key_hz(key, 580, 720, rng), "mute", rng=rng)]
     song.hits("bongo", bongos, lambda c: bongo_p if (c.kind == "drop" or (c.kind == "groove" and c.i % 8 >= 4)
                                                       or (c.kind == "intro" and c.i >= 20)) else None,
               gain_db=-16.5 if not soft else -18.5, pan=0.55, humanize=0.18, timing_ms=2.5, sends={"room": 0.12})
 
-    bell = eh.woodblock(float(rng.uniform(780, 900)), 0.035, rng=rng)
+    bell = eh.woodblock(eh.key_hz(key, 740, 960, rng), 0.035, rng=rng)
     song.hits("bell_12_8", bell, lambda c: BELL_12 if (c.kind in ("groove", "drop") or (c.kind == "intro" and c.i >= 16)
                                                       or (c.kind == "outro" and c.bars_left > 8)) else None,
               gain_db=-17.0 if not soft else -19.0, pan=-0.6, humanize=0.1, sends={"delay8": 0.08, "room": 0.1})
-    clv = eh.clave(float(rng.uniform(2300, 2700)), rng=rng)
+    clv = eh.clave(eh.key_hz(key, 2200, 2800, rng), rng=rng)
     song.hits("clave", clv, lambda c: CLAVE_32 if c.kind in ("drop", "breakdown") or (c.kind == "groove" and c.i >= 16)
               else None, gain_db=-19.0, pan=0.45, sends={"reverb": 0.12})
 
     if style != "kalimba":
         dj = DJEMBE[int(rng.integers(len(DJEMBE)))]
-        dj_s = {"bass": eh.djembe("bass", float(rng.uniform(72, 84)), rng=rng),
-                "tone": eh.djembe("tone", float(rng.uniform(310, 350)), rng=rng),
-                "slap": eh.djembe("slap", float(rng.uniform(400, 440)), rng=rng)}
+        dj_s = {"bass": eh.djembe("bass", eh.key_hz(key, 68, 92, rng), rng=rng),
+                "tone": eh.djembe("tone", eh.key_hz(key, 300, 370, rng), rng=rng),
+                "slap": eh.djembe("slap", eh.key_hz(key, 390, 470, rng), rng=rng)}
         def dj_pat(p, stroke):
             def f(c):
                 if c.kind == "drop" or (c.kind == "groove" and c.i >= 16) or (c.kind == "breakdown" and stroke != "bass"):
@@ -217,8 +218,8 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
                       gain_db=-13.0 if nm != "bass" else -11.0, pan=-0.1 if nm == "bass" else 0.15,
                       humanize=0.12, timing_ms=3.0, sends={"room": 0.15})
 
-    tom_kit = [drums.tom(float(rng.uniform(85, 100)), 0.45, rng=rng), drums.tom(float(rng.uniform(120, 140)), 0.4, rng=rng),
-               drums.tom(float(rng.uniform(160, 185)), 0.35, rng=rng)]
+    tom_kit = [drums.tom(eh.key_hz(key, 82, 104, rng), 0.45, rng=rng), drums.tom(eh.key_hz(key, 115, 145, rng), 0.4, rng=rng),
+               drums.tom(eh.key_hz(key, 155, 195, rng), 0.35, rng=rng)]
     tom_p = TOMS[int(rng.integers(len(TOMS)))]
 
     def tom_pat(c):
@@ -233,8 +234,8 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     song.hits("toms", tom_kit, tom_pat, gain_db=-11.5 if not soft else -14.0, pan=0.1, humanize=0.1,
               sends={"reverb": 0.12, "room": 0.15})
     if style == "desert":
-        td = [eh.talking_drum(float(rng.uniform(150, 175)), float(rng.uniform(4, 6)), rng=rng),
-              eh.talking_drum(float(rng.uniform(200, 230)), float(rng.uniform(3, 5)), rng=rng)]
+        td = [eh.talking_drum(eh.key_hz(key, 145, 180, rng), float(rng.choice([5.0, 7.0])), rng=rng),
+              eh.talking_drum(eh.key_hz(key, 195, 240, rng), float(rng.choice([3.0, 5.0])), rng=rng)]
         tk = TALKING[int(rng.integers(len(TALKING)))]
         song.hits("talking_drum", td, lambda c: tk if c.kind in ("groove", "drop", "breakdown") and c.i % 2 == 1
                   else None, gain_db=-12.0, pan=-0.4, sends={"room": 0.2, "delay8": 0.1}, humanize=0.1)

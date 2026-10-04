@@ -32,23 +32,23 @@ FLAVORS = {
     "techno-05": dict(prog=[0, 5, 2, 6], arp="three", arp_rate=1, arp_voice="glass", lead="glass",
                       hook="cathedral", mud=-2.5, bass="roll3", bass_shape=None, arp2="up", organ=0.35, choir_db=-9.0, perc="tribal",
                       kick_decay=0.36, swing=50.0, hall=4.5, vowel=("a", "o"), arp_gain=-9.5,
-                      desc="קתדרלה של צלילים: מקהלה סינתטית ופדים עם גוון של עוגב, ארפג'יו זכוכיתי בשלוש-נגד-ארבע "
+                      desc="קתדרלה של צלילים — מקהלה סינתטית ופדים בגוון של עוגב, ארפג'יו זכוכיתי בשלוש-נגד-ארבע "
                            "ומלודיה איטית ורחבה בדרופ"),
     # Afterglow Protocol: bright Anyma-style supersaw arp + big anthem lead
     "techno-06": dict(prog=[0, 6, 5, 6], arp="updown", arp_rate=1, arp_voice="supersaw", lead="anthem",
                       hook="anthem", mud=-0.5, bass="roll3", bass_shape=[0, 12, 0], arp2="converge", organ=0.0, choir_db=-12.0, perc="tight",
                       kick_decay=0.32, swing=50.0, hall=3.8, vowel=("e", "a"), arp_gain=-10.0,
-                      desc="ארפג'יו סופר-סו רחב ובוהק בסגנון Anyma, ליד המנוני גדול בדרופ ופדים בסיידצ'יין"),
+                      desc="ארפג'יו סופר-סו רחב ובוהק בהשראת Anyma, ליד המנוני גדול בדרופ ופדים שנושמים עם הסיידצ'יין"),
     # Event Horizon: darker Massano drive, galloping bass, pedal arp, rhythmic pulse hook
     "techno-07": dict(prog=[0, 0, 5, 6], arp="pedal", arp_rate=1, arp_voice="supersaw_dark", lead="anthem_dark",
                       hook="pulse", mud=-0.5, bass="gallop", bass_shape=[0, 0], arp2="updown", organ=0.0, choir_db=-13.0, perc="driving",
                       kick_decay=0.3, swing=50.0, hall=3.5, vowel=("o", "a"), arp_gain=-9.0,
-                      desc="מלודיק טכנו כהה ודוהר בסגנון Massano: באס דוהר, ארפג'יו פדאל אפל וליד ריתמי וחד בדרופ"),
+                      desc="צד כהה ודוהר בהשראת Massano — באס דוהר, ארפג'יו פדאל אפל וליד ריתמי וחד בדרופ"),
     # Silent Orbit: spacey Tale-Of-Us mood, 8th-note glass arp, soft breathy lead, long delays
     "techno-08": dict(prog=[0, 5, 3, 4], arp="converge", arp_rate=2, arp_voice="glass", lead="soft",
-                      hook="descend", mud=-2.0, bass="roll2", bass_shape=[0, 7], arp2="three", organ=0.15, choir_db=-10.0, perc="tribal",
+                      hook="descend", mud=-1.0, bass="roll2", bass_shape=[0, 7], arp2="three", organ=0.15, choir_db=-10.0, perc="tribal",
                       kick_decay=0.34, swing=51.0, hall=5.0, vowel=("u", "a"), arp_gain=-8.5,
-                      desc="מסע חללי ושקט בסגנון Tale Of Us: ארפג'יו זכוכית בשמיניות עם דיליי ארוך, ליד רך ונושם "
+                      desc="מסע חללי ושקט בהשראת Tale Of Us — ארפג'יו זכוכית בשמיניות עם דיליי ארוך, ליד רך ונושם "
                            "ופדים רחבים"),
 }
 
@@ -243,6 +243,12 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
                     sends={"space": 0.35, "hall": 0.15})
     ch.automate("gain_db", sp({"breakdown": 0.0, "drop": -4.0}, -4.0, ramp_bars=1))
 
+    # atmospheric air over the breakdown (and a whisper of it in the drop)
+    air = song.notes("air", xt.air_pad(lo=4500.0, attack=4.0, release=3.0),
+                     lambda c: [(0, c.section.bars * 16 - 8, 60, 0.8)] if c.i == 0 and c.kind in ("breakdown", "drop") else [],
+                     gain_db=-22.0, humanize=0.0, sends={"space": 0.3})
+    air.automate("gain_db", sp({"breakdown": 0.0, "drop": -8.0}, -8.0, ramp_bars=2))
+
     # ================================================================ lead hook
     hook = xt.hook_events(key, prog, fl["hook"], octave=4)
     hclip = clip(hook, 8)
@@ -308,8 +314,9 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
                         "tribal toms & percussion", "riser, pitched snare roll & impact"]
     nm = plan["key"]
     song.description_he = (f"מלודיק טכנו ב-{int(song.bpm)} BPM בסולם {nm}: {fl['desc']}. "
-                           f"מבנה ארוך של 32 תיבות לכל חלק — ברייקדאון קולנועי עם מקהלה ומתח שנבנה לדרופ גדול.")
+                           f"כל חלק באורך 32 תיבות: ברייקדאון קולנועי עם פדים ומקהלה, ומתח שנבנה אל דרופ גדול עם ההוק המלא.")
     song.mix_tips_he = (song.auto_mix_tips_he() +
                         f" הארפג'יו מתחיל לרמוז כבר בתיבה {i0 + 25} (מסונן) — אפשר להתחיל להכניס אז את ה-Mid. "
-                        f"הבאס יוצא בתיבה {bass_off + 1}, כך ש-16 התיבות האחרונות הן תופים בלבד — חלון מושלם ל-Bass Swap.")
+                        f"הבאס יוצא בתיבה {bass_off + 1}, כך ש-16 התיבות האחרונות הן תופים בלבד — חלון מושלם ל-Bass Swap. "
+                        + xt.neighbours_he(plan))
     return song

@@ -349,6 +349,22 @@ def noise_drone(q=9.0, harmonics=(1, 2, 3, 5), drift=0.08, attack=2.0, release=2
     return inst
 
 
+def air_pad(lo=5000.0, hi=15000.0, attack=3.0, release=3.0, shimmer_hz=0.17, corr=0.3, sr=SR):
+    """Atmospheric 'air': band-limited noise with a slow shimmer, decorrelated L/R (pitch is ignored).
+    Adds the high-frequency sheen a cinematic breakdown needs without any tonal clash."""
+    def inst(freq, dur, vel):
+        gate, n = _n(dur, release, sr)
+        t = np.arange(n) / sr
+        rng = _note_rng(freq, 13)
+        sh = 1.0 + 0.35 * np.sin(TAU * shimmer_hz * t) * np.sin(TAU * shimmer_hz * 0.37 * t + 1.0)
+        a = lp(hp(white(n, rng), lo, 2), hi, 2) * sh
+        b = lp(hp(white(n, rng), lo, 2), hi, 2) * sh
+        x = decorrelate(a, b, corr)
+        env = adsr(n, gate, attack, 1.0, 0.9, release, sr, curve=2.5)
+        return _finish(x * env[:, None], vel, rel_fade=4096)
+    return inst
+
+
 def screech(sr=SR):
     """Settings for a hard-techno 'screech' MonoSynth (use with ``instruments.MonoSynth``)."""
     return dict(wave="saw", cutoff=900.0, res=0.9, env_mod=3.2, decay=0.12, accent=0.9, glide_ms=45.0,
@@ -568,3 +584,34 @@ def setup_space(song, hall_decay=None, hall_width=1.5, plate_width=1.4, long_rev
     if quarter_delay:
         song.returns["delay4"] = Return("delay4", "delay", beats=1.0, feedback=0.45, hp=500.0, lp=4000.0,
                                         sidechain=0.6, width=1.3)
+
+
+# ============================================================================ metadata helpers
+def neighbours_he(plan, max_bpm_diff=4.0, limit=3):
+    """Hebrew mixing hint naming DJ Lab tracks that are Camelot neighbours (same, ±1, relative) with a
+    close tempo. Reads the master plan, so it is deterministic for a given plan file."""
+    import json
+
+    from . import PLAN_PATH
+    from .theory import compatible_keys
+
+    code = plan["camelot"]
+    ok = compatible_keys(code)[:4]
+    try:
+        entries = json.loads(PLAN_PATH.read_text(encoding="utf-8"))
+    except Exception:  # noqa: BLE001
+        entries = []
+    cands = []
+    for e in entries:
+        if e.get("id") == plan.get("id") or e.get("camelot") not in ok:
+            continue
+        db = abs(float(e.get("bpm", 0)) - float(plan["bpm"]))
+        if db <= max_bpm_diff:
+            same_fam = e.get("family") == plan.get("family")
+            cands.append((not same_fam, db, ok.index(e["camelot"]), e["id"], e))
+    cands.sort(key=lambda r: r[:4])
+    names = [f"{c[4]['title']} ({c[4]['camelot']}, {int(c[4]['bpm'])} BPM)" for c in cands[:limit]]
+    tip = f"שכנים הרמוניים ב-Camelot: {ok[1]}, {ok[2]} ו-{ok[3]}."
+    if names:
+        tip += " מתחבר מעולה ל-" + ", ".join(names) + "."
+    return tip

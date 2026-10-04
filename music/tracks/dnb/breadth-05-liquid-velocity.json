@@ -1,0 +1,160 @@
+{
+ "id": "breadth-05",
+ "title": "Liquid Velocity",
+ "title_he": "מהירות נוזלית",
+ "artist": "DJ Lab Originals",
+ "genre": "Drum & Bass",
+ "genre_slug": "dnb",
+ "family": "breadth",
+ "bpm": 174.0,
+ "key": "F minor",
+ "key_short": "Fm",
+ "camelot": "4A",
+ "energy": 9,
+ "role": "peak",
+ "duration_sec": 242.759,
+ "bars": 176,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 32,
+   "start_sec": 0.0,
+   "energy": 5
+  },
+  {
+   "name": "Drop",
+   "start_bar": 32,
+   "bars": 48,
+   "start_sec": 44.138,
+   "energy": 9
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 80,
+   "bars": 32,
+   "start_sec": 110.345,
+   "energy": 5
+  },
+  {
+   "name": "Drop 2",
+   "start_bar": 112,
+   "bars": 32,
+   "start_sec": 154.483,
+   "energy": 9
+  },
+  {
+   "name": "Outro",
+   "start_bar": 144,
+   "bars": 32,
+   "start_sec": 198.621,
+   "energy": 5
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 16,
+   "sec": 22.069,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 80,
+   "sec": 110.345,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 32,
+   "sec": 44.138,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "F",
+   "name": "Drop 2",
+   "bar": 112,
+   "sec": 154.483,
+   "color": "#DE44CF",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 144,
+   "sec": 198.621,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 160,
+   "sec": 220.69,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Drop",
+   "bar": 32,
+   "sec": 44.138
+  },
+  {
+   "name": "Breakdown",
+   "bar": 80,
+   "sec": 110.345
+  },
+  {
+   "name": "Drop 2",
+   "bar": 112,
+   "sec": 154.483
+  },
+  {
+   "name": "Outro",
+   "bar": 144,
+   "sec": 198.621
+  }
+ ],
+ "lufs": -9.08,
+ "true_peak_dbtp": -1.23,
+ "file": "music/tracks/dnb/breadth-05-liquid-velocity.mp3",
+ "cover": "music/tracks/dnb/breadth-05-liquid-velocity.jpg",
+ "description_he": "דראם אנד בייס אנרגטי ב-174 BPM בסולם F minor: תופי טו-סטפ חדים (קיק ב-1, סנר ב-2 וב-4) עם גוסט-נוטס והיי-האטים בשאפל, שכבת ברייק סינתטית בסגנון אמן, ובס ריס (Reese) שזז ונושם — סאוטות מנוגדות, פילטר וכורוס — מעל סאב נקי. ווקאל צ'ופים וסטאבים מינוריים. טראק פיק.",
+ "mix_tips_he": "טיפ ערבוב: 16 תיבות ראשונות תופים בלבד; הסאב והריס נכנסים בתיבה 17 (Hot Cue B) והדרופ בתיבה 33 (Hot Cue D). בדראם אנד בייס מקובל לעשות Double Drop: מסנכרנים את הדרופ של הטראק הנכנס עם הדרופ או האאוטרו של היוצא, והורדת Low בטראק אחד חובה. ברייקדאון בתיבה 81, דרופ 2 בתיבה 113, האאוטרו מתחיל בתיבה 145 ו-16 התיבות האחרונות תופים בלבד. Rekordbox עלול לזהות 87 BPM (חצי טמפו) — אם כך, תקנו ל-174. שכנים ב-Camelot: 4A ↔ 5A, 3A, 4B.",
+ "instruments": [
+  "two-step DnB drums",
+  "synthesised amen-like break",
+  "moving reese bass",
+  "clean sine sub",
+  "minor stabs",
+  "atmos pad",
+  "formant vocal chops",
+  "risers & impacts"
+ ],
+ "seed": 1782,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

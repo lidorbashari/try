@@ -118,7 +118,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     ride = drums.ride(decay=1.3, rng=rng)
     song.hits("ride", ride, lambda c: "x.x.x.x.x.x.x.x." if c.kind == "drop" and c.i >= 8 else None,
               gain_db=-21.0, pan=0.3)
-    perc = [drums.conga(float(rng.uniform(220, 260)), "open", rng=rng), drums.bongo(float(rng.uniform(480, 540)), "slap", rng=rng)]
+    perc = [drums.conga(eh.key_hz(key, 210, 270, rng), "open", rng=rng), drums.bongo(eh.key_hz(key, 460, 560, rng), "slap", rng=rng)]
     song.hits("perc", perc, lambda c: ("...x......x..x.." if not c.phrase_end else "......x.x.xxx.xx")
               if c.kind in ("groove", "drop") or (c.kind == "intro" and c.i >= 24) else None,
               gain_db=-15.0, pan=-0.55, sends={"room": 0.15})

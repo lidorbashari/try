@@ -362,7 +362,9 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
         "rolling": "טכנו מתגלגל ודוהר: היי-האטים בשש-עשריות, סיקוונס פולימטרי של 3 נגד 4, טומים מתגלגלים "
                    "וסטאבים דאביים עם דיליי ודרופ ארוך",
     }[flavor]
-    song.description_he = (f"טכנו פיק-טיים ב-{int(song.bpm)} BPM בסולם {kname}: {desc}. "
-                           f"אנרגיה גבוהה לאמצע-סוף הסט.")
-    song.mix_tips_he = song.auto_mix_tips_he() + " הראמבל יושב על הסאב — בזמן מעבר הורידו את ה-Low בטראק היוצא."
+    gname = "טכנו דוהר (Driving)" if "Driving" in plan.get("genre", "") else "טכנו פיק-טיים"
+    slot = {"peak": "לרגעי השיא של הסט", "build": "לבניית אנרגיה באמצע הסט"}.get(plan.get("role"), "לאמצע-סוף הסט")
+    song.description_he = f"{gname} ב-{int(song.bpm)} BPM בסולם {kname}: {desc}. {slot}."
+    song.mix_tips_he = (song.auto_mix_tips_he() + " הראמבל יושב על הסאב — בזמן מעבר הורידו את ה-Low בטראק היוצא. "
+                        + xt.neighbours_he(plan))
     return song
