@@ -1,0 +1,196 @@
+{
+ "id": "house-07",
+ "title": "Warehouse 26",
+ "title_he": "מחסן 26",
+ "artist": "DJ Lab Originals",
+ "genre": "Tech House",
+ "genre_slug": "tech_house",
+ "family": "house",
+ "bpm": 128.0,
+ "key": "G minor",
+ "key_short": "Gm",
+ "camelot": "6A",
+ "energy": 8,
+ "role": "peak",
+ "duration_sec": 255.0,
+ "bars": 136,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 32,
+   "start_sec": 0.0,
+   "energy": 5
+  },
+  {
+   "name": "Groove",
+   "start_bar": 32,
+   "bars": 16,
+   "start_sec": 60.0,
+   "energy": 7
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 48,
+   "bars": 8,
+   "start_sec": 90.0,
+   "energy": 4
+  },
+  {
+   "name": "Drop",
+   "start_bar": 56,
+   "bars": 24,
+   "start_sec": 105.0,
+   "energy": 9
+  },
+  {
+   "name": "Breakdown 2",
+   "start_bar": 80,
+   "bars": 8,
+   "start_sec": 150.0,
+   "energy": 5
+  },
+  {
+   "name": "Drop 2",
+   "start_bar": 88,
+   "bars": 16,
+   "start_sec": 165.0,
+   "energy": 9
+  },
+  {
+   "name": "Outro",
+   "start_bar": 104,
+   "bars": 32,
+   "start_sec": 195.0,
+   "energy": 5
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 32,
+   "sec": 60.0,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 48,
+   "sec": 90.0,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 56,
+   "sec": 105.0,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "E",
+   "name": "Breakdown 2",
+   "bar": 80,
+   "sec": 150.0,
+   "color": "#B4BE04",
+   "type": "hot"
+  },
+  {
+   "slot": "F",
+   "name": "Drop 2",
+   "bar": 88,
+   "sec": 165.0,
+   "color": "#DE44CF",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 104,
+   "sec": 195.0,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 120,
+   "sec": 225.0,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Groove",
+   "bar": 32,
+   "sec": 60.0
+  },
+  {
+   "name": "Breakdown",
+   "bar": 48,
+   "sec": 90.0
+  },
+  {
+   "name": "Drop",
+   "bar": 56,
+   "sec": 105.0
+  },
+  {
+   "name": "Breakdown 2",
+   "bar": 80,
+   "sec": 150.0
+  },
+  {
+   "name": "Drop 2",
+   "bar": 88,
+   "sec": 165.0
+  },
+  {
+   "name": "Outro",
+   "bar": 104,
+   "sec": 195.0
+  }
+ ],
+ "lufs": -9.14,
+ "true_peak_dbtp": -1.4,
+ "file": "music/tracks/tech_house/house-07-warehouse-26.mp3",
+ "cover": "music/tracks/tech_house/house-07-warehouse-26.jpg",
+ "description_he": "טק-האוס אפל ומחסני ב-128 BPM בסולם G minor: קיק דוחף עם ראמבל נמוך, באס מתגלגל בשש-עשריות, טומים ופרקשן מתכתי, וסטאב דאבי שנבלע בדיליי. שני דרופים — לשעת השיא של הלילה.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 32 תיבות להכנסה נקייה, הבאס נכנס בתיבה 33 (Hot Cue B), ברייקדאון בתיבה 49, דרופ בתיבה 57, אאוטרו של 32 תיבות מתיבה 105 — מושלם למיקס החוצה. יש שני ברייקדאונים קצרים של 8 תיבות — מקום טוב לטריקים של אקו/פילטר.",
+ "instruments": [
+  "driven tech-house kick",
+  "low rumble",
+  "rolling 16th mono bass",
+  "toms",
+  "16th rims",
+  "metallic perc",
+  "clap + snap",
+  "ride",
+  "dub chord stab",
+  "dark vocal chop",
+  "hypnotic blip sequence",
+  "noise sweeps"
+ ],
+ "seed": 1102,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

@@ -4,7 +4,7 @@ build_site.py - generate the DJ Lab static website into docs/.
 
     python tools/build_site.py                        # full build (waveform peaks via ffmpeg+numpy, cached)
     python tools/build_site.py --no-peaks             # never analyse audio; keep peaks already in docs/data/peaks.js
-    python tools/build_site.py --no-peaks-if-missing  # analyse only what is possible here (CI-safe), keep the rest
+    python tools/build_site.py --no-peaks-if-missing  # CI: reuse committed peaks, analyse only new audio if possible
 
 Inputs (all optional - the build never fails on missing or partial content):
     guide/*.md (+ guide/assets/*), music/catalog.json and/or music/**/<id>.json sidecars,
@@ -512,7 +512,7 @@ def build_peaks(catalog, mode: str):
     CACHE.mkdir(parents=True, exist_ok=True) if can_compute else None
     for f in files:
         fp = ROOT / f
-        if not fp.is_file() or not can_compute:
+        if not fp.is_file() or not can_compute or (mode == "missing" and f in existing):
             if f in existing:
                 result[f] = existing[f]
             continue
@@ -1444,7 +1444,6 @@ def render_home(catalog, plan, extras, toc_data, crates, sets) -> str:
                  scripts=("home",), data=("catalog", "peaks", "guide"), body_class="is-home")
 
 
-FILTER_SHELL = ""
 
 
 def render_library() -> str:
@@ -1476,7 +1475,7 @@ def render_library() -> str:
     </div>
   </div>
 </section>"""
-    return shell(out, title="ספריית מוזיקה", body=body, active="library", scripts=("library",), data=("catalog", "peaks", "crates"),
+    return shell(out, title="ספריית מוזיקה", body=body, active="library", scripts=("library",), data=("catalog", "peaks"),
                  description="ספריית המוזיקה של DJ Lab: טראקים מקוריים ב-CC0 עם BPM, Key, Camelot, Hot Cues ונגן עם Waveform.")
 
 
@@ -1828,7 +1827,8 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="Build the DJ Lab static site into docs/")
     ap.add_argument("--no-peaks", action="store_true", help="never analyse audio; reuse docs/data/peaks.js")
     ap.add_argument("--no-peaks-if-missing", action="store_true",
-                    help="CI mode: analyse only when ffmpeg+audio exist, otherwise reuse committed peaks")
+                    help="CI mode: keep every waveform already in docs/data/peaks.js and analyse only audio "
+                         "that has none yet (and only if ffmpeg + numpy are available)")
     args = ap.parse_args(argv)
     t0 = time.time()
 
@@ -1840,7 +1840,7 @@ def main(argv=None) -> int:
             GENRE_NAMES.setdefault(t["genre_slug"], t["genre"])
     GENRE_NAMES.update({"dnb": "Drum & Bass", "drum_and_bass": "Drum & Bass", "ukg": "UK Garage", "uk_garage": "UK Garage", "lofi": "Lo-Fi", "edm": "EDM", "rnb": "R&B"})
     catalog = build_catalog(plan, extras)
-    peaks_mode = "never" if args.no_peaks else "auto"
+    peaks_mode = "never" if args.no_peaks else "missing" if args.no_peaks_if_missing else "auto"
     peaks = build_peaks(catalog, peaks_mode)
 
     track_ids = {t.get("id") for t in plan} | {t.get("id") for t in catalog["tracks"]} | \

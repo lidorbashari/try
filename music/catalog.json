@@ -1,13 +1,13 @@
 {
- "generated_at": "2026-10-04T21:42:01+00:00",
+ "generated_at": "2026-10-04T22:08:45+00:00",
  "engine_version": "1.0.0",
  "stats": {
-  "tracks": 2,
-  "practice": 0,
+  "tracks": 11,
+  "practice": 1,
   "transitions": 0,
-  "genres": 2,
-  "minutes": 8.7,
-  "bytes": 21316116
+  "genres": 5,
+  "minutes": 48.6,
+  "bytes": 127213647
  },
  "tracks": [
   {
@@ -165,6 +165,515 @@
    "license": "CC0-1.0",
    "engine_version": "1.0.0",
    "size_bytes": 10510703
+  },
+  {
+   "id": "house-06",
+   "title": "Bassline Bandit",
+   "title_he": "שודד הבאסליין",
+   "artist": "DJ Lab Originals",
+   "genre": "Tech House",
+   "genre_slug": "tech_house",
+   "family": "house",
+   "bpm": 127.0,
+   "key": "D minor",
+   "key_short": "Dm",
+   "camelot": "7A",
+   "energy": 7,
+   "role": "peak",
+   "duration_sec": 257.008,
+   "bars": 136,
+   "beats_per_bar": 4,
+   "first_downbeat_sec": 0.0,
+   "sections": [
+    {
+     "name": "Intro",
+     "start_bar": 0,
+     "bars": 32,
+     "start_sec": 0.0,
+     "energy": 4
+    },
+    {
+     "name": "Groove",
+     "start_bar": 32,
+     "bars": 24,
+     "start_sec": 60.472,
+     "energy": 6
+    },
+    {
+     "name": "Breakdown",
+     "start_bar": 56,
+     "bars": 16,
+     "start_sec": 105.827,
+     "energy": 3
+    },
+    {
+     "name": "Drop",
+     "start_bar": 72,
+     "bars": 32,
+     "start_sec": 136.063,
+     "energy": 8
+    },
+    {
+     "name": "Outro",
+     "start_bar": 104,
+     "bars": 32,
+     "start_sec": 196.535,
+     "energy": 4
+    }
+   ],
+   "cues": [
+    {
+     "slot": "A",
+     "name": "Intro",
+     "bar": 0,
+     "sec": 0.0,
+     "color": "#28E214",
+     "type": "hot"
+    },
+    {
+     "slot": "B",
+     "name": "Mix-In",
+     "bar": 32,
+     "sec": 60.472,
+     "color": "#10B1E6",
+     "type": "hot"
+    },
+    {
+     "slot": "C",
+     "name": "Breakdown",
+     "bar": 56,
+     "sec": 105.827,
+     "color": "#E0641B",
+     "type": "hot"
+    },
+    {
+     "slot": "D",
+     "name": "Drop",
+     "bar": 72,
+     "sec": 136.063,
+     "color": "#E62828",
+     "type": "hot"
+    },
+    {
+     "slot": "G",
+     "name": "Outro",
+     "bar": 104,
+     "sec": 196.535,
+     "color": "#305AFF",
+     "type": "hot"
+    },
+    {
+     "slot": "H",
+     "name": "Last 16",
+     "bar": 120,
+     "sec": 226.772,
+     "color": "#8A2BE2",
+     "type": "hot"
+    }
+   ],
+   "memory_cues": [
+    {
+     "name": "Intro",
+     "bar": 0,
+     "sec": 0.0
+    },
+    {
+     "name": "Groove",
+     "bar": 32,
+     "sec": 60.472
+    },
+    {
+     "name": "Breakdown",
+     "bar": 56,
+     "sec": 105.827
+    },
+    {
+     "name": "Drop",
+     "bar": 72,
+     "sec": 136.063
+    },
+    {
+     "name": "Outro",
+     "bar": 104,
+     "sec": 196.535
+    }
+   ],
+   "lufs": -9.2,
+   "true_peak_dbtp": -1.43,
+   "file": "music/tracks/tech_house/house-06-bassline-bandit.mp3",
+   "cover": "music/tracks/tech_house/house-06-bassline-bandit.jpg",
+   "description_he": "טק-האוס ב-127 BPM בסולם D minor שבו הבאס הוא הכוכב: באסליין \"מדבר\" עם פילטר פורמנטים שנפתח ונסגר בכל תו, בשיטת שאלה-תשובה. תופים רזים ומדויקים, וטיזר של הבאס בסוף הברייקדאון לפני הדרופ.",
+   "mix_tips_he": "טיפ ערבוב: אינטרו של 32 תיבות להכנסה נקייה, הבאס נכנס בתיבה 33 (Hot Cue B), ברייקדאון בתיבה 57, דרופ בתיבה 73, אאוטרו של 32 תיבות מתיבה 105 — מושלם למיקס החוצה. בסוף הברייקדאון הבאס חוזר מפולטר לשמונה תיבות — אל תערבבו שם באס של טראק אחר.",
+   "instruments": [
+    "tuned tech-house kick",
+    "talking / wah formant bass",
+    "swung 16th hats",
+    "open hat",
+    "shaker",
+    "clap + plate",
+    "congas",
+    "rim",
+    "vowel shout",
+    "minor stab",
+    "breakdown pad",
+    "riser & impact"
+   ],
+   "seed": 1085,
+   "license": "CC0-1.0",
+   "engine_version": "1.0.0",
+   "size_bytes": 10434556
+  },
+  {
+   "id": "house-07",
+   "title": "Warehouse 26",
+   "title_he": "מחסן 26",
+   "artist": "DJ Lab Originals",
+   "genre": "Tech House",
+   "genre_slug": "tech_house",
+   "family": "house",
+   "bpm": 128.0,
+   "key": "G minor",
+   "key_short": "Gm",
+   "camelot": "6A",
+   "energy": 8,
+   "role": "peak",
+   "duration_sec": 255.0,
+   "bars": 136,
+   "beats_per_bar": 4,
+   "first_downbeat_sec": 0.0,
+   "sections": [
+    {
+     "name": "Intro",
+     "start_bar": 0,
+     "bars": 32,
+     "start_sec": 0.0,
+     "energy": 5
+    },
+    {
+     "name": "Groove",
+     "start_bar": 32,
+     "bars": 16,
+     "start_sec": 60.0,
+     "energy": 7
+    },
+    {
+     "name": "Breakdown",
+     "start_bar": 48,
+     "bars": 8,
+     "start_sec": 90.0,
+     "energy": 4
+    },
+    {
+     "name": "Drop",
+     "start_bar": 56,
+     "bars": 24,
+     "start_sec": 105.0,
+     "energy": 9
+    },
+    {
+     "name": "Breakdown 2",
+     "start_bar": 80,
+     "bars": 8,
+     "start_sec": 150.0,
+     "energy": 5
+    },
+    {
+     "name": "Drop 2",
+     "start_bar": 88,
+     "bars": 16,
+     "start_sec": 165.0,
+     "energy": 9
+    },
+    {
+     "name": "Outro",
+     "start_bar": 104,
+     "bars": 32,
+     "start_sec": 195.0,
+     "energy": 5
+    }
+   ],
+   "cues": [
+    {
+     "slot": "A",
+     "name": "Intro",
+     "bar": 0,
+     "sec": 0.0,
+     "color": "#28E214",
+     "type": "hot"
+    },
+    {
+     "slot": "B",
+     "name": "Mix-In",
+     "bar": 32,
+     "sec": 60.0,
+     "color": "#10B1E6",
+     "type": "hot"
+    },
+    {
+     "slot": "C",
+     "name": "Breakdown",
+     "bar": 48,
+     "sec": 90.0,
+     "color": "#E0641B",
+     "type": "hot"
+    },
+    {
+     "slot": "D",
+     "name": "Drop",
+     "bar": 56,
+     "sec": 105.0,
+     "color": "#E62828",
+     "type": "hot"
+    },
+    {
+     "slot": "E",
+     "name": "Breakdown 2",
+     "bar": 80,
+     "sec": 150.0,
+     "color": "#B4BE04",
+     "type": "hot"
+    },
+    {
+     "slot": "F",
+     "name": "Drop 2",
+     "bar": 88,
+     "sec": 165.0,
+     "color": "#DE44CF",
+     "type": "hot"
+    },
+    {
+     "slot": "G",
+     "name": "Outro",
+     "bar": 104,
+     "sec": 195.0,
+     "color": "#305AFF",
+     "type": "hot"
+    },
+    {
+     "slot": "H",
+     "name": "Last 16",
+     "bar": 120,
+     "sec": 225.0,
+     "color": "#8A2BE2",
+     "type": "hot"
+    }
+   ],
+   "memory_cues": [
+    {
+     "name": "Intro",
+     "bar": 0,
+     "sec": 0.0
+    },
+    {
+     "name": "Groove",
+     "bar": 32,
+     "sec": 60.0
+    },
+    {
+     "name": "Breakdown",
+     "bar": 48,
+     "sec": 90.0
+    },
+    {
+     "name": "Drop",
+     "bar": 56,
+     "sec": 105.0
+    },
+    {
+     "name": "Breakdown 2",
+     "bar": 80,
+     "sec": 150.0
+    },
+    {
+     "name": "Drop 2",
+     "bar": 88,
+     "sec": 165.0
+    },
+    {
+     "name": "Outro",
+     "bar": 104,
+     "sec": 195.0
+    }
+   ],
+   "lufs": -9.14,
+   "true_peak_dbtp": -1.4,
+   "file": "music/tracks/tech_house/house-07-warehouse-26.mp3",
+   "cover": "music/tracks/tech_house/house-07-warehouse-26.jpg",
+   "description_he": "טק-האוס אפל ומחסני ב-128 BPM בסולם G minor: קיק דוחף עם ראמבל נמוך, באס מתגלגל בשש-עשריות, טומים ופרקשן מתכתי, וסטאב דאבי שנבלע בדיליי. שני דרופים — לשעת השיא של הלילה.",
+   "mix_tips_he": "טיפ ערבוב: אינטרו של 32 תיבות להכנסה נקייה, הבאס נכנס בתיבה 33 (Hot Cue B), ברייקדאון בתיבה 49, דרופ בתיבה 57, אאוטרו של 32 תיבות מתיבה 105 — מושלם למיקס החוצה. יש שני ברייקדאונים קצרים של 8 תיבות — מקום טוב לטריקים של אקו/פילטר.",
+   "instruments": [
+    "driven tech-house kick",
+    "low rumble",
+    "rolling 16th mono bass",
+    "toms",
+    "16th rims",
+    "metallic perc",
+    "clap + snap",
+    "ride",
+    "dub chord stab",
+    "dark vocal chop",
+    "hypnotic blip sequence",
+    "noise sweeps"
+   ],
+   "seed": 1102,
+   "license": "CC0-1.0",
+   "engine_version": "1.0.0",
+   "size_bytes": 10352048
+  },
+  {
+   "id": "house-08",
+   "title": "Shuffle Theory",
+   "title_he": "תורת השאפל",
+   "artist": "DJ Lab Originals",
+   "genre": "Tech House",
+   "genre_slug": "tech_house",
+   "family": "house",
+   "bpm": 126.0,
+   "key": "E minor",
+   "key_short": "Em",
+   "camelot": "9A",
+   "energy": 7,
+   "role": "build",
+   "duration_sec": 259.048,
+   "bars": 136,
+   "beats_per_bar": 4,
+   "first_downbeat_sec": 0.0,
+   "sections": [
+    {
+     "name": "Intro",
+     "start_bar": 0,
+     "bars": 32,
+     "start_sec": 0.0,
+     "energy": 4
+    },
+    {
+     "name": "Groove",
+     "start_bar": 32,
+     "bars": 32,
+     "start_sec": 60.952,
+     "energy": 6
+    },
+    {
+     "name": "Breakdown",
+     "start_bar": 64,
+     "bars": 16,
+     "start_sec": 121.905,
+     "energy": 4
+    },
+    {
+     "name": "Drop",
+     "start_bar": 80,
+     "bars": 24,
+     "start_sec": 152.381,
+     "energy": 8
+    },
+    {
+     "name": "Outro",
+     "start_bar": 104,
+     "bars": 32,
+     "start_sec": 198.095,
+     "energy": 4
+    }
+   ],
+   "cues": [
+    {
+     "slot": "A",
+     "name": "Intro",
+     "bar": 0,
+     "sec": 0.0,
+     "color": "#28E214",
+     "type": "hot"
+    },
+    {
+     "slot": "B",
+     "name": "Mix-In",
+     "bar": 32,
+     "sec": 60.952,
+     "color": "#10B1E6",
+     "type": "hot"
+    },
+    {
+     "slot": "C",
+     "name": "Breakdown",
+     "bar": 64,
+     "sec": 121.905,
+     "color": "#E0641B",
+     "type": "hot"
+    },
+    {
+     "slot": "D",
+     "name": "Drop",
+     "bar": 80,
+     "sec": 152.381,
+     "color": "#E62828",
+     "type": "hot"
+    },
+    {
+     "slot": "G",
+     "name": "Outro",
+     "bar": 104,
+     "sec": 198.095,
+     "color": "#305AFF",
+     "type": "hot"
+    },
+    {
+     "slot": "H",
+     "name": "Last 16",
+     "bar": 120,
+     "sec": 228.571,
+     "color": "#8A2BE2",
+     "type": "hot"
+    }
+   ],
+   "memory_cues": [
+    {
+     "name": "Intro",
+     "bar": 0,
+     "sec": 0.0
+    },
+    {
+     "name": "Groove",
+     "bar": 32,
+     "sec": 60.952
+    },
+    {
+     "name": "Breakdown",
+     "bar": 64,
+     "sec": 121.905
+    },
+    {
+     "name": "Drop",
+     "bar": 80,
+     "sec": 152.381
+    },
+    {
+     "name": "Outro",
+     "bar": 104,
+     "sec": 198.095
+    }
+   ],
+   "lufs": -9.15,
+   "true_peak_dbtp": -1.34,
+   "file": "music/tracks/tech_house/house-08-shuffle-theory.mp3",
+   "cover": "music/tracks/tech_house/house-08-shuffle-theory.jpg",
+   "description_he": "טק-האוס עם שאפל כבד ב-126 BPM בסולם E minor: היי-האטים מתנדנדים, בונגוס בטריולות שיוצרים תחושת 3 נגד 4, באס קופצני באוקטבות וסטאבים של אורגן עם צ'ופים ווקאליים. גרוב שמכין את הרחבה לשיא.",
+   "mix_tips_he": "טיפ ערבוב: אינטרו של 32 תיבות להכנסה נקייה, הבאס נכנס בתיבה 33 (Hot Cue B), ברייקדאון בתיבה 65, דרופ בתיבה 81, אאוטרו של 32 תיבות מתיבה 105 — מושלם למיקס החוצה. השאפל כבד — בזמן ביטמאצ'ינג הקשיבו להיי-האטים ולא רק לקיק.",
+   "instruments": [
+    "tech-house kick",
+    "heavy-swing 16th hats",
+    "triplet bongos",
+    "congas",
+    "tambourine",
+    "bouncy octave bass",
+    "rotary organ stabs",
+    "vocal chops",
+    "pad",
+    "riser & impact"
+   ],
+   "seed": 1119,
+   "license": "CC0-1.0",
+   "engine_version": "1.0.0",
+   "size_bytes": 10510871
   },
   {
    "id": "techno-01",
@@ -360,8 +869,1174 @@
    "license": "CC0-1.0",
    "engine_version": "1.0.0",
    "size_bytes": 10805413
+  },
+  {
+   "id": "techno-05",
+   "title": "Neon Cathedral",
+   "title_he": "קתדרלת ניאון",
+   "artist": "DJ Lab Originals",
+   "genre": "Melodic Techno",
+   "genre_slug": "melodic_techno",
+   "family": "techno",
+   "bpm": 122.0,
+   "key": "B minor",
+   "key_short": "Bm",
+   "camelot": "10A",
+   "energy": 6,
+   "role": "build",
+   "duration_sec": 314.754,
+   "bars": 160,
+   "beats_per_bar": 4,
+   "first_downbeat_sec": 0.0,
+   "sections": [
+    {
+     "name": "Intro",
+     "start_bar": 0,
+     "bars": 32,
+     "start_sec": 0.0,
+     "energy": 4
+    },
+    {
+     "name": "Build",
+     "start_bar": 32,
+     "bars": 32,
+     "start_sec": 62.951,
+     "energy": 6
+    },
+    {
+     "name": "Breakdown",
+     "start_bar": 64,
+     "bars": 32,
+     "start_sec": 125.902,
+     "energy": 3
+    },
+    {
+     "name": "Drop",
+     "start_bar": 96,
+     "bars": 32,
+     "start_sec": 188.852,
+     "energy": 9
+    },
+    {
+     "name": "Outro",
+     "start_bar": 128,
+     "bars": 32,
+     "start_sec": 251.803,
+     "energy": 4
+    }
+   ],
+   "cues": [
+    {
+     "slot": "A",
+     "name": "Intro",
+     "bar": 0,
+     "sec": 0.0,
+     "color": "#28E214",
+     "type": "hot"
+    },
+    {
+     "slot": "B",
+     "name": "Mix-In",
+     "bar": 32,
+     "sec": 62.951,
+     "color": "#10B1E6",
+     "type": "hot"
+    },
+    {
+     "slot": "C",
+     "name": "Breakdown",
+     "bar": 64,
+     "sec": 125.902,
+     "color": "#E0641B",
+     "type": "hot"
+    },
+    {
+     "slot": "D",
+     "name": "Drop",
+     "bar": 96,
+     "sec": 188.852,
+     "color": "#E62828",
+     "type": "hot"
+    },
+    {
+     "slot": "G",
+     "name": "Outro",
+     "bar": 128,
+     "sec": 251.803,
+     "color": "#305AFF",
+     "type": "hot"
+    },
+    {
+     "slot": "H",
+     "name": "Last 16",
+     "bar": 144,
+     "sec": 283.279,
+     "color": "#8A2BE2",
+     "type": "hot"
+    }
+   ],
+   "memory_cues": [
+    {
+     "name": "Intro",
+     "bar": 0,
+     "sec": 0.0
+    },
+    {
+     "name": "Build",
+     "bar": 32,
+     "sec": 62.951
+    },
+    {
+     "name": "Breakdown",
+     "bar": 64,
+     "sec": 125.902
+    },
+    {
+     "name": "Drop",
+     "bar": 96,
+     "sec": 188.852
+    },
+    {
+     "name": "Outro",
+     "bar": 128,
+     "sec": 251.803
+    }
+   ],
+   "lufs": -9.11,
+   "true_peak_dbtp": -1.06,
+   "file": "music/tracks/melodic_techno/techno-05-neon-cathedral.mp3",
+   "cover": "music/tracks/melodic_techno/techno-05-neon-cathedral.jpg",
+   "description_he": "מלודיק טכנו ב-122 BPM בסולם B minor: קתדרלה של צלילים: מקהלה סינתטית ופדים עם גוון של עוגב, ארפג'יו זכוכיתי בשלוש-נגד-ארבע ומלודיה איטית ורחבה בדרופ. מבנה ארוך של 32 תיבות לכל חלק — ברייקדאון קולנועי עם מקהלה ומתח שנבנה לדרופ גדול.",
+   "mix_tips_he": "טיפ ערבוב: אינטרו של 32 תיבות להכנסה נקייה, הבאס נכנס בתיבה 33 (Hot Cue B), ברייקדאון בתיבה 65, דרופ בתיבה 97, אאוטרו של 32 תיבות מתיבה 129 — מושלם למיקס החוצה. הארפג'יו מתחיל לרמוז כבר בתיבה 25 (מסונן) — אפשר להתחיל להכניס אז את ה-Mid. הבאס יוצא בתיבה 145, כך ש-16 התיבות האחרונות הן תופים בלבד — חלון מושלם ל-Bass Swap.",
+   "instruments": [
+    "tight tuned techno kick",
+    "rolling arpeggiated bass",
+    "wide arpeggio",
+    "anthem lead hook",
+    "side-chained pads",
+    "formant choir",
+    "clap & plate snare",
+    "stereo hats, shaker & ride",
+    "tribal toms & percussion",
+    "riser, pitched snare roll & impact"
+   ],
+   "seed": 1306,
+   "license": "CC0-1.0",
+   "engine_version": "1.0.0",
+   "size_bytes": 12780557
+  },
+  {
+   "id": "techno-06",
+   "title": "Afterglow Protocol",
+   "title_he": "פרוטוקול זוהר",
+   "artist": "DJ Lab Originals",
+   "genre": "Melodic Techno",
+   "genre_slug": "melodic_techno",
+   "family": "techno",
+   "bpm": 123.0,
+   "key": "F# minor",
+   "key_short": "F#m",
+   "camelot": "11A",
+   "energy": 7,
+   "role": "peak",
+   "duration_sec": 312.195,
+   "bars": 160,
+   "beats_per_bar": 4,
+   "first_downbeat_sec": 0.0,
+   "sections": [
+    {
+     "name": "Intro",
+     "start_bar": 0,
+     "bars": 32,
+     "start_sec": 0.0,
+     "energy": 4
+    },
+    {
+     "name": "Build",
+     "start_bar": 32,
+     "bars": 32,
+     "start_sec": 62.439,
+     "energy": 6
+    },
+    {
+     "name": "Breakdown",
+     "start_bar": 64,
+     "bars": 32,
+     "start_sec": 124.878,
+     "energy": 3
+    },
+    {
+     "name": "Drop",
+     "start_bar": 96,
+     "bars": 32,
+     "start_sec": 187.317,
+     "energy": 9
+    },
+    {
+     "name": "Outro",
+     "start_bar": 128,
+     "bars": 32,
+     "start_sec": 249.756,
+     "energy": 4
+    }
+   ],
+   "cues": [
+    {
+     "slot": "A",
+     "name": "Intro",
+     "bar": 0,
+     "sec": 0.0,
+     "color": "#28E214",
+     "type": "hot"
+    },
+    {
+     "slot": "B",
+     "name": "Mix-In",
+     "bar": 32,
+     "sec": 62.439,
+     "color": "#10B1E6",
+     "type": "hot"
+    },
+    {
+     "slot": "C",
+     "name": "Breakdown",
+     "bar": 64,
+     "sec": 124.878,
+     "color": "#E0641B",
+     "type": "hot"
+    },
+    {
+     "slot": "D",
+     "name": "Drop",
+     "bar": 96,
+     "sec": 187.317,
+     "color": "#E62828",
+     "type": "hot"
+    },
+    {
+     "slot": "G",
+     "name": "Outro",
+     "bar": 128,
+     "sec": 249.756,
+     "color": "#305AFF",
+     "type": "hot"
+    },
+    {
+     "slot": "H",
+     "name": "Last 16",
+     "bar": 144,
+     "sec": 280.976,
+     "color": "#8A2BE2",
+     "type": "hot"
+    }
+   ],
+   "memory_cues": [
+    {
+     "name": "Intro",
+     "bar": 0,
+     "sec": 0.0
+    },
+    {
+     "name": "Build",
+     "bar": 32,
+     "sec": 62.439
+    },
+    {
+     "name": "Breakdown",
+     "bar": 64,
+     "sec": 124.878
+    },
+    {
+     "name": "Drop",
+     "bar": 96,
+     "sec": 187.317
+    },
+    {
+     "name": "Outro",
+     "bar": 128,
+     "sec": 249.756
+    }
+   ],
+   "lufs": -9.41,
+   "true_peak_dbtp": -1.15,
+   "file": "music/tracks/melodic_techno/techno-06-afterglow-protocol.mp3",
+   "cover": "music/tracks/melodic_techno/techno-06-afterglow-protocol.jpg",
+   "description_he": "מלודיק טכנו ב-123 BPM בסולם F# minor: ארפג'יו סופר-סו רחב ובוהק בסגנון Anyma, ליד המנוני גדול בדרופ ופדים בסיידצ'יין. מבנה ארוך של 32 תיבות לכל חלק — ברייקדאון קולנועי עם מקהלה ומתח שנבנה לדרופ גדול.",
+   "mix_tips_he": "טיפ ערבוב: אינטרו של 32 תיבות להכנסה נקייה, הבאס נכנס בתיבה 33 (Hot Cue B), ברייקדאון בתיבה 65, דרופ בתיבה 97, אאוטרו של 32 תיבות מתיבה 129 — מושלם למיקס החוצה. הארפג'יו מתחיל לרמוז כבר בתיבה 25 (מסונן) — אפשר להתחיל להכניס אז את ה-Mid. הבאס יוצא בתיבה 145, כך ש-16 התיבות האחרונות הן תופים בלבד — חלון מושלם ל-Bass Swap.",
+   "instruments": [
+    "tight tuned techno kick",
+    "rolling arpeggiated bass",
+    "wide arpeggio",
+    "anthem lead hook",
+    "side-chained pads",
+    "formant choir",
+    "clap & plate snare",
+    "stereo hats, shaker & ride",
+    "tribal toms & percussion",
+    "riser, pitched snare roll & impact"
+   ],
+   "seed": 1323,
+   "license": "CC0-1.0",
+   "engine_version": "1.0.0",
+   "size_bytes": 12668185
+  },
+  {
+   "id": "techno-07",
+   "title": "Event Horizon",
+   "title_he": "אופק אירועים",
+   "artist": "DJ Lab Originals",
+   "genre": "Melodic Techno",
+   "genre_slug": "melodic_techno",
+   "family": "techno",
+   "bpm": 124.0,
+   "key": "E minor",
+   "key_short": "Em",
+   "camelot": "9A",
+   "energy": 7,
+   "role": "peak",
+   "duration_sec": 309.677,
+   "bars": 160,
+   "beats_per_bar": 4,
+   "first_downbeat_sec": 0.0,
+   "sections": [
+    {
+     "name": "Intro",
+     "start_bar": 0,
+     "bars": 32,
+     "start_sec": 0.0,
+     "energy": 4
+    },
+    {
+     "name": "Build",
+     "start_bar": 32,
+     "bars": 32,
+     "start_sec": 61.935,
+     "energy": 6
+    },
+    {
+     "name": "Breakdown",
+     "start_bar": 64,
+     "bars": 32,
+     "start_sec": 123.871,
+     "energy": 3
+    },
+    {
+     "name": "Drop",
+     "start_bar": 96,
+     "bars": 32,
+     "start_sec": 185.806,
+     "energy": 9
+    },
+    {
+     "name": "Outro",
+     "start_bar": 128,
+     "bars": 32,
+     "start_sec": 247.742,
+     "energy": 4
+    }
+   ],
+   "cues": [
+    {
+     "slot": "A",
+     "name": "Intro",
+     "bar": 0,
+     "sec": 0.0,
+     "color": "#28E214",
+     "type": "hot"
+    },
+    {
+     "slot": "B",
+     "name": "Mix-In",
+     "bar": 32,
+     "sec": 61.935,
+     "color": "#10B1E6",
+     "type": "hot"
+    },
+    {
+     "slot": "C",
+     "name": "Breakdown",
+     "bar": 64,
+     "sec": 123.871,
+     "color": "#E0641B",
+     "type": "hot"
+    },
+    {
+     "slot": "D",
+     "name": "Drop",
+     "bar": 96,
+     "sec": 185.806,
+     "color": "#E62828",
+     "type": "hot"
+    },
+    {
+     "slot": "G",
+     "name": "Outro",
+     "bar": 128,
+     "sec": 247.742,
+     "color": "#305AFF",
+     "type": "hot"
+    },
+    {
+     "slot": "H",
+     "name": "Last 16",
+     "bar": 144,
+     "sec": 278.71,
+     "color": "#8A2BE2",
+     "type": "hot"
+    }
+   ],
+   "memory_cues": [
+    {
+     "name": "Intro",
+     "bar": 0,
+     "sec": 0.0
+    },
+    {
+     "name": "Build",
+     "bar": 32,
+     "sec": 61.935
+    },
+    {
+     "name": "Breakdown",
+     "bar": 64,
+     "sec": 123.871
+    },
+    {
+     "name": "Drop",
+     "bar": 96,
+     "sec": 185.806
+    },
+    {
+     "name": "Outro",
+     "bar": 128,
+     "sec": 247.742
+    }
+   ],
+   "lufs": -9.24,
+   "true_peak_dbtp": -1.07,
+   "file": "music/tracks/melodic_techno/techno-07-event-horizon.mp3",
+   "cover": "music/tracks/melodic_techno/techno-07-event-horizon.jpg",
+   "description_he": "מלודיק טכנו ב-124 BPM בסולם E minor: מלודיק טכנו כהה ודוהר בסגנון Massano: באס דוהר, ארפג'יו פדאל אפל וליד ריתמי וחד בדרופ. מבנה ארוך של 32 תיבות לכל חלק — ברייקדאון קולנועי עם מקהלה ומתח שנבנה לדרופ גדול.",
+   "mix_tips_he": "טיפ ערבוב: אינטרו של 32 תיבות להכנסה נקייה, הבאס נכנס בתיבה 33 (Hot Cue B), ברייקדאון בתיבה 65, דרופ בתיבה 97, אאוטרו של 32 תיבות מתיבה 129 — מושלם למיקס החוצה. הארפג'יו מתחיל לרמוז כבר בתיבה 25 (מסונן) — אפשר להתחיל להכניס אז את ה-Mid. הבאס יוצא בתיבה 145, כך ש-16 התיבות האחרונות הן תופים בלבד — חלון מושלם ל-Bass Swap.",
+   "instruments": [
+    "tight tuned techno kick",
+    "rolling arpeggiated bass",
+    "wide arpeggio",
+    "anthem lead hook",
+    "side-chained pads",
+    "formant choir",
+    "clap & plate snare",
+    "stereo hats, shaker & ride",
+    "tribal toms & percussion",
+    "riser, pitched snare roll & impact"
+   ],
+   "seed": 1340,
+   "license": "CC0-1.0",
+   "engine_version": "1.0.0",
+   "size_bytes": 12569727
+  },
+  {
+   "id": "mainstream-08",
+   "title": "Dembow Fuego",
+   "title_he": "דמבו פואגו",
+   "artist": "DJ Lab Originals",
+   "genre": "Reggaeton",
+   "genre_slug": "reggaeton",
+   "family": "mainstream",
+   "bpm": 95.0,
+   "key": "A minor",
+   "key_short": "Am",
+   "camelot": "8A",
+   "energy": 7,
+   "role": "peak",
+   "duration_sec": 202.105,
+   "bars": 80,
+   "beats_per_bar": 4,
+   "first_downbeat_sec": 0.0,
+   "sections": [
+    {
+     "name": "Intro",
+     "start_bar": 0,
+     "bars": 16,
+     "start_sec": 0.0,
+     "energy": 3
+    },
+    {
+     "name": "Verso",
+     "start_bar": 16,
+     "bars": 8,
+     "start_sec": 40.421,
+     "energy": 5
+    },
+    {
+     "name": "Coro",
+     "start_bar": 24,
+     "bars": 16,
+     "start_sec": 60.632,
+     "energy": 7
+    },
+    {
+     "name": "Puente",
+     "start_bar": 40,
+     "bars": 8,
+     "start_sec": 101.053,
+     "energy": 4
+    },
+    {
+     "name": "Perreo",
+     "start_bar": 48,
+     "bars": 16,
+     "start_sec": 121.263,
+     "energy": 8
+    },
+    {
+     "name": "Outro",
+     "start_bar": 64,
+     "bars": 16,
+     "start_sec": 161.684,
+     "energy": 4
+    }
+   ],
+   "cues": [
+    {
+     "slot": "A",
+     "name": "Intro",
+     "bar": 0,
+     "sec": 0.0,
+     "color": "#28E214",
+     "type": "hot"
+    },
+    {
+     "slot": "B",
+     "name": "Mix-In",
+     "bar": 16,
+     "sec": 40.421,
+     "color": "#10B1E6",
+     "type": "hot"
+    },
+    {
+     "slot": "C",
+     "name": "Breakdown",
+     "bar": 40,
+     "sec": 101.053,
+     "color": "#E0641B",
+     "type": "hot"
+    },
+    {
+     "slot": "D",
+     "name": "Drop",
+     "bar": 24,
+     "sec": 60.632,
+     "color": "#E62828",
+     "type": "hot"
+    },
+    {
+     "slot": "F",
+     "name": "Drop 2",
+     "bar": 48,
+     "sec": 121.263,
+     "color": "#DE44CF",
+     "type": "hot"
+    },
+    {
+     "slot": "G",
+     "name": "Outro",
+     "bar": 64,
+     "sec": 161.684,
+     "color": "#305AFF",
+     "type": "hot"
+    },
+    {
+     "slot": "H",
+     "name": "Last 16",
+     "bar": 64,
+     "sec": 161.684,
+     "color": "#8A2BE2",
+     "type": "hot"
+    }
+   ],
+   "memory_cues": [
+    {
+     "name": "Intro",
+     "bar": 0,
+     "sec": 0.0
+    },
+    {
+     "name": "Verso",
+     "bar": 16,
+     "sec": 40.421
+    },
+    {
+     "name": "Coro",
+     "bar": 24,
+     "sec": 60.632
+    },
+    {
+     "name": "Puente",
+     "bar": 40,
+     "sec": 101.053
+    },
+    {
+     "name": "Perreo",
+     "bar": 48,
+     "sec": 121.263
+    },
+    {
+     "name": "Outro",
+     "bar": 64,
+     "sec": 161.684
+    }
+   ],
+   "lufs": -10.05,
+   "true_peak_dbtp": -1.47,
+   "file": "music/tracks/reggaeton/mainstream-08-dembow-fuego.mp3",
+   "cover": "music/tracks/reggaeton/mainstream-08-dembow-fuego.jpg",
+   "description_he": "רגאטון חם ומקפיץ ב-95 BPM בסולם A minor: ריתם דמבו קלאסי (קיק עם הדגשה על 1 ו-3 וסנר-רים על ה\"בום-צ'יק\"), טימבלס, קונגות וגוויירו, 808 שעוקב אחרי הקיק, ארפג'ו גיטרה ניילון ופלאק עם הוק קליט. דרופ Perreo כבד עם 808 גולש וסירנה — לרגעי השיא ברחבה.",
+   "mix_tips_he": "טיפ ערבוב: אינטרו של 16 תיבות תופים בלבד (בלי באס ובלי מלודיה). ה-808 והגיטרה נכנסים בתיבה 17 (Hot Cue B), הפזמון בתיבה 25, הברייק בתיבה 41 ודרופ ה-Perreo בתיבה 49. האאוטרו מתחיל בתיבה 65 ו-8 התיבות האחרונות הן תופים בלבד. בגלגל הקמלוט הטראק יושב על 8A ומתערבב חלק עם 7A, 9A ו-8B. מתחבר מעולה ל-Perreo Nocturno (7A, 92 BPM). ב-95 BPM אפשר לעבור להיפ-הופ (92–95) כמעט בלי לגעת ב-Pitch.",
+   "instruments": [
+    "dembow snare + rim",
+    "tuned reggaeton kick",
+    "808 sub (with perreo glides)",
+    "timbales",
+    "congas",
+    "shaker & hats",
+    "nylon-guitar arpeggio (Karplus-Strong)",
+    "square pluck hook",
+    "warm pad",
+    "güiro",
+    "siren FX"
+   ],
+   "seed": 1561,
+   "license": "CC0-1.0",
+   "engine_version": "1.0.0",
+   "size_bytes": 8264623
+  },
+  {
+   "id": "mainstream-09",
+   "title": "Perreo Nocturno",
+   "title_he": "פריאו לילי",
+   "artist": "DJ Lab Originals",
+   "genre": "Reggaeton",
+   "genre_slug": "reggaeton",
+   "family": "mainstream",
+   "bpm": 92.0,
+   "key": "D minor",
+   "key_short": "Dm",
+   "camelot": "7A",
+   "energy": 6,
+   "role": "build",
+   "duration_sec": 208.696,
+   "bars": 80,
+   "beats_per_bar": 4,
+   "first_downbeat_sec": 0.0,
+   "sections": [
+    {
+     "name": "Intro",
+     "start_bar": 0,
+     "bars": 16,
+     "start_sec": 0.0,
+     "energy": 3
+    },
+    {
+     "name": "Verso",
+     "start_bar": 16,
+     "bars": 16,
+     "start_sec": 41.739,
+     "energy": 5
+    },
+    {
+     "name": "Coro",
+     "start_bar": 32,
+     "bars": 16,
+     "start_sec": 83.478,
+     "energy": 6
+    },
+    {
+     "name": "Puente",
+     "start_bar": 48,
+     "bars": 8,
+     "start_sec": 125.217,
+     "energy": 4
+    },
+    {
+     "name": "Perreo",
+     "start_bar": 56,
+     "bars": 8,
+     "start_sec": 146.087,
+     "energy": 7
+    },
+    {
+     "name": "Outro",
+     "start_bar": 64,
+     "bars": 16,
+     "start_sec": 166.957,
+     "energy": 4
+    }
+   ],
+   "cues": [
+    {
+     "slot": "A",
+     "name": "Intro",
+     "bar": 0,
+     "sec": 0.0,
+     "color": "#28E214",
+     "type": "hot"
+    },
+    {
+     "slot": "B",
+     "name": "Mix-In",
+     "bar": 16,
+     "sec": 41.739,
+     "color": "#10B1E6",
+     "type": "hot"
+    },
+    {
+     "slot": "C",
+     "name": "Breakdown",
+     "bar": 48,
+     "sec": 125.217,
+     "color": "#E0641B",
+     "type": "hot"
+    },
+    {
+     "slot": "D",
+     "name": "Drop",
+     "bar": 32,
+     "sec": 83.478,
+     "color": "#E62828",
+     "type": "hot"
+    },
+    {
+     "slot": "F",
+     "name": "Drop 2",
+     "bar": 56,
+     "sec": 146.087,
+     "color": "#DE44CF",
+     "type": "hot"
+    },
+    {
+     "slot": "G",
+     "name": "Outro",
+     "bar": 64,
+     "sec": 166.957,
+     "color": "#305AFF",
+     "type": "hot"
+    },
+    {
+     "slot": "H",
+     "name": "Last 16",
+     "bar": 64,
+     "sec": 166.957,
+     "color": "#8A2BE2",
+     "type": "hot"
+    }
+   ],
+   "memory_cues": [
+    {
+     "name": "Intro",
+     "bar": 0,
+     "sec": 0.0
+    },
+    {
+     "name": "Verso",
+     "bar": 16,
+     "sec": 41.739
+    },
+    {
+     "name": "Coro",
+     "bar": 32,
+     "sec": 83.478
+    },
+    {
+     "name": "Puente",
+     "bar": 48,
+     "sec": 125.217
+    },
+    {
+     "name": "Perreo",
+     "bar": 56,
+     "sec": 146.087
+    },
+    {
+     "name": "Outro",
+     "bar": 64,
+     "sec": 166.957
+    }
+   ],
+   "lufs": -10.06,
+   "true_peak_dbtp": -1.49,
+   "file": "music/tracks/reggaeton/mainstream-09-perreo-nocturno.mp3",
+   "cover": "music/tracks/reggaeton/mainstream-09-perreo-nocturno.jpg",
+   "description_he": "רגאטון לילי ואפל ב-92 BPM בסולם D minor: דמבו קלאסי עם תופי טימבלס, 808 עמוק, ארפג'ו של גיטרה ניילון במינור הרמוני (אקורד V מז'ורי שנותן צבע לטיני-דרמטי), פלאק מלודי וצ'ופים ווקאליים סינתטיים. בדרופ ה-Perreo נכנס 808 מעוות עם גלישות — אנרגיה שעולה בהדרגה, מתאים לבניית הסט.",
+   "mix_tips_he": "טיפ ערבוב: אינטרו של 16 תיבות תופים בלבד (בלי באס ובלי מלודיה). ה-808 והגיטרה נכנסים בתיבה 17 (Hot Cue B), הפזמון בתיבה 33, הברייק בתיבה 49 ודרופ ה-Perreo בתיבה 57. האאוטרו מתחיל בתיבה 65 ו-8 התיבות האחרונות הן תופים בלבד. בגלגל הקמלוט הטראק יושב על 7A ומתערבב חלק עם 6A, 8A ו-7B. מתחבר מעולה ל-Late Night Cypher (6A, 95 BPM) ול-Dembow Fuego (8A, 95 BPM). ב-92 BPM אפשר לעבור להיפ-הופ (92–95) כמעט בלי לגעת ב-Pitch.",
+   "instruments": [
+    "dembow snare + rim",
+    "tuned reggaeton kick",
+    "808 sub (with perreo glides)",
+    "timbales",
+    "congas",
+    "shaker & hats",
+    "nylon-guitar arpeggio (Karplus-Strong)",
+    "square pluck hook",
+    "warm pad",
+    "formant vocal chops",
+    "FM perc"
+   ],
+   "seed": 1578,
+   "license": "CC0-1.0",
+   "engine_version": "1.0.0",
+   "size_bytes": 8523187
+  },
+  {
+   "id": "breadth-01",
+   "title": "Goa Gateway",
+   "title_he": "שער גואה",
+   "artist": "DJ Lab Originals",
+   "genre": "Psytrance",
+   "genre_slug": "psytrance",
+   "family": "breadth",
+   "bpm": 142.0,
+   "key": "F# minor",
+   "key_short": "F#m",
+   "camelot": "11A",
+   "energy": 9,
+   "role": "peak",
+   "duration_sec": 270.423,
+   "bars": 160,
+   "beats_per_bar": 4,
+   "first_downbeat_sec": 0.0,
+   "sections": [
+    {
+     "name": "Intro",
+     "start_bar": 0,
+     "bars": 32,
+     "start_sec": 0.0,
+     "energy": 6
+    },
+    {
+     "name": "Groove",
+     "start_bar": 32,
+     "bars": 16,
+     "start_sec": 54.085,
+     "energy": 8
+    },
+    {
+     "name": "Breakdown",
+     "start_bar": 48,
+     "bars": 16,
+     "start_sec": 81.127,
+     "energy": 6
+    },
+    {
+     "name": "Drop",
+     "start_bar": 64,
+     "bars": 32,
+     "start_sec": 108.169,
+     "energy": 9
+    },
+    {
+     "name": "Breakdown 2",
+     "start_bar": 96,
+     "bars": 16,
+     "start_sec": 162.254,
+     "energy": 7
+    },
+    {
+     "name": "Drop 2",
+     "start_bar": 112,
+     "bars": 16,
+     "start_sec": 189.296,
+     "energy": 10
+    },
+    {
+     "name": "Outro",
+     "start_bar": 128,
+     "bars": 32,
+     "start_sec": 216.338,
+     "energy": 6
+    }
+   ],
+   "cues": [
+    {
+     "slot": "A",
+     "name": "Intro",
+     "bar": 0,
+     "sec": 0.0,
+     "color": "#28E214",
+     "type": "hot"
+    },
+    {
+     "slot": "B",
+     "name": "Mix-In",
+     "bar": 16,
+     "sec": 27.042,
+     "color": "#10B1E6",
+     "type": "hot"
+    },
+    {
+     "slot": "C",
+     "name": "Breakdown",
+     "bar": 48,
+     "sec": 81.127,
+     "color": "#E0641B",
+     "type": "hot"
+    },
+    {
+     "slot": "D",
+     "name": "Drop",
+     "bar": 64,
+     "sec": 108.169,
+     "color": "#E62828",
+     "type": "hot"
+    },
+    {
+     "slot": "E",
+     "name": "Breakdown 2",
+     "bar": 96,
+     "sec": 162.254,
+     "color": "#B4BE04",
+     "type": "hot"
+    },
+    {
+     "slot": "F",
+     "name": "Drop 2",
+     "bar": 112,
+     "sec": 189.296,
+     "color": "#DE44CF",
+     "type": "hot"
+    },
+    {
+     "slot": "G",
+     "name": "Outro",
+     "bar": 128,
+     "sec": 216.338,
+     "color": "#305AFF",
+     "type": "hot"
+    },
+    {
+     "slot": "H",
+     "name": "Last 16",
+     "bar": 144,
+     "sec": 243.38,
+     "color": "#8A2BE2",
+     "type": "hot"
+    }
+   ],
+   "memory_cues": [
+    {
+     "name": "Intro",
+     "bar": 0,
+     "sec": 0.0
+    },
+    {
+     "name": "Groove",
+     "bar": 32,
+     "sec": 54.085
+    },
+    {
+     "name": "Breakdown",
+     "bar": 48,
+     "sec": 81.127
+    },
+    {
+     "name": "Drop",
+     "bar": 64,
+     "sec": 108.169
+    },
+    {
+     "name": "Breakdown 2",
+     "bar": 96,
+     "sec": 162.254
+    },
+    {
+     "name": "Drop 2",
+     "bar": 112,
+     "sec": 189.296
+    },
+    {
+     "name": "Outro",
+     "bar": 128,
+     "sec": 216.338
+    }
+   ],
+   "lufs": -9.15,
+   "true_peak_dbtp": -1.32,
+   "file": "music/tracks/psytrance/breadth-01-goa-gateway.mp3",
+   "cover": "music/tracks/psytrance/breadth-01-goa-gateway.jpg",
+   "description_he": "פסיטרנס פול-און ב-142 BPM בסולם F# minor: קיק קצר ופאנצ'י בלי חפיפה, בס מתגלגל של שלוש 16-יות אחרי כל קיק, אסיד סקוואלשי, סיקוונסים של FM עם פילטר שנפתח, זאפים, צלילות פיץ' ולייזרים — ומרקם קולי שנשמע כמו קטע דיבור (סינתטי לגמרי, בלי מילים). המתח נבנה מחדש כל 16 תיבות. טראק פיק.",
+   "mix_tips_he": "טיפ ערבוב: 16 התיבות הראשונות הן קיק והיי-האטים בלבד, והבאס המתגלגל נכנס בתיבה 17 (Hot Cue B) — זה הרגע להחליף באסים: בפסיטרנס אסור ששני באסים יתנגשו, אז חתכו את ה-Low בטראק הנכנס עד הסוויץ'. ברייקדאון בתיבה 49 ודרופ בתיבה 65. ברייקדאון שני בתיבה 97. האאוטרו מתחיל בתיבה 129 והבאס יוצא בתיבה 145 (16 תיבות תופים בלבד). כל 16 תיבות יש בילד קצר עם חיתוך של הפעמה האחרונה — סמנו אותו כנקודת מעבר טבעית. שכנים הרמוניים ב-Camelot: 11A ↔ 12A, 10A, 11B.",
+   "instruments": [
+    "short punchy psy kick",
+    "rolling KBBB bass",
+    "squelchy acid",
+    "filter-swept FM 1/16 sequence",
+    "Goa-style square lead",
+    "spoken-word-like vowel texture",
+    "dark pad",
+    "zaps & pitch dives",
+    "open hats & ride",
+    "FM percussion"
+   ],
+   "seed": 1714,
+   "license": "CC0-1.0",
+   "engine_version": "1.0.0",
+   "size_bytes": 11006821
   }
  ],
- "practice": [],
+ "practice": [
+  {
+   "id": "practice-03",
+   "kind": "practice",
+   "title": "Beatmatch Drums 124",
+   "title_he": "תופים לביטמאצ'ינג 124",
+   "artist": "DJ Lab Practice",
+   "album": "DJ Lab — Practice",
+   "genre": "Practice",
+   "bpm": 124.0,
+   "duration_sec": 216.774,
+   "bars": 112,
+   "beats_per_bar": 4,
+   "first_downbeat_sec": 0.0,
+   "sections": [
+    {
+     "name": "Intro",
+     "start_bar": 0,
+     "bars": 16,
+     "start_sec": 0.0,
+     "energy": 3
+    },
+    {
+     "name": "Build",
+     "start_bar": 16,
+     "bars": 16,
+     "start_sec": 30.968,
+     "energy": 5
+    },
+    {
+     "name": "Groove A",
+     "start_bar": 32,
+     "bars": 32,
+     "start_sec": 61.935,
+     "energy": 6
+    },
+    {
+     "name": "Groove B",
+     "start_bar": 64,
+     "bars": 32,
+     "start_sec": 123.871,
+     "energy": 6
+    },
+    {
+     "name": "Outro",
+     "start_bar": 96,
+     "bars": 16,
+     "start_sec": 185.806,
+     "energy": 3
+    }
+   ],
+   "cues": [
+    {
+     "slot": "A",
+     "name": "Start · Kick + Hat",
+     "bar": 0,
+     "sec": 0.0,
+     "color": "#28E214",
+     "type": "hot"
+    },
+    {
+     "slot": "B",
+     "name": "Groove A · Bar 33",
+     "bar": 32,
+     "sec": 61.935,
+     "color": "#10B1E6",
+     "type": "hot"
+    },
+    {
+     "slot": "C",
+     "name": "Groove B · Bar 65",
+     "bar": 64,
+     "sec": 123.871,
+     "color": "#E0641B",
+     "type": "hot"
+    },
+    {
+     "slot": "G",
+     "name": "Outro · Bar 97",
+     "bar": 96,
+     "sec": 185.806,
+     "color": "#305AFF",
+     "type": "hot"
+    }
+   ],
+   "memory_cues": [
+    {
+     "name": "Intro",
+     "bar": 0,
+     "sec": 0.0
+    },
+    {
+     "name": "Build",
+     "bar": 16,
+     "sec": 30.968
+    },
+    {
+     "name": "Fill · Bar 32",
+     "bar": 31,
+     "sec": 60.0
+    },
+    {
+     "name": "Groove A",
+     "bar": 32,
+     "sec": 61.935
+    },
+    {
+     "name": "Fill · Bar 64",
+     "bar": 63,
+     "sec": 121.935
+    },
+    {
+     "name": "Groove B",
+     "bar": 64,
+     "sec": 123.871
+    },
+    {
+     "name": "Fill · Bar 96",
+     "bar": 95,
+     "sec": 183.871
+    },
+    {
+     "name": "Outro",
+     "bar": 96,
+     "sec": 185.806
+    }
+   ],
+   "lufs": -10.11,
+   "true_peak_dbtp": -1.54,
+   "file": "music/practice/practice-03-drums-124.mp3",
+   "cover": "music/practice/practice-03-drums-124.jpg",
+   "purpose_he": "לופ תופים נקי לתרגול ביטמאצ'ינג באוזן",
+   "description_he": "לופ תופים נקי ב-124 BPM בסגנון טק-האוס — קיק, קלאפ, היי-האט באופביט ושייקר, בלי באס ובלי שום צליל טונאלי, כך שהביטמאצ'ינג נעשה רק לפי הקצב. כל 8 תיבות משהו קטן משתנה בתופים, וקראש עדין מסמן כל 16 תיבות. הקיק לא נעלם אף פעם — חוץ מתיבת מילוי אחת בסוף כל 32 תיבות (תיבות 32, 64 ו-96: קיק רק על ה-1 ומילוי סנר). 16 התיבות הראשונות והאחרונות מינימליות (קיק והיי-האט).",
+   "exercise_he": "1. תרגיל מיקום: טענו את `practice-03` לשני הדקים. הפעילו את דק 2 בכוונה לא בזמן, ויישרו את הקיקים רק עם ה-Jog. 20 חזרות.\n2. תרגיל מהירות: דק 1 — `practice-03` (124), דק 2 — `music/practice/practice-04-drums-128.mp3` (128). Sync כבוי. כסו את תצוגת ה-BPM של דק 2 (פתק דביק עובד מצוין).\n3. כוונו את ה-Tempo Fader של דק 2 עד שהקיקים יושבים יחד — בערך ‎−3.1%‎ — ותקנו עם ה-Jog.\n4. החזיקו 32 תיבות בלי סטייה של יותר מחצי ביט, ובדקו את עצמכם על תיבת המילוי (תיבה 32).\n5. שלב ב': החליפו תפקידים — `music/practice/practice-04-drums-128.mp3` בדק 1 ו-`practice-03` בדק 2 (הפעם צריך להאיץ, ‎+3.2%‎).",
+   "pair_with": [
+    "practice-04",
+    "practice-03"
+   ],
+   "instruments": [
+    "tech_house kick",
+    "clap",
+    "offbeat open hat",
+    "16th hats",
+    "shaker",
+    "rimshot",
+    "ride",
+    "snare fill every 32 bars",
+    "crash every 16 bars"
+   ],
+   "seed": 7103,
+   "license": "CC0-1.0",
+   "engine_version": "1.0.0",
+   "size_bytes": 8786956
+  }
+ ],
  "transitions": []
 }

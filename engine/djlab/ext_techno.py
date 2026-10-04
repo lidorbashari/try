@@ -266,19 +266,21 @@ def warm_pad(attack=1.2, release=2.0, cutoff=2200.0, detune=0.28, warmth=0.5, or
     return inst
 
 
-def dub_chord_st(cutoff=650.0, env_amt=1300.0, decay=0.22, detune_cents=6.0, amp_decay=0.3, sr=SR):
-    """Stereo dub-techno chord voice: L/R slightly detuned saw+square through a ladder LP, short."""
+def dub_chord_st(cutoff=650.0, env_amt=1300.0, decay=0.22, detune_cents=5.0, amp_decay=0.3, side=0.35, sr=SR):
+    """Stereo dub-techno chord voice: saw+square through a ladder LP, short; a slightly detuned copy is
+    the side signal (mono-compatible width)."""
     def inst(freq, dur, vel):
         gate, n = _n(dur, 0.06, sr)
         t = np.arange(n) / sr
         d = 2 ** (detune_cents / 1200)
         cut = cutoff + env_amt * vel * np.exp(-t / decay)
-        chans = []
-        for c, k in enumerate((d, 1 / d)):
+        sig = []
+        for c, k in enumerate((1.0, d)):
             x = saw(freq * k, n, 0.17 * c) * 0.6 + square(freq * k * 1.002, n, 0.3 + 0.2 * c, 0.5) * 0.4
-            chans.append(ladder(x, cut, 0.45, 1.2))
+            sig.append(ladder(x, cut, 0.45, 1.2))
+        st = np.stack([sig[0] + side * sig[1], sig[0] - side * sig[1]], axis=1)
         env = adsr(n, gate, 0.003, amp_decay, 0.0, 0.06, sr, curve=3.0)
-        return _finish(np.stack(chans, axis=1) * env[:, None], vel)
+        return _finish(st * env[:, None], vel)
     return inst
 
 

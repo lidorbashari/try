@@ -1,0 +1,156 @@
+{
+ "id": "house-06",
+ "title": "Bassline Bandit",
+ "title_he": "שודד הבאסליין",
+ "artist": "DJ Lab Originals",
+ "genre": "Tech House",
+ "genre_slug": "tech_house",
+ "family": "house",
+ "bpm": 127.0,
+ "key": "D minor",
+ "key_short": "Dm",
+ "camelot": "7A",
+ "energy": 7,
+ "role": "peak",
+ "duration_sec": 257.008,
+ "bars": 136,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 32,
+   "start_sec": 0.0,
+   "energy": 4
+  },
+  {
+   "name": "Groove",
+   "start_bar": 32,
+   "bars": 24,
+   "start_sec": 60.472,
+   "energy": 6
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 56,
+   "bars": 16,
+   "start_sec": 105.827,
+   "energy": 3
+  },
+  {
+   "name": "Drop",
+   "start_bar": 72,
+   "bars": 32,
+   "start_sec": 136.063,
+   "energy": 8
+  },
+  {
+   "name": "Outro",
+   "start_bar": 104,
+   "bars": 32,
+   "start_sec": 196.535,
+   "energy": 4
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 32,
+   "sec": 60.472,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 56,
+   "sec": 105.827,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 72,
+   "sec": 136.063,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 104,
+   "sec": 196.535,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 120,
+   "sec": 226.772,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Groove",
+   "bar": 32,
+   "sec": 60.472
+  },
+  {
+   "name": "Breakdown",
+   "bar": 56,
+   "sec": 105.827
+  },
+  {
+   "name": "Drop",
+   "bar": 72,
+   "sec": 136.063
+  },
+  {
+   "name": "Outro",
+   "bar": 104,
+   "sec": 196.535
+  }
+ ],
+ "lufs": -9.2,
+ "true_peak_dbtp": -1.43,
+ "file": "music/tracks/tech_house/house-06-bassline-bandit.mp3",
+ "cover": "music/tracks/tech_house/house-06-bassline-bandit.jpg",
+ "description_he": "טק-האוס ב-127 BPM בסולם D minor שבו הבאס הוא הכוכב: באסליין \"מדבר\" עם פילטר פורמנטים שנפתח ונסגר בכל תו, בשיטת שאלה-תשובה. תופים רזים ומדויקים, וטיזר של הבאס בסוף הברייקדאון לפני הדרופ.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 32 תיבות להכנסה נקייה, הבאס נכנס בתיבה 33 (Hot Cue B), ברייקדאון בתיבה 57, דרופ בתיבה 73, אאוטרו של 32 תיבות מתיבה 105 — מושלם למיקס החוצה. בסוף הברייקדאון הבאס חוזר מפולטר לשמונה תיבות — אל תערבבו שם באס של טראק אחר.",
+ "instruments": [
+  "tuned tech-house kick",
+  "talking / wah formant bass",
+  "swung 16th hats",
+  "open hat",
+  "shaker",
+  "clap + plate",
+  "congas",
+  "rim",
+  "vowel shout",
+  "minor stab",
+  "breakdown pad",
+  "riser & impact"
+ ],
+ "seed": 1085,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

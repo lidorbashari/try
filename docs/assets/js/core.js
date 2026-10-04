@@ -348,7 +348,8 @@
     var nav = DJ.$('#site-nav'), tog = DJ.$('[data-nav-toggle]');
     if (nav && tog) {
       var close = function () { nav.classList.remove('is-open'); tog.setAttribute('aria-expanded', 'false'); tog.innerHTML = DJ.icon('menu'); tog.setAttribute('aria-label', 'פתיחת תפריט'); };
-      tog.addEventListener('click', function () {
+      tog.addEventListener('click', function (e) {
+        e.stopPropagation();
         var open = !nav.classList.contains('is-open');
         nav.classList.toggle('is-open', open);
         tog.setAttribute('aria-expanded', String(open));

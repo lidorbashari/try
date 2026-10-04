@@ -1,0 +1,154 @@
+{
+ "id": "house-08",
+ "title": "Shuffle Theory",
+ "title_he": "תורת השאפל",
+ "artist": "DJ Lab Originals",
+ "genre": "Tech House",
+ "genre_slug": "tech_house",
+ "family": "house",
+ "bpm": 126.0,
+ "key": "E minor",
+ "key_short": "Em",
+ "camelot": "9A",
+ "energy": 7,
+ "role": "build",
+ "duration_sec": 259.048,
+ "bars": 136,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 32,
+   "start_sec": 0.0,
+   "energy": 4
+  },
+  {
+   "name": "Groove",
+   "start_bar": 32,
+   "bars": 32,
+   "start_sec": 60.952,
+   "energy": 6
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 64,
+   "bars": 16,
+   "start_sec": 121.905,
+   "energy": 4
+  },
+  {
+   "name": "Drop",
+   "start_bar": 80,
+   "bars": 24,
+   "start_sec": 152.381,
+   "energy": 8
+  },
+  {
+   "name": "Outro",
+   "start_bar": 104,
+   "bars": 32,
+   "start_sec": 198.095,
+   "energy": 4
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 32,
+   "sec": 60.952,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 64,
+   "sec": 121.905,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 80,
+   "sec": 152.381,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 104,
+   "sec": 198.095,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 120,
+   "sec": 228.571,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Groove",
+   "bar": 32,
+   "sec": 60.952
+  },
+  {
+   "name": "Breakdown",
+   "bar": 64,
+   "sec": 121.905
+  },
+  {
+   "name": "Drop",
+   "bar": 80,
+   "sec": 152.381
+  },
+  {
+   "name": "Outro",
+   "bar": 104,
+   "sec": 198.095
+  }
+ ],
+ "lufs": -9.15,
+ "true_peak_dbtp": -1.34,
+ "file": "music/tracks/tech_house/house-08-shuffle-theory.mp3",
+ "cover": "music/tracks/tech_house/house-08-shuffle-theory.jpg",
+ "description_he": "טק-האוס עם שאפל כבד ב-126 BPM בסולם E minor: היי-האטים מתנדנדים, בונגוס בטריולות שיוצרים תחושת 3 נגד 4, באס קופצני באוקטבות וסטאבים של אורגן עם צ'ופים ווקאליים. גרוב שמכין את הרחבה לשיא.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 32 תיבות להכנסה נקייה, הבאס נכנס בתיבה 33 (Hot Cue B), ברייקדאון בתיבה 65, דרופ בתיבה 81, אאוטרו של 32 תיבות מתיבה 105 — מושלם למיקס החוצה. השאפל כבד — בזמן ביטמאצ'ינג הקשיבו להיי-האטים ולא רק לקיק.",
+ "instruments": [
+  "tech-house kick",
+  "heavy-swing 16th hats",
+  "triplet bongos",
+  "congas",
+  "tambourine",
+  "bouncy octave bass",
+  "rotary organ stabs",
+  "vocal chops",
+  "pad",
+  "riser & impact"
+ ],
+ "seed": 1119,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

@@ -66,7 +66,7 @@
       var st = steps(t.steps_he);
       var num = (t.id || '').replace(/^\D+-?/, '');
       var el = DJ.h('<article class="card pr-card' + (DJ.playable(t) ? '' : ' is-soon') + '" id="' + esc(t.id) + '">' +
-        '<div class="pr-head"><span class="pr-id" aria-hidden="true">' + esc(num) + '</span><div><h3 class="pr-title">' + esc(t.technique_he || t.title_he || t.title) + '</h3><div class="pr-en">' + esc(t.title || t.technique || '') + '</div></div></div>' +
+        '<div class="pr-head"><span class="pr-id" aria-hidden="true">' + esc(num) + '</span><div><h3 class="pr-title">' + esc(t.technique_he || t.title_he || t.title) + '</h3><div class="pr-en">' + esc(t.title || String(t.technique || '').replace(/_/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); })) + '</div></div></div>' +
         '<div class="pr-flow">' + mini(t.from_id) + '<span aria-label="אל">' + I('arrow-left') + '</span>' + mini(t.to_id) + '</div>' +
         badges(t) +
         (t.description_he ? '<p class="pr-purpose">' + esc(t.description_he) + '</p>' : '') +

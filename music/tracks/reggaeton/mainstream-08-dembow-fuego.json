@@ -1,0 +1,175 @@
+{
+ "id": "mainstream-08",
+ "title": "Dembow Fuego",
+ "title_he": "דמבו פואגו",
+ "artist": "DJ Lab Originals",
+ "genre": "Reggaeton",
+ "genre_slug": "reggaeton",
+ "family": "mainstream",
+ "bpm": 95.0,
+ "key": "A minor",
+ "key_short": "Am",
+ "camelot": "8A",
+ "energy": 7,
+ "role": "peak",
+ "duration_sec": 202.105,
+ "bars": 80,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 16,
+   "start_sec": 0.0,
+   "energy": 3
+  },
+  {
+   "name": "Verso",
+   "start_bar": 16,
+   "bars": 8,
+   "start_sec": 40.421,
+   "energy": 5
+  },
+  {
+   "name": "Coro",
+   "start_bar": 24,
+   "bars": 16,
+   "start_sec": 60.632,
+   "energy": 7
+  },
+  {
+   "name": "Puente",
+   "start_bar": 40,
+   "bars": 8,
+   "start_sec": 101.053,
+   "energy": 4
+  },
+  {
+   "name": "Perreo",
+   "start_bar": 48,
+   "bars": 16,
+   "start_sec": 121.263,
+   "energy": 8
+  },
+  {
+   "name": "Outro",
+   "start_bar": 64,
+   "bars": 16,
+   "start_sec": 161.684,
+   "energy": 4
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 16,
+   "sec": 40.421,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 40,
+   "sec": 101.053,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 24,
+   "sec": 60.632,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "F",
+   "name": "Drop 2",
+   "bar": 48,
+   "sec": 121.263,
+   "color": "#DE44CF",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 64,
+   "sec": 161.684,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 64,
+   "sec": 161.684,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Verso",
+   "bar": 16,
+   "sec": 40.421
+  },
+  {
+   "name": "Coro",
+   "bar": 24,
+   "sec": 60.632
+  },
+  {
+   "name": "Puente",
+   "bar": 40,
+   "sec": 101.053
+  },
+  {
+   "name": "Perreo",
+   "bar": 48,
+   "sec": 121.263
+  },
+  {
+   "name": "Outro",
+   "bar": 64,
+   "sec": 161.684
+  }
+ ],
+ "lufs": -10.05,
+ "true_peak_dbtp": -1.47,
+ "file": "music/tracks/reggaeton/mainstream-08-dembow-fuego.mp3",
+ "cover": "music/tracks/reggaeton/mainstream-08-dembow-fuego.jpg",
+ "description_he": "רגאטון חם ומקפיץ ב-95 BPM בסולם A minor: ריתם דמבו קלאסי (קיק עם הדגשה על 1 ו-3 וסנר-רים על ה\"בום-צ'יק\"), טימבלס, קונגות וגוויירו, 808 שעוקב אחרי הקיק, ארפג'ו גיטרה ניילון ופלאק עם הוק קליט. דרופ Perreo כבד עם 808 גולש וסירנה — לרגעי השיא ברחבה.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 16 תיבות תופים בלבד (בלי באס ובלי מלודיה). ה-808 והגיטרה נכנסים בתיבה 17 (Hot Cue B), הפזמון בתיבה 25, הברייק בתיבה 41 ודרופ ה-Perreo בתיבה 49. האאוטרו מתחיל בתיבה 65 ו-8 התיבות האחרונות הן תופים בלבד. בגלגל הקמלוט הטראק יושב על 8A ומתערבב חלק עם 7A, 9A ו-8B. מתחבר מעולה ל-Perreo Nocturno (7A, 92 BPM). ב-95 BPM אפשר לעבור להיפ-הופ (92–95) כמעט בלי לגעת ב-Pitch.",
+ "instruments": [
+  "dembow snare + rim",
+  "tuned reggaeton kick",
+  "808 sub (with perreo glides)",
+  "timbales",
+  "congas",
+  "shaker & hats",
+  "nylon-guitar arpeggio (Karplus-Strong)",
+  "square pluck hook",
+  "warm pad",
+  "güiro",
+  "siren FX"
+ ],
+ "seed": 1561,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

@@ -1,0 +1,154 @@
+{
+ "id": "techno-07",
+ "title": "Event Horizon",
+ "title_he": "אופק אירועים",
+ "artist": "DJ Lab Originals",
+ "genre": "Melodic Techno",
+ "genre_slug": "melodic_techno",
+ "family": "techno",
+ "bpm": 124.0,
+ "key": "E minor",
+ "key_short": "Em",
+ "camelot": "9A",
+ "energy": 7,
+ "role": "peak",
+ "duration_sec": 309.677,
+ "bars": 160,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 32,
+   "start_sec": 0.0,
+   "energy": 4
+  },
+  {
+   "name": "Build",
+   "start_bar": 32,
+   "bars": 32,
+   "start_sec": 61.935,
+   "energy": 6
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 64,
+   "bars": 32,
+   "start_sec": 123.871,
+   "energy": 3
+  },
+  {
+   "name": "Drop",
+   "start_bar": 96,
+   "bars": 32,
+   "start_sec": 185.806,
+   "energy": 9
+  },
+  {
+   "name": "Outro",
+   "start_bar": 128,
+   "bars": 32,
+   "start_sec": 247.742,
+   "energy": 4
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 32,
+   "sec": 61.935,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 64,
+   "sec": 123.871,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 96,
+   "sec": 185.806,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 128,
+   "sec": 247.742,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 144,
+   "sec": 278.71,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Build",
+   "bar": 32,
+   "sec": 61.935
+  },
+  {
+   "name": "Breakdown",
+   "bar": 64,
+   "sec": 123.871
+  },
+  {
+   "name": "Drop",
+   "bar": 96,
+   "sec": 185.806
+  },
+  {
+   "name": "Outro",
+   "bar": 128,
+   "sec": 247.742
+  }
+ ],
+ "lufs": -9.24,
+ "true_peak_dbtp": -1.07,
+ "file": "music/tracks/melodic_techno/techno-07-event-horizon.mp3",
+ "cover": "music/tracks/melodic_techno/techno-07-event-horizon.jpg",
+ "description_he": "מלודיק טכנו ב-124 BPM בסולם E minor: מלודיק טכנו כהה ודוהר בסגנון Massano: באס דוהר, ארפג'יו פדאל אפל וליד ריתמי וחד בדרופ. מבנה ארוך של 32 תיבות לכל חלק — ברייקדאון קולנועי עם מקהלה ומתח שנבנה לדרופ גדול.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 32 תיבות להכנסה נקייה, הבאס נכנס בתיבה 33 (Hot Cue B), ברייקדאון בתיבה 65, דרופ בתיבה 97, אאוטרו של 32 תיבות מתיבה 129 — מושלם למיקס החוצה. הארפג'יו מתחיל לרמוז כבר בתיבה 25 (מסונן) — אפשר להתחיל להכניס אז את ה-Mid. הבאס יוצא בתיבה 145, כך ש-16 התיבות האחרונות הן תופים בלבד — חלון מושלם ל-Bass Swap.",
+ "instruments": [
+  "tight tuned techno kick",
+  "rolling arpeggiated bass",
+  "wide arpeggio",
+  "anthem lead hook",
+  "side-chained pads",
+  "formant choir",
+  "clap & plate snare",
+  "stereo hats, shaker & ride",
+  "tribal toms & percussion",
+  "riser, pitched snare roll & impact"
+ ],
+ "seed": 1340,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

@@ -33,7 +33,7 @@ import numpy as np
 from . import ENGINE_VERSION, REPO_ROOT, SR, scratch_dir
 from . import drums, fx, instruments as inst
 from .arrangement import Song
-from .dsp import F32
+from .dsp import F32, fade
 from .theory import camelot as camelot_of, parse_key, voice_lead
 
 EXTRAS_PATH = REPO_ROOT / "music" / "extras.plan.json"
@@ -44,7 +44,7 @@ GENRE = "Practice"
 TARGET_LUFS = -10.0
 SLOT_COLORS = {"A": "#28E214", "B": "#10B1E6", "C": "#E0641B", "D": "#E62828", "E": "#B4BE04",
                "F": "#DE44CF", "G": "#305AFF", "H": "#8A2BE2"}
-LRM = "‎"
+LRM = "\u200e"
 
 # Per-drill production settings (seed, key for tonal drills, builder). practice-10/11/12 share one
 # seed on purpose: the very same loop, only transposed, so the key comparison is fair.
@@ -115,6 +115,12 @@ def pct(target: float, source: float) -> str:
     return f"{LRM}{sign}{abs(v):.1f}%{LRM}"
 
 
+def soft_onset(x, ms: float = 0.6):
+    """Sub-millisecond raised-cosine fade-in on a one-shot: the onset stays on sample 0 (grid-exact) but the
+    beater transient no longer starts with a step, which on drum-only material reads as a click."""
+    return fade(x, int(ms * 1e-3 * SR), 0)
+
+
 def pick(rng, pool):
     return pool[int(rng.integers(len(pool)))]
 
@@ -170,7 +176,8 @@ KITS = {
 def make_kit(rng, name: str, tune: float | None = None) -> dict:
     k = KITS[name]
     kit = {"cfg": k}
-    kit["kick"] = drums.kick(k["kick"], tune_hz=tune or k["tune"], decay=k["decay"], click=k["click"], rng=rng)
+    kit["kick"] = soft_onset(drums.kick(k["kick"], tune_hz=tune or k["tune"], decay=k["decay"], click=k["click"],
+                                        rng=rng))
     kit["clap"] = drums.variants(drums.clap, 3, rng, jitter={"tone_hz": 0.04}, tone_hz=k["clap_tone"],
                                  tail=k["clap_tail"])
     kit["hat"] = drums.variants(drums.hat, 4, rng, jitter={"decay": 0.12}, decay=k["hat_dec"], tone=k["hat_tone"])
@@ -188,7 +195,7 @@ def make_kit(rng, name: str, tune: float | None = None) -> dict:
 
 
 def house_drums(song: Song, kit: dict, rng, *, clap_from=8, hats_from=16, shaker_from=16, perc_from=32,
-                full_until=96, kickless=(), phrase_fills=True, crash_every=16, crash_from=16, perc_pan=0.45):
+                full_until=96, kickless=(), phrase_fills=True, crash_every=16, crash_from=16, perc_pan=0.55):
     """Steady DJ-tool house drums: kick always (except ``kickless`` bars), offbeat hat, clap, 16th hats,
     shaker, percussion; intro/outro mirror each other (kick + hat at both ends)."""
     total = song.total_bars
@@ -200,7 +207,7 @@ def house_drums(song: Song, kit: dict, rng, *, clap_from=8, hats_from=16, shaker
 
     song.hits("kick", kit["kick"], lambda c: None if c.bar in kickless else FOUR, gain_db=-1.5, sc_source=True,
               humanize=0.0)
-    song.hits("offhat", kit["ohat"], OFF_HAT, gain_db=-11.0, pan=-0.1, humanize=0.05, sends={"room": 0.06})
+    song.hits("offhat", kit["ohat"], OFF_HAT, gain_db=-11.0, pan=-0.2, humanize=0.05, sends={"room": 0.1})
 
     def clap(c):
         if c.bar < clap_from or c.bar >= end_min:
@@ -209,9 +216,9 @@ def house_drums(song: Song, kit: dict, rng, *, clap_from=8, hats_from=16, shaker
 
     song.hits("clap", kit["clap"], clap, gain_db=-4.0, sends={"reverb": 0.1, "room": 0.12})
     song.hits("hats", kit["hat"], lambda c: hat_p if hats_from <= c.bar < full_until else None, gain_db=-15.0,
-              pan=0.3, humanize=0.12)
+              pan=0.4, humanize=0.12)
     song.hits("shaker", kit["shaker"], lambda c: sh_p if shaker_from <= c.bar < end_min else None, gain_db=-17.0,
-              pan=-0.45, humanize=0.15)
+              pan=-0.55, humanize=0.15)
     perc = kit[kit["cfg"]["perc"]]
     song.hits("perc", perc, lambda c: perc_p if perc_from <= c.bar < full_until else None, gain_db=-16.0,
               pan=perc_pan, sends={"delay8": 0.1, "room": 0.1})
@@ -219,6 +226,7 @@ def house_drums(song: Song, kit: dict, rng, *, clap_from=8, hats_from=16, shaker
     for b in range(crash_from, total, crash_every):
         fxl.add(kit["crash"], b, gain_db=-10.0 if b % 32 == 0 else -14.0)
     song.buses["drums"].eq = [("peak", 2600.0, 1.5, 0.8)]
+    song.buses["drums"].width = 1.3
     return fxl
 
 
@@ -330,7 +338,7 @@ def build_drums(entry, spec, rng):
 
     song.hits("kick", kit["kick"], lambda c: "x..............." if c.bar in fills else FOUR, gain_db=-1.5,
               sc_source=True, humanize=0.0)
-    song.hits("offhat", kit["ohat"], OFF_HAT, gain_db=-11.0, pan=-0.1, humanize=0.05, sends={"room": 0.06})
+    song.hits("offhat", kit["ohat"], OFF_HAT, gain_db=-11.0, pan=-0.2, humanize=0.05, sends={"room": 0.1})
 
     def clap(c):
         p = c.bar // 8
@@ -342,21 +350,22 @@ def build_drums(entry, spec, rng):
     song.hits("fill", kit["snare"], lambda c: FILL_KICKLESS if c.bar in fills else None, gain_db=-7.0,
               sends={"reverb": 0.15}, humanize=0.0)
     song.hits("hats", kit["hat"], lambda c: hv[hats_v[c.bar // 8]] if c.bar // 8 in hats_v and c.bar not in fills
-              else None, gain_db=-15.0, pan=0.3, humanize=0.1)
+              else None, gain_db=-15.0, pan=0.4, humanize=0.1)
     song.hits("shaker", kit["shaker"], lambda c: sv[shaker_v[c.bar // 8]] if c.bar // 8 in shaker_v else None,
-              gain_db=-17.0, pan=-0.45, humanize=0.12)
+              gain_db=-17.0, pan=-0.55, humanize=0.12)
     song.hits("perc", kit[cfg["perc"]], lambda c: pv[perc_v[c.bar // 8]] if c.bar // 8 in perc_v
-              and c.bar not in fills else None, gain_db=-16.0, pan=0.45, sends={"delay8": 0.08, "room": 0.1})
+              and c.bar not in fills else None, gain_db=-16.0, pan=0.55, sends={"delay8": 0.1, "room": 0.12})
     if cfg["extra"] == "ride":
         song.hits("ride", kit["ride"], lambda c: "x...x...x...x..." if c.bar // 8 in extra_on else None,
-                  gain_db=-20.0, pan=0.2)
+                  gain_db=-20.0, pan=0.3)
     else:
         song.hits("tamb", kit["tamb"], lambda c: "....x..g....x..g" if c.bar // 8 in extra_on else None,
-                  gain_db=-18.0, pan=0.55, humanize=0.1)
+                  gain_db=-18.0, pan=0.6, humanize=0.1)
     fxl = song.audio("crash", bus="fx")
     for b in range(16, song.total_bars, 16):
         fxl.add(kit["crash"], b, gain_db=-10.0 if b % 32 == 0 else -14.5)
     song.buses["drums"].eq = [("peak", 2600.0, 1.5, 0.8)]
+    song.buses["drums"].width = 1.3
 
     bpm = float(entry["bpm"])
     bs = bpm_str(bpm)
@@ -651,7 +660,7 @@ def build_key_loop(entry, spec, rng):
         ]
         d.pair_with = ["practice-10", "practice-08"]
     else:
-        d.description_he = base + ("זה אותו לופ כמו `practice-10`, בסולם שכן בגלגל ה-Camelot (‎+1‎ מ-8A). יחד עם "
+        d.description_he = base + ("זה אותו לופ כמו `practice-10`, בסולם שכן בגלגל ה-Camelot (\u200e+1\u200e מ-8A). יחד עם "
                                    "`practice-10` הוא נשמע כמו חלק מאותו שיר — מושלם לבלנד ארוך.")
         d.exercise = [
             "טענו את `music/practice/practice-10-key-home-8A-124.mp3` לדק 1 ואת `practice-12` לדק 2, Sync.",
@@ -915,8 +924,8 @@ def build_eq_ear(entry, spec, rng):
 
     d = Drill(category="eq", tonal=True, post=post, preview=(0, 24))
     d.description_he = (
-        "לופ האוס מלא ב-124 BPM (קיק, באס, אקורדים, ווקאל צ'ופ, קלאפ, היי-האטים, שייקר וריידר) — וכל 8 תיבות נשאר "
-        "רק תחום תדרים אחד: Low (עד 250Hz — קיק ובאס), Mid (‏250Hz–3kHz — אקורדים, ווקאל וקלאפ) או High (מעל 3kHz — "
+        "לופ האוס מלא ב-124 BPM (קיק, באס, אקורדים, ווקאל צ'ופ, קלאפ, היי-האטים, שייקר ורייד) — וכל 8 תיבות נשאר "
+        "רק תחום תדרים אחד: Low (עד 250Hz — קיק ובאס), Mid (\u200f250Hz–3kHz — אקורדים, ווקאל וקלאפ) או High (מעל 3kHz — "
         "היי-האטים ושייקר), או שחוזר המיקס המלא (Full). זה בדיוק מה ששומעים כשסוגרים ידיות EQ במיקסר. 8 התיבות "
         "הראשונות הן מיקס מלא לייחוס, אחריהן 12 סבבים בסדר אקראי (כל תחום 3 פעמים), ו-8 תיבות מלאות בסוף. קראש "
         "קטן מסמן כל סבב חדש. מפתח התשובות ב-`answer_key`.")
@@ -952,12 +961,12 @@ def build_tempo_bridge(entry, spec, rng):
     key = song.key
     last = song.total_bars - 1
     brk = range(48, 56)
-    kick = drums.kick("house", tune_hz=49.0, decay=0.4, click=0.4, rng=rng)
+    kick = soft_onset(drums.kick("house", tune_hz=49.0, decay=0.4, click=0.4, rng=rng))
     snr = drums.variants(drums.snare, 3, rng, jitter={"tone_hz": 0.03}, tone_hz=230.0, snappy=0.6, decay=0.1,
                          kind="tight")
     clp = drums.variants(drums.clap, 2, rng, tone_hz=1350.0, tail=0.12)
     hat = drums.variants(drums.hat, 3, rng, jitter={"decay": 0.1}, decay=0.035, tone=1.05)
-    doum = drums.darbuka("doum", 115.0, rng=rng)
+    doum = soft_onset(drums.darbuka("doum", 115.0, rng=rng))
     tek = drums.variants(drums.darbuka, 3, rng, stroke="tek", pitch_hz=720.0)
     ka = drums.variants(drums.darbuka, 3, rng, stroke="ka", pitch_hz=650.0)
     riq = drums.variants(drums.tambourine, 2, rng, length=0.18)
@@ -1098,12 +1107,39 @@ BUILDERS = {
 
 
 # ============================================================================ build / metadata
+def _haas(ms: float, left: bool = False):
+    def f(x):
+        y = fx.haas(x, ms)
+        return y[:, ::-1].copy() if left else y
+    return f
+
+
+def stereo_polish(song: Song) -> None:
+    """Same top-end image for every drill: tops panned wide + a few ms of Haas on hats (right) and shaker (left),
+    a wider room return. Lows are untouched (drum bus stays mono below 110 Hz)."""
+    song.returns["room"].width = 1.5
+    for l in song.layers:
+        if l.name == "hats":
+            l.pan = 0.55
+            l.fx.append(_haas(7.0))
+            l.sends.setdefault("room", 0.1)
+        elif l.name == "shaker":
+            l.pan = -0.7
+            l.fx.append(_haas(11.0, left=True))
+            l.sends.setdefault("room", 0.1)
+        elif l.name == "offhat":
+            l.pan = -0.3
+        elif l.name in ("perc", "rim", "conga", "tamb", "riq"):
+            l.pan = 0.7 if l.pan >= 0 else -0.7
+
+
 def build_drill(entry: dict) -> tuple[Song, Drill, dict]:
     spec = SPECS[entry["id"]]
     if entry.get("key") and spec.get("key") and entry["key"] != spec["key"]:
         raise ValueError(f"{entry['id']}: key mismatch plan={entry['key']} spec={spec['key']}")
     rng = np.random.default_rng(int(spec["seed"]))
     song, drill = BUILDERS[spec["builder"]](entry, spec, rng)
+    stereo_polish(song)
     for s in song.sections:
         if s.start_bar % 8 or s.bars % 8:
             raise ValueError(f"{entry['id']}: section {s.name} off the 8-bar grid")

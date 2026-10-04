@@ -300,7 +300,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     if style == "kalimba":
         lead_inst, lead_name, lead_gain = eh.kalimba(bright=0.6, decay=1.0), "kalimba", -11.0
     elif style == "desert":
-        lead_inst, lead_name, lead_gain = eh.pluck_lead(bright=0.75, decay=0.996, body=0.35), "kora_pluck", -10.0
+        lead_inst, lead_name, lead_gain = eh.pluck_lead(bright=0.8, decay=0.996, body=0.35), "kora_pluck", -8.5
     else:
         lead_inst, lead_name, lead_gain = eh.marimba(decay=0.5), "marimba", -10.0
 

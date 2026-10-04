@@ -1,0 +1,194 @@
+{
+ "id": "breadth-01",
+ "title": "Goa Gateway",
+ "title_he": "שער גואה",
+ "artist": "DJ Lab Originals",
+ "genre": "Psytrance",
+ "genre_slug": "psytrance",
+ "family": "breadth",
+ "bpm": 142.0,
+ "key": "F# minor",
+ "key_short": "F#m",
+ "camelot": "11A",
+ "energy": 9,
+ "role": "peak",
+ "duration_sec": 270.423,
+ "bars": 160,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 32,
+   "start_sec": 0.0,
+   "energy": 6
+  },
+  {
+   "name": "Groove",
+   "start_bar": 32,
+   "bars": 16,
+   "start_sec": 54.085,
+   "energy": 8
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 48,
+   "bars": 16,
+   "start_sec": 81.127,
+   "energy": 6
+  },
+  {
+   "name": "Drop",
+   "start_bar": 64,
+   "bars": 32,
+   "start_sec": 108.169,
+   "energy": 9
+  },
+  {
+   "name": "Breakdown 2",
+   "start_bar": 96,
+   "bars": 16,
+   "start_sec": 162.254,
+   "energy": 7
+  },
+  {
+   "name": "Drop 2",
+   "start_bar": 112,
+   "bars": 16,
+   "start_sec": 189.296,
+   "energy": 10
+  },
+  {
+   "name": "Outro",
+   "start_bar": 128,
+   "bars": 32,
+   "start_sec": 216.338,
+   "energy": 6
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 16,
+   "sec": 27.042,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 48,
+   "sec": 81.127,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 64,
+   "sec": 108.169,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "E",
+   "name": "Breakdown 2",
+   "bar": 96,
+   "sec": 162.254,
+   "color": "#B4BE04",
+   "type": "hot"
+  },
+  {
+   "slot": "F",
+   "name": "Drop 2",
+   "bar": 112,
+   "sec": 189.296,
+   "color": "#DE44CF",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 128,
+   "sec": 216.338,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 144,
+   "sec": 243.38,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Groove",
+   "bar": 32,
+   "sec": 54.085
+  },
+  {
+   "name": "Breakdown",
+   "bar": 48,
+   "sec": 81.127
+  },
+  {
+   "name": "Drop",
+   "bar": 64,
+   "sec": 108.169
+  },
+  {
+   "name": "Breakdown 2",
+   "bar": 96,
+   "sec": 162.254
+  },
+  {
+   "name": "Drop 2",
+   "bar": 112,
+   "sec": 189.296
+  },
+  {
+   "name": "Outro",
+   "bar": 128,
+   "sec": 216.338
+  }
+ ],
+ "lufs": -9.15,
+ "true_peak_dbtp": -1.32,
+ "file": "music/tracks/psytrance/breadth-01-goa-gateway.mp3",
+ "cover": "music/tracks/psytrance/breadth-01-goa-gateway.jpg",
+ "description_he": "פסיטרנס פול-און ב-142 BPM בסולם F# minor: קיק קצר ופאנצ'י בלי חפיפה, בס מתגלגל של שלוש 16-יות אחרי כל קיק, אסיד סקוואלשי, סיקוונסים של FM עם פילטר שנפתח, זאפים, צלילות פיץ' ולייזרים — ומרקם קולי שנשמע כמו קטע דיבור (סינתטי לגמרי, בלי מילים). המתח נבנה מחדש כל 16 תיבות. טראק פיק.",
+ "mix_tips_he": "טיפ ערבוב: 16 התיבות הראשונות הן קיק והיי-האטים בלבד, והבאס המתגלגל נכנס בתיבה 17 (Hot Cue B) — זה הרגע להחליף באסים: בפסיטרנס אסור ששני באסים יתנגשו, אז חתכו את ה-Low בטראק הנכנס עד הסוויץ'. ברייקדאון בתיבה 49 ודרופ בתיבה 65. ברייקדאון שני בתיבה 97. האאוטרו מתחיל בתיבה 129 והבאס יוצא בתיבה 145 (16 תיבות תופים בלבד). כל 16 תיבות יש בילד קצר עם חיתוך של הפעמה האחרונה — סמנו אותו כנקודת מעבר טבעית. שכנים הרמוניים ב-Camelot: 11A ↔ 12A, 10A, 11B.",
+ "instruments": [
+  "short punchy psy kick",
+  "rolling KBBB bass",
+  "squelchy acid",
+  "filter-swept FM 1/16 sequence",
+  "Goa-style square lead",
+  "spoken-word-like vowel texture",
+  "dark pad",
+  "zaps & pitch dives",
+  "open hats & ride",
+  "FM percussion"
+ ],
+ "seed": 1714,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

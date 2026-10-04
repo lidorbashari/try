@@ -166,7 +166,7 @@ def darbuka_stroke(stroke="D", pitch_hz=None, metal=0.5, rng=None, sr=SR):
         slapn = svf(white(n, rng), 900.0, 0.9, "bp") * np.exp(-t / 0.006) * 0.5
         ring = _modes(n, p * 9.3, [(1.0, 1.0, 0.12), (1.47, 0.5, 0.08)], sr, rng=rng) * 0.04 * metal
         x = x + slapn + ring
-        return normalize(fade(hp(x.astype(F32), 35.0), 0, int(0.03 * sr)))
+        return normalize(fade(hp(x.astype(F32), 35.0), int(0.0006 * sr), int(0.03 * sr)))
     n = int(0.3 * sr)
     t = _t(n, sr)
     if st == "T":
@@ -177,7 +177,7 @@ def darbuka_stroke(stroke="D", pitch_hz=None, metal=0.5, rng=None, sr=SR):
         ring = _modes(n, 3900.0 * (pitch_hz or 520.0) / 520.0, [(1.0, 1.0, 0.09), (1.33, 0.6, 0.07), (1.71, 0.4, 0.05)],
                       sr, rng=rng) * 0.22 * metal
         x = body + crack + ring
-        return normalize(fade(hp(x.astype(F32), 300.0), 0, int(0.02 * sr)))
+        return normalize(fade(hp(x.astype(F32), 300.0), int(0.0003 * sr), int(0.02 * sr)))
     if st == "K":
         p = pitch_hz or 470.0
         body = _modes(n, p, [(1.0, 0.8, 0.022), (1.594, 0.5, 0.018), (2.136, 0.35, 0.014), (2.653, 0.2, 0.012)],
@@ -185,13 +185,13 @@ def darbuka_stroke(stroke="D", pitch_hz=None, metal=0.5, rng=None, sr=SR):
         crack = hp(white(n, rng), 2200.0) * np.exp(-t / 0.0028) * 0.9
         ring = _modes(n, 3600.0 * p / 470.0, [(1.0, 1.0, 0.06), (1.41, 0.5, 0.04)], sr, rng=rng) * 0.12 * metal
         x = lp(body + crack + ring, 9000.0)
-        return normalize(fade(hp(x.astype(F32), 300.0), 0, int(0.02 * sr)))
+        return normalize(fade(hp(x.astype(F32), 300.0), int(0.0003 * sr), int(0.02 * sr)))
     # slap / pa: open slap – lots of mid noise + low membrane
     p = pitch_hz or 300.0
     body = _modes(n, p, [(1.0, 0.8, 0.04), (1.594, 0.5, 0.03), (2.296, 0.3, 0.02)], sr, pitch_drop=0.1, rng=rng)
     nz = svf(white(n, rng), 1600.0, 0.8, "bp") * np.exp(-t / 0.018) * 1.4
     x = body + nz + hp(white(n, rng), 4000.0) * np.exp(-t / 0.004)
-    return normalize(fade(hp(x.astype(F32), 200.0), 0, int(0.02 * sr)))
+    return normalize(fade(hp(x.astype(F32), 200.0), int(0.0003 * sr), int(0.02 * sr)))
 
 
 def darbuka_kit(rng=None, pitch=1.0, metal=0.5, n=3):
@@ -350,6 +350,11 @@ def transpose(notes, base: float) -> tuple:
 
 def shift(notes, steps: float) -> list:
     return [(n[0] + steps,) + tuple(n[1:]) for n in notes]
+
+
+def stretch(notes, k: float) -> tuple:
+    """Time-stretch a note tuple sequence by ``k`` (e.g. 2.0 = half tempo)."""
+    return tuple((n[0] * k, n[1] * k) + tuple(n[2:]) for n in notes)
 
 
 def parse_orn(orn: str) -> dict:

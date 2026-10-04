@@ -19,6 +19,7 @@ from __future__ import annotations
 import numpy as np
 
 from .. import drums, fx, instruments as inst
+from ..dsp import eq_lowshelf, normalize
 from .. import ext_techno as xt
 from ..arrangement import Song, clip, euclid
 from ..theory import voice_lead
@@ -99,8 +100,8 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     kick_s = drums.kick("techno", tune_hz=kick_hz, decay=float(rng.uniform(0.34, 0.42)) if not rolling else 0.3,
                         click=0.7 if ind else 0.6, drive=float(rng.uniform(3.8, 4.6)) if ind else float(rng.uniform(2.0, 3.0)),
                         rng=rng)
-    if ind:  # extra drive on the body, transient kept → hard, distorted but still punchy
-        kick_s = xt.distorted(kick_s, 2.2, 9000.0)
+    if ind:  # extra drive on the body, transient kept → hard, distorted but still punchy; sub tamed
+        kick_s = normalize(eq_lowshelf(xt.distorted(kick_s, 2.2, 9000.0), 70.0, -3.5, 0.7))
 
     def kick_pat(c):
         if c.kind == "breakdown":
@@ -120,7 +121,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     r_cut = {"industrial": 210.0, "rolling": 120.0}.get(flavor, float(rng.uniform(130, 190)))
     r_drive = {"industrial": 8.0}.get(flavor, float(rng.uniform(3, 6)))
     rum = song.hits("rumble", kick_s, rumble_pat, bus="bass", humanize=0.0,
-                    gain_db={"industrial": -5.5, "rolling": -10.0}.get(flavor, -6.5),
+                    gain_db={"industrial": -8.5, "rolling": -10.0}.get(flavor, -6.5), hp=40.0 if ind else None,
                     fx=[lambda x: fx.rumble(x, song.bpm, cutoff=r_cut, decay=float(rng.uniform(1.8, 2.8)), drive=r_drive)],
                     sidechain=1.0, sc_release_ms=60000 / song.bpm * 0.85)
     rum.automate("lp", [(groove, 120), (groove + 16, 400), (outro.start_bar, 400), (bass_off, 150)])
@@ -133,7 +134,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     hats = xt.stereo_variants(drums.hat, 4, rng, jitter={"decay": 0.2}, corr=0.45,
                               decay=float(rng.uniform(0.03, 0.06)), tone=float(rng.uniform(1.0, 1.3)))
     song.hits("hats", hats, lambda c: hat_pattern if not (c.kind == "breakdown" and c.bars_left > 2) else None,
-              gain_db=-11.5, pan=0.2, humanize=0.1)
+              gain_db=-13.5 if rolling else -11.5, pan=0.2, humanize=0.1)
     ohat = xt.stereo_hit(drums.hat, rng, corr=0.5, open_=True, decay=float(rng.uniform(0.2, 0.3)),
                          tone=float(rng.uniform(1.0, 1.2)))
     song.hits("open_hat", ohat, lambda c: OPEN_HAT if (c.kind in ("groove", "drop") or (c.kind == "intro" and c.i >= 8)
@@ -149,7 +150,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
         clap = [xt.distorted(c_, 3.0, 8000.0) for c_ in clap]
     clap_p = CLAP[int(rng.integers(len(CLAP)))]
     song.hits("clap", clap, lambda c: clap_p if c.kind in ("groove", "drop", "outro") or (c.kind == "intro" and c.i >= 16)
-              else None, gain_db=-4.0, sends={"reverb": 0.35, "hall": 0.16 if ind else 0.1})
+              else None, gain_db=-4.0 if ind else -3.0, sends={"reverb": 0.35, "hall": 0.16 if ind else 0.1})
     snr = drums.snare(tone_hz=float(rng.uniform(170, 210)), snappy=0.75, decay=0.16, rng=rng)
     if ind:
         snr = xt.distorted(snr, 4.0, 7000.0)
@@ -229,14 +230,14 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
                                                   decay=float(rng.uniform(0.04, 0.08)), res=float(rng.uniform(0.4, 0.6))), 8.0, 0.3)
         seq_l = song.notes("sequence", seq_inst,
                            lambda c: seq_fn(c) if (c.kind in ("groove", "drop", "breakdown") or (c.kind == "outro" and c.i < 8)) else [],
-                           gain_db=-7.0, sidechain=0.45, sends={"delay": 0.22, "hall": 0.08}, pan=0.15)
+                           gain_db=-4.5 if rolling else -7.0, sidechain=0.45, sends={"delay": 0.22, "hall": 0.08}, pan=0.15)
         seq_l.automate("lp", [(groove, 700), (groove + 24, 3500), (d1, 2500), (d1 + 16, 9000), (outro.start_bar + 8, 1200)])
     elif ind:  # metallic FM sequence, bit-crushed, low in the mix
         fm_seq = [(s, 0.5, key.root(4) + (12 if s in (6, 14) else 0), 0.9 if s % 4 == 2 else 0.6)
                   for s in (2, 3, 6, 10, 11, 14)]
         seq_l = song.notes("sequence", inst.fm_stab(ratio=3.5, index=5.0, decay=0.06),
                            lambda c: fm_seq if c.kind in ("groove", "drop") and c.i >= 8 else [],
-                           gain_db=-13.0, sidechain=0.4, sends={"delay": 0.2, "hall": 0.15}, pan=0.3,
+                           gain_db=-10.0, sidechain=0.4, sends={"delay": 0.2, "hall": 0.15}, pan=0.3,
                            fx=[lambda x: fx.bitcrush(x, 9, 2)])
         seq_l.automate("lp", [(groove + 8, 1500), (d1, 6000), (outro.start_bar, 2500)])
 
@@ -263,7 +264,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
                 return ca(c)
             return []
 
-        acid = song.line("acid", synth, acid_notes, bus="music", gain_db=-5.0 if not acid_fl else -4.0, sidechain=0.4,
+        acid = song.line("acid", synth, acid_notes, bus="music", gain_db=-5.0 if not acid_fl else -6.0, sidechain=0.4,
                          sends={"delay": 0.2 if not acid_fl else 0.25, "reverb": 0.08},
                          fx=[lambda x: xt.ms_spread(x, 9.0, 0.3, 400.0)])
         pts = []
@@ -299,7 +300,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
         growl = inst.fm_stab(ratio=1.0, index=3.5, decay=0.12)
         song.notes("growl", growl, lambda c: [(s, 1.5, key.root(2), 0.9) for s in (2, 6, 10, 14)]
                    if c.kind == "drop" and c.i % 8 < 6 else [],
-                   gain_db=-12.0, sidechain=0.7, hp=140.0, fx=[lambda x: xt.distorted(x, 5.0, 4000.0)],
+                   gain_db=-7.5, sidechain=0.7, hp=140.0, fx=[lambda x: xt.distorted(x, 5.0, 4000.0)],
                    sends={"reverb": 0.1})
 
     # breakdown pad / drone
@@ -340,6 +341,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     fxl.add(fx.noise_sweep(bar * 8, up=True, rng=rng), groove, align="end", gain_db=-16.0)
 
     song.buses["drums"].eq = [("peak", 3000.0, 1.5, 0.8)]
+    song.buses["music"].eq = [("peak", 420.0, -2.5 if acid_fl else -2.0, 0.9), ("peak", 1600.0, 1.5, 0.8)]
     song.master.lufs = -9.0
     common = ["driving techno kick", "sidechained reverb rumble", "stereo closed & open hats", "ride",
               "clap & snare (plate)", "industrial metal hits", "pitched snare rolls, risers & noise sweeps"]

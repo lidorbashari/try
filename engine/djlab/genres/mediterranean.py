@@ -50,7 +50,7 @@ NIGHTS = dict(  # "Darbuka Nights" — warm, singalong, maqsum
     darb="maqsum", kick_verse="x.....x.x.......", kick_hook="x...x...x...x...", dembow=False,
     verse_prog=["i", "i", "iv", "V"],
     hook_prog=["i", "bVII", "bVI", "V", "iv", "V", "i", "i"],
-    bd_prog=["i", "i", "bVI", "bVI", "iv", "iv", "V7", "V7"],
+    bd_prog=["i", "i", "V7", "V7", "iv", "i", "V7", "V7"],
     riff=bars("0:2 0:1 3:1 2:1 0:1 -1:1 0:1 3:2 5:2 7:2 5:1 3:1",
               "7:3/v 8:1/g+3 7:2 5:1 3:1 2:2/b-0.5 3:1 2:1 0:4/v",
               "5:2 5:1 8:1 7:1 5:1 3:1 5:1 8:2 12:2 11:1 12:1 8:2",
@@ -77,7 +77,7 @@ FIRE = dict(  # "Hijaz Fire" — driving dembow, saidi/malfuf, more ornaments
     darb="saidi", kick_verse="x...x...x...x...", kick_hook="x...x...x...x...", dembow=True,
     verse_prog=["i", "i", "iv", "V"],
     hook_prog=["i", "bVII", "bVI", "V", "iv", "V", "i", "i"],
-    bd_prog=["i", "i", "iv", "iv", "bVI", "bVI", "V7", "V7"],
+    bd_prog=["i", "V7", "i", "iv", "V7", "iv", "V7", "V7"],
     riff=bars("0:1 0:1 3:1 2:1 0:1 2:1 3:1 5:1 7:2 8:1 7:1 5:1 3:1 2:1 3:1",
               "7:2/g+1 5:1 3:1 2:2/b-0.5 0:2 -1:1 0:1 2:1 -1:1 -4:2/q+0.12 -5:2/v",
               "5:1 5:1 8:1 7:1 5:1 7:1 8:1 10:1 12:2 10:1 8:1 7:1 5:1 7:2",
@@ -102,14 +102,14 @@ FIRE = dict(  # "Hijaz Fire" — driving dembow, saidi/malfuf, more ornaments
 SUNRISE = dict(  # "Mediterranean Sunrise" — warm, emotional, Andalusian cadence breakdown
     darb=["house", "maqsum"], swing=(52.0, 55.0),
     groove_prog=["i", "i", "bVI", "V"],
-    drop_prog=["i", "bVII", "bVI", "V"],
+    drop_prog=["i", "i", "bVI", "V"],
     bd_prog=["i", "bVI", "iv", "V7"],
     hook=bars("0:2 r:1 0:1 3:1 2:1 0:1 r:1 -1:2/g+1 0:1 2:1 3:2 5:2",
               "7:3/v 5:1 3:1 2:1 3:2 2:1 0:1 -1:1 -4:1/q+0.12 -5:4/v"),
     hook2=bars("8:2 r:1 8:1 7:1 5:1 3:1 r:1 2:2 3:1 5:1 7:2 8:2",
                "11:3/t+1 8:1 7:1 5:1 7:2/v 5:1 3:1 2:1 -1:1 -5:4/v"),
-    ney=[bars("7:6/b-0.6,v 8:2/g+3", "7:4 5:2 3:2 5:8/v", "3:4 2:2/b-0.5 3:2 0:8/v", "r:16"),
-         bars("12:6/b-0.5,v 11:2", "12:4 14:2 15:2 14:8/v", "12:4 11:2/t+1 8:2 7:8/v", "r:16"),
+    ney=[bars("7:12/b-0.6,v 8:4/g+3", "7:4 5:2 3:2 5:8/v", "3:4 2:2/b-0.5 3:2 0:8/v", "r:16"),
+         bars("12:12/b-0.5,v 11:4", "12:4 14:2 15:2 14:8/v", "12:4 11:2/t+1 8:2 7:8/v", "r:16"),
          bars("15:8/b-0.5,v 14:4 12:4", "11:4/t+1 8:2 7:2 8:8/v", "7:4 5:2 3:2 2:4/b-0.5 0:4", "0:16/v")],
     bass=[(2, 1.5, 0, 1.0), (3, 1, 0, 0.55), (6, 1.5, 0, 0.9), (7, 1, 12, 0.5), (10, 1.5, 0, 1.0), (11, 1, 0, 0.55),
           (14, 1.5, 7, 0.85)],
@@ -118,14 +118,14 @@ SUNRISE = dict(  # "Mediterranean Sunrise" — warm, emotional, Andalusian caden
 
 OUDCLUB = dict(  # "Oud Club" — hypnotic oud pedal riff, tremolo oud melody, driving
     darb=["house", "ayoub"], swing=(50.0, 53.0),
-    groove_prog=["i", "i", "bVI", "V"],
-    drop_prog=["i", "i", "bVI", "V"],
+    groove_prog=["i", "i", "iv", "V"],
+    drop_prog=["i", "i", "iv", "V"],
     bd_prog=["i", "iv", "bVI", "V7"],
     hook=bars("0:1 0:1 7:1 0:1 8:1 0:1 7:1 5:1 3:1 0:1 2:1 3:1 2:1 0:1 -1:1/g+1 0:1",
               "0:1 0:1 7:1 0:1 8:1 0:1 11:1 12:1 11:1 8:1 7:1 5:1 3:2/v 2:1 -1:1"),
     hook2=bars("7:8/r 8:4/r 7:4/r", "5:8/r 3:4/r 2:4/r", "3:8/r 2:4/r 0:4/r", "-1:12/r,v 0:4/r"),
-    ney=[bars("7:6/b-0.6,v 8:2/q+0.12", "7:4 5:2 3:2 2:8/v", "3:4 2:2 0:2 -1:4/t+1 0:4", "0:16/v"),
-         bars("12:6/b-0.5,v 11:2", "8:4 11:2 12:2 14:8/v", "15:4 14:2 12:2 11:4/t+1 8:4", "7:16/v")],
+    ney=[bars("7:12/b-0.6,v 8:4/q+0.12", "7:4 5:2 3:2 2:8/v", "3:4 2:2 0:2 -1:4/t+1 0:4", "0:16/v"),
+         bars("12:12/b-0.5,v 11:4", "8:4 11:2 12:2 14:8/v", "15:4 14:2 12:2 11:4/t+1 8:4", "7:16/v")],
     bass=[(2, 1, 0, 1.0), (3, 1, 0, 0.6), (5, 1, 12, 0.45), (6, 1, 0, 0.9), (7, 1, 0, 0.55), (10, 1, 0, 1.0),
           (11, 1, 0, 0.6), (13, 1, 12, 0.45), (14, 1, 0, 0.9), (15, 1, -2, 0.55)],
     strings_line=bars("7:8/v 8:4 7:4", "5:12/v 3:4", "3:8/v 2:4 0:4", "-1:16/v,t+1"),
@@ -289,7 +289,7 @@ def build_groove(plan, rng):
             return W.RHYTHMS["malfuf"][1 + (c.i % 2)]
         return orn[c.i % len(orn)]
 
-    dlay = W.add_darbuka(song, darb_pat, kit, gain_db=-3.5, pan=0.05, levels={"D": 0.0, "T": -0.5, "K": -5.0, "S": -3.0},
+    dlay = W.add_darbuka(song, darb_pat, kit, gain_db=-3.5, pan=0.05, levels={"D": -3.0, "T": 2.0, "K": -2.5, "S": 0.0},
                          sends={"room": 0.12, "reverb": 0.04}, humanize=0.08, timing_ms=1.5)
     dlay["D"].hp = 55.0
     for st in ("T", "K"):
@@ -367,9 +367,9 @@ def build_groove(plan, rng):
     else:
         brh = [(0, 3, 0, 1.0), (3, 1, 0, 0.6), (6, 2, 12, 0.8), (8, 3, 0, 0.95), (11, 1, 0, 0.6), (12, 2, 7, 0.8),
                (14, 2, 12, 0.7)]
-    bass_i = inst.bass_pluck(cutoff=float(rng.uniform(210, 260)), env_amt=float(rng.uniform(900, 1400)),
-                             decay=float(rng.uniform(0.12, 0.17)), res=0.25, sub=0.95, drive=1.5, grit=0.28,
-                             sustain=0.45, wave="saw")
+    bass_i = inst.bass_pluck(cutoff=float(rng.uniform(150, 190)), env_amt=float(rng.uniform(500, 800)),
+                             decay=float(rng.uniform(0.1, 0.14)), res=0.2, sub=1.3, drive=1.3, grit=0.2,
+                             sustain=0.5, wave="saw")
 
     def bass_notes(c):
         if c.kind in ("intro", "outro", "breakdown"):
@@ -425,12 +425,10 @@ def build_groove(plan, rng):
             return [(0, riff_hi if (c.i // 4) % 4 == 2 else riff, 1.0)]
         if c.kind == "build" and c.i == 0:
             return [(0, build_oud, 0.9)]
-        if c.kind == "drop" and c.i % 8 == 0 and c.section.name == "Hook":
+        if c.kind == "drop" and c.i % 8 == 0:
             return [(0, hook_low_a, 0.8)]
-        if c.kind == "drop" and c.i % 8 == 4 and c.section.name == "Hook":
+        if c.kind == "drop" and c.i % 8 == 4:
             return [(0, hook_low_b, 0.8)]
-        if c.kind == "drop" and c.i % 4 == 0 and c.section.name != "Hook":
-            return [(0, riff, 0.85)]
         return []
 
     W.add_phrases(song, "oud", oud_i, oud_phr, gain_db=-7.0, pan=-0.12, sends={"room": 0.14, "reverb": 0.08},
@@ -443,7 +441,7 @@ def build_groove(plan, rng):
 
     def q_arp(nm):
         if nm not in arp_cache:
-            tones = sorted(reg(pc, T_q - 5) + s - reg(pc, T_q - 5) % 1 for s in CH[nm])
+            tones = sorted(reg((pc + s) % 12, T_q - 7) for s in CH[nm])
             seq = [tones[0], tones[1], tones[2], tones[0] + 12, tones[2], tones[1]]
             arp_cache[nm] = tuple((i * 1.0, 1.4, float(seq[i % 6]), 0.62 if i % 4 else 0.78, "") for i in range(16))
         return arp_cache[nm]
@@ -469,7 +467,7 @@ def build_groove(plan, rng):
             return [(0, hk_a if (c.i // 4) % 2 == 0 else hk_b, 1.0)]
         return []
 
-    W.add_phrases(song, "mizrahi_lead", lead_i, lead_phr, bus="vox", gain_db=-4.0, sends={"reverb": 0.14, "delay": 0.1},
+    W.add_phrases(song, "mizrahi_lead", lead_i, lead_phr, bus="vox", gain_db=-5.5, sends={"reverb": 0.14, "delay": 0.1},
                   lookback=5, sidechain=0.12)
 
     # Arabic string section doubling the hook (2nd half of Hook, octave up in Hook 2)
@@ -568,7 +566,7 @@ def build_house(plan, rng):
 
     def prog_at(c):
         if c.kind == "groove":
-            return M["groove_prog"][(c.i // 2) % 4] if not club else M["groove_prog"][c.i % 4]
+            return M["groove_prog"][(c.i // 2) % 4]
         if c.kind == "drop":
             return M["drop_prog"][(c.i // 2) % 4]
         if c.kind == "breakdown":
@@ -755,13 +753,11 @@ def build_house(plan, rng):
 
     # strings unison line over the drop (2nd half) — the emotional lift
     su_i = W.strings_unison(voices=7, attack=0.12)
-    sline = _phrase(M["strings_line"], T_str)
+    sline = W.stretch(_phrase(M["strings_line"], T_str), 2.0)
 
     def su_phr(c):
         if c.kind == "drop" and c.i % 8 == 0 and (c.phrase % 2 == 1 or club):
             return [(0, sline, 0.85)]
-        if c.kind == "breakdown" and c.i % 8 == 0 and c.section.bars >= 16 and c.i >= 8:
-            return [(0, sline, 0.9)]
         return []
 
     W.add_phrases(song, "strings_line", su_i, su_phr, gain_db=-11.0, sends={"hall": 0.3}, lookback=9, width=1.5,

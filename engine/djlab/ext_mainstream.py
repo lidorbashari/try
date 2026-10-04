@@ -735,3 +735,41 @@ def bars_events(events, bars):
     from .arrangement import clip
 
     return clip(events, bars)
+
+
+# ============================================================================ Hebrew mix-tip helpers
+def camelot_neighbors(cam):
+    """'8A' → ['7A', '9A', '8B'] (±1 on the wheel + relative major/minor)."""
+    num, letter = int(cam[:-1]), cam[-1].upper()
+    wrap = lambda x: (x - 1) % 12 + 1  # noqa: E731
+    return [f"{wrap(num - 1)}{letter}", f"{wrap(num + 1)}{letter}", f"{num}{'B' if letter == 'A' else 'A'}"]
+
+
+def partners_he(plan, max_n=3, bpm_tol=0.05):
+    """Hebrew phrase naming DJ Lab tracks (from the master plan) that mix harmonically (same Camelot,
+    ±1, relative) and within ``bpm_tol`` tempo (half/double aware). Empty string if none."""
+    from .render import load_plan
+
+    cam = plan.get("camelot", "")
+    ok = set([cam] + camelot_neighbors(cam)) if cam else set()
+    bpm = float(plan["bpm"])
+    out = []
+    for e in load_plan():
+        if e["id"] == plan["id"] or e.get("camelot") not in ok:
+            continue
+        b = float(e["bpm"])
+        if not any(abs(b * m - bpm) <= bpm * bpm_tol for m in (1.0, 0.5, 2.0)):
+            continue
+        same_fam = e.get("family") == plan.get("family")
+        out.append((0 if e["camelot"] == cam else 1, 0 if same_fam else 1, abs(b - bpm), e))
+    out.sort(key=lambda r: r[:3])
+    names = [f"{r[3]['title']} ({r[3]['camelot']}, {int(r[3]['bpm'])} BPM)" for r in out[:max_n]]
+    if not names:
+        return ""
+    return "מתחבר מעולה ל-" + (", ".join(names[:-1]) + " ול-" + names[-1] if len(names) > 1 else names[0])
+
+
+def wheel_he(cam):
+    """'8A' → 'בגלגל הקמלוט הטראק יושב על 8A ומתערבב חלק עם 7A, 9A ו-8B.'"""
+    nb = camelot_neighbors(cam)
+    return f"בגלגל הקמלוט הטראק יושב על {cam} ומתערבב חלק עם {nb[0]}, {nb[1]} ו-{nb[2]}."

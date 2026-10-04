@@ -108,7 +108,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     step = song.grid.step_sec
     secs = song.sections
 
-    root = xb.note_in_range(key.root_pc, 41.0)          # F#1 46 Hz, D2 73 Hz …
+    root = xb.note_in_range(key.root_pc, 41.0 if not prog else 36.0)  # F#1 46 Hz; prog: deeper (D1 37 Hz)
     k_hz = xb.kick_tune(key, 44.0, 62.0)
 
     # ---------------------------------------------------------------- tension structure (16-bar blocks)
