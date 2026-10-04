@@ -343,6 +343,18 @@ def mel(s: str, vel: float = 0.88, offset: float = 0.0) -> list:
     return out
 
 
+def strip_orn(s: str, drop: str = "v") -> str:
+    """Remove ornament kinds (letters in ``drop``) from a mini-notation string."""
+    out = []
+    for tok in s.split():
+        if "/" in tok:
+            head, orn = tok.split("/", 1)
+            keep = [o for o in orn.split(",") if o and o[0] not in drop]
+            tok = head + ("/" + ",".join(keep) if keep else "")
+        out.append(tok)
+    return " ".join(out)
+
+
 def transpose(notes, base: float) -> tuple:
     """Semitone note tuples → absolute MIDI tuples (hashable)."""
     return tuple((st, ln, base + p, v, o) for st, ln, p, v, o in notes)

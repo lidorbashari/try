@@ -53,22 +53,22 @@ _Open-Format Bar Night 60 — Hip-Hop → Reggaeton → Afrobeats → Moombahton
 | # | זמן | אמן – שם | BPM | Key | Camelot | E | מקור | מעבר לטראק הבא | Δ BPM | הרמוניה |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 1 | 00:00 | DJ Lab Originals – Boom Bap Avenue (שדרת בום באפ) | 92 | Cm | `5A` | 6 | `mainstream-05` | **Bass Swap** · 8 תיבות · נכנס מ-`A` כשהיוצא ב-`H` · Low מתחלף בתיבה 5 | ✓ +3.3% | ✓ +1 בגלגל — שכן |
-| 2 | 03:08 | DJ Lab Originals – Late Night Cypher (סייפר של לילה) | 95 | Gm | `6A` | 6 | `mainstream-07` | **Cut** · על ה-1 בסוף סוף הפזמון · נכנס מ-`A` | ⚠ +5.3% | ✓ אותו סולם |
-| 3 | 06:30 | Doja Cat – Paint the Town Red (Intro – Clean (DJ pools)) | 100 | Gm | `6A` | 7 | `hip-hop-rnb` | **Cut** · על ה-1 בסוף סוף הפזמון · נכנס מ-`A` | ✓ -1.0% | ✓ +1 בגלגל — שכן |
+| 2 | 03:08 | DJ Lab Originals – Late Night Cypher (סייפר של לילה) | 95 | Gm | `6A` | 6 | `mainstream-07` | **Cut** · על ה-1 אחרי הפזמון · נכנס מ-`A` | ⚠ +5.3% | ✓ אותו סולם |
+| 3 | 06:30 | Doja Cat – Paint the Town Red (Intro – Clean (DJ pools)) | 100 | Gm | `6A` | 7 | `hip-hop-rnb` | **Cut** · על ה-1 אחרי הפזמון · נכנס מ-`A` | ✓ -1.0% | ✓ +1 בגלגל — שכן |
 | 4 | 10:00 | Beyoncé ft. Jay-Z – Crazy in Love (Intro – Clean (DJ pools)) | 99 | Dm | `7A` | 9 | `hip-hop-rnb` | **Bass Swap** · 8 תיבות · נכנס מ-`A` כשהיוצא ב-`H` · Low מתחלף בתיבה 5 | ✓ +0.0% | ✓ מעבר אלכסוני — עובד ברוב המקרים |
-| 5 | 13:11 | Megan Thee Stallion ft. Nicki Minaj & Ty Dolla $ign – Hot Girl Summer (Intro – Clean (DJ pools)) | 99 | C | `8B` | 7 | `hip-hop-rnb` | **Tempo Change** · Echo 1 Beat בתיבה האחרונה של סוף הפזמון · נכנס מ-`A` על ה-1 | ⚠ -9.1% | ✓ מז'ור/מינור מקביל |
+| 5 | 13:11 | Megan Thee Stallion ft. Nicki Minaj & Ty Dolla $ign – Hot Girl Summer (Intro – Clean (DJ pools)) | 99 | C | `8B` | 7 | `hip-hop-rnb` | **Tempo Change** · Echo 1 Beat בתיבה האחרונה של הפזמון · נכנס מ-`A` על ה-1 | ⚠ -9.1% | ✓ מז'ור/מינור מקביל |
 | 6 | 16:41 | Nicky Jam & J Balvin – X (Intro – Clean (DJ pools)) | 90 ▸92 | Am | `8A` | 7 | `latin-reggaeton` | **Bass Swap** · 8 תיבות · נכנס מ-`A` כשהיוצא ב-`H` · Low מתחלף בתיבה 5 | ✓ +0.0% | ✓ -1 בגלגל — שכן |
 | 7 | 19:50 | DJ Lab Originals – Perreo Nocturno (פריאו לילי) | 92 | Dm | `7A` | 6 | `mainstream-09` | **Bass Swap** · 8 תיבות · נכנס מ-`A` כשהיוצא ב-`H` · Low מתחלף בתיבה 5 | ✓ +3.3% | ✓ +1 בגלגל — שכן |
-| 8 | 22:57 | DJ Lab Originals – Dembow Fuego (דמבו פואגו) | 95 | Am | `8A` | 7 | `mainstream-08` | **Cut** · על ה-1 בסוף סוף הפזמון · נכנס מ-`D` | ✓ +1.1% | ✓ מז'ור/מינור מקביל |
+| 8 | 22:57 | DJ Lab Originals – Dembow Fuego (דמבו פואגו) | 95 | Am | `8A` | 7 | `mainstream-08` | **Cut** · על ה-1 אחרי הפזמון · נכנס מ-`D` | ✓ +1.1% | ✓ מז'ור/מינור מקביל |
 | 9 | 26:20 | Daddy Yankee – Gasolina (Intro – Clean (DJ pools)) | 96 | C | `8B` | 9 | `latin-reggaeton` | **Bass Swap** · 8 תיבות · נכנס מ-`A` כשהיוצא ב-`H` · Low מתחלף בתיבה 5 | ⚠ +4.2% | ✓ אותו סולם |
 | 10 | 29:30 | Shakira ft. Alejandro Sanz – La Tortura (Intro – Clean (DJ pools)) | 100 ▸98 | C | `8B` | 6 | `latin-reggaeton` | **Bass Swap** · 8 תיבות · נכנס מ-`A` כשהיוצא ב-`H` · Low מתחלף בתיבה 5 | ✓ +1.0% | ✓ +1 בגלגל — שכן |
 | 11 | 32:40 | Rihanna – Pon de Replay (Intro – Clean (DJ pools)) | 99 ▸101 | G | `9B` | 7 | `hip-hop-rnb` | **Bass Swap** · 16 תיבות · נכנס מ-`A` כשהיוצא ב-`H` · Low מתחלף בתיבה 9 | ✓ +3.0% | ✓ אותו סולם |
 | 12 | 35:32 | DJ Lab Originals – Lagos To Haifa (מלאגוס לחיפה) | 104 | G | `9B` | 6 | `mainstream-11` | **Bass Swap** · 16 תיבות · נכנס מ-`A` כשהיוצא ב-`H` · Low מתחלף בתיבה 9 | ✓ +1.9% | ✓ +1 בגלגל — שכן |
-| 13 | 38:37 | DJ Lab Originals – Sunshine Riddim (רידים של שמש) | 106 | D | `10B` | 6 | `mainstream-12` | **Cut** · על ה-1 בסוף סוף הפזמון · נכנס מ-`D` | ✓ +1.9% | ✓ אותו סולם |
+| 13 | 38:37 | DJ Lab Originals – Sunshine Riddim (רידים של שמש) | 106 | D | `10B` | 6 | `mainstream-12` | **Cut** · על ה-1 אחרי הפזמון · נכנס מ-`D` | ✓ +1.9% | ✓ אותו סולם |
 | 14 | 42:14 | Afro B ft. French Montana – Joanna (Drogba) (Remix) (Intro – Clean (DJ pools)) | 108 | D | `10B` | 8 | `afrobeats` | **Bass Swap** · 8 תיבות · נכנס מ-`A` כשהיוצא ב-`H` · Low מתחלף בתיבה 5 | ✓ -0.9% | ✓ מעבר אלכסוני — עובד ברוב המקרים |
 | 15 | 45:26 | Rotimi – Love Riddim (Intro – Clean (DJ pools)) | 107 | Em | `9A` | 7 | `afrobeats` | **Bass Swap** · 16 תיבות · נכנס מ-`A` כשהיוצא ב-`H` · Low מתחלף בתיבה 9 | ✓ +0.9% | ✓ אותו סולם |
 | 16 | 48:20 | DJ Lab Originals – Moombah Heat (חום מומבה) | 108 | Em | `9A` | 7 | `mainstream-10` | **Drop Swap** · 8 תיבות · נכנס כשהיוצא ב-`C` · ה-`D` של הנכנס נוחת על ה-1 | ✓ -2.8% | ✓ +1 בגלגל — שכן |
-| 17 | 51:36 | J Balvin & Willy William – Mi Gente (Intro – Clean (DJ pools)) | 105 | Bm | `10A` | 9 | `latin-reggaeton` | **Loop Roll** · Loop 1→1/2→1/4 בסוף הפזמון האחרון · הנכנס נוחת מ-`D` | ✓ -3.8% | ✓ אותו סולם |
+| 17 | 51:36 | J Balvin & Willy William – Mi Gente (Intro – Clean (DJ pools)) | 105 | Bm | `10A` | 9 | `latin-reggaeton` | **Loop Roll** · Loop 1→1/2→1/4 בתיבה האחרונה של הפזמון האחרון · הנכנס נוחת מ-`D` | ✓ -3.8% | ✓ אותו סולם |
 | 18 | 55:06 | Dillon Francis & DJ Snake – Get Low | 101 | Bm | `10A` | 8 | `latin-reggaeton` | סוף הסט |  |  |
 
 סה"כ כ-59:06 (הזמנים מחושבים מאורך כל טראק פחות החפיפה של המעבר; בטראקים מה-crates — האורך שאתם מנגנים בפועל, לא אורך הקובץ).
@@ -119,7 +119,7 @@ track      123456789012345678
 `6A` → `6A` (✓ אותו סולם) · מתנגן 95 → הנכנס 100 BPM (⚠ +5.3%)
 
 - הכנה: הנכנס מסונכרן (Sync או ידני) ועומד על Hot Cue `A`; Trim מכוון כך שהעוצמה לא קופצת.
-- סופרים את הפרייז של היוצא (סוף הפזמון). על ה-1 — Hot Cue של הנכנס ובאותה תנועה הפיידר/Crossfader עובר אליו.
+- סופרים עד הסוף של הפזמון ביוצא. על ה-1 הבא — Hot Cue של הנכנס, ובאותה תנועה הפיידר/Crossfader עובר אליו.
 - אם אין ביטחון בתזמון: `Quantize` דולק — הלחיצה נצמדת לביט.
 - אותו `6A`, 95→100 (+5.3%). בהיפ-הופ קאט על ה-1 של פרייז חדש הוא הדרך הרגילה — לא מותחים טמפו.
 
@@ -128,7 +128,7 @@ track      123456789012345678
 `6A` → `7A` (✓ +1 בגלגל — שכן) · מתנגן 100 → הנכנס 99 BPM (✓ -1.0%)
 
 - הכנה: הנכנס מסונכרן (Sync או ידני) ועומד על Hot Cue `A`; Trim מכוון כך שהעוצמה לא קופצת.
-- סופרים את הפרייז של היוצא (סוף הפזמון). על ה-1 — Hot Cue של הנכנס ובאותה תנועה הפיידר/Crossfader עובר אליו.
+- סופרים עד הסוף של הפזמון ביוצא. על ה-1 הבא — Hot Cue של הנכנס, ובאותה תנועה הפיידר/Crossfader עובר אליו.
 - אם אין ביטחון בתזמון: `Quantize` דולק — הלחיצה נצמדת לביט.
 - הקרייט אומר את זה הכי טוב: "פתיחת הבראס היא הקיו — קאט חד ישר עליה". Hot Cue `A` על הבראס.
 
@@ -146,7 +146,7 @@ track      123456789012345678
 `8B` → `8A` (✓ מז'ור/מינור מקביל) · מתנגן 99 → הנכנס 90 BPM (⚠ -9.1%)
 
 - הכנה: Beat FX → `Echo` (1 Beat), על הערוץ של היוצא, Level/Depth באמצע. הנכנס על Hot Cue `A`, Trim מכוון. לא מסנכרנים — הנכנס מתנגן בטמפו המקורי שלו.
-- ב-סוף הפזמון: על ה-1 של התיבה האחרונה של הפרייז — Echo ON; על ביט 3–4 פיידר היוצא למטה בבת אחת.
+- על ה-1 של התיבה האחרונה של הפזמון — Echo ON; על ביט 3–4 פיידר היוצא למטה בבת אחת.
 - על ה-1 הבא — Play על הנכנס (פיידר מלא). Echo OFF אחרי שהזנב נגמר; EQ של היוצא חוזר לאמצע.
 - 99→90: מעבר לרגאטון. Echo Out על Hot Girl Summer, ו-X נכנס מורם ל-92 (+2.2%). הקהל שומע "ז'אנר חדש", לא "טמפו נפל".
 
@@ -173,7 +173,7 @@ track      123456789012345678
 `8A` → `8B` (✓ מז'ור/מינור מקביל) · מתנגן 95 → הנכנס 96 BPM (✓ +1.1%)
 
 - הכנה: הנכנס מסונכרן (Sync או ידני) ועומד על Hot Cue `D`; Trim מכוון כך שהעוצמה לא קופצת.
-- סופרים את הפרייז של היוצא (סוף הפזמון). על ה-1 — Hot Cue של הנכנס ובאותה תנועה הפיידר/Crossfader עובר אליו.
+- סופרים עד הסוף של הפזמון ביוצא. על ה-1 הבא — Hot Cue של הנכנס, ובאותה תנועה הפיידר/Crossfader עובר אליו.
 - אם אין ביטחון בתזמון: `Quantize` דולק — הלחיצה נצמדת לביט.
 - `8A`→`8B` יחסי. נכנסים ישר על הצעקה "Gasolina!" (Hot Cue `D`) — זה הקיו לקהל.
 
@@ -217,7 +217,7 @@ track      123456789012345678
 `10B` → `10B` (✓ אותו סולם) · מתנגן 106 → הנכנס 108 BPM (✓ +1.9%)
 
 - הכנה: הנכנס מסונכרן (Sync או ידני) ועומד על Hot Cue `D`; Trim מכוון כך שהעוצמה לא קופצת.
-- סופרים את הפרייז של היוצא (סוף הפזמון). על ה-1 — Hot Cue של הנכנס ובאותה תנועה הפיידר/Crossfader עובר אליו.
+- סופרים עד הסוף של הפזמון ביוצא. על ה-1 הבא — Hot Cue של הנכנס, ובאותה תנועה הפיידר/Crossfader עובר אליו.
 - אם אין ביטחון בתזמון: `Quantize` דולק — הלחיצה נצמדת לביט.
 - אותו `10B`, +1.9%. הקיו לקהל: "Drogba!" — Hot Cue `D` בדיוק שם.
 
@@ -253,7 +253,7 @@ track      123456789012345678
 `10A` → `10A` (✓ אותו סולם) · מתנגן 105 → הנכנס 101 BPM (✓ -3.8%)
 
 - הנכנס מסונכרן ועומד על Hot Cue `D`.
-- בתיבה האחרונה לפני הפזמון האחרון: Loop של תיבה אחת על היוצא, ואז 1/2 → 1/4 → 1/8 Beat (כל קיצור על ביט).
+- בתיבה האחרונה של הפזמון האחרון: Loop של תיבה אחת על היוצא, ואז 1/2 → 1/4 → 1/8 Beat (כל קיצור על ביט).
 - על ה-1: יוצאים מהלופ, הפיידר של היוצא למטה והנכנס נוחת מלא.
 - אותו `10A`, 105→101 — Loop Roll על הסוף של Mi Gente והדרופ של Get Low (מומבהטון קלאסי) נוחת על ה-1.
 
@@ -261,23 +261,23 @@ track      123456789012345678
 
 **בלוק 1 — היפ-הופ**
 
-- Ja Rule ft. Ashanti – Always on Time (Intro – Clean (DJ pools)) — 97 BPM · `4A` · E6 · `hip-hop-rnb` — `4A`, 97 — R&B רגוע, שכן של Boom Bap Avenue.
-- Jack Harlow – First Class (Intro – Clean (DJ pools)) — 107 BPM · `6A` · E7 · `hip-hop-rnb` — `6A`, 107 — אותו סולם כמו Paint the Town Red, אם רוצים לעלות מהר.
+- **Ja Rule ft. Ashanti – Always on Time (Intro – Clean (DJ pools))** — 97 BPM · `4A` · E6 · `hip-hop-rnb`. R&B רגוע, שכן של Boom Bap Avenue.
+- **Jack Harlow – First Class (Intro – Clean (DJ pools))** — 107 BPM · `6A` · E7 · `hip-hop-rnb`. אותו סולם כמו Paint the Town Red, אם רוצים לעלות מהר.
 
 **בלוק 2 — רגאטון**
 
-- J Balvin ft. Pharrell, BIA & Sky – Safari (Intro (DJ pools)) — 90 BPM · `8B` · E6 · `latin-reggaeton` — `8B`, 90 — J Balvin, יחסי ל-X.
-- Sech ft. Darell – Otro Trago (Intro – Clean (DJ pools)) — 88 BPM · `8B` · E6 · `latin-reggaeton` — `8B`, 88 — אם הרחבה רוצה פריאו איטי יותר.
+- **J Balvin ft. Pharrell, BIA & Sky – Safari (Intro (DJ pools))** — 90 BPM · `8B` · E6 · `latin-reggaeton`. J Balvin, יחסי ל-X.
+- **Sech ft. Darell – Otro Trago (Intro – Clean (DJ pools))** — 88 BPM · `8B` · E6 · `latin-reggaeton`. אם הרחבה רוצה פריאו איטי יותר.
 
 **בלוק 3 — אפרוביטס**
 
-- Anuel AA, Daddy Yankee, KAROL G, Ozuna & J Balvin – China (Intro – Clean (DJ pools)) — 105 BPM · `9B` · E8 · `latin-reggaeton` — `9B`, 105 — גשר לטיני-אפרו (דגימת "It Wasn't Me").
-- Drake ft. WizKid & Kyla – One Dance (Intro – Clean (DJ pools)) — 104 BPM · `3A` · E9 · `afrobeats` — `3A`, 104 — ההמנון; לא תואם הרמונית — נכנסים רק עם Echo Out.
+- **Anuel AA, Daddy Yankee, KAROL G, Ozuna & J Balvin – China (Intro – Clean (DJ pools))** — 105 BPM · `9B` · E8 · `latin-reggaeton`. גשר לטיני-אפרו (דגימת "It Wasn't Me").
+- **Drake ft. WizKid & Kyla – One Dance (Intro – Clean (DJ pools))** — 104 BPM · `3A` · E9 · `afrobeats`. ההמנון; לא תואם הרמונית — נכנסים רק עם Echo Out.
 
 **בלוק 4 — מומבהטון**
 
-- Major Lazer & DJ Snake ft. MØ – Lean On (Extended / Intro (DJ pools)) — 98 BPM · `6A` · E8 · `latin-reggaeton` — `6A`, 98 — מומבהטון-פופ; רק בקאט.
-- Major Lazer ft. Busy Signal, The Flexican & FS Green – Watch Out for This (Bumaye) — 108 BPM · `3A` · E9 · `latin-reggaeton` — `3A`, 108 — דרופ ענק; רק בקאט/Echo Out.
+- **Major Lazer & DJ Snake ft. MØ – Lean On (Extended / Intro (DJ pools))** — 98 BPM · `6A` · E8 · `latin-reggaeton`. מומבהטון-פופ; רק בקאט.
+- **Major Lazer ft. Busy Signal, The Flexican & FS Green – Watch Out for This (Bumaye)** — 108 BPM · `3A` · E9 · `latin-reggaeton`. דרופ ענק; רק בקאט/Echo Out.
 
 ## קריאת הקהל
 

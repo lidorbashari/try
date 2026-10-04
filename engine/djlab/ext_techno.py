@@ -325,7 +325,7 @@ def rave_stab(cutoff=700.0, env_amt=7000.0, decay=0.09, drive=2.5, detune_cents=
     return inst
 
 
-def noise_drone(q=9.0, harmonics=(1, 2, 3, 5), drift=0.08, attack=2.0, release=2.5, air=0.15, sr=SR):
+def noise_drone(q=9.0, harmonics=(1, 2, 3, 5), drift=0.08, attack=2.0, release=2.5, air=0.15, corr=0.6, sr=SR):
     """Pitched 'wind/tunnel' drone: pink noise through resonant band-passes at the note's harmonics
     with slow drift; decorrelated L/R. Use long notes."""
     def inst(freq, dur, vel):
@@ -341,7 +341,7 @@ def noise_drone(q=9.0, harmonics=(1, 2, 3, 5), drift=0.08, attack=2.0, release=2
                 y += svf(nz, f, q, "bp") / (1 + h * 0.6)
             y += air * hp(nz, 5000.0, 2)
             chans.append(y)
-        x = np.stack(chans, axis=1)
+        x = decorrelate(chans[0], chans[1], corr)
         env = adsr(n, gate, attack, 1.0, 0.9, release, sr, curve=2.5)
         return _finish(x * env[:, None], vel, rel_fade=4096)
     return inst

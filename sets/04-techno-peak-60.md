@@ -195,23 +195,23 @@ track      123456789012
 
 **בלוק 1 — גרוב**
 
-- Amelie Lens – Follow — 128 BPM · `9B` · E7 · `techno` — `9B`, 128 — Amelie Lens, פתיחה היפנוטית חלופית.
-- Dubfire – Fuego (Julian Jeweil Remix) — 125 BPM · `12A` · E7 · `techno` — `12A`, 125 — Dubfire (Julian Jeweil Remix), יחסי ל-`12B`.
+- **Amelie Lens – Follow** — 128 BPM · `9B` · E7 · `techno`. Amelie Lens, פתיחה היפנוטית חלופית.
+- **Dubfire – Fuego (Julian Jeweil Remix)** — 125 BPM · `12A` · E7 · `techno`. Dubfire (Julian Jeweil Remix), יחסי ל-`12B`.
 
 **בלוק 2 — הליבה**
 
-- DJ Lab Originals – Industrial Heart (לב תעשייתי) — 131 BPM · `4A` · E9 · `techno-02` — Industrial Heart (`4A`, 131, אנרגיה 9) — טראק מקורי; נכנס אחרי Night Shift רק עם Echo Out (`6A`→`4A`).
-- Kaspar (DE) – Cycle Of Life — 135 BPM · `6A` · E8 · `techno` — `6A`, 135 — Kaspar, אותו סולם כמו Night Shift, אם הרחבה כבר דורשת מהירות.
+- **DJ Lab Originals – Industrial Heart (לב תעשייתי)** — 131 BPM · `4A` · E9 · `techno-02`. טראק מקורי; נכנס אחרי Night Shift רק עם Echo Out (`6A`→`4A`).
+- **Kaspar (DE) – Cycle Of Life** — 135 BPM · `6A` · E8 · `techno`. Kaspar, אותו סולם כמו Night Shift, אם הרחבה כבר דורשת מהירות.
 
 **בלוק 3 — השיא**
 
-- AKKI (DE) & Prinz (DE) – Sakura (Extended Mix) — 136 BPM · `8A` · E8 · `techno` — `8A`, 136 — AKKI & Prinz, זוג ל-Power Of Thought.
-- Charlotte de Witte – High Street — 138 BPM · `5A` · E9 · `techno` — `5A`, 138 — Charlotte de Witte, אסיד דוחף (רק אם הטמפו כבר 136+).
+- **AKKI (DE) & Prinz (DE) – Sakura (Extended Mix)** — 136 BPM · `8A` · E8 · `techno`. AKKI & Prinz, זוג ל-Power Of Thought.
+- **Charlotte de Witte – High Street** — 138 BPM · `5A` · E9 · `techno`. Charlotte de Witte, אסיד דוחף (רק אם הטמפו כבר 136+).
 
 **בלוק 4 — אם רוצים ללכת קשה**
 
-- DJ Lab Originals – Rave Engine (מנוע רייב) — 148 BPM · `8A` · E10 · `techno-11` — Rave Engine (`8A`, 148) — הארד טכנו מקורי. רק עם Echo Out ובהסכמת ה-DJ הבא.
-- Maddix & Fēlēs – My Gasoline (Extended Mix) — 140 BPM · `2B` · E9 · `techno` — `2B`, 140 — Maddix & Fēlēs, גשר לפיק-טיים/הארד.
+- **DJ Lab Originals – Rave Engine (מנוע רייב)** — 148 BPM · `8A` · E10 · `techno-11`. הארד טכנו מקורי. רק עם Echo Out ובהסכמת ה-DJ הבא.
+- **Maddix & Fēlēs – My Gasoline (Extended Mix)** — 140 BPM · `2B` · E9 · `techno`. Maddix & Fēlēs, גשר לפיק-טיים/הארד.
 
 ## קריאת הקהל
 

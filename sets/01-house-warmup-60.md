@@ -239,23 +239,23 @@ track      1234567890123456
 
 **בלוק 1 — שקיעה**
 
-- DJ Lab Originals – Log Drum Lagoon (לגונת הלוג-דראם) — 113 BPM · `4A` · E5 · `house-14` — אמפיאנו רגוע ב-113 עם אותו `4A` של Desert Drums — אם הבר עוד ריק, אפשר לפתוח בו ואז Echo Out ל-Velvet Rooftop.
-- DJ Lab Originals – Rainy Studio (סטודיו גשום) — 84 BPM · `7B` · E2 · `breadth-10` — לו-פיי של 84 BPM לפני שהדלתות נפתחות — רקע בלבד, יוצאים ממנו ב-Fade.
+- **DJ Lab Originals – Log Drum Lagoon (לגונת הלוג-דראם)** — 113 BPM · `4A` · E5 · `house-14`. אמפיאנו רגוע ב-113 עם אותו `4A` של Desert Drums — אם הבר עוד ריק, אפשר לפתוח בו ואז Echo Out ל-Velvet Rooftop.
+- **DJ Lab Originals – Rainy Studio (סטודיו גשום)** — 84 BPM · `7B` · E2 · `breadth-10`. לו-פיי של 84 BPM לפני שהדלתות נפתחות — רקע בלבד, יוצאים ממנו ב-Fade.
 
 **בלוק 2 — האוס ואפרו**
 
-- DJ Lab Originals – Spirit Dance (ריקוד הרוח) — 122 BPM · `6A` · E7 · `house-11` — אותו `6A` של Piano Saturday; אם הרחבה כבר זזה, החליפו את Kalimba Moon בו.
-- DJ Lab Originals – Oud Club (מועדון העוד) — 125 BPM · `6A` · E8 · `mainstream-16` — Oud Club (`6A`, 125) — אם הקהל אוהב את הצבע הים-תיכוני מוקדם.
+- **DJ Lab Originals – Spirit Dance (ריקוד הרוח)** — 122 BPM · `6A` · E7 · `house-11`. אותו `6A` של Piano Saturday; אם הרחבה כבר זזה, החליפו את Kalimba Moon בו.
+- **DJ Lab Originals – Oud Club (מועדון העוד)** — 125 BPM · `6A` · E8 · `mainstream-16`. אם הקהל אוהב את הצבע הים-תיכוני מוקדם.
 
 **בלוק 3 — מלודי**
 
-- DJ Lab Originals – Silent Orbit (מסלול שקט) — 122 BPM · `8A` · E6 · `techno-08` — Silent Orbit (`8A`) יכול להחליף את Event Horizon אם צריך להוריד אנרגיה.
-- DJ Lab Originals – Micro Groove (מיקרו גרוב) — 127 BPM · `5A` · E6 · `techno-10` — Micro Groove (`5A`, 127, אנרגיה 6) — מינימלי והיפנוטי; רק אם ה-DJ הבא מנגן טכנו.
+- **DJ Lab Originals – Silent Orbit (מסלול שקט)** — 122 BPM · `8A` · E6 · `techno-08`. Silent Orbit (`8A`) יכול להחליף את Event Horizon אם צריך להוריד אנרגיה.
+- **DJ Lab Originals – Micro Groove (מיקרו גרוב)** — 127 BPM · `5A` · E6 · `techno-10`. מינימלי והיפנוטי; רק אם ה-DJ הבא מנגן טכנו.
 
 **בלוק 4 — מסירה**
 
-- DJ Lab Originals – Summer In Tel Aviv (קיץ בתל אביב) — 122 BPM · `8B` · E7 · `mainstream-03` — Summer In Tel Aviv (`8B`, 122) — יחסי ל-Golden Hour, אותה תחושה שמשית.
-- DJ Lab Originals – Piano Saturday (שבת של פסנתר) — 124 BPM · `6A` · E6 · `house-04` — Piano Saturday (`6A`, 124) — אם ה-DJ הבא מאחר, הוא נכנס אחרי Spirit Dance באותו סולם.
+- **DJ Lab Originals – Summer In Tel Aviv (קיץ בתל אביב)** — 122 BPM · `8B` · E7 · `mainstream-03`. יחסי ל-Golden Hour, אותה תחושה שמשית.
+- **DJ Lab Originals – Piano Saturday (שבת של פסנתר)** — 124 BPM · `6A` · E6 · `house-04`. אם ה-DJ הבא מאחר, הוא נכנס אחרי Spirit Dance באותו סולם.
 
 ## קריאת הקהל
 

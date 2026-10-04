@@ -205,23 +205,23 @@ track      1234567890123
 
 **בלוק 1 — התעוררות**
 
-- Stephan Bodzin – Strand — 122 BPM · `7A` · E7 · `melodic-techno` · partial — `7A`, 122 — Stephan Bodzin, אותו סולם כמו Rite (partial).
-- Red Axes – Voom — 126 BPM · `8A` · E6 · `melodic-techno` — `8A`, 126 — Red Axes (ישראלים), אינדי-דאנס; רק אם רוצים לעלות מהר יותר.
+- **Stephan Bodzin – Strand** — 122 BPM · `7A` · E7 · `melodic-techno` · partial. Stephan Bodzin, אותו סולם כמו Rite (partial).
+- **Red Axes – Voom** — 126 BPM · `8A` · E6 · `melodic-techno`. Red Axes (ישראלים), אינדי-דאנס; רק אם רוצים לעלות מהר יותר.
 
 **בלוק 2 — עומק**
 
-- Mano Le Tough – Primative People (Tale Of Us Remix) — 120 BPM · `10A` · E6 · `melodic-techno` — `10A`, 120 — אם הקהל עוד לא מוכן ל-122, החליפו בו את Kölsch.
-- DJ Lab Originals – Event Horizon (אופק אירועים) — 124 BPM · `9A` · E7 · `techno-07` — Event Horizon (`9A`, 124) — טראק מקורי, שכן של `10A`.
+- **Mano Le Tough – Primative People (Tale Of Us Remix)** — 120 BPM · `10A` · E6 · `melodic-techno`. אם הקהל עוד לא מוכן ל-122, החליפו בו את Kölsch.
+- **DJ Lab Originals – Event Horizon (אופק אירועים)** — 124 BPM · `9A` · E7 · `techno-07`. טראק מקורי, שכן של `10A`.
 
 **בלוק 3 — העלייה**
 
-- Guy J – Stop Hold — 124 BPM · `10B` · E7 · `melodic-techno` — `10B`, 124 — Guy J (ישראלי), תחליף רך יותר ל-Return to Oz.
-- ARTBAT – Tabu — 122 BPM · `11B` · E7 · `melodic-techno` — `11B`, 122 — ARTBAT, אם Metro "טק-האוסי" מדי לקהל.
+- **Guy J – Stop Hold** — 124 BPM · `10B` · E7 · `melodic-techno`. Guy J (ישראלי), תחליף רך יותר ל-Return to Oz.
+- **ARTBAT – Tabu** — 122 BPM · `11B` · E7 · `melodic-techno`. ARTBAT, אם Metro "טק-האוסי" מדי לקהל.
 
 **בלוק 4 — נחיתה**
 
-- RÜFÜS DU SOL – Innerbloom — 122 BPM · `5B` · E6 · `melodic-techno` — `5B`, 122 — RÜFÜS DU SOL, סגירה רגשית. רק עם Echo Out (סולם רחוק).
-- Moscoman – Deluded Heart — 121 BPM · `9A` · E6 · `melodic-techno` — `9A`, 121 — אם Sirens כבר נוגן, חוזרים ל-Moscoman.
+- **RÜFÜS DU SOL – Innerbloom** — 122 BPM · `5B` · E6 · `melodic-techno`. RÜFÜS DU SOL, סגירה רגשית. רק עם Echo Out (סולם רחוק).
+- **Moscoman – Deluded Heart** — 121 BPM · `9A` · E6 · `melodic-techno`. אם Sirens כבר נוגן, חוזרים ל-Moscoman.
 
 ## קריאת הקהל
 

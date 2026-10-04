@@ -58,7 +58,7 @@ _My First Set 30 — Four Techniques, Eight Tracks_
 | 4 | 11:32 | DJ Lab Originals – Silent Orbit (מסלול שקט) | 122 ▸124 | Am | `8A` | 6 | `techno-08` | **Bass Swap** · 32 תיבות · נכנס מ-`A` כשהיוצא ב-`G` · Low מתחלף בתיבה 17 | ✓ +1.6% | ✓ אותו סולם |
 | 5 | 15:25 | DJ Lab Originals – Groove Machine (מכונת גרוב) | 126 | Am | `8A` | 7 | `house-05` | **Bass Swap** · 32 תיבות · נכנס מ-`A` כשהיוצא ב-`G` · Low מתחלף בתיבה 17 | ✓ +0.8% | ✓ -1 בגלגל — שכן |
 | 6 | 18:43 | DJ Lab Originals – Bassline Bandit (שודד הבאסליין) | 127 ▸126 | Dm | `7A` | 7 | `house-06` | **Bass Swap** · 32 תיבות · נכנס מ-`A` כשהיוצא ב-`G` · Low מתחלף בתיבה 17 | ✓ +1.6% | ✓ -1 בגלגל — שכן |
-| 7 | 22:01 | DJ Lab Originals – Warehouse 26 (מחסן 26) | 128 ▸127 | Gm | `6A` | 8 | `house-07` | **Echo Out** · Echo 1/2 Beat בתיבה האחרונה של `H` (Last 16) — סוף פרייז · נכנס מ-`A` על ה-1 | ✓ +2.4% | ⚠ +2 — שינוי אנרגיה, קצר ומבוקר |
+| 7 | 22:01 | DJ Lab Originals – Warehouse 26 (מחסן 26) | 128 ▸127 | Gm | `6A` | 8 | `house-07` | **Echo Out** · Echo 1/2 Beat בתיבה האחרונה לפני `H` · נכנס מ-`A` על ה-1 | ✓ +2.4% | ⚠ +2 — שינוי אנרגיה, קצר ומבוקר |
 | 8 | 26:18 | DJ Lab Originals – Concrete Pulse (דופק בטון) | 130 | Am | `8A` | 8 | `techno-01` | סוף הסט |  |  |
 
 סה"כ כ-30:44 (הזמנים מחושבים מאורך כל טראק פחות החפיפה של המעבר; בטראקים מה-crates — האורך שאתם מנגנים בפועל, לא אורך הקובץ).
@@ -148,7 +148,7 @@ track      12345678
 `6A` → `8A` (⚠ +2 — שינוי אנרגיה, קצר ומבוקר) · מתנגן 127 → הנכנס 130 BPM (✓ +2.4%)
 
 - הכנה: Beat FX → `Echo` (1/2 Beat), על הערוץ של היוצא, Level/Depth באמצע. הנכנס על Hot Cue `A`, Trim מכוון.
-- ב-`H` (Last 16) — סוף פרייז: על ה-1 של התיבה האחרונה של הפרייז — Echo ON; על ביט 3–4 פיידר היוצא למטה בבת אחת.
+- על ה-1 של התיבה האחרונה לפני `H` — Echo ON; על ביט 3–4 פיידר היוצא למטה בבת אחת.
 - על ה-1 הבא — Play על הנכנס (פיידר מלא). Echo OFF אחרי שהזנב נגמר; EQ של היוצא חוזר לאמצע.
 - **הדמו:** `transition-04` (`transition-04-echo_out.mp3`).
 - `6A`→`8A` (⚠ +2) ו-127→130: לא מסנכרנים. Concrete Pulse מתחיל בטמפו שלו, 130. ה-Echo מסתיר גם את הסולם וגם את הטמפו.
@@ -166,13 +166,13 @@ track      12345678
 
 **אם מעבר לא יוצא**
 
-- DJ Lab Originals – Hands Up Florentin (ידיים למעלה בפלורנטין) — 124 BPM · `7A` · E6 · `house-03` — Hands Up Florentin (`7A`, 124) — שכן של `8A`; תחליף ל-Neon Cathedral אם רוצים להישאר בהאוס.
-- DJ Lab Originals – Event Horizon (אופק אירועים) — 124 BPM · `9A` · E7 · `techno-07` — Event Horizon (`9A`, 124) — תחליף ל-Silent Orbit; ה-Filter מ-`10A` ל-`9A` הוא שכן (קל יותר).
+- **DJ Lab Originals – Hands Up Florentin (ידיים למעלה בפלורנטין)** — 124 BPM · `7A` · E6 · `house-03`. שכן של `8A`; תחליף ל-Neon Cathedral אם רוצים להישאר בהאוס.
+- **DJ Lab Originals – Event Horizon (אופק אירועים)** — 124 BPM · `9A` · E7 · `techno-07`. תחליף ל-Silent Orbit; ה-Filter מ-`10A` ל-`9A` הוא שכן (קל יותר).
 
 **להאריך את הסט ל-40 דקות**
 
-- DJ Lab Originals – Shuffle Theory (תורת השאפל) — 126 BPM · `9A` · E7 · `house-08` — Shuffle Theory (`9A`, 126) — אחרי Groove Machine, עוד Bass Swap.
-- DJ Lab Originals – Night Shift (משמרת לילה) — 129 BPM · `6A` · E8 · `techno-04` — Night Shift (`6A`, 129) — אחרי Warehouse 26, אותו סולם; Bass Swap במקום Echo Out.
+- **DJ Lab Originals – Shuffle Theory (תורת השאפל)** — 126 BPM · `9A` · E7 · `house-08`. אחרי Groove Machine, עוד Bass Swap.
+- **DJ Lab Originals – Night Shift (משמרת לילה)** — 129 BPM · `6A` · E8 · `techno-04`. אחרי Warehouse 26, אותו סולם; Bass Swap במקום Echo Out.
 
 ## איך לתרגל את הסט
 

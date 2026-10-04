@@ -241,7 +241,9 @@ def build_groove(plan, rng):
             return "x.....x.x......."
         return M["kick_verse"]
 
-    song.hits("kick", kick_s, kick_pat, gain_db=-2.5, sc_source=True, humanize=0.0)
+    kl = song.hits("kick", kick_s, kick_pat, gain_db=-2.5, sc_source=True, humanize=0.0)
+    kl.automate("gain_db", [(0, 0.0), (buildsec.start_bar - 0.01, 0.0), (buildsec.start_bar, -3.5),
+                            (buildsec.end_bar - 1, 0.0)])
 
     # darbuka — the heart of the groove
     kit = W.darbuka_kit(rng, pitch=float(rng.uniform(0.95, 1.06)), metal=float(rng.uniform(0.4, 0.7)))
@@ -328,7 +330,7 @@ def build_groove(plan, rng):
             return "x...x...x...x..."
         return "....x.......x..." if not c.phrase_end else "....x.......x.x."
 
-    song.hits("claps", claps, clap_pat, gain_db=-6.5, sends={"room": 0.18, "reverb": 0.08}, timing_ms=2.0)
+    song.hits("claps", claps, clap_pat, gain_db=-8.5, sends={"room": 0.18, "reverb": 0.08}, timing_ms=2.0)
 
     if M["dembow"]:
         snr = drums.snare(tone_hz=float(rng.uniform(190, 230)), snappy=0.7, decay=0.1, kind="tight", rng=rng)
@@ -417,8 +419,8 @@ def build_groove(plan, rng):
     riff = _phrase(M["riff"], T_oud)
     riff_hi = _phrase(M["riff"], T_oud + 12)
     build_oud = _phrase(M["build_oud"], T_oud)
-    hook_low_a = _phrase(M["hook_a"].replace("/v", "").replace(",v", ""), T_lead - 12)
-    hook_low_b = _phrase(M["hook_b"].replace("/v", "").replace(",v", ""), T_lead - 12)
+    hook_low_a = _phrase(W.strip_orn(M["hook_a"], "vtf"), T_lead - 12)
+    hook_low_b = _phrase(W.strip_orn(M["hook_b"], "vtf"), T_lead - 12)
 
     def oud_phr(c):
         if c.kind == "groove" and c.i % 4 == 0:
@@ -431,8 +433,9 @@ def build_groove(plan, rng):
             return [(0, hook_low_b, 0.8)]
         return []
 
-    W.add_phrases(song, "oud", oud_i, oud_phr, gain_db=-7.0, pan=-0.12, sends={"room": 0.14, "reverb": 0.08},
-                  lookback=9, width=1.3, sidechain=0.15)
+    oudl = W.add_phrases(song, "oud", oud_i, oud_phr, gain_db=-2.5, pan=-0.12, sends={"room": 0.14, "reverb": 0.08},
+                         lookback=9, width=1.3, sidechain=0.15)
+    oudl.automate("gain_db", song.section_points({"groove": 0.0, "build": -1.5, "drop": -4.0}, 0.0))
 
     # ------------------------------------------------------------------ qanun fills / arpeggios
     q_i = W.qanun(t60=float(rng.uniform(1.8, 2.6)))

@@ -109,38 +109,38 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
                 base[s] = "g" if base[s] == "." else "."
         return "".join(base)
 
-    song.hits("hats", hats, hat_pat, gain_db=-12.5 if tunnel else -11.0, pan=0.2, humanize=0.12)
+    song.hits("hats", hats, hat_pat, gain_db=-11.5 if tunnel else -9.5, pan=0.2, humanize=0.12)
     ohat = xt.stereo_hit(drums.hat, rng, corr=0.5, open_=True, decay=0.22 if tunnel else 0.12, tone=1.1)
     song.hits("open_hat", ohat, lambda c: "..x...x...x...x." if groove_on(c, 8) and (tunnel or c.kind == "drop") else None,
               gain_db=-12.0, pan=-0.2, sends={"room": 0.12})
     clap = xt.stereo_variants(drums.clap, 3, rng, corr=0.7, tone_hz=float(rng.uniform(1000, 1250)),
                               tail=0.25 if tunnel else 0.12)
     clap_p = "............x..." if tunnel else "....x.......x..."
-    song.hits("clap", clap, lambda c: clap_p if groove_on(c) else None, gain_db=-6.0 if tunnel else -9.0,
+    song.hits("clap", clap, lambda c: clap_p if groove_on(c) else None, gain_db=-4.5 if tunnel else -6.5,
               sends={"hall": 0.25 if tunnel else 0.05, "reverb": 0.15})
     if not tunnel:
         snap = xt.stereo_hit(drums.snap, rng, corr=0.6)
-        song.hits("snap", snap, lambda c: "....x.......x..." if groove_on(c, 8) else None, gain_db=-11.0,
+        song.hits("snap", snap, lambda c: "....x.......x..." if groove_on(c, 8) else None, gain_db=-8.0,
                   sends={"room": 0.15}, timing_ms=1.0)
 
     # polymetric percussion: 3/16 rim + 5/16 tick against the 4/4 kick
     rim = drums.rimshot(float(rng.uniform(1500, 1900)), rng=rng)
     song.hits("poly3", rim, lambda c: xt.steps_to_pattern(xt.poly_hits(c, 3, 1, reset_bars=8),
                                                           vel_fn=lambda k, s: "x" if k % 2 == 0 else "o")
-              if groove_on(c) else None, gain_db=-15.0 if tunnel else -13.0, pan=0.45,
+              if groove_on(c) else None, gain_db=-12.0 if tunnel else -10.5, pan=0.45,
               sends={"delay8": 0.18, "room": 0.1}, humanize=0.1)
     tick = drums.perc_blip(float(rng.uniform(1200, 1700)), 0.03, fm_index=3.0, ratio=1.7, rng=rng)
     song.hits("poly5", xt.ms_spread(tick, 9.0, 0.6, 600.0),
               lambda c: xt.steps_to_pattern(xt.poly_hits(c, 5, 2, reset_bars=16)) if (c.kind in ("groove", "drop")) else None,
-              gain_db=-15.0, pan=-0.5, sends={"delay": 0.15}, humanize=0.15)
+              gain_db=-13.0, pan=-0.5, sends={"delay": 0.15}, humanize=0.15)
     if not tunnel:
         # clicks: tiny ticks in 7/16 and an evolving euclid, panned wide – the 'micro' texture
         clicks = [xt.click(float(rng.uniform(3000, 6000)), 0.008, rng=rng) for _ in range(3)]
         song.hits("click7", clicks, lambda c: xt.steps_to_pattern(xt.poly_hits(c, 7, 3, reset_bars=8))
-                  if groove_on(c, 8) else None, gain_db=-14.0, pan=0.7, humanize=0.2)
+                  if groove_on(c, 8) else None, gain_db=-8.5, pan=0.7, humanize=0.2)
         eu = [euclid(k, 16, r) for k, r in ((5, 1), (7, 2), (3, 3), (6, 1))]
         song.hits("click_eu", clicks, lambda c: eu[(c.i // 4) % 4] if c.kind in ("groove", "drop") else None,
-                  gain_db=-16.0, pan=-0.7, humanize=0.2, sends={"delay8": 0.1})
+                  gain_db=-10.5, pan=-0.7, humanize=0.2, sends={"delay8": 0.1})
         shk = xt.stereo_variants(drums.shaker, 3, rng, corr=0.3, length=0.05)
         song.hits("shaker", shk, lambda c: "g.gxg.gxg.gxg.gx" if c.kind == "drop" else None, gain_db=-19.0, pan=0.3)
     else:
@@ -184,7 +184,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
                 ev = [e for e in ev if e[3] > 0]
             return ev
 
-        song.notes("sub", sub_i, bass_notes, bus="bass", gain_db=-5.0, sidechain=0.45, humanize=0.05)
+        song.notes("sub", sub_i, bass_notes, bus="bass", gain_db=-6.5, sidechain=0.45, humanize=0.05)
 
     # ================================================================ dub chords (the loop)
     chord = key.chord(0, 3, 4) + ([key.degree(8, 3)] if tunnel else [])
@@ -208,7 +208,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
         ch_ = ch_b if (c.i % 16) >= 12 else ch_a
         return [(s, l, ch_, v) for s, l, v in rh]
 
-    dub = song.notes("dub_chord", dub_i, dub_notes, gain_db=-7.0 if tunnel else -9.0, sidechain=0.55,
+    dub = song.notes("dub_chord", dub_i, dub_notes, gain_db=-6.0 if tunnel else -3.0, sidechain=0.55,
                      humanize=0.05, sends={"delay": 0.4 if tunnel else 0.3, "hall": 0.25 if tunnel else 0.1,
                                           "delay4": 0.15 if tunnel else 0.0})
     dub.automate("lp", journey(450, 4500) if tunnel else journey(700, 7000))
@@ -223,7 +223,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
                                                      0.9 if s % 4 == 0 else 0.65)
                                                     for s in xt.poly_hits(c, period, 0, reset_bars=8)]
                      if (c.kind == "drop" or (c.kind == "groove" and c.i >= 16) or (c.kind == "outro" and c.i < 8)) else [],
-                     gain_db=-10.0 if tunnel else -12.0, sidechain=0.4, pan=0.15,
+                     gain_db=-4.5 if tunnel else -5.0, sidechain=0.4, pan=0.15,
                      sends={"delay": 0.3, "hall": 0.15, "space": 0.1 if tunnel else 0.0})
     seq.automate("lp", journey(500, 5000) if tunnel else journey(900, 9000))
 
@@ -238,7 +238,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return []
 
         drn = song.notes("tunnel", xt.noise_drone(q=14.0, harmonics=(1, 2, 3, 4), drift=0.15, attack=4.0, air=0.05),
-                         drone_notes, gain_db=-13.0, sidechain=0.35, humanize=0.0, sends={"space": 0.35})
+                         drone_notes, gain_db=-12.0, sidechain=0.35, humanize=0.0, hp=150.0, sends={"space": 0.35})
         drn.automate("lp", journey(600, 3500))
         pad = song.notes("pad", xt.warm_pad(attack=2.0, release=2.5, cutoff=1200.0, detune=0.2, warmth=0.8),
                          lambda c: [(0, bd.bars * 16 - 2, ch_a, 0.7)] if c.kind == "breakdown" and c.i == 0 else [],
@@ -249,7 +249,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
         bleep = xt.glass_pluck(ratio=3.0, index=1.0, decay=0.15, release=0.2, shimmer=0.0, side=0.25)
         song.notes("bleep", bleep, lambda c: [(9, 1.0, key.degree(4, 5), 0.8), (11, 1.0, key.degree(2, 5), 0.6)]
                    if c.kind in ("groove", "drop") and c.i % 4 == 3 else [],
-                   gain_db=-14.0, sends={"delay": 0.35, "reverb": 0.1})
+                   gain_db=-7.0, sends={"delay": 0.35, "reverb": 0.1})
 
     # ================================================================ fx
     fxl = song.audio("fx", bus="fx", sends={"hall": 0.2})

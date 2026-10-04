@@ -206,23 +206,23 @@ track      1234567890123
 
 **בלוק 1 — גרוב**
 
-- Manuel De La Mare & Luigi Rocca – Disco 666 (Extended Mix) — 125 BPM · `4A` · E6 · `tech-house` — `4A`, 125, אנרגיה 6 — אם החימום הסתיים נמוך מהצפוי, פתחו בו.
-- RSquared – Foolish Games — 128 BPM · `5A` · E6 · `tech-house` — `5A`, 128, מינימלי-גרובי — להחזקת רחבה בלי להעלות אנרגיה.
+- **Manuel De La Mare & Luigi Rocca – Disco 666 (Extended Mix)** — 125 BPM · `4A` · E6 · `tech-house`. אם החימום הסתיים נמוך מהצפוי, פתחו בו.
+- **RSquared – Foolish Games** — 128 BPM · `5A` · E6 · `tech-house`. להחזקת רחבה בלי להעלות אנרגיה.
 
 **בלוק 2 — מחסן**
 
-- Dave Winnel – Alegria (Extended Mix) — 128 BPM · `6A` · E7 · `tech-house` — `6A`, 128 — לטין-טק עם כלי הקשה, תחליף ל-Warehouse 26.
-- Ben Sterling – Mind Control — 128 BPM · `6A` · E6 · `tech-house` · partial — `6A`, 128, אנרגיה 6 — אם צריך נשימה לפני השיא (partial).
+- **Dave Winnel – Alegria (Extended Mix)** — 128 BPM · `6A` · E7 · `tech-house`. לטין-טק עם כלי הקשה, תחליף ל-Warehouse 26.
+- **Ben Sterling – Mind Control** — 128 BPM · `6A` · E6 · `tech-house` · partial. אם צריך נשימה לפני השיא (partial).
 
 **בלוק 3 — שיא**
 
-- Chris Lake & Aluna – Beggin' (Extended Mix) — 126 BPM · `5B` · E7 · `tech-house` — `5B`, 126 — ווקאל מלודי באותו סולם של Drugs From Amsterdam.
-- Mau P – Dress Code (Extended Mix) — 128 BPM · `3B` · E8 · `tech-house` — `3B`, 128 — יחסי ל-Selecta (`3A`), אם הרחבה רוצה עוד.
+- **Chris Lake & Aluna – Beggin' (Extended Mix)** — 126 BPM · `5B` · E7 · `tech-house`. ווקאל מלודי באותו סולם של Drugs From Amsterdam.
+- **Mau P – Dress Code (Extended Mix)** — 128 BPM · `3B` · E8 · `tech-house`. יחסי ל-Selecta (`3A`), אם הרחבה רוצה עוד.
 
 **בלוק 4 — מסירה**
 
-- Claude VonStroke – Who's Afraid Of Detroit? (10 Year Anniversary Mix) — 124 BPM · `4A` · E7 · `tech-house` · partial — `4A`, 124 — הקלאסיקה של Dirtybird; מנגנים ב-128 (+3.2%) (partial).
-- DJ Lab Originals – Industrial Heart (לב תעשייתי) — 131 BPM · `4A` · E9 · `techno-02` — Industrial Heart (`4A`, 131) — אם ה-DJ הבא מנגן טכנו חזק ורוצה שתעלו.
+- **Claude VonStroke – Who's Afraid Of Detroit? (10 Year Anniversary Mix)** — 124 BPM · `4A` · E7 · `tech-house` · partial. הקלאסיקה של Dirtybird; מנגנים ב-128 (+3.2%) (partial).
+- **DJ Lab Originals – Industrial Heart (לב תעשייתי)** — 131 BPM · `4A` · E9 · `techno-02`. אם ה-DJ הבא מנגן טכנו חזק ורוצה שתעלו.
 
 ## קריאת הקהל
 
