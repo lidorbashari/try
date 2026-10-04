@@ -91,8 +91,8 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
         return lo + ((p - lo) % 12)
 
     # ------------------------------------------------------------------ drums
-    kick_s = drums.kick("house", tune_hz=W.kick_tune(key, 46.0, 58.0, 50.0), decay=float(rng.uniform(0.3, 0.36)),
-                        click=float(rng.uniform(0.25, 0.4)), drive=1.3, rng=rng)
+    kick_s = drums.kick("deep", tune_hz=W.kick_tune(key, 44.0, 58.0, 49.0), decay=float(rng.uniform(0.34, 0.4)),
+                        click=float(rng.uniform(0.3, 0.45)), drive=1.4, rng=rng)
     kpat = M["kick"]
 
     def kick_pat(c):
@@ -117,7 +117,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     if M["dancehall"]:
         snr = drums.snare(tone_hz=float(rng.uniform(200, 240)), snappy=0.75, decay=0.1, kind="tight", rng=rng)
         song.hits("dembow_snare", snr, lambda c: "...x..x....x..x." if c.kind == "drop" else None,
-                  gain_db=-9.0, pan=-0.08, sends={"reverb": 0.1})
+                  gain_db=-6.0, pan=-0.08, sends={"reverb": 0.1})
     shk = drums.variants(drums.shaker, 4, rng, jitter={"length": 0.2}, length=float(rng.uniform(0.06, 0.085)))
     sp = SHAKER[int(rng.integers(len(SHAKER)))]
     song.hits("shaker", shk, lambda c: sp if c.kind != "breakdown" or c.i >= 2 else None,
@@ -175,7 +175,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
                            sustain=0.7, amp_decay=0.5)
 
     def bass_root(nm):
-        return reg((pc + ROOT[nm]) % 12, 28)
+        return reg((pc + ROOT[nm]) % 12, 35)  # MonoSynth sub sits one octave below → 31–58 Hz
 
     def bass_notes(c):
         nm = prog_at(c)
@@ -200,7 +200,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     bass.automate("cutoff", [(verse.start_bar, 240), (verse.start_bar + 8, 320), (hook.start_bar, 420)])
 
     # ------------------------------------------------------------------ chords: Rhodes + warm pad
-    center = reg(pc, 60) + 2
+    center = reg(pc, 60) + 6
     ep = inst.epiano(bright=0.45)
 
     def chord_of(nm, ctr=center):
@@ -268,11 +268,11 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return skank_cache[nm]
 
         W.add_phrases(song, "skank", mut, lambda c: [(0, skank(prog_at(c)), 0.9)] if c.kind == "drop" else [],
-                      gain_db=-10.0, pan=-0.35, sends={"delay8": 0.12, "room": 0.1}, lookback=2, width=1.2,
+                      gain_db=-4.5, pan=-0.35, sends={"delay8": 0.12, "room": 0.1}, lookback=2, width=1.2,
                       sidechain=0.2)
 
     # ------------------------------------------------------------------ mallet hooks
-    T_m = reg(pc, 64) if M["mallet"] == "marimba" else reg(pc, 70)
+    T_m = reg(pc, 74)
     hook_n = W.transpose(W.mel(M["hook"]), T_m)
     counter_n = W.transpose(W.mel(M["counter"]), reg(pc, 60))
     mal = inst.mallet(M["mallet"])
@@ -284,7 +284,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return [(st - off, ln, m, v) for st, ln, m, v, o in hook_n if off <= st < off + 16]
         return []
 
-    song.notes("mallet_hook", mal, mal_notes, gain_db=-10.0, pan=0.1, hp=240.0, sends={"reverb": 0.15, "delay": 0.12},
+    song.notes("mallet_hook", mal, mal_notes, gain_db=-10.5, pan=0.1, hp=240.0, sends={"reverb": 0.15, "delay": 0.12},
                width=1.3, sidechain=0.15)
 
     def mal2_notes(c):
