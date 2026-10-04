@@ -1,0 +1,37 @@
+artist,title,mix,label,year,bpm,key,camelot,energy,role,verified,notes_he
+Ed Sheeran,Thinking Out Loud,Original,,2014,79,D,10B,3,warmup,yes,קבלת פנים — רקע רגוע
+Elvis Presley,Can't Help Falling in Love,Original,,1961,100,D,10B,3,warmup,yes,קבלת פנים / כניסה לחופה — בלדה
+"Shlomi Shabat, Moshe Peretz, Lior Narkis",לכה דודי,Original,,,74,Cm,5A,3,warmup,yes,תעתיק: Lecha Dodi · קבלת פנים או כניסה לחופה
+Christina Perri,A Thousand Years,Original,,2011,139,Bb,6B,3,warmup,yes,כניסת הכלה לחופה · משקל 3/4 (ואלס) — לא לביטמאץ'
+Ben Snof,הרגע שלנו,Original,,,,,,4,warmup,no,"תעתיק: Ha'rega Shelanu · כניסה לחופה; קיים ב-Tunebat, ערכים לא נשלפו"
+"Yaakov Shwekey, Shlomi Shabat",Vehi She'amda,Live,,,145,Fm,4A,4,warmup,yes,והיא שעמדה · חופה/רגע מרגש; 145 = כפול של ~72
+Sameach Music,Siman Tov Mazel Tov,Original,,,,,,8,anthem,no,"סימן טוב ומזל טוב · מיד אחרי שבירת הכוס; קיים ב-Tunebat, ערכים לא נשלפו"
+Osher Cohen,ה' יברך אותך,Original,,,112,Em,9A,6,build,yes,תעתיק: Hashem Yevarech Otcha · אחרי שבירת הכוס / ברכה
+Mergui,הזוג הזה,Original,,,,,,8,anthem,no,"תעתיק: Ha'zug Ha'ze · כניסת הזוג לרחבה; קיים ב-Tunebat, ערכים לא נשלפו"
+Bruno Mars,Marry You,Original,,2010,145,Bb,6B,8,anthem,yes,כניסת הזוג לרחבה
+"Moshe Peretz, Omer Adam",Hopa / Ein Kamoch / Tel Aviv,Live,,,130,Bbm,3A,9,peak,yes,מחרוזת לכניסת הזוג / פתיחת הרחבה
+Omer Adam,תל אביב,Original,,2013,130,Ebm,2A,9,anthem,yes,תעתיק: Tel Aviv · כניסת הזוג / שיא
+Eden Ben Zaken,הגענו הבנות,Original,,,108,A,11B,7,build,yes,תעתיק: Higanu Ha'banot · כניסת הכלה והחברות
+Ed Sheeran,Perfect,Original,,2017,95,Ab,4B,3,closing,yes,ריקוד ראשון · משקל 12/8 — מורגש איטי יותר
+John Legend,All of Me,Original,,2013,120,Ab,4B,3,closing,yes,ריקוד ראשון · מורגש כ-60 (חצי טמפו)
+Itay Levi,כמעט שיר אהבה,Original,,,,,,4,closing,no,"תעתיק: Kimat Shir Ahava · סלואו; קיים ב-Tunebat, ערכים לא נשלפו"
+Osher Cohen,אהבה,Original,,,127,Cm,5A,4,closing,yes,תעתיק: Ahava · סלואו/מעבר; 127 עשוי להיות כפול של ~64
+Mordechai Ben David,Yidden,Original,,1986,,,,9,peak,no,סט חסידי · לא אומת בסשן
+Harry Belafonte,Hava Nagila,Live,,1959,,,,8,anthem,no,הבה נגילה · מתוך Belafonte at Carnegie Hall; מאיץ — קאט בלבד. יש רמיקסים ייעודיים לרחבה
+Voices of Israel,Hevenu Shalom Aleichem,Original,,,,,,7,anthem,no,"הבאנו שלום עליכם · הורה/מעגל; קיים ב-Tunebat, ערכים לא נשלפו"
+Eyal Golan,עם ישראל חי,Original,,,105,F,7B,8,anthem,yes,תעתיק: Am Yisrael Chai · סט ריקודים / שירה בציבור
+Netta,Toy,Original,,2018,130,Ebm,2A,9,anthem,yes,שיא הרחבה · אותו מפתח כמו 'תל אביב'
+Dana International,Diva,Original,,1998,134,Em,9A,8,anthem,yes,שירה בציבור
+Static & Ben El,Tudo Bom,Original,,2018,130,A,11B,9,peak,yes,שיא הרחבה
+Omer Adam,בוקרשט,Original,,2015,130,Cm,5A,8,peak,yes,תעתיק: Bucharest · שיא הרחבה
+"Static & Ben El, Pitbull","Further Up (Na, Na, Na, Na, Na)",Original,,2020,100,F#,2B,8,peak,yes,בלוק לטיני/רגאטון
+Haddaway,What Is Love,Original,,1993,124,Gm,6A,8,peak,yes,קלאסיקת 90s לכל הגילאים
+"Earth, Wind & Fire",September,Original,,1978,126,A,11B,7,build,yes,דיסקו לכל הגילאים
+ABBA,Dancing Queen,Original,,1976,101,A,11B,6,build,yes,דיסקו / שירה בציבור
+Kool & The Gang,Celebration,Original,,1980,122,Db,3B,7,build,partial,BPM אומת; המפתח ממקור אלגוריתמי (Db) — כדאי לבדוק
+The Black Eyed Peas,I Gotta Feeling,Original,,2009,128,C,8B,8,peak,partial,BPM אומת; המקור מציין C אך ההרמוניה נשמעת G — בדקו ב-Rekordbox
+"Mark Ronson, Bruno Mars",Uptown Funk,Original,,2014,115,C,8B,8,peak,partial,BPM אומת; המקור מציין C אך השיר נשמע ב-Dm — בדקו ב-Rekordbox
+Gigi D'Agostino,L'amour Toujours,Small Mix,,1999,139,G,9B,9,peak,yes,שיא מאוחר בלילה
+Haim Moshe,אהבת חיי,Original,,,,,,6,anthem,no,תעתיק: Ahavat Chayai · שירה בציבור לקראת סיום; ערכים לא נשלפו
+"Milk & Honey, Gali Atari",Hallelujah,Original,,1979,,,,5,closing,no,הללויה · זוכת אירוויזיון 1979; סגירה/שירה בציבור
+"Shlomi Shabat, Yehuda Poliker",Hatchala Chadasha,Live,,,145,A,11B,5,closing,yes,התחלה חדשה · סגירה מרגשת לאירוע

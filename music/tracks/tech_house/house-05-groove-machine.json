@@ -1,0 +1,155 @@
+{
+ "id": "house-05",
+ "title": "Groove Machine",
+ "title_he": "מכונת גרוב",
+ "artist": "DJ Lab Originals",
+ "genre": "Tech House",
+ "genre_slug": "tech_house",
+ "family": "house",
+ "bpm": 126.0,
+ "key": "A minor",
+ "key_short": "Am",
+ "camelot": "8A",
+ "energy": 7,
+ "role": "peak",
+ "duration_sec": 259.048,
+ "bars": 136,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 32,
+   "start_sec": 0.0,
+   "energy": 4
+  },
+  {
+   "name": "Groove",
+   "start_bar": 32,
+   "bars": 24,
+   "start_sec": 60.952,
+   "energy": 6
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 56,
+   "bars": 16,
+   "start_sec": 106.667,
+   "energy": 3
+  },
+  {
+   "name": "Drop",
+   "start_bar": 72,
+   "bars": 32,
+   "start_sec": 137.143,
+   "energy": 8
+  },
+  {
+   "name": "Outro",
+   "start_bar": 104,
+   "bars": 32,
+   "start_sec": 198.095,
+   "energy": 4
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 32,
+   "sec": 60.952,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 56,
+   "sec": 106.667,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 72,
+   "sec": 137.143,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 104,
+   "sec": 198.095,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 120,
+   "sec": 228.571,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Groove",
+   "bar": 32,
+   "sec": 60.952
+  },
+  {
+   "name": "Breakdown",
+   "bar": 56,
+   "sec": 106.667
+  },
+  {
+   "name": "Drop",
+   "bar": 72,
+   "sec": 137.143
+  },
+  {
+   "name": "Outro",
+   "bar": 104,
+   "sec": 198.095
+  }
+ ],
+ "lufs": -9.11,
+ "true_peak_dbtp": -1.22,
+ "file": "music/tracks/tech_house/house-05-groove-machine.mp3",
+ "cover": "music/tracks/tech_house/house-05-groove-machine.jpg",
+ "description_he": "טק-האוס מתגלגל ב-126 BPM בסולם A minor: קיק חזק ומכוון, באס אופביט מגרגר עם פילטר שנפתח, היי-האטים בשאפל, קלאפ עם ריוורב וצ'ופים ווקאליים סינתטיים. בנוי לרגעי השיא של הערב.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 32 תיבות להכנסה נקייה, הבאס נכנס בתיבה 33 (Hot Cue B), ברייקדאון בתיבה 57, דרופ בתיבה 73, אאוטרו של 32 תיבות מתיבה 105 — מושלם למיקס החוצה. הקיק נעלם לתיבה אחת לפני הדרופ — רגע מצוין לחתוך את הבאס בטראק השני.",
+ "instruments": [
+  "punchy tuned tech-house kick",
+  "rolling off-beat bass",
+  "swung 16th hats",
+  "open hat",
+  "shaker",
+  "clap + plate reverb",
+  "congas & bongos",
+  "formant vocal chops",
+  "minor-7th chord stabs",
+  "breakdown pad",
+  "riser & impact"
+ ],
+ "seed": 1068,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}
