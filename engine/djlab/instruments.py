@@ -37,8 +37,9 @@ def _n(dur, release, sr=SR):
 
 # ============================================================================ basses
 def bass_pluck(cutoff=500.0, env_amt=2200.0, decay=0.12, res=0.35, sub=0.6, drive=1.6, wave="saw",
-               release=0.03, sustain=0.35, sr=SR):
-    """Tech-house style plucky bass: saw/square + sine sub through a ladder LP with envelope."""
+               release=0.03, sustain=0.35, grit=0.35, sr=SR):
+    """Tech-house style plucky bass: saw/square + sine sub through a ladder LP with envelope, plus a
+    band-passed saturated 'grit' layer (400 Hz–3 kHz) so the bass reads on small speakers."""
     def inst(freq, dur, vel):
         gate, n = _n(dur, release, sr)
         t = np.arange(n) / sr
@@ -46,6 +47,9 @@ def bass_pluck(cutoff=500.0, env_amt=2200.0, decay=0.12, res=0.35, sub=0.6, driv
         fenv = np.exp(-t / decay)
         cut = cutoff + env_amt * vel * fenv
         x = ladder(osc * 0.8, cut, res, drive)
+        if grit:
+            g = np.tanh(ladder(osc, cut * 1.5 + 400, 0.2, 1.0) * 3.0)
+            x = x + grit * hp(lp(g, 3000.0, 2), 350.0, 2)
         x = x + sub * sine(freq, n)
         env = adsr(n, gate, 0.002, decay * 1.5, sustain, release, sr)
         return _finish(x * env, vel)
@@ -104,7 +108,7 @@ def organ_bass(drawbars=(1.0, 0.6, 0.3, 0.15), release=0.03, sr=SR):
 
 # ============================================================================ chords / keys / pads
 def stab(wave="saw", cutoff=900.0, env_amt=3500.0, decay=0.16, res=0.25, detune_cents=9.0,
-         release=0.08, amp_decay=0.35, width=0.6, sr=SR):
+         release=0.08, amp_decay=0.35, width=0.9, sr=SR):
     """Chord stab voice (call once per chord note): detuned osc pair through a 12 dB SVF with a snappy
     filter envelope. Stereo."""
     def inst(freq, dur, vel):

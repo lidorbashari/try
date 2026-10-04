@@ -79,7 +79,7 @@ def detect_clicks(x, sr=SR, max_report=10):
     d2 = np.abs(np.diff(m, 2))
     win = int(0.02 * sr)
     k = np.ones(win) / win
-    local = np.sqrt(signal.fftconvolve(d2 ** 2, k, mode="same")) + 1e-6
+    local = np.sqrt(np.maximum(signal.fftconvolve(d2 ** 2, k, mode="same"), 0.0)) + 1e-6
     ratio = d2 / local
     idx = np.where((ratio > 14.0) & (d2 > 0.05))[0]
     events, last = [], -sr

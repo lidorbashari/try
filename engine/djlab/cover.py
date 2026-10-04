@@ -103,22 +103,24 @@ def make_cover(plan: dict, envelope: np.ndarray | None = None, size: int = 800) 
     env = np.interp(np.linspace(0, len(env) - 1, 360), np.arange(len(env)), env)
     env = env / (env.max() + 1e-9)
     rad0 = 150
-    pts_out, pts_in = [], []
-    for i, e in enumerate(env):
-        a = i / len(env) * 2 * math.pi - math.pi / 2
-        ro = rad0 + 10 + 110 * e
-        ri = rad0 - 4 - 30 * e
-        pts_out.append((ccx + ro * math.cos(a), ccy + ro * math.sin(a)))
-        pts_in.append((ccx + ri * math.cos(a), ccy + ri * math.sin(a)))
     glow_l = Image.new("RGBA", (S, S), (0, 0, 0, 0))
     gd = ImageDraw.Draw(glow_l)
-    gd.polygon(pts_out, fill=acc + (90,))
-    glow_l = glow_l.filter(ImageFilter.GaussianBlur(18))
+    gd.ellipse([ccx - rad0 - 60, ccy - rad0 - 60, ccx + rad0 + 60, ccy + rad0 + 60], fill=acc + (70,))
+    glow_l = glow_l.filter(ImageFilter.GaussianBlur(40))
     img = Image.alpha_composite(img, glow_l)
-    d.polygon(pts_out, fill=acc + (200,))
-    d.polygon(pts_in, fill=c1 + (255,))
-    d.ellipse([ccx - rad0 + 30, ccy - rad0 + 30, ccx + rad0 - 30, ccy + rad0 - 30], outline=acc + (180,), width=3)
-    d.ellipse([ccx - 8, ccy - 8, ccx + 8, ccy + 8], fill=acc + (230,))
+    nb = 180
+    envb = np.interp(np.linspace(0, len(env) - 1, nb), np.arange(len(env)), env)
+    for i, e in enumerate(envb):
+        a = i / nb * 2 * math.pi - math.pi / 2
+        r0, r1 = rad0 + 8, rad0 + 14 + 120 * e
+        d.line([ccx + r0 * math.cos(a), ccy + r0 * math.sin(a), ccx + r1 * math.cos(a), ccy + r1 * math.sin(a)],
+               fill=acc + (235,), width=4)
+    d.ellipse([ccx - rad0, ccy - rad0, ccx + rad0, ccy + rad0], fill=c1 + (235,))
+    for k in range(5):
+        rr = rad0 - 18 - k * 22
+        d.ellipse([ccx - rr, ccy - rr, ccx + rr, ccy + rr], outline=acc + (60 + 25 * (k % 2),), width=2)
+    d.ellipse([ccx - 34, ccy - 34, ccx + 34, ccy + 34], fill=acc + (240,))
+    d.ellipse([ccx - 6, ccy - 6, ccx + 6, ccy + 6], fill=c1 + (255,))
     img = Image.alpha_composite(img, over)
 
     # ---- typography

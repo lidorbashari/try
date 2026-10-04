@@ -89,7 +89,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return "x...x...x......." if c.before("breakdown", 1) else None
         return KICK
 
-    song.hits("kick", kick_s, kick_pat, bus="drums", gain_db=0.0, sc_source=True, humanize=0.0)
+    song.hits("kick", kick_s, kick_pat, bus="drums", gain_db=-1.5, sc_source=True, humanize=0.0)
 
     clap_s = drums.variants(drums.clap, 3, rng, jitter={"tone_hz": 0.05}, tone_hz=float(rng.uniform(1100, 1400)),
                             tail=float(rng.uniform(0.14, 0.2)))
@@ -102,7 +102,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return None
         return clap_p if not c.phrase_end else "....x.......x.xx"
 
-    song.hits("clap", clap_s, clap_pat, gain_db=-5.5, sends={"reverb": 0.22, "room": 0.15}, timing_ms=1.5)
+    song.hits("clap", clap_s, clap_pat, gain_db=-3.5, sends={"reverb": 0.22, "room": 0.15}, timing_ms=1.5)
 
     hats_c = drums.variants(drums.hat, 4, rng, jitter={"decay": 0.15}, decay=float(rng.uniform(0.03, 0.05)),
                             tone=float(rng.uniform(0.9, 1.15)))
@@ -115,17 +115,17 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return None
         return hat_p
 
-    song.hits("hats", hats_c, hat_pat, gain_db=-14.0, pan=0.12, humanize=0.12)
+    song.hits("hats", hats_c, hat_pat, gain_db=-14.0, pan=0.3, humanize=0.12)
 
     ohat = drums.hat(open_=True, decay=float(rng.uniform(0.16, 0.24)), tone=float(rng.uniform(0.95, 1.1)), rng=rng)
     song.hits("open_hat", ohat, lambda c: OPEN_HAT if (c.kind in ("groove", "drop") or (c.kind == "intro" and c.i >= 16)
                                                          or (c.kind == "outro" and c.bars_left > 8)) else None,
-              gain_db=-11.0, pan=-0.08, sends={"room": 0.1})
+              gain_db=-11.0, pan=-0.15, sends={"room": 0.12})
 
     shk = drums.variants(drums.shaker, 4, rng, jitter={"length": 0.2}, length=float(rng.uniform(0.07, 0.1)))
     sh_p = SHAKER[int(rng.integers(len(SHAKER)))]
     song.hits("shaker", shk, lambda c: sh_p if not (c.kind == "breakdown") and not (c.kind == "intro" and c.i < 8) else None,
-              gain_db=-17.0, pan=-0.35, humanize=0.15, timing_ms=2.0)
+              gain_db=-17.0, pan=-0.5, humanize=0.15, timing_ms=2.0)
 
     # percussion: conga/bongo/rim/blip
     perc_kit = [drums.conga(float(rng.uniform(190, 240)), "open", rng=rng),
@@ -143,18 +143,18 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return fill
         return p1 if c.kind != "breakdown" else None
 
-    song.hits("perc_conga", [perc_kit[0], perc_kit[1]], perc_a, gain_db=-12.0, pan=-0.45,
+    song.hits("perc_conga", [perc_kit[0], perc_kit[1]], perc_a, gain_db=-12.0, pan=-0.55,
               sends={"room": 0.2, "delay": 0.06})
     song.hits("perc_bongo", [perc_kit[2], perc_kit[3]],
               lambda c: p2 if c.kind in ("groove", "drop") and c.phrase < 4 else None,
-              gain_db=-15.0, pan=0.5, sends={"delay": 0.12, "room": 0.15})
+              gain_db=-14.0, pan=0.6, sends={"delay": 0.12, "room": 0.15})
 
     rim = drums.rimshot(float(rng.uniform(1500, 1900)), rng=rng)
     song.hits("rim", rim, lambda c: "..x..x....x..x.." if c.kind == "drop" and c.i % 4 >= 2 else None,
               gain_db=-17.0, pan=0.3, sends={"delay8": 0.15})
 
     ride = drums.ride(decay=1.1, rng=rng)
-    song.hits("ride", ride, lambda c: "x...x...x...x..." if c.kind == "drop" else None, gain_db=-21.0, pan=0.2)
+    song.hits("ride", ride, lambda c: "x...x...x...x..." if c.kind == "drop" else None, gain_db=-19.0, pan=0.25)
 
     # snare roll into the drop (last 4 bars of each breakdown)
     snr = drums.snare(tone_hz=float(rng.uniform(180, 220)), snappy=0.8, decay=0.12, rng=rng)
@@ -184,7 +184,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             ev = [e for e in ev if e[0] < 8]  # cut the bass for half a bar before transitions
         return ev
 
-    bass = song.notes("bass", bass_inst, bass_notes, bus="bass", gain_db=-2.0, sidechain=0.55,
+    bass = song.notes("bass", bass_inst, bass_notes, bus="bass", gain_db=-4.0, sidechain=0.55,
                       sc_release_ms=150.0, swing=song.swing, humanize=0.04)
     g0, d0 = groove_bar, song.bar("drop")
     bass.automate("lp", [(g0, 350), (g0 + 8, 900), (d0 - 1, 1600), (d0, 5000), (outro.start_bar, 5000),
@@ -212,7 +212,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return vclip(c) if c.i % 4 < 2 else []
         return []
 
-    song.notes("vox_chop", vox_inst, vox_notes, bus="vox", gain_db=-9.0, sidechain=0.35,
+    song.notes("vox_chop", vox_inst, vox_notes, bus="vox", gain_db=-5.0, sidechain=0.35,
                sends={"delay": 0.22, "reverb": 0.18}, pan=0.0)
 
     # chord stabs (minor 7th voicings, voice-led)
@@ -233,8 +233,8 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return [(s, l, ch, v) for s, l, v in stab_r]
         return []
 
-    song.notes("stabs", stab_inst, stab_notes, gain_db=-11.0, sidechain=0.5,
-               sends={"delay": 0.25, "reverb": 0.15}, width=1.3)
+    song.notes("stabs", stab_inst, stab_notes, gain_db=-7.0, sidechain=0.5,
+               sends={"delay": 0.25, "reverb": 0.15}, width=1.6)
 
     # breakdown pad
     pad_inst = inst.pad(attack=float(rng.uniform(0.6, 1.2)), cutoff=float(rng.uniform(1400, 2400)))
@@ -245,7 +245,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return [(0, 31.5, ch, 0.8)]
         return []
 
-    pad = song.notes("pad", pad_inst, pad_notes, gain_db=-11.0, sends={"hall": 0.3}, width=1.4)
+    pad = song.notes("pad", pad_inst, pad_notes, gain_db=-9.0, sends={"hall": 0.3}, width=1.6)
     for bd in [s for s in song.sections if s.kind == "breakdown"]:
         pad.automate("lp", [(bd.start_bar, 600), (bd.end_bar, 6000)])
 
