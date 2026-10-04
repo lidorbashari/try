@@ -143,10 +143,10 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
                          tone=float(rng.uniform(5800, 6800)))
     sh_p = SHAKER[int(rng.integers(len(SHAKER)))]
     song.hits("shaker", shk, lambda c: sh_p if not (c.kind == "breakdown" and c.i < 4) else None,
-              gain_db=-15.0, pan=-0.45, humanize=0.15, timing_ms=2.5)
+              gain_db=-13.0, pan=-0.45, humanize=0.15, timing_ms=2.5)
     shek = drums.variants(eh.shekere, 3, rng, jitter={"length": 0.15}, length=float(rng.uniform(0.1, 0.14)))
     song.hits("shekere", shek, lambda c: SHEKERE if c.kind in ("groove", "drop") or (c.kind == "intro" and c.i >= 16)
-              or (c.kind == "outro" and c.bars_left > 8) else None, gain_db=-18.0, pan=0.5, humanize=0.15,
+              or (c.kind == "outro" and c.bars_left > 8) else None, gain_db=-16.0, pan=0.5, humanize=0.15,
               timing_ms=3.0)
 
     hats = drums.variants(drums.hat, 3, rng, jitter={"decay": 0.2}, decay=float(rng.uniform(0.025, 0.04)),
@@ -156,11 +156,11 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return None
         return "..x...x...x...x." if c.i % 2 == 0 else "..x...x...x.x.x."
 
-    song.hits("hats", hats, hat_pat, gain_db=-17.0, pan=0.25, lp=11000.0)
+    song.hits("hats", hats, hat_pat, gain_db=-14.0, pan=0.25)
     ohat = drums.hat(open_=True, decay=float(rng.uniform(0.18, 0.26)), tone=0.95, rng=rng)
     song.hits("open_hat", ohat, lambda c: "..x...x...x...x." if c.kind == "drop" or (c.kind == "groove" and c.i >= 8)
-              or (c.kind == "intro" and c.i >= 24) else None, gain_db=-14.0 if not soft else -16.0, pan=-0.2,
-              sends={"room": 0.1}, lp=12000.0)
+              or (c.kind == "intro" and c.i >= 24) else None, gain_db=-12.5 if not soft else -14.5, pan=-0.2,
+              sends={"room": 0.1})
 
     # three congas, interlocking 2-bar parts
     ci = int(rng.integers(len(CONGA_LO)))
@@ -190,7 +190,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
               drums.bongo(float(rng.uniform(620, 680)), "mute", rng=rng)]
     song.hits("bongo", bongos, lambda c: bongo_p if (c.kind == "drop" or (c.kind == "groove" and c.i % 8 >= 4)
                                                       or (c.kind == "intro" and c.i >= 20)) else None,
-              gain_db=-15.0 if not soft else -17.0, pan=0.55, humanize=0.18, timing_ms=2.5, sends={"room": 0.12})
+              gain_db=-16.5 if not soft else -18.5, pan=0.55, humanize=0.18, timing_ms=2.5, sends={"room": 0.12})
 
     bell = eh.woodblock(float(rng.uniform(780, 900)), 0.035, rng=rng)
     song.hits("bell_12_8", bell, lambda c: BELL_12 if (c.kind in ("groove", "drop") or (c.kind == "intro" and c.i >= 16)
@@ -285,7 +285,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return [(0, 31.0, chords[chord_deg(c)], 0.8)]
         return []
 
-    pad = song.notes("pad", pad_inst, pad_notes, gain_db=-12.0, sends={"hall": 0.35}, width=1.4, sidechain=0.35,
+    pad = song.notes("pad", pad_inst, pad_notes, gain_db=-12.0, sends={"hall": 0.35}, width=0.85, sidechain=0.35,
                      hp=180.0)
     pad.automate("gain_db", song.section_points({"groove": -4.0, "breakdown": 2.0, "drop": -2.0, "outro": -5.0}, -60.0,
                                                 ramp_bars=2))
@@ -298,11 +298,11 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     motif_oct = 4 if style != "kalimba" else 5
     mclip = clip([(s, l, deg(d, motif_oct), v) for s, l, d, v in motif], 2)
     if style == "kalimba":
-        lead_inst, lead_name, lead_gain = eh.kalimba(bright=0.55, decay=1.0), "kalimba", -8.0
+        lead_inst, lead_name, lead_gain = eh.kalimba(bright=0.6, decay=1.0), "kalimba", -11.0
     elif style == "desert":
-        lead_inst, lead_name, lead_gain = eh.pluck_lead(bright=0.75, decay=0.996, body=0.35), "kora_pluck", -9.0
+        lead_inst, lead_name, lead_gain = eh.pluck_lead(bright=0.75, decay=0.996, body=0.35), "kora_pluck", -10.0
     else:
-        lead_inst, lead_name, lead_gain = eh.marimba(decay=0.5), "marimba", -8.5
+        lead_inst, lead_name, lead_gain = eh.marimba(decay=0.5), "marimba", -10.0
 
     def motif_notes(c):
         if c.kind == "groove":
@@ -331,8 +331,8 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
         lclip = clip([(s, l, deg(d, 4), v) for s, l, d, v in lead], 4)
         big = eh.synth_lead(detune_cents=float(rng.uniform(10, 16)), cutoff=float(rng.uniform(2600, 3400)),
                             res=0.2, vibrato=0.15)
-        ld = song.notes("lead", big, lambda c: lclip(c) if c.kind == "drop" else [], gain_db=-8.5, sidechain=0.45,
-                        sends={"delay": 0.25, "hall": 0.2}, width=1.3)
+        ld = song.notes("lead", big, lambda c: lclip(c) if c.kind == "drop" else [], gain_db=-9.0, sidechain=0.45,
+                        sends={"delay": 0.25, "hall": 0.2}, width=0.9)
         ld.automate("lp", [(drop, 2500), (drop + 8, 9000)])
 
     # chants: call (low ensemble voice) + response (higher voice)
@@ -363,9 +363,9 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
                    riser_db=-10.0 if not soft else -13.0, riser_kind="noise" if soft else "both")
     song.returns["hall"].decay = 3.6
     song.returns["reverb"].decay = 2.2
-    song.buses["drums"].eq = [("peak", 2400.0, 1.5, 0.8), ("highshelf", 10000.0, -1.0, 0.7)]
+    song.buses["drums"].eq = [("peak", 2400.0, 1.5, 0.8), ("highshelf", 9000.0, 1.5, 0.7)]
     song.buses["drums"].width = 1.2
-    song.buses["music"].eq = [("peak", 350.0, -1.5, 0.9)]
+    song.buses["music"].eq = [("peak", 380.0, -2.5, 0.8), ("highshelf", 7000.0, 1.5, 0.7)]
     song.master.lufs = -9.0
 
     # ================================================================ metadata

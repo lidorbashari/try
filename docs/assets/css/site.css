@@ -1028,3 +1028,4 @@ kbd, .kbd { display: inline-block; min-width: 1.6em; padding: .05em .45em; borde
   .path-sum { -webkit-line-clamp: 2; font-size: .88rem; }
   .path-meta { padding-top: 0; }
 }
+.cam-badge--inline { height: 1.45em; min-width: 2.4em; font-size: .8em; padding: 0 .45em; vertical-align: .08em; border-radius: 6px; }

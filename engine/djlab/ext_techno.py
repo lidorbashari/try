@@ -96,6 +96,29 @@ def stereo_variants(fn, n=4, rng=None, jitter=None, corr=0.5, **kw):
     return out
 
 
+def ms_spread(x, ms=11.0, amount=0.35, hp_hz=250.0, sr=SR):
+    """Mono-compatible widening: side = high-passed, delayed copy of the mid. The side cancels
+    exactly in a mono sum (no comb filtering), unlike a plain Haas delay."""
+    m = as_mono(x)
+    d = int(ms * 1e-3 * sr)
+    sd = np.concatenate([np.zeros(d, dtype=F32), m[:-d] if d else m])
+    sd = hp(sd, hp_hz, 2, sr) * F32(amount)
+    return np.stack([m + sd, m - sd], axis=1).astype(F32)
+
+
+def stereo_detune(inst_fn, cents=7.0, side=0.3):
+    """Wrap a mono instrument: mid = the note, side = a slightly detuned copy (mono-compatible)."""
+    k = 2 ** (cents / 1200.0)
+
+    def inst(freq, dur, vel):
+        m = as_mono(inst_fn(freq, dur, vel))
+        d = as_mono(inst_fn(freq * k, dur, vel))
+        n = min(m.shape[0], d.shape[0])
+        st = np.stack([m[:n] + side * d[:n], m[:n] - side * d[:n]], axis=1)
+        return normalize(st.astype(F32), 0.8 * float(vel))
+    return inst
+
+
 def click(freq=4200.0, length=0.012, tone=0.5, rng=None, sr=SR):
     """Tiny 'clicky' minimal-techno tick: band-passed impulse + ringing sine, a few ms long."""
     rng = rng if rng is not None else np.random.default_rng(0)

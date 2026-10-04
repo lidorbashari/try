@@ -363,11 +363,12 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     def pad_notes(c):
         if c.kind == "breakdown" and c.i % 4 == 0:
             return [(0, 63.5, chords[(c.i // 4) % 4], 0.75)]
-        if prog and c.kind == "drop" and c.i >= 16 and c.i % 4 == 0:
+        if c.kind == "drop" and c.i >= (16 if prog else 0) and c.i % 4 == 0:
             return [(0, 63.5, chords[(c.i // 4) % 4], 0.5)]
         return []
 
-    pad = song.notes("pad", pad_i, pad_notes, gain_db=-12.0, sends={"hall": 0.35}, width=1.6, sidechain=0.3)
+    pad = song.notes("pad", pad_i, pad_notes, gain_db=-12.0, sends={"hall": 0.35}, width=1.8, sidechain=0.6,
+                     hp=250.0)
     for s in secs:
         if s.kind == "breakdown":
             pad.automate("lp", [(s.start_bar, 500.0), (s.end_bar, 4000.0)])

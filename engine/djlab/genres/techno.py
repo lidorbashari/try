@@ -168,8 +168,8 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
               or (ind and c.kind == "breakdown" and c.i % 2 == 1) else None,
               gain_db=-9.0 if ind else -11.0, pan=-0.5, sends={"hall": 0.3 if ind else 0.22, "delay": 0.15},
               fx=[lambda x: fx.bitcrush(x, 8 if ind else 10, 3 if ind else 2)])
-    perc = xt.stereo_hit(drums.perc_blip, rng, corr=0.6, freq_hz=float(rng.uniform(500, 900)), decay=0.06,
-                         fm_index=2.5, ratio=1.41)
+    perc = xt.ms_spread(drums.perc_blip(float(rng.uniform(500, 900)), 0.06, fm_index=2.5, ratio=1.41, rng=rng),
+                        13.0, 0.5, 300.0)
     perc_p = euclid(int(rng.integers(3, 6)), 16, int(rng.integers(1, 5)))
     song.hits("perc", perc, lambda c: perc_p if c.kind != "breakdown" and not (c.kind == "intro" and c.i < 8) else None,
               gain_db=-13.0, pan=0.55, sends={"delay8": 0.2})
@@ -192,6 +192,22 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
               lambda c: "..........x.x.xx" if c.phrase_end and c.i % 16 == 15 and c.kind != "breakdown"
               else None, gain_db=-13.0, pan=-0.15, sends={"reverb": 0.2})
 
+    # ---------------------------------------------------------------- rolling bass (rolling flavor)
+    if rolling:
+        rb_inst = inst.bass_pluck(cutoff=float(rng.uniform(160, 220)), env_amt=float(rng.uniform(900, 1400)),
+                                  decay=0.07, res=0.3, sub=0.85, drive=1.8, grit=0.3, sustain=0.2)
+
+        def rbass(c):
+            if c.kind in ("intro", "breakdown") or c.bar >= bass_off:
+                return []
+            r = root + (key.scale[3] if c.kind == "drop" and c.i % 8 in (6, 7) else 0)
+            ev = xt.bass_roll(r, "roll3", c.rng, shape=[0, 0, 12] if c.kind == "drop" else None)
+            return [e for e in ev if e[0] < 8] if c.before("drop", 1) or c.before("breakdown", 1) else ev
+
+        rbl = song.notes("rolling_bass", rb_inst, rbass, bus="bass", gain_db=-5.0, sidechain=0.7,
+                         sc_release_ms=60000 / song.bpm * 0.3, humanize=0.04)
+        rbl.automate("lp", [(groove, 300), (groove + 24, 1500), (d1, 2500), (outro.start_bar, 2500), (bass_off, 400)])
+
     # ---------------------------------------------------------------- tonal
     chords, prev = [], None
     degs = {"industrial": [0, 0, 1, 0], "rolling": [0, 0, 3, 5]}.get(flavor) or [[0, 0, 5, 3], [0, 6, 5, 6], [0, 0, 3, 4]][int(rng.integers(3))]
@@ -209,12 +225,11 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
         else:
             seq = seq_pattern(rng, key)
             seq_fn = lambda c: seq  # noqa: E731
-        seq_inst = inst.seq_blip(wave=str(rng.choice(["square", "saw"])), cutoff=float(rng.uniform(900, 1600)),
-                                 decay=float(rng.uniform(0.04, 0.08)), res=float(rng.uniform(0.4, 0.6)))
+        seq_inst = xt.stereo_detune(inst.seq_blip(wave=str(rng.choice(["square", "saw"])), cutoff=float(rng.uniform(900, 1600)),
+                                                  decay=float(rng.uniform(0.04, 0.08)), res=float(rng.uniform(0.4, 0.6))), 8.0, 0.3)
         seq_l = song.notes("sequence", seq_inst,
                            lambda c: seq_fn(c) if (c.kind in ("groove", "drop", "breakdown") or (c.kind == "outro" and c.i < 8)) else [],
-                           gain_db=-7.0, sidechain=0.45, sends={"delay": 0.22, "hall": 0.08}, pan=0.15,
-                           fx=[lambda x: fx.haas(x, 9.0)])
+                           gain_db=-7.0, sidechain=0.45, sends={"delay": 0.22, "hall": 0.08}, pan=0.15)
         seq_l.automate("lp", [(groove, 700), (groove + 24, 3500), (d1, 2500), (d1 + 16, 9000), (outro.start_bar + 8, 1200)])
     elif ind:  # metallic FM sequence, bit-crushed, low in the mix
         fm_seq = [(s, 0.5, key.root(4) + (12 if s in (6, 14) else 0), 0.9 if s % 4 == 2 else 0.6)
@@ -249,7 +264,8 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return []
 
         acid = song.line("acid", synth, acid_notes, bus="music", gain_db=-5.0 if not acid_fl else -4.0, sidechain=0.4,
-                         sends={"delay": 0.2 if not acid_fl else 0.25, "reverb": 0.08}, fx=[lambda x: fx.haas(x, 7.0)])
+                         sends={"delay": 0.2 if not acid_fl else 0.25, "reverb": 0.08},
+                         fx=[lambda x: xt.ms_spread(x, 9.0, 0.3, 400.0)])
         pts = []
         for s in song.sections:
             if s.kind == "groove":
@@ -331,7 +347,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
         "classic": ["hypnotic 16th sequence", "acid line", "dub chord stabs"],
         "industrial": ["distorted kick & rumble", "machine noise", "bit-crushed FM sequence", "growl stabs", "dark drone"],
         "acid": ["303-style acid lead", "strobe chord stabs"],
-        "rolling": ["rolling 16th rumble", "polymetric 3/16 sequence", "rolling toms & shaker", "dub chord stabs"],
+        "rolling": ["rolling 16th bassline", "polymetric 3/16 sequence", "rolling toms & shaker", "dub chord stabs"],
     }[flavor]
     song.instruments = common + extra
     kname = plan["key"]

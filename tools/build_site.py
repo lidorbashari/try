@@ -758,7 +758,7 @@ def postprocess(h: str, ctx: Ctx) -> str:
 
     # bidi: numeric ranges written with an en/em dash ("95–130") would render reversed in RTL text
     def bidi_ranges(seg):
-        return re.sub(r"(?<![\w.])(\d+(?:[.,]\d+)?%?\s?[–—]\s?\d+(?:[.,]\d+)?%?)(?![\w])", r'<bdi dir="ltr">\1</bdi>', seg)
+        return re.sub(r"(?<![\w.:])(\d+(?:[.,:]\d+)*%?\s?[–—]\s?\d+(?:[.,:]\d+)*%?)(?![\w])", r'<bdi dir="ltr">\1</bdi>', seg)
 
     out, pos = [], 0
     for mm in re.finditer(r"<pre[\s>].*?</pre>|<[^>]+>", h, re.S):
@@ -783,6 +783,8 @@ def postprocess(h: str, ctx: Ctx) -> str:
         return m.group(0)
 
     h = re.sub(r"<code>((?:house|techno|mainstream|breadth|practice|transition)-\d\d)</code>", code_repl, h)
+    h = re.sub(r"<code>(1[0-2]|[1-9])([AB])</code>",
+               lambda m: f'<span class="cam-badge cam-badge--inline" style="--cam:var(--cam-{m.group(1)}{m.group(2).lower()})" title="Camelot {m.group(1)}{m.group(2)}">{m.group(1)}{m.group(2)}</span>', h)
 
     # inline code that names an audio file in the repo: <code>music/tracks/x/y.mp3</code> -> inline play chip
     def file_repl(m):
@@ -1195,18 +1197,34 @@ def build_sets(ctx_base, track_ids):
         title_he = str(fm.get("title_he") or fm.get("title") or (h1.group(1) if h1 else f.stem))
         if h1:
             body = body[h1.end():]
+        # an italic line right under the H1 that only repeats the English title
+        sub = re.match(r"^\s*[_*]([^_*\n]+)[_*]\s*\n", body)
+        if sub and sub.group(1).strip() in (str(fm.get("title") or ""), str(fm.get("title_en") or "")):
+            body = body[sub.end():]
         slug = str(fm.get("slug") or f.stem)
         out = DOCS / "sets" / f"{f.stem}.html"
         ctx = Ctx(f, out, *ctx_base)
         body_html, toc = md_to_html(body)
         body_html = postprocess(body_html, ctx)
-        tracks = [t for t in as_list(fm.get("tracks")) if t in track_ids]
+        fm_tracks = fm.get("tracks")
+        tracks = [t for t in as_list(fm_tracks) if t in track_ids] if isinstance(fm_tracks, (list, tuple, str)) else []
+        if not tracks:
+            # numbered tracklist table rows: "| 3 | ... | `house-05` | ..."
+            seen = []
+            for row in re.findall(r"^\|\s*\d+\s*\|.*$", body, re.M):
+                mm = re.search(r"\b((?:house|techno|mainstream|breadth)-\d\d)\b", row)
+                if mm and mm.group(1) in track_ids:
+                    seen.append(mm.group(1))
+            if len(seen) >= 2:
+                tracks = seen
         if not tracks:
             seen = []
             for t in re.findall(r"\b((?:house|techno|mainstream|breadth)-\d\d)\b", body):
                 if t in track_ids and t not in seen:
                     seen.append(t)
             tracks = seen
+        if isinstance(fm_tracks, int) and len(tracks) > fm_tracks:
+            tracks = tracks[:fm_tracks]
         intro = str(fm.get("summary") or fm.get("description") or "")
         if not intro:
             m = re.search(r"^(?!\s*[#|>\-*!\[])(\S.+)$", body, re.M)
