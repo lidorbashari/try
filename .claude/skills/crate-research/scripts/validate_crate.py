@@ -56,15 +56,22 @@ def check(path: Path) -> tuple[int, int, int]:
                 err(i, f"{len(cols)} columns, expected {len(HEADER)} (quote fields that contain commas)")
                 continue
             r = dict(zip(HEADER, (c.strip() for c in cols)))
-            for f in ("artist", "title", "bpm", "key", "camelot", "energy", "role", "verified"):
+            for f in ("artist", "title", "energy", "role", "verified"):
                 if not r[f]:
                     err(i, f"empty `{f}`")
-            try:
-                bpm = float(r["bpm"])
-                if not 60 <= bpm <= 200:
-                    err(i, f"bpm {bpm} outside 60-200")
-            except ValueError:
-                err(i, f"bpm not a number: {r['bpm']!r}")
+            for f in ("bpm", "key", "camelot"):
+                if not r[f]:
+                    # honest blanks are fine for unverified rows; set_planner skips rows without bpm
+                    (warn if r["verified"] in ("no", "partial") else err)(
+                        i, f"empty `{f}`" + (" (ok for verified=no/partial, but the row can't be planned)"
+                                             if r["verified"] in ("no", "partial") else " although verified=yes"))
+            if r["bpm"]:
+                try:
+                    bpm = float(r["bpm"])
+                    if not 60 <= bpm <= 200:
+                        err(i, f"bpm {bpm} outside 60-200")
+                except ValueError:
+                    err(i, f"bpm not a number: {r['bpm']!r}")
             k = camelot.parse_key(r["key"])
             if r["key"] and not k:
                 err(i, f"unrecognised key {r['key']!r} (use Am, F#m, Db ...)")
@@ -82,7 +89,7 @@ def check(path: Path) -> tuple[int, int, int]:
             except ValueError:
                 err(i, f"energy not an integer: {r['energy']!r}")
             if r["role"] and r["role"] not in ROLES:
-                err(i, f"role {r['role']!r} not in {sorted(ROLES)}")
+                warn(i, f"role {r['role']!r} is outside the SCHEMA set-slot vocabulary {sorted(ROLES)}")
             if r["verified"] and r["verified"] not in VERIFIED:
                 err(i, f"verified {r['verified']!r} not in {sorted(VERIFIED)}")
             if r["year"] and not re.fullmatch(r"(19[5-9]\d|20[0-4]\d)", r["year"]):

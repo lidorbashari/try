@@ -62,8 +62,8 @@ def default_buses() -> dict[str, Bus]:
 
 def default_returns(bpm: float) -> dict[str, Return]:
     return {
-        "reverb": Return("reverb", "reverb", "plate"),
-        "hall": Return("hall", "reverb", "hall", hp=350.0, lp=8000.0, sidechain=0.6),
+        "reverb": Return("reverb", "reverb", "plate", width=1.2),
+        "hall": Return("hall", "reverb", "hall", hp=350.0, lp=8000.0, sidechain=0.6, width=1.3),
         "room": Return("room", "reverb", "room", hp=200.0, lp=10000.0, sidechain=0.3),
         "delay": Return("delay", "delay", beats=0.75, feedback=0.38, hp=350.0, lp=5000.0, sidechain=0.5),
         "delay8": Return("delay8", "delay", beats=0.5, feedback=0.3, hp=400.0, lp=6000.0, sidechain=0.5),

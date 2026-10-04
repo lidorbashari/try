@@ -1,0 +1,194 @@
+{
+ "id": "techno-01",
+ "title": "Concrete Pulse",
+ "title_he": "דופק בטון",
+ "artist": "DJ Lab Originals",
+ "genre": "Peak-Time Techno",
+ "genre_slug": "techno",
+ "family": "techno",
+ "bpm": 130.0,
+ "key": "A minor",
+ "key_short": "Am",
+ "camelot": "8A",
+ "energy": 8,
+ "role": "peak",
+ "duration_sec": 265.846,
+ "bars": 144,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 32,
+   "start_sec": 0.0,
+   "energy": 4
+  },
+  {
+   "name": "Groove",
+   "start_bar": 32,
+   "bars": 24,
+   "start_sec": 59.077,
+   "energy": 6
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 56,
+   "bars": 8,
+   "start_sec": 103.385,
+   "energy": 4
+  },
+  {
+   "name": "Drop",
+   "start_bar": 64,
+   "bars": 24,
+   "start_sec": 118.154,
+   "energy": 9
+  },
+  {
+   "name": "Breakdown 2",
+   "start_bar": 88,
+   "bars": 8,
+   "start_sec": 162.462,
+   "energy": 5
+  },
+  {
+   "name": "Drop 2",
+   "start_bar": 96,
+   "bars": 16,
+   "start_sec": 177.231,
+   "energy": 9
+  },
+  {
+   "name": "Outro",
+   "start_bar": 112,
+   "bars": 32,
+   "start_sec": 206.769,
+   "energy": 5
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 32,
+   "sec": 59.077,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 56,
+   "sec": 103.385,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 64,
+   "sec": 118.154,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "E",
+   "name": "Breakdown 2",
+   "bar": 88,
+   "sec": 162.462,
+   "color": "#B4BE04",
+   "type": "hot"
+  },
+  {
+   "slot": "F",
+   "name": "Drop 2",
+   "bar": 96,
+   "sec": 177.231,
+   "color": "#DE44CF",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 112,
+   "sec": 206.769,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 128,
+   "sec": 236.308,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Groove",
+   "bar": 32,
+   "sec": 59.077
+  },
+  {
+   "name": "Breakdown",
+   "bar": 56,
+   "sec": 103.385
+  },
+  {
+   "name": "Drop",
+   "bar": 64,
+   "sec": 118.154
+  },
+  {
+   "name": "Breakdown 2",
+   "bar": 88,
+   "sec": 162.462
+  },
+  {
+   "name": "Drop 2",
+   "bar": 96,
+   "sec": 177.231
+  },
+  {
+   "name": "Outro",
+   "bar": 112,
+   "sec": 206.769
+  }
+ ],
+ "lufs": -9.14,
+ "true_peak_dbtp": -1.24,
+ "file": "music/tracks/techno/techno-01-concrete-pulse.mp3",
+ "cover": "music/tracks/techno/techno-01-concrete-pulse.jpg",
+ "description_he": "טכנו פיק-טיים ב-130 BPM בסולם A minor: קיק דוחף עם ראמבל עמוק, סיקוונס היפנוטי, קו אסיד שנפתח לאורך הטראק וסטאבים דאביים עם דיליי. אנרגיה גבוהה לאמצע-סוף הסט.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 32 תיבות להכנסה נקייה, הבאס נכנס בתיבה 33 (Hot Cue B), ברייקדאון בתיבה 57, דרופ בתיבה 65, אאוטרו של 32 תיבות מתיבה 113 — מושלם למיקס החוצה. הראמבל יושב על הסאב — בזמן מעבר הורידו את ה-Low בטראק היוצא.",
+ "instruments": [
+  "driving techno kick",
+  "sidechained reverb rumble",
+  "hypnotic 16th sequence",
+  "acid line",
+  "dub chord stabs",
+  "closed & open hats",
+  "ride",
+  "clap & snare",
+  "industrial metal hits",
+  "risers & noise sweeps"
+ ],
+ "seed": 1238,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

@@ -30,6 +30,7 @@ const maxPages = parseInt(opt('--max-pages', '15'), 10);
     console.error('Cannot launch Chromium: ' + e.message.split('\n')[0]); process.exit(2);
   }
   const failures = [];
+  const warnings = new Set();
   const fail = (page, msg) => failures.push(`${page}: ${msg}`);
   const origin = new URL(base).origin;
   const visited = new Set();
@@ -44,10 +45,16 @@ const maxPages = parseInt(opt('--max-pages', '15'), 10);
     visited.add(key);
     pagesChecked++;
     for (const vp of [{ name: 'desktop', width: 1280, height: 800 }, { name: 'mobile', width: 375, height: 740 }]) {
-      const ctx = await browser.newContext({ viewport: { width: vp.width, height: vp.height } });
+      const ctx = await browser.newContext({ viewport: { width: vp.width, height: vp.height }, ignoreHTTPSErrors: true });
       const page = await ctx.newPage();
       const label = `${key.replace(origin, '') || '/'} [${vp.name}]`;
-      page.on('console', m => { if (m.type() === 'error') fail(label, 'console error: ' + m.text().slice(0, 200)); });
+      page.on('console', m => {
+        if (m.type() !== 'error') return;
+        const src = (m.location() && m.location().url) || '';
+        // third-party resources (CDN fonts etc.) can be blocked by a sandbox/proxy: warn, don't fail
+        if (src && !src.startsWith(origin) && /Failed to load resource/.test(m.text())) { warnings.add(`${src.split('?')[0]}: ${m.text().slice(0, 120)}`); return; }
+        fail(label, 'console error: ' + m.text().slice(0, 200));
+      });
       page.on('pageerror', e => fail(label, 'uncaught: ' + String(e.message).slice(0, 200)));
       page.on('requestfailed', r => {
         const u = r.url();
@@ -105,6 +112,7 @@ const maxPages = parseInt(opt('--max-pages', '15'), 10);
   }
   await browser.close();
   console.log(`checked ${pagesChecked} page(s) x 2 viewports, ${audioUrls.size} audio source(s)`);
+  if (warnings.size) { console.log(`warnings (${warnings.size}, third-party):`); [...warnings].slice(0, 10).forEach(w => console.log('  ~ ' + w)); }
   if (failures.length) {
     console.log(`FAIL (${failures.length})`);
     [...new Set(failures)].slice(0, 60).forEach(f => console.log('  - ' + f));

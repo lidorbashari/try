@@ -25,7 +25,8 @@ run() { # run <name> <cmd...>
 skip() { printf '▶ %-22s SKIP (%s)\n' "$1" "$2"; RESULTS+=("SKIP  $1 ($2)"); }
 
 if [ $QUICK -eq 0 ]; then
-  if [ -d engine/tests ]; then run "pytest" "$PY" -m pytest engine/tests -q; else skip "pytest" "no engine/tests"; fi
+  if ls engine/tests/test_*.py engine/tests/*_test.py >/dev/null 2>&1; then run "pytest" "$PY" -m pytest engine/tests -q
+  else skip "pytest" "no tests in engine/tests"; fi
   if [ -f tools/verify_audio.py ] && ls music/tracks/*/*.mp3 >/dev/null 2>&1; then
     run "verify_audio tracks" "$PY" tools/verify_audio.py music/tracks
     for d in music/practice music/transitions; do
