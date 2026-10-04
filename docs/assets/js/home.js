@@ -20,7 +20,16 @@
       var t = list.splice(Math.min(pickIdx, list.length - 1), 1)[0];
       if (!used.has(t.genre) || out.length >= fams.length * 1.5) { out.push(t); used.add(t.genre); }
     }
-    return out.slice(0, ready.length >= 4 || !ready.length ? 8 : ready.length);
+    out = out.slice(0, 8);
+    if (ready.length && out.length < 8) {
+      // fill with planned tracks that are still rendering, one per genre
+      var seen = new Set(out.map(function (t) { return t.genre; }));
+      (DJ.catalog.plan.tracks || []).forEach(function (p) {
+        if (out.length >= 8 || DJ.byId.has(p.id) || seen.has(p.genre)) return;
+        seen.add(p.genre); out.push(Object.assign({ has_audio: false }, p));
+      });
+    }
+    return out;
   }
 
   function heroWave() {

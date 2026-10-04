@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 470" width="800" height="470" role="img" aria-labelledby="title desc" font-family="Heebo, Rubik, Arial, sans-serif">
+<title id="title">מפת הדרכים של 30 הימים</title>
+<desc id="desc">ארבעה שבועות של תרגול: יסודות, מעברים והרמוניה, ספרייה ז'אנרים וטמפו, והופעה — עם אבן דרך בסוף כל שבוע.</desc>
+<rect x="1" y="1" width="798" height="468" rx="20" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+<text x="400.0" y="46.0" font-size="26" font-weight="700" fill="#f1f5f9" text-anchor="middle" direction="rtl">30 יום — מהספירה הראשונה לסט של שעה</text>
+<text x="400.0" y="76.0" font-size="14" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">ארבעה שבועות · 20-60 דקות ביום · אבן דרך בסוף כל שבוע</text>
+<rect x="606" y="104" width="178" height="310" rx="14" fill="#16213a" stroke="#334155"/>
+<rect x="606" y="104" width="178" height="64" rx="14" fill="#38bdf8" fill-opacity="0.9"/>
+<rect x="606" y="154" width="178" height="14" fill="#38bdf8" fill-opacity="0.9"/>
+<text x="695.0" y="132.0" font-size="18" font-weight="800" fill="#0b1220" text-anchor="middle" direction="rtl">שבוע 1</text>
+<text x="695.0" y="154.0" font-size="14" font-weight="700" fill="#0b1220" text-anchor="middle" direction="rtl">יסודות</text>
+<circle cx="766" cy="197" r="4" fill="#38bdf8"/>
+<text x="689.0" y="202.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">ספירת תיבות ופרייזים</text>
+<circle cx="766" cy="237" r="4" fill="#38bdf8"/>
+<text x="689.0" y="242.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">ביטמאץ' באוזן</text>
+<circle cx="766" cy="277" r="4" fill="#38bdf8"/>
+<text x="689.0" y="282.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">Gain ו-EQ</text>
+<circle cx="766" cy="317" r="4" fill="#38bdf8"/>
+<text x="689.0" y="322.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">בלנד ראשון</text>
+<rect x="616" y="362" width="158" height="42" rx="10" fill="#0b1220" stroke="#38bdf8" stroke-opacity="0.8"/>
+<text x="695.0" y="380.0" font-size="11" font-weight="800" fill="#38bdf8" text-anchor="middle" direction="rtl">אבן דרך</text>
+<text x="695.0" y="396.0" font-size="11" font-weight="600" fill="#cbd5e1" text-anchor="middle" direction="rtl">32 תיבות נעולות + בלנד</text>
+<path d="M604.0,254 L593.0,262 L604.0,270 z" fill="#94a3b8"/>
+<rect x="412" y="104" width="178" height="310" rx="14" fill="#16213a" stroke="#334155"/>
+<rect x="412" y="104" width="178" height="64" rx="14" fill="#22c55e" fill-opacity="0.9"/>
+<rect x="412" y="154" width="178" height="14" fill="#22c55e" fill-opacity="0.9"/>
+<text x="501.0" y="132.0" font-size="18" font-weight="800" fill="#0b1220" text-anchor="middle" direction="rtl">שבוע 2</text>
+<text x="501.0" y="154.0" font-size="14" font-weight="700" fill="#0b1220" text-anchor="middle" direction="rtl">מעברים וצבע</text>
+<circle cx="572" cy="197" r="4" fill="#22c55e"/>
+<text x="495.0" y="202.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">Bass Swap ו-Cues</text>
+<circle cx="572" cy="237" r="4" fill="#22c55e"/>
+<text x="495.0" y="242.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">קיואינג באוזניות</text>
+<circle cx="572" cy="277" r="4" fill="#22c55e"/>
+<text x="495.0" y="282.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">גלגל Camelot</text>
+<circle cx="572" cy="317" r="4" fill="#22c55e"/>
+<text x="495.0" y="322.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">Echo Out ופילטר</text>
+<rect x="422" y="362" width="158" height="42" rx="10" fill="#0b1220" stroke="#22c55e" stroke-opacity="0.8"/>
+<text x="501.0" y="380.0" font-size="11" font-weight="800" fill="#22c55e" text-anchor="middle" direction="rtl">אבן דרך</text>
+<text x="501.0" y="396.0" font-size="11" font-weight="600" fill="#cbd5e1" text-anchor="middle" direction="rtl">4 מעברים + הקלטה</text>
+<path d="M410.0,254 L399.0,262 L410.0,270 z" fill="#94a3b8"/>
+<rect x="218" y="104" width="178" height="310" rx="14" fill="#16213a" stroke="#334155"/>
+<rect x="218" y="104" width="178" height="64" rx="14" fill="#f59e0b" fill-opacity="0.9"/>
+<rect x="218" y="154" width="178" height="14" fill="#f59e0b" fill-opacity="0.9"/>
+<text x="307.0" y="132.0" font-size="18" font-weight="800" fill="#0b1220" text-anchor="middle" direction="rtl">שבוע 3</text>
+<text x="307.0" y="154.0" font-size="14" font-weight="700" fill="#0b1220" text-anchor="middle" direction="rtl">ספרייה וז'אנרים</text>
+<circle cx="378" cy="197" r="4" fill="#f59e0b"/>
+<text x="301.0" y="202.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">תגיות ופלייליסטים</text>
+<circle cx="378" cy="237" r="4" fill="#f59e0b"/>
+<text x="301.0" y="242.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">סיור ז'אנרים</text>
+<circle cx="378" cy="277" r="4" fill="#f59e0b"/>
+<text x="301.0" y="282.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">קפיצות טמפו</text>
+<circle cx="378" cy="317" r="4" fill="#f59e0b"/>
+<text x="301.0" y="322.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">חצי סט מוקלט</text>
+<rect x="228" y="362" width="158" height="42" rx="10" fill="#0b1220" stroke="#f59e0b" stroke-opacity="0.8"/>
+<text x="307.0" y="380.0" font-size="11" font-weight="800" fill="#f59e0b" text-anchor="middle" direction="rtl">אבן דרך</text>
+<text x="307.0" y="396.0" font-size="11" font-weight="600" fill="#cbd5e1" text-anchor="middle" direction="rtl">קפיצת טמפו שעובדת</text>
+<path d="M216.0,254 L205.0,262 L216.0,270 z" fill="#94a3b8"/>
+<rect x="24" y="104" width="178" height="310" rx="14" fill="#16213a" stroke="#334155"/>
+<rect x="24" y="104" width="178" height="64" rx="14" fill="#ef4444" fill-opacity="0.9"/>
+<rect x="24" y="154" width="178" height="14" fill="#ef4444" fill-opacity="0.9"/>
+<text x="113.0" y="132.0" font-size="18" font-weight="800" fill="#0b1220" text-anchor="middle" direction="rtl">שבוע 4</text>
+<text x="113.0" y="154.0" font-size="14" font-weight="700" fill="#0b1220" text-anchor="middle" direction="rtl">הופעה</text>
+<circle cx="184" cy="197" r="4" fill="#ef4444"/>
+<text x="107.0" y="202.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">סט של 60 דקות</text>
+<circle cx="184" cy="237" r="4" fill="#ef4444"/>
+<text x="107.0" y="242.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">סימולציית אירוע</text>
+<circle cx="184" cy="277" r="4" fill="#ef4444"/>
+<text x="107.0" y="282.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">מאסטרינג והעלאה</text>
+<circle cx="184" cy="317" r="4" fill="#ef4444"/>
+<text x="107.0" y="322.0" font-size="13" font-weight="400" fill="#f1f5f9" text-anchor="middle" direction="rtl">הופעת גמר</text>
+<rect x="34" y="362" width="158" height="42" rx="10" fill="#0b1220" stroke="#ef4444" stroke-opacity="0.8"/>
+<text x="113.0" y="380.0" font-size="11" font-weight="800" fill="#ef4444" text-anchor="middle" direction="rtl">אבן דרך</text>
+<text x="113.0" y="396.0" font-size="11" font-weight="600" fill="#cbd5e1" text-anchor="middle" direction="rtl">סט של שעה + קהל</text>
+<text x="400.0" y="448.0" font-size="12" font-weight="400" fill="#94a3b8" text-anchor="middle" direction="rtl">כל יום: מטרה אחת · תרגיל אחד · בדיקה אחת — הפירוט המלא בטבלאות של פרק 19</text>
+</svg>

@@ -333,7 +333,7 @@ def shell(out: Path, *, title: str, body: str, active: str = "", description: st
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
-      <a class="brand" href="{base}index.html">{BRAND_MARK}<span class="brand-word">DJ<b>Lab</b></span></a>
+      <a class="brand" href="{base}index.html">{BRAND_MARK.replace('bm-g', 'bm-f')}<span class="brand-word">DJ<b>Lab</b></span></a>
       <p>בית הספר לתקלוט שלך: קורס Rekordbox בעברית, מוזיקה מקורית לתרגול וכלים שעובדים ישר בדפדפן.</p>
     </div>
     <nav aria-label="ללמוד"><h2>ללמוד</h2><ul>
@@ -730,7 +730,32 @@ def postprocess(h: str, ctx: Ctx) -> str:
                 f'<div class="callout-head">{icon(ic)}<span>{esc(label)}</span></div>'
                 f'<div class="callout-body">{rest}</div></aside>')
 
-    h = re.sub(r"<blockquote>\s*(.*?)\s*</blockquote>", bq_repl, h, flags=re.S)
+    start_re = re.compile(r"<p>\s*(?:<(?:strong|b)>\s*)?(?:" + _EMOJI_RE + r")")
+
+    def bq_split(m):
+        inner = m.group(1)
+        # one blockquote may hold several callouts (e.g. an exercise followed by a "💡 טיפ:" paragraph)
+        cuts = [mm.start() for mm in start_re.finditer(inner)]
+        if len(cuts) <= 1 or cuts[0] != 0 and len(cuts) == 1:
+            return bq_repl(m)
+        if cuts[0] != 0:
+            cuts = [0] + cuts
+        parts = [inner[a:b].strip() for a, b in zip(cuts, cuts[1:] + [len(inner)])]
+        return "".join(bq_repl(re.match(r"(.*)", p_, re.S)) for p_ in parts if p_)
+
+    h = re.sub(r"<blockquote>\s*(.*?)\s*</blockquote>", bq_split, h, flags=re.S)
+
+    # bidi: numeric ranges written with an en/em dash ("95–130") would render reversed in RTL text
+    def bidi_ranges(seg):
+        return re.sub(r"(?<![\w.])(\d+(?:[.,]\d+)?%?\s?[–—]\s?\d+(?:[.,]\d+)?%?)(?![\w])", r'<bdi dir="ltr">\1</bdi>', seg)
+
+    out, pos = [], 0
+    for mm in re.finditer(r"<pre[\s>].*?</pre>|<[^>]+>", h, re.S):
+        out.append(bidi_ranges(h[pos:mm.start()]))
+        out.append(mm.group(0))
+        pos = mm.end()
+    out.append(bidi_ranges(h[pos:]))
+    h = "".join(out)
 
     # tables
     h = re.sub(r"<table>", '<div class="table-wrap" role="region" aria-label="טבלה" tabindex="0"><table>', h)
@@ -1246,6 +1271,14 @@ def render_home(catalog, plan, extras, toc_data, crates, sets) -> str:
   <span class="path-sum">{esc(t['summary'])}</span>
   <span class="path-meta">{icon('clock')}{t['reading_minutes']} דק'<span class="path-check">{icon('check')}</span></span>
 </a></li>""" for t in path_items)
+        rest = len(toc_data) - len(path_items)
+        if rest > 0:
+            path_html += f"""<li class="path-step path-more"><a href="guide/index.html">
+  <span class="path-num">+{rest}</span>
+  <span class="path-title">עוד {rest} פרקים</span>
+  <span class="path-sum">ספרייה, מיקס הרמוני, אפקטים, בניית סט, אירועים וחתונות ועוד.</span>
+  <span class="path-meta">לכל הקורס {icon('arrow-left')}</span>
+</a></li>"""
     else:
         demo = [("00", "ברוכים הבאים", "מה זה תקלוט, מה נלמד ואיך משתמשים ברפו"), ("01", "הציוד", "קונטרולר, אוזניות ומה באמת צריך"),
                 ("02", "הכירו את Rekordbox", "ספרייה, דקים ומיקסר"), ("03", "ספירת ביטים ופרייזים", "4/4, תיבות ופרייזים של 8"),
