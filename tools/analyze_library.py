@@ -246,8 +246,9 @@ def estimate_bpm(y: np.ndarray, sr: int) -> dict:
         alt = slow if chosen == fast else fast
         if abs(chosen - bpm) > 1e-6:
             bpm, strength = refine(chosen, width=0.01)
-    # snap to integer when within 0.06 BPM (most club tracks are produced at integer tempos)
-    if abs(bpm - round(bpm)) < 0.06:
+    # snap to integer when close (most club tracks are produced at integer tempos); the refinement gets
+    # coarser on short excerpts (--sample), so the tolerance grows as the analyzed audio gets shorter
+    if abs(bpm - round(bpm)) < max(0.06, 4.0 / (len(env) / fps)):
         bpm = float(round(bpm))
     conf = float(np.clip((strength - 1.3) / 2.2, 0.0, 1.0))
     onsets = librosa.onset.onset_detect(onset_envelope=env, sr=sr, hop_length=hop, units="frames")
@@ -273,15 +274,21 @@ def estimate_key(y: np.ndarray, sr: int) -> dict:
     for semis, amount in ((28, 0.2), (19, 0.25)):
         sh = semis * 3
         H[sh:] = np.maximum(H[sh:] - amount * H[:-sh], 0.0)
-    chroma = librosa.feature.chroma_cqt(C=H, sr=sr, hop_length=hop, fmin=fmin, bins_per_octave=36, norm=None)
-    bass = librosa.feature.chroma_cqt(C=H[: 3 * 36], sr=sr, hop_length=hop, fmin=fmin, bins_per_octave=36,
-                                      n_octaves=3, norm=None)
+    # skip the C1 octave (32-65 Hz): kick-drum fundamentals live there and smear A/Bb/B in club music.
+    # "upper" = C3-C8 (chords, leads, bass harmonics), "bass" = C2-C4 (bass line roots)
+    chroma = librosa.feature.chroma_cqt(C=H[2 * 36:], sr=sr, hop_length=hop, fmin=fmin * 4, bins_per_octave=36,
+                                        n_octaves=5, norm=None)
+    bass = librosa.feature.chroma_cqt(C=H[36: 3 * 36], sr=sr, hop_length=hop, fmin=fmin * 2, bins_per_octave=36,
+                                      n_octaves=2, norm=None)
     vec = np.zeros(12)
+    bass_v = np.zeros(12)
     for ch, w in ((chroma, 1.0), (bass, 0.6)):
         ch = ch / (ch.max() + 1e-9)
         ch = np.log1p(10.0 * ch)
         v = ch.sum(axis=1)
-        vec += w * v / (v.sum() + 1e-9)
+        v = v / (v.sum() + 1e-9)
+        vec += w * v
+        bass_v = v  # last one is the bass chroma
     if not np.isfinite(vec).all() or vec.std() < 1e-9:
         return {"key": None, "key_confidence": 0.0, "key_alt": None, "perc_ratio": perc_ratio}
     zv = _z(vec)
@@ -298,6 +305,13 @@ def estimate_key(y: np.ndarray, sr: int) -> dict:
         win, lose = (tonic * 2 + 1, tonic * 2) if minor_ev > major_ev else (tonic * 2, tonic * 2 + 1)
         if scores[win] < scores[lose]:
             scores[win], scores[lose] = scores[lose] + 1e-3, scores[win]
+    # relative major/minor (same Camelot number) within a hair: the tonic the bass line sits on wins
+    top = int(np.argmax(scores))
+    t_pc, is_min = top // 2, bool(top % 2)
+    rel_pc = (t_pc + 3) % 12 if is_min else (t_pc + 9) % 12
+    rel = rel_pc * 2 + (0 if is_min else 1)
+    if scores[top] - scores[rel] < 0.08 and bass_v[rel_pc] > bass_v[t_pc] * 1.15:
+        scores[rel], scores[top] = scores[top] + 1e-3, scores[rel]
     order = np.argsort(-scores)
     best, second = int(order[0]), int(order[1])
     if scores[best] < 0.38:  # no clear tonality (drum tools, noise, spoken word): don't guess

@@ -77,9 +77,9 @@ def export_mp3_safe(audio, path, sr=SR, max_tp=-1.0, verbose=False):
         L, tp = measure(dec, sr)
         if verbose:
             print(f"    mp3 it{it}: {L:.2f} LUFS, TP {tp:.2f} dBTP")
-        if tp <= max_tp - 0.05:
+        if tp <= max_tp:
             return dec, L, tp
-        gain *= 10 ** ((max_tp - 0.15 - tp) / 20.0)
+        gain *= 10 ** ((max_tp - 0.12 - tp) / 20.0)
     return dec, L, tp
 
 

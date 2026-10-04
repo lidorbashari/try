@@ -485,7 +485,7 @@ def clip(events: list, bars: int):
 @dataclass
 class MasterSettings:
     lufs: float = -9.0
-    ceiling_dbtp: float = -1.6
+    ceiling_dbtp: float = -1.9
     mono_below: float = 110.0
     low_shelf_db: float = 0.0
     low_shelf_hz: float = 80.0

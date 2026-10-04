@@ -372,7 +372,7 @@ def to_markdown(rows: list[dict], args, origin: str, title: str) -> str:
          f"start_energy: {args.start_energy:g}",
          f"peak_energy: {args.peak_energy:g}",
          f"tracks: {len(rows)}",
-         f"generated_by: tools/set_planner.py",
+         "generated_by: tools/set_planner.py",
          f"generated_at: {now}",
          "---", "",
          f"# {title}", "",

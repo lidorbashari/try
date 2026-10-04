@@ -97,6 +97,8 @@ The website consumes `docs/data/catalog.js` (`window.DJLAB_CATALOG = {...}`) gen
 `crates/<crate_slug>.csv` with header:
 `artist,title,mix,label,year,bpm,key,camelot,energy,role,verified,notes_he`
 - `verified`: `yes` (BPM and key confirmed by ≥1 reliable source), `partial`, or `no`.
+  Rows with `verified=no` leave `bpm`/`key`/`camelot` blank rather than guess.
+- `role`: `warmup` \| `build` \| `peak` \| `closing` \| `anthem` (a sing-along/peak-moment classic).
 - `crates/<crate_slug>.md`: Hebrew intro to the genre + the table + where to buy/stream legally.
 - `crates/index.json`: `[{"slug","title_he","title","genres":[...],"count","file_csv","file_md"}]`.
 

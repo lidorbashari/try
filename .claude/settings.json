@@ -44,10 +44,12 @@
       "WebFetch(domain:musicbrainz.org)"
     ],
     "ask": [
+      "Bash(git push *)"
+    ],
+    "deny": [
       "Bash(yt-dlp *)",
       "Bash(youtube-dl *)",
-      "Bash(spotdl *)",
-      "Bash(git push *)"
+      "Bash(spotdl *)"
     ]
   },
   "hooks": {

@@ -116,7 +116,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
                           tail=float(rng.uniform(0.16, 0.25)))
     clap_p = CLAP[int(rng.integers(len(CLAP)))]
     song.hits("clap", clap, lambda c: clap_p if c.kind in ("groove", "drop", "outro") or (c.kind == "intro" and c.i >= 16)
-              else None, gain_db=-4.0, sends={"reverb": 0.3, "hall": 0.08})
+              else None, gain_db=-4.0, sends={"reverb": 0.35, "hall": 0.12})
     snr = drums.snare(tone_hz=float(rng.uniform(170, 210)), snappy=0.75, decay=0.16, rng=rng)
 
     def snare_pat(c):
@@ -163,7 +163,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
         return []
 
     acid = song.line("acid", synth, acid_notes, bus="music", gain_db=-5.0, sidechain=0.4,
-                     sends={"delay": 0.12, "reverb": 0.06})
+                     sends={"delay": 0.2, "reverb": 0.08})
     d1 = song.bar("drop")
     pts = []
     for s in song.sections:
