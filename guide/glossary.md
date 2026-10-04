@@ -5,7 +5,7 @@ title: "מילון מונחים"
 title_en: "Glossary"
 summary: "יותר מ-100 מונחי DJ ו-Rekordbox, מסודרים לפי האלף-בית האנגלי, עם הסבר קצר בעברית והפניה לפרק הרלוונטי."
 level: "מתחיל"
-reading_minutes: 20
+reading_minutes: 12
 ---
 
 # מילון מונחים

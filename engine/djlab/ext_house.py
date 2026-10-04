@@ -58,6 +58,23 @@ def bass_root(key: Key, lo: int = 31) -> int:
     return r
 
 
+def sub_root(key: Key) -> int:
+    """MIDI root for a sine sub layer: D1 (36.7 Hz) … C#2 (69 Hz)."""
+    r = key.root(1)
+    while r < 26:
+        r += 12
+    while r > 37:
+        r -= 12
+    return r
+
+
+def sub_events(events, root: int, sub: int, vel: float = 0.9):
+    """Sine-sub notes that follow a bass line: every note below the octave pop is copied into the
+    sub register (``sub`` = :func:`sub_root`), octave pops are skipped."""
+    shift = sub - root
+    return [(e[0], e[1], e[2] + shift, e[3] * vel) for e in events if e[2] - root < 12]
+
+
 def kick_tune(key: Key, lo: float = 44.0, hi: float = 60.0) -> float:
     """Kick body pitch that is a chord tone of the key (root, fifth, fourth) inside [lo, hi] Hz."""
     for semis in (0, 7, 5, 3):
@@ -446,9 +463,11 @@ def deep_bass(cutoff: float = 260.0, sub: float = 0.85, drive: float = 1.3, atta
 
 
 def talking_bass(cutoff: float = 260.0, f1: tuple = (240.0, 900.0), f2: tuple = (700.0, 2100.0),
-                 wah_time: float = 0.11, sub: float = 0.8, drive: float = 2.0, release: float = 0.03, sr=SR):
+                 wah_time: float = 0.11, sub: float = 0.8, drive: float = 2.0, release: float = 0.03,
+                 sub_oct: bool = False, sr=SR):
     """Talking / wah bass: saw+pulse through two moving formant band-passes that open and close
-    per note ('yow'), a low-passed body and a clean sine sub. Mono."""
+    per note ('yow'), a low-passed body and a clean sine sub (``sub_oct``: one octave down, for keys
+    whose bass root sits above ~70 Hz). Mono."""
     def inst(freq, dur, vel):
         gate, n = _n(dur, release, sr)
         t = np.arange(n) / sr
@@ -460,7 +479,7 @@ def talking_bass(cutoff: float = 260.0, f1: tuple = (240.0, 900.0), f2: tuple = 
         y = svf(osc, fa, 3.2, "bp") * 1.2 + svf(osc, fb, 4.0, "bp") * 0.7
         y = y + ladder(osc, cutoff, 0.2, 1.0) * 0.5
         y = np.tanh(y * drive) / math.tanh(drive)
-        y = y + sub * sine(freq, n)
+        y = y + sub * sine(freq * (0.5 if sub_oct else 1.0), n)
         env = adsr(n, gate, 0.003, 0.25, 0.75, release, sr)
         return _finish(y * env, vel)
     return inst

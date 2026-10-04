@@ -53,12 +53,12 @@
         '<div class="pr-head"><span class="pr-id" aria-hidden="true">' + esc(num) + '</span><div><h3 class="pr-title">' + esc(t.title_he || t.title) + '</h3><div class="pr-en">' + esc(t.title || '') + '</div></div></div>' +
         badges(t) +
         '<p class="pr-purpose">' + esc(t.description_he || t.purpose_he || '') + '</p>' +
-        '<span class="mp" data-mp></span>' +
+        (DJ.playable(t) ? '<span class="mp" data-mp></span>' : '') +
         (st.length ? '<details open><summary>' + I('chev-down') + 'איך מתרגלים</summary><ol class="pr-steps">' + st.map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('') + '</ol></details>' : '') +
         '<div class="btn-row">' + (DJ.playable(t) ? '<a class="btn btn--ghost btn--sm" href="' + DJ.page('tools/mix-trainer.html?a=' + encodeURIComponent(t.id) + (PARTNER[t.id] ? '&b=' + PARTNER[t.id] : '')) + '">' + I('mixer') + '<span>לתרגל במאמן</span></a>' : '') + '</div>' +
         '</article>');
       dHost.appendChild(el);
-      DJ.miniPlayer(el.querySelector('[data-mp]'), t, { title: 'האזנה', queue: dq });
+      if (DJ.playable(t)) DJ.miniPlayer(el.querySelector('[data-mp]'), t, { title: 'האזנה', queue: dq });
     });
 
     if (!trans.length) tHost.innerHTML = '<div class="empty card">' + I('repeat', 'empty-icon') + '<h2>המעברים בדרך</h2><p>מעברי הדוגמה יופיעו כאן אחרי הרינדור.</p></div>';
@@ -70,13 +70,13 @@
         '<div class="pr-flow">' + mini(t.from_id) + '<span aria-label="אל">' + I('arrow-left') + '</span>' + mini(t.to_id) + '</div>' +
         badges(t) +
         (t.description_he ? '<p class="pr-purpose">' + esc(t.description_he) + '</p>' : '') +
-        '<span class="mp" data-mp></span>' +
+        (DJ.playable(t) ? '<span class="mp" data-mp></span>' : '') +
         (st.length ? '<details' + (st.length <= 6 ? ' open' : '') + '><summary>' + I('chev-down') + 'השלבים במעבר</summary><ol class="pr-steps">' + st.map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('') + '</ol></details>' : '') +
         (t.exercise_he ? '<aside class="callout callout--exercise" role="note" style="margin:0"><div class="callout-head">' + I('headphones') + '<span>תרגיל</span></div><div class="callout-body"><p>' + esc(steps(t.exercise_he).join(' ')) + '</p></div></aside>' : '') +
         '<div class="btn-row"><a class="btn btn--ghost btn--sm" href="' + DJ.page('tools/mix-trainer.html?a=' + encodeURIComponent(t.from_id || '') + '&b=' + encodeURIComponent(t.to_id || '')) + '">' + I('mixer') + '<span>לנסות בעצמכם במאמן</span></a></div>' +
         '</article>');
       tHost.appendChild(el);
-      DJ.miniPlayer(el.querySelector('[data-mp]'), t, { title: 'האזנה למעבר', queue: tq });
+      if (DJ.playable(t)) DJ.miniPlayer(el.querySelector('[data-mp]'), t, { title: 'האזנה למעבר', queue: tq });
     });
     if (location.hash) { var target = document.getElementById(location.hash.slice(1)); if (target) setTimeout(function () { target.scrollIntoView({ block: 'start' }); }, 60); }
   });

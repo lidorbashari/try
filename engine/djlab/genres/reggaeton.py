@@ -118,7 +118,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
         return roots[c.i % 4]
 
     # ---------------------------------------------------------------- drums
-    kick = drums.kick("house", tune_hz=kick_hz, decay=float(rng.uniform(0.32, 0.4)), click=float(rng.uniform(0.4, 0.6)),
+    kick = drums.kick("house", tune_hz=kick_hz, decay=float(rng.uniform(0.24, 0.3)), click=float(rng.uniform(0.45, 0.65)),
                       drive=1.5, rng=rng)
 
     def kick_pat(c):
@@ -228,9 +228,9 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             ev = [e for e in ev if e[0] < 8]
         return ev
 
-    b808 = xm.synth_808(decay=float(rng.uniform(0.9, 1.3)), drive=float(rng.uniform(1.8, 2.4)), punch=6.0,
+    b808 = xm.synth_808(decay=float(rng.uniform(0.9, 1.3)), drive=float(rng.uniform(1.3, 1.6)), punch=5.0,
                         glide_ms=70.0, seed=song.seed)
-    song.line("bass", b808, bass_notes, bus="bass", gain_db=-6.0, sidechain=0.3, sc_release_ms=90.0)
+    song.line("bass", b808, bass_notes, bus="bass", gain_db=-3.0, sidechain=0.3, sc_release_ms=90.0)
 
     pb = BASS_PERREO[int(rng.integers(len(BASS_PERREO)))]
 
@@ -244,7 +244,13 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
         return ev
 
     p808 = xm.synth_808(decay=1.6, drive=3.6, punch=8.0, glide_ms=85.0, tone=1.8, seed=song.seed + 1)
-    song.line("bass_perreo", p808, perreo_notes, bus="bass", gain_db=-5.5, sidechain=0.3, sc_release_ms=90.0)
+    song.line("bass_perreo", p808, perreo_notes, bus="bass", gain_db=-4.0, sidechain=0.3, sc_release_ms=90.0)
+
+    # quiet sub under the Puente so the breakdown keeps weight on a club system
+    song.notes("bd_sub", xm.deep_bass(cutoff=200.0, harm=0.1, drive=1.1, attack=0.3, decay=2.0, sustain=0.9,
+                                      release=0.6),
+               lambda c: [(0, 15.0, root_at(c), 0.7)] if c.kind == "breakdown" and c.bars_left > 2 else [],
+               bus="bass", gain_db=-9.0)
 
     # ---------------------------------------------------------------- music
     arp = ARPS[int(rng.integers(len(ARPS)))]
@@ -327,7 +333,8 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     fxl.add(crash, outro.start_bar, gain_db=-12.0)
 
     # ---------------------------------------------------------------- mix
-    song.buses["drums"].eq = [("peak", 3200.0, 1.5, 0.8), ("lowshelf", 90.0, 0.5, 0.7)]
+    song.buses["drums"].eq = [("peak", 3200.0, 1.5, 0.8), ("peak", 170.0, -2.0, 0.9)]
+    song.buses["bass"].eq = [("lowshelf", 55.0, 2.5, 0.7), ("peak", 150.0, -3.0, 0.9)]
     song.buses["music"].eq = [("peak", 2200.0, 1.0, 0.7)]
     song.buses["drums"].width = 1.1
     song.master.lufs = -10.0

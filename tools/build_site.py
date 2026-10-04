@@ -62,6 +62,7 @@ LEVEL_HE = {
 }
 
 STATS = {"warnings": []}
+GENRE_NAMES: dict[str, str] = {}  # genre_slug -> display name, filled from the plan
 
 
 def warn(msg: str) -> None:
@@ -1026,6 +1027,26 @@ def read_csv_rows(p: Path):
     return rows
 
 
+def md_table_sections(md: str) -> list:
+    """Section heading (h3/h4) for every row of the markdown track tables, in order."""
+    out, sec, lines, i = [], None, md.splitlines(), 0
+    while i < len(lines):
+        ln = lines[i]
+        m = re.match(r"^(#{2,4})\s+(.+?)\s*#*\s*$", ln)
+        if m:
+            sec = None if len(m.group(1)) == 2 else re.sub(r"[`*_]", "", m.group(2)).strip()
+        if ln.lstrip().startswith("|") and i + 1 < len(lines) and re.match(r"^\s*\|\s*:?-", lines[i + 1]):
+            is_tracks = "bpm" in ln.lower()
+            i += 2
+            while i < len(lines) and lines[i].lstrip().startswith("|"):
+                if is_tracks:
+                    out.append(sec)
+                i += 1
+            continue
+        i += 1
+    return out
+
+
 def build_crates(ctx_base):
     cdir = ROOT / "crates"
     index_json = read_json(cdir / "index.json", []) or []
@@ -1043,12 +1064,18 @@ def build_crates(ctx_base):
             fm, body = parse_front_matter(read_text(mdp))
         meta = meta_by_slug.get(slug, {})
         rows = read_csv_rows(csvp) if csvp.exists() else []
+        secs = md_table_sections(body) if body else []
+        if rows and len(secs) == len(rows) and len({x for x in secs if x}) > 1:
+            for r, sec in zip(rows, secs):
+                if sec:
+                    r["section"] = sec
         h1 = re.match(r"^\s*#\s+(.+?)\s*\n", body)
         title_he = str(fm.get("title_he") or meta.get("title_he") or (h1.group(1) if h1 else "") or slug)
         if h1:
             body = body[h1.end():]
         title = str(fm.get("title") or meta.get("title") or slug.replace("_", " ").replace("-", " ").title())
-        genres = as_list(fm.get("genres") or meta.get("genres"))
+        genres = [GENRE_NAMES.get(g, g.replace("_", " ").title() if re.fullmatch(r"[a-z0-9_]+", g) else g)
+                  for g in as_list(fm.get("genres") or meta.get("genres"))]
         count = len(rows) or fm.get("count") or meta.get("count") or 0
         verified = sum(1 for r in rows if r.get("verified", "").lower() == "yes")
         bpms = [float(r["bpm"]) for r in rows if re.fullmatch(r"\d+(\.\d+)?", r.get("bpm", "") or "")]
@@ -1078,10 +1105,13 @@ def build_crates(ctx_base):
 def render_crate(c, body_html: str, out: Path) -> str:
     placeholder = '<div class="crate-table" id="crate-table" data-crate="' + esc(c["slug"]) + '"></div>'
     if c["tracks"]:
-        # replace the first track table in the markdown with the interactive one
-        tbl = re.search(r'<div class="table-wrap"[^>]*><table>(?:(?!</table>).)*?BPM(?:(?!</table>).)*</table></div>', body_html, re.S)
-        if tbl:
-            body_html = body_html[: tbl.start()] + placeholder + body_html[tbl.end():]
+        # the CSV is the source of truth: drop every markdown track table (and the sub-heading right above it)
+        # and put the interactive table where the first one was
+        pat = re.compile(r'(?:<h[34][^>]*>(?:(?!</h[34]>).)*</h[34]>\s*)?<div class="table-wrap"[^>]*><table>\s*<thead>(?:(?!</thead>).)*?BPM(?:(?!</table>).)*</table></div>', re.S)
+        first = pat.search(body_html)
+        if first:
+            body_html = body_html[: first.start()] + "\x00" + body_html[first.end():]
+            body_html = pat.sub("", body_html).replace("\x00", placeholder)
         else:
             body_html = body_html + placeholder
     genres = "".join(f'<span class="chip chip--static">{esc(g)}</span>' for g in c["genres"])
@@ -1778,6 +1808,10 @@ def main(argv=None) -> int:
     if markdown is None:
         warn("python 'markdown' package missing: pip install markdown")
     plan, extras = load_plans()
+    for t in plan:
+        if t.get("genre_slug") and t.get("genre"):
+            GENRE_NAMES.setdefault(t["genre_slug"], t["genre"])
+    GENRE_NAMES.update({"dnb": "Drum & Bass", "drum_and_bass": "Drum & Bass", "ukg": "UK Garage", "uk_garage": "UK Garage", "lofi": "Lo-Fi", "edm": "EDM", "rnb": "R&B"})
     catalog = build_catalog(plan, extras)
     peaks_mode = "never" if args.no_peaks else "auto"
     peaks = build_peaks(catalog, peaks_mode)

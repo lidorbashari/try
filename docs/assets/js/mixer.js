@@ -353,7 +353,7 @@
     if (this.playing) this.pause();
     this.ui.load.value = item.id;
     this.setLoading(0);
-    this.ui.title.textContent = 'טוען: ' + (item.title || item.id) + '…';
+    this.ui.title.textContent = 'Loading · ' + (item.title || item.id) + '…';
     return load(item.file, function (f) { if (token === self.loadToken) self.setLoading(f * 0.9); }).then(function (r) {
       if (token !== self.loadToken) return;
       self.stopSrc(); self.playing = false;
@@ -486,7 +486,7 @@
     var mid = h / 2;
     if (!d.env) {
       g.fillStyle = 'rgba(255,255,255,.08)'; g.fillRect(0, mid, w, 1);
-      g.fillStyle = 'rgba(255,255,255,.35)'; g.font = '12px Heebo, sans-serif'; g.textAlign = 'center'; g.fillText('דק ' + d.id + ' ריק', w / 2, mid - 6);
+      g.fillStyle = 'rgba(255,255,255,.35)'; g.font = '12px Heebo, sans-serif'; g.textAlign = 'center'; try { g.direction = 'rtl'; } catch (e) { /* old browsers */ } g.fillText('דק ' + d.id + ' ריק - בחרו טראק', w / 2, mid + 4); try { g.direction = 'ltr'; } catch (e) { /* */ }
       return;
     }
     var p = d.position(), span = opts.zoom, t0 = p - span / 2, env = d.env, pxPerSec = w / span;

@@ -651,14 +651,15 @@ def plucked_string(bright=0.5, t60=1.8, t60_rel=0.12, hardness=0.85, pos=0.18, c
     return inst
 
 
-def oud(bright=0.42, t60=1.6, hardness=0.9, pos=0.2, sr=SR, **kw):
+def oud(bright=0.3, t60=1.5, hardness=0.72, pos=0.17, sr=SR, **kw):
     """Fretless Arabic lute: warm double courses, bright plectrum (risha) attack, deep wooden body.
     Supports slides (``s``), hammer-ons (``h``), tremolo picking (``r``), grace notes, trills."""
-    kw.setdefault("body", [(105.0, 4.0, 1.4), (240.0, 3.0, 1.6), (520.0, -2.0, 1.2), (2400.0, 3.0, 1.4),
-                           (5500.0, -4.0, 0.8)])
-    kw.setdefault("lp_hz", 9000.0)
+    kw.setdefault("body", [(110.0, 3.5, 1.3), (230.0, 3.5, 1.5), (480.0, -1.5, 1.2), (1900.0, 2.0, 1.6),
+                           (5000.0, -6.0, 0.7)])
+    kw.setdefault("lp_hz", 7500.0)
+    kw.setdefault("hp_hz", 70.0)
     return plucked_string(bright=bright, t60=t60, hardness=hardness, pos=pos, courses=2, course_cents=3.5,
-                          course_ms=1.4, attack_click=0.12, sr=sr, **kw)
+                          course_ms=1.4, attack_click=0.16, sr=sr, **kw)
 
 
 def qanun(bright=0.72, t60=2.2, hardness=0.97, pos=0.11, sr=SR, **kw):

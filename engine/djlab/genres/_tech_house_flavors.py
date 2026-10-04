@@ -18,6 +18,7 @@ import numpy as np
 
 from .. import drums, ext_house as eh, fx, instruments as inst
 from ..arrangement import Song, clip, euclid
+from ..dsp import eq_peak
 from ..theory import Key
 
 TEMPLATES = {
@@ -200,7 +201,7 @@ def build_flavor(plan: dict, rng: np.random.Generator, flavor: str) -> Song:
         riff = TALK_RIFFS[int(rng.integers(len(TALK_RIFFS)))]
         tb = eh.talking_bass(cutoff=float(rng.uniform(220, 300)), wah_time=float(rng.uniform(0.11, 0.16)),
                              f1=(220.0, float(rng.uniform(800, 1000))), f2=(650.0, float(rng.uniform(1900, 2400))),
-                             drive=float(rng.uniform(1.8, 2.4)))
+                             drive=float(rng.uniform(1.8, 2.4)), sub_oct=root >= 38)
         bclip = clip([(s, l, root + o, v) for s, l, o, v in riff], 2)
         bd = song.find("breakdown")
 
@@ -271,6 +272,10 @@ def build_flavor(plan: dict, rng: np.random.Generator, flavor: str) -> Song:
                           swing=song.swing, humanize=0.04)
         bass.automate("lp", [(groove, 500), (groove + 16, 2000), (drop1 - 1, 2400), (drop1, 7000),
                              (outro.start_bar, 7000), (bass_off, 600)])
+        if root >= 38:  # E2/D2 roots: add a clean sine sub an octave down so the sub band is not empty
+            sr_ = eh.sub_root(key)
+            song.notes("sub", inst.sub_bass(harmonics=0.05), lambda c: eh.sub_events(bass_notes(c), root, sr_),
+                       bus="bass", gain_db=-5.5, sidechain=0.6, sc_release_ms=130.0, swing=song.swing, humanize=0.0)
 
     # ================================================================ music / hooks
     deg = key.degree
@@ -292,17 +297,23 @@ def build_flavor(plan: dict, rng: np.random.Generator, flavor: str) -> Song:
     elif flavor == "warehouse":
         ch = eh.voice_progression(key, [0, 5, 0, 6], [4, 4, 4, 4], center=57, rootless=False)
         stab_r = [[(0, 1, 0.9), (6, 1, 0.55)], [(3, 1, 0.9), (10, 1, 0.65)], [(2, 1, 0.9)]][int(rng.integers(3))]
-        dub = inst.dub_chord(cutoff=float(rng.uniform(450, 650)), env_amt=float(rng.uniform(900, 1500)))
+        dub = inst.dub_chord(cutoff=float(rng.uniform(700, 950)), env_amt=float(rng.uniform(1200, 1800)))
         song.notes("dub_stab", dub, lambda c: [(s, l, ch[(c.i // 4) % len(ch)], v) for s, l, v in stab_r]
                    if c.kind in ("drop", "breakdown") or (c.kind == "groove" and c.i >= 8) else [],
-                   gain_db=-9.0, sidechain=0.5, sends={"delay": 0.38, "hall": 0.2}, width=1.7)
+                   gain_db=-7.0, sidechain=0.5, sends={"delay": 0.38, "hall": 0.2}, width=1.6)
+        dpad = song.notes("pad", inst.pad(attack=1.0, cutoff=1100.0, detune=0.25, warmth=0.7),
+                          lambda c: [(0, 63.5, ch[(c.i // 4) % len(ch)], 0.75)] if c.kind == "breakdown" and c.i % 4 == 0
+                          else [], gain_db=-9.0, sends={"hall": 0.35}, width=1.5)
+        for s in song.sections:
+            if s.kind == "breakdown":
+                dpad.automate("lp", [(s.start_bar, 600), (s.end_bar, 4500)])
         dark = inst.vocal_chop(vowel="o", vowel_to="u", shift=0.85, scoop=-1.0, breath=0.1)
         song.notes("vox_dark", dark, lambda c: [(2, 2, deg(0, 4), 0.9), (6, 1, deg(2, 4), 0.7), (10, 3, deg(0, 4), 0.85)]
                    if (c.kind == "drop" and c.i % 4 == 1) or (c.kind == "breakdown" and c.i % 2 == 0) else [],
-                   bus="vox", gain_db=-8.0, sends={"delay": 0.32, "hall": 0.2}, sidechain=0.35)
+                   bus="vox", gain_db=-6.5, sends={"delay": 0.32, "hall": 0.2}, sidechain=0.35)
         seq = [(0, 0.6, deg(0, 4), 0.9), (3, 0.6, deg(0, 5), 0.7), (6, 0.6, deg(2, 4), 0.8), (10, 0.6, deg(6, 3), 0.8),
                (13, 0.6, deg(0, 4), 0.7)]
-        blip = inst.seq_blip(wave="square", cutoff=float(rng.uniform(800, 1200)), decay=0.05, res=0.5)
+        blip = inst.seq_blip(wave="square", cutoff=float(rng.uniform(1200, 1700)), decay=0.05, res=0.5)
         sq = song.notes("blip_seq", blip, lambda c: seq if c.kind == "drop" else [], gain_db=-13.0, sidechain=0.45,
                         sends={"delay": 0.25}, pan=0.25, width=1.4)
         sq.automate("lp", [(drop1, 900), (drop1 + 16, 5000)])
@@ -319,17 +330,19 @@ def build_flavor(plan: dict, rng: np.random.Generator, flavor: str) -> Song:
                 return [(s, l, ch[(c.i // 2) % len(ch)], v) for s, l, v in rhy]
             return []
 
-        org = song.notes("organ", organ, organ_notes, gain_db=-9.5, sidechain=0.45, swing=song.swing,
-                         sends={"delay": 0.18, "reverb": 0.15}, width=1.4, fx=[eh.leslie(rate=5.5, mix=0.5)])
+        org = song.notes("organ", organ, organ_notes, gain_db=-10.5, sidechain=0.45, swing=song.swing, hp=220.0,
+                         sends={"delay": 0.18, "reverb": 0.15}, width=1.2, fx=[eh.leslie(rate=5.5, mix=0.3)])
         org.automate("lp", [(groove + 16, 1200), (drop1 - 1, 3000), (drop1, 9000)])
         vphr = VOX_SHUFFLE[int(rng.integers(len(VOX_SHUFFLE)))]
         vox = inst.vocal_chop(vowel="e", vowel_to="a", shift=float(rng.uniform(1.1, 1.2)), scoop=-1.2)
         vclip = clip([(s, l, deg(d, 4), v) for s, l, d, v in vphr], 2)
         song.notes("vox_chop", vox, lambda c: vclip(c) if c.kind == "drop" or (c.kind == "groove" and c.i % 8 >= 4)
                    or (c.kind == "breakdown" and c.i < c.section.bars - 4 and c.i % 4 < 2) else [],
-                   bus="vox", gain_db=-5.5, sidechain=0.35, sends={"delay": 0.22, "reverb": 0.18}, swing=song.swing)
+                   bus="vox", gain_db=-7.0, hp=350.0, sidechain=0.35, sends={"delay": 0.22, "reverb": 0.18},
+                   swing=song.swing, fx=[lambda x: eq_peak(x, 470.0, -5.0, 0.9)])
         pad = song.notes("pad", eh.soft_pad(attack=0.8, cutoff=1800.0), lambda c: [(0, 31.5, ch[(c.i // 2) % len(ch)], 0.8)]
-                         if c.kind == "breakdown" and c.i % 2 == 0 else [], gain_db=-10.0, sends={"hall": 0.3}, width=1.5)
+                         if c.kind == "breakdown" and c.i % 2 == 0 else [], gain_db=-10.0, sends={"hall": 0.3},
+                         width=1.2, hp=200.0)
         for s in song.sections:
             if s.kind == "breakdown":
                 pad.automate("lp", [(s.start_bar, 700), (s.end_bar, 5000)])
@@ -342,7 +355,8 @@ def build_flavor(plan: dict, rng: np.random.Generator, flavor: str) -> Song:
     eh.transitions(song, rng, crash_db=-8.5, impact_db=-9.0, riser_db=-9.0,
                    riser_kind="both" if flavor != "warehouse" else "noise")
 
-    song.buses["drums"].eq = [("peak", 2600.0, 2.0 if flavor != "warehouse" else 1.0, 0.8)]
+    song.buses["drums"].eq = [("peak", 2600.0, 2.0, 0.8)] if flavor != "warehouse" else \
+        [("peak", 1300.0, 1.5, 0.8), ("peak", 2800.0, 2.0, 0.8)]
     song.buses["music"].eq = [("peak", 1800.0, 1.5, 0.7)]
     song.buses["drums"].width = 1.15 if flavor != "warehouse" else 1.25
     if flavor == "warehouse":

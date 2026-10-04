@@ -17,10 +17,10 @@
     var q = encodeURIComponent((r.artist || '') + ' ' + (r.title || '') + (r.mix && !/original/i.test(r.mix) ? ' ' + r.mix : ''));
     var qq = encodeURIComponent((r.artist || '') + ' ' + (r.title || ''));
     return '<span class="ct-links">' +
-      '<a href="https://www.beatport.com/search?q=' + q + '" target="_blank" rel="noopener" title="חיפוש ב-Beatport">Beatport</a>' +
-      '<a href="https://bandcamp.com/search?q=' + qq + '" target="_blank" rel="noopener" title="חיפוש ב-Bandcamp">Bandcamp</a>' +
-      '<a href="https://open.spotify.com/search/' + qq + '" target="_blank" rel="noopener" title="האזנה ב-Spotify">Spotify</a>' +
-      '<a href="https://www.youtube.com/results?search_query=' + qq + '" target="_blank" rel="noopener" title="האזנה ב-YouTube">YouTube</a></span>';
+      '<a href="https://www.beatport.com/search?q=' + q + '" target="_blank" rel="noopener" title="חיפוש ב-Beatport" aria-label="Beatport">BP</a>' +
+      '<a href="https://bandcamp.com/search?q=' + qq + '" target="_blank" rel="noopener" title="חיפוש ב-Bandcamp" aria-label="Bandcamp">BC</a>' +
+      '<a href="https://open.spotify.com/search/' + qq + '" target="_blank" rel="noopener" title="האזנה ב-Spotify" aria-label="Spotify">SP</a>' +
+      '<a href="https://www.youtube.com/results?search_query=' + qq + '" target="_blank" rel="noopener" title="האזנה ב-YouTube" aria-label="YouTube">YT</a></span>';
   }
   function vbadge(v) {
     v = String(v || '').toLowerCase();
@@ -34,17 +34,19 @@
     var crate = (window.DJLAB_CRATES || []).filter(function (c) { return c.slug === slug; })[0];
     if (!crate || !crate.tracks || !crate.tracks.length) { host.innerHTML = ''; return; }
     var rows = crate.tracks.map(function (r, i) { var o = Object.assign({}, r); o._i = i + 1; o._cam = DJ.cam.norm(r.camelot) || DJ.cam.fromKey(r.key); o._bpm = parseFloat(r.bpm) || 0; o._en = parseFloat(r.energy) || 0; return o; });
-    var st = { q: '', cam: '', compat: true, verified: false, sort: '_i', dir: 1 };
+    var st = { q: '', cam: '', compat: true, verified: false, sort: '_i', dir: 1, sec: '' };
+    var sections = []; rows.forEach(function (r) { if (r.section && sections.indexOf(r.section) < 0) sections.push(r.section); });
     var cams = Array.from(new Set(rows.map(function (r) { return r._cam; }).filter(Boolean))).sort(function (a, b) { var A = DJ.cam.parse(a), B = DJ.cam.parse(b); return A.n - B.n || (A.l < B.l ? -1 : 1); });
     host.innerHTML =
       '<div class="ct-controls">' +
       '<label class="search-field search-field--sm">' + I('search') + '<span class="sr-only">חיפוש בארגז</span><input type="search" placeholder="חיפוש אמן, שם, לייבל…" data-ct-q></label>' +
       '<label class="select-field select-field--sm"><span class="sr-only">סינון לפי Camelot</span><select data-ct-cam><option value="">כל הסולמות</option>' + cams.map(function (c) { return '<option value="' + c + '">' + c + ' · ' + DJ.cam.keys[c] + '</option>'; }).join('') + '</select></label>' +
+      (sections.length > 1 ? '<label class="select-field select-field--sm"><span class="sr-only">סינון לפי חלק</span><select data-ct-sec><option value="">כל החלקים</option>' + sections.map(function (x) { return '<option>' + esc(x) + '</option>'; }).join('') + '</select></label>' : '') +
       '<label class="switch"><input type="checkbox" checked data-ct-compat><span></span>כולל תואמים</label>' +
       '<label class="switch"><input type="checkbox" data-ct-ver><span></span>רק מאומתים</label>' +
       '</div><p class="muted small" data-ct-count></p>' +
       '<div class="table-wrap ct-wrap"><table class="data-table ct-table"><thead><tr>' +
-      th('_i', '#') + th('artist', 'אמן') + th('title', 'שם') + '<th class="ct-hide-sm">לייבל</th>' + th('year', 'שנה', 'ct-hide-sm') + th('_bpm', 'BPM') + th('_cam', 'Key') + th('_en', 'אנרגיה', 'ct-hide-sm') + '<th class="ct-hide-sm">תפקיד</th><th>אימות</th><th>הערות</th><th>קנייה / האזנה</th>' +
+      th('_i', '#') + th('artist', 'אמן · שם') + th('_bpm', 'BPM') + th('_cam', 'Key') + th('_en', 'אנרגיה') + '<th>תפקיד</th><th>אימות</th><th>הערות</th><th>קנייה / האזנה</th>' +
       '</tr></thead><tbody></tbody></table></div>';
     function th(k, label, cls) { return '<th' + (cls ? ' class="' + cls + '"' : '') + ' aria-sort="none" data-k="' + k + '"><button type="button">' + label + '</button></th>'; }
     var tbody = host.querySelector('tbody');
@@ -55,6 +57,7 @@
       var list = rows.filter(function (r) {
         if (allowed && !allowed.has(r._cam)) return false;
         if (st.verified && String(r.verified).toLowerCase() !== 'yes') return false;
+        if (st.sec && r.section !== st.sec) return false;
         if (q && [r.artist, r.title, r.mix, r.label, r.notes_he, r.camelot, r.key].join(' ').toLowerCase().indexOf(q) < 0) return false;
         return true;
       });
@@ -64,26 +67,29 @@
         if (typeof A === 'number' || /^\d+(\.\d+)?$/.test(A || '')) return st.dir * ((parseFloat(A) || 0) - (parseFloat(B) || 0));
         return st.dir * String(A || '').localeCompare(String(B || ''));
       });
+      var lastSec = null, grouped = st.sort === '_i' && sections.length > 1;
       tbody.innerHTML = list.map(function (r) {
         var rel = st.cam && r._cam ? DJ.cam.relation(st.cam, r._cam) : null;
-        return '<tr>' +
+        var head = '';
+        if (grouped && r.section && r.section !== lastSec) { lastSec = r.section; head = '<tr class="ct-group"><th colspan="9" scope="rowgroup">' + esc(r.section) + '</th></tr>'; }
+        return head + '<tr>' +
           '<td data-col="idx" class="ct-num muted">' + r._i + '</td>' +
-          '<td data-col="artist"><span class="ct-artist" dir="auto">' + esc(r.artist) + '</span></td>' +
-          '<td data-col="title" class="ct-title-cell"><span dir="auto">' + esc(r.title) + '</span>' + (r.mix ? ' <span class="ct-mix">(' + esc(r.mix) + ')</span>' : '') + '</td>' +
-          '<td data-col="label" class="ct-hide-sm muted small" dir="auto">' + esc(r.label) + '</td>' +
-          '<td data-col="year" class="ct-hide-sm ct-num muted">' + esc(r.year) + '</td>' +
+          '<td data-col="title"><span class="ct-artist" dir="auto">' + esc(r.artist) + '</span><span class="ct-title" dir="auto">' + esc(r.title) + (r.mix ? ' <span class="ct-mix">(' + esc(r.mix) + ')</span>' : '') + '</span>' +
+          ((r.label || r.year) ? '<span class="ct-sub">' + esc([r.label, r.year].filter(Boolean).join(' · ')) + '</span>' : '') + '</td>' +
           '<td data-col="bpm" class="ct-num"><b>' + esc(r.bpm) + '</b><span class="ct-show-sm muted"> BPM</span></td>' +
           '<td data-col="cam">' + (r._cam ? DJ.camBadge(r._cam) : esc(r.key)) + (rel && rel.type !== 'perfect' ? '<div class="why why--' + rel.type + '" style="margin-top:4px;display:inline-block">' + esc(rel.label) + '</div>' : '') + '</td>' +
-          '<td data-col="energy" class="ct-hide-sm">' + (r._en ? DJ.energyHTML(r._en) : '') + '</td>' +
-          '<td data-col="role" class="ct-hide-sm">' + DJ.roleHTML(r.role) + '</td>' +
+          '<td data-col="energy">' + (r._en ? DJ.energyHTML(r._en) : '') + '</td>' +
+          '<td data-col="role">' + DJ.roleHTML(r.role) + '</td>' +
           '<td data-col="verified">' + vbadge(r.verified) + '</td>' +
           '<td data-col="notes" class="ct-notes">' + esc(r.notes_he) + '</td>' +
           '<td data-col="links">' + links(r) + '</td></tr>';
-      }).join('') || '<tr><td colspan="12" class="muted" style="text-align:center;padding:24px">אין התאמות. נסו לבטל סינון.</td></tr>';
+      }).join('') || '<tr><td colspan="9" class="muted" style="text-align:center;padding:24px">אין התאמות. נסו לבטל סינון.</td></tr>';
       host.querySelector('[data-ct-count]').textContent = 'מציג ' + list.length + ' מתוך ' + rows.length + ' טראקים' + (st.cam ? ' · סולמות תואמים ל-' + st.cam : '');
     }
     host.querySelector('[data-ct-q]').addEventListener('input', DJ.debounce(function (e) { st.q = e.target.value.trim(); render(); }, 120));
     host.querySelector('[data-ct-cam]').addEventListener('change', function (e) { st.cam = e.target.value; render(); });
+    var secSel = host.querySelector('[data-ct-sec]');
+    if (secSel) secSel.addEventListener('change', function (e) { st.sec = e.target.value; render(); });
     host.querySelector('[data-ct-compat]').addEventListener('change', function (e) { st.compat = e.target.checked; render(); });
     host.querySelector('[data-ct-ver]').addEventListener('change', function (e) { st.verified = e.target.checked; render(); });
     host.querySelectorAll('th[data-k] button').forEach(function (b) {

@@ -113,7 +113,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return None
         return "....x.......x..." if not (c.phrase_end and c.kind in ("groove", "drop")) else "....x.......x..x"
 
-    song.hits("clap", clap, clap_pat, gain_db=-2.5, sends={"reverb": 0.28, "hall": 0.06}, timing_ms=1.0)
+    song.hits("clap", clap, clap_pat, gain_db=-2.0, sends={"reverb": 0.28, "hall": 0.06}, timing_ms=1.0)
     snr = drums.snare(tone_hz=float(rng.uniform(180, 210)), snappy=0.8, decay=0.14, kind="tight", rng=rng)
     song.hits("snare", snr, lambda c: "....x.......x..." if c.kind == "drop" else None, gain_db=-13.0,
               sends={"reverb": 0.2})
@@ -165,6 +165,11 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
               sends={"room": 0.15, "delay": 0.08}, humanize=0.12)
     song.hits("perc_r", p2, lambda c: pb if perc_on(c) and c.i % 4 >= 2 else None, gain_db=-16.0, pan=0.6,
               sends={"delay8": 0.15, "room": 0.1}, humanize=0.12)
+    rim = drums.rimshot(float(rng.uniform(1600, 2100)), rng=rng)
+    rim_p = xt.pick(rng, ["...x..x....x..x.", "..x..x....x...x.", "...x...x..x..x.."])
+    song.hits("rim", rim, lambda c: rim_p if (c.kind in ("groove", "drop") or (c.kind == "intro" and c.i >= 8)
+                                             or (c.kind == "outro" and c.bars_left > 8)) else None,
+              gain_db=-15.0, pan=0.45, sends={"delay8": 0.12, "room": 0.1}, humanize=0.15)
     tom = drums.tom(float(rng.uniform(80, 100)), 0.5, rng=rng)
     song.hits("tom_fill", [tom, xt.pitch_shift(tom, 5), xt.pitch_shift(tom, 7)],
               lambda c: "..........x..xx." if c.every(16) and c.kind in ("intro", "groove", "drop", "outro") else None,
@@ -226,10 +231,10 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
                      gain_db=-12.5, sidechain=0.55, humanize=0.0, hp=150.0,
                      sends={"hall": 0.25, "space": 0.2})
     pad.automate("gain_db", sp({"groove": -7.0, "breakdown": 0.0, "drop": -3.5, "outro": -6.0}, -6.0, ramp_bars=2))
-    pad.automate("lp", [(g0 + 16, 900), (g0 + 32, 2500), (b0, 1200), (b0 + 24, 5000), (d0, 3500), (o0 + 8, 900)])
+    pad.automate("lp", [(g0 + 16, 900), (g0 + 32, 2500), (b0, 2200), (b0 + 24, 7500), (d0, 4500), (o0 + 8, 900)])
 
     choir_i = xt.choir(vowel=fl["vowel"][0], vowel_to=fl["vowel"][1], shift=float(rng.uniform(1.0, 1.1)),
-                       attack=0.9, release=1.6)
+                       attack=0.9, release=1.6, bright=7500.0)
     ch = song.notes("choir", choir_i, lambda c: [(0, 31.0, choir_chords[chord_i(c)], 0.8)]
                     if c.i % 2 == 0 and ((c.kind == "breakdown" and c.i >= 4 and c.bars_left > 2) or (c.kind == "drop" and c.i >= 16))
                     else [], bus="vox", gain_db=fl["choir_db"], sidechain=0.3, humanize=0.0,
@@ -264,7 +269,8 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     lead.automate("lp", [(b0 + 8, 1500), (b0 + 24, 3000), (d0 - 0.01, 9000), (d0, 14000)])
     # octave-up glass double on the second half of the drop (lift without new material)
     dbl = xt.glass_pluck(ratio=2.0, index=1.2, decay=0.6, release=0.5, shimmer=0.1)
-    song.notes("lead_hi", dbl, lambda c: hclip(c) if c.kind == "drop" and c.i >= 16 else [], transpose=12,
+    song.notes("lead_hi", dbl, lambda c: hclip(c) if (c.kind == "drop" and c.i >= 16)
+               or (c.kind == "breakdown" and 16 <= c.i < c.section.bars - 1) else [], transpose=12,
                gain_db=-16.0, sidechain=0.3, humanize=0.0, sends={"delay": 0.25, "space": 0.15})
 
     # ================================================================ fx / transitions
@@ -291,8 +297,8 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     fxl.add(fx.downlifter(bar * 4, rng=rng), o0, gain_db=-14.0)
 
     # ================================================================ mix
-    song.buses["drums"].eq = [("peak", 3200.0, 1.0, 0.8), ("peak", 350.0, -1.5, 1.0)]
-    song.buses["music"].eq = [("peak", 380.0, -2.5, 0.8)]
+    song.buses["drums"].eq = [("peak", 2600.0, 2.0, 0.8), ("peak", 350.0, -1.5, 1.0)]
+    song.buses["music"].eq = [("peak", 380.0, -2.5, 0.8), ("peak", 2000.0, 2.0, 0.7)]
     song.buses["vox"].hp = 250.0
     song.master.lufs = -9.0
     song.instruments = ["tight tuned techno kick", "rolling arpeggiated bass", "wide arpeggio", "anthem lead hook",
