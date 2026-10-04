@@ -5,7 +5,7 @@ title: "אוזניות וקיואינג"
 title_en: "Headphones & Cueing"
 summary: "איך מאזינים לשיר הבא לפני שהקהל שומע: כפתורי CUE, Headphones Mix, טכניקת האוזן האחת, Split Cue, מוניטור Booth, למה השהיות הורסות ביטמאצ'ינג — ואיך עושים את כל זה בלי לפגוע בשמיעה."
 level: "מתחיל"
-reading_minutes: 12
+reading_minutes: 14
 ---
 
 # אוזניות וקיואינג
