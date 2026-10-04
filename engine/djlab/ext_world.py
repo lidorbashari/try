@@ -349,7 +349,7 @@ def transpose(notes, base: float) -> tuple:
 
 
 def shift(notes, steps: float) -> list:
-    return [(st + steps,) + tuple(n[1:]) for n in notes for st in [n[0]]]
+    return [(n[0] + steps,) + tuple(n[1:]) for n in notes]
 
 
 def parse_orn(orn: str) -> dict:
@@ -367,7 +367,7 @@ def parse_orn(orn: str) -> dict:
 
 # ============================================================================ pitch / envelope builders
 def pitch_track(notes, n, sr=SR, glide=0.045, legato_all=False, vib_rate=5.6, vib_depth=0.0, vib_delay=0.16,
-                vib_attack=0.3, trill_hz=13.0, seed=0):
+                vib_attack=0.3, trill_hz=13.0, seed=0, vib_flag_only=False):
     """Per-sample MIDI pitch (float) for a monophonic phrase with portamento, ornaments, vibrato.
 
     ``notes``: sorted ``(t0_sec, dur_sec, midi, vel, orn)``. ``legato_all``: portamento between all
@@ -418,7 +418,7 @@ def pitch_track(notes, n, sr=SR, glide=0.045, legato_all=False, vib_rate=5.6, vi
             fl = min(0.2, dur * 0.4)
             k = tt > dur - fl
             c[k] += o["f"] * _smooth((tt[k] - (dur - fl)) / fl)
-        depth = vib_depth * (1.7 if "v" in o else 1.0) * (0.0 if "n" in o or "t" in o else 1.0)
+        depth = vib_depth * (1.7 if "v" in o else (0.0 if vib_flag_only else 1.0)) * (0.0 if "n" in o or "t" in o else 1.0)
         if depth > 0 and dur > 0.18:
             ramp = _smooth((tt - vib_delay) / vib_attack) * (tt < dur + 0.05)
             rate = vib_rate * (1 + 0.04 * rng.uniform(-1, 1))
@@ -538,8 +538,9 @@ def _ks_group(group, n0, sr, bright, t60, t60_rel, hardness, pos, detune_cents, 
     notes = [(t0 - t_start, d, m, v, o) for t0, d, m, v, o in group]
     end = max(t0 + d for t0, d, *_ in notes)
     n = int((end + t60_rel * 1.3 + 0.02) * sr)
-    curve = pitch_track(notes, n, sr, glide=0.07, legato_all=False, vib_depth=0.0, seed=seed)
-    # vibrato on long notes (left-hand vibrato, gentle)
+    # left-hand vibrato only on notes flagged "v"
+    curve = pitch_track(notes, n, sr, glide=0.07, legato_all=False, vib_depth=0.09, vib_rate=5.2, vib_delay=0.12,
+                        seed=seed, vib_flag_only=True)
     curve = curve + detune_cents / 100.0
     hz = _hz(curve)
     delay = sr / hz - 0.5 * (1.0 - bright)
@@ -645,7 +646,7 @@ def plucked_string(bright=0.5, t60=1.8, t60_rel=0.12, hardness=0.85, pos=0.18, c
             x = hp(x, hp_hz, 2, sr)
         if lp_hz:
             x = lp(x, lp_hz, 2, sr)
-        peak = max(v for *_, v, _o in [(nt[0], nt[1], nt[2], nt[3], nt[4]) for nt in notes])
+        peak = max(nt[3] for nt in notes)
         return normalize(fade(x, 0, int(0.02 * sr)), 0.8 * peak)
     return inst
 

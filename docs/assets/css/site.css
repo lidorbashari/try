@@ -573,7 +573,7 @@ button.tc-title { cursor: pointer; width: 100%; }
 .dt-facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; border-radius: var(--r); overflow: hidden; background: var(--border); border: 1px solid var(--border); }
 .dt-facts div { background: var(--bg-elev); padding: 10px 12px; display: grid; gap: 2px; }
 .dt-facts .k { font-size: .74rem; color: var(--muted); }
-.dt-facts .v { font-family: var(--font-head); font-weight: 700; font-size: 1.05rem; direction: ltr; text-align: start; font-variant-numeric: tabular-nums; }
+.dt-facts .v { font-family: var(--font-head); font-weight: 700; font-size: 1.05rem; text-align: right; unicode-bidi: plaintext; font-variant-numeric: tabular-nums; }
 .dt-section h3 { font-size: .9rem; color: var(--muted); margin-bottom: var(--s2); font-weight: 600; }
 .dt-section p { margin: 0 0 .6em; color: var(--text-2); line-height: 1.75; }
 .dt-wave { position: relative; direction: ltr; }
@@ -1005,3 +1005,7 @@ kbd, .kbd { display: inline-block; min-width: 1.6em; padding: .05em .45em; borde
 .appx { display: flex; gap: var(--s3); align-items: flex-start; }
 .appx > .icon { color: var(--accent-ink); width: 28px; height: 28px; }
 .appx > span { display: grid; gap: 4px; }
+
+/* tiny artwork: gradient only, no label */
+.ci-art .cover-fallback span, .pl-art .cover-fallback span, .pr-tr .cover-fallback span, .track-grid.is-list .cover-fallback span { display: none; }
+.ci-art .cover-fallback::before, .pl-art .cover-fallback::before { display: block; inset: 22%; box-shadow: none; }

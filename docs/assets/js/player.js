@@ -348,7 +348,7 @@
       '</div>' +
       (playable && d ? '<div class="dt-section"><h3>מבנה הטראק</h3><div class="dt-wave"><canvas aria-label="Waveform - לחצו כדי לנגן מנקודה"></canvas></div>' + (sections ? '<div class="dt-sections" aria-hidden="true">' + sections + '</div>' : '') + '</div>' : '') +
       (t.description_he ? '<div class="dt-section"><h3>על הטראק</h3><p>' + esc(t.description_he) + '</p></div>' : '') +
-      (t.mix_tips_he ? '<div class="dt-section"><aside class="callout callout--exercise" role="note" style="margin:0"><div class="callout-head">' + I('headphones') + '<span>טיפ ערבוב</span></div><div class="callout-body"><p>' + esc(t.mix_tips_he) + '</p></div></aside></div>' : '') +
+      (t.mix_tips_he ? '<div class="dt-section"><aside class="callout callout--exercise" role="note" style="margin:0"><div class="callout-head">' + I('headphones') + '<span>טיפ ערבוב</span></div><div class="callout-body"><p>' + esc(String(t.mix_tips_he).replace(/^\s*טיפ ערבוב\s*[:：]\s*/, '')) + '</p></div></aside></div>' : '') +
       (cues ? '<div class="dt-section"><h3>Hot Cues</h3><ul class="cue-list">' + cues + '</ul></div>' : '') +
       (mem ? '<div class="dt-section"><h3>Memory Cues</h3><ul class="cue-list">' + mem + '</ul></div>' : '') +
       '<div class="dt-section" data-compat-section><h3>מתאימים למיקס <span class="muted small">(Camelot תואם · BPM ±6%)</span></h3><ul class="compat-list">' + compatHTML + '</ul></div>' +

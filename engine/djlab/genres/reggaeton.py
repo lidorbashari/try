@@ -161,27 +161,27 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return dfill
         return DEMBOW if c.i % 4 != 3 else dv
 
-    song.hits("dembow", dembow_s, dembow_pat, gain_db=-4.5, sends={"room": 0.12, "reverb": 0.05}, humanize=0.08,
+    song.hits("dembow", dembow_s, dembow_pat, gain_db=-2.5, sends={"room": 0.12, "reverb": 0.05}, humanize=0.08,
               timing_ms=1.0)
     pb0 = song.bar("Perreo")
     song.layer("dembow").automate("gain_db", [(0, 0.0), (pb0 - 2.01, 0.0), (pb0 - 2, -9.0), (pb0 - 0.01, -1.0),
                                               (pb0, 0.0)])
 
     clap = drums.clap(tightness=0.8, tone_hz=float(rng.uniform(1200, 1500)), tail=0.12, rng=rng)
-    song.hits("clap", clap, lambda c: "......x.......x." if c.kind == "drop" else None, gain_db=-8.0,
+    song.hits("clap", clap, lambda c: "......x.......x." if c.kind == "drop" else None, gain_db=-6.5,
               sends={"reverb": 0.15}, pan=0.05)
 
     hat = drums.variants(drums.hat, 4, rng, jitter={"decay": 0.15}, decay=float(rng.uniform(0.03, 0.045)),
                          tone=float(rng.uniform(0.95, 1.15)))
     hp_ = HATS[int(rng.integers(len(HATS)))]
     song.hits("hats", hat, lambda c: hp_ if (c.kind != "breakdown" and not (c.kind == "outro" and c.bars_left <= 2))
-              else None, gain_db=-13.5, pan=0.25, humanize=0.1)
+              else None, gain_db=-12.0, pan=0.25, humanize=0.1)
     ohat = drums.hat(open_=True, decay=0.18, tone=1.05, rng=rng)
     song.hits("open_hat", ohat, lambda c: "..............x." if c.kind == "drop" and c.i % 2 == 1 else None,
               gain_db=-14.0, pan=-0.2, sends={"room": 0.1})
     shk = drums.variants(drums.shaker, 4, rng, jitter={"length": 0.2}, length=float(rng.uniform(0.06, 0.09)))
     sp = SHAKER[int(rng.integers(len(SHAKER)))]
-    song.hits("shaker", shk, lambda c: sp if not (c.kind == "intro" and c.i < 2) else None, gain_db=-17.0, pan=-0.45,
+    song.hits("shaker", shk, lambda c: sp if not (c.kind == "intro" and c.i < 2) else None, gain_db=-15.0, pan=-0.45,
               humanize=0.15, timing_ms=2.0)
 
     t_hi = xm.timbale(float(rng.uniform(560, 680)), ring=0.55, rng=rng)
@@ -230,7 +230,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
 
     b808 = xm.synth_808(decay=float(rng.uniform(0.9, 1.3)), drive=float(rng.uniform(1.8, 2.4)), punch=6.0,
                         glide_ms=70.0, seed=song.seed)
-    song.line("bass", b808, bass_notes, bus="bass", gain_db=-3.5, sidechain=0.3, sc_release_ms=90.0)
+    song.line("bass", b808, bass_notes, bus="bass", gain_db=-6.0, sidechain=0.3, sc_release_ms=90.0)
 
     pb = BASS_PERREO[int(rng.integers(len(BASS_PERREO)))]
 
@@ -244,7 +244,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
         return ev
 
     p808 = xm.synth_808(decay=1.6, drive=3.6, punch=8.0, glide_ms=85.0, tone=1.8, seed=song.seed + 1)
-    song.line("bass_perreo", p808, perreo_notes, bus="bass", gain_db=-3.0, sidechain=0.3, sc_release_ms=90.0)
+    song.line("bass_perreo", p808, perreo_notes, bus="bass", gain_db=-5.5, sidechain=0.3, sc_release_ms=90.0)
 
     # ---------------------------------------------------------------- music
     arp = ARPS[int(rng.integers(len(ARPS)))]
@@ -260,14 +260,14 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return ev if c.i % 2 == 0 else ev[:3]
         return ev
 
-    gl = song.notes("guitar", guitar, gtr_notes, gain_db=-9.5, pan=-0.25, sends={"reverb": 0.18, "delay8": 0.1},
+    gl = song.notes("guitar", guitar, gtr_notes, gain_db=-6.5, pan=-0.25, sends={"reverb": 0.18, "delay8": 0.1},
                     sidechain=0.2, humanize=0.1)
     gl.automate("lp", [(verso.start_bar, 2500), (verso.start_bar + 4, 9000), (outro.start_bar, 9000),
                        (drums_only_from, 900)])
 
     pad = song.notes("pad", xm.soft_pad(attack=0.5, cutoff=float(rng.uniform(1300, 1900))),
                      lambda c: [(0, 15.5, chord_at(c), 0.7)] if c.kind in ("groove", "breakdown", "drop") else [],
-                     gain_db=-15.0 if not dark else -13.0, sends={"hall": 0.25}, width=1.5, sidechain=0.35)
+                     gain_db=-12.5 if not dark else -11.0, sends={"hall": 0.25}, width=1.5, sidechain=0.35)
     pad.automate("gain_db", song.section_points({"Puente": 3.0, "Perreo": -3.0}, 0.0, ramp_bars=1))
 
     # hook (square pluck) — chord-aware call/response, generated per seed
@@ -287,7 +287,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return [e for e in hook_clip(c)][:3]
         return []
 
-    hl = song.notes("hook", lead_inst, hook_notes, gain_db=-8.0, sends={"delay": 0.22, "reverb": 0.15}, width=1.3,
+    hl = song.notes("hook", lead_inst, hook_notes, gain_db=-6.0, sends={"delay": 0.22, "reverb": 0.15}, width=1.3,
                     sidechain=0.3)
     hl.automate("lp", [(puente.start_bar, 1400), (puente.end_bar - 2, 4000), (puente.end_bar, 16000)])
     if not dark:
