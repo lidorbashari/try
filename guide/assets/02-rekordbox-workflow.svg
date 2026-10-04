@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" width="800" height="360" role="img" aria-labelledby="t d" font-family="Heebo, Rubik, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 390" width="800" height="390" role="img" aria-labelledby="t d" font-family="Heebo, Rubik, Arial, sans-serif">
 <title id="t">זרימת העבודה ב-Rekordbox</title>
 <desc id="d">ייבוא, ניתוח, בדיקת Beatgrid, Cues, תגיות ופלייליסטים במצב Export; ואז ייצוא ל-USB לנגני מועדון או נגינה חיה במצב Performance.</desc>
-<rect x="1" y="1" width="798" height="358" rx="16" fill="#7f7f7f" fill-opacity="0.07" stroke="#7f7f7f" stroke-opacity="0.28"/>
+<rect x="1" y="1" width="798" height="388" rx="16" fill="#7f7f7f" fill-opacity="0.07" stroke="#7f7f7f" stroke-opacity="0.28"/>
 <defs>
 <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#858b95"/></marker>
 </defs>
@@ -43,12 +43,12 @@
 <line x1="610.0" y1="214.0" x2="610.0" y2="236.0" stroke="#858b95" stroke-width="2.5" marker-end="url(#arr)"/>
 <rect x="440.0" y="242.0" width="340.0" height="86.0" rx="14" fill="#3a5fe0" />
 <text x="610.0" y="270.0" font-size="15.5" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >ייצוא ל-USB ← נגני CDJ / XDJ</text>
-<text x="610.0" y="294.0" font-size="12" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="normal" >מצב Export · Grid, Cues ופלייליסטים עוברים איתכם</text>
-<text x="610.0" y="314.0" font-size="12" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="normal" >למועדון</text>
+<text x="610.0" y="294.0" font-size="12.5" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >מצב Export — למועדון</text>
+<text x="610.0" y="314.0" font-size="12" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="normal" >ה-Grid, ה-Cues והפלייליסטים עוברים איתכם</text>
 <rect x="20.0" y="242.0" width="340.0" height="86.0" rx="14" fill="#cf3434" />
 <text x="190.0" y="270.0" font-size="15.5" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >נגינה חיה עם קונטרולר</text>
-<text x="190.0" y="294.0" font-size="12" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="normal" >מצב Performance · EQ, אפקטים, לופים, הקלטה</text>
-<text x="190.0" y="314.0" font-size="12" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="normal" >לתרגול ולהופעות</text>
-<rect x="330.0" y="200.0" width="140.0" height="28.0" rx="14" fill="#7f7f7f" fill-opacity="0.2"/>
-<text x="400.0" y="219.0" font-size="12.5" fill="#858b95" text-anchor="middle" direction="rtl" font-weight="bold" >ספרייה אחת משותפת</text>
+<text x="190.0" y="294.0" font-size="12.5" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >מצב Performance — לתרגול ולהופעות</text>
+<text x="190.0" y="314.0" font-size="12" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="normal" >EQ, אפקטים, לופים והקלטה</text>
+<rect x="250.0" y="344.0" width="300.0" height="30.0" rx="15" fill="#7f7f7f" fill-opacity="0.16"/>
+<text x="400.0" y="364.0" font-size="13" fill="#858b95" text-anchor="middle" direction="rtl" font-weight="bold" >ספרייה אחת — משותפת לשני המצבים</text>
 </svg>

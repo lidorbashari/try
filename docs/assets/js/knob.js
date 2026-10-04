@@ -120,7 +120,7 @@
     this.v = v;
     var t = (v - o.min) / (o.max - o.min);
     var p = o.orient === 'v' ? (o.invert ? t : 1 - t) : t;
-    this.el.style.setProperty('--p', (p * 100).toFixed(3) + '%');
+    this.el.style.setProperty('--p', p.toFixed(4));
     var txt = o.format(v);
     this.el.setAttribute('aria-valuenow', String(+v.toFixed(4)));
     this.el.setAttribute('aria-valuetext', txt);

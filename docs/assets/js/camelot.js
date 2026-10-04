@@ -128,7 +128,7 @@
     svg.addEventListener('click', function (e) { var g = e.target.closest('.seg'); if (g) select(g.getAttribute('data-code'), false); });
     svg.addEventListener('keydown', function (e) {
       var p = DJ.cam.parse(sel), next = null;
-      if (e.key === 'ArrowRight' || e.key === 'ArrowDown' && false) next = DJ.cam.code(p.n + 1, p.l);
+      if (e.key === 'ArrowRight') next = DJ.cam.code(p.n + 1, p.l);
       else if (e.key === 'ArrowLeft') next = DJ.cam.code(p.n - 1, p.l);
       else if (e.key === 'ArrowUp') next = p.n + 'B';
       else if (e.key === 'ArrowDown') next = p.n + 'A';

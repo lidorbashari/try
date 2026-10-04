@@ -55,6 +55,7 @@
 <rect x="32.0" y="322.0" width="151.0" height="24.0" rx="12" fill="#ffffff" fill-opacity="0.22"/>
 <text x="107.5" y="339.0" font-size="12.5" fill="#ffffff" text-anchor="middle" direction="rtl" font-weight="bold" >חודש 3 והלאה</text>
 <rect x="630.0" y="368.0" width="150.0" height="26.0" rx="13" fill="#7f7f7f" fill-opacity="0.18"/>
-<text x="705.0" y="386.0" font-size="13" fill="#858b95" text-anchor="middle" direction="rtl" font-weight="bold" >📍 אתם כאן: פרק 0</text>
+<circle cx="760" cy="381" r="5" fill="#cf3434"/>
+<text x="748.0" y="386.0" font-size="13" fill="#858b95" text-anchor="start" direction="rtl" font-weight="bold" >אתם כאן: פרק 0</text>
 <text x="220.0" y="386.0" font-size="12.5" fill="#9aa0a9" text-anchor="middle" direction="rtl" font-weight="normal" >מילון מונחים ושאלות נפוצות — לאורך כל הדרך</text>
 </svg>
