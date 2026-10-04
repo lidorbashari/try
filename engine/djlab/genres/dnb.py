@@ -104,7 +104,9 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return "....X.......XXXX"
         return SNARE if not c.phrase_end else "....X.......X.XX"
 
-    song.hits("snare", snr, snare_pat, gain_db=-5.0, sc_source=True, sends={"room": 0.15, "reverb": 0.08 if not liquid else 0.18})
+    sn_l = song.hits("snare", snr, snare_pat, gain_db=-5.0, sc_source=True,
+                     sends={"room": 0.15, "reverb": 0.08 if not liquid else 0.18})
+    sn_l.automate("gain_db", [(0, 0.0), (bd.end_bar - 8 - 1e-3, 0.0), (bd.end_bar - 8, -12.0), (bd.end_bar - 0.01, 0.0)])
     song.hits("ghost", ghost, lambda c: gpat if c.kind in ("drop", "outro") or (c.kind == "intro" and c.i >= 8) else None,
               gain_db=-15.0, pan=0.1, humanize=0.2, timing_ms=1.5)
     hats = drums.variants(drums.hat, 4, rng, jitter={"decay": 0.2}, decay=float(rng.uniform(0.025, 0.04)),
@@ -176,7 +178,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
         if c.kind == "outro":
             return c.bar < bass_off
         if c.kind == "breakdown":
-            return c.i >= 16 and c.bars_left > 1
+            return 1 < c.bars_left <= 8
         return True
 
     # ---------------------------------------------------------------- bass
@@ -212,12 +214,13 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
                                                          hp_hz=85.0, dist=0.55),
                                       reese_notes, bus="bass", gain_db=-3.0, sidechain=0.5, sc_release_ms=120.0))
         rp = [(bass_in, 0.25), (intro.end_bar - 0.01, 0.8), (intro.end_bar, 1.0)]
-        rp += [(bd.start_bar + 16, 0.3), (bd.end_bar - 0.01, 0.9), (bd.end_bar, 1.0)]
+        rp += [(bd.end_bar - 8, 0.25), (bd.end_bar - 0.01, 0.8), (bd.end_bar, 1.0)]
         rp += [(outro.start_bar, 1.0), (bass_off, 0.3)]
         reese.automate("cutoff", [(b, v * 1400.0) for b, v in rp])
         sub = song.add(xb.SynthLine("sub", xb.SubLine(harm=0.08, drive=1.2, glide_ms=60.0), reese_notes, bus="bass",
                                     gain_db=-6.0, sidechain=0.55, sc_release_ms=110.0))
-        sub.automate("gain_db", [(bass_in, -8.0), (intro.end_bar - 0.01, -3.0), (intro.end_bar, 0.0)])
+        sub.automate("gain_db", [(bass_in, -8.0), (intro.end_bar - 0.01, -3.0), (intro.end_bar, 0.0),
+                                 (bd.end_bar - 8, -10.0), (bd.end_bar - 0.01, -4.0), (bd.end_bar, 0.0)])
     else:
         def sub_notes(c):
             if not bass_on(c):
@@ -232,7 +235,8 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
 
         sub = song.add(xb.SynthLine("sub", xb.SubLine(harm=0.22, drive=1.6, glide_ms=80.0, release_ms=40.0), sub_notes,
                                     bus="bass", gain_db=-3.0, sidechain=0.45, sc_release_ms=140.0))
-        sub.automate("gain_db", [(bass_in, -10.0), (intro.end_bar - 0.01, -3.0), (intro.end_bar, 0.0)])
+        sub.automate("gain_db", [(bass_in, -10.0), (intro.end_bar - 0.01, -3.0), (intro.end_bar, 0.0),
+                                 (bd.end_bar - 8, -12.0), (bd.end_bar - 0.01, -5.0), (bd.end_bar, 0.0)])
 
     # ---------------------------------------------------------------- music
     if liquid:

@@ -75,6 +75,24 @@ def sub_events(events, root: int, sub: int, vel: float = 0.9):
     return [(e[0], e[1], e[2] + shift, e[3] * vel) for e in events if e[2] - root < 12]
 
 
+def key_hz(key: Key, lo: float, hi: float, rng=None, degrees=(0, 4, 2, 3, 6)) -> float:
+    """A frequency in [lo, hi] Hz that is a scale tone of ``key`` (root/5th/3rd/4th/7th preferred) —
+    for tuning congas, bongos, toms and blips so hand percussion sits in the key instead of adding
+    random pitches. With ``rng`` a random candidate is chosen (deterministic)."""
+    cands = []
+    for d in degrees:
+        pc = (key.root_pc + key.scale[d % len(key.scale)]) % 12
+        for octv in range(0, 9):
+            f = float(midi_to_hz(12 * (octv + 1) + pc))
+            if lo <= f <= hi:
+                cands.append(f)
+    if not cands:
+        return float(np.sqrt(lo * hi))
+    if rng is None:
+        return cands[0]
+    return float(cands[int(rng.integers(len(cands)))])
+
+
 def kick_tune(key: Key, lo: float = 44.0, hi: float = 60.0) -> float:
     """Kick body pitch that is a chord tone of the key (root, fifth, fourth) inside [lo, hi] Hz."""
     for semis in (0, 7, 5, 3):

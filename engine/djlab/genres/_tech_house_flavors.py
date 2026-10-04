@@ -151,8 +151,8 @@ def build_flavor(plan: dict, rng: np.random.Generator, flavor: str) -> Song:
 
     # ---- flavor percussion
     if flavor == "talking":
-        congas = [drums.conga(float(rng.uniform(190, 230)), "open", rng=rng),
-                  drums.conga(float(rng.uniform(290, 330)), "slap", rng=rng)]
+        congas = [drums.conga(eh.key_hz(key, 180, 240, rng), "open", rng=rng),
+                  drums.conga(eh.key_hz(key, 280, 340, rng), "slap", rng=rng)]
         cp = ["...x......x..x..", "..x....x..x....."][int(rng.integers(2))]
         song.hits("perc_conga", congas, lambda c: ("......x.x.xxx.xx" if c.phrase_end else cp)
                   if c.kind in ("groove", "drop", "outro") or (c.kind == "intro" and c.i >= 16) else None,
@@ -161,8 +161,8 @@ def build_flavor(plan: dict, rng: np.random.Generator, flavor: str) -> Song:
         song.hits("rim", rim, lambda c: "..x..x....x..x.." if c.kind == "drop" and c.i % 4 >= 2 else None,
                   gain_db=-17.0, pan=0.3, sends={"delay8": 0.15})
     elif flavor == "warehouse":
-        toms = [drums.tom(float(rng.uniform(95, 110)), 0.35, rng=rng), drums.tom(float(rng.uniform(130, 150)), 0.3, rng=rng),
-                drums.tom(float(rng.uniform(175, 200)), 0.25, rng=rng)]
+        toms = [drums.tom(eh.key_hz(key, 90, 115, rng), 0.35, rng=rng), drums.tom(eh.key_hz(key, 125, 155, rng), 0.3, rng=rng),
+                drums.tom(eh.key_hz(key, 170, 210, rng), 0.25, rng=rng)]
         tom_p = ["......x..x....x.", "...x......x...x.", "......x...x..x.."][int(rng.integers(3))]
         song.hits("toms", toms, lambda c: ("..........x.x.xx" if c.phrase_end else tom_p)
                   if c.kind in ("drop",) or (c.kind == "groove" and c.i >= 8) or (c.kind == "intro" and c.i >= 24)
@@ -172,21 +172,21 @@ def build_flavor(plan: dict, rng: np.random.Generator, flavor: str) -> Song:
                   lambda c: "gogxgogogogxgogo" if c.kind == "drop" or (c.kind == "groove" and c.i >= 8) else
                   ("g.g.g.g.g.g.g.g." if c.kind in ("intro", "outro") and c.i >= 16 and not (c.kind == "outro" and c.bars_left <= 8) else None),
                   gain_db=-20.0, pan=0.45, humanize=0.2)
-        metal = drums.perc_blip(float(rng.uniform(600, 900)), 0.05, fm_index=3.0, ratio=1.41, rng=rng)
+        metal = drums.perc_blip(eh.key_hz(key, 580, 900, rng), 0.05, fm_index=3.0, ratio=1.41, rng=rng)
         mp = euclid(int(rng.integers(3, 6)), 16, int(rng.integers(1, 5)))
         song.hits("metal_perc", metal, lambda c: mp if c.kind in ("groove", "drop") or (c.kind == "intro" and c.i >= 16)
                   else None, gain_db=-15.0, pan=0.55, sends={"delay8": 0.18, "room": 0.1},
                   fx=[lambda x: fx.bitcrush(x, 10, 2)])
     else:  # shuffle
-        bongos = [drums.bongo(float(rng.uniform(450, 520)), "open", rng=rng),
-                  drums.bongo(float(rng.uniform(600, 680)), "slap", rng=rng),
-                  drums.bongo(float(rng.uniform(540, 600)), "mute", rng=rng)]
+        bongos = [drums.bongo(eh.key_hz(key, 440, 530, rng), "open", rng=rng),
+                  drums.bongo(eh.key_hz(key, 590, 700, rng), "slap", rng=rng),
+                  drums.bongo(eh.key_hz(key, 520, 620, rng), "mute", rng=rng)]
         trip = ["x..x..x.xx..", "x.xx..x..x.x", ".x.x.xx..x.x"][int(rng.integers(3))]  # 12 steps = 8th triplets
         song.hits("bongo_trip", bongos, lambda c: trip if (c.kind in ("groove", "drop") and c.i % 4 >= 2)
                   or (c.kind == "intro" and c.i >= 24) else None, gain_db=-14.0, pan=0.55, humanize=0.15,
                   sends={"room": 0.18})
-        congas = [drums.conga(float(rng.uniform(190, 230)), "open", rng=rng),
-                  drums.conga(float(rng.uniform(270, 310)), "mute", rng=rng)]
+        congas = [drums.conga(eh.key_hz(key, 180, 240, rng), "open", rng=rng),
+                  drums.conga(eh.key_hz(key, 260, 320, rng), "mute", rng=rng)]
         song.hits("perc_conga", congas, lambda c: ("...x..x.......x." if not c.phrase_end else "......x.x.xxx.xx")
                   if c.kind in ("groove", "drop", "outro") or (c.kind == "intro" and c.i >= 16) else None,
                   gain_db=-13.0, pan=-0.5, sends={"room": 0.2})

@@ -30,23 +30,23 @@ TEMPLATE = [
 FLAVORS = {
     # Neon Cathedral: choir-heavy, organ-tinted pads, glassy 3-against-4 arp, slow cathedral hook
     "techno-05": dict(prog=[0, 5, 2, 6], arp="three", arp_rate=1, arp_voice="glass", lead="glass",
-                      hook="cathedral", bass="roll3", bass_shape=None, arp2="up", organ=0.35, choir_db=-9.0, perc="tribal",
+                      hook="cathedral", mud=-2.5, bass="roll3", bass_shape=None, arp2="up", organ=0.35, choir_db=-9.0, perc="tribal",
                       kick_decay=0.36, swing=50.0, hall=4.5, vowel=("a", "o"), arp_gain=-9.5,
                       desc="קתדרלה של צלילים: מקהלה סינתטית ופדים עם גוון של עוגב, ארפג'יו זכוכיתי בשלוש-נגד-ארבע "
                            "ומלודיה איטית ורחבה בדרופ"),
     # Afterglow Protocol: bright Anyma-style supersaw arp + big anthem lead
     "techno-06": dict(prog=[0, 6, 5, 6], arp="updown", arp_rate=1, arp_voice="supersaw", lead="anthem",
-                      hook="anthem", bass="roll3", bass_shape=[0, 12, 0], arp2="converge", organ=0.0, choir_db=-12.0, perc="tight",
+                      hook="anthem", mud=-0.5, bass="roll3", bass_shape=[0, 12, 0], arp2="converge", organ=0.0, choir_db=-12.0, perc="tight",
                       kick_decay=0.32, swing=50.0, hall=3.8, vowel=("e", "a"), arp_gain=-10.0,
                       desc="ארפג'יו סופר-סו רחב ובוהק בסגנון Anyma, ליד המנוני גדול בדרופ ופדים בסיידצ'יין"),
     # Event Horizon: darker Massano drive, galloping bass, pedal arp, rhythmic pulse hook
     "techno-07": dict(prog=[0, 0, 5, 6], arp="pedal", arp_rate=1, arp_voice="supersaw_dark", lead="anthem_dark",
-                      hook="pulse", bass="gallop", bass_shape=[0, 0], arp2="updown", organ=0.0, choir_db=-13.0, perc="driving",
+                      hook="pulse", mud=-0.5, bass="gallop", bass_shape=[0, 0], arp2="updown", organ=0.0, choir_db=-13.0, perc="driving",
                       kick_decay=0.3, swing=50.0, hall=3.5, vowel=("o", "a"), arp_gain=-9.0,
                       desc="מלודיק טכנו כהה ודוהר בסגנון Massano: באס דוהר, ארפג'יו פדאל אפל וליד ריתמי וחד בדרופ"),
     # Silent Orbit: spacey Tale-Of-Us mood, 8th-note glass arp, soft breathy lead, long delays
     "techno-08": dict(prog=[0, 5, 3, 4], arp="converge", arp_rate=2, arp_voice="glass", lead="soft",
-                      hook="descend", bass="roll2", bass_shape=[0, 7], arp2="three", organ=0.15, choir_db=-10.0, perc="tribal",
+                      hook="descend", mud=-2.0, bass="roll2", bass_shape=[0, 7], arp2="three", organ=0.15, choir_db=-10.0, perc="tribal",
                       kick_decay=0.34, swing=51.0, hall=5.0, vowel=("u", "a"), arp_gain=-8.5,
                       desc="מסע חללי ושקט בסגנון Tale Of Us: ארפג'יו זכוכית בשמיניות עם דיליי ארוך, ליד רך ונושם "
                            "ופדים רחבים"),
@@ -217,7 +217,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
         seqs = arp_seqs2 if (c.kind == "drop" and c.i >= 16) else arp_seqs  # the arp evolves in the 2nd half
         return xt.arp_bar(seqs[chord_i(c)], c.i * 16, rate=rate, gate=0.7)
 
-    arp = song.notes("arp", arp_inst, arp_notes, gain_db=fl["arp_gain"], sidechain=0.45, humanize=0.02, hp=180.0,
+    arp = song.notes("arp", arp_inst, arp_notes, gain_db=fl["arp_gain"], sidechain=0.45, humanize=0.02, hp=150.0,
                      sends={"delay": 0.22, "hall": 0.14, "space": 0.06})
     i0, g0, b0, d0, o0 = intro.start_bar, grv.start_bar, bd.start_bar, drop.start_bar, outro.start_bar
     arp.automate("lp", [(i0 + 24, 700), (g0, 800), (g0 + 24, 3500), (g0 + 32, 5000), (b0, 1400), (b0 + 16, 900),
@@ -300,7 +300,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
 
     # ================================================================ mix
     song.buses["drums"].eq = [("peak", 2600.0, 2.0, 0.8), ("peak", 350.0, -1.5, 1.0)]
-    song.buses["music"].eq = [("peak", 380.0, -2.5, 0.8), ("peak", 2000.0, 2.0, 0.7)]
+    song.buses["music"].eq = [("peak", 380.0, fl.get("mud", -2.0), 0.8), ("peak", 2000.0, 2.0, 0.7)]
     song.buses["vox"].hp = 250.0
     song.master.lufs = -9.0
     song.instruments = ["tight tuned techno kick", "rolling arpeggiated bass", "wide arpeggio", "anthem lead hook",
