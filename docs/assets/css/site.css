@@ -999,3 +999,9 @@ kbd, .kbd { display: inline-block; min-width: 1.6em; padding: .05em .45em; borde
   .cam-badge, .chip[aria-pressed="true"], .btn--primary { border: 1px solid CanvasText; }
 }
 .select-field select { max-width: 100%; }
+.chapter-num--icon { -webkit-text-stroke: 0; color: var(--accent-ink); background: none; }
+.chapter-num--icon .icon { width: clamp(64px, 9vw, 120px); height: auto; stroke-width: 1.2; }
+.appx-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: var(--s3); }
+.appx { display: flex; gap: var(--s3); align-items: flex-start; }
+.appx > .icon { color: var(--accent-ink); width: 28px; height: 28px; }
+.appx > span { display: grid; gap: 4px; }

@@ -668,3 +668,70 @@ def trap_hats(rng, base=2, rolls=1, energy=1.0):
 
 def chord_roots(chords):
     return [min(c) for c in chords]
+
+
+# ============================================================================ melody / harmony helpers
+def scale_pcs(key):
+    return {(key.root_pc + s) % 12 for s in key.scale}
+
+
+def voiced(key, degrees, octave=3, size=3, center=None):
+    """Voice-led diatonic chords for scale degrees (0-based)."""
+    from .theory import voice_lead
+
+    out, prev = [], None
+    c0 = center if center is not None else key.root(octave) + 7
+    for d in degrees:
+        ch = voice_lead(prev, key.chord(d, octave, size), center=c0)
+        out.append(ch)
+        prev = ch
+    return out
+
+
+def make_melody(rng, key, chords, rhythm, lo, hi, contour=None, start=None, resolve=True, phrase_bars=2,
+                extra_pcs=None):
+    """Chord-aware hook generator.
+
+    ``rhythm``: ``[(step, len, vel), ...]`` for one *phrase* of ``phrase_bars`` bars (steps from 0).
+    ``chords``: one chord (list of MIDI) per bar; the phrase is repeated over all chords
+    (call → response), re-pitched to fit each bar's harmony while keeping the same rhythm and contour
+    (classic pop sequencing). Strong notes (on beats 1/3 or long) snap to chord tones, the rest move
+    stepwise in the scale; the last note of the last phrase resolves to the tonic.
+    Returns events ``(step, len, midi, vel)`` with steps from the start of the loop."""
+    spcs = set(scale_pcs(key)) | set(extra_pcs or ())
+    pool = [m for m in range(lo, hi + 1) if m % 12 in spcs]
+    if contour is None:
+        contour = [int(rng.choice([-2, -1, -1, 0, 1, 1, 2, 3, -3])) for _ in rhythm]
+    nph = max(1, len(chords) // phrase_bars)
+    if start is None:
+        mid = (lo + hi) / 2
+        start = min((m for m in pool if m % 12 in {x % 12 for x in chords[0]}), key=lambda m: abs(m - mid))
+    out = []
+    for p in range(nph):
+        prev = start
+        for j, (s, l, v) in enumerate(rhythm):
+            ch = chords[(p * phrase_bars + int(s) // 16) % len(chords)]
+            cpcs = {x % 12 for x in ch}
+            strong = (int(s) % 8 == 0) or l >= 3 or j == 0
+            i0 = min(range(len(pool)), key=lambda k: abs(pool[k] - prev))
+            tgt = pool[int(np.clip(i0 + (0 if j == 0 else contour[j]), 0, len(pool) - 1))]
+            if j == 0:
+                tgt = start if p == 0 else tgt
+            if strong:
+                cands = [m for m in pool if m % 12 in cpcs] or pool
+                d = contour[j] if j else 0
+                tgt = min(cands, key=lambda m: abs(m - tgt) + (0.4 if (m - prev) * d < 0 else 0))
+            if resolve and p == nph - 1 and j == len(rhythm) - 1:
+                roots = [m for m in pool if m % 12 == key.root_pc]
+                tgt = min(roots, key=lambda m: abs(m - prev))
+            out.append((float(s) + 16 * phrase_bars * p, l, int(tgt), v))
+            prev = tgt
+    return out
+
+
+def bars_events(events, bars):
+    """Split a multi-bar event list into a per-bar notes callable (like ``arrangement.clip``) but
+    keeping optional 5th-element flags."""
+    from .arrangement import clip
+
+    return clip(events, bars)

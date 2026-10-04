@@ -7,6 +7,10 @@ breakdown with pad + riser + snare roll, drop with impact and crash.
 
 Everything that can vary is drawn from ``rng`` (pattern pools, sound-design params, arrangement
 variant), so each plan entry (seed/key/BPM) gives a genuinely different track.
+
+Flavors (``FLAVOR_BY_ID``): ``classic`` (this file, the reference), ``talking`` (talking/wah bass
+hook), ``warehouse`` (darker, straighter, percussive, rumble + dub stab) and ``shuffle`` (heavy
+swing, bouncy octave bass, organ stabs + vocal chops) — see ``_tech_house_flavors.py``.
 """
 from __future__ import annotations
 
@@ -63,6 +67,24 @@ TEMPLATES = [
 
 @register("tech_house")
 def build(plan: dict, rng: np.random.Generator) -> Song:
+    """Dispatch to a flavor. ``classic`` is the original reference recipe (house-05, bit-identical);
+    the other flavors (talking / warehouse / shuffle) live in :mod:`._tech_house_flavors`."""
+    flavor = plan.get("style") or FLAVOR_BY_ID.get(plan.get("id", ""))
+    if flavor is None:  # new plan entries: pick a flavor from the seed without touching ``rng``
+        flavor = str(np.random.default_rng(int(plan.get("seed", 0)) + 7919).choice(list(FLAVORS)))
+    if flavor == "classic":
+        return _build_classic(plan, rng)
+    from ._tech_house_flavors import build_flavor
+
+    return build_flavor(plan, rng, flavor)
+
+
+# plan id → flavor (each track gets a distinct groove, bass and hook)
+FLAVOR_BY_ID = {"house-05": "classic", "house-06": "talking", "house-07": "warehouse", "house-08": "shuffle"}
+FLAVORS = ("classic", "talking", "warehouse", "shuffle")
+
+
+def _build_classic(plan: dict, rng: np.random.Generator) -> Song:
     song = Song(plan, rng, swing=float(rng.choice([54.0, 56.0, 57.0, 58.0])))
     key: Key = song.key
     total = song.target_bars()

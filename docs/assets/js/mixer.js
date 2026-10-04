@@ -328,7 +328,7 @@
     if (this.playing && p >= d - 0.02) { this.playing = false; this.pos = d; this.stopSrc(); this.syncUI(); }
     var bpm = this.effBpm();
     this.ui.bpm.textContent = opts.showBpm ? (bpm ? bpm.toFixed(2) : '--') : '•••';
-    this.ui.orig.textContent = opts.showBpm && it.bpm ? 'מקור ' + DJ.fmtBpm(it.bpm) : '';
+    this.ui.orig.textContent = opts.showBpm && it.bpm ? 'ORIG ' + DJ.fmtBpm(it.bpm) : '';
     this.ui.time.textContent = '-' + DJ.fmtTime(Math.max(0, d - p));
     this.ui.elapsed.textContent = DJ.fmtTime(p);
     var bi = this.beatInfo();
@@ -404,7 +404,8 @@
   function buildMixer(host) {
     host.innerHTML = '<div class="mx-strips"><div class="mx-strip" data-strip="A"></div><div class="mx-master" data-master></div><div class="mx-strip" data-strip="B"></div></div>' +
       '<div class="mx-xf"><span class="xf-lab">A</span><div data-xf class="xf-wrap"></div><span class="xf-lab">B</span></div>' +
-      '<div class="mx-curve"><span class="muted small">Crossfader</span><div class="seg seg--xs" role="group" aria-label="עקומת Crossfader"><button type="button" data-curve="blend" aria-pressed="' + (opts.curve === 'blend') + '">חלק</button><button type="button" data-curve="cut" aria-pressed="' + (opts.curve === 'cut') + '">חד</button></div></div>';
+      '<div class="mx-curve"><span class="small">Crossfader</span><div class="seg seg--xs" role="group" aria-label="עקומת Crossfader"><button type="button" data-curve="blend" aria-pressed="' + (opts.curve === 'blend') + '">חלק</button><button type="button" data-curve="cut" aria-pressed="' + (opts.curve === 'cut') + '">חד</button></div></div>' +
+      '<p class="mx-note" dir="rtl">אין כאן יציאת אוזניות נפרדת - כל מה שתשמעו הוא ה-Master. כדי "להציץ" לטראק לפני שהוא נכנס, הורידו את ה-Channel fader שלו ונסו להקשיב לקיק מתחת לטראק השני.</p>';
     decks.forEach(function (d) {
       var s = host.querySelector('[data-strip="' + d.id + '"]');
       s.innerHTML = '<div class="strip-id">' + d.id + '</div>';
@@ -416,6 +417,7 @@
         low: mk({ label: 'LOW', name: 'EQ Low דק ' + d.id, min: -1, max: 1, def: 0, color: '#2f7bff', format: function (v) { return dbFmt(eqMap(v)); }, onInput: function (v) { d.eq.low = eqMap(v); d.applyMix(); } }),
         filter: mk({ label: 'FILTER', name: 'Filter דק ' + d.id + ' (שמאלה LPF, ימינה HPF)', min: -1, max: 1, def: 0, color: '#ff2bd6', format: function (v) { return Math.abs(v) < 0.03 ? 'OFF' : (v < 0 ? 'LPF ' : 'HPF ') + Math.round(Math.abs(v) * 100) + '%'; }, onInput: function (v) { d.filter = v; d.applyMix(); } })
       };
+      d.knobs.filter.el.classList.add('knob--filter');
       var row = DJ.h('<div class="strip-fader"><div class="vu" data-vu="' + d.id + '" aria-hidden="true"><i></i><b></b></div></div>');
       d.chFader = new DJ.Fader({ orient: 'v', min: 0, max: 1, step: 0.005, def: 1, value: 1, name: 'Channel fader ' + d.id, cls: 'fader--ch', format: function (v) { return Math.round(v * 100) + '%'; }, onInput: function (v) { d.fader = v; d.applyMix(); } });
       row.appendChild(d.chFader.el);
@@ -427,7 +429,6 @@
     var mk2 = new DJ.Knob({ label: 'MASTER', name: 'Master volume', min: 0, max: 1, def: 0.8, value: 0.8, color: '#b6ff3b', format: function (v) { return Math.round(v * 100) + '%'; }, onInput: function (v) { if (masterGain) masterGain.gain.setTargetAtTime(v, ctx.currentTime, 0.01); } });
     m.appendChild(mk2.el);
     m.appendChild(DJ.h('<div class="master-vu" aria-hidden="true"><div class="vu vu--m" data-vu="L"><i></i><b></b></div><div class="vu vu--m" data-vu="R"><i></i><b></b></div><span>L</span><span>R</span></div>'));
-    m.appendChild(DJ.h('<p class="mx-note">אין כאן יציאת אוזניות נפרדת: כל מה שתשמעו הוא ה-Master. השתמשו ב-Channel fader כדי "להציץ".</p>'));
     xfFader = new DJ.Fader({ orient: 'h', min: -1, max: 1, step: 0.01, def: 0, value: 0, name: 'Crossfader (שמאלה A, ימינה B)', cls: 'fader--xf', format: function (v) { return v < -0.02 ? 'A ' + Math.round(-v * 100) + '%' : v > 0.02 ? 'B ' + Math.round(v * 100) + '%' : 'מרכז'; }, onInput: function (v) { xf = v; applyXfader(); } });
     host.querySelector('[data-xf]').appendChild(xfFader.el);
     host.querySelectorAll('[data-curve]').forEach(function (b) {
@@ -455,16 +456,17 @@
       '<div class="phase" data-phase role="group" aria-label="מד פאזה: כמה הביטים של B רחוקים מהביטים של A">' +
       '<div class="ph-meter"><span class="ph-side">B מאחר</span><div class="ph-track"><span class="ph-zone"></span><span class="ph-tick" style="left:25%"></span><span class="ph-tick" style="left:75%"></span><span class="ph-center"></span><span class="ph-needle" data-needle></span></div><span class="ph-side">B מקדים</span></div>' +
       '<div class="ph-info"><span class="ph-text" data-phtext>הפעילו את שני הדקים כדי לראות את הפאזה</span><span class="ph-tempo" data-phtempo></span><span class="ph-bar" data-phbar></span></div></div>' +
-      '<div class="zrow" data-zrow="B"><span class="ztag">B</span><canvas data-zoom="B" aria-hidden="true"></canvas></div>' +
-      '<div class="zoom-ctl"><button type="button" class="mini-btn" data-zoom-btn="out" aria-label="הרחקה">−</button><span data-zoom-lab>' + opts.zoom + 's</span><button type="button" class="mini-btn" data-zoom-btn="in" aria-label="קירוב">+</button></div>';
+      '<div class="zrow" data-zrow="B"><span class="ztag">B</span><canvas data-zoom="B" aria-hidden="true"></canvas></div>';
+    var zslot = DJ.$('[data-zoom-slot]');
+    if (zslot) zslot.innerHTML = '<span class="small muted">זום</span><div class="zoom-ctl" dir="ltr"><button type="button" class="mini-btn" data-zoom-btn="out" aria-label="הרחקה (יותר שניות)">−</button><span data-zoom-lab>' + opts.zoom + 's</span><button type="button" class="mini-btn" data-zoom-btn="in" aria-label="קירוב (פחות שניות)">+</button></div>';
     zoomEls.A = host.querySelector('[data-zoom="A"]'); zoomEls.B = host.querySelector('[data-zoom="B"]');
     phaseEl = { root: host.querySelector('[data-phase]'), needle: host.querySelector('[data-needle]'), text: host.querySelector('[data-phtext]'), tempo: host.querySelector('[data-phtempo]'), bar: host.querySelector('[data-phbar]') };
     var Z = [2, 4, 6, 10, 16];
-    host.querySelectorAll('[data-zoom-btn]').forEach(function (b) {
+    document.querySelectorAll('[data-zoom-btn]').forEach(function (b) {
       b.addEventListener('click', function () {
         var i = Z.indexOf(opts.zoom); if (i < 0) i = 2;
         i = DJ.clamp(i + (b.getAttribute('data-zoom-btn') === 'in' ? -1 : 1), 0, Z.length - 1);
-        opts.zoom = Z[i]; DJ.store.set('mx-zoom', opts.zoom); host.querySelector('[data-zoom-lab]').textContent = opts.zoom + 's';
+        opts.zoom = Z[i]; DJ.store.set('mx-zoom', opts.zoom); DJ.$('[data-zoom-lab]').textContent = opts.zoom + 's';
       });
     });
     // click/drag on zoomed waveform = scratch-free nudge (move position)
@@ -492,7 +494,7 @@
     if (d.item && d.item.bpm) {
       var bl = d.beatLen(), fd = d.firstBeat(), bpb = d.item.beats_per_bar || 4;
       var k0 = Math.ceil((t0 - fd) / bl), k1 = Math.floor((t0 + span - fd) / bl);
-      for (var k = k0; k <= k1; k++) {
+      for (var k = Math.max(k0, 0); k <= k1; k++) {
         var x = (fd + k * bl - t0) * pxPerSec;
         var down = ((k % bpb) + bpb) % bpb === 0, phrase = ((k % (bpb * 8)) + bpb * 8) % (bpb * 8) === 0;
         g.fillStyle = phrase ? 'rgba(255,43,214,.9)' : down ? 'rgba(255,255,255,.55)' : 'rgba(255,255,255,.18)';

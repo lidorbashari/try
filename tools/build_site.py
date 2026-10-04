@@ -584,6 +584,8 @@ def map_repo_path(rp: str, ctx: Ctx):
         return rel(ctx.out, DOCS / "guide" / (Path(p).stem + ".html")), "page"
     if low in ("guide", "guide/readme.md", "guide/index.md"):
         return rel(ctx.out, DOCS / "guide" / "index.html"), "page"
+    if re.fullmatch(r"guide/[^/]+\.md", p) and (ROOT / p).is_file():
+        return rel(ctx.out, DOCS / "guide" / (Path(p).stem + ".html")), "page"
     if re.fullmatch(r"crates/[^/]+\.md", p) and not low.endswith("readme.md"):
         return rel(ctx.out, DOCS / "crates" / (Path(p).stem + ".html")), "page"
     if low in ("crates", "crates/readme.md", "crates/index.json"):
@@ -810,6 +812,8 @@ def flatten_toc(tokens):
 def build_guide(ctx_base):
     src_dir = ROOT / "guide"
     files = sorted(p for p in src_dir.glob("*.md") if re.match(r"^\d{2}-", p.name)) if src_dir.exists() else []
+    extra = sorted(p for p in src_dir.glob("*.md") if not re.match(r"^\d{2}-", p.name)
+                   and p.stem.lower() not in ("readme", "index")) if src_dir.exists() else []
     # assets
     adir = src_dir / "assets"
     if adir.exists():
@@ -818,14 +822,17 @@ def build_guide(ctx_base):
                 dst = DOCS / "assets" / "guide" / f.relative_to(adir)
                 write(dst, f.read_bytes())
     chapters = []
-    for f in files:
+    for f in files + extra:
         text = read_text(f)
         fm, body = parse_front_matter(text)
+        appendix = f in extra
         num = fm.get("chapter")
         try:
             num = int(num)
         except Exception:
-            num = int(f.name[:2])
+            num = int(f.name[:2]) if not appendix else 0
+        if appendix:
+            num = 900 + extra.index(f)
         out = DOCS / "guide" / (f.stem + ".html")
         # drop a leading H1 (the page renders its own title)
         h1 = re.match(r"^\s*#\s+(.+?)\s*\n", body)
@@ -834,7 +841,7 @@ def build_guide(ctx_base):
             body = body[h1.end():]
         chapters.append({
             "src": f, "out": out, "fm": fm, "body": body,
-            "chapter": num, "slug": str(fm.get("slug") or f.stem[3:]), "file": f.stem,
+            "chapter": num, "slug": str(fm.get("slug") or (f.stem if appendix else f.stem[3:])), "file": f.stem, "appendix": appendix,
             "title": title, "title_en": str(fm.get("title_en") or ""), "summary": str(fm.get("summary") or ""),
             "level": str(fm.get("level") or ""), "reading_minutes": fm.get("reading_minutes"),
         })
@@ -859,14 +866,15 @@ def build_guide(ctx_base):
         c["audio"] = ctx.audio_refs
         c["prev"], c["next"] = prev_c, next_c
         toc_data.append({
-            "chapter": c["chapter"], "num": f"{c['chapter']:02d}", "slug": c["slug"], "file": c["file"],
+            "chapter": c["chapter"], "num": "" if c["appendix"] else f"{c['chapter']:02d}", "appendix": c["appendix"], "slug": c["slug"], "file": c["file"],
             "title": c["title"], "title_en": c["title_en"], "summary": c["summary"], "level": c["level"],
             "level_he": LEVEL_HE.get(c["level"].lower(), c["level"]), "reading_minutes": rm,
             "href": f"guide/{c['file']}.html", "headings": [t for t in c["toc"] if t["level"] == 2],
             "audio_count": len(ctx.audio_refs),
         })
+    n_main = sum(1 for c in chapters if not c["appendix"])
     for c in chapters:
-        write(c["out"], render_chapter(c, len(chapters)))
+        write(c["out"], render_chapter(c, n_main))
     return chapters, toc_data
 
 
@@ -878,7 +886,7 @@ def level_badge(level: str) -> str:
 
 
 def render_chapter(c, total) -> str:
-    num = f"{c['chapter']:02d}"
+    num = f"{c['chapter']:02d}" if not c.get("appendix") else ""
 
     def nav_card(o, dirn):
         if not o:
@@ -887,7 +895,7 @@ def render_chapter(c, total) -> str:
         ic = icon("arrow-right" if dirn == "prev" else "arrow-left")
         return (f'<a class="pn-card pn-{dirn}" href="{esc(o["file"])}.html">'
                 f'<span class="pn-label">{ic if dirn == "prev" else ""}{lab}{ic if dirn == "next" else ""}</span>'
-                f'<span class="pn-title"><span class="pn-num">{o["chapter"]:02d}</span>{esc(o["title"])}</span></a>')
+                f'<span class="pn-title">' + ("" if o.get("appendix") else f'<span class="pn-num">{o["chapter"]:02d}</span>') + f'{esc(o["title"])}</span></a>')
 
     toc_block = ""
     if c["toc_html"]:
@@ -906,11 +914,11 @@ def render_chapter(c, total) -> str:
 <article class="chapter" data-chapter="{esc(c['file'])}" data-chapter-num="{num}">
   <header class="chapter-hero">
     <div class="container">
-      <nav class="crumbs" aria-label="פירורי לחם"><a href="../index.html">בית</a><span aria-hidden="true">/</span><a href="index.html">הקורס</a><span aria-hidden="true">/</span><span aria-current="page">פרק {num}</span></nav>
+      <nav class="crumbs" aria-label="פירורי לחם"><a href="../index.html">בית</a><span aria-hidden="true">/</span><a href="index.html">הקורס</a><span aria-hidden="true">/</span><span aria-current="page">{f"פרק {num}" if num else esc(c["title"])}</span></nav>
       <div class="chapter-hero-grid">
-        <div class="chapter-num" aria-hidden="true">{num}</div>
+        <div class="chapter-num{'' if num else ' chapter-num--icon'}" aria-hidden="true">{num or icon('book')}</div>
         <div>
-          <p class="eyebrow">פרק {num} מתוך {total}</p>
+          <p class="eyebrow">{f"פרק {num} מתוך {total}" if num else "נספח לקורס"}</p>
           <h1 class="chapter-title">{esc(c['title'])}</h1>
           {title_en}
           {summary}
@@ -935,13 +943,15 @@ def render_chapter(c, total) -> str:
   </div>
   <nav class="container pn" aria-label="ניווט בין פרקים">{nav_card(c['prev'], 'prev')}{nav_card(c['next'], 'next')}</nav>
 </article>"""
-    return shell(c["out"], title=f"{num} · {c['title']}", body=body, active="guide",
+    return shell(c["out"], title=f"{num} · {c['title']}" if num else c["title"], body=body, active="guide",
                  description=c["summary"] or c["title"], scripts=("guide",), data=("catalog", "peaks", "guide"),
                  body_class="has-progress")
 
 
 def render_guide_index(toc_data) -> str:
     out = DOCS / "guide" / "index.html"
+    appendices = [t for t in toc_data if t.get("appendix")]
+    toc_data = [t for t in toc_data if not t.get("appendix")]
     if toc_data:
         rows = []
         for t in toc_data:
@@ -966,6 +976,10 @@ def render_guide_index(toc_data) -> str:
 </li>""")
         total_min = sum(t["reading_minutes"] for t in toc_data)
         listing = f'<ol class="ch-list" data-guide-list>{"".join(rows)}</ol>'
+        if appendices:
+            listing += '<h2 class="section-title" style="margin-top:var(--s6)">נספחים</h2><ul class="appx-grid">' + "".join(
+                f'<li><a class="card card--link appx" href="{esc(t["file"])}.html">{icon("book")}<span><b>{esc(t["title"])}</b><span class="muted small">{esc(t["summary"])}</span></span></a></li>'
+                for t in appendices) + '</ul>'
         stats = f"""<div class="guide-progress card" data-guide-progress>
   <div class="gp-ring" aria-hidden="true"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" class="gp-track"/><circle cx="60" cy="60" r="52" class="gp-fill" data-gp-fill/></svg><span data-gp-pct>0%</span></div>
   <div class="gp-text">
@@ -1585,6 +1599,7 @@ def render_tool_mixer() -> str:
       <label class="switch"><input type="checkbox" checked data-opt-phase><span></span>מד פאזה</label>
       <label class="switch"><input type="checkbox" data-opt-quantize><span></span>Quantize ל-Cue</label>
     </div>
+    <div class="mt-zoom" data-zoom-slot></div>
     <div class="mt-presets"><label class="select-field select-field--sm"><span class="sr-only">תרגיל מוכן</span><select data-preset><option value="">תרגיל מוכן…</option></select></label>
     <button class="btn btn--ghost btn--sm" type="button" data-help-toggle aria-expanded="false" aria-controls="mixer-help">{icon('keyboard')}<span>מקלדת ועזרה</span></button></div>
   </div>
@@ -1794,7 +1809,7 @@ def main(argv=None) -> int:
     sets = build_sets(ctx_base, track_ids)
     write(DATA / "sets.js", "/* generated by tools/build_site.py */\n" + js_global("DJLAB_SETS", sets))
 
-    write(DOCS / "index.html", render_home(catalog, plan, extras, toc_data, crates, sets))
+    write(DOCS / "index.html", render_home(catalog, plan, extras, [t for t in toc_data if not t.get("appendix")], crates, sets))
     write(DOCS / "library.html", render_library())
     write(DOCS / "practice.html", render_practice())
     write(DOCS / "about.html", render_about(catalog))
@@ -1814,7 +1829,7 @@ def main(argv=None) -> int:
     print(f"  tracks       {len(catalog['tracks'])} in catalog ({sum(1 for t in catalog['tracks'] if t.get('has_audio'))} with audio) / {len(plan)} planned")
     print(f"  practice     {len(catalog['practice'])} / {len(extras.get('practice', []))} planned · transitions {len(catalog['transitions'])} / {len(extras.get('transitions', []))} planned")
     print(f"  peaks        {len(peaks['files'])}/{n_audio} audio files ({STATS.get('peaks_computed', 0)} analysed this run)")
-    print(f"  guide        {len(toc_data)} chapters · crates {len(crates)} · sets {len(sets)}")
+    print(f"  guide        {sum(1 for t in toc_data if not t.get('appendix'))} chapters (+{sum(1 for t in toc_data if t.get('appendix'))} appendix) · crates {len(crates)} · sets {len(sets)}")
     print(f"  files        {len(WRITTEN)} written, {len(CHANGED)} changed, {removed} stale removed")
     for w in STATS["warnings"]:
         print(f"  warning: {w}")

@@ -8,7 +8,7 @@
   function indexPage() {
     var list = DJ.$('[data-guide-list]');
     if (!list) return;
-    var chapters = window.DJLAB_GUIDE || [];
+    var chapters = (window.DJLAB_GUIDE || []).filter(function (c) { return !c.appendix; });
     function paint() {
       var read = getRead(), done = 0, next = null;
       DJ.$$('.ch-row', list).forEach(function (row) {
