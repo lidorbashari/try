@@ -186,7 +186,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return None if c.bars_left > 2 else "gxgxgxgxgxgxgxgx"
         return ch_p
 
-    song.hits("hats", ch, ch_pat, gain_db=-14.0, pan=0.35, humanize=0.12, sends={"delay8": 0.05})
+    song.hits("hats", ch, ch_pat, gain_db=-12.5, pan=0.4, humanize=0.12, sends={"delay8": 0.05})
     oh = drums.hat(open_=True, decay=float(rng.uniform(0.09, 0.13)), tone=float(rng.uniform(1.0, 1.2)), rng=rng)
 
     def oh_pat(c):
@@ -198,7 +198,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return None
         return "..x...x...x...x."
 
-    song.hits("open_hat", oh, oh_pat, gain_db=-11.5, pan=-0.22, sends={"room": 0.12})
+    song.hits("open_hat", oh, oh_pat, gain_db=-10.5, pan=-0.25, sends={"room": 0.12})
     clap = drums.variants(drums.clap, 3, rng, jitter={"tone_hz": 0.05}, tone_hz=float(rng.uniform(1300, 1700)),
                           tail=float(rng.uniform(0.1, 0.15)))
 
@@ -333,7 +333,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
                                   drive=1.8, dist=0.2)
         lclip = clip(lead_ev, 4)
         lead = song.line("lead", lead_syn, lambda c: lclip(c) if (c.kind == "drop" and (c.name == "Drop 2" or c.i >= 16))
-                         else [], bus="music", gain_db=-11.0, sidechain=0.4,
+                         else [], bus="music", gain_db=-15.0, sidechain=0.4,
                          sends={"delay": 0.3, "reverb": 0.15}, hp=300.0, pan=0.12, width=1.3)
         lead.automate("cutoff", [(0, 1200.0)] + [(s.start_bar, 900.0) for s in secs if s.kind == "drop"]
                       + [(s.end_bar - 0.01, 3000.0) for s in secs if s.kind == "drop"])
@@ -437,7 +437,9 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     song.buses["music"].width = 1.4
     song.buses["music"].eq = [("peak", 2200.0, 2.0, 0.7)]
     song.returns["delay"].beats = 0.75
-    song.returns["reverb"].width = 1.4
+    song.returns["reverb"].width = 1.5
+    song.returns["delay"].width = 1.5
+    song.returns["hall"].width = 1.5
     song.master.lufs = -9.0
 
     style = "פרוגרסיב פסיי" if prog else "פסיטרנס פול-און"

@@ -1214,7 +1214,8 @@ def build_sets(ctx_base, track_ids):
         s = {
             "slug": slug, "file": f.stem, "title_he": title_he, "title": str(fm.get("title_en") or fm.get("title") or ""),
             "duration": fm.get("duration") or fm.get("duration_min") or fm.get("minutes"),
-            "genres": as_list(fm.get("genres")), "level": str(fm.get("level") or ""),
+            "genres": [GENRE_NAMES.get(g, g.replace("_", " ").title() if re.fullmatch(r"[a-z0-9_]+", g) else g) for g in as_list(fm.get("genres"))],
+            "level": str(fm.get("level") or ""),
             "bpm": str(fm.get("bpm") or fm.get("bpm_range") or ""), "tracks": tracks, "intro": intro,
             "href": f"sets/{f.stem}.html", "source": str(fm.get("source") or ("ours" if tracks else "")),
         }

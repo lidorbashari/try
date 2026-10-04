@@ -226,9 +226,9 @@ def house_drums(song: Song, kit: dict, rng, *, clap_from=8, hats_from=16, shaker
 def build_phrase_counter(entry, spec, rng):
     kit = make_kit(rng, "house", tune=55.0)
     song = new_song(entry, spec, rng, swing=54.0)
-    song.arrange([("Intro", "intro", 16, 3, 0), ("Groove", "groove", 16, 5, 0), ("Block 2", "groove", 32, 6, 0),
-                  ("Block 3", "groove", 32, 6, 0), ("Block 4", "groove", 16, 6, 0), ("Outro", "outro", 16, 3, 0)],
-                 128)
+    song.arrange([("Block 1 · Intro", "intro", 16, 3, 0), ("Block 1 · Bass In", "groove", 16, 5, 0),
+                  ("Block 2", "groove", 32, 6, 0), ("Block 3", "groove", 32, 6, 0), ("Block 4", "groove", 16, 6, 0),
+                  ("Block 4 · Outro", "outro", 16, 3, 0)], 128)
     key = song.key
     song.hits("kick", kit["kick"], FOUR, gain_db=-1.5, sc_source=True, humanize=0.0)
     song.hits("offhat", kit["ohat"], OFF_HAT, gain_db=-11.0, pan=-0.1, sends={"room": 0.06})
@@ -304,7 +304,6 @@ def build_phrase_counter(entry, spec, rng):
     ]
     d.cues = [("A", "Bar 1 · Bell", 0), ("B", "Bass In · Bar 17", 16), ("C", "Bell · Bar 33", 32),
               ("D", "Bell · Bar 65", 64), ("E", "Bell · Bar 97", 96), ("G", "Outro · Bar 113", 112)]
-    d.memory = [(f"Phrase {i + 1}", i * 8) for i in range(0, 16, 2)]
     d.pair_with = ["practice-03", "house-04"]
     d.instruments = ["house kick", "phrase crash every 8 bars", "bell every 32 bars", "snare fills (bar 8)",
                      "clap", "hats & shaker", "congas", "light pluck bass", "dub chords"]
@@ -377,8 +376,9 @@ def build_drums(entry, spec, rng):
     d.memory = [(s.name, s.start_bar) for s in song.sections] + [(f"Fill · Bar {b + 1}", b) for b in sorted(fills)]
     d.memory.sort(key=lambda m: m[1])
     d.instruments = [f"{cfg['kick']} kick", "clap", "offbeat open hat", "16th hats", "shaker",
-                     "rimshot" if cfg["perc"] == "rim" else "finger snap", cfg["extra"] == "ride" and "ride" or
-                     "tambourine", "snare fill every 32 bars", "crash every 16 bars"]
+                     "rimshot" if cfg["perc"] == "rim" else "finger snap",
+                     "ride" if cfg["extra"] == "ride" else "tambourine", "snare fill every 32 bars",
+                     "crash every 16 bars"]
     d.marks = {**{(r, c): 0.28 for r in range(4) for c in range(8)}, **{(r, 0): 0.6 for r in range(4)},
                (3, 7): 1.0}
     return song, d
@@ -536,8 +536,9 @@ def build_bass_swap_b(entry, spec, rng):
     b = song.line("bass", synth, bass, gain_db=-3.0, sidechain=0.45, sc_release_ms=110.0, humanize=0.0)
     b.automate("cutoff", [(16, 200), (31.9, 300), (32, 380), (96, 380)])
     # light melodic element: syncopated e-piano chords Em9 / Cmaj9 / D6/9
-    voicings = [[key.degree(d, 3) for d in (2, 4, 6, 8)], [key.degree(d, 3) for d in (0, 2, 4, 6)],
-                [key.degree(d, 3) for d in (1, 3, 5, 7)]]
+    voicings = [[key.degree(d, 3) for d in (2, 4, 6, 8)],    # Em9 (rootless: G B D F#)
+                [key.degree(d, 3) for d in (5, 7, 9, 11)],   # Cmaj7
+                [key.degree(d, 3) for d in (6, 7, 8, 10)]]   # Dadd9
     voicings = [voice_lead(None, v, center=64) for v in voicings]
     seq = [0, 0, 1, 2]
 
@@ -766,7 +767,7 @@ def build_cue_hunt(entry, spec, rng):
     ev.add(fx.riser(bar_s * 4, "noise", rng=rng), 64, align="end", gain_db=-9.0)
     ev.add(fx.reverse_cymbal(bar_s, rng=rng), 32, align="end", gain_db=-8.0)
     ev.add(fx.reverse_cymbal(bar_s * 0.5, rng=rng), 48, align="end", gain_db=-10.0)
-    ev.add(drums.metal_hit(float(key.degree(0, 3) and 196.0), 0.5, rng=rng), 48, gain_db=-12.0)
+    ev.add(drums.metal_hit(float(440.0 * 2 ** ((key.degree(0, 3) - 69) / 12)), 0.5, rng=rng), 48, gain_db=-12.0)
 
     d = Drill(category="cue", tonal=True, preview=(12, 20))
     d.description_he = (
@@ -858,7 +859,7 @@ def build_eq_ear(entry, spec, rng):
         chords.append(ch)
         prev = ch
     song.notes("stabs", inst.stab(cutoff=900.0, env_amt=3000.0, decay=0.16),
-               lambda c: [(3, 1, chords[c.i % 4 if False else (c.bar // 2) % 4], 0.85),
+               lambda c: [(3, 1, chords[(c.bar // 2) % 4], 0.85),
                           (10, 1.5, chords[(c.bar // 2) % 4], 0.75)],
                gain_db=-8.0, sidechain=0.5, sends={"delay": 0.2, "reverb": 0.12}, width=1.5)
     vox = inst.vocal_chop(vowel="a", vowel_to="e", shift=1.1, scoop=-1.0)
@@ -909,7 +910,7 @@ def build_eq_ear(entry, spec, rng):
             pos = song_.grid.bar_sample(b) - a0
             if 0 <= pos < n:
                 k = min(crash.shape[0], n - pos)
-                out[pos:pos + k] += crash[:k] * F32(0.16 * 10 ** (makeup.get("high", 0) / 40))
+                out[pos:pos + k] += crash[:k] * F32(0.2)
         return out
 
     d = Drill(category="eq", tonal=True, post=post, preview=(0, 24))
@@ -938,8 +939,7 @@ def build_eq_ear(entry, spec, rng):
     d.instruments = ["tech-house kick", "rolling bass", "chord stabs", "formant vocal chops", "clap", "hats",
                      "open hat", "shaker", "ride", "rimshot", "3-band isolator (250 Hz / 3 kHz)"]
     shade = {"low": 0.95, "mid": 0.7, "high": 0.45, "full": 0.25}
-    d.marks = {(r, c): shade[(["full"] + rounds)[min(r * 2 + c // 4, len(rounds))]] for r in range(4)
-               for c in range(8)}
+    d.marks = {(r, c): shade[(["full"] + rounds)[r]] for r in range(4) for c in range(8)}
     return song, d
 
 
@@ -1006,7 +1006,6 @@ def build_tempo_bridge(entry, spec, rng):
     roots2 = [key.degree(dg, 2) for dg in prog]
     triads = [mkchord(r + 12, q) for r, q in zip(roots2, qual)]  # around octave 3
     triads = [voice_lead(None, t, center=62) for t in triads]
-    tonal = lambda c: c.bar < 80 and c.bar not in brk  # noqa: E731
 
     def bass(c):
         if not (16 <= c.bar < 80) or c.bar in brk:
@@ -1014,7 +1013,7 @@ def build_tempo_bridge(entry, spec, rng):
         r = root_at_least(roots2[c.i % 4] - 12, 31)
         return [(0, 2.5, r, 1.0), (3, 2.5, r, 0.85), (8, 2.5, r, 0.95), (11, 1.5, r, 0.85), (14, 1.5, r + 7, 0.75)]
 
-    song.notes("bass", inst.bass_808(decay=0.55, drive=2.0, punch=1.5), bass, bus="bass", gain_db=-5.0,
+    song.notes("bass", inst.sub_bass(harmonics=0.3, drive=1.8, release=0.05), bass, bus="bass", gain_db=-5.0,
                sidechain=0.35, sc_release_ms=110.0)
     D4 = key.root(3) + 12  # D4 = 62
     oud_riff = [  # 4 bars over Dm | Bb | C | A, D harmonic minor (C# on the A chord)
@@ -1027,8 +1026,11 @@ def build_tempo_bridge(entry, spec, rng):
         (48, 1, 7, .9), (50, 1, 5, .7), (51, 1, 3, .75), (52, 2, 2, .85), (54, 1, 3, .7), (55, 1, 2, .7),
         (56, 2, -1, .9), (58, 2, 2, .8), (60, 4, -5, .85)]
 
-    def oud(c):
-        if not (16 <= c.bar < 80) or (32 <= c.bar < 48 and c.i % 4 >= 2) or (56 <= c.bar < 80 and c.i % 4 >= 2):
+    def is_hook(c):
+        return 32 <= c.bar < 48 or 56 <= c.bar < 80
+
+    def oud(c):  # verse + break: full riff; hooks: answers the vocal (bars 3-4 of every 4)
+        if not (16 <= c.bar < 80) or (is_hook(c) and c.i % 4 < 2):
             return []
         off = (c.i % 4) * 16
         return [(s - off, l, D4 + o, v) for s, l, o, v in oud_riff if off <= s < off + 16]
@@ -1042,9 +1044,8 @@ def build_tempo_bridge(entry, spec, rng):
         (48, 1.5, 14, .9), (51, 1, 15, .75), (52, 1, 14, .8), (54, 2, 11, .85), (58, 4, 7, .9)]
     vox = inst.vocal_chop(vowel="a", vowel_to="e", shift=1.12, scoop=-1.5, vibrato=0.4)
 
-    def vox_n(c):
-        hook = (32 <= c.bar < 48) or (56 <= c.bar < 80) or (80 <= c.bar < 88)
-        if not hook:
+    def vox_n(c):  # hooks: call (bars 1-2 of every 4); outro bars 81-88: the whole phrase, a-cappella style
+        if not ((is_hook(c) and c.i % 4 < 2) or 80 <= c.bar < 88):
             return []
         off = (c.i % 4) * 16
         return [(s - off, l, D4 + o, v) for s, l, o, v in vox_riff if off <= s < off + 16]
@@ -1061,11 +1062,10 @@ def build_tempo_bridge(entry, spec, rng):
         fxl.add(crash, b, gain_db=-9.0)
     fxl.add(fx.downlifter(song.grid.bar_sec * 2, rng=rng), 48, gain_db=-12.0)
     fxl.add(fx.riser(song.grid.bar_sec * 4, "noise", rng=rng), 56, align="end", gain_db=-11.0)
-    _ = tonal
 
     d = Drill(category="tempo", tonal=True, preview=(76, 96))
     d.description_he = (
-        "גרוב ים-תיכוני/רגאטון ב-100 BPM ברה מינור (7A): דרבוקה במקצב מקסום, קיק ישר עם סנר דמבו, באס 808, "
+        "גרוב ים-תיכוני/רגאטון ב-100 BPM ברה מינור (7A): דרבוקה במקצב מקסום, קיק ישר עם סנר דמבו, סאב-באס, "
         "עוּד סינתטי בסולם רה מינור הרמוני (עם צבע חיג'אז על אקורד ה-A) וצ'ופים ווקאליים בפזמון. 16 התיבות "
         "האחרונות מתרוקנות בהדרגה: תיבות 81–88 — תופים וצ'ופים ווקאליים בלבד (בסגנון אקפלה), תיבות 89–96 — תופים "
         "בלבד, והתיבה האחרונה (96) נקייה לגמרי: רק ארבעה רבעים של קיק ודרבוקה — מושלם ל-Echo Out ולכניסה "
@@ -1084,7 +1084,7 @@ def build_tempo_bridge(entry, spec, rng):
               ("G", "Outro · Vox + Drums · Bar 81", 80), ("H", "Drums Only · Bar 89", 88)]
     d.pair_with = ["mainstream-15", "house-03", "practice-03", "transition-08"]
     d.instruments = ["darbuka (doum / tek / ka, maqsum)", "reggaeton kick + dembow snare & clap", "riq", "shaker",
-                     "808 bass", "synth oud (Karplus-Strong)", "formant vocal chops", "string pad", "riser & downlifter"]
+                     "sub bass", "synth oud (Karplus-Strong)", "formant vocal chops", "string pad", "riser & downlifter"]
     d.extra = {"echo_out_bar": last + 1, "next_bpm": 124}
     d.marks = {**{(r, c): 0.3 for r in range(4) for c in range(8)}, **{(3, c): 0.8 for c in range(8)}, (3, 7): 1.0}
     return song, d
