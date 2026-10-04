@@ -384,7 +384,7 @@ def _trap(plan, rng):
         return "........x......."
 
     cl = song.hits("clap", cs, clap_pat, gain_db=-3.0, sends={"reverb": 0.18})
-    cl.automate("gain_db", [(0, 0.0), (build_s.start_bar - 0.01, 0.0), (build_s.start_bar, -12.0),
+    cl.automate("gain_db", [(0, 0.0), (build_s.start_bar - 0.01, 0.0), (build_s.start_bar, -16.0),
                             (build_s.end_bar - 0.01, 0.0), (build_s.end_bar, 0.0)])
     hats = drums.variants(drums.hat, 4, rng, jitter={"decay": 0.1}, decay=float(rng.uniform(0.028, 0.04)),
                           tone=float(rng.uniform(1.05, 1.25)))
@@ -427,12 +427,12 @@ def _trap(plan, rng):
 
     b808 = xm.synth_808(decay=float(rng.uniform(1.4, 1.9)), drive=float(rng.uniform(2.0, 2.8)), punch=7.0,
                         glide_ms=float(rng.uniform(70, 110)), seed=song.seed)
-    song.line("808", b808, b808_notes, bus="bass", gain_db=-3.0, sidechain=0.4, sc_release_ms=70.0)
+    song.line("808", b808, b808_notes, bus="bass", gain_db=-1.5, sidechain=0.4, sc_release_ms=70.0)
 
     # ---------------------------------------------------------------- music
     br = TRAP_BELL_RHYTHMS[int(rng.integers(len(TRAP_BELL_RHYTHMS)))]
     bell_ch = [chords[0], chords[0], chords[1], chords[1], chords[2], chords[2], chords[3], chords[3]]
-    mel = xm.make_melody(rng, key, bell_ch, br, key.root(5) - 5, key.root(6), phrase_bars=2)
+    mel = xm.make_melody(rng, key, bell_ch, br, key.root(4) + 2, key.root(5) + 7, phrase_bars=2)
     mclip = clip(mel, 8)
 
     def bell_notes(c):
@@ -442,14 +442,14 @@ def _trap(plan, rng):
             return mclip(c) if c.i % 2 == 0 else []
         return []
 
-    bells = song.notes("bells", inst.bell(ratio=float(rng.choice([3.5, 2.0, 4.0])), index=2.5, decay=1.1),
-                       bell_notes, gain_db=-9.0, sends={"reverb": 0.22, "delay": 0.2}, pan=0.15, width=1.4,
+    bells = song.notes("bells", inst.bell(ratio=float(rng.choice([3.5, 2.0, 4.0])), index=1.8, decay=1.1),
+                       bell_notes, gain_db=-12.5, sends={"reverb": 0.22, "delay": 0.2}, pan=0.15, width=1.4,
                        sidechain=0.25)
-    bells.automate("lp", [(verse.start_bar, 2500), (verse.start_bar + 8, 12000), (outro.start_bar, 12000),
+    bells.automate("lp", [(verse.start_bar, 2000), (verse.start_bar + 8, 6500), (outro.start_bar, 6500),
                           (beat_only_from, 1500)])
     song.notes("pluck", xm.square_pluck(pw=0.3, cutoff=700.0, env_amt=2500.0, decay=0.12),
-               lambda c: [(s, l, m - 12, v * 0.8) for s, l, m, v in mclip(c)] if c.kind == "drop" else [],
-               gain_db=-13.0, sends={"delay": 0.15}, pan=-0.25)
+               lambda c: [(s, l, m, v * 0.8) for s, l, m, v in mclip(c)] if c.kind == "drop" else [],
+               gain_db=-15.0, sends={"delay": 0.15}, pan=-0.25)
     choir = xm.chant(vowel="u", vowel_to="o", voices=4, shift=0.95, fall=0.0, breath=0.1, spread=0.8, release=0.8)
 
     def choir_notes(c):
