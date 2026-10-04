@@ -218,7 +218,7 @@ def build_flavor(plan: dict, rng: np.random.Generator, flavor: str) -> Song:
                           swing=song.swing, humanize=0.03)
         bass.automate("lp", [(groove, 600), (groove + 8, 2500), (drop1 - 16, 2500), (bd.end_bar - 8, 300),
                              (drop1 - 0.01, 1200), (drop1, 9000), (outro.start_bar, 9000), (bass_off, 700)])
-        bass.automate("gain_db", [(bd.end_bar - 8, -6.0), (drop1 - 0.01, -1.5), (drop1, 0.0)])
+        bass.automate("gain_db", [(bd.end_bar - 8.01, 0.0), (bd.end_bar - 8, -6.0), (drop1 - 0.01, -1.5), (drop1, 0.0)])
     elif flavor == "warehouse":
         var = ROLL_VARIATIONS[int(rng.integers(len(ROLL_VARIATIONS)))]
 

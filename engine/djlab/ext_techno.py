@@ -49,6 +49,16 @@ def _note_rng(freq, salt=0):
     return np.random.default_rng((int(freq * 1000) * 31 + salt) % (2 ** 31))
 
 
+def kick_tune(key, lo=41.0, hi=58.0):
+    """Kick body frequency in ``[lo, hi]`` Hz: the key root if possible, else its fifth, else fourth."""
+    for semis in (0, 7, 5):
+        for octv in (0, 1, 2):
+            f = 440.0 * 2 ** ((key.root(octv) + semis - 69) / 12)
+            if lo <= f <= hi:
+                return float(f)
+    return 50.0
+
+
 def pick(rng, seq):
     return seq[int(rng.integers(len(seq)))]
 
@@ -118,7 +128,7 @@ def pitch_shift(x, semis):
 
 # ============================================================================ instruments
 def supersaw_pluck(cutoff=500.0, env_amt=6000.0, decay=0.16, sustain=0.18, release=0.22, detune=0.22,
-                   mix=0.55, width=1.0, res=0.25, body=0.15, sr=SR):
+                   mix=0.55, width=0.55, res=0.25, body=0.15, sr=SR):
     """Wide supersaw pluck for melodic-techno arpeggios (stereo, filter-enveloped)."""
     def inst(freq, dur, vel):
         gate, n = _n(dur, release, sr)
@@ -133,18 +143,19 @@ def supersaw_pluck(cutoff=500.0, env_amt=6000.0, decay=0.16, sustain=0.18, relea
     return inst
 
 
-def glass_pluck(ratio=2.0, index=2.2, decay=0.5, release=0.6, shimmer=0.25, sr=SR):
-    """Glassy FM/triangle pluck (Tale Of Us / cinematic arps & leads). Stereo via a detuned copy."""
+def glass_pluck(ratio=2.0, index=2.2, decay=0.5, release=0.6, shimmer=0.25, side=0.35, sr=SR):
+    """Glassy FM/triangle pluck (Tale Of Us / cinematic arps & leads). Mid-dominant stereo: a slightly
+    detuned copy is added as the side signal (``side`` ≈ its level), so it stays mono-compatible."""
     def inst(freq, dur, vel):
         gate, n = _n(max(dur, 0.12), release, sr)
         t = np.arange(n) / sr
         ienv = np.exp(-t / (decay * 0.35))
-        l = fm(freq, n, ratio, index * vel, ienv) * 0.7 + triangle(freq, n) * 0.4
-        r = fm(freq * 1.0035, n, ratio, index * vel, ienv) * 0.7 + triangle(freq * 0.9965, n, 0.3) * 0.4
+        m = fm(freq, n, ratio, index * vel, ienv) * 0.7 + triangle(freq, n) * 0.4
+        d = fm(freq * 1.004, n, ratio, index * vel, ienv) * 0.7 + triangle(freq * 0.996, n, 0.3) * 0.4
         if shimmer:
-            l = l + shimmer * sine(freq * 4.0, n) * np.exp(-t / (decay * 0.2))
-            r = r + shimmer * sine(freq * 4.01, n, 0.25) * np.exp(-t / (decay * 0.2))
-        x = np.stack([l, r], axis=1)
+            m = m + shimmer * sine(freq * 4.0, n) * np.exp(-t / (decay * 0.2))
+            d = d + shimmer * sine(freq * 4.01, n, 0.25) * np.exp(-t / (decay * 0.2))
+        x = np.stack([m + side * d, m - side * d], axis=1)
         env = np.exp(-t / decay) * 0.75 + 0.25
         env = env * adsr(n, gate, 0.002, 0.1, 1.0, release, sr, curve=4.0)
         return _finish(x * env[:, None], vel, rel_fade=512)
@@ -152,7 +163,7 @@ def glass_pluck(ratio=2.0, index=2.2, decay=0.5, release=0.6, shimmer=0.25, sr=S
 
 
 def choir(vowel="a", vowel_to="o", shift=1.0, voices=3, vibrato=0.12, breath=0.06, attack=0.5,
-          release=1.2, bright=5500.0, sr=SR):
+          release=1.2, bright=5500.0, corr=0.5, sr=SR):
     """Choir-like vowel pad: per channel ``voices`` detuned glottal saws with independent vibrato through
     a formant bank (slowly morphing ``vowel`` → ``vowel_to``), breath noise, chorus. Stereo."""
     def inst(freq, dur, vel):
@@ -169,16 +180,16 @@ def choir(vowel="a", vowel_to="o", shift=1.0, voices=3, vibrato=0.12, breath=0.0
                 src += saw(f, n, rng.random())
             src = src / voices + breath * white(n, rng)
             chans.append(formant_filter(src.astype(F32), vowel, vowel_to, shift, sr))
-        x = np.stack(chans, axis=1)
+        x = decorrelate(chans[0], chans[1], corr)
         x = lp(hp(x, 140.0, 2), bright, 2)
-        x = chorus(x, 0.35, 2.5, 14.0, 0.35)
+        x = chorus(x, 0.35, 2.5, 14.0, 0.25)
         env = adsr(n, gate, attack, 0.6, 0.9, release, sr, curve=3.0)
         return _finish(x * env[:, None], vel, rel_fade=2048)
     return inst
 
 
 def anthem_lead(detune=0.2, bright=0.8, vib=0.14, attack=0.006, release=0.4, sustain=0.72, scoop=0.6,
-                octave_up=0.2, sub=0.25, sr=SR):
+                octave_up=0.2, sub=0.25, spread=0.5, sr=SR):
     """Big melodic-techno lead: supersaw + octave shimmer + square sub-octave, 24 dB LP with a
     pluck-to-sustain envelope, pitch scoop into each note and delayed vibrato. Stereo."""
     def inst(freq, dur, vel):
@@ -186,7 +197,7 @@ def anthem_lead(detune=0.2, bright=0.8, vib=0.14, attack=0.006, release=0.4, sus
         t = np.arange(n) / sr
         semis = vib * np.sin(TAU * 5.2 * t) * np.clip((t - 0.2) / 0.3, 0, 1) - scoop * np.exp(-t / 0.022)
         f = freq * 2 ** (semis / 12)
-        x = supersaw(f, n, detune=detune, mix=0.5, rng=_note_rng(freq, 3))
+        x = supersaw(f, n, detune=detune, mix=0.5, spread=spread, rng=_note_rng(freq, 3))
         x = hp(x, freq * 0.7, 1)
         if octave_up:
             x = x + as_stereo(saw(f * 2, n, 0.31)) * octave_up
@@ -208,19 +219,19 @@ def soft_lead(vib=0.18, release=0.5, bright=0.4, sr=SR):
         f = freq * 2 ** (semis / 12)
         l = triangle(f, n) + 0.35 * sine(f * 2, n) + bright * 0.3 * saw(f, n, 0.1)
         r = triangle(f * 1.003, n, 0.2) + 0.35 * sine(f * 2.006, n, 0.1) + bright * 0.3 * saw(f * 0.997, n, 0.6)
-        x = lp(np.stack([l, r], axis=1), 2500 + 3000 * bright, 2)
+        x = lp(np.stack([l * 0.8 + r * 0.2, r * 0.8 + l * 0.2], axis=1), 2500 + 3000 * bright, 2)
         x = x + as_stereo(white(n, _note_rng(freq, 9)) * 0.03)
         env = adsr(n, gate, 0.02, 0.4, 0.8, release, sr, curve=3.5)
         return _finish(x * env[:, None], vel, rel_fade=512)
     return inst
 
 
-def warm_pad(attack=1.2, release=2.0, cutoff=2200.0, detune=0.28, warmth=0.5, organ=0.0, sr=SR):
+def warm_pad(attack=1.2, release=2.0, cutoff=2200.0, detune=0.28, warmth=0.5, organ=0.0, spread=0.65, sr=SR):
     """Lush stereo pad: supersaw + triangle (+ optional organ-like octave sines) with slow filter drift."""
     def inst(freq, dur, vel):
         gate, n = _n(dur, release, sr)
         t = np.arange(n) / sr
-        x = supersaw(freq, n, detune=detune, mix=0.6, rng=_note_rng(freq, 5))
+        x = supersaw(freq, n, detune=detune, mix=0.6, spread=spread, rng=_note_rng(freq, 5))
         x = x * (1 - warmth * 0.5) + as_stereo(triangle(freq, n)) * warmth * 0.6
         if organ:
             x = x + organ * np.stack([sine(freq * 2, n) + 0.5 * sine(freq * 3, n),

@@ -106,7 +106,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     from ..theory import voice_lead
     for d in degs:
         kk = key if (dark and d == 4) else nat
-        ch = voice_lead(prev, kk.chord(d, 3, 3), center=key.root(3) + 9)
+        ch = voice_lead(prev, kk.chord(d, 3, 3), center=key.root(3) + 3)
         chords.append(ch)
         prev = ch
     roots = [_bass_midi(nat.degree(d, 1) if not (dark and d == 4) else key.degree(d, 1)) for d in degs]
@@ -163,7 +163,9 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
 
     song.hits("dembow", dembow_s, dembow_pat, gain_db=-4.5, sends={"room": 0.12, "reverb": 0.05}, humanize=0.08,
               timing_ms=1.0)
-    song.layer("dembow").automate("gain_db", _ramp_into(song, "Perreo", 2, -6.0, 0.0) if not dark else [(0, 0.0)])
+    pb0 = song.bar("Perreo")
+    song.layer("dembow").automate("gain_db", [(0, 0.0), (pb0 - 2.01, 0.0), (pb0 - 2, -9.0), (pb0 - 0.01, -1.0),
+                                              (pb0, 0.0)])
 
     clap = drums.clap(tightness=0.8, tone_hz=float(rng.uniform(1200, 1500)), tail=0.12, rng=rng)
     song.hits("clap", clap, lambda c: "......x.......x." if c.kind == "drop" else None, gain_db=-8.0,
@@ -259,21 +261,19 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
         return ev
 
     gl = song.notes("guitar", guitar, gtr_notes, gain_db=-9.5, pan=-0.25, sends={"reverb": 0.18, "delay8": 0.1},
-                    sidechain=0.2, humanize=0.1, timing_ms=4.0)
+                    sidechain=0.2, humanize=0.1)
     gl.automate("lp", [(verso.start_bar, 2500), (verso.start_bar + 4, 9000), (outro.start_bar, 9000),
                        (drums_only_from, 900)])
 
     pad = song.notes("pad", xm.soft_pad(attack=0.5, cutoff=float(rng.uniform(1300, 1900))),
-                     lambda c: [(0, 63.5, chords[c.i % 4], 0.7)] if c.kind in ("groove", "breakdown", "drop")
-                     and c.i % 4 == 0 and False else
-                     ([(0, 15.5, chord_at(c), 0.7)] if c.kind in ("groove", "breakdown", "drop") else []),
+                     lambda c: [(0, 15.5, chord_at(c), 0.7)] if c.kind in ("groove", "breakdown", "drop") else [],
                      gain_db=-15.0 if not dark else -13.0, sends={"hall": 0.25}, width=1.5, sidechain=0.35)
     pad.automate("gain_db", song.section_points({"Puente": 3.0, "Perreo": -3.0}, 0.0, ramp_bars=1))
 
     # hook (square pluck) — chord-aware call/response, generated per seed
     rhythm = HOOK_RHYTHMS[int(rng.integers(len(HOOK_RHYTHMS)))]
-    lo, hi = key.root(4) - 3, key.root(5) + 4
-    hook = xm.make_melody(rng, nat if not dark else key, chords, rhythm, lo, hi)
+    lo, hi = key.root(4) - 5, key.root(5) + 2
+    hook = xm.make_melody(rng, nat, chords, rhythm, lo, hi)
     hook_clip = clip(hook, 4)
     lead_inst = xm.square_pluck(pw=float(rng.uniform(0.3, 0.45)), cutoff=float(rng.uniform(800, 1200)),
                                 env_amt=float(rng.uniform(3500, 6000)), decay=float(rng.uniform(0.08, 0.13)))
@@ -354,8 +354,3 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     return song
 
 
-def _ramp_into(song, name, bars, lo, hi):
-    s = song.find(name)
-    if s is None:
-        return [(0, 0.0)]
-    return [(s.start_bar - bars, lo), (s.start_bar - 0.01, lo), (s.start_bar, hi)]

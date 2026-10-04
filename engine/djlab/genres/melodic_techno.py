@@ -79,11 +79,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
         root += 12
     while root > 41:
         root -= 12
-    kick_hz = 440 * 2 ** ((root - 69) / 12)
-    while kick_hz > 62:
-        kick_hz /= 2
-    while kick_hz < 40:
-        kick_hz *= 2
+    kick_hz = xt.kick_tune(key)
 
     prog = fl["prog"]
     arp_chords = xt.chords_for(key, prog, octave=3, size=4, center=key.root(3) + 9)
@@ -107,9 +103,9 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return "x...x...x......."
         return "x...x...x...x..."
 
-    song.hits("kick", kick, kick_pat, gain_db=-2.0, sc_source=True, humanize=0.0)
+    song.hits("kick", kick, kick_pat, gain_db=-1.5, sc_source=True, humanize=0.0)
 
-    clap = xt.stereo_variants(drums.clap, 3, rng, jitter={"tone_hz": 0.05}, corr=0.6,
+    clap = xt.stereo_variants(drums.clap, 3, rng, jitter={"tone_hz": 0.05}, corr=0.75,
                               tone_hz=float(rng.uniform(1050, 1300)), tail=float(rng.uniform(0.18, 0.24)))
 
     def clap_pat(c):
@@ -117,12 +113,12 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return None
         return "....x.......x..." if not (c.phrase_end and c.kind in ("groove", "drop")) else "....x.......x..x"
 
-    song.hits("clap", clap, clap_pat, gain_db=-5.0, sends={"reverb": 0.28, "hall": 0.06}, timing_ms=1.0)
+    song.hits("clap", clap, clap_pat, gain_db=-2.5, sends={"reverb": 0.28, "hall": 0.06}, timing_ms=1.0)
     snr = drums.snare(tone_hz=float(rng.uniform(180, 210)), snappy=0.8, decay=0.14, kind="tight", rng=rng)
     song.hits("snare", snr, lambda c: "....x.......x..." if c.kind == "drop" else None, gain_db=-13.0,
               sends={"reverb": 0.2})
 
-    hats = xt.stereo_variants(drums.hat, 4, rng, jitter={"decay": 0.15}, corr=0.35,
+    hats = xt.stereo_variants(drums.hat, 4, rng, jitter={"decay": 0.15}, corr=0.5,
                               decay=float(rng.uniform(0.03, 0.045)), tone=float(rng.uniform(1.0, 1.2)))
     hat_p = {"tribal": "gogxgogxgogxgogx", "tight": "xgoxxgoxxgoxxgox", "driving": "oxoxoxoxoxoxoxox"}[fl["perc"]]
 
@@ -133,19 +129,19 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return "..x...x...x...x."
         return hat_p
 
-    song.hits("hats", hats, hat_pat, gain_db=-14.5, pan=0.15, humanize=0.1)
+    song.hits("hats", hats, hat_pat, gain_db=-11.0, pan=0.15, humanize=0.1)
 
     ohat = xt.stereo_hit(drums.hat, rng, corr=0.5, open_=True, decay=float(rng.uniform(0.18, 0.26)), tone=1.05)
     song.hits("open_hat", ohat, lambda c: "..x...x...x...x." if (c.kind in ("groove", "drop") or (c.kind == "intro" and c.i >= 16)
                                                                  or (c.kind == "outro" and c.bars_left > 8)) else None,
-              gain_db=-13.0, pan=-0.12, sends={"room": 0.1})
+              gain_db=-10.5, pan=-0.12, sends={"room": 0.1})
     shk = xt.stereo_variants(drums.shaker, 3, rng, corr=0.3, length=float(rng.uniform(0.07, 0.09)))
     song.hits("shaker", shk, lambda c: "xgogxgogxgogxgog" if c.kind != "breakdown" and not (c.kind == "intro" and c.i < 8)
               and not (c.kind == "outro" and c.bars_left <= 8) else None,
-              gain_db=-19.0, pan=-0.35, humanize=0.15, timing_ms=1.5)
+              gain_db=-16.0, pan=-0.35, humanize=0.15, timing_ms=1.5)
     ride = xt.stereo_hit(drums.ride, rng, corr=0.55, decay=1.3)
     song.hits("ride", ride, lambda c: "..x...x...x...x." if c.kind == "drop" or (c.kind == "groove" and c.i >= 16) else None,
-              gain_db=-17.0, pan=0.25, sends={"room": 0.1})
+              gain_db=-14.5, pan=0.25, sends={"room": 0.1})
 
     # tribal / tom percussion – the Afterlife groove
     if fl["perc"] == "tribal":
@@ -214,7 +210,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return []
         return xt.arp_bar(arp_seqs[chord_i(c)], c.i * 16, rate=rate, gate=0.7)
 
-    arp = song.notes("arp", arp_inst, arp_notes, gain_db=fl["arp_gain"], sidechain=0.45, width=1.35, humanize=0.02,
+    arp = song.notes("arp", arp_inst, arp_notes, gain_db=fl["arp_gain"], sidechain=0.45, humanize=0.02, hp=180.0,
                      sends={"delay": 0.22, "hall": 0.14, "space": 0.06})
     i0, g0, b0, d0, o0 = intro.start_bar, grv.start_bar, bd.start_bar, drop.start_bar, outro.start_bar
     arp.automate("lp", [(i0 + 24, 700), (g0, 800), (g0 + 24, 3500), (g0 + 32, 5000), (b0, 1400), (b0 + 16, 900),
@@ -227,7 +223,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
                      lambda c: [(0, 31.5, pad_chords[chord_i(c)], 0.8)]
                      if c.i % 2 == 0 and (c.kind in ("breakdown", "drop") or (c.kind == "groove" and c.i >= 16)
                                           or (c.kind == "outro" and c.i < 8)) else [],
-                     gain_db=-11.0, sidechain=0.55, width=1.5, humanize=0.0,
+                     gain_db=-12.5, sidechain=0.55, humanize=0.0, hp=150.0,
                      sends={"hall": 0.25, "space": 0.2})
     pad.automate("gain_db", sp({"groove": -7.0, "breakdown": 0.0, "drop": -3.5, "outro": -6.0}, -6.0, ramp_bars=2))
     pad.automate("lp", [(g0 + 16, 900), (g0 + 32, 2500), (b0, 1200), (b0 + 24, 5000), (d0, 3500), (o0 + 8, 900)])
@@ -236,7 +232,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
                        attack=0.9, release=1.6)
     ch = song.notes("choir", choir_i, lambda c: [(0, 31.0, choir_chords[chord_i(c)], 0.8)]
                     if c.i % 2 == 0 and ((c.kind == "breakdown" and c.i >= 4 and c.bars_left > 2) or (c.kind == "drop" and c.i >= 16))
-                    else [], bus="vox", gain_db=fl["choir_db"], sidechain=0.3, width=1.4, humanize=0.0,
+                    else [], bus="vox", gain_db=fl["choir_db"], sidechain=0.3, humanize=0.0,
                     sends={"space": 0.35, "hall": 0.15})
     ch.automate("gain_db", sp({"breakdown": 0.0, "drop": -4.0}, -4.0, ramp_bars=1))
 
@@ -262,14 +258,14 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return hclip(c)
         return []
 
-    lead = song.notes("lead", lead_inst, lead_notes, gain_db=lead_db, sidechain=0.3, width=1.25, humanize=0.03,
+    lead = song.notes("lead", lead_inst, lead_notes, gain_db=lead_db - 3.0, sidechain=0.3, humanize=0.03,
                       sends={"delay4": 0.18, "delay": 0.12, "hall": 0.2, "space": 0.12})
     lead.automate("gain_db", [(b0 + 8, -7.0), (b0 + 24, -3.0), (d0 - 0.01, -1.0), (d0, 0.0)])
     lead.automate("lp", [(b0 + 8, 1500), (b0 + 24, 3000), (d0 - 0.01, 9000), (d0, 14000)])
     # octave-up glass double on the second half of the drop (lift without new material)
     dbl = xt.glass_pluck(ratio=2.0, index=1.2, decay=0.6, release=0.5, shimmer=0.1)
     song.notes("lead_hi", dbl, lambda c: hclip(c) if c.kind == "drop" and c.i >= 16 else [], transpose=12,
-               gain_db=-15.0, sidechain=0.3, width=1.5, humanize=0.0, sends={"delay": 0.25, "space": 0.15})
+               gain_db=-16.0, sidechain=0.3, humanize=0.0, sends={"delay": 0.25, "space": 0.15})
 
     # ================================================================ fx / transitions
     fxl = song.audio("fx", bus="fx", sends={"hall": 0.12})
@@ -296,9 +292,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
 
     # ================================================================ mix
     song.buses["drums"].eq = [("peak", 3200.0, 1.0, 0.8), ("peak", 350.0, -1.5, 1.0)]
-    song.buses["drums"].width = 1.25
-    song.buses["music"].width = 1.25
-    song.buses["music"].eq = [("peak", 450.0, -1.5, 0.8)]
+    song.buses["music"].eq = [("peak", 380.0, -2.5, 0.8)]
     song.buses["vox"].hp = 250.0
     song.master.lufs = -9.0
     song.instruments = ["tight tuned techno kick", "rolling arpeggiated bass", "wide arpeggio", "anthem lead hook",
