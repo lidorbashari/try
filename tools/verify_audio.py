@@ -29,6 +29,12 @@ SIDECAR_FIELDS = ["id", "title", "title_he", "artist", "genre", "genre_slug", "f
                   "camelot", "energy", "role", "duration_sec", "bars", "beats_per_bar", "first_downbeat_sec",
                   "sections", "cues", "memory_cues", "lufs", "true_peak_dbtp", "file", "cover", "description_he",
                   "mix_tips_he", "instruments", "seed", "license", "engine_version"]
+EXTRA_FIELDS = {
+    "practice": ["id", "kind", "title", "title_he", "bpm", "duration_sec", "first_downbeat_sec", "description_he",
+                 "exercise_he", "file"],
+    "transition": ["id", "kind", "title", "title_he", "technique", "technique_he", "from_id", "to_id", "bpm",
+                   "duration_sec", "steps_he", "description_he", "exercise_he", "file"],
+}
 CUE_COLORS = {"A": "#28E214", "B": "#10B1E6", "C": "#E0641B", "D": "#E62828", "E": "#B4BE04", "F": "#DE44CF",
               "G": "#305AFF", "H": "#8A2BE2"}
 SR = 44100
@@ -60,6 +66,28 @@ def check_tags(mp3: Path, meta: dict, errs: list):
         errs.append("COMM mismatch")
     if not [k for k in t.keys() if k.startswith("APIC")]:
         errs.append("APIC cover missing")
+
+
+def check_extra_meta(meta: dict, errs: list):
+    """Practice drills and transition demos (SCHEMA §3) have a lighter sidecar and free-form tags."""
+    for f in EXTRA_FIELDS[meta["kind"]]:
+        if f not in meta:
+            errs.append(f"sidecar missing {f}")
+    if meta["kind"] == "practice" and meta.get("first_downbeat_sec") != 0.0:
+        errs.append("first_downbeat_sec != 0")
+
+
+def check_extra_tags(mp3: Path, meta: dict, errs: list):
+    from mutagen.id3 import ID3
+
+    try:
+        t = ID3(str(mp3))
+    except Exception as e:  # noqa: BLE001
+        errs.append(f"ID3 missing ({e})")
+        return
+    title = t.get("TIT2")
+    if title is None or not title.text or not str(title.text[0]).strip():
+        errs.append("TIT2 title tag missing")
 
 
 def check_meta(meta: dict, errs: list):
@@ -109,7 +137,11 @@ def verify(mp3: Path, fast: bool = False) -> dict:
             meta = json.loads(side.read_text(encoding="utf-8"))
         except Exception as e:  # noqa: BLE001
             errs.append(f"sidecar invalid JSON: {e}")
-    if meta:
+    kind = meta.get("kind", "track") if meta else "track"
+    if kind in EXTRA_FIELDS:
+        check_extra_meta(meta, errs)
+        check_extra_tags(mp3, meta, errs)
+    elif meta:
         check_meta(meta, errs)
         check_tags(mp3, meta, errs)
         cover = REPO / meta.get("cover", "")
@@ -128,7 +160,7 @@ def verify(mp3: Path, fast: bool = False) -> dict:
     tp = float(lin2db(oversampled_peak(x).max()))
     row["lufs"], row["tp"] = L, tp
     slug = meta.get("genre_slug", "")
-    target = TARGET_LUFS.get(slug, -9.0)
+    target = -10.0 if kind in EXTRA_FIELDS else TARGET_LUFS.get(slug, -9.0)
     if abs(L - target) > 1.5:
         errs.append(f"LUFS {L:.2f} outside {target}±1.5")
     if tp > -0.8:
@@ -136,10 +168,12 @@ def verify(mp3: Path, fast: bool = False) -> dict:
     if meta:
         if abs(meta.get("duration_sec", 0) - dur) > 0.05:
             errs.append(f"duration {dur:.3f} != sidecar {meta.get('duration_sec')}")
-        bpm = float(meta.get("bpm", 0))
-        if bpm:
+        bpm = float(meta.get("bpm", 0) or 0)
+        if bpm and kind == "transition":
+            pass  # demos join two decks (tempo changes, partial bars): no grid-length/BPM assertions
+        elif bpm:
             exp = meta.get("bars", 0) * 240.0 / bpm
-            if abs(exp - dur) > 0.06:
+            if meta.get("bars") and abs(exp - dur) > 0.06:
                 errs.append(f"duration {dur:.3f} != bars×bar_len {exp:.3f}")
             if abs(meta.get("lufs", 0) - L) > 0.3:
                 warns.append(f"sidecar lufs {meta.get('lufs')} vs measured {L:.2f}")

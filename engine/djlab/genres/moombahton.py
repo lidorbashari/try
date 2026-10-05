@@ -31,7 +31,7 @@ TPL = [("Intro", "intro", 16, 4, 0), ("Groove", "groove", 8, 6, 1), ("Build", "b
        ("Drop", "drop", 16, 8, 2), ("Breakdown", "breakdown", 8, 4, 0), ("Build 2", "build", 8, 7, 0),
        ("Drop 2", "drop", 16, 9, 3), ("Outro", "outro", 16, 5, 0)]
 
-PROGS = [[0, 5, 2, 6], [0, 3, 5, 4], [0, 5, 3, 6], [0, 0, 5, 6]]
+PROGS = [[0, 5, 2, 6], [0, 3, 0, 6], [0, 5, 3, 6], [0, 0, 5, 6]]
 
 FOUR = "x...x...x...x..."
 DEMBOW = "...o..x....o..x."
@@ -114,7 +114,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     for deg, pref in ((0, 0.0), (4, 1.0), (2, 2.0), (3, 2.5)):
         for o in (0, 1, 2):
             hz = 440 * 2 ** ((key.degree(deg, o) - 69) / 12)
-            if 45 <= hz <= 60:
+            if 40 <= hz <= 62:
                 cands.append((pref + abs(hz - 52) / 10, hz))
     kick_hz = float(min(cands)[1]) if cands else 52.0
 
@@ -179,8 +179,12 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
 
     tg = TOM_GROOVES[int(rng.integers(len(TOM_GROOVES)))]
     tf = TOM_FILLS[int(rng.integers(len(TOM_FILLS)))]
-    tom_hi = drums.tom(float(rng.uniform(170, 200)), decay=0.3, rng=rng)
-    tom_lo = drums.tom(float(rng.uniform(105, 125)), decay=0.4, rng=rng)
+    # toms / timbale tuned to the key (tonic + fifth) so the drums-only intro already "speaks" the key
+    tom_hi_m = in_range(key.root(3), 50, 57)
+    rng.uniform(170, 200)
+    tom_hi = drums.tom(440 * 2 ** ((tom_hi_m - 69) / 12), decay=0.3, rng=rng)
+    rng.uniform(105, 125)
+    tom_lo = drums.tom(440 * 2 ** ((tom_hi_m - 5 - 69) / 12), decay=0.4, rng=rng)
 
     def tom_pat(which):
         def f(c):
@@ -199,7 +203,8 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
 
     song.hits("tom_hi", tom_hi, tom_pat(0), gain_db=-10.0, pan=0.3, sends={"room": 0.2}, humanize=0.1)
     song.hits("tom_lo", tom_lo, tom_pat(1), gain_db=-9.0, pan=-0.3, sends={"room": 0.2}, humanize=0.1)
-    timb = xm.timbale(float(rng.uniform(560, 660)), ring=0.5, rng=rng)
+    rng.uniform(560, 660)
+    timb = xm.timbale(440 * 2 ** ((in_range(key.root(5), 74, 81) - 69) / 12), ring=0.5, rng=rng)
     song.hits("timbale", timb, lambda c: "..............x." if c.kind == "drop" and c.i % 4 == 1 else None,
               gain_db=-11.0, pan=0.4, sends={"room": 0.15})
 
@@ -223,11 +228,11 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     song.notes("sub", sub, sub_notes, bus="bass", gain_db=-4.0, sidechain=0.5, sc_release_ms=120.0)
 
     bpm = song.bpm
-    wob8 = xm.wobble_bass(bpm, beats=0.5, lo=float(rng.uniform(140, 200)), hi=float(rng.uniform(2200, 3000)),
-                          res=0.55, detune=14.0, drive=2.6, sub=0.85)
-    wob16 = xm.wobble_bass(bpm, beats=0.25, lo=180.0, hi=3200.0, res=0.6, detune=16.0, drive=2.8, sub=0.85,
+    wob8 = xm.wobble_bass(bpm, beats=0.5, lo=float(rng.uniform(140, 200)), hi=float(rng.uniform(2200, 3000)) * 0.6,
+                          res=0.4, detune=14.0, drive=2.6, sub=0.85)
+    wob16 = xm.wobble_bass(bpm, beats=0.25, lo=180.0, hi=1800.0, res=0.45, detune=16.0, drive=2.8, sub=0.85,
                            shape="square")
-    wob3 = xm.wobble_bass(bpm, beats=1.0 / 3.0, lo=160.0, hi=2600.0, res=0.5, detune=12.0, drive=2.6, sub=0.85,
+    wob3 = xm.wobble_bass(bpm, beats=1.0 / 3.0, lo=160.0, hi=1600.0, res=0.4, detune=12.0, drive=2.6, sub=0.85,
                           shape="saw")
 
     def wob_notes(which):
@@ -240,7 +245,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
                 return [(0, 6, r, 1.0), (6, 2, r, 0.85), (8, 8, r, 1.0)] if c.i % 2 == 0 else \
                     [(0, 3, r, 1.0), (3, 3, r, 0.9), (6, 2, r + 12, 0.85), (8, 6, r, 1.0), (14, 2, r, 0.85)]
             if turn and which == (16 if c.i % 8 == 3 else 3):
-                return [(0, 4, r, 1.0), (4, 4, r + 3, 0.95), (8, 4, r + 7, 0.95), (12, 4, r + 10, 0.9)] \
+                return [(0, 4, r, 1.0), (4, 4, r + 7, 0.95), (8, 4, r + 12, 0.95), (12, 4, r + 7, 0.9)] \
                     if which == 16 else [(0, 8, r, 1.0), (8, 4, r + 12, 0.9), (12, 4, r + 7, 0.9)]
             return []
         return f
@@ -248,17 +253,17 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     for nm, ins, w in (("wobble", wob8, 8), ("wobble16", wob16, 16), ("wobble3", wob3, 3)):
         song.notes(nm, ins, wob_notes(w), bus="bass", gain_db=-6.5, sidechain=0.6, sc_release_ms=130.0)
     # growl layer: the same wobbles an octave up without sub, high-passed (reads on small speakers)
-    wtop8 = xm.wobble_bass(bpm, beats=0.5, lo=300.0, hi=3500.0, res=0.6, detune=18.0, drive=3.2, sub=0.0)
-    wtop16 = xm.wobble_bass(bpm, beats=0.25, lo=320.0, hi=4000.0, res=0.6, detune=18.0, drive=3.2, sub=0.0,
+    wtop8 = xm.wobble_bass(bpm, beats=0.5, lo=300.0, hi=2200.0, res=0.45, detune=18.0, drive=3.2, sub=0.0)
+    wtop16 = xm.wobble_bass(bpm, beats=0.25, lo=320.0, hi=2400.0, res=0.45, detune=18.0, drive=3.2, sub=0.0,
                             shape="square")
-    wtop3 = xm.wobble_bass(bpm, beats=1.0 / 3.0, lo=300.0, hi=3200.0, res=0.55, detune=16.0, drive=3.0, sub=0.0,
+    wtop3 = xm.wobble_bass(bpm, beats=1.0 / 3.0, lo=300.0, hi=2000.0, res=0.4, detune=16.0, drive=3.0, sub=0.0,
                            shape="saw")
 
     def top_of(f):
         return lambda c: [(s, ln, m + 12, v) for s, ln, m, v in f(c)]
 
     for nm, ins, w in (("growl", wtop8, 8), ("growl16", wtop16, 16), ("growl3", wtop3, 3)):
-        song.notes(nm, ins, top_of(wob_notes(w)), bus="music", gain_db=-4.5, hp=220.0, width=1.3, sidechain=0.6,
+        song.notes(nm, ins, top_of(wob_notes(w)), bus="music", gain_db=-6.0, hp=220.0, width=1.3, sidechain=0.6,
                    sc_release_ms=130.0)
 
     # ---------------------------------------------------------------- lead (Dutch squeak)
@@ -305,11 +310,11 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     def pluck_notes(c):
         if c.kind in ("groove", "breakdown", "drop") or (c.kind == "outro" and c.bar < drums_only_from):
             ch = chord_at(c)
-            v = 0.7 if c.kind == "drop" else 0.9
+            v = 0.9
             return [(3, 2, ch, v - 0.1), (6, 2, ch, v), (11, 2, ch, v - 0.1), (14, 2, ch, v)]
         return []
 
-    song.notes("pluck", pl, pluck_notes, gain_db=-11.0, width=1.5, sidechain=0.4, sends={"delay8": 0.15})
+    song.notes("pluck", pl, pluck_notes, gain_db=-9.5, width=1.5, sidechain=0.4, sends={"delay8": 0.15})
     brass = inst.brass(cutoff=2200.0, release=0.12)
 
     def brass_notes(c):
@@ -322,9 +327,9 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
 
     song.notes("brass", brass, brass_notes, gain_db=-11.0, width=1.4, sidechain=0.4, sends={"hall": 0.15})
     pad = song.notes("pad", xm.soft_pad(attack=0.5, cutoff=1500.0),
-                     lambda c: [(0, 16, chord_at(c), 0.7)] if c.kind in ("breakdown", "build") else [],
+                     lambda c: [(0, 16, chord_at(c), 0.7)] if c.kind in ("breakdown", "build", "drop") else [],
                      gain_db=-13.0, width=1.6, sidechain=0.5, sends={"hall": 0.25})
-    pad.automate("gain_db", song.section_points({"breakdown": 0.0, "build": -4.0}, -60.0))
+    pad.automate("gain_db", song.section_points({"breakdown": 0.0, "build": -4.0, "drop": -3.0}, -60.0))
 
     shout = xm.chant(vowel="a", vowel_to="e", voices=5, shift=1.1, fall=-2.0, breath=0.25, spread=0.8)
     sp_pitch = in_range(key.root(3), 50, 61)

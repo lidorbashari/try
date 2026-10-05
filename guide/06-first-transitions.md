@@ -99,7 +99,7 @@ reading_minutes: 18
 1. **שתי ידיים בבת אחת:** יד שמאל על ה-Low של A, יד ימין על ה-Low של B, ובדיוק על ה-1 — שתיהן זזות יחד. הכי מדויק, אבל דורש קואורדינציה.
 2. **"יציאה ואז כניסה":** על ביט 4 של תיבה 16 — Low של A למטה. על ה-1 של תיבה 17 — Low של B למעלה. רבע ביט בלי באס, שבדרך כלל אף אחד לא שם לב אליו — ולפעמים אפילו מוסיף "נשימה".
 
-> 💡 טיפ: בטראקים של DJ Lab, החלפת הבאס בתיבה 17 של המעבר קורית כמעט מעצמה: באאוטרו של A הבאס יוצא אחרי 16 תיבות (Hot Cue H), ובאינטרו של B הבאס נכנס אחרי 16 תיבות (Hot Cue B). אתם רק "מחזקים" את מה שהמבנה כבר עושה. בטראקים מסחריים זה לא תמיד כך — לכן ה-EQ.
+> 💡 טיפ: בטראקים של DJ Lab האינטרו הוא 32 תיבות של תופים, והבאס נכנס בדיוק ב-Hot Cue B (אחרי 32 תיבות). באאוטרו של A הבאס יוצא ב-Hot Cue H (16 תיבות לפני הסוף). לכן, כדי שהחלפת הבאס תיפול בתיבה 17 של מעבר באורך 32 תיבות: מתחילים את B **16 תיבות לפני Hot Cue B שלו** (כדאי לשים שם Memory Cue), ומיישרים את הנקודה הזאת ל-Hot Cue G (Outro) של A. ככה הבאס של B נכנס בדיוק כשהבאס של A יוצא, ואתם רק "מחזקים" את מה שהמבנה כבר עושה. בטראקים מסחריים זה לא תמיד כך — לכן ה-EQ.
 
 **טעויות נפוצות:** להחליף באסים באמצע פרייז; להעלות את ה-Low של B לפני שהורדתם את של A ("רגע של בוץ"); לשכוח ש-B עדיין בלי באס, ולתהות למה המעבר "דק".
 
@@ -213,7 +213,7 @@ reading_minutes: 18
 
 > 🎧 תרגיל 2 — Blend: שחזרו את `transition-01`: מ-`music/tracks/deep_house/house-01-sunset-over-jaffa.mp3` ל-`music/tracks/deep_house/house-02-velvet-rooftop.mp3` לפי הטבלה של Blend ארוך. שימו לב: B ב-121 ו-A ב-122 — צריך להתאים.
 
-> 🎧 תרגיל 3 — Bass Swap אמיתי: שחזרו את `transition-02`: מ-`music/tracks/tech_house/house-05-groove-machine.mp3` ל-`music/tracks/tech_house/house-06-bassline-bandit.mp3`. Hot Cue G של A ↔ Hot Cue A של B, החלפה בתיבה 17.
+> 🎧 תרגיל 3 — Bass Swap אמיתי: שחזרו את `transition-02`: מ-`music/tracks/tech_house/house-05-groove-machine.mp3` ל-`music/tracks/tech_house/house-06-bassline-bandit.mp3`. Hot Cue G של A ↔ הנקודה 16 תיבות לפני Hot Cue B של B, החלפה בתיבה 17. הזמנים המדויקים נמצאים ב-`steps_he` שבקובץ ה-JSON של הדמו.
 
 > 🎧 תרגיל 4 — פילטר: שחזרו את `transition-03`: מ-`music/tracks/melodic_techno/techno-05-neon-cathedral.mp3` ל-`music/tracks/melodic_techno/techno-08-silent-orbit.mp3`. נסו גם את הווריאציה עם LPF על B.
 

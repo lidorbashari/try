@@ -1,8 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DJ_PLAYLISTS Version="1.0.0">
   <PRODUCT Name="rekordbox" Version="7.0.0" Company="AlphaTheta"/>
-  <COLLECTION Entries="14">
-    <TRACK TrackID="1" Name="Groove Machine" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — House Vol. 1" Grouping="house" Genre="Tech House" Kind="MP3 File" Size="10510703" TotalTime="259" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="126.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 8A · Energy 7 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/tech_house/house-05-groove-machine.mp3" Remixer="" Tonality="Am" Label="DJ Lab" Mix="Original Mix">
+  <COLLECTION Entries="77">
+    <TRACK TrackID="1" Name="Sunset Over Jaffa" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — House Vol. 1" Grouping="house" Genre="Deep House" Kind="MP3 File" Size="11493244" TotalTime="283" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="122.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 8A · Energy 4 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/deep_house/house-01-sunset-over-jaffa.mp3" Remixer="" Tonality="Am" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="122.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="62.951" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="125.902" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="157.377" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="220.328" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="251.803" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Groove" Type="0" Start="62.951" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="125.902" Num="-1"/>
+      <POSITION_MARK Name="Main" Type="0" Start="157.377" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="220.328" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="2" Name="Velvet Rooftop" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — House Vol. 1" Grouping="house" Genre="Deep House" Kind="MP3 File" Size="10961457" TotalTime="270" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="121.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 9A · Energy 3 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/deep_house/house-02-velvet-rooftop.mp3" Remixer="" Tonality="Em" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="121.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="63.471" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="126.942" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="158.678" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="206.281" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="238.017" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Groove" Type="0" Start="63.471" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="126.942" Num="-1"/>
+      <POSITION_MARK Name="Main" Type="0" Start="158.678" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="206.281" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="3" Name="Hands Up Florentin" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — House Vol. 1" Grouping="house" Genre="House" Kind="MP3 File" Size="10689008" TotalTime="263" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="124.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 7A · Energy 6 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/house/house-03-hands-up-florentin.mp3" Remixer="" Tonality="Dm" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="124.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="61.935" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="92.903" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="123.871" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Breakdown 2" Type="0" Start="170.323" Num="4" Red="180" Green="190" Blue="4"/>
+      <POSITION_MARK Name="Drop 2" Type="0" Start="185.806" Num="5" Red="222" Green="68" Blue="207"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="201.290" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="232.258" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Groove" Type="0" Start="61.935" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="92.903" Num="-1"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="123.871" Num="-1"/>
+      <POSITION_MARK Name="Breakdown 2" Type="0" Start="170.323" Num="-1"/>
+      <POSITION_MARK Name="Drop 2" Type="0" Start="185.806" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="201.290" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="4" Name="Piano Saturday" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — House Vol. 1" Grouping="house" Genre="House" Kind="MP3 File" Size="10677357" TotalTime="263" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="124.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 6A · Energy 6 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/house/house-04-piano-saturday.mp3" Remixer="" Tonality="Gm" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="124.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="61.935" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="108.387" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="139.355" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="201.290" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="232.258" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Groove" Type="0" Start="61.935" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="108.387" Num="-1"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="139.355" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="201.290" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="5" Name="Groove Machine" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — House Vol. 1" Grouping="house" Genre="Tech House" Kind="MP3 File" Size="10510703" TotalTime="259" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="126.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 8A · Energy 7 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/tech_house/house-05-groove-machine.mp3" Remixer="" Tonality="Am" Label="DJ Lab" Mix="Original Mix">
       <TEMPO Inizio="0.000" Bpm="126.00" Metro="4/4" Battito="1"/>
       <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
       <POSITION_MARK Name="Mix-In" Type="0" Start="60.952" Num="1" Red="16" Green="177" Blue="230"/>
@@ -16,7 +76,7 @@
       <POSITION_MARK Name="Drop" Type="0" Start="137.143" Num="-1"/>
       <POSITION_MARK Name="Outro" Type="0" Start="198.095" Num="-1"/>
     </TRACK>
-    <TRACK TrackID="2" Name="Bassline Bandit" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — House Vol. 1" Grouping="house" Genre="Tech House" Kind="MP3 File" Size="10434556" TotalTime="257" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="127.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 7A · Energy 7 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/tech_house/house-06-bassline-bandit.mp3" Remixer="" Tonality="Dm" Label="DJ Lab" Mix="Original Mix">
+    <TRACK TrackID="6" Name="Bassline Bandit" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — House Vol. 1" Grouping="house" Genre="Tech House" Kind="MP3 File" Size="10434153" TotalTime="257" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="127.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 7A · Energy 7 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/tech_house/house-06-bassline-bandit.mp3" Remixer="" Tonality="Dm" Label="DJ Lab" Mix="Original Mix">
       <TEMPO Inizio="0.000" Bpm="127.00" Metro="4/4" Battito="1"/>
       <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
       <POSITION_MARK Name="Mix-In" Type="0" Start="60.472" Num="1" Red="16" Green="177" Blue="230"/>
@@ -30,7 +90,7 @@
       <POSITION_MARK Name="Drop" Type="0" Start="136.063" Num="-1"/>
       <POSITION_MARK Name="Outro" Type="0" Start="196.535" Num="-1"/>
     </TRACK>
-    <TRACK TrackID="3" Name="Warehouse 26" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — House Vol. 1" Grouping="house" Genre="Tech House" Kind="MP3 File" Size="10352048" TotalTime="255" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="128.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 6A · Energy 8 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/tech_house/house-07-warehouse-26.mp3" Remixer="" Tonality="Gm" Label="DJ Lab" Mix="Original Mix">
+    <TRACK TrackID="7" Name="Warehouse 26" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — House Vol. 1" Grouping="house" Genre="Tech House" Kind="MP3 File" Size="10351355" TotalTime="255" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="128.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 6A · Energy 8 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/tech_house/house-07-warehouse-26.mp3" Remixer="" Tonality="Gm" Label="DJ Lab" Mix="Original Mix">
       <TEMPO Inizio="0.000" Bpm="128.00" Metro="4/4" Battito="1"/>
       <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
       <POSITION_MARK Name="Mix-In" Type="0" Start="60.000" Num="1" Red="16" Green="177" Blue="230"/>
@@ -48,7 +108,7 @@
       <POSITION_MARK Name="Drop 2" Type="0" Start="165.000" Num="-1"/>
       <POSITION_MARK Name="Outro" Type="0" Start="195.000" Num="-1"/>
     </TRACK>
-    <TRACK TrackID="4" Name="Shuffle Theory" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — House Vol. 1" Grouping="house" Genre="Tech House" Kind="MP3 File" Size="10510871" TotalTime="259" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="126.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 9A · Energy 7 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/tech_house/house-08-shuffle-theory.mp3" Remixer="" Tonality="Em" Label="DJ Lab" Mix="Original Mix">
+    <TRACK TrackID="8" Name="Shuffle Theory" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — House Vol. 1" Grouping="house" Genre="Tech House" Kind="MP3 File" Size="10511006" TotalTime="259" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="126.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 9A · Energy 7 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/tech_house/house-08-shuffle-theory.mp3" Remixer="" Tonality="Em" Label="DJ Lab" Mix="Original Mix">
       <TEMPO Inizio="0.000" Bpm="126.00" Metro="4/4" Battito="1"/>
       <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
       <POSITION_MARK Name="Mix-In" Type="0" Start="60.952" Num="1" Red="16" Green="177" Blue="230"/>
@@ -62,7 +122,91 @@
       <POSITION_MARK Name="Drop" Type="0" Start="152.381" Num="-1"/>
       <POSITION_MARK Name="Outro" Type="0" Start="198.095" Num="-1"/>
     </TRACK>
-    <TRACK TrackID="5" Name="Concrete Pulse" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Techno Vol. 1" Grouping="techno" Genre="Peak-Time Techno" Kind="MP3 File" Size="10805413" TotalTime="266" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="130.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 8A · Energy 8 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/techno/techno-01-concrete-pulse.mp3" Remixer="" Tonality="Am" Label="DJ Lab" Mix="Original Mix">
+    <TRACK TrackID="9" Name="Desert Drums" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — House Vol. 1" Grouping="house" Genre="Afro House" Kind="MP3 File" Size="11483293" TotalTime="283" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="122.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 4A · Energy 6 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/afro_house/house-09-desert-drums.mp3" Remixer="" Tonality="Fm" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="122.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="62.951" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="125.902" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="157.377" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="220.328" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="251.803" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Groove" Type="0" Start="62.951" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="125.902" Num="-1"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="157.377" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="220.328" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="10" Name="Kalimba Moon" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — House Vol. 1" Grouping="house" Genre="Afro House" Kind="MP3 File" Size="11032629" TotalTime="272" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="120.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 5A · Energy 5 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/afro_house/house-10-kalimba-moon.mp3" Remixer="" Tonality="Cm" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="120.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="64.000" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="128.000" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="160.000" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="208.000" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="240.000" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Groove" Type="0" Start="64.000" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="128.000" Num="-1"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="160.000" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="208.000" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="11" Name="Spirit Dance" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — House Vol. 1" Grouping="house" Genre="Afro House" Kind="MP3 File" Size="11488739" TotalTime="283" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="122.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 6A · Energy 7 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/afro_house/house-11-spirit-dance.mp3" Remixer="" Tonality="Gm" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="122.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="62.951" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="125.902" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="157.377" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="220.328" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="251.803" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Groove" Type="0" Start="62.951" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="125.902" Num="-1"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="157.377" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="220.328" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="12" Name="Mirrorball Boulevard" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — House Vol. 1" Grouping="house" Genre="Nu-Disco" Kind="MP3 File" Size="10581967" TotalTime="260" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="118.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 8B · Energy 5 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/nu_disco/house-12-mirrorball-boulevard.mp3" Remixer="" Tonality="C" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="118.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="65.085" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="97.627" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="130.169" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="195.254" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="227.797" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Groove" Type="0" Start="65.085" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="97.627" Num="-1"/>
+      <POSITION_MARK Name="Chorus" Type="0" Start="130.169" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="195.254" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="13" Name="Funk Cruise" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — House Vol. 1" Grouping="house" Genre="Nu-Disco" Kind="MP3 File" Size="10737002" TotalTime="265" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="116.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 7B · Energy 5 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/nu_disco/house-13-funk-cruise.mp3" Remixer="" Tonality="F" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="116.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="66.207" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="115.862" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="132.414" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="198.621" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="231.724" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Groove" Type="0" Start="66.207" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="115.862" Num="-1"/>
+      <POSITION_MARK Name="Chorus" Type="0" Start="132.414" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="198.621" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="14" Name="Log Drum Lagoon" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — House Vol. 1" Grouping="house" Genre="Amapiano" Kind="MP3 File" Size="11032408" TotalTime="272" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="113.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 4A · Energy 5 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/amapiano/house-14-log-drum-lagoon.mp3" Remixer="" Tonality="Fm" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="113.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="67.965" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="135.929" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="152.920" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="203.894" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="237.876" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Build" Type="0" Start="67.965" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="135.929" Num="-1"/>
+      <POSITION_MARK Name="Main" Type="0" Start="152.920" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="203.894" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="15" Name="Concrete Pulse" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Techno Vol. 1" Grouping="techno" Genre="Peak-Time Techno" Kind="MP3 File" Size="10805413" TotalTime="266" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="130.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 8A · Energy 8 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/techno/techno-01-concrete-pulse.mp3" Remixer="" Tonality="Am" Label="DJ Lab" Mix="Original Mix">
       <TEMPO Inizio="0.000" Bpm="130.00" Metro="4/4" Battito="1"/>
       <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
       <POSITION_MARK Name="Mix-In" Type="0" Start="59.077" Num="1" Red="16" Green="177" Blue="230"/>
@@ -80,7 +224,53 @@
       <POSITION_MARK Name="Drop 2" Type="0" Start="177.231" Num="-1"/>
       <POSITION_MARK Name="Outro" Type="0" Start="206.769" Num="-1"/>
     </TRACK>
-    <TRACK TrackID="6" Name="Neon Cathedral" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Techno Vol. 1" Grouping="techno" Genre="Melodic Techno" Kind="MP3 File" Size="12780557" TotalTime="315" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="122.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 10A · Energy 6 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/melodic_techno/techno-05-neon-cathedral.mp3" Remixer="" Tonality="Bm" Label="DJ Lab" Mix="Original Mix">
+    <TRACK TrackID="16" Name="Industrial Heart" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Techno Vol. 1" Grouping="techno" Genre="Peak-Time Techno" Kind="MP3 File" Size="10746334" TotalTime="264" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="131.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 4A · Energy 9 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/techno/techno-02-industrial-heart.mp3" Remixer="" Tonality="Fm" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="131.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="58.626" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="117.252" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="146.565" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="205.191" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="234.504" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Groove" Type="0" Start="58.626" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="117.252" Num="-1"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="146.565" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="205.191" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="17" Name="Strobe Ritual" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Techno Vol. 1" Grouping="techno" Genre="Peak-Time Techno" Kind="MP3 File" Size="10662665" TotalTime="262" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="132.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 7A · Energy 9 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/techno/techno-03-strobe-ritual.mp3" Remixer="" Tonality="Dm" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="132.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="58.182" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="101.818" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="116.364" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Breakdown 2" Type="0" Start="160.000" Num="4" Red="180" Green="190" Blue="4"/>
+      <POSITION_MARK Name="Drop 2" Type="0" Start="174.545" Num="5" Red="222" Green="68" Blue="207"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="203.636" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="232.727" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Groove" Type="0" Start="58.182" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="101.818" Num="-1"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="116.364" Num="-1"/>
+      <POSITION_MARK Name="Breakdown 2" Type="0" Start="160.000" Num="-1"/>
+      <POSITION_MARK Name="Drop 2" Type="0" Start="174.545" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="203.636" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="18" Name="Night Shift" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Techno Vol. 1" Grouping="techno" Genre="Driving Techno" Kind="MP3 File" Size="10890938" TotalTime="268" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="129.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 6A · Energy 8 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/techno/techno-04-night-shift.mp3" Remixer="" Tonality="Gm" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="129.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="59.535" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="133.953" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="148.837" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="208.372" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="238.140" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Groove" Type="0" Start="59.535" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="133.953" Num="-1"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="148.837" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="208.372" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="19" Name="Neon Cathedral" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Techno Vol. 1" Grouping="techno" Genre="Melodic Techno" Kind="MP3 File" Size="12780557" TotalTime="315" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="122.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 10A · Energy 6 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/melodic_techno/techno-05-neon-cathedral.mp3" Remixer="" Tonality="Bm" Label="DJ Lab" Mix="Original Mix">
       <TEMPO Inizio="0.000" Bpm="122.00" Metro="4/4" Battito="1"/>
       <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
       <POSITION_MARK Name="Mix-In" Type="0" Start="62.951" Num="1" Red="16" Green="177" Blue="230"/>
@@ -94,7 +284,7 @@
       <POSITION_MARK Name="Drop" Type="0" Start="188.852" Num="-1"/>
       <POSITION_MARK Name="Outro" Type="0" Start="251.803" Num="-1"/>
     </TRACK>
-    <TRACK TrackID="7" Name="Afterglow Protocol" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Techno Vol. 1" Grouping="techno" Genre="Melodic Techno" Kind="MP3 File" Size="12668185" TotalTime="312" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="123.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 11A · Energy 7 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/melodic_techno/techno-06-afterglow-protocol.mp3" Remixer="" Tonality="F#m" Label="DJ Lab" Mix="Original Mix">
+    <TRACK TrackID="20" Name="Afterglow Protocol" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Techno Vol. 1" Grouping="techno" Genre="Melodic Techno" Kind="MP3 File" Size="12668185" TotalTime="312" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="123.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 11A · Energy 7 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/melodic_techno/techno-06-afterglow-protocol.mp3" Remixer="" Tonality="F#m" Label="DJ Lab" Mix="Original Mix">
       <TEMPO Inizio="0.000" Bpm="123.00" Metro="4/4" Battito="1"/>
       <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
       <POSITION_MARK Name="Mix-In" Type="0" Start="62.439" Num="1" Red="16" Green="177" Blue="230"/>
@@ -108,7 +298,7 @@
       <POSITION_MARK Name="Drop" Type="0" Start="187.317" Num="-1"/>
       <POSITION_MARK Name="Outro" Type="0" Start="249.756" Num="-1"/>
     </TRACK>
-    <TRACK TrackID="8" Name="Event Horizon" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Techno Vol. 1" Grouping="techno" Genre="Melodic Techno" Kind="MP3 File" Size="12569727" TotalTime="310" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="124.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 9A · Energy 7 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/melodic_techno/techno-07-event-horizon.mp3" Remixer="" Tonality="Em" Label="DJ Lab" Mix="Original Mix">
+    <TRACK TrackID="21" Name="Event Horizon" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Techno Vol. 1" Grouping="techno" Genre="Melodic Techno" Kind="MP3 File" Size="12569727" TotalTime="310" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="124.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 9A · Energy 7 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/melodic_techno/techno-07-event-horizon.mp3" Remixer="" Tonality="Em" Label="DJ Lab" Mix="Original Mix">
       <TEMPO Inizio="0.000" Bpm="124.00" Metro="4/4" Battito="1"/>
       <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
       <POSITION_MARK Name="Mix-In" Type="0" Start="61.935" Num="1" Red="16" Green="177" Blue="230"/>
@@ -122,7 +312,7 @@
       <POSITION_MARK Name="Drop" Type="0" Start="185.806" Num="-1"/>
       <POSITION_MARK Name="Outro" Type="0" Start="247.742" Num="-1"/>
     </TRACK>
-    <TRACK TrackID="9" Name="Silent Orbit" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Techno Vol. 1" Grouping="techno" Genre="Melodic Techno" Kind="MP3 File" Size="12772588" TotalTime="315" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="122.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 8A · Energy 6 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/melodic_techno/techno-08-silent-orbit.mp3" Remixer="" Tonality="Am" Label="DJ Lab" Mix="Original Mix">
+    <TRACK TrackID="22" Name="Silent Orbit" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Techno Vol. 1" Grouping="techno" Genre="Melodic Techno" Kind="MP3 File" Size="12772588" TotalTime="315" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="122.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 8A · Energy 6 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/melodic_techno/techno-08-silent-orbit.mp3" Remixer="" Tonality="Am" Label="DJ Lab" Mix="Original Mix">
       <TEMPO Inizio="0.000" Bpm="122.00" Metro="4/4" Battito="1"/>
       <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
       <POSITION_MARK Name="Mix-In" Type="0" Start="62.951" Num="1" Red="16" Green="177" Blue="230"/>
@@ -136,7 +326,186 @@
       <POSITION_MARK Name="Drop" Type="0" Start="188.852" Num="-1"/>
       <POSITION_MARK Name="Outro" Type="0" Start="251.803" Num="-1"/>
     </TRACK>
-    <TRACK TrackID="10" Name="Dembow Fuego" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Mainstream Vol. 1" Grouping="mainstream" Genre="Reggaeton" Kind="MP3 File" Size="8264623" TotalTime="202" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="95.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 8A · Energy 7 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/reggaeton/mainstream-08-dembow-fuego.mp3" Remixer="" Tonality="Am" Label="DJ Lab" Mix="Original Mix">
+    <TRACK TrackID="23" Name="Infinite Loop" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Techno Vol. 1" Grouping="techno" Genre="Hypnotic Techno" Kind="MP3 File" Size="10992592" TotalTime="270" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="128.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 4A · Energy 7 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/hypnotic_techno/techno-09-infinite-loop.mp3" Remixer="" Tonality="Fm" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="128.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="60.000" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="135.000" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="150.000" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="210.000" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="240.000" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Groove" Type="0" Start="60.000" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="135.000" Num="-1"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="150.000" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="210.000" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="24" Name="Micro Groove" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Techno Vol. 1" Grouping="techno" Genre="Minimal Techno" Kind="MP3 File" Size="11057174" TotalTime="272" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="127.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 5A · Energy 6 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/hypnotic_techno/techno-10-micro-groove.mp3" Remixer="" Tonality="Cm" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="127.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="60.472" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="136.063" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="151.181" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="211.654" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="241.890" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Groove" Type="0" Start="60.472" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="136.063" Num="-1"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="151.181" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="211.654" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="25" Name="Rave Engine" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Techno Vol. 1" Grouping="techno" Genre="Hard Techno" Kind="MP3 File" Size="9508522" TotalTime="234" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="148.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 8A · Energy 10 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/hard_techno/techno-11-rave-engine.mp3" Remixer="" Tonality="Am" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="148.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="51.892" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="90.811" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="116.757" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="181.622" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="207.568" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Groove" Type="0" Start="51.892" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="90.811" Num="-1"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="116.757" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="181.622" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="26" Name="Overdrive 150" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Techno Vol. 1" Grouping="techno" Genre="Hard Techno" Kind="MP3 File" Size="9903555" TotalTime="243" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="150.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 7A · Energy 10 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/hard_techno/techno-12-overdrive-150.mp3" Remixer="" Tonality="Dm" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="150.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="51.200" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="76.800" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="89.600" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Breakdown 2" Type="0" Start="140.800" Num="4" Red="180" Green="190" Blue="4"/>
+      <POSITION_MARK Name="Drop 2" Type="0" Start="153.600" Num="5" Red="222" Green="68" Blue="207"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="192.000" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="217.600" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Groove" Type="0" Start="51.200" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="76.800" Num="-1"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="89.600" Num="-1"/>
+      <POSITION_MARK Name="Breakdown 2" Type="0" Start="140.800" Num="-1"/>
+      <POSITION_MARK Name="Drop 2" Type="0" Start="153.600" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="192.000" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="27" Name="Festival Main Stage" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Mainstream Vol. 1" Grouping="mainstream" Genre="Big Room / EDM" Kind="MP3 File" Size="9182981" TotalTime="225" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="128.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 4A · Energy 9 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/big_room/mainstream-01-festival-main-stage.mp3" Remixer="" Tonality="Fm" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="128.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="30.000" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="60.000" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="90.000" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Breakdown 2" Type="0" Start="120.000" Num="4" Red="180" Green="190" Blue="4"/>
+      <POSITION_MARK Name="Drop 2" Type="0" Start="135.000" Num="5" Red="222" Green="68" Blue="207"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="165.000" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="195.000" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="60.000" Num="-1"/>
+      <POSITION_MARK Name="Build" Type="0" Start="75.000" Num="-1"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="90.000" Num="-1"/>
+      <POSITION_MARK Name="Breakdown 2" Type="0" Start="120.000" Num="-1"/>
+      <POSITION_MARK Name="Drop 2" Type="0" Start="135.000" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="165.000" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="28" Name="Hands In The Sky" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Mainstream Vol. 1" Grouping="mainstream" Genre="Big Room / EDM" Kind="MP3 File" Size="9175149" TotalTime="225" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="128.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 6A · Energy 9 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/big_room/mainstream-02-hands-in-the-sky.mp3" Remixer="" Tonality="Gm" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="128.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="30.000" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="105.000" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="75.000" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Drop 2" Type="0" Start="135.000" Num="5" Red="222" Green="68" Blue="207"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="165.000" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="195.000" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Build" Type="0" Start="60.000" Num="-1"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="75.000" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="105.000" Num="-1"/>
+      <POSITION_MARK Name="Drop 2" Type="0" Start="135.000" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="165.000" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="29" Name="Summer In Tel Aviv" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Mainstream Vol. 1" Grouping="mainstream" Genre="Pop Dance" Kind="MP3 File" Size="8984535" TotalTime="220" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="122.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 8B · Energy 7 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/pop_dance/mainstream-03-summer-in-tel-aviv.mp3" Remixer="" Tonality="C" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="122.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="31.475" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="110.164" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="78.689" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Drop 2" Type="0" Start="141.639" Num="5" Red="222" Green="68" Blue="207"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="173.115" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="188.852" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Verse" Type="0" Start="31.475" Num="-1"/>
+      <POSITION_MARK Name="Pre-Chorus" Type="0" Start="62.951" Num="-1"/>
+      <POSITION_MARK Name="Chorus" Type="0" Start="78.689" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="110.164" Num="-1"/>
+      <POSITION_MARK Name="Chorus 2" Type="0" Start="141.639" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="173.115" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="30" Name="Golden Hour" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Mainstream Vol. 1" Grouping="mainstream" Genre="Pop Dance" Kind="MP3 File" Size="8835128" TotalTime="217" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="124.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 8A · Energy 7 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/pop_dance/mainstream-04-golden-hour.mp3" Remixer="" Tonality="Am" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="124.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="30.968" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="108.387" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="77.419" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Drop 2" Type="0" Start="139.355" Num="5" Red="222" Green="68" Blue="207"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="170.323" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="185.806" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Verse" Type="0" Start="61.935" Num="-1"/>
+      <POSITION_MARK Name="Chorus" Type="0" Start="77.419" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="108.387" Num="-1"/>
+      <POSITION_MARK Name="Chorus 2" Type="0" Start="139.355" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="170.323" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="31" Name="Boom Bap Avenue" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Mainstream Vol. 1" Grouping="mainstream" Genre="Hip-Hop" Kind="MP3 File" Size="8510432" TotalTime="209" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="92.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 5A · Energy 6 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/hip_hop/mainstream-05-boom-bap-avenue.mp3" Remixer="" Tonality="Cm" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="92.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="41.739" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="125.217" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="83.478" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Drop 2" Type="0" Start="146.087" Num="5" Red="222" Green="68" Blue="207"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="166.957" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="166.957" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Verse" Type="0" Start="41.739" Num="-1"/>
+      <POSITION_MARK Name="Hook" Type="0" Start="83.478" Num="-1"/>
+      <POSITION_MARK Name="Verse 2" Type="0" Start="104.348" Num="-1"/>
+      <POSITION_MARK Name="Break" Type="0" Start="125.217" Num="-1"/>
+      <POSITION_MARK Name="Hook 2" Type="0" Start="146.087" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="166.957" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="32" Name="808 Skyline" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Mainstream Vol. 1" Grouping="mainstream" Genre="Trap" Kind="MP3 File" Size="7853345" TotalTime="192" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="140.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 4A · Energy 7 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/hip_hop/mainstream-06-808-skyline.mp3" Remixer="" Tonality="Fm" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="140.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="27.429" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="123.429" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="68.571" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Drop 2" Type="0" Start="137.143" Num="5" Red="222" Green="68" Blue="207"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="164.571" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="164.571" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Verse" Type="0" Start="27.429" Num="-1"/>
+      <POSITION_MARK Name="Build" Type="0" Start="54.857" Num="-1"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="68.571" Num="-1"/>
+      <POSITION_MARK Name="Verse 2" Type="0" Start="96.000" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="123.429" Num="-1"/>
+      <POSITION_MARK Name="Drop 2" Type="0" Start="137.143" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="164.571" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="33" Name="Late Night Cypher" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Mainstream Vol. 1" Grouping="mainstream" Genre="Hip-Hop" Kind="MP3 File" Size="8264951" TotalTime="202" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="95.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 6A · Energy 6 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/hip_hop/mainstream-07-late-night-cypher.mp3" Remixer="" Tonality="Gm" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="95.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="40.421" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="101.053" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="80.842" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Drop 2" Type="0" Start="141.474" Num="5" Red="222" Green="68" Blue="207"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="161.684" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="161.684" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Verse" Type="0" Start="40.421" Num="-1"/>
+      <POSITION_MARK Name="Hook" Type="0" Start="80.842" Num="-1"/>
+      <POSITION_MARK Name="Break" Type="0" Start="101.053" Num="-1"/>
+      <POSITION_MARK Name="Verse 2" Type="0" Start="121.263" Num="-1"/>
+      <POSITION_MARK Name="Hook 2" Type="0" Start="141.474" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="161.684" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="34" Name="Dembow Fuego" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Mainstream Vol. 1" Grouping="mainstream" Genre="Reggaeton" Kind="MP3 File" Size="8264623" TotalTime="202" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="95.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 8A · Energy 7 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/reggaeton/mainstream-08-dembow-fuego.mp3" Remixer="" Tonality="Am" Label="DJ Lab" Mix="Original Mix">
       <TEMPO Inizio="0.000" Bpm="95.00" Metro="4/4" Battito="1"/>
       <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
       <POSITION_MARK Name="Mix-In" Type="0" Start="40.421" Num="1" Red="16" Green="177" Blue="230"/>
@@ -152,7 +521,7 @@
       <POSITION_MARK Name="Perreo" Type="0" Start="121.263" Num="-1"/>
       <POSITION_MARK Name="Outro" Type="0" Start="161.684" Num="-1"/>
     </TRACK>
-    <TRACK TrackID="11" Name="Perreo Nocturno" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Mainstream Vol. 1" Grouping="mainstream" Genre="Reggaeton" Kind="MP3 File" Size="8523187" TotalTime="209" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="92.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 7A · Energy 6 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/reggaeton/mainstream-09-perreo-nocturno.mp3" Remixer="" Tonality="Dm" Label="DJ Lab" Mix="Original Mix">
+    <TRACK TrackID="35" Name="Perreo Nocturno" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Mainstream Vol. 1" Grouping="mainstream" Genre="Reggaeton" Kind="MP3 File" Size="8523187" TotalTime="209" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="92.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 7A · Energy 6 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/reggaeton/mainstream-09-perreo-nocturno.mp3" Remixer="" Tonality="Dm" Label="DJ Lab" Mix="Original Mix">
       <TEMPO Inizio="0.000" Bpm="92.00" Metro="4/4" Battito="1"/>
       <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
       <POSITION_MARK Name="Mix-In" Type="0" Start="41.739" Num="1" Red="16" Green="177" Blue="230"/>
@@ -168,7 +537,125 @@
       <POSITION_MARK Name="Perreo" Type="0" Start="146.087" Num="-1"/>
       <POSITION_MARK Name="Outro" Type="0" Start="166.957" Num="-1"/>
     </TRACK>
-    <TRACK TrackID="12" Name="Goa Gateway" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Breadth Vol. 1" Grouping="breadth" Genre="Psytrance" Kind="MP3 File" Size="11006821" TotalTime="270" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="142.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 11A · Energy 9 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/psytrance/breadth-01-goa-gateway.mp3" Remixer="" Tonality="F#m" Label="DJ Lab" Mix="Original Mix">
+    <TRACK TrackID="36" Name="Moombah Heat" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Mainstream Vol. 1" Grouping="mainstream" Genre="Moombahton" Kind="MP3 File" Size="8716066" TotalTime="213" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="108.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 9A · Energy 7 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/moombahton/mainstream-10-moombah-heat.mp3" Remixer="" Tonality="Em" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="108.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="35.556" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="106.667" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="71.111" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Drop 2" Type="0" Start="142.222" Num="5" Red="222" Green="68" Blue="207"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="177.778" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="177.778" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Groove" Type="0" Start="35.556" Num="-1"/>
+      <POSITION_MARK Name="Build" Type="0" Start="53.333" Num="-1"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="71.111" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="106.667" Num="-1"/>
+      <POSITION_MARK Name="Build 2" Type="0" Start="124.444" Num="-1"/>
+      <POSITION_MARK Name="Drop 2" Type="0" Start="142.222" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="177.778" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="37" Name="Lagos To Haifa" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Mainstream Vol. 1" Grouping="mainstream" Genre="Afrobeats" Kind="MP3 File" Size="9041315" TotalTime="222" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="104.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 9B · Energy 6 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/afrobeats/mainstream-11-lagos-to-haifa.mp3" Remixer="" Tonality="G" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="104.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="36.923" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="129.231" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="73.846" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Drop 2" Type="0" Start="147.692" Num="5" Red="222" Green="68" Blue="207"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="184.615" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="184.615" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Verse" Type="0" Start="36.923" Num="-1"/>
+      <POSITION_MARK Name="Hook" Type="0" Start="73.846" Num="-1"/>
+      <POSITION_MARK Name="Verse 2" Type="0" Start="110.769" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="129.231" Num="-1"/>
+      <POSITION_MARK Name="Hook 2" Type="0" Start="147.692" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="184.615" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="38" Name="Sunshine Riddim" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Mainstream Vol. 1" Grouping="mainstream" Genre="Afrobeats" Kind="MP3 File" Size="8859315" TotalTime="217" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="106.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 10B · Energy 6 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/afrobeats/mainstream-12-sunshine-riddim.mp3" Remixer="" Tonality="D" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="106.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="36.226" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="126.792" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="72.453" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Drop 2" Type="0" Start="144.906" Num="5" Red="222" Green="68" Blue="207"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="181.132" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="181.132" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Verse" Type="0" Start="36.226" Num="-1"/>
+      <POSITION_MARK Name="Hook" Type="0" Start="72.453" Num="-1"/>
+      <POSITION_MARK Name="Verse 2" Type="0" Start="108.679" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="126.792" Num="-1"/>
+      <POSITION_MARK Name="Hook 2" Type="0" Start="144.906" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="181.132" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="39" Name="Darbuka Nights" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Mainstream Vol. 1" Grouping="mainstream" Genre="Mediterranean Groove" Kind="MP3 File" Size="8623625" TotalTime="211" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="100.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 9A · Energy 7 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/mediterranean/mainstream-13-darbuka-nights.mp3" Remixer="" Tonality="Em" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="100.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="38.400" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="115.200" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="76.800" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Drop 2" Type="0" Start="134.400" Num="5" Red="222" Green="68" Blue="207"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="172.800" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="172.800" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Verse" Type="0" Start="38.400" Num="-1"/>
+      <POSITION_MARK Name="Build" Type="0" Start="57.600" Num="-1"/>
+      <POSITION_MARK Name="Hook" Type="0" Start="76.800" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="115.200" Num="-1"/>
+      <POSITION_MARK Name="Hook 2" Type="0" Start="134.400" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="172.800" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="40" Name="Hijaz Fire" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Mainstream Vol. 1" Grouping="mainstream" Genre="Mediterranean Groove" Kind="MP3 File" Size="9040454" TotalTime="222" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="104.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 8A · Energy 8 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/mediterranean/mainstream-14-hijaz-fire.mp3" Remixer="" Tonality="Am" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="104.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="36.923" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="129.231" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="92.308" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Drop 2" Type="0" Start="147.692" Num="5" Red="222" Green="68" Blue="207"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="184.615" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="184.615" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Verse" Type="0" Start="36.923" Num="-1"/>
+      <POSITION_MARK Name="Build" Type="0" Start="73.846" Num="-1"/>
+      <POSITION_MARK Name="Hook" Type="0" Start="92.308" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="129.231" Num="-1"/>
+      <POSITION_MARK Name="Hook 2" Type="0" Start="147.692" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="184.615" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="41" Name="Mediterranean Sunrise" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Mainstream Vol. 1" Grouping="mainstream" Genre="Mediterranean House" Kind="MP3 File" Size="10090350" TotalTime="248" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="124.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 7A · Energy 7 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/mediterranean/mainstream-15-mediterranean-sunrise.mp3" Remixer="" Tonality="Dm" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="124.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="61.935" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="92.903" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="123.871" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="185.806" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="216.774" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Groove" Type="0" Start="61.935" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="92.903" Num="-1"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="123.871" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="185.806" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="42" Name="Oud Club" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Mainstream Vol. 1" Grouping="mainstream" Genre="Mediterranean House" Kind="MP3 File" Size="10007549" TotalTime="246" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="125.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 6A · Energy 8 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/mediterranean/mainstream-16-oud-club.mp3" Remixer="" Tonality="Gm" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="125.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="61.440" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="92.160" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="107.520" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Breakdown 2" Type="0" Start="138.240" Num="4" Red="180" Green="190" Blue="4"/>
+      <POSITION_MARK Name="Drop 2" Type="0" Start="153.600" Num="5" Red="222" Green="68" Blue="207"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="184.320" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="215.040" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Groove" Type="0" Start="61.440" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="92.160" Num="-1"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="107.520" Num="-1"/>
+      <POSITION_MARK Name="Breakdown 2" Type="0" Start="138.240" Num="-1"/>
+      <POSITION_MARK Name="Drop 2" Type="0" Start="153.600" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="184.320" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="43" Name="Goa Gateway" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Breadth Vol. 1" Grouping="breadth" Genre="Psytrance" Kind="MP3 File" Size="11006821" TotalTime="270" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="142.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 11A · Energy 9 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/psytrance/breadth-01-goa-gateway.mp3" Remixer="" Tonality="F#m" Label="DJ Lab" Mix="Original Mix">
       <TEMPO Inizio="0.000" Bpm="142.00" Metro="4/4" Battito="1"/>
       <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
       <POSITION_MARK Name="Mix-In" Type="0" Start="27.042" Num="1" Red="16" Green="177" Blue="230"/>
@@ -186,7 +673,21 @@
       <POSITION_MARK Name="Drop 2" Type="0" Start="189.296" Num="-1"/>
       <POSITION_MARK Name="Outro" Type="0" Start="216.338" Num="-1"/>
     </TRACK>
-    <TRACK TrackID="13" Name="Euphoria Coast" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Breadth Vol. 1" Grouping="breadth" Genre="Uplifting Trance" Kind="MP3 File" Size="11305279" TotalTime="278" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="138.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 8A · Energy 9 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/trance/breadth-03-euphoria-coast.mp3" Remixer="" Tonality="Am" Label="DJ Lab" Mix="Original Mix">
+    <TRACK TrackID="44" Name="Forest Frequency" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Breadth Vol. 1" Grouping="breadth" Genre="Progressive Psytrance" Kind="MP3 File" Size="11315689" TotalTime="278" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="138.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 7A · Energy 8 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/psytrance/breadth-02-forest-frequency.mp3" Remixer="" Tonality="Dm" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="138.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="27.826" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="111.304" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="139.130" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="222.609" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="250.435" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Groove" Type="0" Start="55.652" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="111.304" Num="-1"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="139.130" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="222.609" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="45" Name="Euphoria Coast" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Breadth Vol. 1" Grouping="breadth" Genre="Uplifting Trance" Kind="MP3 File" Size="11305279" TotalTime="278" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="138.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 8A · Energy 9 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/trance/breadth-03-euphoria-coast.mp3" Remixer="" Tonality="Am" Label="DJ Lab" Mix="Original Mix">
       <TEMPO Inizio="0.000" Bpm="138.00" Metro="4/4" Battito="1"/>
       <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
       <POSITION_MARK Name="Mix-In" Type="0" Start="27.826" Num="1" Red="16" Green="177" Blue="230"/>
@@ -200,7 +701,141 @@
       <POSITION_MARK Name="Drop" Type="0" Start="166.957" Num="-1"/>
       <POSITION_MARK Name="Outro" Type="0" Start="222.609" Num="-1"/>
     </TRACK>
-    <TRACK TrackID="14" Name="Beatmatch Drums 124" Artist="DJ Lab Practice" Composer="" Album="DJ Lab — Practice" Grouping="practice" Genre="Practice" Kind="MP3 File" Size="8786956" TotalTime="217" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="124.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot - · Energy - · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/practice/practice-03-drums-124.mp3" Remixer="" Tonality="" Label="DJ Lab" Mix="Original Mix">
+    <TRACK TrackID="46" Name="Starlight Drive" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Breadth Vol. 1" Grouping="breadth" Genre="Progressive Trance" Kind="MP3 File" Size="11068977" TotalTime="272" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="134.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 9A · Energy 8 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/trance/breadth-04-starlight-drive.mp3" Remixer="" Tonality="Em" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="134.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="28.657" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="114.627" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="157.612" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="214.925" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="243.582" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Groove" Type="0" Start="57.313" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="114.627" Num="-1"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="157.612" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="214.925" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="47" Name="Liquid Velocity" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Breadth Vol. 1" Grouping="breadth" Genre="Drum &amp; Bass" Kind="MP3 File" Size="9879147" TotalTime="243" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="174.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 4A · Energy 9 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/dnb/breadth-05-liquid-velocity.mp3" Remixer="" Tonality="Fm" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="174.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="22.069" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="110.345" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="44.138" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Drop 2" Type="0" Start="154.483" Num="5" Red="222" Green="68" Blue="207"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="198.621" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="220.690" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="44.138" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="110.345" Num="-1"/>
+      <POSITION_MARK Name="Drop 2" Type="0" Start="154.483" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="198.621" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="48" Name="Rain On Neon" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Breadth Vol. 1" Grouping="breadth" Genre="Liquid Drum &amp; Bass" Kind="MP3 File" Size="9981039" TotalTime="246" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="172.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 5A · Energy 7 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/dnb/breadth-06-rain-on-neon.mp3" Remixer="" Tonality="Cm" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="172.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="22.326" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="111.628" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="44.651" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Drop 2" Type="0" Start="156.279" Num="5" Red="222" Green="68" Blue="207"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="200.930" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="223.256" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="44.651" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="111.628" Num="-1"/>
+      <POSITION_MARK Name="Drop 2" Type="0" Start="156.279" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="200.930" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="49" Name="Wobble Tectonics" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Breadth Vol. 1" Grouping="breadth" Genre="Dubstep" Kind="MP3 File" Size="8941790" TotalTime="219" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="140.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 4A · Energy 9 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/dubstep/breadth-07-wobble-tectonics.mp3" Remixer="" Tonality="Fm" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="140.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="27.429" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="109.714" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="54.857" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Drop 2" Type="0" Start="137.143" Num="5" Red="222" Green="68" Blue="207"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="178.286" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="192.000" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Build" Type="0" Start="27.429" Num="-1"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="54.857" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="109.714" Num="-1"/>
+      <POSITION_MARK Name="Drop 2" Type="0" Start="137.143" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="178.286" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="50" Name="2-Step Underground" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Breadth Vol. 1" Grouping="breadth" Genre="UK Garage" Kind="MP3 File" Size="9476023" TotalTime="233" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="132.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 6A · Energy 7 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/ukg/breadth-08-2-step-underground.mp3" Remixer="" Tonality="Gm" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="132.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="29.091" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="101.818" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="116.364" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="174.545" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="203.636" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Groove" Type="0" Start="58.182" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="101.818" Num="-1"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="116.364" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="174.545" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="51" Name="Breakdance Theory" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Breadth Vol. 1" Grouping="breadth" Genre="Breakbeat" Kind="MP3 File" Size="9622440" TotalTime="236" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="130.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 7A · Energy 7 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/breaks/breadth-09-breakdance-theory.mp3" Remixer="" Tonality="Dm" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="130.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="29.538" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="103.385" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="132.923" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="177.231" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="206.769" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Groove" Type="0" Start="59.077" Num="-1"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="103.385" Num="-1"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="132.923" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="177.231" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="52" Name="Rainy Studio" Artist="DJ Lab Originals" Composer="" Album="DJ Lab — Breadth Vol. 1" Grouping="breadth" Genre="Lo-Fi Hip-Hop" Kind="MP3 File" Size="7489002" TotalTime="183" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="84.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 7B · Energy 2 · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/tracks/lofi/breadth-10-rainy-studio.mp3" Remixer="" Tonality="F" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="84.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Mix-In" Type="0" Start="22.857" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Breakdown" Type="0" Start="114.286" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Drop" Type="0" Start="68.571" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Drop 2" Type="0" Start="137.143" Num="5" Red="222" Green="68" Blue="207"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="160.000" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Last 16" Type="0" Start="137.143" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Verse" Type="0" Start="22.857" Num="-1"/>
+      <POSITION_MARK Name="Theme" Type="0" Start="68.571" Num="-1"/>
+      <POSITION_MARK Name="Break" Type="0" Start="114.286" Num="-1"/>
+      <POSITION_MARK Name="Theme 2" Type="0" Start="137.143" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="160.000" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="53" Name="Phrase Counter 124" Artist="DJ Lab Practice" Composer="" Album="DJ Lab — Practice" Grouping="practice" Genre="Practice" Kind="MP3 File" Size="9402168" TotalTime="232" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="124.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 8A · Energy - · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/practice/practice-01-phrase-counter-124.mp3" Remixer="" Tonality="Am" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="124.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Bar 1 · Bell" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Bass In · Bar 17" Type="0" Start="30.968" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Bell · Bar 33" Type="0" Start="61.935" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Bell · Bar 65" Type="0" Start="123.871" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Bell · Bar 97" Type="0" Start="185.806" Num="4" Red="180" Green="190" Blue="4"/>
+      <POSITION_MARK Name="Outro · Bar 105" Type="0" Start="201.290" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Block 1 · Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Block 1 · Bass In" Type="0" Start="30.968" Num="-1"/>
+      <POSITION_MARK Name="Block 2" Type="0" Start="61.935" Num="-1"/>
+      <POSITION_MARK Name="Block 3" Type="0" Start="123.871" Num="-1"/>
+      <POSITION_MARK Name="Block 4" Type="0" Start="185.806" Num="-1"/>
+      <POSITION_MARK Name="Block 4 · Outro" Type="0" Start="201.290" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="54" Name="Beatmatch Drums 120" Artist="DJ Lab Practice" Composer="" Album="DJ Lab — Practice" Grouping="practice" Genre="Practice" Kind="MP3 File" Size="9075692" TotalTime="224" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="120.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot - · Energy - · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/practice/practice-02-drums-120.mp3" Remixer="" Tonality="" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="120.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Start · Kick + Hat" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Groove A · Bar 33" Type="0" Start="64.000" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Groove B · Bar 65" Type="0" Start="128.000" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Outro · Bar 97" Type="0" Start="192.000" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Build" Type="0" Start="32.000" Num="-1"/>
+      <POSITION_MARK Name="Fill · Bar 32" Type="0" Start="62.000" Num="-1"/>
+      <POSITION_MARK Name="Groove A" Type="0" Start="64.000" Num="-1"/>
+      <POSITION_MARK Name="Fill · Bar 64" Type="0" Start="126.000" Num="-1"/>
+      <POSITION_MARK Name="Groove B" Type="0" Start="128.000" Num="-1"/>
+      <POSITION_MARK Name="Fill · Bar 96" Type="0" Start="190.000" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="192.000" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="55" Name="Beatmatch Drums 124" Artist="DJ Lab Practice" Composer="" Album="DJ Lab — Practice" Grouping="practice" Genre="Practice" Kind="MP3 File" Size="8787008" TotalTime="217" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="124.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot - · Energy - · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/practice/practice-03-drums-124.mp3" Remixer="" Tonality="" Label="DJ Lab" Mix="Original Mix">
       <TEMPO Inizio="0.000" Bpm="124.00" Metro="4/4" Battito="1"/>
       <POSITION_MARK Name="Start · Kick + Hat" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
       <POSITION_MARK Name="Groove A · Bar 33" Type="0" Start="61.935" Num="1" Red="16" Green="177" Blue="230"/>
@@ -215,11 +850,260 @@
       <POSITION_MARK Name="Fill · Bar 96" Type="0" Start="183.871" Num="-1"/>
       <POSITION_MARK Name="Outro" Type="0" Start="185.806" Num="-1"/>
     </TRACK>
+    <TRACK TrackID="56" Name="Beatmatch Drums 128" Artist="DJ Lab Practice" Composer="" Album="DJ Lab — Practice" Grouping="practice" Genre="Practice" Kind="MP3 File" Size="8516089" TotalTime="210" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="128.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot - · Energy - · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/practice/practice-04-drums-128.mp3" Remixer="" Tonality="" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="128.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Start · Kick + Hat" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Groove A · Bar 33" Type="0" Start="60.000" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Groove B · Bar 65" Type="0" Start="120.000" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Outro · Bar 97" Type="0" Start="180.000" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Build" Type="0" Start="30.000" Num="-1"/>
+      <POSITION_MARK Name="Fill · Bar 32" Type="0" Start="58.125" Num="-1"/>
+      <POSITION_MARK Name="Groove A" Type="0" Start="60.000" Num="-1"/>
+      <POSITION_MARK Name="Fill · Bar 64" Type="0" Start="118.125" Num="-1"/>
+      <POSITION_MARK Name="Groove B" Type="0" Start="120.000" Num="-1"/>
+      <POSITION_MARK Name="Fill · Bar 96" Type="0" Start="178.125" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="180.000" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="57" Name="Beatmatch Drums 132" Artist="DJ Lab Practice" Composer="" Album="DJ Lab — Practice" Grouping="practice" Genre="Practice" Kind="MP3 File" Size="8261233" TotalTime="204" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="132.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot - · Energy - · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/practice/practice-05-drums-132.mp3" Remixer="" Tonality="" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="132.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Start · Kick + Hat" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Groove A · Bar 33" Type="0" Start="58.182" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Groove B · Bar 65" Type="0" Start="116.364" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Outro · Bar 97" Type="0" Start="174.545" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Build" Type="0" Start="29.091" Num="-1"/>
+      <POSITION_MARK Name="Fill · Bar 32" Type="0" Start="56.364" Num="-1"/>
+      <POSITION_MARK Name="Groove A" Type="0" Start="58.182" Num="-1"/>
+      <POSITION_MARK Name="Fill · Bar 64" Type="0" Start="114.545" Num="-1"/>
+      <POSITION_MARK Name="Groove B" Type="0" Start="116.364" Num="-1"/>
+      <POSITION_MARK Name="Fill · Bar 96" Type="0" Start="172.727" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="174.545" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="58" Name="Odd Tempo 125.5" Artist="DJ Lab Practice" Composer="" Album="DJ Lab — Practice" Grouping="practice" Genre="Practice" Kind="MP3 File" Size="8672786" TotalTime="214" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="125.50" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot - · Energy - · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/practice/practice-06-odd-tempo-125_5.mp3" Remixer="" Tonality="" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="125.50" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Start · Kick + Hat" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Groove A · Bar 33" Type="0" Start="61.195" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Groove B · Bar 65" Type="0" Start="122.390" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Outro · Bar 97" Type="0" Start="183.586" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Build" Type="0" Start="30.598" Num="-1"/>
+      <POSITION_MARK Name="Fill · Bar 32" Type="0" Start="59.283" Num="-1"/>
+      <POSITION_MARK Name="Groove A" Type="0" Start="61.195" Num="-1"/>
+      <POSITION_MARK Name="Fill · Bar 64" Type="0" Start="120.478" Num="-1"/>
+      <POSITION_MARK Name="Groove B" Type="0" Start="122.390" Num="-1"/>
+      <POSITION_MARK Name="Fill · Bar 96" Type="0" Start="181.673" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="183.586" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="59" Name="Odd Tempo 122.7" Artist="DJ Lab Practice" Composer="" Album="DJ Lab — Practice" Grouping="practice" Genre="Practice" Kind="MP3 File" Size="8867072" TotalTime="219" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="122.70" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot - · Energy - · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/practice/practice-07-odd-tempo-122_7.mp3" Remixer="" Tonality="" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="122.70" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Start · Kick + Hat" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Groove A · Bar 33" Type="0" Start="62.592" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Groove B · Bar 65" Type="0" Start="125.183" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Outro · Bar 97" Type="0" Start="187.775" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Build" Type="0" Start="31.296" Num="-1"/>
+      <POSITION_MARK Name="Fill · Bar 32" Type="0" Start="60.636" Num="-1"/>
+      <POSITION_MARK Name="Groove A" Type="0" Start="62.592" Num="-1"/>
+      <POSITION_MARK Name="Fill · Bar 64" Type="0" Start="123.227" Num="-1"/>
+      <POSITION_MARK Name="Groove B" Type="0" Start="125.183" Num="-1"/>
+      <POSITION_MARK Name="Fill · Bar 96" Type="0" Start="185.819" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="187.775" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="60" Name="Bass Swap A (8A)" Artist="DJ Lab Practice" Composer="" Album="DJ Lab — Practice" Grouping="practice" Genre="Practice" Kind="MP3 File" Size="8779110" TotalTime="217" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="124.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 8A · Energy - · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/practice/practice-08-bass-swap-a-124.mp3" Remixer="" Tonality="Am" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="124.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro (drums)" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Bass In · Bar 17" Type="0" Start="30.968" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Full Loop · Bar 33" Type="0" Start="61.935" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Outro (drums) · Bar 97" Type="0" Start="185.806" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Bass In" Type="0" Start="30.968" Num="-1"/>
+      <POSITION_MARK Name="Full Loop" Type="0" Start="61.935" Num="-1"/>
+      <POSITION_MARK Name="Full Loop 2" Type="0" Start="123.871" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="185.806" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="61" Name="Bass Swap B (9A)" Artist="DJ Lab Practice" Composer="" Album="DJ Lab — Practice" Grouping="practice" Genre="Practice" Kind="MP3 File" Size="8778226" TotalTime="217" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="124.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 9A · Energy - · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/practice/practice-09-bass-swap-b-124.mp3" Remixer="" Tonality="Em" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="124.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro (drums)" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Bass In · Bar 17" Type="0" Start="30.968" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Full Loop · Bar 33" Type="0" Start="61.935" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Outro (drums) · Bar 97" Type="0" Start="185.806" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Bass In" Type="0" Start="30.968" Num="-1"/>
+      <POSITION_MARK Name="Full Loop" Type="0" Start="61.935" Num="-1"/>
+      <POSITION_MARK Name="Full Loop 2" Type="0" Start="123.871" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="185.806" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="62" Name="Key Home 8A" Artist="DJ Lab Practice" Composer="" Album="DJ Lab — Practice" Grouping="practice" Genre="Practice" Kind="MP3 File" Size="8778546" TotalTime="217" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="124.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 8A · Energy - · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/practice/practice-10-key-home-8A-124.mp3" Remixer="" Tonality="Am" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="124.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro (drums)" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Chords In · Bar 17" Type="0" Start="30.968" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Full Loop · Bar 33" Type="0" Start="61.935" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Outro (drums) · Bar 97" Type="0" Start="185.806" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Chords" Type="0" Start="30.968" Num="-1"/>
+      <POSITION_MARK Name="Full Loop" Type="0" Start="61.935" Num="-1"/>
+      <POSITION_MARK Name="Full Loop 2" Type="0" Start="123.871" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="185.806" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="63" Name="Key Clash 3A" Artist="DJ Lab Practice" Composer="" Album="DJ Lab — Practice" Grouping="practice" Genre="Practice" Kind="MP3 File" Size="8779586" TotalTime="217" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="124.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 3A · Energy - · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/practice/practice-11-key-clash-3A-124.mp3" Remixer="" Tonality="Bbm" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="124.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro (drums)" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Chords In · Bar 17" Type="0" Start="30.968" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Full Loop · Bar 33" Type="0" Start="61.935" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Outro (drums) · Bar 97" Type="0" Start="185.806" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Chords" Type="0" Start="30.968" Num="-1"/>
+      <POSITION_MARK Name="Full Loop" Type="0" Start="61.935" Num="-1"/>
+      <POSITION_MARK Name="Full Loop 2" Type="0" Start="123.871" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="185.806" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="64" Name="Key Friend 9A" Artist="DJ Lab Practice" Composer="" Album="DJ Lab — Practice" Grouping="practice" Genre="Practice" Kind="MP3 File" Size="8777911" TotalTime="217" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="124.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 9A · Energy - · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/practice/practice-12-key-friend-9A-124.mp3" Remixer="" Tonality="Em" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="124.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro (drums)" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Chords In · Bar 17" Type="0" Start="30.968" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Full Loop · Bar 33" Type="0" Start="61.935" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Outro (drums) · Bar 97" Type="0" Start="185.806" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Chords" Type="0" Start="30.968" Num="-1"/>
+      <POSITION_MARK Name="Full Loop" Type="0" Start="61.935" Num="-1"/>
+      <POSITION_MARK Name="Full Loop 2" Type="0" Start="123.871" Num="-1"/>
+      <POSITION_MARK Name="Outro" Type="0" Start="185.806" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="65" Name="Cue Hunt 126" Artist="DJ Lab Practice" Composer="" Album="DJ Lab — Practice" Grouping="practice" Genre="Practice" Kind="MP3 File" Size="7415881" TotalTime="183" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="126.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 6A · Energy - · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/practice/practice-13-cue-hunt-126.mp3" Remixer="" Tonality="Gm" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="126.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Start · Bar 1" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+    </TRACK>
+    <TRACK TrackID="66" Name="EQ Ear Training" Artist="DJ Lab Practice" Composer="" Album="DJ Lab — Practice" Grouping="practice" Genre="Practice" Kind="MP3 File" Size="8773188" TotalTime="217" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="124.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 5A · Energy - · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/practice/practice-14-eq-ear-training.mp3" Remixer="" Tonality="Cm" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="124.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Reference · Full" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Reference" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Round 1" Type="0" Start="15.484" Num="-1"/>
+      <POSITION_MARK Name="Round 2" Type="0" Start="30.968" Num="-1"/>
+      <POSITION_MARK Name="Round 3" Type="0" Start="46.452" Num="-1"/>
+      <POSITION_MARK Name="Round 4" Type="0" Start="61.935" Num="-1"/>
+      <POSITION_MARK Name="Round 5" Type="0" Start="77.419" Num="-1"/>
+      <POSITION_MARK Name="Round 6" Type="0" Start="92.903" Num="-1"/>
+      <POSITION_MARK Name="Round 7" Type="0" Start="108.387" Num="-1"/>
+      <POSITION_MARK Name="Round 8" Type="0" Start="123.871" Num="-1"/>
+      <POSITION_MARK Name="Round 9" Type="0" Start="139.355" Num="-1"/>
+      <POSITION_MARK Name="Round 10" Type="0" Start="154.839" Num="-1"/>
+      <POSITION_MARK Name="Round 11" Type="0" Start="170.323" Num="-1"/>
+      <POSITION_MARK Name="Round 12" Type="0" Start="185.806" Num="-1"/>
+      <POSITION_MARK Name="Final (Full)" Type="0" Start="201.290" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="67" Name="Tempo Bridge 100" Artist="DJ Lab Practice" Composer="" Album="DJ Lab — Practice" Grouping="practice" Genre="Practice" Kind="MP3 File" Size="9316697" TotalTime="230" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="100.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot 7A · Energy - · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/practice/practice-15-tempo-bridge-100-to-124.mp3" Remixer="" Tonality="Dm" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="100.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="Intro · Darbuka + Dembow" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Verse · Bass In · Bar 17" Type="0" Start="38.400" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Break · Bar 49" Type="0" Start="115.200" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Hook · Bar 33" Type="0" Start="76.800" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Hook 2 · Bar 57" Type="0" Start="134.400" Num="5" Red="222" Green="68" Blue="207"/>
+      <POSITION_MARK Name="Outro · Vox + Drums · Bar 81" Type="0" Start="192.000" Num="6" Red="48" Green="90" Blue="255"/>
+      <POSITION_MARK Name="Drums Only · Bar 89" Type="0" Start="211.200" Num="7" Red="138" Green="43" Blue="226"/>
+      <POSITION_MARK Name="Intro" Type="0" Start="0.000" Num="-1"/>
+      <POSITION_MARK Name="Verse" Type="0" Start="38.400" Num="-1"/>
+      <POSITION_MARK Name="Hook" Type="0" Start="76.800" Num="-1"/>
+      <POSITION_MARK Name="Break" Type="0" Start="115.200" Num="-1"/>
+      <POSITION_MARK Name="Hook 2" Type="0" Start="134.400" Num="-1"/>
+      <POSITION_MARK Name="Outro · Vox + Drums" Type="0" Start="192.000" Num="-1"/>
+      <POSITION_MARK Name="Outro · Drums Only" Type="0" Start="211.200" Num="-1"/>
+    </TRACK>
+    <TRACK TrackID="68" Name="Long Blend: Sunset Over Jaffa → Velvet Rooftop" Artist="DJ Lab Transitions" Composer="" Album="DJ Lab — Transitions" Grouping="transition" Genre="Transition Demo" Kind="MP3 File" Size="3784510" TotalTime="94" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="122.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot - · Energy - · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/transitions/transition-01-blend.mp3" Remixer="" Tonality="" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="122.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="A solo" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="B in" Type="0" Start="15.738" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Highs" Type="0" Start="31.475" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Bass blend" Type="0" Start="47.213" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="A fades" Type="0" Start="55.082" Num="4" Red="180" Green="190" Blue="4"/>
+      <POSITION_MARK Name="A out" Type="0" Start="70.820" Num="5" Red="222" Green="68" Blue="207"/>
+      <POSITION_MARK Name="B solo" Type="0" Start="78.689" Num="6" Red="48" Green="90" Blue="255"/>
+    </TRACK>
+    <TRACK TrackID="69" Name="Bass Swap: Groove Machine → Bassline Bandit" Artist="DJ Lab Transitions" Composer="" Album="DJ Lab — Transitions" Grouping="transition" Genre="Transition Demo" Kind="MP3 File" Size="3664222" TotalTime="91" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="126.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot - · Energy - · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/transitions/transition-02-bass_swap.mp3" Remixer="" Tonality="" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="126.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="A solo" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="B in" Type="0" Start="15.238" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="A hi down" Type="0" Start="30.476" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Bass swap" Type="0" Start="45.714" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="A thins" Type="0" Start="46.667" Num="4" Red="180" Green="190" Blue="4"/>
+      <POSITION_MARK Name="A fader" Type="0" Start="60.952" Num="5" Red="222" Green="68" Blue="207"/>
+      <POSITION_MARK Name="B solo" Type="0" Start="76.190" Num="6" Red="48" Green="90" Blue="255"/>
+    </TRACK>
+    <TRACK TrackID="70" Name="Filter Transition: Neon Cathedral → Silent Orbit" Artist="DJ Lab Transitions" Composer="" Album="DJ Lab — Transitions" Grouping="transition" Genre="Transition Demo" Kind="MP3 File" Size="3154864" TotalTime="79" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="122.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot - · Energy - · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/transitions/transition-03-filter.mp3" Remixer="" Tonality="" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="122.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="A solo" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="B in + HPF" Type="0" Start="15.738" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="HPF halfway" Type="0" Start="27.541" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="B low in" Type="0" Start="39.344" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="B full" Type="0" Start="47.213" Num="4" Red="180" Green="190" Blue="4"/>
+    </TRACK>
+    <TRACK TrackID="71" Name="Echo Out: Warehouse 26 → Concrete Pulse" Artist="DJ Lab Transitions" Composer="" Album="DJ Lab — Transitions" Grouping="transition" Genre="Transition Demo" Kind="MP3 File" Size="2979125" TotalTime="74" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="128.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot - · Energy - · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/transitions/transition-04-echo_out.mp3" Remixer="" Tonality="" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="128.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="A phrase" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Get ready" Type="0" Start="22.500" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Echo on" Type="0" Start="28.125" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="A fader cut" Type="0" Start="29.062" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="B on the 1" Type="0" Start="30.000" Num="4" Red="180" Green="190" Blue="4"/>
+      <POSITION_MARK Name="Echo off" Type="0" Start="33.692" Num="5" Red="222" Green="68" Blue="207"/>
+    </TRACK>
+    <TRACK TrackID="72" Name="Cut / Slam: Festival Main Stage → Hands In The Sky" Artist="DJ Lab Transitions" Composer="" Album="DJ Lab — Transitions" Grouping="transition" Genre="Transition Demo" Kind="MP3 File" Size="3007388" TotalTime="75" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="128.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot - · Energy - · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/transitions/transition-05-cut.mp3" Remixer="" Tonality="" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="128.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="A plays" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="A breakdown" Type="0" Start="15.000" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="A build" Type="0" Start="30.000" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Last beat" Type="0" Start="44.531" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="CUT" Type="0" Start="45.000" Num="4" Red="180" Green="190" Blue="4"/>
+      <POSITION_MARK Name="B phrase 2" Type="0" Start="60.000" Num="5" Red="222" Green="68" Blue="207"/>
+    </TRACK>
+    <TRACK TrackID="73" Name="Loop Roll: Industrial Heart → Strobe Ritual" Artist="DJ Lab Transitions" Composer="" Album="DJ Lab — Transitions" Grouping="transition" Genre="Transition Demo" Kind="MP3 File" Size="2938340" TotalTime="73" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="131.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot - · Energy - · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/transitions/transition-06-loop_roll.mp3" Remixer="" Tonality="" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="131.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="A drop" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="HPF build" Type="0" Start="21.985" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Roll 1" Type="0" Start="27.481" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Roll 1/2" Type="0" Start="28.397" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Roll 1/4-1/8" Type="0" Start="28.855" Num="4" Red="180" Green="190" Blue="4"/>
+      <POSITION_MARK Name="B drop" Type="0" Start="29.313" Num="5" Red="222" Green="68" Blue="207"/>
+      <POSITION_MARK Name="B groove" Type="0" Start="43.969" Num="6" Red="48" Green="90" Blue="255"/>
+    </TRACK>
+    <TRACK TrackID="74" Name="Energy Boost +2: Desert Drums → Spirit Dance" Artist="DJ Lab Transitions" Composer="" Album="DJ Lab — Transitions" Grouping="transition" Genre="Transition Demo" Kind="MP3 File" Size="3154855" TotalTime="79" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="122.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot - · Energy - · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/transitions/transition-07-energy_boost.mp3" Remixer="" Tonality="" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="122.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="A solo" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="B drums in" Type="0" Start="15.738" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="A recedes" Type="0" Start="31.475" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="+2 lift" Type="0" Start="47.213" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="B solo" Type="0" Start="62.951" Num="4" Red="180" Green="190" Blue="4"/>
+    </TRACK>
+    <TRACK TrackID="75" Name="Tempo Change Echo Out: Dembow Fuego → Mediterranean Sunrise" Artist="DJ Lab Transitions" Composer="" Album="DJ Lab — Transitions" Grouping="transition" Genre="Transition Demo" Kind="MP3 File" Size="3482264" TotalTime="87" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="95.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot - · Energy - · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/transitions/transition-08-tempo_change_echo.mp3" Remixer="" Tonality="" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="95.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="A chorus" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="Plan exit" Type="0" Start="20.211" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="Echo + Low cut" Type="0" Start="39.789" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="B drop" Type="0" Start="40.421" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="Echo off" Type="0" Start="44.292" Num="4" Red="180" Green="190" Blue="4"/>
+      <POSITION_MARK Name="New tempo" Type="0" Start="55.905" Num="5" Red="222" Green="68" Blue="207"/>
+    </TRACK>
+    <TRACK TrackID="76" Name="Drop Swap: Darbuka Nights → Hijaz Fire" Artist="DJ Lab Transitions" Composer="" Album="DJ Lab — Transitions" Grouping="transition" Genre="Transition Demo" Kind="MP3 File" Size="3078499" TotalTime="77" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="100.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot - · Energy - · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/transitions/transition-09-drop_swap.mp3" Remixer="" Tonality="" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="100.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="A drop" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="B build in" Type="0" Start="19.200" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="A recedes" Type="0" Start="28.800" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="DROP SWAP" Type="0" Start="38.400" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="B hook" Type="0" Start="57.600" Num="4" Red="180" Green="190" Blue="4"/>
+    </TRACK>
+    <TRACK TrackID="77" Name="Breakdown Mix: Afterglow Protocol → Event Horizon" Artist="DJ Lab Transitions" Composer="" Album="DJ Lab — Transitions" Grouping="transition" Genre="Transition Demo" Kind="MP3 File" Size="3754187" TotalTime="94" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="123.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot - · Energy - · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/transitions/transition-10-breakdown_mix.mp3" Remixer="" Tonality="" Label="DJ Lab" Mix="Original Mix">
+      <TEMPO Inizio="0.000" Bpm="123.00" Metro="4/4" Battito="1"/>
+      <POSITION_MARK Name="A breakdown" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
+      <POSITION_MARK Name="B in (LPF)" Type="0" Start="31.220" Num="1" Red="16" Green="177" Blue="230"/>
+      <POSITION_MARK Name="A recedes" Type="0" Start="46.829" Num="2" Red="224" Green="100" Blue="27"/>
+      <POSITION_MARK Name="Echo 2 beats" Type="0" Start="61.463" Num="3" Red="230" Green="40" Blue="40"/>
+      <POSITION_MARK Name="B drop" Type="0" Start="62.439" Num="4" Red="180" Green="190" Blue="4"/>
+      <POSITION_MARK Name="B solo" Type="0" Start="78.049" Num="5" Red="222" Green="68" Blue="207"/>
+    </TRACK>
   </COLLECTION>
   <PLAYLISTS>
     <NODE Type="0" Name="ROOT" Count="1">
-      <NODE Type="0" Name="DJ Lab" Count="7">
-        <NODE Name="All DJ Lab Tracks" Type="1" KeyType="0" Entries="13">
+      <NODE Type="0" Name="DJ Lab" Count="8">
+        <NODE Name="All DJ Lab Tracks" Type="1" KeyType="0" Entries="52">
           <TRACK Key="1"/>
           <TRACK Key="2"/>
           <TRACK Key="3"/>
@@ -233,84 +1117,302 @@
           <TRACK Key="11"/>
           <TRACK Key="12"/>
           <TRACK Key="13"/>
+          <TRACK Key="14"/>
+          <TRACK Key="15"/>
+          <TRACK Key="16"/>
+          <TRACK Key="17"/>
+          <TRACK Key="18"/>
+          <TRACK Key="19"/>
+          <TRACK Key="20"/>
+          <TRACK Key="21"/>
+          <TRACK Key="22"/>
+          <TRACK Key="23"/>
+          <TRACK Key="24"/>
+          <TRACK Key="25"/>
+          <TRACK Key="26"/>
+          <TRACK Key="27"/>
+          <TRACK Key="28"/>
+          <TRACK Key="29"/>
+          <TRACK Key="30"/>
+          <TRACK Key="31"/>
+          <TRACK Key="32"/>
+          <TRACK Key="33"/>
+          <TRACK Key="34"/>
+          <TRACK Key="35"/>
+          <TRACK Key="36"/>
+          <TRACK Key="37"/>
+          <TRACK Key="38"/>
+          <TRACK Key="39"/>
+          <TRACK Key="40"/>
+          <TRACK Key="41"/>
+          <TRACK Key="42"/>
+          <TRACK Key="43"/>
+          <TRACK Key="44"/>
+          <TRACK Key="45"/>
+          <TRACK Key="46"/>
+          <TRACK Key="47"/>
+          <TRACK Key="48"/>
+          <TRACK Key="49"/>
+          <TRACK Key="50"/>
+          <TRACK Key="51"/>
+          <TRACK Key="52"/>
         </NODE>
-        <NODE Type="0" Name="House Family" Count="2">
-          <NODE Name="All House Family" Type="1" KeyType="0" Entries="4">
+        <NODE Type="0" Name="House Family" Count="7">
+          <NODE Name="All House Family" Type="1" KeyType="0" Entries="14">
             <TRACK Key="1"/>
             <TRACK Key="2"/>
+            <TRACK Key="3"/>
+            <TRACK Key="4"/>
+            <TRACK Key="5"/>
+            <TRACK Key="6"/>
+            <TRACK Key="7"/>
+            <TRACK Key="8"/>
+            <TRACK Key="9"/>
+            <TRACK Key="10"/>
+            <TRACK Key="11"/>
+            <TRACK Key="12"/>
+            <TRACK Key="13"/>
+            <TRACK Key="14"/>
+          </NODE>
+          <NODE Name="Deep House" Type="1" KeyType="0" Entries="2">
+            <TRACK Key="1"/>
+            <TRACK Key="2"/>
+          </NODE>
+          <NODE Name="House" Type="1" KeyType="0" Entries="2">
             <TRACK Key="3"/>
             <TRACK Key="4"/>
           </NODE>
           <NODE Name="Tech House" Type="1" KeyType="0" Entries="4">
-            <TRACK Key="1"/>
-            <TRACK Key="2"/>
-            <TRACK Key="3"/>
-            <TRACK Key="4"/>
-          </NODE>
-        </NODE>
-        <NODE Type="0" Name="Techno Family" Count="3">
-          <NODE Name="All Techno Family" Type="1" KeyType="0" Entries="5">
             <TRACK Key="5"/>
             <TRACK Key="6"/>
             <TRACK Key="7"/>
             <TRACK Key="8"/>
-            <TRACK Key="9"/>
           </NODE>
-          <NODE Name="Peak-Time Techno" Type="1" KeyType="0" Entries="1">
-            <TRACK Key="5"/>
+          <NODE Name="Afro House" Type="1" KeyType="0" Entries="3">
+            <TRACK Key="9"/>
+            <TRACK Key="10"/>
+            <TRACK Key="11"/>
+          </NODE>
+          <NODE Name="Nu-Disco" Type="1" KeyType="0" Entries="2">
+            <TRACK Key="12"/>
+            <TRACK Key="13"/>
+          </NODE>
+          <NODE Name="Amapiano" Type="1" KeyType="0" Entries="1">
+            <TRACK Key="14"/>
+          </NODE>
+        </NODE>
+        <NODE Type="0" Name="Techno Family" Count="5">
+          <NODE Name="All Techno Family" Type="1" KeyType="0" Entries="12">
+            <TRACK Key="15"/>
+            <TRACK Key="16"/>
+            <TRACK Key="17"/>
+            <TRACK Key="18"/>
+            <TRACK Key="19"/>
+            <TRACK Key="20"/>
+            <TRACK Key="21"/>
+            <TRACK Key="22"/>
+            <TRACK Key="23"/>
+            <TRACK Key="24"/>
+            <TRACK Key="25"/>
+            <TRACK Key="26"/>
+          </NODE>
+          <NODE Name="Techno" Type="1" KeyType="0" Entries="4">
+            <TRACK Key="15"/>
+            <TRACK Key="16"/>
+            <TRACK Key="17"/>
+            <TRACK Key="18"/>
           </NODE>
           <NODE Name="Melodic Techno" Type="1" KeyType="0" Entries="4">
-            <TRACK Key="6"/>
-            <TRACK Key="7"/>
-            <TRACK Key="8"/>
-            <TRACK Key="9"/>
+            <TRACK Key="19"/>
+            <TRACK Key="20"/>
+            <TRACK Key="21"/>
+            <TRACK Key="22"/>
+          </NODE>
+          <NODE Name="Hypnotic Techno" Type="1" KeyType="0" Entries="2">
+            <TRACK Key="23"/>
+            <TRACK Key="24"/>
+          </NODE>
+          <NODE Name="Hard Techno" Type="1" KeyType="0" Entries="2">
+            <TRACK Key="25"/>
+            <TRACK Key="26"/>
           </NODE>
         </NODE>
-        <NODE Type="0" Name="Mainstream &amp; Mediterranean" Count="2">
-          <NODE Name="All Mainstream &amp; Mediterranean" Type="1" KeyType="0" Entries="2">
-            <TRACK Key="10"/>
-            <TRACK Key="11"/>
+        <NODE Type="0" Name="Mainstream &amp; Mediterranean" Count="8">
+          <NODE Name="All Mainstream &amp; Mediterranean" Type="1" KeyType="0" Entries="16">
+            <TRACK Key="27"/>
+            <TRACK Key="28"/>
+            <TRACK Key="29"/>
+            <TRACK Key="30"/>
+            <TRACK Key="31"/>
+            <TRACK Key="32"/>
+            <TRACK Key="33"/>
+            <TRACK Key="34"/>
+            <TRACK Key="35"/>
+            <TRACK Key="36"/>
+            <TRACK Key="37"/>
+            <TRACK Key="38"/>
+            <TRACK Key="39"/>
+            <TRACK Key="40"/>
+            <TRACK Key="41"/>
+            <TRACK Key="42"/>
+          </NODE>
+          <NODE Name="Big Room" Type="1" KeyType="0" Entries="2">
+            <TRACK Key="27"/>
+            <TRACK Key="28"/>
+          </NODE>
+          <NODE Name="Pop Dance" Type="1" KeyType="0" Entries="2">
+            <TRACK Key="29"/>
+            <TRACK Key="30"/>
+          </NODE>
+          <NODE Name="Hip Hop" Type="1" KeyType="0" Entries="3">
+            <TRACK Key="31"/>
+            <TRACK Key="32"/>
+            <TRACK Key="33"/>
           </NODE>
           <NODE Name="Reggaeton" Type="1" KeyType="0" Entries="2">
-            <TRACK Key="10"/>
-            <TRACK Key="11"/>
+            <TRACK Key="34"/>
+            <TRACK Key="35"/>
+          </NODE>
+          <NODE Name="Moombahton" Type="1" KeyType="0" Entries="1">
+            <TRACK Key="36"/>
+          </NODE>
+          <NODE Name="Afrobeats" Type="1" KeyType="0" Entries="2">
+            <TRACK Key="37"/>
+            <TRACK Key="38"/>
+          </NODE>
+          <NODE Name="Mediterranean" Type="1" KeyType="0" Entries="4">
+            <TRACK Key="39"/>
+            <TRACK Key="40"/>
+            <TRACK Key="41"/>
+            <TRACK Key="42"/>
           </NODE>
         </NODE>
-        <NODE Type="0" Name="More Genres" Count="3">
-          <NODE Name="All More Genres" Type="1" KeyType="0" Entries="2">
-            <TRACK Key="12"/>
-            <TRACK Key="13"/>
+        <NODE Type="0" Name="More Genres" Count="8">
+          <NODE Name="All More Genres" Type="1" KeyType="0" Entries="10">
+            <TRACK Key="43"/>
+            <TRACK Key="44"/>
+            <TRACK Key="45"/>
+            <TRACK Key="46"/>
+            <TRACK Key="47"/>
+            <TRACK Key="48"/>
+            <TRACK Key="49"/>
+            <TRACK Key="50"/>
+            <TRACK Key="51"/>
+            <TRACK Key="52"/>
           </NODE>
-          <NODE Name="Psytrance" Type="1" KeyType="0" Entries="1">
-            <TRACK Key="12"/>
+          <NODE Name="Psytrance" Type="1" KeyType="0" Entries="2">
+            <TRACK Key="43"/>
+            <TRACK Key="44"/>
           </NODE>
-          <NODE Name="Uplifting Trance" Type="1" KeyType="0" Entries="1">
-            <TRACK Key="13"/>
+          <NODE Name="Trance" Type="1" KeyType="0" Entries="2">
+            <TRACK Key="45"/>
+            <TRACK Key="46"/>
+          </NODE>
+          <NODE Name="Dnb" Type="1" KeyType="0" Entries="2">
+            <TRACK Key="47"/>
+            <TRACK Key="48"/>
+          </NODE>
+          <NODE Name="Dubstep" Type="1" KeyType="0" Entries="1">
+            <TRACK Key="49"/>
+          </NODE>
+          <NODE Name="UK Garage" Type="1" KeyType="0" Entries="1">
+            <TRACK Key="50"/>
+          </NODE>
+          <NODE Name="Breakbeat" Type="1" KeyType="0" Entries="1">
+            <TRACK Key="51"/>
+          </NODE>
+          <NODE Name="Lo-Fi Hip-Hop" Type="1" KeyType="0" Entries="1">
+            <TRACK Key="52"/>
           </NODE>
         </NODE>
         <NODE Type="0" Name="By Energy" Count="3">
-          <NODE Name="Warm-up (energy 1-5)" Type="1" KeyType="0" Entries="0">
-          </NODE>
-          <NODE Name="Build (energy 6-7)" Type="1" KeyType="0" Entries="9">
-            <TRACK Key="11"/>
-            <TRACK Key="6"/>
-            <TRACK Key="9"/>
-            <TRACK Key="10"/>
-            <TRACK Key="7"/>
-            <TRACK Key="8"/>
-            <TRACK Key="1"/>
-            <TRACK Key="4"/>
+          <NODE Name="Warm-up (energy 1-5)" Type="1" KeyType="0" Entries="7">
+            <TRACK Key="52"/>
             <TRACK Key="2"/>
-          </NODE>
-          <NODE Name="Peak (energy 8-10)" Type="1" KeyType="0" Entries="4">
-            <TRACK Key="3"/>
-            <TRACK Key="5"/>
+            <TRACK Key="1"/>
+            <TRACK Key="14"/>
             <TRACK Key="13"/>
             <TRACK Key="12"/>
+            <TRACK Key="10"/>
+          </NODE>
+          <NODE Name="Build (energy 6-7)" Type="1" KeyType="0" Entries="28">
+            <TRACK Key="31"/>
+            <TRACK Key="35"/>
+            <TRACK Key="33"/>
+            <TRACK Key="37"/>
+            <TRACK Key="38"/>
+            <TRACK Key="9"/>
+            <TRACK Key="19"/>
+            <TRACK Key="22"/>
+            <TRACK Key="3"/>
+            <TRACK Key="4"/>
+            <TRACK Key="24"/>
+            <TRACK Key="34"/>
+            <TRACK Key="39"/>
+            <TRACK Key="36"/>
+            <TRACK Key="11"/>
+            <TRACK Key="29"/>
+            <TRACK Key="20"/>
+            <TRACK Key="21"/>
+            <TRACK Key="30"/>
+            <TRACK Key="41"/>
+            <TRACK Key="5"/>
+            <TRACK Key="8"/>
+            <TRACK Key="6"/>
+            <TRACK Key="23"/>
+            <TRACK Key="51"/>
+            <TRACK Key="50"/>
+            <TRACK Key="32"/>
+            <TRACK Key="48"/>
+          </NODE>
+          <NODE Name="Peak (energy 8-10)" Type="1" KeyType="0" Entries="17">
+            <TRACK Key="40"/>
+            <TRACK Key="42"/>
+            <TRACK Key="7"/>
+            <TRACK Key="18"/>
+            <TRACK Key="15"/>
+            <TRACK Key="46"/>
+            <TRACK Key="44"/>
+            <TRACK Key="27"/>
+            <TRACK Key="28"/>
+            <TRACK Key="16"/>
+            <TRACK Key="17"/>
+            <TRACK Key="45"/>
+            <TRACK Key="49"/>
+            <TRACK Key="43"/>
+            <TRACK Key="47"/>
+            <TRACK Key="25"/>
+            <TRACK Key="26"/>
           </NODE>
         </NODE>
-        <NODE Name="Practice Drills" Type="1" KeyType="0" Entries="1">
-          <TRACK Key="14"/>
+        <NODE Name="Practice Drills" Type="1" KeyType="0" Entries="15">
+          <TRACK Key="53"/>
+          <TRACK Key="54"/>
+          <TRACK Key="55"/>
+          <TRACK Key="56"/>
+          <TRACK Key="57"/>
+          <TRACK Key="58"/>
+          <TRACK Key="59"/>
+          <TRACK Key="60"/>
+          <TRACK Key="61"/>
+          <TRACK Key="62"/>
+          <TRACK Key="63"/>
+          <TRACK Key="64"/>
+          <TRACK Key="65"/>
+          <TRACK Key="66"/>
+          <TRACK Key="67"/>
+        </NODE>
+        <NODE Name="Transition Demos" Type="1" KeyType="0" Entries="10">
+          <TRACK Key="68"/>
+          <TRACK Key="69"/>
+          <TRACK Key="70"/>
+          <TRACK Key="71"/>
+          <TRACK Key="72"/>
+          <TRACK Key="73"/>
+          <TRACK Key="74"/>
+          <TRACK Key="75"/>
+          <TRACK Key="76"/>
+          <TRACK Key="77"/>
         </NODE>
       </NODE>
     </NODE>
