@@ -262,7 +262,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return []
         cd = chord_deg(c)
         off = (c.i % 2) * 16
-        ev = [(s - off, l, bass_note(cd + st), v) for s, l, st, v in riff if off <= s < off + 16]
+        ev = [(s - off, l, eh.chord_bass(key, cd, st, root - 2), v) for s, l, st, v in riff if off <= s < off + 16]
         if c.before("drop", 1) or c.before("breakdown", 1):
             ev = [e for e in ev if e[0] < 8]
         return ev

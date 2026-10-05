@@ -122,6 +122,17 @@ def voice_progression(key: Key, degs, sizes=None, center: int = 62, rootless: bo
     return out
 
 
+def chord_bass(key: Key, chord_deg: int, step: int, lo: int) -> int:
+    """Bass note ``step`` scale steps above the chord root, with the chord root folded once into
+    the octave [lo, lo+12) — so octave pops and passing tones keep their real interval."""
+    base = key.degree(chord_deg, 1)
+    while base < lo:
+        base += 12
+    while base >= lo + 12:
+        base -= 12
+    return base + key.degree(chord_deg + step, 1) - key.degree(chord_deg, 1)
+
+
 def degree_root(key: Key, deg: int, base: int) -> int:
     """MIDI of scale degree ``deg`` placed in the octave starting at ``base`` (a bass root)."""
     pc = (key.root_pc + key.scale[deg % len(key.scale)]) % 12

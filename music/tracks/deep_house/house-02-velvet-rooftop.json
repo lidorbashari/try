@@ -1,0 +1,157 @@
+{
+ "id": "house-02",
+ "title": "Velvet Rooftop",
+ "title_he": "גג קטיפה",
+ "artist": "DJ Lab Originals",
+ "genre": "Deep House",
+ "genre_slug": "deep_house",
+ "family": "house",
+ "bpm": 121.0,
+ "key": "E minor",
+ "key_short": "Em",
+ "camelot": "9A",
+ "energy": 3,
+ "role": "warmup",
+ "duration_sec": 269.752,
+ "bars": 136,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 32,
+   "start_sec": 0.0,
+   "energy": 3
+  },
+  {
+   "name": "Groove",
+   "start_bar": 32,
+   "bars": 32,
+   "start_sec": 63.471,
+   "energy": 5
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 64,
+   "bars": 16,
+   "start_sec": 126.942,
+   "energy": 4
+  },
+  {
+   "name": "Main",
+   "start_bar": 80,
+   "bars": 24,
+   "start_sec": 158.678,
+   "energy": 6
+  },
+  {
+   "name": "Outro",
+   "start_bar": 104,
+   "bars": 32,
+   "start_sec": 206.281,
+   "energy": 3
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 32,
+   "sec": 63.471,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 64,
+   "sec": 126.942,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 80,
+   "sec": 158.678,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 104,
+   "sec": 206.281,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 120,
+   "sec": 238.017,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Groove",
+   "bar": 32,
+   "sec": 63.471
+  },
+  {
+   "name": "Breakdown",
+   "bar": 64,
+   "sec": 126.942
+  },
+  {
+   "name": "Main",
+   "bar": 80,
+   "sec": 158.678
+  },
+  {
+   "name": "Outro",
+   "bar": 104,
+   "sec": 206.281
+  }
+ ],
+ "lufs": -9.04,
+ "true_peak_dbtp": -1.61,
+ "file": "music/tracks/deep_house/house-02-velvet-rooftop.mp3",
+ "cover": "music/tracks/deep_house/house-02-velvet-rooftop.jpg",
+ "description_he": "דיפ-האוס קטיפתי לשעות הלילה ב-121 BPM בסולם E minor: אקורדים דאביים מפולטרים שנבלעים בדיליי, פד רך, באס עמוק עם גלישות חלקות ותופים מינימליים. אנרגיה נמוכה ועדינה, מושלם למעברים ארוכים.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 32 תיבות להכנסה נקייה, הבאס נכנס בתיבה 33 (Hot Cue B), ברייקדאון בתיבה 65, דרופ בתיבה 81, אאוטרו של 32 תיבות מתיבה 105 — מושלם למיקס החוצה. הטראק עדין ואחיד — מתאים למעבר ארוך של 32 תיבות עם החלפת באסים (Bass Swap) בתחילת פרייז.",
+ "instruments": [
+  "warm deep kick",
+  "swung soft hats",
+  "open hat",
+  "shaker",
+  "dusty rim",
+  "roomy clap + snap",
+  "ride",
+  "tops blip",
+  "gliding mono bass",
+  "filtered dub chords",
+  "velvet pad",
+  "breathy vowel atmosphere",
+  "vocal chop"
+ ],
+ "seed": 1017,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

@@ -91,7 +91,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
         return lo + ((p - lo) % 12)
 
     # ------------------------------------------------------------------ drums
-    kick_s = drums.kick("deep", tune_hz=W.kick_tune(key, 44.0, 58.0, 49.0), decay=float(rng.uniform(0.34, 0.4)),
+    kick_s = drums.kick("deep", tune_hz=W.kick_tune(key, 44.0, 52.0, 48.0), decay=float(rng.uniform(0.34, 0.4)),
                         click=float(rng.uniform(0.3, 0.45)), drive=1.4, rng=rng)
     kpat = M["kick"]
 
@@ -121,7 +121,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     shk = drums.variants(drums.shaker, 4, rng, jitter={"length": 0.2}, length=float(rng.uniform(0.06, 0.085)))
     sp = SHAKER[int(rng.integers(len(SHAKER)))]
     song.hits("shaker", shk, lambda c: sp if c.kind != "breakdown" or c.i >= 2 else None,
-              gain_db=-12.0, pan=0.42, humanize=0.15, timing_ms=2.0)
+              gain_db=-10.5, pan=0.42, humanize=0.15, timing_ms=2.0)
     hats = drums.variants(drums.hat, 3, rng, decay=float(rng.uniform(0.028, 0.04)), tone=float(rng.uniform(1.0, 1.2)))
     song.hits("hats", hats, lambda c: "gogxgogxgogxgogx" if c.kind == "drop" or (c.kind == "groove" and c.i >= 8) else None,
               gain_db=-16.0, pan=-0.3, humanize=0.12)
@@ -171,7 +171,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
 
     # ------------------------------------------------------------------ deep melodic bass (mono, slides)
     synth = inst.MonoSynth(wave=str(rng.choice(["saw", "square"])), cutoff=float(rng.uniform(260, 340)), res=0.18,
-                           env_mod=float(rng.uniform(0.8, 1.3)), decay=0.22, glide_ms=70.0, drive=1.3, sub=0.9,
+                           env_mod=float(rng.uniform(0.8, 1.3)), decay=0.22, glide_ms=70.0, drive=1.3, sub=0.35,
                            sustain=0.7, amp_decay=0.5)
 
     def bass_root(nm):
@@ -198,6 +198,20 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
 
     bass = song.line("bass", synth, bass_notes, bus="bass", gain_db=-2.0, sidechain=0.35, sc_release_ms=110.0)
     bass.automate("cutoff", [(verse.start_bar, 240), (verse.start_bar + 8, 320), (hook.start_bar, 420)])
+
+    # sine sub on the chord roots (36–62 Hz) under the melodic bass — the afrobeats "808" weight
+    def sub_notes(c):
+        nm = prog_at(c)
+        if nm is None or c.kind in ("outro", "breakdown"):
+            return []
+        r = reg((pc + ROOT[nm]) % 12, 26)
+        ev = [(0, 5.5, r, 0.95), (6, 1.8, r, 0.7), (8, 5.5, r, 0.9)]
+        if c.before("drop", 1) or c.before("breakdown", 1):
+            ev = ev[:2]
+        return ev
+
+    song.notes("sub", inst.sub_bass(harmonics=0.06, attack=0.006), sub_notes, bus="bass", gain_db=-6.0, sidechain=0.45,
+               sc_release_ms=120.0, humanize=0.0)
 
     # ------------------------------------------------------------------ chords: Rhodes + warm pad
     center = reg(pc, 60) + 6
@@ -324,7 +338,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
         if s.kind == "breakdown":
             fxl.add(fx.downlifter(bar * 2, rng=rng), s.start_bar, gain_db=-14.0)
 
-    song.buses["drums"].eq = [("peak", 2800.0, 1.5, 0.8)]
+    song.buses["drums"].eq = [("peak", 2800.0, 1.5, 0.8), ("highshelf", 7000.0, 2.5, 0.7)]
     song.buses["drums"].width = 1.25
     song.buses["music"].eq = [("peak", 2200.0, 1.0, 0.8)]
     song.master.lufs = -9.0

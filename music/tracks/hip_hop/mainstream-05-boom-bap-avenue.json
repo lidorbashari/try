@@ -1,0 +1,183 @@
+{
+ "id": "mainstream-05",
+ "title": "Boom Bap Avenue",
+ "title_he": "שדרת בום באפ",
+ "artist": "DJ Lab Originals",
+ "genre": "Hip-Hop",
+ "genre_slug": "hip_hop",
+ "family": "mainstream",
+ "bpm": 92.0,
+ "key": "C minor",
+ "key_short": "Cm",
+ "camelot": "5A",
+ "energy": 6,
+ "role": "build",
+ "duration_sec": 208.696,
+ "bars": 80,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 16,
+   "start_sec": 0.0,
+   "energy": 3
+  },
+  {
+   "name": "Verse",
+   "start_bar": 16,
+   "bars": 16,
+   "start_sec": 41.739,
+   "energy": 5
+  },
+  {
+   "name": "Hook",
+   "start_bar": 32,
+   "bars": 8,
+   "start_sec": 83.478,
+   "energy": 7
+  },
+  {
+   "name": "Verse 2",
+   "start_bar": 40,
+   "bars": 8,
+   "start_sec": 104.348,
+   "energy": 5
+  },
+  {
+   "name": "Break",
+   "start_bar": 48,
+   "bars": 8,
+   "start_sec": 125.217,
+   "energy": 4
+  },
+  {
+   "name": "Hook 2",
+   "start_bar": 56,
+   "bars": 8,
+   "start_sec": 146.087,
+   "energy": 7
+  },
+  {
+   "name": "Outro",
+   "start_bar": 64,
+   "bars": 16,
+   "start_sec": 166.957,
+   "energy": 4
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 16,
+   "sec": 41.739,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 48,
+   "sec": 125.217,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 32,
+   "sec": 83.478,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "F",
+   "name": "Drop 2",
+   "bar": 56,
+   "sec": 146.087,
+   "color": "#DE44CF",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 64,
+   "sec": 166.957,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 64,
+   "sec": 166.957,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Verse",
+   "bar": 16,
+   "sec": 41.739
+  },
+  {
+   "name": "Hook",
+   "bar": 32,
+   "sec": 83.478
+  },
+  {
+   "name": "Verse 2",
+   "bar": 40,
+   "sec": 104.348
+  },
+  {
+   "name": "Break",
+   "bar": 48,
+   "sec": 125.217
+  },
+  {
+   "name": "Hook 2",
+   "bar": 56,
+   "sec": 146.087
+  },
+  {
+   "name": "Outro",
+   "bar": 64,
+   "sec": 166.957
+  }
+ ],
+ "lufs": -10.93,
+ "true_peak_dbtp": -1.47,
+ "file": "music/tracks/hip_hop/mainstream-05-boom-bap-avenue.mp3",
+ "cover": "music/tracks/hip_hop/mainstream-05-boom-bap-avenue.jpg",
+ "description_he": "היפ-הופ בום-באפ קלאסי ב-92 BPM בסולם C minor: קיק מאובק ונוקש, סנר פריך, היי-האטים בסווינג MPC של 62%, לופ רודס ג'אזי (אקורדי 9 ו-maj7) עם רעידת טייפ עדינה (wow), באס עמוק, מוטיב חליל ווייבים בהוק, קראקל של ויניל וסקרצ'ים.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 16 תיבות ביט בלבד (בלי באס ובלי אקורדים) — מספיק זמן ל-Beatmatching למרות הסווינג. הלופ והבאס נכנסים בתיבה 17 (Hot Cue B), ההוק בתיבה 33, הברייק בתיבה 49. לפני כל הוק הביט נעצר לחצי תיבה — רגע מושלם לסקרץ' או לקאט. האאוטרו מתחיל בתיבה 65 ו-8 התיבות האחרונות הן תופים בלבד. בגלגל הקמלוט הטראק יושב על 5A ומתערבב חלק עם 4A, 6A ו-5B. מתחבר מעולה ל-Late Night Cypher (6A, 95 BPM).",
+ "instruments": [
+  "dusty swung boom-bap drums (12-bit)",
+  "vinyl crackle",
+  "FM Rhodes chord loop (tape wow)",
+  "deep round bass",
+  "turntable scratches",
+  "breathy jazz flute",
+  "vibraphone"
+ ],
+ "seed": 1510,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

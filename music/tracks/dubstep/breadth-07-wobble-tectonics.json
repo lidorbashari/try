@@ -1,0 +1,172 @@
+{
+ "id": "breadth-07",
+ "title": "Wobble Tectonics",
+ "title_he": "טקטוניקת וובל",
+ "artist": "DJ Lab Originals",
+ "genre": "Dubstep",
+ "genre_slug": "dubstep",
+ "family": "breadth",
+ "bpm": 140.0,
+ "key": "F minor",
+ "key_short": "Fm",
+ "camelot": "4A",
+ "energy": 9,
+ "role": "peak",
+ "duration_sec": 219.429,
+ "bars": 128,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 16,
+   "start_sec": 0.0,
+   "energy": 4
+  },
+  {
+   "name": "Build",
+   "start_bar": 16,
+   "bars": 16,
+   "start_sec": 27.429,
+   "energy": 6
+  },
+  {
+   "name": "Drop",
+   "start_bar": 32,
+   "bars": 32,
+   "start_sec": 54.857,
+   "energy": 10
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 64,
+   "bars": 16,
+   "start_sec": 109.714,
+   "energy": 5
+  },
+  {
+   "name": "Drop 2",
+   "start_bar": 80,
+   "bars": 24,
+   "start_sec": 137.143,
+   "energy": 10
+  },
+  {
+   "name": "Outro",
+   "start_bar": 104,
+   "bars": 24,
+   "start_sec": 178.286,
+   "energy": 4
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 16,
+   "sec": 27.429,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 64,
+   "sec": 109.714,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 32,
+   "sec": 54.857,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "F",
+   "name": "Drop 2",
+   "bar": 80,
+   "sec": 137.143,
+   "color": "#DE44CF",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 104,
+   "sec": 178.286,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 112,
+   "sec": 192.0,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Build",
+   "bar": 16,
+   "sec": 27.429
+  },
+  {
+   "name": "Drop",
+   "bar": 32,
+   "sec": 54.857
+  },
+  {
+   "name": "Breakdown",
+   "bar": 64,
+   "sec": 109.714
+  },
+  {
+   "name": "Drop 2",
+   "bar": 80,
+   "sec": 137.143
+  },
+  {
+   "name": "Outro",
+   "bar": 104,
+   "sec": 178.286
+  }
+ ],
+ "lufs": -9.02,
+ "true_peak_dbtp": -1.41,
+ "file": "music/tracks/dubstep/breadth-07-wobble-tectonics.mp3",
+ "cover": "music/tracks/dubstep/breadth-07-wobble-tectonics.jpg",
+ "description_he": "דאבסטפ ב-140 BPM (תחושת חצי טמפו) בסולם F minor: תופים בחצי טמפו עם סנר ענק בפעמה 3, בילד גדול עם סנר-רול, סירנה ורייזר, ודרופ של באס וובל שהפילטר שלו מסונכרן לטמפו (1/8, 1/16 וטריולות) שעונה לו באס גראול ב-FM — הכול מעל סאב מונו נקי וכבד. ברייקדאון עם פדים כהים ופעמונים.",
+ "mix_tips_he": "טיפ ערבוב: 16 תיבות ראשונות תופים בלבד, בתיבה 17 (Hot Cue B) נכנסים סאב ופדים והבילד מתחיל; הדרופ בתיבה 33 (Hot Cue D). ברייקדאון בתיבה 65, דרופ 2 בתיבה 81, אאוטרו מתיבה 105 (16 התיבות האחרונות תופים בלבד). Rekordbox עשוי להציג 70 BPM (חצי טמפו) — הגריד זהה, אפשר להכפיל. מעבר קלאסי: לחתוך את הטראק היוצא על הסנר של הפעמה 3 ממש לפני הדרופ. שכנים ב-Camelot: 4A ↔ 5A, 3A, 4B.",
+ "instruments": [
+  "half-time drums",
+  "huge layered snare",
+  "tempo-synced wobble bass",
+  "FM growl bass",
+  "clean mono sub",
+  "dark pads",
+  "FM bell melody",
+  "siren, riser, impact"
+ ],
+ "seed": 1816,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

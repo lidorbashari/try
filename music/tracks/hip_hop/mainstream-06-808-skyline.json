@@ -1,0 +1,198 @@
+{
+ "id": "mainstream-06",
+ "title": "808 Skyline",
+ "title_he": "קו רקיע 808",
+ "artist": "DJ Lab Originals",
+ "genre": "Trap",
+ "genre_slug": "hip_hop",
+ "family": "mainstream",
+ "bpm": 140.0,
+ "key": "F minor",
+ "key_short": "Fm",
+ "camelot": "4A",
+ "energy": 7,
+ "role": "peak",
+ "duration_sec": 192.0,
+ "bars": 112,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 16,
+   "start_sec": 0.0,
+   "energy": 3
+  },
+  {
+   "name": "Verse",
+   "start_bar": 16,
+   "bars": 16,
+   "start_sec": 27.429,
+   "energy": 5
+  },
+  {
+   "name": "Build",
+   "start_bar": 32,
+   "bars": 8,
+   "start_sec": 54.857,
+   "energy": 6
+  },
+  {
+   "name": "Drop",
+   "start_bar": 40,
+   "bars": 16,
+   "start_sec": 68.571,
+   "energy": 8
+  },
+  {
+   "name": "Verse 2",
+   "start_bar": 56,
+   "bars": 16,
+   "start_sec": 96.0,
+   "energy": 6
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 72,
+   "bars": 8,
+   "start_sec": 123.429,
+   "energy": 4
+  },
+  {
+   "name": "Drop 2",
+   "start_bar": 80,
+   "bars": 16,
+   "start_sec": 137.143,
+   "energy": 8
+  },
+  {
+   "name": "Outro",
+   "start_bar": 96,
+   "bars": 16,
+   "start_sec": 164.571,
+   "energy": 4
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 16,
+   "sec": 27.429,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 72,
+   "sec": 123.429,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 40,
+   "sec": 68.571,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "F",
+   "name": "Drop 2",
+   "bar": 80,
+   "sec": 137.143,
+   "color": "#DE44CF",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 96,
+   "sec": 164.571,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 96,
+   "sec": 164.571,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Verse",
+   "bar": 16,
+   "sec": 27.429
+  },
+  {
+   "name": "Build",
+   "bar": 32,
+   "sec": 54.857
+  },
+  {
+   "name": "Drop",
+   "bar": 40,
+   "sec": 68.571
+  },
+  {
+   "name": "Verse 2",
+   "bar": 56,
+   "sec": 96.0
+  },
+  {
+   "name": "Breakdown",
+   "bar": 72,
+   "sec": 123.429
+  },
+  {
+   "name": "Drop 2",
+   "bar": 80,
+   "sec": 137.143
+  },
+  {
+   "name": "Outro",
+   "bar": 96,
+   "sec": 164.571
+  }
+ ],
+ "lufs": -10.36,
+ "true_peak_dbtp": -1.45,
+ "file": "music/tracks/hip_hop/mainstream-06-808-skyline.mp3",
+ "cover": "music/tracks/hip_hop/mainstream-06-808-skyline.jpg",
+ "description_he": "טראפ כהה ב-140 BPM בתחושת חצי-טמפו בסולם F minor: 808 ארוך ומכוון עם גלישות אוקטבה, קלאפ וסנר על הפעמה השלישית, היי-האטים עם רולים של שש-עשריות, שלושים-ושתיים וטריולות, פעמונים אפלים, מקהלת \"אוּ\" סינתטית ובילד עם רול סנר לפני הדרופ.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 16 תיבות תופים בלבד. ה-808 והפעמונים נכנסים בתיבה 17 (Hot Cue B), בילד בתיבה 33, הדרופ בתיבה 41, ברייקדאון בתיבה 73. האאוטרו מתחיל בתיבה 97 ו-8 התיבות האחרונות הן תופים בלבד. Rekordbox עשוי לזהות 70 BPM (חצי-טמפו) — זה תקין; ב-140 הוא מתערבב גם עם דאבסטפ, ובחצי (70) עם היפ-הופ איטי. בגלגל הקמלוט הטראק יושב על 4A ומתערבב חלק עם 3A, 5A ו-4B. מתחבר מעולה ל-Wobble Tectonics (4A, 140 BPM).",
+ "instruments": [
+  "long gliding 808 (tuned)",
+  "punchy trap kick",
+  "clap + snare on 3",
+  "hi-hat rolls (1/16, 1/32, triplets)",
+  "open hats & rim/snap percs",
+  "dark FM bells",
+  "square pluck",
+  "formant 'ooh' choir",
+  "dark pad",
+  "risers / impacts / reverse cymbals"
+ ],
+ "seed": 1527,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

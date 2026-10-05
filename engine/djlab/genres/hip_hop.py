@@ -314,8 +314,8 @@ def _boom_bap(plan, rng):
     else:
         song.description_he = (f"היפ-הופ בום-באפ קלאסי ב-{int(song.bpm)} BPM בסולם {plan['key']}: קיק מאובק ונוקש, "
                                f"סנר פריך, היי-האטים בסווינג MPC של {sw}%, לופ רודס ג'אזי (אקורדי 9 ו-maj7) עם "
-                               f"\"ווא\" של טייפ, באס עמוק, מוטיב חליל ווייבים בהוק, קראקל של ויניל וסקרצ'ים.")
-    song.mix_tips_he = (f"טיפ ערבוב: אינטרו של 16 תיבות ביט בלבד (בלי באס ובלי אקורדים) — הכי נוח למיקס בסווינג. "
+                               f"רעידת טייפ עדינה (wow), באס עמוק, מוטיב חליל ווייבים בהוק, קראקל של ויניל וסקרצ'ים.")
+    song.mix_tips_he = (f"טיפ ערבוב: אינטרו של 16 תיבות ביט בלבד (בלי באס ובלי אקורדים) — מספיק זמן ל-Beatmatching למרות הסווינג. "
                         f"הלופ והבאס נכנסים בתיבה {verse.start_bar + 1} (Hot Cue B), ההוק בתיבה "
                         f"{hook.start_bar + 1}, הברייק בתיבה {brk.start_bar + 1}. לפני כל הוק הביט נעצר לחצי "
                         f"תיבה — רגע מושלם לסקרץ' או לקאט. האאוטרו מתחיל בתיבה {outro.start_bar + 1} ו-8 "
@@ -383,7 +383,7 @@ def _trap(plan, rng):
             return "........x.....x."
         return "........x......."
 
-    cl = song.hits("clap", cs, clap_pat, gain_db=-3.0, sends={"reverb": 0.18})
+    cl = song.hits("clap", cs, clap_pat, gain_db=-3.0, sends={"reverb": 0.24})
     cl.automate("gain_db", [(0, 0.0), (build_s.start_bar - 0.01, 0.0), (build_s.start_bar, -16.0),
                             (build_s.end_bar - 0.01, 0.0), (build_s.end_bar, 0.0)])
     hats = drums.variants(drums.hat, 4, rng, jitter={"decay": 0.1}, decay=float(rng.uniform(0.028, 0.04)),
@@ -401,15 +401,15 @@ def _trap(plan, rng):
         rolls = 1 if c.i % 2 == 1 else 0
         return xm.trap_hats(c.rng, base=2, rolls=rolls, energy=0.8)
 
-    song.hits("hats", hats, hat_pat, gain_db=-12.0, pan=0.2, humanize=0.08)
+    song.hits("hats", hats, hat_pat, gain_db=-12.0, pan=0.35, humanize=0.08)
     ohat = drums.hat(open_=True, decay=0.25, tone=1.1, rng=rng)
     song.hits("open_hat", ohat, lambda c: "..............x." if c.kind in ("drop",) and c.i % 2 == 0
-              or (c.kind == "verse" and c.i % 4 == 3) else None, gain_db=-14.0, pan=-0.3, sends={"room": 0.1})
+              or (c.kind == "verse" and c.i % 4 == 3) else None, gain_db=-14.0, pan=-0.45, sends={"room": 0.1})
     rim = drums.rimshot(float(rng.uniform(1700, 2100)), rng=rng)
     snap = drums.snap(rng=rng)
     song.hits("perc", [rim, snap], lambda c: ("...x......x...x." if c.i % 2 else ".......x.....x..")
               if c.kind in ("drop", "verse") or (c.kind == "intro" and c.i >= 8) else None,
-              gain_db=-15.0, pan=0.45, sends={"delay8": 0.15, "room": 0.1})
+              gain_db=-15.0, pan=-0.6, sends={"delay8": 0.2, "room": 0.1})
 
     # ---------------------------------------------------------------- 808
     b808_clip = clip(b808pat, 2)
@@ -427,7 +427,8 @@ def _trap(plan, rng):
 
     b808 = xm.synth_808(decay=float(rng.uniform(1.4, 1.9)), drive=float(rng.uniform(2.0, 2.8)), punch=7.0,
                         glide_ms=float(rng.uniform(70, 110)), seed=song.seed)
-    song.line("808", b808, b808_notes, bus="bass", gain_db=-1.5, sidechain=0.4, sc_release_ms=70.0)
+    song.line("808", b808, b808_notes, bus="bass", gain_db=-1.5, sidechain=0.4, sc_release_ms=70.0) \
+        .automate("gain_db", song.section_points({"verse": -2.0, "drop": 0.0, "breakdown": -2.0}, -1.0))
 
     # ---------------------------------------------------------------- music
     br = TRAP_BELL_RHYTHMS[int(rng.integers(len(TRAP_BELL_RHYTHMS)))]
@@ -443,13 +444,14 @@ def _trap(plan, rng):
         return []
 
     bells = song.notes("bells", inst.bell(ratio=float(rng.choice([3.5, 2.0, 4.0])), index=1.8, decay=1.1),
-                       bell_notes, gain_db=-12.5, sends={"reverb": 0.22, "delay": 0.2}, pan=0.15, width=1.4,
+                       bell_notes, gain_db=-12.5, sends={"reverb": 0.26, "delay": 0.22}, pan=0.15, width=1.9,
                        sidechain=0.25)
+    bells.automate("gain_db", song.section_points({"verse": -3.5, "drop": 0.0, "breakdown": 1.0}, -2.0, ramp_bars=1))
     bells.automate("lp", [(verse.start_bar, 2000), (verse.start_bar + 8, 6500), (outro.start_bar, 6500),
                           (beat_only_from, 1500)])
     song.notes("pluck", xm.square_pluck(pw=0.3, cutoff=700.0, env_amt=2500.0, decay=0.12),
                lambda c: [(s, l, m, v * 0.8) for s, l, m, v in mclip(c)] if c.kind == "drop" else [],
-               gain_db=-15.0, sends={"delay": 0.15}, pan=-0.25)
+               gain_db=-15.0, sends={"delay": 0.18}, pan=-0.4, width=1.5)
     choir = xm.chant(vowel="u", vowel_to="o", voices=4, shift=0.95, fall=0.0, breath=0.1, spread=0.8, release=0.8)
 
     def choir_notes(c):
@@ -482,6 +484,7 @@ def _trap(plan, rng):
 
     song.buses["drums"].eq = [("peak", 4500.0, 1.5, 0.8), ("peak", 200.0, -2.0, 1.0)]
     song.buses["bass"].eq = [("lowshelf", 55.0, 1.5, 0.7), ("peak", 160.0, -2.0, 0.9)]
+    song.returns["reverb"].width = 1.7
     song.master.lufs = -10.5
     song.instruments = ["long gliding 808 (tuned)", "punchy trap kick", "clap + snare on 3", "hi-hat rolls (1/16, "
                         "1/32, triplets)", "open hats & rim/snap percs", "dark FM bells", "square pluck",

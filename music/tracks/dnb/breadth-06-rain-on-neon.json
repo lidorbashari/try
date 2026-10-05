@@ -1,0 +1,159 @@
+{
+ "id": "breadth-06",
+ "title": "Rain On Neon",
+ "title_he": "גשם על ניאון",
+ "artist": "DJ Lab Originals",
+ "genre": "Liquid Drum & Bass",
+ "genre_slug": "dnb",
+ "family": "breadth",
+ "bpm": 172.0,
+ "key": "C minor",
+ "key_short": "Cm",
+ "camelot": "5A",
+ "energy": 7,
+ "role": "build",
+ "duration_sec": 245.581,
+ "bars": 176,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 32,
+   "start_sec": 0.0,
+   "energy": 5
+  },
+  {
+   "name": "Drop",
+   "start_bar": 32,
+   "bars": 48,
+   "start_sec": 44.651,
+   "energy": 9
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 80,
+   "bars": 32,
+   "start_sec": 111.628,
+   "energy": 5
+  },
+  {
+   "name": "Drop 2",
+   "start_bar": 112,
+   "bars": 32,
+   "start_sec": 156.279,
+   "energy": 9
+  },
+  {
+   "name": "Outro",
+   "start_bar": 144,
+   "bars": 32,
+   "start_sec": 200.93,
+   "energy": 5
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 16,
+   "sec": 22.326,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 80,
+   "sec": 111.628,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 32,
+   "sec": 44.651,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "F",
+   "name": "Drop 2",
+   "bar": 112,
+   "sec": 156.279,
+   "color": "#DE44CF",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 144,
+   "sec": 200.93,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 160,
+   "sec": 223.256,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Drop",
+   "bar": 32,
+   "sec": 44.651
+  },
+  {
+   "name": "Breakdown",
+   "bar": 80,
+   "sec": 111.628
+  },
+  {
+   "name": "Drop 2",
+   "bar": 112,
+   "sec": 156.279
+  },
+  {
+   "name": "Outro",
+   "bar": 144,
+   "sec": 200.93
+  }
+ ],
+ "lufs": -9.06,
+ "true_peak_dbtp": -1.33,
+ "file": "music/tracks/dnb/breadth-06-rain-on-neon.mp3",
+ "cover": "music/tracks/dnb/breadth-06-rain-on-neon.jpg",
+ "description_he": "ליקוויד דראם אנד בייס ב-172 BPM בסולם C minor: סאב חם ועגול עם גלישות, פדים ג'אזיים עשירים (אקורדי min9 ו-maj7), רודס שמנגן קומפינג ומנגינה עדינה, מרקם של גשם ברקע ותופי ברייקביט מתגלגלים (קיק ב-1, סנר ב-2 וב-4, גוסטים וברייק סינתטי בסגנון אמן). אווירה של לילה רטוב בעיר.",
+ "mix_tips_he": "טיפ ערבוב: 16 תיבות ראשונות תופים בלבד; הסאב והפדים נכנסים בתיבה 17 (Hot Cue B) והדרופ בתיבה 33 (Hot Cue D). בדראם אנד בייס מקובל לעשות Double Drop: מסנכרנים את הדרופ של הטראק הנכנס עם הדרופ או האאוטרו של היוצא, והורדת Low בטראק אחד חובה. ברייקדאון בתיבה 81, דרופ 2 בתיבה 113, האאוטרו מתחיל בתיבה 145 ו-16 התיבות האחרונות תופים בלבד. Rekordbox עלול לזהות 86 BPM (חצי טמפו) — אם כך, תקנו ל-172. שכנים ב-Camelot: 5A ↔ 6A, 4A, 5B.",
+ "instruments": [
+  "two-step DnB drums",
+  "synthesised amen-like break",
+  "warm sine sub with glides",
+  "jazzy min9/maj7 pads",
+  "Rhodes comping & melody",
+  "vocal 'ooh' pad",
+  "rain texture"
+ ],
+ "seed": 1799,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

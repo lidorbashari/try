@@ -244,10 +244,10 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
               "open hats & ride", "metal hits & tom rolls", "pitched noise risers & snare rolls"]
     if rave:
         song.instruments = common + ["hoover riff", "rave chord stabs"]
-        desc = "אנרגיית רייב של שנות ה-90: ריף הובר עם גלישות פיץ' וסטאבים של אקורדי רייב"
+        desc = "ובמרכז — ריף הובר עם גלישות פיץ' וסטאבים של אקורדי רייב, באנרגיה של שנות ה-90"
     else:
         song.instruments = common + ["screech lead", "distorted acid line", "industrial noise bursts"]
-        desc = "אגרסיבי ותעשייתי: ליד צורח עם רזוננס, קו אסיד מעוות ופרצי רעש מתכתיים"
+        desc = "ובמרכז — ליד צורח עם רזוננס, קו אסיד מעוות ופרצי רעש מתכתיים"
     song.description_he = (f"הארד טכנו ב-{int(song.bpm)} BPM בסולם {plan['key']}: קיק מעוות ופאנצ'י עם ראמבל רווי, "
                            f"קלאפ קשה והיי-האטים מהירים; {desc}. בלתי מתפשר — לשיא של הסט.")
     song.mix_tips_he = (song.auto_mix_tips_he() +

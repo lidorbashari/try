@@ -1,0 +1,157 @@
+{
+ "id": "house-12",
+ "title": "Mirrorball Boulevard",
+ "title_he": "שדרת כדור המראות",
+ "artist": "DJ Lab Originals",
+ "genre": "Nu-Disco",
+ "genre_slug": "nu_disco",
+ "family": "house",
+ "bpm": 118.0,
+ "key": "C major",
+ "key_short": "C",
+ "camelot": "8B",
+ "energy": 5,
+ "role": "warmup",
+ "duration_sec": 260.339,
+ "bars": 128,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 32,
+   "start_sec": 0.0,
+   "energy": 4
+  },
+  {
+   "name": "Groove",
+   "start_bar": 32,
+   "bars": 16,
+   "start_sec": 65.085,
+   "energy": 5
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 48,
+   "bars": 16,
+   "start_sec": 97.627,
+   "energy": 4
+  },
+  {
+   "name": "Chorus",
+   "start_bar": 64,
+   "bars": 32,
+   "start_sec": 130.169,
+   "energy": 7
+  },
+  {
+   "name": "Outro",
+   "start_bar": 96,
+   "bars": 32,
+   "start_sec": 195.254,
+   "energy": 4
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 32,
+   "sec": 65.085,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 48,
+   "sec": 97.627,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 64,
+   "sec": 130.169,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 96,
+   "sec": 195.254,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 112,
+   "sec": 227.797,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Groove",
+   "bar": 32,
+   "sec": 65.085
+  },
+  {
+   "name": "Breakdown",
+   "bar": 48,
+   "sec": 97.627
+  },
+  {
+   "name": "Chorus",
+   "bar": 64,
+   "sec": 130.169
+  },
+  {
+   "name": "Outro",
+   "bar": 96,
+   "sec": 195.254
+  }
+ ],
+ "lufs": -9.11,
+ "true_peak_dbtp": -1.13,
+ "file": "music/tracks/nu_disco/house-12-mirrorball-boulevard.mp3",
+ "cover": "music/tracks/nu_disco/house-12-mirrorball-boulevard.jpg",
+ "description_he": "נו-דיסקו נוצץ ב-118 BPM בסולם C major: באס דיסקו באוקטבות, גיטרה מושתקת בשש-עשריות, סטרינגס רחבים ופילטר האוס שנושם — נפתח ונסגר — בפזמון. אנרגיה חיובית ושמחה מתחת לכדור המראות.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 32 תיבות להכנסה נקייה, הבאס נכנס בתיבה 33 (Hot Cue B), ברייקדאון בתיבה 49, דרופ בתיבה 65, אאוטרו של 32 תיבות מתיבה 97 — מושלם למיקס החוצה. טראק בסולם מז'ור — מתחבר בצורה חלקה לטראקים במינור היחסי (אותו מספר Camelot עם A).",
+ "instruments": [
+  "tight house kick",
+  "clap + snare",
+  "16th hats",
+  "off-beat open hat",
+  "tambourine",
+  "shaker",
+  "congas",
+  "disco octave bass",
+  "muted rhythm guitar (Karplus-Strong)",
+  "string machine + ensemble",
+  "string stabs",
+  "filter-house sweep",
+  "vocoder-like vowel hook"
+ ],
+ "seed": 1187,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

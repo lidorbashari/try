@@ -134,7 +134,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     hats = xt.stereo_variants(drums.hat, 4, rng, jitter={"decay": 0.2}, corr=0.45,
                               decay=float(rng.uniform(0.03, 0.06)), tone=float(rng.uniform(1.0, 1.3)))
     song.hits("hats", hats, lambda c: hat_pattern if not (c.kind == "breakdown" and c.bars_left > 2) else None,
-              gain_db=-13.5 if rolling else -11.5, pan=0.2, humanize=0.1)
+              gain_db=-14.5 if rolling else -11.5, pan=0.2, humanize=0.1)
     ohat = xt.stereo_hit(drums.hat, rng, corr=0.5, open_=True, decay=float(rng.uniform(0.2, 0.3)),
                          tone=float(rng.uniform(1.0, 1.2)))
     song.hits("open_hat", ohat, lambda c: OPEN_HAT if (c.kind in ("groove", "drop") or (c.kind == "intro" and c.i >= 8)
@@ -184,7 +184,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     if rolling:
         shk = xt.stereo_variants(drums.shaker, 3, rng, corr=0.3, length=0.08)
         song.hits("shaker", shk, lambda c: "gxgogxgogxgogxgo" if c.kind != "breakdown" and not (c.kind == "intro" and c.i < 8)
-                  else None, gain_db=-17.0, pan=-0.4, humanize=0.15)
+                  else None, gain_db=-18.5, pan=-0.4, humanize=0.15)
         toms = [drums.tom(float(rng.uniform(95, 120)), 0.3, rng=rng), drums.tom(float(rng.uniform(140, 170)), 0.25, rng=rng)]
         song.hits("toms_roll", toms, lambda c: xt.steps_to_pattern(xt.poly_hits(c, 3, 2)) if c.kind in ("groove", "drop")
                   and c.i >= 8 else None, gain_db=-16.0, pan=0.35, sends={"room": 0.2, "delay8": 0.1}, humanize=0.2)
@@ -230,14 +230,14 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
                                                   decay=float(rng.uniform(0.04, 0.08)), res=float(rng.uniform(0.4, 0.6))), 8.0, 0.3)
         seq_l = song.notes("sequence", seq_inst,
                            lambda c: seq_fn(c) if (c.kind in ("groove", "drop", "breakdown") or (c.kind == "outro" and c.i < 8)) else [],
-                           gain_db=-4.5 if rolling else -7.0, sidechain=0.45, sends={"delay": 0.22, "hall": 0.08}, pan=0.15)
+                           gain_db=-3.0 if rolling else -7.0, sidechain=0.45, sends={"delay": 0.22, "hall": 0.08}, pan=0.15)
         seq_l.automate("lp", [(groove, 700), (groove + 24, 3500), (d1, 2500), (d1 + 16, 9000), (outro.start_bar + 8, 1200)])
     elif ind:  # metallic FM sequence, bit-crushed, low in the mix
         fm_seq = [(s, 0.5, key.root(4) + (12 if s in (6, 14) else 0), 0.9 if s % 4 == 2 else 0.6)
                   for s in (2, 3, 6, 10, 11, 14)]
         seq_l = song.notes("sequence", inst.fm_stab(ratio=3.5, index=5.0, decay=0.06),
                            lambda c: fm_seq if c.kind in ("groove", "drop") and c.i >= 8 else [],
-                           gain_db=-10.0, sidechain=0.4, sends={"delay": 0.2, "hall": 0.15}, pan=0.3,
+                           gain_db=-8.0, sidechain=0.4, sends={"delay": 0.2, "hall": 0.15}, pan=0.3,
                            fx=[lambda x: fx.bitcrush(x, 9, 2)])
         seq_l.automate("lp", [(groove + 8, 1500), (d1, 6000), (outro.start_bar, 2500)])
 
@@ -264,7 +264,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
                 return ca(c)
             return []
 
-        acid = song.line("acid", synth, acid_notes, bus="music", gain_db=-5.0 if not acid_fl else -6.0, sidechain=0.4,
+        acid = song.line("acid", synth, acid_notes, bus="music", gain_db=-5.0 if not acid_fl else -4.0, sidechain=0.4,
                          sends={"delay": 0.2 if not acid_fl else 0.25, "reverb": 0.08},
                          fx=[lambda x: xt.ms_spread(x, 9.0, 0.3, 400.0)])
         pts = []
@@ -288,25 +288,27 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
         song.notes("dub_stab", dub,
                    lambda c: [(s, l, chords[(c.i // 4) % len(chords)], v) for s, l, v in stab_r]
                    if c.kind in ("breakdown", "drop") or (rolling and c.kind == "groove" and c.i >= 16) else [],
-                   gain_db=-8.0, sidechain=0.5, sends={"delay": 0.35, "hall": 0.25})
+                   gain_db=-6.0 if rolling else -8.0, sidechain=0.5, sends={"delay": 0.35, "hall": 0.25})
     elif acid_fl:  # strobe: 16th-gated chord stab in the second half of each drop
         strobe = "x.xx.xx.x.xx.xx."
         stb = xt.rave_stab(cutoff=500.0, env_amt=3500.0, decay=0.05, drive=1.8, amp_decay=0.09)
         song.notes("strobe", stb, lambda c: [(i, 0.5, chords[(c.i // 4) % len(chords)], 0.9 if i % 4 == 0 else 0.65)
                                              for i, ch_ in enumerate(strobe) if ch_ == "x"]
                    if c.kind == "drop" and (c.i >= c.section.bars // 2) else [],
-                   gain_db=-12.0, sidechain=0.6, sends={"delay8": 0.2, "hall": 0.12})
+                   gain_db=-10.0, sidechain=0.6, sends={"delay8": 0.2, "hall": 0.12})
     elif ind:  # growl: distorted low-mid FM stab on the offbeats of the drop
         growl = inst.fm_stab(ratio=1.0, index=3.5, decay=0.12)
-        song.notes("growl", growl, lambda c: [(s, 1.5, key.root(2), 0.9) for s in (2, 6, 10, 14)]
-                   if c.kind == "drop" and c.i % 8 < 6 else [],
+        gr = song.notes("growl", growl, lambda c: [(s, 1.5, key.root(2), 0.9 if c.kind == "drop" else 0.7) for s in (2, 6, 10, 14)]
+                   if (c.kind == "drop" and c.i % 8 < 6) or (c.kind == "groove" and c.i >= 16)
+                   or (c.kind == "breakdown" and c.i >= 8 and c.bars_left > 1) else [],
                    gain_db=-7.5, sidechain=0.7, hp=140.0, fx=[lambda x: xt.distorted(x, 5.0, 4000.0)],
                    sends={"reverb": 0.1})
+        gr.automate("lp", [(groove + 16, 500), (d1 - 8, 600), (d1 - 0.01, 3000), (d1, 8000)])
 
     # breakdown pad / drone
     pad_inst = xt.warm_pad(attack=1.2, cutoff=900.0, detune=0.25, warmth=0.7)
     pad = song.notes("pad", pad_inst, lambda c: [(0, 63.5, chords[(c.i // 4) % len(chords)], 0.7)]
-                     if c.kind == "breakdown" and c.i % 4 == 0 else [], gain_db=-12.0 if not ind else -15.0,
+                     if c.kind == "breakdown" and c.i % 4 == 0 else [], gain_db=-12.0 if not ind else -7.0,
                      sends={"hall": 0.35}, humanize=0.0)
     for s in song.sections:
         if s.kind == "breakdown":
@@ -314,7 +316,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     if ind:
         song.notes("drone", xt.noise_drone(q=12.0, harmonics=(1, 2, 3), attack=3.0),
                    lambda c: [(0, c.section.bars * 16 - 4, key.root(2), 0.8)] if c.kind == "breakdown" and c.i == 0 else [],
-                   gain_db=-10.0, sends={"hall": 0.3}, humanize=0.0)
+                   gain_db=-1.0, sends={"hall": 0.3}, humanize=0.0)
 
     # ---------------------------------------------------------------- fx / transitions
     fxl = song.audio("fx", bus="fx", sends={"hall": 0.15})
@@ -341,8 +343,11 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     fxl.add(fx.noise_sweep(bar * 8, up=True, rng=rng), groove, align="end", gain_db=-16.0)
 
     song.buses["drums"].eq = [("peak", 3000.0, 1.5, 0.8)]
-    song.buses["music"].eq = [("peak", 420.0, -2.5 if acid_fl else -2.0, 0.9), ("peak", 1600.0, 1.5, 0.8)]
+    mud, pres = {"classic": (-2.0, 1.5), "industrial": (0.0, 1.5), "acid": (-2.5, 3.0), "rolling": (0.0, 2.5)}[flavor]
+    song.buses["music"].eq = [("peak", 420.0, mud, 0.9), ("peak", 1600.0, pres, 0.8)]
     song.master.lufs = -9.0
+    if kick_hz > 50.0 and not rolling:  # kick body near the 60 Hz edge → gentle sub tilt in the master
+        song.master.low_shelf_db, song.master.low_shelf_hz = 2.0, 55.0
     common = ["driving techno kick", "sidechained reverb rumble", "stereo closed & open hats", "ride",
               "clap & snare (plate)", "industrial metal hits", "pitched snare rolls, risers & noise sweeps"]
     extra = {
@@ -355,12 +360,12 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     kname = plan["key"]
     desc = {
         "classic": "קיק דוחף עם ראמבל עמוק, סיקוונס היפנוטי, קו אסיד שנפתח לאורך הטראק וסטאבים דאביים עם דיליי",
-        "industrial": "טכנו תעשייתי כהה ומעוות: קיק וראמבל עם דיסטורשן, צלצולי מתכת, רעש מכונות בסטריאו, "
+        "industrial": "הצד התעשייתי, הכהה והמעוות — קיק וראמבל עם דיסטורשן, צלצולי מתכת, רעש מכונות בסטריאו, "
                       "סטאבים גרוליים ודרון אפל בברייקדאון",
         "acid": "קו אסיד בסגנון 303 שמוביל את הטראק מהגרוב ועד הדרופ — הפילטר נפתח לאט, וסטאבים מהבהבים "
                 "(סטרובו) בחצי השני של כל דרופ",
-        "rolling": "טכנו מתגלגל ודוהר: היי-האטים בשש-עשריות, סיקוונס פולימטרי של 3 נגד 4, טומים מתגלגלים "
-                   "וסטאבים דאביים עם דיליי ודרופ ארוך",
+        "rolling": "גרוב מתגלגל ודוהר — באסליין מתגלגל בשש-עשריות, היי-האטים רצים, סיקוונס פולימטרי של 3 נגד 4, "
+                   "טומים מתגלגלים, סטאבים דאביים עם דיליי ודרופ ארוך",
     }[flavor]
     gname = "טכנו דוהר (Driving)" if "Driving" in plan.get("genre", "") else "טכנו פיק-טיים"
     slot = {"peak": "לרגעי השיא של הסט", "build": "לבניית אנרגיה באמצע הסט"}.get(plan.get("role"), "לאמצע-סוף הסט")

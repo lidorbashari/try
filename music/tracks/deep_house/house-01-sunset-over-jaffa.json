@@ -1,0 +1,157 @@
+{
+ "id": "house-01",
+ "title": "Sunset Over Jaffa",
+ "title_he": "שקיעה ביפו",
+ "artist": "DJ Lab Originals",
+ "genre": "Deep House",
+ "genre_slug": "deep_house",
+ "family": "house",
+ "bpm": 122.0,
+ "key": "A minor",
+ "key_short": "Am",
+ "camelot": "8A",
+ "energy": 4,
+ "role": "warmup",
+ "duration_sec": 283.279,
+ "bars": 144,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 32,
+   "start_sec": 0.0,
+   "energy": 3
+  },
+  {
+   "name": "Groove",
+   "start_bar": 32,
+   "bars": 32,
+   "start_sec": 62.951,
+   "energy": 5
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 64,
+   "bars": 16,
+   "start_sec": 125.902,
+   "energy": 4
+  },
+  {
+   "name": "Main",
+   "start_bar": 80,
+   "bars": 32,
+   "start_sec": 157.377,
+   "energy": 6
+  },
+  {
+   "name": "Outro",
+   "start_bar": 112,
+   "bars": 32,
+   "start_sec": 220.328,
+   "energy": 3
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 32,
+   "sec": 62.951,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 64,
+   "sec": 125.902,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 80,
+   "sec": 157.377,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 112,
+   "sec": 220.328,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 128,
+   "sec": 251.803,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Groove",
+   "bar": 32,
+   "sec": 62.951
+  },
+  {
+   "name": "Breakdown",
+   "bar": 64,
+   "sec": 125.902
+  },
+  {
+   "name": "Main",
+   "bar": 80,
+   "sec": 157.377
+  },
+  {
+   "name": "Outro",
+   "bar": 112,
+   "sec": 220.328
+  }
+ ],
+ "lufs": -9.04,
+ "true_peak_dbtp": -1.51,
+ "file": "music/tracks/deep_house/house-01-sunset-over-jaffa.mp3",
+ "cover": "music/tracks/deep_house/house-01-sunset-over-jaffa.jpg",
+ "description_he": "דיפ-האוס חמים ב-122 BPM בסולם A minor: אקורדי רודס עם טרמולו סטריאו, באס אורגן עגול וקיק רך, היי-האטים מתנדנדים ואווירה ווקאלית נושמת עם ריוורב ארוך. מוזיקת שקיעה לחימום רגוע.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 32 תיבות להכנסה נקייה, הבאס נכנס בתיבה 33 (Hot Cue B), ברייקדאון בתיבה 65, דרופ בתיבה 81, אאוטרו של 32 תיבות מתיבה 113 — מושלם למיקס החוצה. הטראק עדין ואחיד — מתאים למעבר ארוך של 32 תיבות עם החלפת באסים (Bass Swap) בתחילת פרייז.",
+ "instruments": [
+  "warm deep kick",
+  "swung soft hats",
+  "open hat",
+  "shaker",
+  "dusty rim",
+  "roomy clap + snap",
+  "conga ghost notes",
+  "M1-style organ bass",
+  "Rhodes-style FM e-piano (tremolo)",
+  "minor 9th chords",
+  "filtered pad",
+  "breathy vowel atmosphere",
+  "vocal chop"
+ ],
+ "seed": 1000,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

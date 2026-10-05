@@ -156,7 +156,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
             return []
         off = (c.i % 2) * 16  # riff is 2 bars; the chord changes every bar
         cd = prog[chord_of(c)]
-        ev = [(s - off, l, bass_note(cd + st), v) for s, l, st, v in riff if off <= s < off + 16]
+        ev = [(s - off, l, eh.chord_bass(key, cd, st, root - 4), v) for s, l, st, v in riff if off <= s < off + 16]
         if c.before("drop", 1) or c.before("breakdown", 1):
             ev = [e for e in ev if e[0] < 8]
         return ev

@@ -1,0 +1,198 @@
+{
+ "id": "house-03",
+ "title": "Hands Up Florentin",
+ "title_he": "ידיים למעלה בפלורנטין",
+ "artist": "DJ Lab Originals",
+ "genre": "House",
+ "genre_slug": "house",
+ "family": "house",
+ "bpm": 124.0,
+ "key": "D minor",
+ "key_short": "Dm",
+ "camelot": "7A",
+ "energy": 6,
+ "role": "build",
+ "duration_sec": 263.226,
+ "bars": 136,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 32,
+   "start_sec": 0.0,
+   "energy": 4
+  },
+  {
+   "name": "Groove",
+   "start_bar": 32,
+   "bars": 16,
+   "start_sec": 61.935,
+   "energy": 6
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 48,
+   "bars": 16,
+   "start_sec": 92.903,
+   "energy": 4
+  },
+  {
+   "name": "Drop",
+   "start_bar": 64,
+   "bars": 24,
+   "start_sec": 123.871,
+   "energy": 8
+  },
+  {
+   "name": "Breakdown 2",
+   "start_bar": 88,
+   "bars": 8,
+   "start_sec": 170.323,
+   "energy": 5
+  },
+  {
+   "name": "Drop 2",
+   "start_bar": 96,
+   "bars": 8,
+   "start_sec": 185.806,
+   "energy": 9
+  },
+  {
+   "name": "Outro",
+   "start_bar": 104,
+   "bars": 32,
+   "start_sec": 201.29,
+   "energy": 5
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 32,
+   "sec": 61.935,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 48,
+   "sec": 92.903,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 64,
+   "sec": 123.871,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "E",
+   "name": "Breakdown 2",
+   "bar": 88,
+   "sec": 170.323,
+   "color": "#B4BE04",
+   "type": "hot"
+  },
+  {
+   "slot": "F",
+   "name": "Drop 2",
+   "bar": 96,
+   "sec": 185.806,
+   "color": "#DE44CF",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 104,
+   "sec": 201.29,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 120,
+   "sec": 232.258,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Groove",
+   "bar": 32,
+   "sec": 61.935
+  },
+  {
+   "name": "Breakdown",
+   "bar": 48,
+   "sec": 92.903
+  },
+  {
+   "name": "Drop",
+   "bar": 64,
+   "sec": 123.871
+  },
+  {
+   "name": "Breakdown 2",
+   "bar": 88,
+   "sec": 170.323
+  },
+  {
+   "name": "Drop 2",
+   "bar": 96,
+   "sec": 185.806
+  },
+  {
+   "name": "Outro",
+   "bar": 104,
+   "sec": 201.29
+  }
+ ],
+ "lufs": -9.11,
+ "true_peak_dbtp": -1.37,
+ "file": "music/tracks/house/house-03-hands-up-florentin.mp3",
+ "cover": "music/tracks/house/house-03-hands-up-florentin.jpg",
+ "description_he": "האוס קלאסי בסגנון שיקגו/ניו-יורק ב-124 BPM בסולם D minor: קיק 909 חזק, אופן-האט על האופביט וקלאפים על 2 ו-4, באס קופצני, סטאבים של פסנתר ואורגן ומהלך אקורדים של ידיים למעלה — עם ברייקדאון גדול ודרופ אופוריה.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 32 תיבות להכנסה נקייה, הבאס נכנס בתיבה 33 (Hot Cue B), ברייקדאון בתיבה 49, דרופ בתיבה 65, אאוטרו של 32 תיבות מתיבה 105 — מושלם למיקס החוצה. הקיק נעלם לתיבה אחת לפני הדרופ — חתכו שם את הבאס של הטראק היוצא ותנו לפסנתר להיכנס נקי.",
+ "instruments": [
+  "909 kick",
+  "909 clap",
+  "16th hats",
+  "offbeat open hat",
+  "shaker",
+  "tambourine",
+  "ride",
+  "conga/bongo",
+  "bouncy octave bass",
+  "house piano stabs",
+  "drawbar organ stabs (rotary)",
+  "string machine",
+  "vowel chops",
+  "riser, snare roll & impact"
+ ],
+ "seed": 1034,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

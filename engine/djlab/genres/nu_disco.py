@@ -117,11 +117,11 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     ohat = drums.hat(open_=True, decay=float(rng.uniform(0.22, 0.3)), tone=float(rng.uniform(1.0, 1.1)), rng=rng)
     song.hits("open_hat", ohat, lambda c: "..x...x...x...x." if c.kind in ("groove", "drop") or
               (c.kind == "intro" and c.i >= 8) or (c.kind == "outro" and c.bars_left > 8) else None,
-              gain_db=-11.0, pan=-0.15, sends={"room": 0.1})
+              gain_db=-13.0, pan=-0.15, sends={"room": 0.1})
     tamb = drums.variants(drums.tambourine, 3, rng, jitter={"length": 0.15}, length=float(rng.uniform(0.14, 0.2)))
     song.hits("tamb", tamb, lambda c: ("gxoxgxoxgxoxgxox" if c.kind == "drop" else "..x...x...x...x.")
               if c.kind in ("groove", "drop") or (c.kind == "intro" and c.i >= 16) or (c.kind == "outro" and c.bars_left > 4)
-              else None, gain_db=-15.5, pan=0.45, humanize=0.15, timing_ms=2.0)
+              else None, gain_db=-17.5, pan=0.45, humanize=0.15, timing_ms=2.0)
     shk = drums.variants(drums.shaker, 3, rng, jitter={"length": 0.2}, length=0.08)
     song.hits("shaker", shk, lambda c: "gxgogxgogxgogxgo" if c.kind in ("groove", "drop", "breakdown") or
               (c.kind == "intro" and c.i >= 24) else None, gain_db=-18.0, pan=-0.5, humanize=0.15)
@@ -135,18 +135,10 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
 
     # ================================================================ harmony
     prog = PROGRESSIONS[int(rng.integers(len(PROGRESSIONS)))]
-    root = eh.bass_root(key, 28)
 
     def chord_deg(c):
         return prog[c.i % len(prog)]
 
-    def bass_note(deg_):
-        n = key.degree(deg_, 1)
-        while n < root - 2:
-            n += 12
-        while n > root + 14:
-            n -= 12
-        return n
 
     pad_ch, gtr_ch, stab_ch = {}, {}, {}
     prev = None
@@ -173,13 +165,13 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
         if c.kind in ("intro", "breakdown") or c.bar >= bass_off:
             return []
         cd = chord_deg(c)
-        ev = [(s, l, bass_note(cd + st), v) for s, l, st, v in riff]
+        ev = [(s, l, eh.chord_bass(key, cd, st, 28), v) for s, l, st, v in riff]
         if c.before("drop", 1) or c.before("breakdown", 1):
             ev = [e for e in ev if e[0] < 8]
         return ev
 
     b_inst = inst.bass_pluck(cutoff=float(rng.uniform(380, 500)), env_amt=float(rng.uniform(2000, 3000)),
-                             decay=float(rng.uniform(0.08, 0.11)), res=0.3, sub=0.7, drive=1.6, sustain=0.4,
+                             decay=float(rng.uniform(0.08, 0.11)), res=0.3, sub=1.0, drive=1.6, sustain=0.4,
                              grit=0.45, wave="square" if funk else "saw")
     bass = song.notes("bass", b_inst, bass_notes, bus="bass", gain_db=-4.0, sidechain=0.4, sc_release_ms=120.0,
                       humanize=0.05, timing_ms=2.0)
@@ -256,7 +248,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     # ================================================================ fx & mix
     eh.transitions(song, rng, crash_db=-8.5, impact_db=-11.0, riser_db=-10.0, riser_kind="noise",
                    downlifter=True, reverse=True)
-    song.buses["drums"].eq = [("peak", 3000.0, 1.5, 0.8), ("highshelf", 9000.0, 1.0, 0.7)]
+    song.buses["drums"].eq = [("peak", 3000.0, 1.5, 0.8)]
     song.buses["music"].eq = [("peak", 330.0, -2.0, 0.8), ("highshelf", 6000.0, 1.5, 0.7)]
     song.buses["drums"].width = 1.15
     song.returns["reverb"].decay = 1.6

@@ -1,0 +1,156 @@
+{
+ "id": "house-10",
+ "title": "Kalimba Moon",
+ "title_he": "ירח קלימבה",
+ "artist": "DJ Lab Originals",
+ "genre": "Afro House",
+ "genre_slug": "afro_house",
+ "family": "house",
+ "bpm": 120.0,
+ "key": "C minor",
+ "key_short": "Cm",
+ "camelot": "5A",
+ "energy": 5,
+ "role": "warmup",
+ "duration_sec": 272.0,
+ "bars": 136,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 32,
+   "start_sec": 0.0,
+   "energy": 4
+  },
+  {
+   "name": "Groove",
+   "start_bar": 32,
+   "bars": 32,
+   "start_sec": 64.0,
+   "energy": 6
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 64,
+   "bars": 16,
+   "start_sec": 128.0,
+   "energy": 3
+  },
+  {
+   "name": "Drop",
+   "start_bar": 80,
+   "bars": 24,
+   "start_sec": 160.0,
+   "energy": 8
+  },
+  {
+   "name": "Outro",
+   "start_bar": 104,
+   "bars": 32,
+   "start_sec": 208.0,
+   "energy": 4
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 32,
+   "sec": 64.0,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 64,
+   "sec": 128.0,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 80,
+   "sec": 160.0,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 104,
+   "sec": 208.0,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 120,
+   "sec": 240.0,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Groove",
+   "bar": 32,
+   "sec": 64.0
+  },
+  {
+   "name": "Breakdown",
+   "bar": 64,
+   "sec": 128.0
+  },
+  {
+   "name": "Drop",
+   "bar": 80,
+   "sec": 160.0
+  },
+  {
+   "name": "Outro",
+   "bar": 104,
+   "sec": 208.0
+  }
+ ],
+ "lufs": -9.04,
+ "true_peak_dbtp": -1.58,
+ "file": "music/tracks/afro_house/house-10-kalimba-moon.mp3",
+ "cover": "music/tracks/afro_house/house-10-kalimba-moon.jpg",
+ "description_he": "אפרו-האוס רך ומהפנט ב-120 BPM בסולם C minor: קלימבה מנגנת מוטיב חוזר מעל קונגות ושייקרים, פדים חמים ו\"אוו\" ווקאלי אוורירי. מושלם לחימום רחבה בשעות המוקדמות.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 32 תיבות להכנסה נקייה, הבאס נכנס בתיבה 33 (Hot Cue B), ברייקדאון בתיבה 65, דרופ בתיבה 81, אאוטרו של 32 תיבות מתיבה 105 — מושלם למיקס החוצה. בברייקדאון נשארים רק כלי הקשה, פדים וצ'אנטים — מקום טבעי להכניס את הטראק הבא עם הקונגות שלו.",
+ "instruments": [
+  "deep kick",
+  "congas ×3",
+  "bongos",
+  "12/8 bell (woodblock)",
+  "3-2 clave",
+  "shaker + shekere",
+  "soft clap",
+  "rolling deep bass",
+  "kalimba",
+  "plucked counter-melody",
+  "warm pad",
+  "airy chant voices"
+ ],
+ "seed": 1153,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

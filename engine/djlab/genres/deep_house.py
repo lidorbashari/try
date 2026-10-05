@@ -155,6 +155,8 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     def chord_i(c):
         return (c.i // 2) % len(prog)
 
+    blo = max(28, root - 2)  # bass octave window [blo, blo+12): E1 … D#2 range
+
     def bass_note(deg_):
         n = key.degree(deg_, 1)
         while n < root - 3:
@@ -178,7 +180,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
                 return []
             cd = prog[chord_i(c)][0]
             off = (c.i % 2) * 16
-            ev = [(s - off, l, bass_note(cd + st), v) for s, l, st, v in riff if off <= s < off + 16]
+            ev = [(s - off, l, eh.chord_bass(key, cd, st, blo), v) for s, l, st, v in riff if off <= s < off + 16]
             return [e for e in ev if e[0] < 8] if c.before("drop", 1) else ev
 
         bass = song.notes("bass", inst.organ_bass(drawbars=(1.0, 0.45, 0.18, 0.06)), bass_notes, bus="bass",
@@ -192,7 +194,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
                 return []
             cd = prog[chord_i(c)][0]
             off = (c.i % 2) * 16
-            ev = [(s - off, l, bass_note(cd + st), v, fl) for s, l, st, v, fl in riff if off <= s < off + 16]
+            ev = [(s - off, l, eh.chord_bass(key, cd, st, blo), v, fl) for s, l, st, v, fl in riff if off <= s < off + 16]
             return [e for e in ev if e[0] < 8] if c.before("drop", 1) else ev
 
         ms = inst.MonoSynth(wave="saw", cutoff=float(rng.uniform(150, 190)), res=0.12, env_mod=1.0, decay=0.3,

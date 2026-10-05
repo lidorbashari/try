@@ -115,7 +115,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
 
     def hat_pat(c):
         if c.kind == "breakdown" and c.bars_left > 8:
-            return None if not liquid else "x.x.x.x.x.x.x.x."
+            return None if c.i < 8 else "x.x.x.x.x.x.x.x."
         return hpat
 
     song.hits("hats", hats, hat_pat, gain_db=-16.0, pan=0.4, humanize=0.15, swing=56.0)
@@ -292,7 +292,7 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
         pad_i = inst.pad(attack=1.2, cutoff=1500.0, detune=0.3, warmth=0.6)
         song.notes("pad", pad_i, lambda c: [(0, 31.5, chords[chord_i(c)], 0.7)]
                    if c.i % 2 == 0 and (c.kind == "breakdown" or (c.kind == "intro" and c.i >= 16)) else [],
-                   gain_db=-12.0, sends={"hall": 0.4}, width=1.6, hp=160.0)
+                   gain_db=-9.0, sends={"hall": 0.4}, width=1.6, hp=160.0)
         vox_i = inst.vocal_chop(vowel="a", vowel_to="e", shift=1.15, scoop=-1.2)
         vph = [(0, 2, 4), (3, 1, 4), (6, 2, 6), (10, 3, 4), (14, 2, 2)]
 
@@ -323,7 +323,8 @@ def build(plan: dict, rng: np.random.Generator) -> Song:
     fxl.add(crash, bass_in, gain_db=-12.0)
 
     # ---------------------------------------------------------------- mix
-    song.buses["drums"].eq = [("peak", 4000.0, 0.5, 0.8), ("peak", 200.0, 1.0, 1.0)]
+    song.buses["drums"].eq = [("peak", 200.0, 1.0, 1.0), ("highshelf", 6000.0, -2.5, 0.7)]
+    song.buses["break"].eq = song.buses["break"].eq + [("highshelf", 6000.0, -2.0, 0.7)]
     song.buses["music"].eq = [("peak", 1200.0, 2.0, 0.7)]
     song.buses["drums"].width = 1.2
     song.buses["music"].width = 1.3

@@ -1,0 +1,158 @@
+{
+ "id": "house-04",
+ "title": "Piano Saturday",
+ "title_he": "שבת של פסנתר",
+ "artist": "DJ Lab Originals",
+ "genre": "House",
+ "genre_slug": "house",
+ "family": "house",
+ "bpm": 124.0,
+ "key": "G minor",
+ "key_short": "Gm",
+ "camelot": "6A",
+ "energy": 6,
+ "role": "build",
+ "duration_sec": 263.226,
+ "bars": 136,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 32,
+   "start_sec": 0.0,
+   "energy": 4
+  },
+  {
+   "name": "Groove",
+   "start_bar": 32,
+   "bars": 24,
+   "start_sec": 61.935,
+   "energy": 6
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 56,
+   "bars": 16,
+   "start_sec": 108.387,
+   "energy": 4
+  },
+  {
+   "name": "Drop",
+   "start_bar": 72,
+   "bars": 32,
+   "start_sec": 139.355,
+   "energy": 8
+  },
+  {
+   "name": "Outro",
+   "start_bar": 104,
+   "bars": 32,
+   "start_sec": 201.29,
+   "energy": 5
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 32,
+   "sec": 61.935,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 56,
+   "sec": 108.387,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 72,
+   "sec": 139.355,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 104,
+   "sec": 201.29,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 120,
+   "sec": 232.258,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Groove",
+   "bar": 32,
+   "sec": 61.935
+  },
+  {
+   "name": "Breakdown",
+   "bar": 56,
+   "sec": 108.387
+  },
+  {
+   "name": "Drop",
+   "bar": 72,
+   "sec": 139.355
+  },
+  {
+   "name": "Outro",
+   "bar": 104,
+   "sec": 201.29
+  }
+ ],
+ "lufs": -9.11,
+ "true_peak_dbtp": -1.2,
+ "file": "music/tracks/house/house-04-piano-saturday.mp3",
+ "cover": "music/tracks/house/house-04-piano-saturday.jpg",
+ "description_he": "פסנתר-האוס שמח ב-124 BPM בסולם G minor: ריף פסנתר מתנגן על קיק 909, באס אורגן בסגנון M1, סטרינגס רחבים וברייקדאון ארוך שבו הפסנתר נפתח לאט עד לדרופ.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 32 תיבות להכנסה נקייה, הבאס נכנס בתיבה 33 (Hot Cue B), ברייקדאון בתיבה 57, דרופ בתיבה 73, אאוטרו של 32 תיבות מתיבה 105 — מושלם למיקס החוצה. הקיק נעלם לתיבה אחת לפני הדרופ — חתכו שם את הבאס של הטראק היוצא ותנו לפסנתר להיכנס נקי.",
+ "instruments": [
+  "909 kick",
+  "909 clap",
+  "16th hats",
+  "offbeat open hat",
+  "shaker",
+  "tambourine",
+  "ride",
+  "conga/bongo",
+  "M1-style organ bass",
+  "house piano stabs",
+  "drawbar organ stabs (rotary)",
+  "string machine",
+  "vowel chops",
+  "riser, snare roll & impact"
+ ],
+ "seed": 1051,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

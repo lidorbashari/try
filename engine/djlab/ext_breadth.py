@@ -752,8 +752,8 @@ class Growl(LineVoice):
     follow the synced LFO, heavy saturation, HP. Stereo via short chorus."""
 
     def __init__(self, ratio=1.0, index=4.5, feedback=0.7, shift=1.0, dist=0.7, hp_hz=110.0, vowels=("o", "a", "e"),
-                 chorus_mix=0.25):
-        self.ratio, self.index, self.feedback, self.shift = ratio, index, feedback, shift
+                 chorus_mix=0.25, lp_hz=6000.0):
+        self.ratio, self.index, self.feedback, self.shift, self.lp_hz = ratio, index, feedback, shift, lp_hz
         self.dist, self.hp_hz, self.vowels, self.chorus_mix = dist, hp_hz, vowels, chorus_mix
         self.glide_ms = 25.0
         self.lfo_shape = "tri"
@@ -773,7 +773,7 @@ class Growl(LineVoice):
         y = np.tanh(y * d) / math.tanh(d)
         y = y * A["gate"] * A["vel"]
         y = hp(y.astype(F32), self.hp_hz, 2)
-        y = lp(y, 8000.0, 2)
+        y = lp(y, self.lp_hz, 2)
         return chorus(y, 0.9, 1.2, 6.0, self.chorus_mix) if self.chorus_mix else y
 
 

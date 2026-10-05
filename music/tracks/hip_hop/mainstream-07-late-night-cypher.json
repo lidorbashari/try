@@ -1,0 +1,184 @@
+{
+ "id": "mainstream-07",
+ "title": "Late Night Cypher",
+ "title_he": "סייפר של לילה",
+ "artist": "DJ Lab Originals",
+ "genre": "Hip-Hop",
+ "genre_slug": "hip_hop",
+ "family": "mainstream",
+ "bpm": 95.0,
+ "key": "G minor",
+ "key_short": "Gm",
+ "camelot": "6A",
+ "energy": 6,
+ "role": "build",
+ "duration_sec": 202.105,
+ "bars": 80,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 16,
+   "start_sec": 0.0,
+   "energy": 3
+  },
+  {
+   "name": "Verse",
+   "start_bar": 16,
+   "bars": 16,
+   "start_sec": 40.421,
+   "energy": 5
+  },
+  {
+   "name": "Hook",
+   "start_bar": 32,
+   "bars": 8,
+   "start_sec": 80.842,
+   "energy": 6
+  },
+  {
+   "name": "Break",
+   "start_bar": 40,
+   "bars": 8,
+   "start_sec": 101.053,
+   "energy": 4
+  },
+  {
+   "name": "Verse 2",
+   "start_bar": 48,
+   "bars": 8,
+   "start_sec": 121.263,
+   "energy": 5
+  },
+  {
+   "name": "Hook 2",
+   "start_bar": 56,
+   "bars": 8,
+   "start_sec": 141.474,
+   "energy": 7
+  },
+  {
+   "name": "Outro",
+   "start_bar": 64,
+   "bars": 16,
+   "start_sec": 161.684,
+   "energy": 4
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 16,
+   "sec": 40.421,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 40,
+   "sec": 101.053,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 32,
+   "sec": 80.842,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "F",
+   "name": "Drop 2",
+   "bar": 56,
+   "sec": 141.474,
+   "color": "#DE44CF",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 64,
+   "sec": 161.684,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 64,
+   "sec": 161.684,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Verse",
+   "bar": 16,
+   "sec": 40.421
+  },
+  {
+   "name": "Hook",
+   "bar": 32,
+   "sec": 80.842
+  },
+  {
+   "name": "Break",
+   "bar": 40,
+   "sec": 101.053
+  },
+  {
+   "name": "Verse 2",
+   "bar": 48,
+   "sec": 121.263
+  },
+  {
+   "name": "Hook 2",
+   "bar": 56,
+   "sec": 141.474
+  },
+  {
+   "name": "Outro",
+   "bar": 64,
+   "sec": 161.684
+  }
+ ],
+ "lufs": -10.81,
+ "true_peak_dbtp": -1.44,
+ "file": "music/tracks/hip_hop/mainstream-07-late-night-cypher.mp3",
+ "cover": "music/tracks/hip_hop/mainstream-07-late-night-cypher.jpg",
+ "description_he": "היפ-הופ בום-באפ אפל ולילי ב-95 BPM בסולם G minor: תופים מאובקים בסווינג MPC של 60%, לופ רודס ג'אזי עם אקורדים פריגיים כהים, באס עמוק, פעמונים וקרן עמומה בהוק, קראקל של ויניל וסקרצ'ים לפני כל פזמון. אווירת סייפר של שתיים בלילה.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 16 תיבות ביט בלבד (בלי באס ובלי אקורדים) — מספיק זמן ל-Beatmatching למרות הסווינג. הלופ והבאס נכנסים בתיבה 17 (Hot Cue B), ההוק בתיבה 33, הברייק בתיבה 41. לפני כל הוק הביט נעצר לחצי תיבה — רגע מושלם לסקרץ' או לקאט. האאוטרו מתחיל בתיבה 65 ו-8 התיבות האחרונות הן תופים בלבד. בגלגל הקמלוט הטראק יושב על 6A ומתערבב חלק עם 5A, 7A ו-6B. מתחבר מעולה ל-Boom Bap Avenue (5A, 92 BPM) ול-Perreo Nocturno (7A, 92 BPM).",
+ "instruments": [
+  "dusty swung boom-bap drums (12-bit)",
+  "vinyl crackle",
+  "FM Rhodes chord loop (tape wow)",
+  "deep round bass",
+  "turntable scratches",
+  "dark FM bells",
+  "muted square horn",
+  "dark pad"
+ ],
+ "seed": 1544,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}
