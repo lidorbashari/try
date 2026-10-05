@@ -1,0 +1,170 @@
+{
+ "id": "transition-01",
+ "kind": "transition",
+ "title": "Long Blend: Sunset Over Jaffa → Velvet Rooftop",
+ "title_he": "בלנד ארוך — שקיעה ביפו ← גג קטיפה",
+ "artist": "DJ Lab Transitions",
+ "album": "DJ Lab — Transitions",
+ "genre": "Transition Demo",
+ "technique": "blend",
+ "technique_he": "בלנד ארוך",
+ "from_id": "house-01",
+ "to_id": "house-02",
+ "bpm": 122.0,
+ "duration_sec": 94.426,
+ "bars": 48,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "decks": {
+  "A": {
+   "id": "house-01",
+   "title": "Sunset Over Jaffa",
+   "title_he": "שקיעה ביפו",
+   "bpm": 122.0,
+   "camelot": "8A",
+   "file": "music/tracks/deep_house/house-01-sunset-over-jaffa.mp3",
+   "play_from_bar": 104,
+   "play_from_sec": 204.59,
+   "enters_at_sec": 0.0,
+   "tempo": "master tempo 122 BPM"
+  },
+  "B": {
+   "id": "house-02",
+   "title": "Velvet Rooftop",
+   "title_he": "גג קטיפה",
+   "bpm": 121.0,
+   "camelot": "9A",
+   "file": "music/tracks/deep_house/house-02-velvet-rooftop.mp3",
+   "play_from_bar": 16,
+   "play_from_sec": 31.736,
+   "enters_at_sec": 15.738,
+   "tempo": "resample (vinyl) 121 → 122 BPM (‎+0.8%)"
+  }
+ },
+ "steps_he": [
+  "0:00 — A (`house-01` „שקיעה ביפו“, 8A, 122 BPM) מנגן לבד את 8 התיבות האחרונות לפני ה-Outro. B (`house-02` „גג קטיפה“, 9A, 121 BPM) מוכן באוזניות: מותאם ל-122 BPM, Low למטה לגמרי, High בשעה 10, פיידר למטה.",
+  "0:15 — תיבה 1 של המעבר (תיבה 9 בקובץ): A מגיע ל-Hot Cue G (Outro) ו-B מתחיל על ה-1. הפיידר של B עולה לאט עד כ-75% לאורך 8 תיבות.",
+  "0:31 — תיבות 9–12 של המעבר: ה-High של A יורד לשעה 10, הפיידר של B עולה ל-100% וה-High שלו חוזר לאמצע.",
+  "0:47 — תיבות 17–20 של המעבר (מ-25 בקובץ): החלפת באסים הדרגתית — ה-Low של A יורד עד הסוף וה-Low של B עולה לאמצע, בדיוק כשהבאס של B נכנס (Hot Cue B שלו). באמצע הדרך שניהם בערך בשעה 9–10 — אף פעם לא שני Lows מלאים.",
+  "0:55 — תיבות 21–28 של המעבר: ה-Mid של A יורד מעט והפיידר שלו יורד לאט.",
+  "1:10 — תיבות 29–32 של המעבר: הפיידר של A מגיע ל-0. ב-B לא נוגעים.",
+  "1:18 — תיבה 41 בקובץ: B לבד. ה-EQ של A חוזר לאמצע (הפיידר שלו כבר למטה) — השיר החדש בבית."
+ ],
+ "timeline": [
+  {
+   "t": 0.0,
+   "bar": 0,
+   "beat": 1,
+   "pos": "1.1",
+   "action": "Deck A plays alone, 8 bars before its Outro (Hot Cue G)"
+  },
+  {
+   "t": 15.738,
+   "bar": 8,
+   "beat": 1,
+   "pos": "9.1",
+   "action": "Mix bar 1: A hits Hot Cue G, B starts on the 1 (Low killed, High −6 dB); B fader up to ~75% over 8 bars"
+  },
+  {
+   "t": 31.475,
+   "bar": 16,
+   "beat": 1,
+   "pos": "17.1",
+   "action": "Bars 9-12: A High down to 10 o'clock (−6 dB); B fader to 100%, B High back to centre"
+  },
+  {
+   "t": 47.213,
+   "bar": 24,
+   "beat": 1,
+   "pos": "25.1",
+   "action": "Bars 17-20: gradual low swap — A Low down to kill, B Low up to centre (B's bass enters at its Hot Cue B)"
+  },
+  {
+   "t": 55.082,
+   "bar": 28,
+   "beat": 1,
+   "pos": "29.1",
+   "action": "Bars 21-28: A Mid slightly down, A fader slowly down"
+  },
+  {
+   "t": 70.82,
+   "bar": 36,
+   "beat": 1,
+   "pos": "37.1",
+   "action": "Bars 29-32: A fader reaches 0"
+  },
+  {
+   "t": 78.689,
+   "bar": 40,
+   "beat": 1,
+   "pos": "41.1",
+   "action": "B alone; A EQ reset to centre (fader already down)"
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "A solo",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "B in",
+   "bar": 8,
+   "sec": 15.738,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Highs",
+   "bar": 16,
+   "sec": 31.475,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Bass blend",
+   "bar": 24,
+   "sec": 47.213,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "E",
+   "name": "A fades",
+   "bar": 28,
+   "sec": 55.082,
+   "color": "#B4BE04",
+   "type": "hot"
+  },
+  {
+   "slot": "F",
+   "name": "A out",
+   "bar": 36,
+   "sec": 70.82,
+   "color": "#DE44CF",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "B solo",
+   "bar": 40,
+   "sec": 78.689,
+   "color": "#305AFF",
+   "type": "hot"
+  }
+ ],
+ "description_he": "בלנד ארוך של 32 תיבות מ-„שקיעה ביפו“ (`house-01`, 8A) אל „גג קטיפה“ (`house-02`, 9A), בדיוק לפי הטבלה בפרק 6. B מותאם ל-122 BPM ונכנס על ה-Outro של A; הפיידר שלו עולה לאט, ה-Highs מתחלפים, והבאסים מתחלפים בהדרגה בתיבות 17–20 של המעבר — הרחבה כמעט לא מרגישה שהשיר התחלף. ‎8A→9A — שכנים בגלגל.",
+ "exercise_he": "1. טענו לדק 1 את `music/tracks/deep_house/house-01-sunset-over-jaffa.mp3` ולדק 2 את `music/tracks/deep_house/house-02-velvet-rooftop.mp3`.\n2. הכינו את B: הפעילו Sync על B (או כוונו את ה-Tempo ל-122 BPM, ‎+0.8%). נקודת הכניסה של B: תיבה 17 (0:31.7) — 16 תיבות לפני Hot Cue B. Low למטה לגמרי, High בשעה 10, פיידר למטה.\n3. נגנו את A מתיבה 105 שלו (3:24.6) — שם מתחיל הדמו — וספרו תיבות.\n4. על ה-1 של Hot Cue G של A — הפעילו את B ובצעו את השלבים לפי הזמנים בדמו (פיידר עד 75% בשמונה תיבות, Highs בתיבות 9–12, Lows בתיבות 17–20, A יוצא עד תיבה 32).\n5. הקליטו והשוו לדמו: האם הבאסים התחלפו בלי רגע של שני באסים מלאים? האם B עלה לאט מספיק?",
+ "lufs": -9.96,
+ "true_peak_dbtp": -1.51,
+ "file": "music/transitions/transition-01-blend.mp3",
+ "mixer": "djlab.djmix",
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

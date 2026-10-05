@@ -1,0 +1,168 @@
+{
+ "id": "practice-01",
+ "kind": "practice",
+ "title": "Phrase Counter 124",
+ "title_he": "סופר הפרייזים 124",
+ "artist": "DJ Lab Practice",
+ "album": "DJ Lab — Practice",
+ "genre": "Practice",
+ "bpm": 124.0,
+ "key": "A minor",
+ "key_short": "Am",
+ "camelot": "8A",
+ "duration_sec": 232.258,
+ "bars": 120,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Block 1 · Intro",
+   "start_bar": 0,
+   "bars": 16,
+   "start_sec": 0.0,
+   "energy": 3
+  },
+  {
+   "name": "Block 1 · Bass In",
+   "start_bar": 16,
+   "bars": 16,
+   "start_sec": 30.968,
+   "energy": 5
+  },
+  {
+   "name": "Block 2",
+   "start_bar": 32,
+   "bars": 32,
+   "start_sec": 61.935,
+   "energy": 6
+  },
+  {
+   "name": "Block 3",
+   "start_bar": 64,
+   "bars": 32,
+   "start_sec": 123.871,
+   "energy": 6
+  },
+  {
+   "name": "Block 4",
+   "start_bar": 96,
+   "bars": 8,
+   "start_sec": 185.806,
+   "energy": 6
+  },
+  {
+   "name": "Block 4 · Outro",
+   "start_bar": 104,
+   "bars": 16,
+   "start_sec": 201.29,
+   "energy": 3
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Bar 1 · Bell",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Bass In · Bar 17",
+   "bar": 16,
+   "sec": 30.968,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Bell · Bar 33",
+   "bar": 32,
+   "sec": 61.935,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Bell · Bar 65",
+   "bar": 64,
+   "sec": 123.871,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "E",
+   "name": "Bell · Bar 97",
+   "bar": 96,
+   "sec": 185.806,
+   "color": "#B4BE04",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro · Bar 105",
+   "bar": 104,
+   "sec": 201.29,
+   "color": "#305AFF",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Block 1 · Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Block 1 · Bass In",
+   "bar": 16,
+   "sec": 30.968
+  },
+  {
+   "name": "Block 2",
+   "bar": 32,
+   "sec": 61.935
+  },
+  {
+   "name": "Block 3",
+   "bar": 64,
+   "sec": 123.871
+  },
+  {
+   "name": "Block 4",
+   "bar": 96,
+   "sec": 185.806
+  },
+  {
+   "name": "Block 4 · Outro",
+   "bar": 104,
+   "sec": 201.29
+  }
+ ],
+ "lufs": -10.18,
+ "true_peak_dbtp": -1.42,
+ "file": "music/practice/practice-01-phrase-counter-124.mp3",
+ "cover": "music/practice/practice-01-phrase-counter-124.jpg",
+ "purpose_he": "ספירת תיבות ופרייזים: קראש בכל 8 תיבות, צליל 'פעמון' בכל 32 תיבות",
+ "description_he": "גרוב האוס רגוע ב-124 BPM שנבנה כדי ללמוד לספור תיבות ופרייזים: מצילת קראש על התיבה הראשונה של כל פרייז (כל 8 תיבות), צליל פעמון רך על התיבה הראשונה של כל בלוק של 32 תיבות (תיבות 1, 33, 65, 97) ומילוי תופים קטן בתיבה 8 של כל פרייז (מילוי גדול יותר בסוף כל בלוק). הבאס נכנס בתיבה 17 ויוצא בתיבה 105, ומהלך האקורדים שלו חוזר בדיוק כל 8 תיבות. סולם Am (8A).",
+ "exercise_he": "1. נגנו את הקובץ וספרו בקול \"1-2-3-4\" על כל תיבה; הקישו על השולחן בכל \"1\".\n2. ספרו תיבות על האצבעות: המילוי הקטן מגיע בתיבה 8, והקראש נוחת בדיוק על ה-1 של הפרייז הבא. אם הקראש מפתיע אתכם — איבדתם את הספירה.\n3. ספרו פרייזים: אחרי ארבעה קראשים (32 תיבות) מגיע הפעמון. אמרו \"בלוק!\" רגע לפני שהוא מצלצל.\n4. שלב ב': טענו לדק 2 את `music/practice/practice-03-drums-124.mp3`, הפעילו Sync, והתחילו אותו בדיוק על הפעמון של תיבה 33 — המילויים והקראשים של שני הדקים צריכים ליפול יחד.\n5. יעד: 3 בלוקים של 32 תיבות ברצף בלי לאבד את הספירה — בסוף גם בעיניים עצומות.",
+ "pair_with": [
+  "practice-03",
+  "house-04"
+ ],
+ "instruments": [
+  "house kick",
+  "phrase crash every 8 bars",
+  "bell every 32 bars",
+  "snare fills (bar 8)",
+  "clap",
+  "hats & shaker",
+  "congas",
+  "light pluck bass",
+  "dub chords"
+ ],
+ "seed": 7101,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

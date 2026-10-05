@@ -235,22 +235,23 @@ def build_phrase_counter(entry, spec, rng):
     kit = make_kit(rng, "house", tune=55.0)
     song = new_song(entry, spec, rng, swing=54.0)
     song.arrange([("Block 1 · Intro", "intro", 16, 3, 0), ("Block 1 · Bass In", "groove", 16, 5, 0),
-                  ("Block 2", "groove", 32, 6, 0), ("Block 3", "groove", 32, 6, 0), ("Block 4", "groove", 16, 6, 0),
-                  ("Block 4 · Outro", "outro", 16, 3, 0)], 128)
+                  ("Block 2", "groove", 32, 6, 0), ("Block 3", "groove", 32, 6, 0), ("Block 4", "groove", 8, 6, 0),
+                  ("Block 4 · Outro", "outro", 16, 3, 0)], 120)  # 120 bars @124 = 3:52 (≤ 4 min)
     key = song.key
+    out_bar = 104  # outro: bass, chords, 16th hats and congas out → kick, hats, clap, shaker only
     song.hits("kick", kit["kick"], FOUR, gain_db=-1.5, sc_source=True, humanize=0.0)
     song.hits("offhat", kit["ohat"], OFF_HAT, gain_db=-11.0, pan=-0.1, sends={"room": 0.06})
     song.hits("clap", kit["clap"], lambda c: CLAP if c.bar >= 8 else None, gain_db=-4.5,
               sends={"reverb": 0.1, "room": 0.12})
     hat_p = pick(rng, HATS16[:3])
-    song.hits("hats", kit["hat"], lambda c: hat_p if 16 <= c.bar < 112 else None, gain_db=-15.5, pan=0.3,
+    song.hits("hats", kit["hat"], lambda c: hat_p if 16 <= c.bar < out_bar else None, gain_db=-15.5, pan=0.3,
               humanize=0.12)
     sh_p = pick(rng, SHAKERS)
     song.hits("shaker", kit["shaker"], lambda c: sh_p if c.bar >= 8 else None, gain_db=-17.5, pan=-0.45,
               humanize=0.15)
     congas = [drums.conga(210.0, "open", rng=rng), drums.conga(300.0, "mute", rng=rng)]
     cp = pick(rng, PERCS)
-    song.hits("conga", congas, lambda c: cp if 32 <= c.bar < 112 else None, gain_db=-16.0, pan=0.5,
+    song.hits("conga", congas, lambda c: cp if 32 <= c.bar < out_bar else None, gain_db=-16.0, pan=0.5,
               sends={"room": 0.15})
 
     # the drill: small fill in bar 8 of every phrase, bigger one in the last bar of each 32-bar block
@@ -273,7 +274,7 @@ def build_phrase_counter(entry, spec, rng):
     roots[3] = key.degree(4, 2)  # lift to the 5th an octave up before the phrase restarts
 
     def bass(c):
-        if not (16 <= c.bar < 112):
+        if not (16 <= c.bar < out_bar):
             return []
         r = roots[(c.bar % 8) // 2]
         ev = [(2, 1.5, r, 0.95), (6, 1.5, r, 0.85), (10, 1.5, r, 0.95), (14, 1, r, 0.8)]
@@ -283,7 +284,7 @@ def build_phrase_counter(entry, spec, rng):
 
     b = song.notes("bass", inst.bass_pluck(cutoff=300.0, env_amt=1500.0, decay=0.1, res=0.3, sub=0.8, drive=1.5),
                    bass, bus="bass", gain_db=-6.0, sidechain=0.55, sc_release_ms=140.0)
-    b.automate("lp", [(16, 500), (32, 1400), (112, 1400)])
+    b.automate("lp", [(16, 500), (32, 1400), (out_bar, 1400)])
     chords, prev = [], None
     for d in (0, 5, 6, 4):
         ch = voice_lead(prev, key.chord(d, 3, 4), center=key.root(4) - 2)
@@ -291,7 +292,7 @@ def build_phrase_counter(entry, spec, rng):
         prev = ch
     song.notes("chords", inst.dub_chord(cutoff=700.0, env_amt=1400.0, decay=0.2),
                lambda c: [(6, 1, chords[(c.bar % 8) // 2], 0.75), (14, 1, chords[(c.bar % 8) // 2], 0.6)]
-               if 32 <= c.bar < 112 else [], gain_db=-15.0, sidechain=0.45, sends={"delay": 0.2, "reverb": 0.1},
+               if 32 <= c.bar < out_bar else [], gain_db=-11.0, sidechain=0.45, sends={"delay": 0.2, "reverb": 0.1},
                width=1.5)
 
     k1 = key_short(spec["key"])
@@ -299,7 +300,7 @@ def build_phrase_counter(entry, spec, rng):
     d.description_he = (
         "גרוב האוס רגוע ב-124 BPM שנבנה כדי ללמוד לספור תיבות ופרייזים: מצילת קראש על התיבה הראשונה של כל פרייז "
         "(כל 8 תיבות), צליל פעמון רך על התיבה הראשונה של כל בלוק של 32 תיבות (תיבות 1, 33, 65, 97) ומילוי תופים "
-        "קטן בתיבה 8 של כל פרייז (מילוי גדול יותר בסוף כל בלוק). הבאס נכנס בתיבה 17 ויוצא בתיבה 113, ומהלך "
+        "קטן בתיבה 8 של כל פרייז (מילוי גדול יותר בסוף כל בלוק). הבאס נכנס בתיבה 17 ויוצא בתיבה 105, ומהלך "
         f"האקורדים שלו חוזר בדיוק כל 8 תיבות. סולם {k1} (8A).")
     d.exercise = [
         "נגנו את הקובץ וספרו בקול \"1-2-3-4\" על כל תיבה; הקישו על השולחן בכל \"1\".",
@@ -311,7 +312,7 @@ def build_phrase_counter(entry, spec, rng):
         "יעד: 3 בלוקים של 32 תיבות ברצף בלי לאבד את הספירה — בסוף גם בעיניים עצומות.",
     ]
     d.cues = [("A", "Bar 1 · Bell", 0), ("B", "Bass In · Bar 17", 16), ("C", "Bell · Bar 33", 32),
-              ("D", "Bell · Bar 65", 64), ("E", "Bell · Bar 97", 96), ("G", "Outro · Bar 113", 112)]
+              ("D", "Bell · Bar 65", 64), ("E", "Bell · Bar 97", 96), ("G", "Outro · Bar 105", 104)]
     d.pair_with = ["practice-03", "house-04"]
     d.instruments = ["house kick", "phrase crash every 8 bars", "bell every 32 bars", "snare fills (bar 8)",
                      "clap", "hats & shaker", "congas", "light pluck bass", "dub chords"]
@@ -394,7 +395,7 @@ def build_drums(entry, spec, rng):
 
 
 DRUM_PAIRS = {
-    "practice-02": ["practice-03", "practice-05"], "practice-03": ["practice-04", "practice-03"],
+    "practice-02": ["practice-03", "practice-05"], "practice-03": ["practice-04", "practice-02"],
     "practice-04": ["practice-03", "practice-05"], "practice-05": ["practice-04", "practice-02"],
     "practice-06": ["practice-03", "practice-07"], "practice-07": ["practice-03", "practice-06"],
 }
@@ -545,7 +546,7 @@ def build_bass_swap_b(entry, spec, rng):
     b = song.line("bass", synth, bass, gain_db=-3.0, sidechain=0.45, sc_release_ms=110.0, humanize=0.0)
     b.automate("cutoff", [(16, 200), (31.9, 300), (32, 380), (96, 380)])
     # light melodic element: syncopated e-piano chords Em9 / Cmaj9 / D6/9
-    voicings = [[key.degree(d, 3) for d in (2, 4, 6, 8)],    # Em9 (rootless: G B D F#)
+    voicings = [[key.degree(d, 3) for d in (0, 2, 4, 6, 8)], # Em9 (E G B D F#: the root anchors the key)
                 [key.degree(d, 3) for d in (5, 7, 9, 11)],   # Cmaj7
                 [key.degree(d, 3) for d in (6, 7, 8, 10)]]   # Dadd9
     voicings = [voice_lead(None, v, center=64) for v in voicings]
@@ -557,7 +558,7 @@ def build_bass_swap_b(entry, spec, rng):
         ch = voicings[seq[c.i % 4]]
         return [(3, 1.5, ch, 0.7), (10, 2.5, ch, 0.6)] if c.i % 2 == 0 else [(6, 1.5, ch, 0.6), (14, 1.5, ch, 0.5)]
 
-    song.notes("epiano", inst.epiano(bright=0.55), keys, gain_db=-11.0, sidechain=0.35, pan=-0.1,
+    song.notes("epiano", inst.epiano(bright=0.55), keys, gain_db=-9.0, sidechain=0.35, pan=-0.1,
                sends={"delay": 0.18, "reverb": 0.15}, width=1.4)
     d = Drill(category="bass", tonal=True)
     d.description_he = (

@@ -1,0 +1,145 @@
+{
+ "id": "practice-13",
+ "kind": "practice",
+ "title": "Cue Hunt 126",
+ "title_he": "ציד Hot Cues 126",
+ "artist": "DJ Lab Practice",
+ "album": "DJ Lab — Practice",
+ "genre": "Practice",
+ "bpm": 126.0,
+ "key": "G minor",
+ "key_short": "Gm",
+ "camelot": "6A",
+ "duration_sec": 182.857,
+ "bars": 96,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Part 1",
+   "start_bar": 0,
+   "bars": 16,
+   "start_sec": 0.0,
+   "energy": 4
+  },
+  {
+   "name": "Part 2",
+   "start_bar": 16,
+   "bars": 16,
+   "start_sec": 30.476,
+   "energy": 6
+  },
+  {
+   "name": "Part 3",
+   "start_bar": 32,
+   "bars": 16,
+   "start_sec": 60.952,
+   "energy": 6
+  },
+  {
+   "name": "Part 4",
+   "start_bar": 48,
+   "bars": 16,
+   "start_sec": 91.429,
+   "energy": 7
+  },
+  {
+   "name": "Part 5",
+   "start_bar": 64,
+   "bars": 16,
+   "start_sec": 121.905,
+   "energy": 8
+  },
+  {
+   "name": "Outro",
+   "start_bar": 80,
+   "bars": 16,
+   "start_sec": 152.381,
+   "energy": 4
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Start · Bar 1",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [],
+ "lufs": -10.05,
+ "true_peak_dbtp": -1.48,
+ "file": "music/practice/practice-13-cue-hunt-126.mp3",
+ "cover": "music/practice/practice-13-cue-hunt-126.jpg",
+ "purpose_he": "אירועים קוליים ברורים בתיבות 1/17/33/49/65 — לסמן עליהם Hot Cues",
+ "description_he": "גרוב טק-האוס ב-126 BPM עם חמישה 'אירועים' שאי אפשר לפספס, כל אחד בדיוק על תחילת תיבה: תיבה 1 — אימפקט, קראש וקריאת \"Hey!\"; תיבה 17 — רייזר שנגמר בדרופ והבאס נכנס; תיבה 33 — אחרי תיבה שלמה בלי קיק, סטאב אקורד גדול; תיבה 49 — קריאת \"Ho!\" עם קראש; תיבה 65 — סנר רול, אימפקט והדרופ הגדול עם מלודיה. בין האירועים הגרוב יציב. ה-Hot Cues לא מסומנים מראש (רק A בהתחלה) — התשובות נמצאות ב-`answer_key`.",
+ "exercise_he": "1. טענו את `practice-13` לדק 1. ודאו ש-Quantize דולק ושה-Beatgrid מתחיל בתיבה 1.\n2. נגנו בלי להסתכל על הווייבפורם. בכל פעם שאתם שומעים אירוע — לחצו על הכפתור הפנוי הבא (A, B, C, D, E) כדי לשמור Hot Cue.\n3. בדקו את עצמכם: הגדילו את הזום וודאו שכל Cue יושב על קו של תחילת תיבה — 1, 17, 33, 49, 65 (ראו `answer_key` בקובץ ה-JSON).\n4. קפצו בין ה-Cues תוך כדי נגינה (A→C→B…) בתזמון של ה-1 — כך משתמשים ב-Hot Cues בהופעה.\n5. שלב ב': כבו Quantize ונסו שוב. יעד: 5 מתוך 5 במקום. בונוס: טענו את `music/practice/practice-03-drums-124.mp3` לדק 2 והכניסו אותו בדיוק על Hot Cue C.",
+ "pair_with": [
+  "practice-03"
+ ],
+ "answer_key": [
+  {
+   "slot": "A",
+   "bar": 1,
+   "start_bar": 0,
+   "sec": 0.0,
+   "event": "start",
+   "event_en": "Impact + \"Hey!\" shout + crash",
+   "event_he": "אימפקט, קריאת Hey וקראש — תחילת הגרוב"
+  },
+  {
+   "slot": "B",
+   "bar": 17,
+   "start_bar": 16,
+   "sec": 30.476,
+   "event": "drop",
+   "event_en": "Riser ends → drop, bass enters",
+   "event_he": "הרייזר נגמר, דרופ והבאס נכנס"
+  },
+  {
+   "slot": "C",
+   "bar": 33,
+   "start_bar": 32,
+   "sec": 60.952,
+   "event": "stab",
+   "event_en": "1 bar without kick → big chord stab",
+   "event_he": "תיבה בלי קיק ואז סטאב אקורד גדול"
+  },
+  {
+   "slot": "D",
+   "bar": 49,
+   "start_bar": 48,
+   "sec": 91.429,
+   "event": "shout",
+   "event_en": "\"Ho!\" shout + crash, percussion enters",
+   "event_he": "קריאת Ho, קראש ופרקשן חדש"
+  },
+  {
+   "slot": "E",
+   "bar": 65,
+   "start_bar": 64,
+   "sec": 121.905,
+   "event": "big_drop",
+   "event_en": "Snare roll → impact, big drop + lead",
+   "event_he": "סנר רול, אימפקט והדרופ הגדול עם מלודיה"
+  }
+ ],
+ "instruments": [
+  "tech-house kick",
+  "clap",
+  "hats",
+  "shaker",
+  "rimshot",
+  "rolling bass",
+  "chord stabs",
+  "pluck lead",
+  "formant vocal shouts",
+  "brass stab",
+  "impacts, risers, crashes"
+ ],
+ "seed": 7113,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

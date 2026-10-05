@@ -1,0 +1,154 @@
+{
+ "id": "transition-05",
+ "kind": "transition",
+ "title": "Cut / Slam: Festival Main Stage → Hands In The Sky",
+ "title_he": "קאט / סלאם — הבמה הראשית ← ידיים לשמיים",
+ "artist": "DJ Lab Transitions",
+ "album": "DJ Lab — Transitions",
+ "genre": "Transition Demo",
+ "technique": "cut",
+ "technique_he": "קאט / סלאם",
+ "from_id": "mainstream-01",
+ "to_id": "mainstream-02",
+ "bpm": 128.0,
+ "duration_sec": 75.0,
+ "bars": 40,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "decks": {
+  "A": {
+   "id": "mainstream-01",
+   "title": "Festival Main Stage",
+   "title_he": "הבמה הראשית",
+   "bpm": 128.0,
+   "camelot": "4A",
+   "file": "music/tracks/big_room/mainstream-01-festival-main-stage.mp3",
+   "play_from_bar": 24,
+   "play_from_sec": 45.0,
+   "enters_at_sec": 0.0,
+   "tempo": "master tempo 128 BPM"
+  },
+  "B": {
+   "id": "mainstream-02",
+   "title": "Hands In The Sky",
+   "title_he": "ידיים לשמיים",
+   "bpm": 128.0,
+   "camelot": "6A",
+   "file": "music/tracks/big_room/mainstream-02-hands-in-the-sky.mp3",
+   "play_from_bar": 40,
+   "play_from_sec": 75.0,
+   "enters_at_sec": 45.0,
+   "tempo": "native 128 BPM (no beatmatch)"
+  }
+ },
+ "steps_he": [
+  "0:00 — A (`mainstream-01` „הבמה הראשית“, 4A, 128 BPM) מנגן את סוף האינטרו שלו. B (`mainstream-02` „ידיים לשמיים“, 6A, 128 BPM) מסונכרן ועומד על Hot Cue D — הדרופ שלו. Crossfader בצד של A (או הפיידר של B למטה).",
+  "0:15 — תיבה 9: הברייקדאון של A (Hot Cue C) — מכאן 16 תיבות עד הדרופ. סופרים.",
+  "0:30 — תיבה 17: הבילדאפ של A מתחיל — 8 תיבות. יד אחת על Hot Cue D של B, יד שנייה על ה-Crossfader.",
+  "0:44 — תיבה 24, פעמה 4: הפעמה האחרונה של הבילדאפ — הרחבה מחכה לדרופ של A.",
+  "0:45 — תיבה 25, על ה-1: קאט! Hot Cue D של B וה-Crossfader ל-B באותה תנועה — הרחבה מקבלת את הדרופ של B במקום הדרופ של A.",
+  "1:00 — תיבה 33: B ממשיך — הפרייז השני של הדרופ שלו. A כבר עצור ומוכן לטראק הבא."
+ ],
+ "timeline": [
+  {
+   "t": 0.0,
+   "bar": 0,
+   "beat": 1,
+   "pos": "1.1",
+   "action": "Deck A plays the end of its intro; B synced and paused on Hot Cue D (its drop)"
+  },
+  {
+   "t": 15.0,
+   "bar": 8,
+   "beat": 1,
+   "pos": "9.1",
+   "action": "A's breakdown: 16 bars to its drop"
+  },
+  {
+   "t": 30.0,
+   "bar": 16,
+   "beat": 1,
+   "pos": "17.1",
+   "action": "A's build-up: 8 bars to go, hand on B's Hot Cue D"
+  },
+  {
+   "t": 44.531,
+   "bar": 23,
+   "beat": 4,
+   "pos": "24.4",
+   "action": "Last beat of the build — the crowd expects A's drop"
+  },
+  {
+   "t": 45.0,
+   "bar": 24,
+   "beat": 1,
+   "pos": "25.1",
+   "action": "On the 1: CUT — B's Hot Cue D and crossfader to B in one motion; B's drop instead of A's"
+  },
+  {
+   "t": 60.0,
+   "bar": 32,
+   "beat": 1,
+   "pos": "33.1",
+   "action": "B's drop continues — next phrase"
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "A plays",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "A breakdown",
+   "bar": 8,
+   "sec": 15.0,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "A build",
+   "bar": 16,
+   "sec": 30.0,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Last beat",
+   "bar": 23,
+   "sec": 44.531,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "E",
+   "name": "CUT",
+   "bar": 24,
+   "sec": 45.0,
+   "color": "#B4BE04",
+   "type": "hot"
+  },
+  {
+   "slot": "F",
+   "name": "B phrase 2",
+   "bar": 32,
+   "sec": 60.0,
+   "color": "#DE44CF",
+   "type": "hot"
+  }
+ ],
+ "description_he": "קאט / סלאם: „הבמה הראשית“ (`mainstream-01`, 4A) בונה מתח בבילדאפ שלו, ובדיוק על ה-1 של הדרופ — במקום הדרופ שלו — נוחת הדרופ של „ידיים לשמיים“ (`mainstream-02`, 6A). ביט אחד, בלי חפיפה, ולכן גם הסולמות ‎4A ו-6A לא מתנגשים. המעבר הקלאסי של מיינסטרים, ביג רום ואירועים.",
+ "exercise_he": "1. טענו לדק 1 את `music/tracks/big_room/mainstream-01-festival-main-stage.mp3` ולדק 2 את `music/tracks/big_room/mainstream-02-hands-in-the-sky.mp3`.\n2. הכינו את B: בלי Sync — B נשאר בקצב המקורי שלו. נקודת הכניסה של B: Hot Cue D (תיבה 41, 1:15.0). עצרו אותו על Hot Cue D. עקומת Crossfader חדה, A בצד שמאל ו-B בצד ימין.\n3. נגנו את A מתיבה 25 שלו (0:45.0) — שם מתחיל הדמו — וספרו תיבות.\n4. ספרו את הבילדאפ של A (8 תיבות). על ה-1 של הדרופ — Hot Cue D של B וה-Crossfader ל-B באותה תנועה.\n5. נסו פעם עם Quantize ופעם בלי — ושימו לב להבדל בתזמון.\n6. וריאציה (\"סלאם לבילדאפ\"): קאט מ-A ישר לתחילת הבילדאפ של B (8 תיבות לפני Hot Cue D שלו).",
+ "lufs": -9.99,
+ "true_peak_dbtp": -1.61,
+ "file": "music/transitions/transition-05-cut.mp3",
+ "mixer": "djlab.djmix",
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

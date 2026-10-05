@@ -1,0 +1,164 @@
+{
+ "id": "transition-08",
+ "kind": "transition",
+ "title": "Tempo Change Echo Out: Dembow Fuego → Mediterranean Sunrise",
+ "title_he": "מעבר טמפו 95→124 עם Echo — דמבו פואגו ← זריחה ים-תיכונית",
+ "artist": "DJ Lab Transitions",
+ "album": "DJ Lab — Transitions",
+ "genre": "Transition Demo",
+ "technique": "tempo_change_echo",
+ "technique_he": "מעבר טמפו 95→124 עם Echo",
+ "from_id": "mainstream-08",
+ "to_id": "mainstream-15",
+ "bpm": 95.0,
+ "tempo_map": [
+  {
+   "bar": 0,
+   "bpm": 95.0
+  },
+  {
+   "bar": 16,
+   "bpm": 124.0
+  }
+ ],
+ "duration_sec": 86.873,
+ "bars": 40,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "decks": {
+  "A": {
+   "id": "mainstream-08",
+   "title": "Dembow Fuego",
+   "title_he": "דמבו פואגו",
+   "bpm": 95.0,
+   "camelot": "8A",
+   "file": "music/tracks/reggaeton/mainstream-08-dembow-fuego.mp3",
+   "play_from_bar": 24,
+   "play_from_sec": 60.632,
+   "enters_at_sec": 0.0,
+   "tempo": "master tempo 95 BPM"
+  },
+  "B": {
+   "id": "mainstream-15",
+   "title": "Mediterranean Sunrise",
+   "title_he": "זריחה ים-תיכונית",
+   "bpm": 124.0,
+   "camelot": "7A",
+   "file": "music/tracks/mediterranean/mainstream-15-mediterranean-sunrise.mp3",
+   "play_from_bar": 64,
+   "play_from_sec": 123.871,
+   "enters_at_sec": 40.421,
+   "tempo": "native 124 BPM (no beatmatch)"
+  }
+ },
+ "steps_he": [
+  "0:00 — A (`mainstream-08` „דמבו פואגו“, 8A, 95 BPM) מנגן את הפזמון שלו (Hot Cue D). B (`mainstream-15` „זריחה ים-תיכונית“, 7A, 124 BPM) מחכה על Hot Cue D — הדרופ שלו — בקצב המקורי. הפער ‎+30.5%: אין טעם לנסות ביטמאצ'ינג.",
+  "0:20 — תיבה 9: החצי השני של הפזמון — בוחרים את רגע היציאה: סוף המשפט בתיבה 16. מכינים Echo של 1/2 פעמה, Level כ-50%.",
+  "0:39 — תיבה 16, פעמה 4 — הפעמה האחרונה של המשפט: Echo ON על A, ובאותו רגע חיתוך ה-Low שלו.",
+  "0:40 — תיבה 17, על ה-1: הפיידר של A למטה וההד ממשיך לבד; על אותו 1 B מתחיל מ-Hot Cue D — ב-124 BPM, בלי שום ביטמאצ'ינג.",
+  "0:44 — תיבה 19: מכבים את ה-Echo, Level חזרה לאפס, ה-EQ של A לאמצע. הרחבה כבר בקצב החדש.",
+  "0:55 — תיבה 25: הדרופ של B ממשיך — ‎95→124 BPM בלי \"בור\" ברחבה."
+ ],
+ "timeline": [
+  {
+   "t": 0.0,
+   "bar": 0,
+   "beat": 1,
+   "pos": "1.1",
+   "action": "Deck A (95 BPM) plays its chorus (Hot Cue D); B waits on Hot Cue D at 124 BPM — no beatmatch (‎+30.5%)"
+  },
+  {
+   "t": 20.211,
+   "bar": 8,
+   "beat": 1,
+   "pos": "9.1",
+   "action": "Second half of the chorus: pick the exit (end of the phrase), Echo 1/2 beat ready"
+  },
+  {
+   "t": 39.789,
+   "bar": 15,
+   "beat": 4,
+   "pos": "16.4",
+   "action": "Last beat of the phrase: Echo ON (1/2 beat) and A Low cut"
+  },
+  {
+   "t": 40.421,
+   "bar": 16,
+   "beat": 1,
+   "pos": "17.1",
+   "action": "Next 1: A fader down (echo tail continues); B starts from Hot Cue D at 124 BPM"
+  },
+  {
+   "t": 44.292,
+   "bar": 18,
+   "beat": 1,
+   "pos": "19.1",
+   "action": "Echo off, level back to zero, A EQ reset"
+  },
+  {
+   "t": 55.905,
+   "bar": 24,
+   "beat": 1,
+   "pos": "25.1",
+   "action": "B's drop continues at 124 BPM"
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "A chorus",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Plan exit",
+   "bar": 8,
+   "sec": 20.211,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Echo + Low cut",
+   "bar": 15,
+   "sec": 39.789,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "B drop",
+   "bar": 16,
+   "sec": 40.421,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "E",
+   "name": "Echo off",
+   "bar": 18,
+   "sec": 44.292,
+   "color": "#B4BE04",
+   "type": "hot"
+  },
+  {
+   "slot": "F",
+   "name": "New tempo",
+   "bar": 24,
+   "sec": 55.905,
+   "color": "#DE44CF",
+   "type": "hot"
+  }
+ ],
+ "description_he": "מעבר טמפו עם Echo Out מ-„דמבו פואגו“ (`mainstream-08`, 8A) אל „זריחה ים-תיכונית“ (`mainstream-15`, 7A) — קפיצה של ‎+30.5%, בלי ביטמאצ'ינג. A יוצא בסוף הפזמון: Echo של 1/2 פעמה וחיתוך Low בפעמה האחרונה, הפיידר יורד על ה-1, ועל אותו 1 נוחת הדרופ של B בקצב שלו. ‎8A ו-7A שכנים בגלגל, כך שגם זנב ההד לא מתנגש עם B. הדמו מנוגן ב-95 BPM עד תיבה 16 וב-124 BPM מתיבה 17 (ראו tempo_map).",
+ "exercise_he": "1. טענו לדק 1 את `music/tracks/reggaeton/mainstream-08-dembow-fuego.mp3` ולדק 2 את `music/tracks/mediterranean/mainstream-15-mediterranean-sunrise.mp3`.\n2. הכינו את B: בלי Sync — B נשאר בקצב המקורי שלו. נקודת הכניסה של B: Hot Cue D (תיבה 65, 2:03.9). עצרו אותו על Hot Cue D (הדרופ), פיידר למטה.\n3. נגנו את A מתיבה 25 שלו (1:00.6) — שם מתחיל הדמו — וספרו תיבות.\n4. בחרו את סוף הפזמון של A. בפעמה האחרונה של המשפט — Echo ON (1/2 פעמה, Level כ-50%) וחיתוך Low.\n5. על ה-1 הבא — פיידר A למטה ו-Play על B מ-Hot Cue D באותו רגע. אחרי שהזנב נגמר — Echo OFF.\n6. נסו Echo של 1/2 ושל פעמה אחת — איזה מגשר טוב יותר בלי \"ללכלך\" את ההתחלה של B?",
+ "lufs": -10.01,
+ "true_peak_dbtp": -1.46,
+ "file": "music/transitions/transition-08-tempo_change_echo.mp3",
+ "mixer": "djlab.djmix",
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

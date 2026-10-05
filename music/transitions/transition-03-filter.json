@@ -1,0 +1,138 @@
+{
+ "id": "transition-03",
+ "kind": "transition",
+ "title": "Filter Transition: Neon Cathedral → Silent Orbit",
+ "title_he": "מעבר פילטר — קתדרלת ניאון ← מסלול שקט",
+ "artist": "DJ Lab Transitions",
+ "album": "DJ Lab — Transitions",
+ "genre": "Transition Demo",
+ "technique": "filter",
+ "technique_he": "מעבר פילטר",
+ "from_id": "techno-05",
+ "to_id": "techno-08",
+ "bpm": 122.0,
+ "duration_sec": 78.689,
+ "bars": 40,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "decks": {
+  "A": {
+   "id": "techno-05",
+   "title": "Neon Cathedral",
+   "title_he": "קתדרלת ניאון",
+   "bpm": 122.0,
+   "camelot": "10A",
+   "file": "music/tracks/melodic_techno/techno-05-neon-cathedral.mp3",
+   "play_from_bar": 120,
+   "play_from_sec": 236.066,
+   "enters_at_sec": 0.0,
+   "tempo": "master tempo 122 BPM"
+  },
+  "B": {
+   "id": "techno-08",
+   "title": "Silent Orbit",
+   "title_he": "מסלול שקט",
+   "bpm": 122.0,
+   "camelot": "8A",
+   "file": "music/tracks/melodic_techno/techno-08-silent-orbit.mp3",
+   "play_from_bar": 32,
+   "play_from_sec": 62.951,
+   "enters_at_sec": 15.738,
+   "tempo": "native 122 BPM (no beatmatch)"
+  }
+ },
+ "steps_he": [
+  "0:00 — A (`techno-05` „קתדרלת ניאון“, 10A, 122 BPM) מנגן את 8 התיבות האחרונות של הדרופ. B (`techno-08` „מסלול שקט“, 8A, 122 BPM) מוכן על Hot Cue B, Low למטה, פיידר למטה.",
+  "0:15 — תיבה 1 של המעבר (תיבה 9 בקובץ): A מגיע ל-Outro ו-B מתחיל על ה-1 מ-Hot Cue B; הפיידר שלו עולה ל-80% ב-4 תיבות. במקביל מתחילים לסובב לאט את הפילטר של A לכיוון HPF.",
+  "0:27 — תיבות 7–12 של המעבר: הפילטר של A עובר את שעה 1–2 — הקיק והבאס של A נהיים דקים, ו-B תופס את המקום.",
+  "0:39 — תיבה 13 של המעבר (תיבה 21 בקובץ), על ה-1: ה-Low של B חוזר לאמצע — הבאס שלו נכנס. הפיידר של A יורד ל-0 במשך 4 תיבות, והפילטר שלו נשאר פתוח.",
+  "0:47 — תיבה 17 של המעבר (תיבה 25 בקובץ): B מלא. רק עכשיו, כשהפיידר של A כבר למטה, הפילטר שלו חוזר לאמצע."
+ ],
+ "timeline": [
+  {
+   "t": 0.0,
+   "bar": 0,
+   "beat": 1,
+   "pos": "1.1",
+   "action": "Deck A plays the last 8 bars of its drop"
+  },
+  {
+   "t": 15.738,
+   "bar": 8,
+   "beat": 1,
+   "pos": "9.1",
+   "action": "Mix bar 1: B starts on the 1 (fader to 80% over 4 bars); A HPF starts rising slowly (12 → 3 o'clock over 12 bars)"
+  },
+  {
+   "t": 27.541,
+   "bar": 14,
+   "beat": 1,
+   "pos": "15.1",
+   "action": "Bars 7-12: A HPF passes 1-2 o'clock — A's kick and bass get thin"
+  },
+  {
+   "t": 39.344,
+   "bar": 20,
+   "beat": 1,
+   "pos": "21.1",
+   "action": "Mix bar 13 on the 1: B Low back to centre; A fader down to 0 over 4 bars (filter stays open)"
+  },
+  {
+   "t": 47.213,
+   "bar": 24,
+   "beat": 1,
+   "pos": "25.1",
+   "action": "Mix bar 17: B full; only now A's filter goes back to centre (fader already down)"
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "A solo",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "B in + HPF",
+   "bar": 8,
+   "sec": 15.738,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "HPF halfway",
+   "bar": 14,
+   "sec": 27.541,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "B low in",
+   "bar": 20,
+   "sec": 39.344,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "E",
+   "name": "B full",
+   "bar": 24,
+   "sec": 47.213,
+   "color": "#B4BE04",
+   "type": "hot"
+  }
+ ],
+ "description_he": "מעבר פילטר של 16 תיבות מ-„קתדרלת ניאון“ (`techno-05`, 10A) אל „מסלול שקט“ (`techno-08`, 8A): פילטר HPF על A עולה לאט ו\"מעלים\" את הבאס והגוף שלו, בזמן ש-B נכנס מ-Hot Cue B בלי Low. בתיבה 13 הבאס של B חוזר ו-A יוצא. הסולמות ‎10A ו-8A רחוקים בשני צעדים — הפילטר מסתיר את החפיפה.",
+ "exercise_he": "1. טענו לדק 1 את `music/tracks/melodic_techno/techno-05-neon-cathedral.mp3` ולדק 2 את `music/tracks/melodic_techno/techno-08-silent-orbit.mp3`.\n2. הכינו את B: בלי Sync — B נשאר בקצב המקורי שלו. נקודת הכניסה של B: Hot Cue B (תיבה 33, 1:03.0). Low למטה, פיידר למטה.\n3. נגנו את A מתיבה 121 שלו (3:56.1) — שם מתחיל הדמו — וספרו תיבות.\n4. על ה-1 של Hot Cue G של A — הפעילו את B והעלו את הפיידר ל-80% ב-4 תיבות. במקביל סובבו את ה-Color FX של A (Filter) לאט לכיוון HPF — 12 תיבות משעה 12 לשעה 3.\n5. בתיבה 13: Low של B לאמצע על ה-1, ופיידר A למטה במשך 4 תיבות. רק אחרי שהפיידר למטה — פילטר A לאמצע.\n6. נסו גם את הווריאציה: B נכנס עם LPF כמעט סגור, ופותחים אותו לאט לאורך 16 תיבות.",
+ "lufs": -10.22,
+ "true_peak_dbtp": -1.43,
+ "file": "music/transitions/transition-03-filter.mp3",
+ "mixer": "djlab.djmix",
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

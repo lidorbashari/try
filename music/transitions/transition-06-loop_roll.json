@@ -1,0 +1,170 @@
+{
+ "id": "transition-06",
+ "kind": "transition",
+ "title": "Loop Roll: Industrial Heart → Strobe Ritual",
+ "title_he": "לופ רול — לב תעשייתי ← טקס סטרובוסקופ",
+ "artist": "DJ Lab Transitions",
+ "album": "DJ Lab — Transitions",
+ "genre": "Transition Demo",
+ "technique": "loop_roll",
+ "technique_he": "לופ רול",
+ "from_id": "techno-02",
+ "to_id": "techno-03",
+ "bpm": 131.0,
+ "duration_sec": 73.282,
+ "bars": 40,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "decks": {
+  "A": {
+   "id": "techno-02",
+   "title": "Industrial Heart",
+   "title_he": "לב תעשייתי",
+   "bpm": 131.0,
+   "camelot": "4A",
+   "file": "music/tracks/techno/techno-02-industrial-heart.mp3",
+   "play_from_bar": 96,
+   "play_from_sec": 175.878,
+   "enters_at_sec": 0.0,
+   "tempo": "master tempo 131 BPM"
+  },
+  "B": {
+   "id": "techno-03",
+   "title": "Strobe Ritual",
+   "title_he": "טקס סטרובוסקופ",
+   "bpm": 132.0,
+   "camelot": "7A",
+   "file": "music/tracks/techno/techno-03-strobe-ritual.mp3",
+   "play_from_bar": 64,
+   "play_from_sec": 116.364,
+   "enters_at_sec": 29.313,
+   "tempo": "resample (vinyl) 132 → 131 BPM (‎-0.8%)"
+  }
+ },
+ "steps_he": [
+  "0:00 — A (`techno-02` „לב תעשייתי“, 4A, 131 BPM) מנגן את 16 התיבות האחרונות של הדרופ. B (`techno-03` „טקס סטרובוסקופ“, 7A, 132 BPM) מוכן על Hot Cue D (הדרופ), מסונכרן ל-131 BPM.",
+  "0:21 — תיבות 13–16: פילטר HPF על A עולה לאט לאורך 4 תיבות — הבאס מתחיל להיעלם והמתח עולה.",
+  "0:27 — תיבה 16, על ה-1: Roll של פעמה אחת על A.",
+  "0:28 — תיבה 16, פעמה 3: מקצרים ל-1/2 פעמה.",
+  "0:28 — תיבה 16, פעמה 4: ‏1/4 פעמה, ובחצי הפעמה האחרונה 1/8 — ה\"טררררר\" מאיץ.",
+  "0:29 — תיבה 17, בדיוק על ה-1: ה-Roll כבוי, הפיידר של A למטה, ו-B נוחת מ-Hot Cue D עם הדרופ המלא. רק אחר כך הפילטר של A חוזר לאמצע.",
+  "0:43 — תיבה 25: B ממשיך לבד — הדרופ שלו בשיא, ואף אחד לא שם לב שהשיר התחלף באמצע משפט."
+ ],
+ "timeline": [
+  {
+   "t": 0.0,
+   "bar": 0,
+   "beat": 1,
+   "pos": "1.1",
+   "action": "Deck A plays the last 16 bars of its drop; B cued on Hot Cue D, synced"
+  },
+  {
+   "t": 21.985,
+   "bar": 12,
+   "beat": 1,
+   "pos": "13.1",
+   "action": "Bars 13-16: HPF on A rises slowly — tension builds"
+  },
+  {
+   "t": 27.481,
+   "bar": 15,
+   "beat": 1,
+   "pos": "16.1",
+   "action": "Bar 16 beat 1: Loop Roll 1 beat"
+  },
+  {
+   "t": 28.397,
+   "bar": 15,
+   "beat": 3,
+   "pos": "16.3",
+   "action": "Beat 3: Roll 1/2 beat"
+  },
+  {
+   "t": 28.855,
+   "bar": 15,
+   "beat": 4,
+   "pos": "16.4",
+   "action": "Beat 4: Roll 1/4, then 1/8 on the last half beat"
+  },
+  {
+   "t": 29.313,
+   "bar": 16,
+   "beat": 1,
+   "pos": "17.1",
+   "action": "Bar 17 exactly on the 1: roll off, A fader down, B lands on its drop (Hot Cue D)"
+  },
+  {
+   "t": 43.969,
+   "bar": 24,
+   "beat": 1,
+   "pos": "25.1",
+   "action": "B alone — its drop continues"
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "A drop",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "HPF build",
+   "bar": 12,
+   "sec": 21.985,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Roll 1",
+   "bar": 15,
+   "sec": 27.481,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Roll 1/2",
+   "bar": 15,
+   "sec": 28.397,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "E",
+   "name": "Roll 1/4-1/8",
+   "bar": 15,
+   "sec": 28.855,
+   "color": "#B4BE04",
+   "type": "hot"
+  },
+  {
+   "slot": "F",
+   "name": "B drop",
+   "bar": 16,
+   "sec": 29.313,
+   "color": "#DE44CF",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "B groove",
+   "bar": 24,
+   "sec": 43.969,
+   "color": "#305AFF",
+   "type": "hot"
+  }
+ ],
+ "description_he": "‏Loop Roll לפני דרופ: „לב תעשייתי“ (`techno-02`, 4A) מסיים את הדרופ שלו עם HPF עולה ו-Roll שמתקצר — 1 → 1/2 → 1/4 → 1/8 פעמה — ובדיוק על ה-1 הכל נכבה ו-„טקס סטרובוסקופ“ (`techno-03`, 7A) נוחת על הדרופ שלו (Hot Cue D). בלי חפיפה, ולכן גם הסולמות ‎4A ו-7A לא מתנגשים.",
+ "exercise_he": "1. טענו לדק 1 את `music/tracks/techno/techno-02-industrial-heart.mp3` ולדק 2 את `music/tracks/techno/techno-03-strobe-ritual.mp3`.\n2. הכינו את B: הפעילו Sync על B (או כוונו את ה-Tempo ל-131 BPM, ‎-0.8%). נקודת הכניסה של B: Hot Cue D (תיבה 65, 1:56.4). פיידר למטה, מחכה על Hot Cue D; Quantize דולק.\n3. נגנו את A מתיבה 97 שלו (2:55.9) — שם מתחיל הדמו — וספרו תיבות.\n4. בתיבה 13 של A התחילו לסובב את הפילטר לכיוון HPF.\n5. בתיבה 16: Roll של 1 פעמה על ה-1, ‏1/2 בפעמה 3, ‏1/4 בפעמה 4 ו-1/8 בחצי האחרון שלה.\n6. על ה-1 של תיבה 17: Roll כבוי, פיידר A למטה, Hot Cue D של B — באותה תנועה. אחר כך פילטר A לאמצע.\n7. תרגלו גם את הגרסה הארוכה: לופ של 4 תיבות על 16 התיבות האחרונות של A (Hot Cue H) כדי לקנות זמן.",
+ "lufs": -10.06,
+ "true_peak_dbtp": -1.21,
+ "file": "music/transitions/transition-06-loop_roll.mp3",
+ "mixer": "djlab.djmix",
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

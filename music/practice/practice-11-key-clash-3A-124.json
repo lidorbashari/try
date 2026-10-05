@@ -1,0 +1,143 @@
+{
+ "id": "practice-11",
+ "kind": "practice",
+ "title": "Key Clash 3A",
+ "title_he": "התנגשות סולמות 3A",
+ "artist": "DJ Lab Practice",
+ "album": "DJ Lab — Practice",
+ "genre": "Practice",
+ "bpm": 124.0,
+ "key": "Bb minor",
+ "key_short": "Bbm",
+ "camelot": "3A",
+ "duration_sec": 216.774,
+ "bars": 112,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 16,
+   "start_sec": 0.0,
+   "energy": 3
+  },
+  {
+   "name": "Chords",
+   "start_bar": 16,
+   "bars": 16,
+   "start_sec": 30.968,
+   "energy": 4
+  },
+  {
+   "name": "Full Loop",
+   "start_bar": 32,
+   "bars": 32,
+   "start_sec": 61.935,
+   "energy": 6
+  },
+  {
+   "name": "Full Loop 2",
+   "start_bar": 64,
+   "bars": 32,
+   "start_sec": 123.871,
+   "energy": 6
+  },
+  {
+   "name": "Outro",
+   "start_bar": 96,
+   "bars": 16,
+   "start_sec": 185.806,
+   "energy": 3
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro (drums)",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Chords In · Bar 17",
+   "bar": 16,
+   "sec": 30.968,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Full Loop · Bar 33",
+   "bar": 32,
+   "sec": 61.935,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro (drums) · Bar 97",
+   "bar": 96,
+   "sec": 185.806,
+   "color": "#305AFF",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Chords",
+   "bar": 16,
+   "sec": 30.968
+  },
+  {
+   "name": "Full Loop",
+   "bar": 32,
+   "sec": 61.935
+  },
+  {
+   "name": "Full Loop 2",
+   "bar": 64,
+   "sec": 123.871
+  },
+  {
+   "name": "Outro",
+   "bar": 96,
+   "sec": 185.806
+  }
+ ],
+ "lufs": -9.88,
+ "true_peak_dbtp": -1.58,
+ "file": "music/practice/practice-11-key-clash-3A-124.mp3",
+ "cover": "music/practice/practice-11-key-clash-3A-124.jpg",
+ "purpose_he": "מתנגש עם 8A — לשמוע איך נשמע מיקס 'מזייף'",
+ "description_he": "לופ אקורדים ב-124 BPM ב-Bbm (3A): פד חם מנגן Bbm–Gb–Ab–F (2 תיבות לכל אקורד), ארפג'יו פלאק ובאס רך נכנסים בתיבה 33. התופים מינימליים — קיק והיי-האט בלבד — כדי שההרמוניה תישמע ברורה. 16 תיבות תופים בהתחלה ובסוף. זה בדיוק אותו לופ כמו `practice-10`, אבל חצי טון מעליו. לבד הוא נשמע נהדר; יחד עם `practice-10` (8A) הוא מזייף בכוונה — כדי שתלמדו לזהות התנגשות סולמות באוזן.",
+ "exercise_he": "1. נגנו את `practice-11` לבד — שימו לב שאין בו שום בעיה.\n2. טענו את `music/practice/practice-10-key-home-8A-124.mp3` לדק השני, Sync, הפעילו יחד על ה-1 והעלו את שני הפיידרים. הקשיבו לחיכוך בתיבה 17, כשהאקורדים נכנסים.\n3. נסו 'להציל' את המיקס: הורידו את ה-Mid וה-Low של אחד הדקים — ההתנגשות נחלשת, אבל לא נעלמת.\n4. לחצו Key Sync (או Key Shift של חצי טון למטה) בדק של `practice-11` — ההתנגשות נעלמת, כי הוא הפך ל-8A.\n5. המסקנה: מ-8A ל-3A עוברים רק בקאט, ב-Echo Out או בברייקדאון — לא בבלנד ארוך.",
+ "pair_with": [
+  "practice-10",
+  "practice-08"
+ ],
+ "progression": [
+  "Bbm",
+  "Gb",
+  "Ab",
+  "F"
+ ],
+ "instruments": [
+  "deep house kick",
+  "offbeat hat",
+  "16th hats",
+  "warm supersaw pad",
+  "pluck arpeggio",
+  "soft sub bass"
+ ],
+ "seed": 7110,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

@@ -1,0 +1,154 @@
+{
+ "id": "transition-10",
+ "kind": "transition",
+ "title": "Breakdown Mix: Afterglow Protocol → Event Horizon",
+ "title_he": "כניסה בברייקדאון — פרוטוקול זוהר ← אופק אירועים",
+ "artist": "DJ Lab Transitions",
+ "album": "DJ Lab — Transitions",
+ "genre": "Transition Demo",
+ "technique": "breakdown_mix",
+ "technique_he": "כניסה בברייקדאון",
+ "from_id": "techno-06",
+ "to_id": "techno-07",
+ "bpm": 123.0,
+ "duration_sec": 93.659,
+ "bars": 48,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "decks": {
+  "A": {
+   "id": "techno-06",
+   "title": "Afterglow Protocol",
+   "title_he": "פרוטוקול זוהר",
+   "bpm": 123.0,
+   "camelot": "11A",
+   "file": "music/tracks/melodic_techno/techno-06-afterglow-protocol.mp3",
+   "play_from_bar": 64,
+   "play_from_sec": 124.878,
+   "enters_at_sec": 0.0,
+   "tempo": "master tempo 123 BPM"
+  },
+  "B": {
+   "id": "techno-07",
+   "title": "Event Horizon",
+   "title_he": "אופק אירועים",
+   "bpm": 124.0,
+   "camelot": "9A",
+   "file": "music/tracks/melodic_techno/techno-07-event-horizon.mp3",
+   "play_from_bar": 80,
+   "play_from_sec": 154.839,
+   "enters_at_sec": 31.22,
+   "tempo": "resample (vinyl) 124 → 123 BPM (‎-0.8%)"
+  }
+ },
+ "steps_he": [
+  "0:00 — A (`techno-06` „פרוטוקול זוהר“, 11A, 123 BPM) נכנס לברייקדאון (Hot Cue C): הקיק והבאס נעלמים, נשארים פדים וארפג'יו. ספרו 16 תיבות.",
+  "0:31 — תיבה 17 — אמצע הברייקדאון של A: B מתחיל על ה-1, 16 תיבות לפני הדרופ שלו (Hot Cue D), עם LPF כמעט סגור ו-Low למטה. הפיידר שלו עולה ל-100% ב-4 תיבות, והפילטר נפתח לאט — B \"מתקרב\".",
+  "0:46 — תיבות 25–32: ה-Mid וה-High של A יורדים בהדרגה, וה-LPF של B כמעט פתוח.",
+  "1:01 — תיבה 32, פעמה 3: Echo של 2 פעמות על A — מברייקדאון לברייקדאון.",
+  "1:02 — תיבה 33, על ה-1: הפיידר של A למטה וה-Low של B חוזר — הדרופ של B מחליף את הדרופ ש-A היה אמור לתת. זנב האקו של A דועך מעליו.",
+  "1:18 — תיבה 41: B לבד בדרופ שלו. מכבים את האקו ומאפסים את ה-EQ של A."
+ ],
+ "timeline": [
+  {
+   "t": 0.0,
+   "bar": 0,
+   "beat": 1,
+   "pos": "1.1",
+   "action": "Deck A enters its breakdown (Hot Cue C): kick and bass drop out"
+  },
+  {
+   "t": 31.22,
+   "bar": 16,
+   "beat": 1,
+   "pos": "17.1",
+   "action": "Bar 17 (middle of A's breakdown): B starts on the 1, 16 bars before its drop, LPF almost closed, Low killed; fader up over 4 bars"
+  },
+  {
+   "t": 46.829,
+   "bar": 24,
+   "beat": 1,
+   "pos": "25.1",
+   "action": "Bars 25-32: A Mid/High gradually down while B's LPF keeps opening"
+  },
+  {
+   "t": 61.463,
+   "bar": 31,
+   "beat": 3,
+   "pos": "32.3",
+   "action": "Last bar of A's breakdown, beat 3: Echo 2 beats on A"
+  },
+  {
+   "t": 62.439,
+   "bar": 32,
+   "beat": 1,
+   "pos": "33.1",
+   "action": "On the 1: A fader down, B Low in — B's drop replaces the drop A was about to play"
+  },
+  {
+   "t": 78.049,
+   "bar": 40,
+   "beat": 1,
+   "pos": "41.1",
+   "action": "B's drop alone; A echo off and EQ reset"
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "A breakdown",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "B in (LPF)",
+   "bar": 16,
+   "sec": 31.22,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "A recedes",
+   "bar": 24,
+   "sec": 46.829,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Echo 2 beats",
+   "bar": 31,
+   "sec": 61.463,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "E",
+   "name": "B drop",
+   "bar": 32,
+   "sec": 62.439,
+   "color": "#B4BE04",
+   "type": "hot"
+  },
+  {
+   "slot": "F",
+   "name": "B solo",
+   "bar": 40,
+   "sec": 78.049,
+   "color": "#DE44CF",
+   "type": "hot"
+  }
+ ],
+ "description_he": "כניסה בברייקדאון במלודיק טכנו: „אופק אירועים“ (`techno-07`, 9A) נכנס באמצע הברייקדאון של „פרוטוקול זוהר“ (`techno-06`, 11A), עם LPF סגור ובלי Low, ונפתח לאט. בסוף הברייקדאון A יוצא עם Echo של 2 פעמות, ובדיוק במקום שבו הדרופ של A היה אמור להגיע — נוחת הדרופ של B. התחלת הדמו היא Hot Cue C של A.",
+ "exercise_he": "1. טענו לדק 1 את `music/tracks/melodic_techno/techno-06-afterglow-protocol.mp3` ולדק 2 את `music/tracks/melodic_techno/techno-07-event-horizon.mp3`.\n2. הכינו את B: הפעילו Sync על B (או כוונו את ה-Tempo ל-123 BPM, ‎-0.8%). נקודת הכניסה של B: תיבה 81 (2:34.8) — 16 תיבות לפני Hot Cue D. Low למטה, Color FX על LPF כמעט סגור, פיידר למטה.\n3. נגנו את A מתיבה 65 שלו (2:04.9) — שם מתחיל הדמו — וספרו תיבות.\n4. ספרו 16 תיבות מתחילת הברייקדאון של A, ועל ה-1 הפעילו את B; פיידר עד הסוף ב-4 תיבות.\n5. פתחו את ה-LPF של B לאט לאורך 16 תיבות, והורידו בהדרגה Mid ו-High של A מהתיבה ה-9.\n6. בתיבה האחרונה של הברייקדאון — Echo של 2 פעמות על A בפעמה 3; על ה-1: פיידר A למטה ו-Low של B לאמצע.",
+ "lufs": -10.35,
+ "true_peak_dbtp": -1.24,
+ "file": "music/transitions/transition-10-breakdown_mix.mp3",
+ "mixer": "djlab.djmix",
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

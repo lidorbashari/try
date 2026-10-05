@@ -1,0 +1,138 @@
+{
+ "id": "transition-07",
+ "kind": "transition",
+ "title": "Energy Boost +2: Desert Drums → Spirit Dance",
+ "title_he": "קפיצת אנרגיה הרמונית (+2 Camelot) — תופי מדבר ← ריקוד הרוח",
+ "artist": "DJ Lab Transitions",
+ "album": "DJ Lab — Transitions",
+ "genre": "Transition Demo",
+ "technique": "energy_boost",
+ "technique_he": "קפיצת אנרגיה הרמונית (+2 Camelot)",
+ "from_id": "house-09",
+ "to_id": "house-11",
+ "bpm": 122.0,
+ "duration_sec": 78.689,
+ "bars": 40,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "decks": {
+  "A": {
+   "id": "house-09",
+   "title": "Desert Drums",
+   "title_he": "תופי מדבר",
+   "bpm": 122.0,
+   "camelot": "4A",
+   "file": "music/tracks/afro_house/house-09-desert-drums.mp3",
+   "play_from_bar": 104,
+   "play_from_sec": 204.59,
+   "enters_at_sec": 0.0,
+   "tempo": "master tempo 122 BPM"
+  },
+  "B": {
+   "id": "house-11",
+   "title": "Spirit Dance",
+   "title_he": "ריקוד הרוח",
+   "bpm": 122.0,
+   "camelot": "6A",
+   "file": "music/tracks/afro_house/house-11-spirit-dance.mp3",
+   "play_from_bar": 16,
+   "play_from_sec": 31.475,
+   "enters_at_sec": 15.738,
+   "tempo": "native 122 BPM (no beatmatch)"
+  }
+ },
+ "steps_he": [
+  "0:00 — A (`house-09` „תופי מדבר“, 4A, 122 BPM) מנגן את 8 התיבות האחרונות של הדרופ. B (`house-11` „ריקוד הרוח“, 6A, 122 BPM) — שני צעדים עם כיוון השעון בגלגל — מוכן באוזניות עם Low למטה.",
+  "0:15 — תיבה 1 של המעבר (תיבה 9 בקובץ): A מגיע ל-Outro ו-B מתחיל על ה-1 — רק תופים וכלי הקשה, בלי באס ובלי אקורדים, כך ששני הסולמות לא מתנגשים. הפיידר של B עולה עד 100% ב-8 תיבות.",
+  "0:31 — תיבות 9–16 של המעבר: ה-Mid וה-High של A יורדים בהדרגה — ההרמוניה של 4A נסוגה והתופים של B תופסים את הבמה.",
+  "0:47 — תיבה 17 של המעבר (תיבה 25 בקובץ) — תחילת פרייז, על ה-1: הפיידר של A למטה בבת אחת וה-Low של B חוזר. הבאס וההרמוניה של B נכנסים ב-6A: זו ה\"הרמה\" של ‎+2 — טון שלם למעלה.",
+  "1:02 — תיבה 33: B לבד — שימו לב כמה הגרוב נשמע בהיר ו\"גבוה\" יותר, באותו קצב בדיוק."
+ ],
+ "timeline": [
+  {
+   "t": 0.0,
+   "bar": 0,
+   "beat": 1,
+   "pos": "1.1",
+   "action": "Deck A (4A) plays the last 8 bars of its drop"
+  },
+  {
+   "t": 15.738,
+   "bar": 8,
+   "beat": 1,
+   "pos": "9.1",
+   "action": "Mix bar 1: B starts on the 1 — drums and percussion only, no bass/chords, so the keys don't clash"
+  },
+  {
+   "t": 31.475,
+   "bar": 16,
+   "beat": 1,
+   "pos": "17.1",
+   "action": "Bars 9-16: A Mid/High gradually down — the 4A harmony recedes"
+  },
+  {
+   "t": 47.213,
+   "bar": 24,
+   "beat": 1,
+   "pos": "25.1",
+   "action": "Mix bar 17, phrase start, on the 1: A fader cut, B Low in — B's bass and harmony arrive in 6A"
+  },
+  {
+   "t": 62.951,
+   "bar": 32,
+   "beat": 1,
+   "pos": "33.1",
+   "action": "B alone in the new key"
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "A solo",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "B drums in",
+   "bar": 8,
+   "sec": 15.738,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "A recedes",
+   "bar": 16,
+   "sec": 31.475,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "+2 lift",
+   "bar": 24,
+   "sec": 47.213,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "E",
+   "name": "B solo",
+   "bar": 32,
+   "sec": 62.951,
+   "color": "#B4BE04",
+   "type": "hot"
+  }
+ ],
+ "description_he": "קפיצת אנרגיה הרמונית ‎+2 בגלגל Camelot: מ-„תופי מדבר“ (`house-09`, 4A) אל „ריקוד הרוח“ (`house-11`, 6A) — טון שלם למעלה. כדי שהסולמות לא יתנגשו, B נכנס רק עם התופים שלו, A נסוג, והבאס וההרמוניה של B נוחתים על תחילת פרייז (תיבה 17 של המעבר) — לא באמצע בלנד ארוך עם שני באסים.",
+ "exercise_he": "1. טענו לדק 1 את `music/tracks/afro_house/house-09-desert-drums.mp3` ולדק 2 את `music/tracks/afro_house/house-11-spirit-dance.mp3`.\n2. הכינו את B: בלי Sync — B נשאר בקצב המקורי שלו. נקודת הכניסה של B: תיבה 17 (0:31.5) — 16 תיבות לפני Hot Cue B. Low למטה, פיידר למטה.\n3. נגנו את A מתיבה 105 שלו (3:24.6) — שם מתחיל הדמו — וספרו תיבות.\n4. על ה-1 של Hot Cue G של A — הפעילו את B והעלו את הפיידר שלו עד הסוף במשך 8 תיבות.\n5. בתיבות 9–16 הורידו בהדרגה Mid ו-High של A.\n6. על ה-1 של תיבה 17 של המעבר: פיידר A למטה ו-Low של B לאמצע באותו רגע. הקשיבו ל\"הרמה\" — ונסו לעשות את אותו מעבר בבלנד ארוך כדי לשמוע למה זה פחות עובד ב-‎+2.",
+ "lufs": -9.93,
+ "true_peak_dbtp": -1.35,
+ "file": "music/transitions/transition-07-energy_boost.mp3",
+ "mixer": "djlab.djmix",
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

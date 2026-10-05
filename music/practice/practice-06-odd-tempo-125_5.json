@@ -1,0 +1,152 @@
+{
+ "id": "practice-06",
+ "kind": "practice",
+ "title": "Odd Tempo 125.5",
+ "title_he": "טמפו עקום 125.5",
+ "artist": "DJ Lab Practice",
+ "album": "DJ Lab — Practice",
+ "genre": "Practice",
+ "bpm": 125.5,
+ "duration_sec": 214.183,
+ "bars": 112,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 16,
+   "start_sec": 0.0,
+   "energy": 3
+  },
+  {
+   "name": "Build",
+   "start_bar": 16,
+   "bars": 16,
+   "start_sec": 30.598,
+   "energy": 5
+  },
+  {
+   "name": "Groove A",
+   "start_bar": 32,
+   "bars": 32,
+   "start_sec": 61.195,
+   "energy": 6
+  },
+  {
+   "name": "Groove B",
+   "start_bar": 64,
+   "bars": 32,
+   "start_sec": 122.39,
+   "energy": 6
+  },
+  {
+   "name": "Outro",
+   "start_bar": 96,
+   "bars": 16,
+   "start_sec": 183.586,
+   "energy": 3
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Start · Kick + Hat",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Groove A · Bar 33",
+   "bar": 32,
+   "sec": 61.195,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Groove B · Bar 65",
+   "bar": 64,
+   "sec": 122.39,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro · Bar 97",
+   "bar": 96,
+   "sec": 183.586,
+   "color": "#305AFF",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Build",
+   "bar": 16,
+   "sec": 30.598
+  },
+  {
+   "name": "Fill · Bar 32",
+   "bar": 31,
+   "sec": 59.283
+  },
+  {
+   "name": "Groove A",
+   "bar": 32,
+   "sec": 61.195
+  },
+  {
+   "name": "Fill · Bar 64",
+   "bar": 63,
+   "sec": 120.478
+  },
+  {
+   "name": "Groove B",
+   "bar": 64,
+   "sec": 122.39
+  },
+  {
+   "name": "Fill · Bar 96",
+   "bar": 95,
+   "sec": 181.673
+  },
+  {
+   "name": "Outro",
+   "bar": 96,
+   "sec": 183.586
+  }
+ ],
+ "lufs": -10.08,
+ "true_peak_dbtp": -1.49,
+ "file": "music/practice/practice-06-odd-tempo-125_5.mp3",
+ "cover": "music/practice/practice-06-odd-tempo-125_5.jpg",
+ "purpose_he": "BPM לא עגול — מכריח לכוון באוזן ולא לפי המספר",
+ "description_he": "לופ תופים נקי ב-125.5 BPM בסגנון האוס גרובי — קיק, קלאפ, היי-האט באופביט ושייקר, בלי באס ובלי שום צליל טונאלי, כך שהביטמאצ'ינג נעשה רק לפי הקצב. כל 8 תיבות משהו קטן משתנה בתופים, וקראש עדין מסמן כל 16 תיבות. הקיק לא נעלם אף פעם — חוץ מתיבת מילוי אחת בסוף כל 32 תיבות (תיבות 32, 64 ו-96: קיק רק על ה-1 ומילוי סנר). 16 התיבות הראשונות והאחרונות מינימליות (קיק והיי-האט). הטמפו 'עקום' בכוונה: 125.5 BPM בדיוק. תגית ה-BPM בקובץ (ID3) חייבת להיות מספר שלם ולכן מציגה 126, אבל ה-Beatgrid וקובץ ה-JSON מציינים 125.5 — אי אפשר 'לכוון למספר', חייבים להקשיב.",
+ "exercise_he": "1. טענו את `music/practice/practice-03-drums-124.mp3` (124) לדק 1 ואת `practice-06` (125.5) לדק 2. Sync כבוי. כסו את תצוגת ה-BPM של דק 2 (פתק דביק עובד מצוין).\n2. כוונו את דק 2 באוזן — היעד בערך ‎−1.2%‎: שינוי קטן ועדין של ה-Tempo Fader.\n3. החזיקו 32 תיבות. כשהפער קטן הסטייה מצטברת לאט — 'הבהוב' או 'פלאם' בהיי-האטים הוא סימן מוקדם שצריך לתקן.\n4. שלב ב': `practice-06` (125.5) בדק 1 מול `music/practice/practice-07-odd-tempo-122_7.mp3` (122.7) בדק 2 — ‎+2.3%‎.\n5. בסוף הציצו ב-BPM שהגעתם אליו: כמה קרוב ל-124 (או ל-125.5) הייתם?",
+ "pair_with": [
+  "practice-03",
+  "practice-07"
+ ],
+ "instruments": [
+  "house kick",
+  "clap",
+  "offbeat open hat",
+  "16th hats",
+  "shaker",
+  "finger snap",
+  "tambourine",
+  "snare fill every 32 bars",
+  "crash every 16 bars"
+ ],
+ "seed": 7106,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

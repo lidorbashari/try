@@ -1,0 +1,192 @@
+{
+ "id": "practice-15",
+ "kind": "practice",
+ "title": "Tempo Bridge 100",
+ "title_he": "גשר טמפו 100",
+ "artist": "DJ Lab Practice",
+ "album": "DJ Lab — Practice",
+ "genre": "Practice",
+ "bpm": 100.0,
+ "key": "D minor",
+ "key_short": "Dm",
+ "camelot": "7A",
+ "duration_sec": 230.4,
+ "bars": 96,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 16,
+   "start_sec": 0.0,
+   "energy": 4
+  },
+  {
+   "name": "Verse",
+   "start_bar": 16,
+   "bars": 16,
+   "start_sec": 38.4,
+   "energy": 6
+  },
+  {
+   "name": "Hook",
+   "start_bar": 32,
+   "bars": 16,
+   "start_sec": 76.8,
+   "energy": 8
+  },
+  {
+   "name": "Break",
+   "start_bar": 48,
+   "bars": 8,
+   "start_sec": 115.2,
+   "energy": 4
+  },
+  {
+   "name": "Hook 2",
+   "start_bar": 56,
+   "bars": 24,
+   "start_sec": 134.4,
+   "energy": 8
+  },
+  {
+   "name": "Outro · Vox + Drums",
+   "start_bar": 80,
+   "bars": 8,
+   "start_sec": 192.0,
+   "energy": 5
+  },
+  {
+   "name": "Outro · Drums Only",
+   "start_bar": 88,
+   "bars": 8,
+   "start_sec": 211.2,
+   "energy": 4
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro · Darbuka + Dembow",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Verse · Bass In · Bar 17",
+   "bar": 16,
+   "sec": 38.4,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Break · Bar 49",
+   "bar": 48,
+   "sec": 115.2,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Hook · Bar 33",
+   "bar": 32,
+   "sec": 76.8,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "F",
+   "name": "Hook 2 · Bar 57",
+   "bar": 56,
+   "sec": 134.4,
+   "color": "#DE44CF",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro · Vox + Drums · Bar 81",
+   "bar": 80,
+   "sec": 192.0,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Drums Only · Bar 89",
+   "bar": 88,
+   "sec": 211.2,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Verse",
+   "bar": 16,
+   "sec": 38.4
+  },
+  {
+   "name": "Hook",
+   "bar": 32,
+   "sec": 76.8
+  },
+  {
+   "name": "Break",
+   "bar": 48,
+   "sec": 115.2
+  },
+  {
+   "name": "Hook 2",
+   "bar": 56,
+   "sec": 134.4
+  },
+  {
+   "name": "Outro · Vox + Drums",
+   "bar": 80,
+   "sec": 192.0
+  },
+  {
+   "name": "Outro · Drums Only",
+   "bar": 88,
+   "sec": 211.2
+  }
+ ],
+ "lufs": -10.05,
+ "true_peak_dbtp": -1.38,
+ "file": "music/practice/practice-15-tempo-bridge-100-to-124.mp3",
+ "cover": "music/practice/practice-15-tempo-bridge-100-to-124.jpg",
+ "purpose_he": "גרוב ים-תיכוני/רגאטון ב-100 עם אאוטרו אקפלה-תופים לתרגול מעבר ל-124",
+ "description_he": "גרוב ים-תיכוני/רגאטון ב-100 BPM ברה מינור (7A): דרבוקה במקצב מקסום, קיק ישר עם סנר דמבו, סאב-באס, עוּד סינתטי בסולם רה מינור הרמוני (עם צבע חיג'אז על אקורד ה-A) וצ'ופים ווקאליים בפזמון. 16 התיבות האחרונות מתרוקנות בהדרגה: תיבות 81–88 — תופים וצ'ופים ווקאליים בלבד (בסגנון אקפלה), תיבות 89–96 — תופים בלבד, והתיבה האחרונה (96) נקייה לגמרי: רק ארבעה רבעים של קיק ודרבוקה — מושלם ל-Echo Out ולכניסה 'בבום' לטראק האוס ב-124. אותו סולם (7A) כמו `mainstream-15` ו-`house-03`.",
+ "exercise_he": "1. טענו את `practice-15` לדק 1, ולדק 2 טראק ב-124: `mainstream-15` או `house-03` (שניהם 7A), או לתרגול יבש `music/practice/practice-03-drums-124.mp3`. Sync כבוי — במעבר הזה אין ביטמאצ'ינג.\n2. שימו את דק 2 על Hot Cue A. בדק 1 בחרו Echo עם 1 Beat (או 1/2 Beat).\n3. נגנו את דק 1 וספרו פרייזים. מתיבה 81 (Hot Cue G) נשארים תופים וווקאל, ומתיבה 89 (Hot Cue H) רק תופים.\n4. בתחילת התיבה האחרונה (96) הדליקו את ה-Echo. על ה-1 שאחריה — הורידו את הפיידר של דק 1, ובאותו רגע הפעילו את דק 2: 'בום' בטמפו החדש, וההד של ה-100 נמס מתחתיו.\n5. חזרו 10 פעמים, עד שה-1 של הטראק החדש נוחת בדיוק כשההד מתחיל לדעוך. שלב ב': אותה נקודה בקאט נקי, בלי Echo.",
+ "pair_with": [
+  "mainstream-15",
+  "house-03",
+  "practice-03",
+  "transition-08"
+ ],
+ "echo_out_bar": 96,
+ "next_bpm": 124,
+ "instruments": [
+  "darbuka (doum / tek / ka, maqsum)",
+  "reggaeton kick + dembow snare & clap",
+  "riq",
+  "shaker",
+  "sub bass",
+  "synth oud (Karplus-Strong)",
+  "formant vocal chops",
+  "string pad",
+  "riser & downlifter"
+ ],
+ "seed": 7115,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

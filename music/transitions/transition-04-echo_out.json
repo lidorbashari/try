@@ -1,0 +1,164 @@
+{
+ "id": "transition-04",
+ "kind": "transition",
+ "title": "Echo Out: Warehouse 26 → Concrete Pulse",
+ "title_he": "Echo Out — מחסן 26 ← דופק בטון",
+ "artist": "DJ Lab Transitions",
+ "album": "DJ Lab — Transitions",
+ "genre": "Transition Demo",
+ "technique": "echo_out",
+ "technique_he": "Echo Out",
+ "from_id": "house-07",
+ "to_id": "techno-01",
+ "bpm": 128.0,
+ "tempo_map": [
+  {
+   "bar": 0,
+   "bpm": 128.0
+  },
+  {
+   "bar": 16,
+   "bpm": 130.0
+  }
+ ],
+ "duration_sec": 74.308,
+ "bars": 40,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "decks": {
+  "A": {
+   "id": "house-07",
+   "title": "Warehouse 26",
+   "title_he": "מחסן 26",
+   "bpm": 128.0,
+   "camelot": "6A",
+   "file": "music/tracks/tech_house/house-07-warehouse-26.mp3",
+   "play_from_bar": 88,
+   "play_from_sec": 165.0,
+   "enters_at_sec": 0.0,
+   "tempo": "master tempo 128 BPM"
+  },
+  "B": {
+   "id": "techno-01",
+   "title": "Concrete Pulse",
+   "title_he": "דופק בטון",
+   "bpm": 130.0,
+   "camelot": "8A",
+   "file": "music/tracks/techno/techno-01-concrete-pulse.mp3",
+   "play_from_bar": 0,
+   "play_from_sec": 0.0,
+   "enters_at_sec": 30.0,
+   "tempo": "native 130 BPM (no beatmatch)"
+  }
+ },
+ "steps_he": [
+  "0:00 — A (`house-07` „מחסן 26“, 6A, 128 BPM) מנגן את הפרייז האחרון של הדרופ (מ-Hot Cue F). B (`techno-01` „דופק בטון“, 8A, 130 BPM) מחכה על Hot Cue A בקצב המקורי שלו — בלי ביטמאצ'ינג.",
+  "0:22 — תיבה 13: נשארו 4 תיבות לסוף הפרייז — מכינים Echo של 1/2 פעמה, Level כ-50%, על הערוץ של A.",
+  "0:28 — תיבה 16, על ה-1 — התיבה האחרונה של הפרייז: מדליקים את ה-Echo על A.",
+  "0:29 — תיבה 16, פעמה 3: הפיידר של A יורד בבת אחת — זנב האקו ממשיך להדהד ולדעוך.",
+  "0:30 — תיבה 17, על ה-1: B מתחיל מ-Hot Cue A והפיידר שלו למעלה — ב-130 BPM, בלי לסנכרן.",
+  "0:33 — תיבה 19: הזנב נגמר — מכבים את ה-Echo, מחזירים את ה-Level לאפס ואת ה-EQ של A לאמצע. B ממשיך לבד."
+ ],
+ "timeline": [
+  {
+   "t": 0.0,
+   "bar": 0,
+   "beat": 1,
+   "pos": "1.1",
+   "action": "Deck A plays the last phrase of its drop; B waits on Hot Cue A at its own tempo (no beatmatch)"
+  },
+  {
+   "t": 22.5,
+   "bar": 12,
+   "beat": 1,
+   "pos": "13.1",
+   "action": "Bar 13: 4 bars left in the phrase — Echo 1/2 beat, level ~50%, assigned to A"
+  },
+  {
+   "t": 28.125,
+   "bar": 15,
+   "beat": 1,
+   "pos": "16.1",
+   "action": "Last bar of A's phrase, beat 1: Echo ON (1/2 beat)"
+  },
+  {
+   "t": 29.062,
+   "bar": 15,
+   "beat": 3,
+   "pos": "16.3",
+   "action": "Beat 3: A fader down at once — the echo tail keeps ringing"
+  },
+  {
+   "t": 30.0,
+   "bar": 16,
+   "beat": 1,
+   "pos": "17.1",
+   "action": "Next 1: B starts from Hot Cue A at its native 130 BPM, fader up"
+  },
+  {
+   "t": 33.692,
+   "bar": 18,
+   "beat": 1,
+   "pos": "19.1",
+   "action": "Tail gone: Echo off, A EQ/level reset"
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "A phrase",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Get ready",
+   "bar": 12,
+   "sec": 22.5,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Echo on",
+   "bar": 15,
+   "sec": 28.125,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "A fader cut",
+   "bar": 15,
+   "sec": 29.062,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "E",
+   "name": "B on the 1",
+   "bar": 16,
+   "sec": 30.0,
+   "color": "#B4BE04",
+   "type": "hot"
+  },
+  {
+   "slot": "F",
+   "name": "Echo off",
+   "bar": 18,
+   "sec": 33.692,
+   "color": "#DE44CF",
+   "type": "hot"
+  }
+ ],
+ "description_he": "‏Echo Out מ-„מחסן 26“ (`house-07`, 6A) אל „דופק בטון“ (`techno-01`, 8A): אקו של 1/2 פעמה נדלק על התיבה האחרונה של הפרייז, הפיידר של A יורד בפעמה 3, והזנב מגשר עד ש-B נכנס על ה-1 — בקצב המקורי שלו (130), בלי ביטמאצ'ינג. מעבר קצר ונקי שעובד גם בין ז'אנרים וקצבים.",
+ "exercise_he": "1. טענו לדק 1 את `music/tracks/tech_house/house-07-warehouse-26.mp3` ולדק 2 את `music/tracks/techno/techno-01-concrete-pulse.mp3`.\n2. הכינו את B: בלי Sync — B נשאר בקצב המקורי שלו. נקודת הכניסה של B: Hot Cue A (תיבה 1, 0:00.0). פיידר למטה, EQ באמצע.\n3. נגנו את A מתיבה 89 שלו (2:45.0) — שם מתחיל הדמו — וספרו תיבות.\n4. ב-Beat FX בחרו Echo, Beat 1/2, Level כ-50%, והקצו אותו לערוץ של A.\n5. על ה-1 של התיבה האחרונה של הפרייז — Echo ON; בפעמה 3 — פיידר A למטה בבת אחת; על ה-1 הבא — Play על B ופיידר למעלה.\n6. נסו גם Beat של 3/4 ושל 1 ובחרו את האהוב עליכם. אל תשכחו לכבות את האקו אחרי שהזנב נגמר.",
+ "lufs": -10.01,
+ "true_peak_dbtp": -1.44,
+ "file": "music/transitions/transition-04-echo_out.mp3",
+ "mixer": "djlab.djmix",
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

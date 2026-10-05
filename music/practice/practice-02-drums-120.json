@@ -1,0 +1,152 @@
+{
+ "id": "practice-02",
+ "kind": "practice",
+ "title": "Beatmatch Drums 120",
+ "title_he": "תופים לביטמאצ'ינג 120",
+ "artist": "DJ Lab Practice",
+ "album": "DJ Lab — Practice",
+ "genre": "Practice",
+ "bpm": 120.0,
+ "duration_sec": 224.0,
+ "bars": 112,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 16,
+   "start_sec": 0.0,
+   "energy": 3
+  },
+  {
+   "name": "Build",
+   "start_bar": 16,
+   "bars": 16,
+   "start_sec": 32.0,
+   "energy": 5
+  },
+  {
+   "name": "Groove A",
+   "start_bar": 32,
+   "bars": 32,
+   "start_sec": 64.0,
+   "energy": 6
+  },
+  {
+   "name": "Groove B",
+   "start_bar": 64,
+   "bars": 32,
+   "start_sec": 128.0,
+   "energy": 6
+  },
+  {
+   "name": "Outro",
+   "start_bar": 96,
+   "bars": 16,
+   "start_sec": 192.0,
+   "energy": 3
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Start · Kick + Hat",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Groove A · Bar 33",
+   "bar": 32,
+   "sec": 64.0,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Groove B · Bar 65",
+   "bar": 64,
+   "sec": 128.0,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro · Bar 97",
+   "bar": 96,
+   "sec": 192.0,
+   "color": "#305AFF",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Build",
+   "bar": 16,
+   "sec": 32.0
+  },
+  {
+   "name": "Fill · Bar 32",
+   "bar": 31,
+   "sec": 62.0
+  },
+  {
+   "name": "Groove A",
+   "bar": 32,
+   "sec": 64.0
+  },
+  {
+   "name": "Fill · Bar 64",
+   "bar": 63,
+   "sec": 126.0
+  },
+  {
+   "name": "Groove B",
+   "bar": 64,
+   "sec": 128.0
+  },
+  {
+   "name": "Fill · Bar 96",
+   "bar": 95,
+   "sec": 190.0
+  },
+  {
+   "name": "Outro",
+   "bar": 96,
+   "sec": 192.0
+  }
+ ],
+ "lufs": -10.08,
+ "true_peak_dbtp": -1.45,
+ "file": "music/practice/practice-02-drums-120.mp3",
+ "cover": "music/practice/practice-02-drums-120.jpg",
+ "purpose_he": "לופ תופים נקי לתרגול ביטמאצ'ינג באוזן",
+ "description_he": "לופ תופים נקי ב-120 BPM בסגנון דיפ-האוס רך — קיק, קלאפ, היי-האט באופביט ושייקר, בלי באס ובלי שום צליל טונאלי, כך שהביטמאצ'ינג נעשה רק לפי הקצב. כל 8 תיבות משהו קטן משתנה בתופים, וקראש עדין מסמן כל 16 תיבות. הקיק לא נעלם אף פעם — חוץ מתיבת מילוי אחת בסוף כל 32 תיבות (תיבות 32, 64 ו-96: קיק רק על ה-1 ומילוי סנר). 16 התיבות הראשונות והאחרונות מינימליות (קיק והיי-האט).",
+ "exercise_he": "1. טענו את `practice-02` (120) לדק 1 ואת `music/practice/practice-03-drums-124.mp3` (124) לדק 2. Sync כבוי. כסו את תצוגת ה-BPM של דק 2 (פתק דביק עובד מצוין).\n2. נגנו את דק 1 ברמקולים. בדק 2 לחצו Play על ה-1 של פרייז (הקראש בדק 1 הוא סימן טוב) והאזינו לו באוזניות.\n3. הורידו את ה-Tempo Fader של דק 2 עד שהקיקים מפסיקים 'לדהור' — היעד בערך ‎−3.2%‎. תקנו מיקום עם ה-Jog.\n4. החזיקו 32 תיבות יציבות. תיבת המילוי (בלי קיק) בסוף כל 32 תיבות היא מבחן: אם אחריה הקיקים עדיין יחד — הצלחתם.\n5. שלב ב': אותו תרגיל מול `music/practice/practice-05-drums-132.mp3` (132) — פער של 10% (‎−9.1%‎); צריך טווח Tempo של ±16%.",
+ "pair_with": [
+  "practice-03",
+  "practice-05"
+ ],
+ "instruments": [
+  "deep kick",
+  "clap",
+  "offbeat open hat",
+  "16th hats",
+  "shaker",
+  "rimshot",
+  "tambourine",
+  "snare fill every 32 bars",
+  "crash every 16 bars"
+ ],
+ "seed": 7102,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

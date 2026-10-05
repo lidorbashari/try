@@ -1,0 +1,170 @@
+{
+ "id": "transition-02",
+ "kind": "transition",
+ "title": "Bass Swap: Groove Machine → Bassline Bandit",
+ "title_he": "החלפת באס (Bass Swap) — מכונת גרוב ← שודד הבאסליין",
+ "artist": "DJ Lab Transitions",
+ "album": "DJ Lab — Transitions",
+ "genre": "Transition Demo",
+ "technique": "bass_swap",
+ "technique_he": "החלפת באס (Bass Swap)",
+ "from_id": "house-05",
+ "to_id": "house-06",
+ "bpm": 126.0,
+ "duration_sec": 91.429,
+ "bars": 48,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "decks": {
+  "A": {
+   "id": "house-05",
+   "title": "Groove Machine",
+   "title_he": "מכונת גרוב",
+   "bpm": 126.0,
+   "camelot": "8A",
+   "file": "music/tracks/tech_house/house-05-groove-machine.mp3",
+   "play_from_bar": 96,
+   "play_from_sec": 182.857,
+   "enters_at_sec": 0.0,
+   "tempo": "master tempo 126 BPM"
+  },
+  "B": {
+   "id": "house-06",
+   "title": "Bassline Bandit",
+   "title_he": "שודד הבאסליין",
+   "bpm": 127.0,
+   "camelot": "7A",
+   "file": "music/tracks/tech_house/house-06-bassline-bandit.mp3",
+   "play_from_bar": 16,
+   "play_from_sec": 30.236,
+   "enters_at_sec": 15.238,
+   "tempo": "resample (vinyl) 127 → 126 BPM (‎-0.8%)"
+  }
+ },
+ "steps_he": [
+  "0:00 — A (`house-05` „מכונת גרוב“, 8A, 126 BPM) מנגן לבד, 8 תיבות לפני ה-Outro. B (`house-06` „שודד הבאסליין“, 7A, 127 BPM) מוכן: מותאם ל-126 BPM, Low למטה לגמרי, פיידר למטה.",
+  "0:15 — תיבה 1 של המעבר (תיבה 9 בקובץ): A מגיע ל-Hot Cue G ו-B מתחיל על ה-1. הפיידר של B עולה עד 100% לאורך 8 תיבות — שומעים רק את התופים והגבוהים שלו, בלי באס.",
+  "0:30 — תיבות 9–16 של המעבר: ה-High של A יורד מעט (שעה 10–11). B מלא, עדיין בלי Low.",
+  "0:45 — תיבה 17 של המעבר (תיבה 25 בקובץ), בדיוק על ה-1: Bass Swap — ה-Low של A למטה בבת אחת וה-Low של B לאמצע בבת אחת. הבאס של B נכנס כאן (Hot Cue B שלו) — באס אחד בכל רגע.",
+  "0:46 — תיבות 17–24 של המעבר: ה-Mid וה-High של A יורדים בהדרגה — A הופך לרקע.",
+  "1:00 — תיבות 25–32 של המעבר: הפיידר של A יורד עד 0.",
+  "1:16 — תיבה 41 בקובץ: B לבד. ה-EQ והפיידר של A מתאפסים — מוכנים לטראק הבא."
+ ],
+ "timeline": [
+  {
+   "t": 0.0,
+   "bar": 0,
+   "beat": 1,
+   "pos": "1.1",
+   "action": "Deck A plays alone, 8 bars before Hot Cue G"
+  },
+  {
+   "t": 15.238,
+   "bar": 8,
+   "beat": 1,
+   "pos": "9.1",
+   "action": "Mix bar 1: B starts on the 1 with Low killed; fader up to 100% over 8 bars (drums and highs only)"
+  },
+  {
+   "t": 30.476,
+   "bar": 16,
+   "beat": 1,
+   "pos": "17.1",
+   "action": "Bars 9-16: A High slightly down (10-11 o'clock); B full without Low"
+  },
+  {
+   "t": 45.714,
+   "bar": 24,
+   "beat": 1,
+   "pos": "25.1",
+   "action": "Mix bar 17 on the 1: BASS SWAP — A Low killed, B Low to centre at the same moment"
+  },
+  {
+   "t": 46.667,
+   "bar": 24,
+   "beat": 3,
+   "pos": "25.3",
+   "action": "Bars 17-24: A Mid and High gradually down"
+  },
+  {
+   "t": 60.952,
+   "bar": 32,
+   "beat": 1,
+   "pos": "33.1",
+   "action": "Bars 25-32: A fader down to 0"
+  },
+  {
+   "t": 76.19,
+   "bar": 40,
+   "beat": 1,
+   "pos": "41.1",
+   "action": "B alone; A EQ reset"
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "A solo",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "B in",
+   "bar": 8,
+   "sec": 15.238,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "A hi down",
+   "bar": 16,
+   "sec": 30.476,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Bass swap",
+   "bar": 24,
+   "sec": 45.714,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "E",
+   "name": "A thins",
+   "bar": 24,
+   "sec": 46.667,
+   "color": "#B4BE04",
+   "type": "hot"
+  },
+  {
+   "slot": "F",
+   "name": "A fader",
+   "bar": 32,
+   "sec": 60.952,
+   "color": "#DE44CF",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "B solo",
+   "bar": 40,
+   "sec": 76.19,
+   "color": "#305AFF",
+   "type": "hot"
+  }
+ ],
+ "description_he": "החלפת באס (Bass Swap) קלאסית ב-32 תיבות מ-„מכונת גרוב“ (`house-05`, 8A) אל „שודד הבאסליין“ (`house-06`, 7A), לפי פרק 6. B מותאם ל-126 BPM, עולה בלי באס, ובתיבה 17 של המעבר — בדיוק על ה-1 — ה-Lows מתחלפים בבת אחת: הבאס של A יוצא והבאס של B נכנס. ‎8A→7A — שכנים בגלגל (‎−1).",
+ "exercise_he": "1. טענו לדק 1 את `music/tracks/tech_house/house-05-groove-machine.mp3` ולדק 2 את `music/tracks/tech_house/house-06-bassline-bandit.mp3`.\n2. הכינו את B: הפעילו Sync על B (או כוונו את ה-Tempo ל-126 BPM, ‎-0.8%). נקודת הכניסה של B: תיבה 17 (0:30.2) — 16 תיבות לפני Hot Cue B. Low למטה לגמרי, פיידר למטה.\n3. נגנו את A מתיבה 97 שלו (3:02.9) — שם מתחיל הדמו — וספרו תיבות.\n4. על ה-1 של Hot Cue G של A — הפעילו את B והעלו את הפיידר שלו עד 100% במשך 8 תיבות.\n5. ספרו 16 תיבות. על ה-1 של תיבה 17 של המעבר — יד אחת על ה-Low של A, יד שנייה על ה-Low של B, ושתיהן זזות יחד.\n6. תיבות 17–32: הורידו בהדרגה Mid ו-High של A ואז את הפיידר שלו. הקליטו והשוו לדמו — האם ההחלפה נפלה בדיוק על ה-1?",
+ "lufs": -9.98,
+ "true_peak_dbtp": -1.26,
+ "file": "music/transitions/transition-02-bass_swap.mp3",
+ "mixer": "djlab.djmix",
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

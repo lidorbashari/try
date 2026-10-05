@@ -124,8 +124,8 @@
    "sec": 185.806
   }
  ],
- "lufs": -10.11,
- "true_peak_dbtp": -1.54,
+ "lufs": -10.12,
+ "true_peak_dbtp": -1.39,
  "file": "music/practice/practice-03-drums-124.mp3",
  "cover": "music/practice/practice-03-drums-124.jpg",
  "purpose_he": "לופ תופים נקי לתרגול ביטמאצ'ינג באוזן",
@@ -133,7 +133,7 @@
  "exercise_he": "1. תרגיל מיקום: טענו את `practice-03` לשני הדקים. הפעילו את דק 2 בכוונה לא בזמן, ויישרו את הקיקים רק עם ה-Jog. 20 חזרות.\n2. תרגיל מהירות: דק 1 — `practice-03` (124), דק 2 — `music/practice/practice-04-drums-128.mp3` (128). Sync כבוי. כסו את תצוגת ה-BPM של דק 2 (פתק דביק עובד מצוין).\n3. כוונו את ה-Tempo Fader של דק 2 עד שהקיקים יושבים יחד — בערך ‎−3.1%‎ — ותקנו עם ה-Jog.\n4. החזיקו 32 תיבות בלי סטייה של יותר מחצי ביט, ובדקו את עצמכם על תיבת המילוי (תיבה 32).\n5. שלב ב': החליפו תפקידים — `music/practice/practice-04-drums-128.mp3` בדק 1 ו-`practice-03` בדק 2 (הפעם צריך להאיץ, ‎+3.2%‎).",
  "pair_with": [
   "practice-04",
-  "practice-03"
+  "practice-02"
  ],
  "instruments": [
   "tech_house kick",

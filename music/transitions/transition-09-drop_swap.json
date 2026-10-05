@@ -1,0 +1,138 @@
+{
+ "id": "transition-09",
+ "kind": "transition",
+ "title": "Drop Swap: Darbuka Nights → Hijaz Fire",
+ "title_he": "החלפת דרופים — לילות דרבוקה ← אש חיג'אז",
+ "artist": "DJ Lab Transitions",
+ "album": "DJ Lab — Transitions",
+ "genre": "Transition Demo",
+ "technique": "drop_swap",
+ "technique_he": "החלפת דרופים",
+ "from_id": "mainstream-13",
+ "to_id": "mainstream-14",
+ "bpm": 100.0,
+ "duration_sec": 76.8,
+ "bars": 32,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "decks": {
+  "A": {
+   "id": "mainstream-13",
+   "title": "Darbuka Nights",
+   "title_he": "לילות דרבוקה",
+   "bpm": 100.0,
+   "camelot": "9A",
+   "file": "music/tracks/mediterranean/mainstream-13-darbuka-nights.mp3",
+   "play_from_bar": 32,
+   "play_from_sec": 76.8,
+   "enters_at_sec": 0.0,
+   "tempo": "master tempo 100 BPM"
+  },
+  "B": {
+   "id": "mainstream-14",
+   "title": "Hijaz Fire",
+   "title_he": "אש חיג'אז",
+   "bpm": 104.0,
+   "camelot": "8A",
+   "file": "music/tracks/mediterranean/mainstream-14-hijaz-fire.mp3",
+   "play_from_bar": 32,
+   "play_from_sec": 73.846,
+   "enters_at_sec": 19.2,
+   "tempo": "time-stretch (key lock) 104 → 100 BPM (‎-3.8%)"
+  }
+ },
+ "steps_he": [
+  "0:00 — A (`mainstream-13` „לילות דרבוקה“, 9A, 100 BPM) מנגן את הדרופ/הפזמון שלו (Hot Cue D). B (`mainstream-14` „אש חיג'אז“, 8A, 104 BPM) מותאם ל-100 BPM (Master Tempo / time-stretch, ‎-3.8%) ומחכה 8 תיבות לפני Hot Cue D שלו — תחילת הבילד.",
+  "0:19 — תיבה 9, על ה-1: B מתחיל עם הבילד שלו (גלגולי דרבוקה) מעל החצי השני של הדרופ של A — Low למטה, הפיידר עולה ב-4 תיבות.",
+  "0:28 — תיבות 13–16: ה-Mid וה-High של A יורדים בהדרגה, והבילד של B עולה.",
+  "0:38 — תיבה 17, על ה-1: החלפת דרופים — הפיידר של A למטה וה-Low של B לאמצע בבת אחת. במקום הברייקדאון של A מגיע הדרופ של B.",
+  "0:57 — תיבה 25: B ממשיך בפזמון שלו — הרחבה לא קיבלה אפילו שנייה של ירידה באנרגיה."
+ ],
+ "timeline": [
+  {
+   "t": 0.0,
+   "bar": 0,
+   "beat": 1,
+   "pos": "1.1",
+   "action": "Deck A plays its drop/hook (Hot Cue D); B synced, waiting 8 bars before its Hot Cue D"
+  },
+  {
+   "t": 19.2,
+   "bar": 8,
+   "beat": 1,
+   "pos": "9.1",
+   "action": "B starts on the 1 with its build-up, Low killed; fader up over 4 bars"
+  },
+  {
+   "t": 28.8,
+   "bar": 12,
+   "beat": 1,
+   "pos": "13.1",
+   "action": "Bars 13-16: A Mid/High down gradually while B's build rises"
+  },
+  {
+   "t": 38.4,
+   "bar": 16,
+   "beat": 1,
+   "pos": "17.1",
+   "action": "On the 1: A fader down, B Low in — B's drop replaces A's next section"
+  },
+  {
+   "t": 57.6,
+   "bar": 24,
+   "beat": 1,
+   "pos": "25.1",
+   "action": "B's hook continues — the floor never got a break"
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "A drop",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "B build in",
+   "bar": 8,
+   "sec": 19.2,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "A recedes",
+   "bar": 12,
+   "sec": 28.8,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "DROP SWAP",
+   "bar": 16,
+   "sec": 38.4,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "E",
+   "name": "B hook",
+   "bar": 24,
+   "sec": 57.6,
+   "color": "#B4BE04",
+   "type": "hot"
+  }
+ ],
+ "description_he": "החלפת דרופים בים-תיכוני: בזמן שהפזמון של „לילות דרבוקה“ (`mainstream-13`, 9A) מתנגן, הבילד של „אש חיג'אז“ (`mainstream-14`, 8A) נכנס מעליו בלי Low, ובדיוק במקום שבו A היה יורד לברייקדאון — נוחת הדרופ של B. B מותאם מ-104 ל-100 BPM (Master Tempo, בלי שינוי בגובה הצליל). ‎9A→8A — שכנים בגלגל.",
+ "exercise_he": "1. טענו לדק 1 את `music/tracks/mediterranean/mainstream-13-darbuka-nights.mp3` ולדק 2 את `music/tracks/mediterranean/mainstream-14-hijaz-fire.mp3`.\n2. הכינו את B: הפעילו Sync על B (או כוונו את ה-Tempo ל-100 BPM, ‎-3.8%). נקודת הכניסה של B: תיבה 33 (1:13.8) — 8 תיבות לפני Hot Cue D. Master Tempo דולק, Low למטה, פיידר למטה.\n3. נגנו את A מתיבה 33 שלו (1:16.8) — שם מתחיל הדמו — וספרו תיבות.\n4. נגנו את A מ-Hot Cue D. אחרי 8 תיבות — על ה-1 — הפעילו את B והעלו את הפיידר שלו ב-4 תיבות.\n5. 4 תיבות לפני הסוף של הדרופ של A: הורידו בהדרגה Mid ו-High שלו.\n6. על ה-1 שבו A היה נכנס לברייקדאון: פיידר A למטה ו-Low של B לאמצע — הדרופ של B נוחת.",
+ "lufs": -9.94,
+ "true_peak_dbtp": -1.45,
+ "file": "music/transitions/transition-09-drop_swap.mp3",
+ "mixer": "djlab.djmix",
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

@@ -1,0 +1,327 @@
+{
+ "id": "practice-14",
+ "kind": "practice",
+ "title": "EQ Ear Training",
+ "title_he": "אימון אוזן EQ",
+ "artist": "DJ Lab Practice",
+ "album": "DJ Lab — Practice",
+ "genre": "Practice",
+ "bpm": 124.0,
+ "key": "C minor",
+ "key_short": "Cm",
+ "camelot": "5A",
+ "duration_sec": 216.774,
+ "bars": 112,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Reference",
+   "start_bar": 0,
+   "bars": 8,
+   "start_sec": 0.0,
+   "energy": 6
+  },
+  {
+   "name": "Round 1",
+   "start_bar": 8,
+   "bars": 8,
+   "start_sec": 15.484,
+   "energy": 6
+  },
+  {
+   "name": "Round 2",
+   "start_bar": 16,
+   "bars": 8,
+   "start_sec": 30.968,
+   "energy": 6
+  },
+  {
+   "name": "Round 3",
+   "start_bar": 24,
+   "bars": 8,
+   "start_sec": 46.452,
+   "energy": 6
+  },
+  {
+   "name": "Round 4",
+   "start_bar": 32,
+   "bars": 8,
+   "start_sec": 61.935,
+   "energy": 6
+  },
+  {
+   "name": "Round 5",
+   "start_bar": 40,
+   "bars": 8,
+   "start_sec": 77.419,
+   "energy": 6
+  },
+  {
+   "name": "Round 6",
+   "start_bar": 48,
+   "bars": 8,
+   "start_sec": 92.903,
+   "energy": 6
+  },
+  {
+   "name": "Round 7",
+   "start_bar": 56,
+   "bars": 8,
+   "start_sec": 108.387,
+   "energy": 6
+  },
+  {
+   "name": "Round 8",
+   "start_bar": 64,
+   "bars": 8,
+   "start_sec": 123.871,
+   "energy": 6
+  },
+  {
+   "name": "Round 9",
+   "start_bar": 72,
+   "bars": 8,
+   "start_sec": 139.355,
+   "energy": 6
+  },
+  {
+   "name": "Round 10",
+   "start_bar": 80,
+   "bars": 8,
+   "start_sec": 154.839,
+   "energy": 6
+  },
+  {
+   "name": "Round 11",
+   "start_bar": 88,
+   "bars": 8,
+   "start_sec": 170.323,
+   "energy": 6
+  },
+  {
+   "name": "Round 12",
+   "start_bar": 96,
+   "bars": 8,
+   "start_sec": 185.806,
+   "energy": 6
+  },
+  {
+   "name": "Final (Full)",
+   "start_bar": 104,
+   "bars": 8,
+   "start_sec": 201.29,
+   "energy": 6
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Reference · Full",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Reference",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Round 1",
+   "bar": 8,
+   "sec": 15.484
+  },
+  {
+   "name": "Round 2",
+   "bar": 16,
+   "sec": 30.968
+  },
+  {
+   "name": "Round 3",
+   "bar": 24,
+   "sec": 46.452
+  },
+  {
+   "name": "Round 4",
+   "bar": 32,
+   "sec": 61.935
+  },
+  {
+   "name": "Round 5",
+   "bar": 40,
+   "sec": 77.419
+  },
+  {
+   "name": "Round 6",
+   "bar": 48,
+   "sec": 92.903
+  },
+  {
+   "name": "Round 7",
+   "bar": 56,
+   "sec": 108.387
+  },
+  {
+   "name": "Round 8",
+   "bar": 64,
+   "sec": 123.871
+  },
+  {
+   "name": "Round 9",
+   "bar": 72,
+   "sec": 139.355
+  },
+  {
+   "name": "Round 10",
+   "bar": 80,
+   "sec": 154.839
+  },
+  {
+   "name": "Round 11",
+   "bar": 88,
+   "sec": 170.323
+  },
+  {
+   "name": "Round 12",
+   "bar": 96,
+   "sec": 185.806
+  },
+  {
+   "name": "Final (Full)",
+   "bar": 104,
+   "sec": 201.29
+  }
+ ],
+ "lufs": -10.09,
+ "true_peak_dbtp": -1.24,
+ "file": "music/practice/practice-14-eq-ear-training.mp3",
+ "cover": "music/practice/practice-14-eq-ear-training.jpg",
+ "purpose_he": "לופ שבו כל 8 תיבות מודגש תחום תדרים אחר (Low/Mid/High) — לנחש איזה",
+ "description_he": "לופ האוס מלא ב-124 BPM (קיק, באס, אקורדים, ווקאל צ'ופ, קלאפ, היי-האטים, שייקר ורייד) — וכל 8 תיבות נשאר רק תחום תדרים אחד: Low (עד 250Hz — קיק ובאס), Mid (‏250Hz–3kHz — אקורדים, ווקאל וקלאפ) או High (מעל 3kHz — היי-האטים ושייקר), או שחוזר המיקס המלא (Full). זה בדיוק מה ששומעים כשסוגרים ידיות EQ במיקסר. 8 התיבות הראשונות הן מיקס מלא לייחוס, אחריהן 12 סבבים בסדר אקראי (כל תחום 3 פעמים), ו-8 תיבות מלאות בסוף. קראש קטן מסמן כל סבב חדש. מפתח התשובות ב-`answer_key`.",
+ "exercise_he": "1. הכינו דף עם המספרים 1–12. נגנו את הקובץ מההתחלה, ושננו את צליל המיקס המלא ב-8 התיבות הראשונות.\n2. בכל סבב (קראש קטן כל 8 תיבות, החל מתיבה 9) כתבו Low, Mid, High או Full — לפני שהקראש הבא מגיע.\n3. בדקו מול `answer_key` בקובץ ה-JSON. יעד: 10 מתוך 12, ואז 12 מתוך 12.\n4. שלב ב': טענו את `music/practice/practice-03-drums-124.mp3` לדק השני ונסו לחקות כל צבע עם ידיות ה-EQ (סגירה מלאה) או עם ה-Filter: סיבוב שמאלה (LPF) משאיר Low, סיבוב ימינה (HPF) משאיר High.",
+ "pair_with": [
+  "practice-03"
+ ],
+ "eq_split_hz": [
+  250.0,
+  3000.0
+ ],
+ "answer_key": [
+  {
+   "round": 1,
+   "bar": 9,
+   "start_bar": 8,
+   "sec": 15.484,
+   "band": "mid",
+   "band_he": "Mid — אקורדים, ווקאל וקלאפ"
+  },
+  {
+   "round": 2,
+   "bar": 17,
+   "start_bar": 16,
+   "sec": 30.968,
+   "band": "low",
+   "band_he": "Low — באס וקיק בלבד"
+  },
+  {
+   "round": 3,
+   "bar": 25,
+   "start_bar": 24,
+   "sec": 46.452,
+   "band": "full",
+   "band_he": "Full — המיקס המלא"
+  },
+  {
+   "round": 4,
+   "bar": 33,
+   "start_bar": 32,
+   "sec": 61.935,
+   "band": "high",
+   "band_he": "High — היי-האטים ושייקר"
+  },
+  {
+   "round": 5,
+   "bar": 41,
+   "start_bar": 40,
+   "sec": 77.419,
+   "band": "full",
+   "band_he": "Full — המיקס המלא"
+  },
+  {
+   "round": 6,
+   "bar": 49,
+   "start_bar": 48,
+   "sec": 92.903,
+   "band": "high",
+   "band_he": "High — היי-האטים ושייקר"
+  },
+  {
+   "round": 7,
+   "bar": 57,
+   "start_bar": 56,
+   "sec": 108.387,
+   "band": "low",
+   "band_he": "Low — באס וקיק בלבד"
+  },
+  {
+   "round": 8,
+   "bar": 65,
+   "start_bar": 64,
+   "sec": 123.871,
+   "band": "mid",
+   "band_he": "Mid — אקורדים, ווקאל וקלאפ"
+  },
+  {
+   "round": 9,
+   "bar": 73,
+   "start_bar": 72,
+   "sec": 139.355,
+   "band": "full",
+   "band_he": "Full — המיקס המלא"
+  },
+  {
+   "round": 10,
+   "bar": 81,
+   "start_bar": 80,
+   "sec": 154.839,
+   "band": "high",
+   "band_he": "High — היי-האטים ושייקר"
+  },
+  {
+   "round": 11,
+   "bar": 89,
+   "start_bar": 88,
+   "sec": 170.323,
+   "band": "low",
+   "band_he": "Low — באס וקיק בלבד"
+  },
+  {
+   "round": 12,
+   "bar": 97,
+   "start_bar": 96,
+   "sec": 185.806,
+   "band": "mid",
+   "band_he": "Mid — אקורדים, ווקאל וקלאפ"
+  }
+ ],
+ "instruments": [
+  "tech-house kick",
+  "rolling bass",
+  "chord stabs",
+  "formant vocal chops",
+  "clap",
+  "hats",
+  "open hat",
+  "shaker",
+  "ride",
+  "rimshot",
+  "3-band isolator (250 Hz / 3 kHz)"
+ ],
+ "seed": 7114,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}
