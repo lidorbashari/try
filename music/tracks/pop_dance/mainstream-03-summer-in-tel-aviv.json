@@ -1,0 +1,190 @@
+{
+ "id": "mainstream-03",
+ "title": "Summer In Tel Aviv",
+ "title_he": "קיץ בתל אביב",
+ "artist": "DJ Lab Originals",
+ "genre": "Pop Dance",
+ "genre_slug": "pop_dance",
+ "family": "mainstream",
+ "bpm": 122.0,
+ "key": "C major",
+ "key_short": "C",
+ "camelot": "8B",
+ "energy": 7,
+ "role": "build",
+ "duration_sec": 220.328,
+ "bars": 112,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 16,
+   "start_sec": 0.0,
+   "energy": 4
+  },
+  {
+   "name": "Verse",
+   "start_bar": 16,
+   "bars": 16,
+   "start_sec": 31.475,
+   "energy": 5
+  },
+  {
+   "name": "Pre-Chorus",
+   "start_bar": 32,
+   "bars": 8,
+   "start_sec": 62.951,
+   "energy": 6
+  },
+  {
+   "name": "Chorus",
+   "start_bar": 40,
+   "bars": 16,
+   "start_sec": 78.689,
+   "energy": 8
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 56,
+   "bars": 16,
+   "start_sec": 110.164,
+   "energy": 4
+  },
+  {
+   "name": "Chorus 2",
+   "start_bar": 72,
+   "bars": 16,
+   "start_sec": 141.639,
+   "energy": 8
+  },
+  {
+   "name": "Outro",
+   "start_bar": 88,
+   "bars": 24,
+   "start_sec": 173.115,
+   "energy": 4
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 16,
+   "sec": 31.475,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 56,
+   "sec": 110.164,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 40,
+   "sec": 78.689,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "F",
+   "name": "Drop 2",
+   "bar": 72,
+   "sec": 141.639,
+   "color": "#DE44CF",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 88,
+   "sec": 173.115,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 96,
+   "sec": 188.852,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Verse",
+   "bar": 16,
+   "sec": 31.475
+  },
+  {
+   "name": "Pre-Chorus",
+   "bar": 32,
+   "sec": 62.951
+  },
+  {
+   "name": "Chorus",
+   "bar": 40,
+   "sec": 78.689
+  },
+  {
+   "name": "Breakdown",
+   "bar": 56,
+   "sec": 110.164
+  },
+  {
+   "name": "Chorus 2",
+   "bar": 72,
+   "sec": 141.639
+  },
+  {
+   "name": "Outro",
+   "bar": 88,
+   "sec": 173.115
+  }
+ ],
+ "lufs": -9.08,
+ "true_peak_dbtp": -1.22,
+ "file": "music/tracks/pop_dance/mainstream-03-summer-in-tel-aviv.mp3",
+ "cover": "music/tracks/pop_dance/mainstream-03-summer-in-tel-aviv.jpg",
+ "description_he": "פופ דאנס טרופי ושמשי ב-122 BPM בסולם C major: לופ אקורדים אופטימי I–vi–IV–V, ארפג'ו של מרימבה, ליין מלודי של \"חליל פאן\" סינתטי עם גלישות וויברטו, וצ'ופים ווקאליים סינתטיים שעונים לו (בלי שירה אמיתית). בבית האקורדים מסוננים, ובפזמון הכול נפתח — טראק שמח לשקיעה על החוף או לחימום הרחבה.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 16 תיבות — 16 התיבות הראשונות תופים בלבד, הבאס נכנס בתיבה 17 (Hot Cue B). הבית מתחיל בתיבה 17, הפזמון הראשון (Hot Cue D) בתיבה 41, הברייקדאון בתיבה 57 והפזמון השני בתיבה 73. באאוטרו הבאס יוצא בתיבה 97 ו-16 התיבות האחרונות הן תופים בלבד. בגלגל הקמלוט הטראק יושב על 8B ומתערבב חלק עם 7B, 9B ו-8A. מתחבר מעולה ל-Mirrorball Boulevard (8B, 118 BPM), Golden Hour (8A, 124 BPM) ול-Sunset Over Jaffa (8A, 122 BPM). כשנכנסים מטראק האוס, עשו Bass Swap בדיוק בתיבה 17 — הקיק כבר מסונכרן והמלודיה עוד לא התחילה.",
+ "instruments": [
+  "house kick",
+  "clap + snap",
+  "shaker",
+  "tambourine",
+  "bongos",
+  "round dotted bass",
+  "marimba arpeggios",
+  "pan-flute synth topline",
+  "formant vocal chops",
+  "piano",
+  "square chord stabs",
+  "warm pad",
+  "clap-roll build",
+  "riser"
+ ],
+ "seed": 1476,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

@@ -1,0 +1,154 @@
+{
+ "id": "breadth-02",
+ "title": "Forest Frequency",
+ "title_he": "תדר יער",
+ "artist": "DJ Lab Originals",
+ "genre": "Progressive Psytrance",
+ "genre_slug": "psytrance",
+ "family": "breadth",
+ "bpm": 138.0,
+ "key": "D minor",
+ "key_short": "Dm",
+ "camelot": "7A",
+ "energy": 8,
+ "role": "build",
+ "duration_sec": 278.261,
+ "bars": 160,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 32,
+   "start_sec": 0.0,
+   "energy": 5
+  },
+  {
+   "name": "Groove",
+   "start_bar": 32,
+   "bars": 32,
+   "start_sec": 55.652,
+   "energy": 7
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 64,
+   "bars": 16,
+   "start_sec": 111.304,
+   "energy": 5
+  },
+  {
+   "name": "Drop",
+   "start_bar": 80,
+   "bars": 48,
+   "start_sec": 139.13,
+   "energy": 8
+  },
+  {
+   "name": "Outro",
+   "start_bar": 128,
+   "bars": 32,
+   "start_sec": 222.609,
+   "energy": 5
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 16,
+   "sec": 27.826,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 64,
+   "sec": 111.304,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 80,
+   "sec": 139.13,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 128,
+   "sec": 222.609,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 144,
+   "sec": 250.435,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Groove",
+   "bar": 32,
+   "sec": 55.652
+  },
+  {
+   "name": "Breakdown",
+   "bar": 64,
+   "sec": 111.304
+  },
+  {
+   "name": "Drop",
+   "bar": 80,
+   "sec": 139.13
+  },
+  {
+   "name": "Outro",
+   "bar": 128,
+   "sec": 222.609
+  }
+ ],
+ "lufs": -9.21,
+ "true_peak_dbtp": -1.28,
+ "file": "music/tracks/psytrance/breadth-02-forest-frequency.mp3",
+ "cover": "music/tracks/psytrance/breadth-02-forest-frequency.jpg",
+ "description_he": "פרוגרסיב פסיי ב-138 BPM בסולם D minor: עמוק, כהה והיפנוטי. קיק קצר ומדויק, בס מתגלגל (שלוש 16-יות אחרי כל קיק) עם גלופ קטן, כלי הקשה אורגניים (קונגות, בונגו, שייקר וטומים), סיקוונס פעמונים ב-FM עם דיליי, אסיד מעוגל ופילטרים שנפתחים לאט — ומרקם קולי שנשמע כמו קטע דיבור (סינתטי לגמרי, בלי מילים אמיתיות). מעולה לבניית מתח לפני הפיק.",
+ "mix_tips_he": "טיפ ערבוב: 16 התיבות הראשונות הן קיק והיי-האטים בלבד, והבאס המתגלגל נכנס בתיבה 17 (Hot Cue B) — זה הרגע להחליף באסים: בפסיטרנס אסור ששני באסים יתנגשו, אז חתכו את ה-Low בטראק הנכנס עד הסוויץ'. ברייקדאון בתיבה 65 ודרופ בתיבה 81. האאוטרו מתחיל בתיבה 129 והבאס יוצא בתיבה 145 (16 תיבות תופים בלבד). שכנים הרמוניים ב-Camelot: 7A ↔ 8A, 6A, 7B.",
+ "instruments": [
+  "short punchy psy kick",
+  "rolling KBBB bass",
+  "squelchy acid",
+  "filter-swept FM 1/16 sequence",
+  "FM bell sequence",
+  "spoken-word-like vowel texture",
+  "dark pad",
+  "zaps & pitch dives",
+  "open hats & ride",
+  "congas, bongos, shaker, toms"
+ ],
+ "seed": 1731,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

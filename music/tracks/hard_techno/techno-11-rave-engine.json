@@ -1,0 +1,153 @@
+{
+ "id": "techno-11",
+ "title": "Rave Engine",
+ "title_he": "מנוע רייב",
+ "artist": "DJ Lab Originals",
+ "genre": "Hard Techno",
+ "genre_slug": "hard_techno",
+ "family": "techno",
+ "bpm": 148.0,
+ "key": "A minor",
+ "key_short": "Am",
+ "camelot": "8A",
+ "energy": 10,
+ "role": "peak",
+ "duration_sec": 233.514,
+ "bars": 144,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 32,
+   "start_sec": 0.0,
+   "energy": 5
+  },
+  {
+   "name": "Groove",
+   "start_bar": 32,
+   "bars": 24,
+   "start_sec": 51.892,
+   "energy": 7
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 56,
+   "bars": 16,
+   "start_sec": 90.811,
+   "energy": 5
+  },
+  {
+   "name": "Drop",
+   "start_bar": 72,
+   "bars": 40,
+   "start_sec": 116.757,
+   "energy": 10
+  },
+  {
+   "name": "Outro",
+   "start_bar": 112,
+   "bars": 32,
+   "start_sec": 181.622,
+   "energy": 6
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 32,
+   "sec": 51.892,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 56,
+   "sec": 90.811,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 72,
+   "sec": 116.757,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 112,
+   "sec": 181.622,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 128,
+   "sec": 207.568,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Groove",
+   "bar": 32,
+   "sec": 51.892
+  },
+  {
+   "name": "Breakdown",
+   "bar": 56,
+   "sec": 90.811
+  },
+  {
+   "name": "Drop",
+   "bar": 72,
+   "sec": 116.757
+  },
+  {
+   "name": "Outro",
+   "bar": 112,
+   "sec": 181.622
+  }
+ ],
+ "lufs": -9.2,
+ "true_peak_dbtp": -1.22,
+ "file": "music/tracks/hard_techno/techno-11-rave-engine.mp3",
+ "cover": "music/tracks/hard_techno/techno-11-rave-engine.jpg",
+ "description_he": "הארד טכנו ב-148 BPM בסולם A minor: קיק מעוות ופאנצ'י עם ראמבל רווי, קלאפ קשה והיי-האטים מהירים; ובמרכז — ריף הובר עם גלישות פיץ' וסטאבים של אקורדי רייב, באנרגיה של שנות ה-90. בלתי מתפשר — לשיא של הסט.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 32 תיבות להכנסה נקייה, הבאס נכנס בתיבה 33 (Hot Cue B), ברייקדאון בתיבה 57, דרופ בתיבה 73, אאוטרו של 32 תיבות מתיבה 113 — מושלם למיקס החוצה. ב-148–150 BPM המעבר מטכנו רגיל דורש קפיצת טמפו: עדיף להיכנס מטראק הארד אחר או לעשות Cut חד על תחילת פרייז. שכנים הרמוניים ב-Camelot: 9A, 7A ו-8B. מתחבר מעולה ל-Overdrive 150 (7A, 150 BPM).",
+ "instruments": [
+  "distorted hard kick",
+  "saturated side-chained rumble",
+  "hard stereo clap",
+  "fast 16th hats",
+  "open hats & ride",
+  "metal hits & tom rolls",
+  "pitched noise risers & snare rolls",
+  "hoover riff",
+  "rave chord stabs"
+ ],
+ "seed": 1408,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

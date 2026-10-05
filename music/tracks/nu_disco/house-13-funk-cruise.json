@@ -1,0 +1,158 @@
+{
+ "id": "house-13",
+ "title": "Funk Cruise",
+ "title_he": "שיוט פאנק",
+ "artist": "DJ Lab Originals",
+ "genre": "Nu-Disco",
+ "genre_slug": "nu_disco",
+ "family": "house",
+ "bpm": 116.0,
+ "key": "F major",
+ "key_short": "F",
+ "camelot": "7B",
+ "energy": 5,
+ "role": "warmup",
+ "duration_sec": 264.828,
+ "bars": 128,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 32,
+   "start_sec": 0.0,
+   "energy": 4
+  },
+  {
+   "name": "Groove",
+   "start_bar": 32,
+   "bars": 24,
+   "start_sec": 66.207,
+   "energy": 5
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 56,
+   "bars": 8,
+   "start_sec": 115.862,
+   "energy": 4
+  },
+  {
+   "name": "Chorus",
+   "start_bar": 64,
+   "bars": 32,
+   "start_sec": 132.414,
+   "energy": 7
+  },
+  {
+   "name": "Outro",
+   "start_bar": 96,
+   "bars": 32,
+   "start_sec": 198.621,
+   "energy": 4
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 32,
+   "sec": 66.207,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 56,
+   "sec": 115.862,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 64,
+   "sec": 132.414,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 96,
+   "sec": 198.621,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 112,
+   "sec": 231.724,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Groove",
+   "bar": 32,
+   "sec": 66.207
+  },
+  {
+   "name": "Breakdown",
+   "bar": 56,
+   "sec": 115.862
+  },
+  {
+   "name": "Chorus",
+   "bar": 64,
+   "sec": 132.414
+  },
+  {
+   "name": "Outro",
+   "bar": 96,
+   "sec": 198.621
+  }
+ ],
+ "lufs": -9.15,
+ "true_peak_dbtp": -1.31,
+ "file": "music/tracks/nu_disco/house-13-funk-cruise.mp3",
+ "cover": "music/tracks/nu_disco/house-13-funk-cruise.jpg",
+ "description_he": "נו-דיסקו פאנקי ב-116 BPM בסולם F major: באס באוקטבות עם סינקופות, גיטרה עם וואה בשש-עשריות, רודס, סטאבים של כלי נשיפה סינתטיים וסטרינגס חמים — גרוב חיובי ומחויך לשעות המוקדמות.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 32 תיבות להכנסה נקייה, הבאס נכנס בתיבה 33 (Hot Cue B), ברייקדאון בתיבה 57, דרופ בתיבה 65, אאוטרו של 32 תיבות מתיבה 97 — מושלם למיקס החוצה. טראק בסולם מז'ור — מתחבר בצורה חלקה לטראקים במינור היחסי (אותו מספר Camelot עם A).",
+ "instruments": [
+  "tight house kick",
+  "clap + snare",
+  "16th hats",
+  "off-beat open hat",
+  "tambourine",
+  "shaker",
+  "congas",
+  "funky octave bass",
+  "wah muted guitar (Karplus-Strong)",
+  "string machine + ensemble",
+  "string stabs",
+  "Rhodes-style e-piano",
+  "synth brass",
+  "vocoder-like vowel hook"
+ ],
+ "seed": 1204,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

@@ -1,0 +1,192 @@
+{
+ "id": "mainstream-12",
+ "title": "Sunshine Riddim",
+ "title_he": "רידים של שמש",
+ "artist": "DJ Lab Originals",
+ "genre": "Afrobeats",
+ "genre_slug": "afrobeats",
+ "family": "mainstream",
+ "bpm": 106.0,
+ "key": "D major",
+ "key_short": "D",
+ "camelot": "10B",
+ "energy": 6,
+ "role": "build",
+ "duration_sec": 217.358,
+ "bars": 96,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 16,
+   "start_sec": 0.0,
+   "energy": 4
+  },
+  {
+   "name": "Verse",
+   "start_bar": 16,
+   "bars": 16,
+   "start_sec": 36.226,
+   "energy": 6
+  },
+  {
+   "name": "Hook",
+   "start_bar": 32,
+   "bars": 16,
+   "start_sec": 72.453,
+   "energy": 7
+  },
+  {
+   "name": "Verse 2",
+   "start_bar": 48,
+   "bars": 8,
+   "start_sec": 108.679,
+   "energy": 6
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 56,
+   "bars": 8,
+   "start_sec": 126.792,
+   "energy": 4
+  },
+  {
+   "name": "Hook 2",
+   "start_bar": 64,
+   "bars": 16,
+   "start_sec": 144.906,
+   "energy": 8
+  },
+  {
+   "name": "Outro",
+   "start_bar": 80,
+   "bars": 16,
+   "start_sec": 181.132,
+   "energy": 4
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 16,
+   "sec": 36.226,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 56,
+   "sec": 126.792,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 32,
+   "sec": 72.453,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "F",
+   "name": "Drop 2",
+   "bar": 64,
+   "sec": 144.906,
+   "color": "#DE44CF",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 80,
+   "sec": 181.132,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 80,
+   "sec": 181.132,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Verse",
+   "bar": 16,
+   "sec": 36.226
+  },
+  {
+   "name": "Hook",
+   "bar": 32,
+   "sec": 72.453
+  },
+  {
+   "name": "Verse 2",
+   "bar": 48,
+   "sec": 108.679
+  },
+  {
+   "name": "Breakdown",
+   "bar": 56,
+   "sec": 126.792
+  },
+  {
+   "name": "Hook 2",
+   "bar": 64,
+   "sec": 144.906
+  },
+  {
+   "name": "Outro",
+   "bar": 80,
+   "sec": 181.132
+  }
+ ],
+ "lufs": -9.1,
+ "true_peak_dbtp": -1.11,
+ "file": "music/tracks/afrobeats/mainstream-12-sunshine-riddim.mp3",
+ "cover": "music/tracks/afrobeats/mainstream-12-sunshine-riddim.jpg",
+ "description_he": "אפרוביטס עם טאץ' של דאנסהול ב-106 BPM בסולם D מז'ור: קיק מסונכרן, סנר דמבו בפזמון, שייקרים בחלוקה 3-3-2, טוקינג דראם שעונה לגרוב, סקאנק גיטרה על האופביט, הוק של קלימבה מבריק ובאס מלודי עמוק עם גלישות. מהלך אקורדים שמח ומזמין (I–IV–vi–V).",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 16 תיבות תופים וכלי הקשה בלבד, הבאס והגיטרה נכנסים בתיבה 17 (Hot Cue B), הפזמון בתיבה 33 (Hot Cue D), ברייקדאון בלי קיק בתיבה 57. אאוטרו של 16 תיבות תופים בלבד מתיבה 81. שכנים ב-Camelot: 10B ↔ 11B, 9B, 10A.",
+ "instruments": [
+  "syncopated afrobeats kick",
+  "3-3-2 shakers",
+  "rim & clap",
+  "log percussion",
+  "congas",
+  "agogo bell",
+  "talking drum",
+  "deep melodic bass (slides)",
+  "highlife guitar (Karplus-Strong)",
+  "kalimba",
+  "marimba",
+  "Rhodes chords",
+  "warm pad",
+  "vocal chant chops",
+  "dembow snare",
+  "off-beat guitar skank"
+ ],
+ "seed": 1629,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

@@ -1,0 +1,171 @@
+{
+ "id": "breadth-10",
+ "title": "Rainy Studio",
+ "title_he": "סטודיו גשום",
+ "artist": "DJ Lab Originals",
+ "genre": "Lo-Fi Hip-Hop",
+ "genre_slug": "lofi",
+ "family": "breadth",
+ "bpm": 84.0,
+ "key": "F major",
+ "key_short": "F",
+ "camelot": "7B",
+ "energy": 2,
+ "role": "warmup",
+ "duration_sec": 182.857,
+ "bars": 64,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 8,
+   "start_sec": 0.0,
+   "energy": 2
+  },
+  {
+   "name": "Verse",
+   "start_bar": 8,
+   "bars": 16,
+   "start_sec": 22.857,
+   "energy": 3
+  },
+  {
+   "name": "Theme",
+   "start_bar": 24,
+   "bars": 16,
+   "start_sec": 68.571,
+   "energy": 4
+  },
+  {
+   "name": "Break",
+   "start_bar": 40,
+   "bars": 8,
+   "start_sec": 114.286,
+   "energy": 2
+  },
+  {
+   "name": "Theme 2",
+   "start_bar": 48,
+   "bars": 8,
+   "start_sec": 137.143,
+   "energy": 4
+  },
+  {
+   "name": "Outro",
+   "start_bar": 56,
+   "bars": 8,
+   "start_sec": 160.0,
+   "energy": 2
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 8,
+   "sec": 22.857,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 40,
+   "sec": 114.286,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 24,
+   "sec": 68.571,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "F",
+   "name": "Drop 2",
+   "bar": 48,
+   "sec": 137.143,
+   "color": "#DE44CF",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 56,
+   "sec": 160.0,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 48,
+   "sec": 137.143,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Verse",
+   "bar": 8,
+   "sec": 22.857
+  },
+  {
+   "name": "Theme",
+   "bar": 24,
+   "sec": 68.571
+  },
+  {
+   "name": "Break",
+   "bar": 40,
+   "sec": 114.286
+  },
+  {
+   "name": "Theme 2",
+   "bar": 48,
+   "sec": 137.143
+  },
+  {
+   "name": "Outro",
+   "bar": 56,
+   "sec": 160.0
+  }
+ ],
+ "lufs": -11.87,
+ "true_peak_dbtp": -1.7,
+ "file": "music/tracks/lofi/breadth-10-rainy-studio.mp3",
+ "cover": "music/tracks/lofi/breadth-10-rainy-studio.jpg",
+ "description_he": "לו-פיי היפ-הופ רגוע ב-84 BPM בפה מז׳ור (7B) — אחר צהריים גשום באולפן. תופים מאובקים בסווינג עצל של 62%, עם סנר שיושב קצת מאחורי הביט, קראקל של ויניל וגשם ברקע. פסנתר רודס מנגן אקורדים ג'אזיים (Fmaj9 – Dm9 – Gm9 – C9) בפריטה רכה, עם 'רעידת' טייפ (Wow & Flutter) עדינה, באס עגול ורך ומלודיית חליל נושמת. בברייק הקיק יוצא, הרודס מתעמעם וויברפון רך עונה למלודיה.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 8 תיבות תופים, קראקל וגשם בלבד — בלי באס ובלי אקורדים. הרודס והבאס נכנסים בתיבה 9 (Hot Cue B), המלודיה בתיבה 25 (Hot Cue D), הברייק בלי קיק בתיבה 41 (Hot Cue C), והאאוטרו מתיבה 57 (Hot Cue G) חוזר לתופים בלבד — 8 תיבות נקיות למיקס החוצה. בגלל הסווינג הכבד, עשו Beatmatching לפי הקיק והסנר ולא לפי ההיי-האטים. בגלגל הקמלוט הטראק יושב על 7B ומתערבב חלק עם 6B, 8B ו-7A. טראק מושלם לפתיחת ערב או לרגע נשימה, ולמעבר להיפ-הופ ב-85–95 BPM.",
+ "instruments": [
+  "dusty swung drums (12-bit, laid-back snare)",
+  "vinyl crackle",
+  "rain",
+  "FM Rhodes (rolled 9th chords, tape wow & flutter)",
+  "mellow round bass",
+  "breathy flute melody",
+  "vibraphone"
+ ],
+ "seed": 1867,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

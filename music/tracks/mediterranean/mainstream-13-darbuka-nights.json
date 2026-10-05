@@ -1,0 +1,187 @@
+{
+ "id": "mainstream-13",
+ "title": "Darbuka Nights",
+ "title_he": "לילות דרבוקה",
+ "artist": "DJ Lab Originals",
+ "genre": "Mediterranean Groove",
+ "genre_slug": "mediterranean",
+ "family": "mainstream",
+ "bpm": 100.0,
+ "key": "E minor",
+ "key_short": "Em",
+ "camelot": "9A",
+ "energy": 7,
+ "role": "peak",
+ "duration_sec": 211.2,
+ "bars": 88,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 16,
+   "start_sec": 0.0,
+   "energy": 4
+  },
+  {
+   "name": "Verse",
+   "start_bar": 16,
+   "bars": 8,
+   "start_sec": 38.4,
+   "energy": 6
+  },
+  {
+   "name": "Build",
+   "start_bar": 24,
+   "bars": 8,
+   "start_sec": 57.6,
+   "energy": 7
+  },
+  {
+   "name": "Hook",
+   "start_bar": 32,
+   "bars": 16,
+   "start_sec": 76.8,
+   "energy": 8
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 48,
+   "bars": 8,
+   "start_sec": 115.2,
+   "energy": 5
+  },
+  {
+   "name": "Hook 2",
+   "start_bar": 56,
+   "bars": 16,
+   "start_sec": 134.4,
+   "energy": 9
+  },
+  {
+   "name": "Outro",
+   "start_bar": 72,
+   "bars": 16,
+   "start_sec": 172.8,
+   "energy": 4
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 16,
+   "sec": 38.4,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 48,
+   "sec": 115.2,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 32,
+   "sec": 76.8,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "F",
+   "name": "Drop 2",
+   "bar": 56,
+   "sec": 134.4,
+   "color": "#DE44CF",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 72,
+   "sec": 172.8,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 72,
+   "sec": 172.8,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Verse",
+   "bar": 16,
+   "sec": 38.4
+  },
+  {
+   "name": "Build",
+   "bar": 24,
+   "sec": 57.6
+  },
+  {
+   "name": "Hook",
+   "bar": 32,
+   "sec": 76.8
+  },
+  {
+   "name": "Breakdown",
+   "bar": 48,
+   "sec": 115.2
+  },
+  {
+   "name": "Hook 2",
+   "bar": 56,
+   "sec": 134.4
+  },
+  {
+   "name": "Outro",
+   "bar": 72,
+   "sec": 172.8
+  }
+ ],
+ "lufs": -9.45,
+ "true_peak_dbtp": -1.12,
+ "file": "music/tracks/mediterranean/mainstream-13-darbuka-nights.mp3",
+ "cover": "music/tracks/mediterranean/mainstream-13-darbuka-nights.jpg",
+ "description_he": "גרוב ים-תיכוני חם ב-100 BPM בסולם E מינור: הדרבוקה היא הלב — דום, טק וקה על מקצב מקסום עם סלסולים ותופים מתגלגלים, ובברייקדאון צ'יפטטלי איטי. רִק, זילים ומחיאות כפיים, קיק ובאס בסגנון מזרחי-פופ. מלודיות במינור הרמוני (מקאם נהוונד) עם חיג'אז על הדרגה החמישית (B): ריף עוד, ריצות קאנון, טקסים של נאי וליד קלידים מזרחי עם ויברטו ופורטמנטו בפזמון.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 16 תיבות תופים ודרבוקה בלבד — מכניסים מעל האאוטרו של הטראק הקודם. הבאס והעוד נכנסים בתיבה 17 (Hot Cue B), הבילד עם גלגולי דרבוקה בתיבה 25, הפזמון הגדול בתיבה 33 (Hot Cue D), ברייקדאון עם נאי בתיבה 49 ופזמון 2 בתיבה 57. אאוטרו של 16 תיבות תופים בלבד מתיבה 73. שכנים הרמוניים ב-Camelot: 9A ↔ 10A, 8A, 9B.",
+ "instruments": [
+  "darbuka (doum/tek/ka/slap)",
+  "riq",
+  "finger cymbals (zills)",
+  "crowd claps",
+  "maqsum-pop kick",
+  "Mizrahi synth bass",
+  "oud (Karplus-Strong)",
+  "qanun runs",
+  "ney",
+  "Arabic strings (pad + unison)",
+  "Mizrahi keyboard lead"
+ ],
+ "seed": 1646,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

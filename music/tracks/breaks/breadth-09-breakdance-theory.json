@@ -1,0 +1,152 @@
+{
+ "id": "breadth-09",
+ "title": "Breakdance Theory",
+ "title_he": "תורת הברייקדאנס",
+ "artist": "DJ Lab Originals",
+ "genre": "Breakbeat",
+ "genre_slug": "breaks",
+ "family": "breadth",
+ "bpm": 130.0,
+ "key": "D minor",
+ "key_short": "Dm",
+ "camelot": "7A",
+ "energy": 7,
+ "role": "build",
+ "duration_sec": 236.308,
+ "bars": 128,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 32,
+   "start_sec": 0.0,
+   "energy": 5
+  },
+  {
+   "name": "Groove",
+   "start_bar": 32,
+   "bars": 24,
+   "start_sec": 59.077,
+   "energy": 7
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 56,
+   "bars": 16,
+   "start_sec": 103.385,
+   "energy": 4
+  },
+  {
+   "name": "Drop",
+   "start_bar": 72,
+   "bars": 24,
+   "start_sec": 132.923,
+   "energy": 8
+  },
+  {
+   "name": "Outro",
+   "start_bar": 96,
+   "bars": 32,
+   "start_sec": 177.231,
+   "energy": 5
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 16,
+   "sec": 29.538,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 56,
+   "sec": 103.385,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 72,
+   "sec": 132.923,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 96,
+   "sec": 177.231,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 112,
+   "sec": 206.769,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Groove",
+   "bar": 32,
+   "sec": 59.077
+  },
+  {
+   "name": "Breakdown",
+   "bar": 56,
+   "sec": 103.385
+  },
+  {
+   "name": "Drop",
+   "bar": 72,
+   "sec": 132.923
+  },
+  {
+   "name": "Outro",
+   "bar": 96,
+   "sec": 177.231
+  }
+ ],
+ "lufs": -9.06,
+ "true_peak_dbtp": -1.22,
+ "file": "music/tracks/breaks/breadth-09-breakdance-theory.mp3",
+ "cover": "music/tracks/breaks/breadth-09-breakdance-theory.jpg",
+ "description_he": "ברייקביט ב-130 BPM בסולם D minor: תופי ברייק פאנקיים וסינקופטיים (קיק ב-1 וקיקים מוזזים, סנר ב-2 וב-4 עם גוסט-נוטס) מעל שכבת ברייק סינתטית בסגנון וינטג', באסליין נו-סקול גומי ומלוכלך עם פילטר שזז בסנכרון לטמפו, סטאבים של סינת וברס, ושריטות (Scratch) שנוצרו מ'אהה' סינתטי — בלי סמפלים.",
+ "mix_tips_he": "טיפ ערבוב: 16 תיבות ראשונות תופים בלבד; הבאס נכנס בתיבה 17 (Hot Cue B). ברייקביט לא בנוי על קיק בכל פעמה — כדי לסנכרן הקשיבו לסנר ב-2 וב-4. ברייקדאון בתיבה 57, דרופ בתיבה 73, ושריטות בסוף כל פרייז של 8 תיבות מסמנות את המעבר. האאוטרו מתיבה 97 (16 התיבות האחרונות תופים בלבד). שכנים ב-Camelot: 7A ↔ 8A, 6A, 7B.",
+ "instruments": [
+  "funky breakbeat drums",
+  "synthesised funk-break layer",
+  "nu-skool filter bass",
+  "clean sub",
+  "synth & brass stabs",
+  "turntable scratch FX",
+  "breakdown pad",
+  "risers & sweeps"
+ ],
+ "seed": 1850,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

@@ -1,0 +1,155 @@
+{
+ "id": "techno-04",
+ "title": "Night Shift",
+ "title_he": "משמרת לילה",
+ "artist": "DJ Lab Originals",
+ "genre": "Driving Techno",
+ "genre_slug": "techno",
+ "family": "techno",
+ "bpm": 129.0,
+ "key": "G minor",
+ "key_short": "Gm",
+ "camelot": "6A",
+ "energy": 8,
+ "role": "build",
+ "duration_sec": 267.907,
+ "bars": 144,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 32,
+   "start_sec": 0.0,
+   "energy": 4
+  },
+  {
+   "name": "Groove",
+   "start_bar": 32,
+   "bars": 40,
+   "start_sec": 59.535,
+   "energy": 7
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 72,
+   "bars": 8,
+   "start_sec": 133.953,
+   "energy": 5
+  },
+  {
+   "name": "Drop",
+   "start_bar": 80,
+   "bars": 32,
+   "start_sec": 148.837,
+   "energy": 9
+  },
+  {
+   "name": "Outro",
+   "start_bar": 112,
+   "bars": 32,
+   "start_sec": 208.372,
+   "energy": 5
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 32,
+   "sec": 59.535,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 72,
+   "sec": 133.953,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 80,
+   "sec": 148.837,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 112,
+   "sec": 208.372,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 128,
+   "sec": 238.14,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Groove",
+   "bar": 32,
+   "sec": 59.535
+  },
+  {
+   "name": "Breakdown",
+   "bar": 72,
+   "sec": 133.953
+  },
+  {
+   "name": "Drop",
+   "bar": 80,
+   "sec": 148.837
+  },
+  {
+   "name": "Outro",
+   "bar": 112,
+   "sec": 208.372
+  }
+ ],
+ "lufs": -9.1,
+ "true_peak_dbtp": -1.12,
+ "file": "music/tracks/techno/techno-04-night-shift.mp3",
+ "cover": "music/tracks/techno/techno-04-night-shift.jpg",
+ "description_he": "טכנו דוהר (Driving) ב-129 BPM בסולם G minor: גרוב מתגלגל ודוהר — באסליין מתגלגל בשש-עשריות, היי-האטים רצים, סיקוונס פולימטרי של 3 נגד 4, טומים מתגלגלים, סטאבים דאביים עם דיליי ודרופ ארוך. לבניית אנרגיה באמצע הסט.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 32 תיבות להכנסה נקייה, הבאס נכנס בתיבה 33 (Hot Cue B), ברייקדאון בתיבה 73, דרופ בתיבה 81, אאוטרו של 32 תיבות מתיבה 113 — מושלם למיקס החוצה. הראמבל יושב על הסאב — בזמן מעבר הורידו את ה-Low בטראק היוצא. שכנים הרמוניים ב-Camelot: 7A, 5A ו-6B. מתחבר מעולה ל-Micro Groove (5A, 127 BPM), Strobe Ritual (7A, 132 BPM), Warehouse 26 (6A, 128 BPM).",
+ "instruments": [
+  "driving techno kick",
+  "sidechained reverb rumble",
+  "stereo closed & open hats",
+  "ride",
+  "clap & snare (plate)",
+  "industrial metal hits",
+  "pitched snare rolls, risers & noise sweeps",
+  "rolling 16th bassline",
+  "polymetric 3/16 sequence",
+  "rolling toms & shaker",
+  "dub chord stabs"
+ ],
+ "seed": 1289,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

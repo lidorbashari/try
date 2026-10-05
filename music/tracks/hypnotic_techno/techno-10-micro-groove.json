@@ -1,0 +1,152 @@
+{
+ "id": "techno-10",
+ "title": "Micro Groove",
+ "title_he": "מיקרו גרוב",
+ "artist": "DJ Lab Originals",
+ "genre": "Minimal Techno",
+ "genre_slug": "hypnotic_techno",
+ "family": "techno",
+ "bpm": 127.0,
+ "key": "C minor",
+ "key_short": "Cm",
+ "camelot": "5A",
+ "energy": 6,
+ "role": "build",
+ "duration_sec": 272.126,
+ "bars": 144,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 32,
+   "start_sec": 0.0,
+   "energy": 4
+  },
+  {
+   "name": "Groove",
+   "start_bar": 32,
+   "bars": 40,
+   "start_sec": 60.472,
+   "energy": 6
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 72,
+   "bars": 8,
+   "start_sec": 136.063,
+   "energy": 4
+  },
+  {
+   "name": "Drop",
+   "start_bar": 80,
+   "bars": 32,
+   "start_sec": 151.181,
+   "energy": 7
+  },
+  {
+   "name": "Outro",
+   "start_bar": 112,
+   "bars": 32,
+   "start_sec": 211.654,
+   "energy": 4
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 32,
+   "sec": 60.472,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 72,
+   "sec": 136.063,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 80,
+   "sec": 151.181,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 112,
+   "sec": 211.654,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 128,
+   "sec": 241.89,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Groove",
+   "bar": 32,
+   "sec": 60.472
+  },
+  {
+   "name": "Breakdown",
+   "bar": 72,
+   "sec": 136.063
+  },
+  {
+   "name": "Drop",
+   "bar": 80,
+   "sec": 151.181
+  },
+  {
+   "name": "Outro",
+   "bar": 112,
+   "sec": 211.654
+  }
+ ],
+ "lufs": -9.11,
+ "true_peak_dbtp": -1.27,
+ "file": "music/tracks/hypnotic_techno/techno-10-micro-groove.mp3",
+ "cover": "music/tracks/hypnotic_techno/techno-10-micro-groove.jpg",
+ "description_he": "מינימל טכנו חסכוני ו'קליקי': קיק הדוק, בליפים קצרים של סאב, קליקים פולימטריים (3, 5 ו-7 צעדים נגד ה-4/4), סטאב דאב בודד ומיקרו-וריאציות בכל תיבה — הגרוב משתנה בלי שתשימו לב. 127 BPM בסולם C minor, דרופ אחד בלבד אחרי ברייקדאון קצר.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 32 תיבות להכנסה נקייה, הבאס נכנס בתיבה 33 (Hot Cue B), ברייקדאון בתיבה 73, דרופ בתיבה 81, אאוטרו של 32 תיבות מתיבה 113 — מושלם למיקס החוצה. טראק לופי שמושלם לבלנד ארוך: אפשר להחזיק את שני הטראקים יחד 32 תיבות ולשחק רק עם ה-EQ. שכנים הרמוניים ב-Camelot: 6A, 4A ו-5B. מתחבר מעולה ל-Infinite Loop (4A, 128 BPM), Night Shift (6A, 129 BPM), Industrial Heart (4A, 131 BPM).",
+ "instruments": [
+  "tight minimal kick",
+  "short sub blips",
+  "clicks in 7/16 & euclid",
+  "3/16 rim & 5/16 tick",
+  "snap & dry clap",
+  "lone dub stab",
+  "blip sequence (5/16)",
+  "bleep answers"
+ ],
+ "seed": 1391,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

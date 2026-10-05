@@ -1,0 +1,158 @@
+{
+ "id": "house-14",
+ "title": "Log Drum Lagoon",
+ "title_he": "לגונת הלוג-דראם",
+ "artist": "DJ Lab Originals",
+ "genre": "Amapiano",
+ "genre_slug": "amapiano",
+ "family": "house",
+ "bpm": 113.0,
+ "key": "F minor",
+ "key_short": "Fm",
+ "camelot": "4A",
+ "energy": 5,
+ "role": "build",
+ "duration_sec": 271.858,
+ "bars": 128,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 32,
+   "start_sec": 0.0,
+   "energy": 3
+  },
+  {
+   "name": "Build",
+   "start_bar": 32,
+   "bars": 32,
+   "start_sec": 67.965,
+   "energy": 5
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 64,
+   "bars": 8,
+   "start_sec": 135.929,
+   "energy": 4
+  },
+  {
+   "name": "Main",
+   "start_bar": 72,
+   "bars": 24,
+   "start_sec": 152.92,
+   "energy": 7
+  },
+  {
+   "name": "Outro",
+   "start_bar": 96,
+   "bars": 32,
+   "start_sec": 203.894,
+   "energy": 4
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 32,
+   "sec": 67.965,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 64,
+   "sec": 135.929,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 72,
+   "sec": 152.92,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 96,
+   "sec": 203.894,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 112,
+   "sec": 237.876,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Build",
+   "bar": 32,
+   "sec": 67.965
+  },
+  {
+   "name": "Breakdown",
+   "bar": 64,
+   "sec": 135.929
+  },
+  {
+   "name": "Main",
+   "bar": 72,
+   "sec": 152.92
+  },
+  {
+   "name": "Outro",
+   "bar": 96,
+   "sec": 203.894
+  }
+ ],
+ "lufs": -9.14,
+ "true_peak_dbtp": -1.17,
+ "file": "music/tracks/amapiano/house-14-log-drum-lagoon.mp3",
+ "cover": "music/tracks/amapiano/house-14-log-drum-lagoon.jpg",
+ "description_he": "אמאפיאנו היפנוטי ב-113 BPM בסולם F minor: הלוג-דראם המפורסם מנגן מלודיית באס עם גלישות בין התווים, שייקרים בשש-עשריות עם סווינג, קיק דליל ולא ארבע-על-הרצפה, מכות \"פה\" עם ריוורב, פסנתר ג'אזי רך ופדים — בבילד ארוך שנפתח לאט.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 32 תיבות להכנסה נקייה, הבאס נכנס בתיבה 33 (Hot Cue B), ברייקדאון בתיבה 65, דרופ בתיבה 73, אאוטרו של 32 תיבות מתיבה 97 — מושלם למיקס החוצה. הקיק באמאפיאנו דליל — כשמערבבים מטראק האוס, הורידו את הקיק של הטראק היוצא בהדרגה ותנו לשייקרים להחזיק את הגריד.",
+ "instruments": [
+  "sliding log drum (tuned to key)",
+  "soft sparse kick",
+  "swung 16th shakers",
+  "shekere",
+  "pha hits",
+  "3-3-2 rim",
+  "woodblock",
+  "hat rolls",
+  "congas",
+  "jazzy piano (min9 / maj7)",
+  "Rhodes-style e-piano",
+  "warm pad",
+  "airy vowel voices",
+  "plucked melody"
+ ],
+ "seed": 1221,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

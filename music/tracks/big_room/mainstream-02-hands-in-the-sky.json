@@ -1,0 +1,178 @@
+{
+ "id": "mainstream-02",
+ "title": "Hands In The Sky",
+ "title_he": "ידיים לשמיים",
+ "artist": "DJ Lab Originals",
+ "genre": "Big Room / EDM",
+ "genre_slug": "big_room",
+ "family": "mainstream",
+ "bpm": 128.0,
+ "key": "G minor",
+ "key_short": "Gm",
+ "camelot": "6A",
+ "energy": 9,
+ "role": "peak",
+ "duration_sec": 225.0,
+ "bars": 120,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 32,
+   "start_sec": 0.0,
+   "energy": 5
+  },
+  {
+   "name": "Build",
+   "start_bar": 32,
+   "bars": 8,
+   "start_sec": 60.0,
+   "energy": 7
+  },
+  {
+   "name": "Drop",
+   "start_bar": 40,
+   "bars": 16,
+   "start_sec": 75.0,
+   "energy": 9
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 56,
+   "bars": 16,
+   "start_sec": 105.0,
+   "energy": 4
+  },
+  {
+   "name": "Drop 2",
+   "start_bar": 72,
+   "bars": 16,
+   "start_sec": 135.0,
+   "energy": 10
+  },
+  {
+   "name": "Outro",
+   "start_bar": 88,
+   "bars": 32,
+   "start_sec": 165.0,
+   "energy": 5
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 16,
+   "sec": 30.0,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 56,
+   "sec": 105.0,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 40,
+   "sec": 75.0,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "F",
+   "name": "Drop 2",
+   "bar": 72,
+   "sec": 135.0,
+   "color": "#DE44CF",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 88,
+   "sec": 165.0,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 104,
+   "sec": 195.0,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Build",
+   "bar": 32,
+   "sec": 60.0
+  },
+  {
+   "name": "Drop",
+   "bar": 40,
+   "sec": 75.0
+  },
+  {
+   "name": "Breakdown",
+   "bar": 56,
+   "sec": 105.0
+  },
+  {
+   "name": "Drop 2",
+   "bar": 72,
+   "sec": 135.0
+  },
+  {
+   "name": "Outro",
+   "bar": 88,
+   "sec": 165.0
+  }
+ ],
+ "lufs": -9.15,
+ "true_peak_dbtp": -1.05,
+ "file": "music/tracks/big_room/mainstream-02-hands-in-the-sky.mp3",
+ "cover": "music/tracks/big_room/mainstream-02-hands-in-the-sky.jpg",
+ "description_he": "ביג רום קופצני ב-128 BPM בסולם G minor: הוק של אקורדי סופרסאו קצרים ופלאקיים בריתם מסונכפ, באס שקופץ באוקטבות, ליד \"זאפ\" שמכפיל את הקול העליון וקריאות \"OH!\". הדרופ הראשון מגיע מוקדם, אחריו ברייקדאון מלודי ארוך ובילד עם רול סנר מאיץ ורייזר, ובדרופ השני נכנסים רייד ועוד אנרגיה. מושלם לרגע של ידיים באוויר.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 32 תיבות — 16 התיבות הראשונות תופים בלבד, הבאס נכנס בתיבה 17 (Hot Cue B). ברייקדאון בתיבה 57, הבילד מתחיל בתיבה 33 והדרופ נוחת בתיבה 41 (Hot Cue D); דרופ שני בתיבה 73. האאוטרו מתחיל בתיבה 89, הבאס יוצא בתיבה 105 ו-16 התיבות האחרונות הן תופים בלבד — מצוין ל-Bass Swap. בגלגל הקמלוט הטראק יושב על 6A ומתערבב חלק עם 5A, 7A ו-6B. מתחבר מעולה ל-Oud Club (6A, 125 BPM), Warehouse 26 (6A, 128 BPM) ול-Night Shift (6A, 129 BPM). אל תשכבו שני דרופים של ביג רום זה על זה — הזנבות של הקיקים יתנגשו; עשו Bass Swap בתחילת פרייז.",
+ "instruments": [
+  "big room kick with tuned tail",
+  "layered clap+snare",
+  "octave-bouncing saw bass",
+  "plucky supersaw chord-stab hook",
+  "zap lead",
+  "square pluck",
+  "warm pad",
+  "crowd chant (OH!)",
+  "pitch-rising snare roll",
+  "supersaw riser",
+  "white-noise sweeps",
+  "impacts",
+  "toms",
+  "ride"
+ ],
+ "seed": 1459,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

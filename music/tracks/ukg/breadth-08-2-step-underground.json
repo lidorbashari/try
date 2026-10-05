@@ -1,0 +1,152 @@
+{
+ "id": "breadth-08",
+ "title": "2-Step Underground",
+ "title_he": "מחתרת טו-סטפ",
+ "artist": "DJ Lab Originals",
+ "genre": "UK Garage",
+ "genre_slug": "ukg",
+ "family": "breadth",
+ "bpm": 132.0,
+ "key": "G minor",
+ "key_short": "Gm",
+ "camelot": "6A",
+ "energy": 7,
+ "role": "build",
+ "duration_sec": 232.727,
+ "bars": 128,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 32,
+   "start_sec": 0.0,
+   "energy": 5
+  },
+  {
+   "name": "Groove",
+   "start_bar": 32,
+   "bars": 24,
+   "start_sec": 58.182,
+   "energy": 7
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 56,
+   "bars": 8,
+   "start_sec": 101.818,
+   "energy": 5
+  },
+  {
+   "name": "Drop",
+   "start_bar": 64,
+   "bars": 32,
+   "start_sec": 116.364,
+   "energy": 8
+  },
+  {
+   "name": "Outro",
+   "start_bar": 96,
+   "bars": 32,
+   "start_sec": 174.545,
+   "energy": 5
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 16,
+   "sec": 29.091,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 56,
+   "sec": 101.818,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 64,
+   "sec": 116.364,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 96,
+   "sec": 174.545,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 112,
+   "sec": 203.636,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Groove",
+   "bar": 32,
+   "sec": 58.182
+  },
+  {
+   "name": "Breakdown",
+   "bar": 56,
+   "sec": 101.818
+  },
+  {
+   "name": "Drop",
+   "bar": 64,
+   "sec": 116.364
+  },
+  {
+   "name": "Outro",
+   "bar": 96,
+   "sec": 174.545
+  }
+ ],
+ "lufs": -9.16,
+ "true_peak_dbtp": -1.35,
+ "file": "music/tracks/ukg/breadth-08-2-step-underground.mp3",
+ "cover": "music/tracks/ukg/breadth-08-2-step-underground.jpg",
+ "description_he": "יו-קיי גראז' ב-132 BPM בסולם G minor: תופי טו-סטפ קופצניים עם סווינג של כ-60%, סטאבים של אורגן בסגנון M1 משנות ה-90, צ'ופים ווקאליים מקוטעים (סינתטיים, בלי מילים), סאב קופצני עם קפיצות אוקטבה — ובדרופ באסליין 'דרד' בסגנון ספיד גראז' וחצי שני עם קיק ישר ב-4/4.",
+ "mix_tips_he": "טיפ ערבוב: 16 תיבות ראשונות תופים בלבד (טו-סטפ — הקיק לא על כל פעמה, אז הקשיבו לסנר ב-2 וב-4 כדי לסנכרן). הסאב נכנס בתיבה 17 (Hot Cue B), ברייקדאון קצר בתיבה 57 ודרופ בתיבה 65; מהתיבה 81 הקיק עובר ל-4/4 — נקודה נוחה למעבר לטראק האוס. האאוטרו מתיבה 97, ו-16 התיבות האחרונות תופים בלבד. שכנים ב-Camelot: 6A ↔ 7A, 5A, 6B.",
+ "instruments": [
+  "2-step shuffled drums",
+  "clap + rim + tight snare",
+  "skippy hats & shaker",
+  "M1-style organ stabs",
+  "formant vocal chops",
+  "bouncy sub bass",
+  "speed-garage dread bass",
+  "breakdown pad"
+ ],
+ "seed": 1833,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

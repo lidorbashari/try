@@ -1,0 +1,190 @@
+{
+ "id": "mainstream-11",
+ "title": "Lagos To Haifa",
+ "title_he": "מלאגוס לחיפה",
+ "artist": "DJ Lab Originals",
+ "genre": "Afrobeats",
+ "genre_slug": "afrobeats",
+ "family": "mainstream",
+ "bpm": 104.0,
+ "key": "G major",
+ "key_short": "G",
+ "camelot": "9B",
+ "energy": 6,
+ "role": "build",
+ "duration_sec": 221.538,
+ "bars": 96,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 16,
+   "start_sec": 0.0,
+   "energy": 4
+  },
+  {
+   "name": "Verse",
+   "start_bar": 16,
+   "bars": 16,
+   "start_sec": 36.923,
+   "energy": 6
+  },
+  {
+   "name": "Hook",
+   "start_bar": 32,
+   "bars": 16,
+   "start_sec": 73.846,
+   "energy": 7
+  },
+  {
+   "name": "Verse 2",
+   "start_bar": 48,
+   "bars": 8,
+   "start_sec": 110.769,
+   "energy": 6
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 56,
+   "bars": 8,
+   "start_sec": 129.231,
+   "energy": 4
+  },
+  {
+   "name": "Hook 2",
+   "start_bar": 64,
+   "bars": 16,
+   "start_sec": 147.692,
+   "energy": 8
+  },
+  {
+   "name": "Outro",
+   "start_bar": 80,
+   "bars": 16,
+   "start_sec": 184.615,
+   "energy": 4
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 16,
+   "sec": 36.923,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 56,
+   "sec": 129.231,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 32,
+   "sec": 73.846,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "F",
+   "name": "Drop 2",
+   "bar": 64,
+   "sec": 147.692,
+   "color": "#DE44CF",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 80,
+   "sec": 184.615,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 80,
+   "sec": 184.615,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Verse",
+   "bar": 16,
+   "sec": 36.923
+  },
+  {
+   "name": "Hook",
+   "bar": 32,
+   "sec": 73.846
+  },
+  {
+   "name": "Verse 2",
+   "bar": 48,
+   "sec": 110.769
+  },
+  {
+   "name": "Breakdown",
+   "bar": 56,
+   "sec": 129.231
+  },
+  {
+   "name": "Hook 2",
+   "bar": 64,
+   "sec": 147.692
+  },
+  {
+   "name": "Outro",
+   "bar": 80,
+   "sec": 184.615
+  }
+ ],
+ "lufs": -9.1,
+ "true_peak_dbtp": -1.13,
+ "file": "music/tracks/afrobeats/mainstream-11-lagos-to-haifa.mp3",
+ "cover": "music/tracks/afrobeats/mainstream-11-lagos-to-haifa.jpg",
+ "description_he": "אפרוביטס שמשי ב-104 BPM בסולם G מז'ור: קיק מסונכרן ושייקרים מקפצים, רים וקלאפ, כלי הקשה מעץ, קונגות, פעמון אגוגו וטוקינג דראם. גיטרת הייליף חמה, הוק של מרימבה, אקורדי רודס ופד חם מעל באס מלודי עמוק — מהלך מז'ור מרגיש-טוב (Imaj7–vi7–IVmaj7–V).",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 16 תיבות תופים וכלי הקשה בלבד, הבאס והגיטרה נכנסים בתיבה 17 (Hot Cue B), הפזמון בתיבה 33 (Hot Cue D), ברייקדאון בלי קיק בתיבה 57. אאוטרו של 16 תיבות תופים בלבד מתיבה 81. שכנים ב-Camelot: 9B ↔ 10B, 8B, 9A.",
+ "instruments": [
+  "syncopated afrobeats kick",
+  "3-3-2 shakers",
+  "rim & clap",
+  "log percussion",
+  "congas",
+  "agogo bell",
+  "talking drum",
+  "deep melodic bass (slides)",
+  "highlife guitar (Karplus-Strong)",
+  "marimba",
+  "kalimba",
+  "Rhodes chords",
+  "warm pad",
+  "vocal chant chops"
+ ],
+ "seed": 1612,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

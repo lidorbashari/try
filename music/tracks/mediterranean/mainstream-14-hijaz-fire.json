@@ -1,0 +1,187 @@
+{
+ "id": "mainstream-14",
+ "title": "Hijaz Fire",
+ "title_he": "אש חיג'אז",
+ "artist": "DJ Lab Originals",
+ "genre": "Mediterranean Groove",
+ "genre_slug": "mediterranean",
+ "family": "mainstream",
+ "bpm": 104.0,
+ "key": "A minor",
+ "key_short": "Am",
+ "camelot": "8A",
+ "energy": 8,
+ "role": "peak",
+ "duration_sec": 221.538,
+ "bars": 96,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 16,
+   "start_sec": 0.0,
+   "energy": 4
+  },
+  {
+   "name": "Verse",
+   "start_bar": 16,
+   "bars": 16,
+   "start_sec": 36.923,
+   "energy": 6
+  },
+  {
+   "name": "Build",
+   "start_bar": 32,
+   "bars": 8,
+   "start_sec": 73.846,
+   "energy": 7
+  },
+  {
+   "name": "Hook",
+   "start_bar": 40,
+   "bars": 16,
+   "start_sec": 92.308,
+   "energy": 8
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 56,
+   "bars": 8,
+   "start_sec": 129.231,
+   "energy": 5
+  },
+  {
+   "name": "Hook 2",
+   "start_bar": 64,
+   "bars": 16,
+   "start_sec": 147.692,
+   "energy": 9
+  },
+  {
+   "name": "Outro",
+   "start_bar": 80,
+   "bars": 16,
+   "start_sec": 184.615,
+   "energy": 4
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 16,
+   "sec": 36.923,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 56,
+   "sec": 129.231,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 40,
+   "sec": 92.308,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "F",
+   "name": "Drop 2",
+   "bar": 64,
+   "sec": 147.692,
+   "color": "#DE44CF",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 80,
+   "sec": 184.615,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 80,
+   "sec": 184.615,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Verse",
+   "bar": 16,
+   "sec": 36.923
+  },
+  {
+   "name": "Build",
+   "bar": 32,
+   "sec": 73.846
+  },
+  {
+   "name": "Hook",
+   "bar": 40,
+   "sec": 92.308
+  },
+  {
+   "name": "Breakdown",
+   "bar": 56,
+   "sec": 129.231
+  },
+  {
+   "name": "Hook 2",
+   "bar": 64,
+   "sec": 147.692
+  },
+  {
+   "name": "Outro",
+   "bar": 80,
+   "sec": 184.615
+  }
+ ],
+ "lufs": -9.12,
+ "true_peak_dbtp": -1.11,
+ "file": "music/tracks/mediterranean/mainstream-14-hijaz-fire.mp3",
+ "cover": "music/tracks/mediterranean/mainstream-14-hijaz-fire.jpg",
+ "description_he": "גרוב ים-תיכוני לוהט ב-104 BPM בסולם A מינור: דרבוקה על מקצב סעידי שעובר למלפוף בפזמון, קיק וסנר דמבו, רִק, זילים ומחיאות כפיים של קהל. המנגינות במינור הרמוני (נהוונד) עם חיג'אז על הדרגה החמישית (E) — טרילים, תווי חסד, גלישות ובנדים של רבע טון. עוד בטרמולו בבילד, קאנון בריצות, נאי בברייקדאון, ולידים של קלידים מזרחיים בפזמון סינגלונג גדול.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 16 תיבות תופים ודרבוקה בלבד — מכניסים מעל האאוטרו של הטראק הקודם. הבאס והעוד נכנסים בתיבה 17 (Hot Cue B), הבילד עם גלגולי דרבוקה בתיבה 33, הפזמון הגדול בתיבה 41 (Hot Cue D), ברייקדאון עם נאי בתיבה 57 ופזמון 2 בתיבה 65. אאוטרו של 16 תיבות תופים בלבד מתיבה 81. שכנים הרמוניים ב-Camelot: 8A ↔ 9A, 7A, 8B.",
+ "instruments": [
+  "darbuka (doum/tek/ka/slap)",
+  "riq",
+  "finger cymbals (zills)",
+  "crowd claps",
+  "dembow kick & snare",
+  "Mizrahi synth bass",
+  "oud (Karplus-Strong)",
+  "qanun runs",
+  "ney",
+  "Arabic strings (pad + unison)",
+  "Mizrahi keyboard lead"
+ ],
+ "seed": 1663,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

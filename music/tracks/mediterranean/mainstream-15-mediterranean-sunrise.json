@@ -1,0 +1,157 @@
+{
+ "id": "mainstream-15",
+ "title": "Mediterranean Sunrise",
+ "title_he": "זריחה ים-תיכונית",
+ "artist": "DJ Lab Originals",
+ "genre": "Mediterranean House",
+ "genre_slug": "mediterranean",
+ "family": "mainstream",
+ "bpm": 124.0,
+ "key": "D minor",
+ "key_short": "Dm",
+ "camelot": "7A",
+ "energy": 7,
+ "role": "peak",
+ "duration_sec": 247.742,
+ "bars": 128,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 32,
+   "start_sec": 0.0,
+   "energy": 4
+  },
+  {
+   "name": "Groove",
+   "start_bar": 32,
+   "bars": 16,
+   "start_sec": 61.935,
+   "energy": 6
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 48,
+   "bars": 16,
+   "start_sec": 92.903,
+   "energy": 4
+  },
+  {
+   "name": "Drop",
+   "start_bar": 64,
+   "bars": 32,
+   "start_sec": 123.871,
+   "energy": 8
+  },
+  {
+   "name": "Outro",
+   "start_bar": 96,
+   "bars": 32,
+   "start_sec": 185.806,
+   "energy": 4
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 32,
+   "sec": 61.935,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 48,
+   "sec": 92.903,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 64,
+   "sec": 123.871,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 96,
+   "sec": 185.806,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 112,
+   "sec": 216.774,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Groove",
+   "bar": 32,
+   "sec": 61.935
+  },
+  {
+   "name": "Breakdown",
+   "bar": 48,
+   "sec": 92.903
+  },
+  {
+   "name": "Drop",
+   "bar": 64,
+   "sec": 123.871
+  },
+  {
+   "name": "Outro",
+   "bar": 96,
+   "sec": 185.806
+  }
+ ],
+ "lufs": -9.14,
+ "true_peak_dbtp": -1.3,
+ "file": "music/tracks/mediterranean/mainstream-15-mediterranean-sunrise.mp3",
+ "cover": "music/tracks/mediterranean/mainstream-15-mediterranean-sunrise.jpg",
+ "description_he": "האוס ים-תיכוני/אתני ב-124 BPM בסולם D מינור: קיק עמוק ארבע-על-הרצפה, דרבוקה וקונגות מעליו, באס מתגלגל ופדים רחבים. הוק של עוד במינור הרמוני עם חיג'אז על A, ארפג'ים של קאנון, וברייקדאון רגשי גדול עם קשתות ונאי.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 32 תיבות תופים בלבד (דרבוקה נכנסת בתיבה 9), הבאס נכנס בתיבה 33 (Hot Cue B), ברייקדאון בתיבה 49, דרופ בתיבה 65. אאוטרו של 32 תיבות תופים בלבד מתיבה 97 — מושלם להכנסת הטראק הבא. שכנים ב-Camelot: 7A ↔ 8A, 6A, 7B.",
+ "instruments": [
+  "deep house kick",
+  "darbuka on top",
+  "congas",
+  "riq",
+  "zills",
+  "clap & snaps",
+  "shaker",
+  "deep rolling bass",
+  "oud hook (Karplus-Strong)",
+  "qanun arpeggios",
+  "ney",
+  "Arabic strings",
+  "wide pads"
+ ],
+ "seed": 1680,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

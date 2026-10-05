@@ -1,0 +1,196 @@
+{
+ "id": "mainstream-01",
+ "title": "Festival Main Stage",
+ "title_he": "הבמה הראשית",
+ "artist": "DJ Lab Originals",
+ "genre": "Big Room / EDM",
+ "genre_slug": "big_room",
+ "family": "mainstream",
+ "bpm": 128.0,
+ "key": "F minor",
+ "key_short": "Fm",
+ "camelot": "4A",
+ "energy": 9,
+ "role": "peak",
+ "duration_sec": 225.0,
+ "bars": 120,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 32,
+   "start_sec": 0.0,
+   "energy": 5
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 32,
+   "bars": 8,
+   "start_sec": 60.0,
+   "energy": 4
+  },
+  {
+   "name": "Build",
+   "start_bar": 40,
+   "bars": 8,
+   "start_sec": 75.0,
+   "energy": 7
+  },
+  {
+   "name": "Drop",
+   "start_bar": 48,
+   "bars": 16,
+   "start_sec": 90.0,
+   "energy": 9
+  },
+  {
+   "name": "Breakdown 2",
+   "start_bar": 64,
+   "bars": 8,
+   "start_sec": 120.0,
+   "energy": 5
+  },
+  {
+   "name": "Drop 2",
+   "start_bar": 72,
+   "bars": 16,
+   "start_sec": 135.0,
+   "energy": 10
+  },
+  {
+   "name": "Outro",
+   "start_bar": 88,
+   "bars": 32,
+   "start_sec": 165.0,
+   "energy": 5
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 16,
+   "sec": 30.0,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 32,
+   "sec": 60.0,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 48,
+   "sec": 90.0,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "E",
+   "name": "Breakdown 2",
+   "bar": 64,
+   "sec": 120.0,
+   "color": "#B4BE04",
+   "type": "hot"
+  },
+  {
+   "slot": "F",
+   "name": "Drop 2",
+   "bar": 72,
+   "sec": 135.0,
+   "color": "#DE44CF",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 88,
+   "sec": 165.0,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 104,
+   "sec": 195.0,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Breakdown",
+   "bar": 32,
+   "sec": 60.0
+  },
+  {
+   "name": "Build",
+   "bar": 40,
+   "sec": 75.0
+  },
+  {
+   "name": "Drop",
+   "bar": 48,
+   "sec": 90.0
+  },
+  {
+   "name": "Breakdown 2",
+   "bar": 64,
+   "sec": 120.0
+  },
+  {
+   "name": "Drop 2",
+   "bar": 72,
+   "sec": 135.0
+  },
+  {
+   "name": "Outro",
+   "bar": 88,
+   "sec": 165.0
+  }
+ ],
+ "lufs": -9.13,
+ "true_peak_dbtp": -1.21,
+ "file": "music/tracks/big_room/mainstream-01-festival-main-stage.mp3",
+ "cover": "music/tracks/big_room/mainstream-01-festival-main-stage.jpg",
+ "description_he": "ביג רום פסטיבלי ב-128 BPM בסולם F minor: קיק ענק עם זנב מכוון לסולם, באס סאו שפועם על האוף-ביט והוק ענק של סופרסאו (Detuned) בשיטת שאלה-תשובה על הלופ VI–VII–i–i. בברייקדאון פסנתר ופד, בבילד רול סנר מאיץ שעולה בגובה, רייזר וסוויפ של רעש לבן — ואז דרופ עם אימפקט וקריאות \"HEY!\" של הקהל. נבנה לרגע השיא של הסט.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 32 תיבות — 16 התיבות הראשונות תופים בלבד, הבאס נכנס בתיבה 17 (Hot Cue B). ברייקדאון בתיבה 33, הבילד מתחיל בתיבה 41 והדרופ נוחת בתיבה 49 (Hot Cue D); דרופ שני בתיבה 73. האאוטרו מתחיל בתיבה 89, הבאס יוצא בתיבה 105 ו-16 התיבות האחרונות הן תופים בלבד — מצוין ל-Bass Swap. בגלגל הקמלוט הטראק יושב על 4A ומתערבב חלק עם 3A, 5A ו-4B. מתחבר מעולה ל-Infinite Loop (4A, 128 BPM), Industrial Heart (4A, 131 BPM) ול-Desert Drums (4A, 122 BPM). אל תשכבו שני דרופים של ביג רום זה על זה — הזנבות של הקיקים יתנגשו; עשו Bass Swap בתחילת פרייז.",
+ "instruments": [
+  "big room kick with tuned tail",
+  "layered clap+snare",
+  "pumping off-beat saw bass",
+  "detuned supersaw lead (zap)",
+  "piano",
+  "warm pad",
+  "crowd chant (HEY!)",
+  "pitch-rising snare roll",
+  "supersaw riser",
+  "white-noise sweeps",
+  "impacts",
+  "toms"
+ ],
+ "seed": 1442,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

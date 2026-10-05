@@ -1,0 +1,152 @@
+{
+ "id": "breadth-04",
+ "title": "Starlight Drive",
+ "title_he": "נסיעת אור כוכבים",
+ "artist": "DJ Lab Originals",
+ "genre": "Progressive Trance",
+ "genre_slug": "trance",
+ "family": "breadth",
+ "bpm": 134.0,
+ "key": "E minor",
+ "key_short": "Em",
+ "camelot": "9A",
+ "energy": 8,
+ "role": "build",
+ "duration_sec": 272.239,
+ "bars": 152,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 32,
+   "start_sec": 0.0,
+   "energy": 5
+  },
+  {
+   "name": "Groove",
+   "start_bar": 32,
+   "bars": 32,
+   "start_sec": 57.313,
+   "energy": 7
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 64,
+   "bars": 24,
+   "start_sec": 114.627,
+   "energy": 5
+  },
+  {
+   "name": "Drop",
+   "start_bar": 88,
+   "bars": 32,
+   "start_sec": 157.612,
+   "energy": 8
+  },
+  {
+   "name": "Outro",
+   "start_bar": 120,
+   "bars": 32,
+   "start_sec": 214.925,
+   "energy": 5
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 16,
+   "sec": 28.657,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 64,
+   "sec": 114.627,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 88,
+   "sec": 157.612,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 120,
+   "sec": 214.925,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 136,
+   "sec": 243.582,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Groove",
+   "bar": 32,
+   "sec": 57.313
+  },
+  {
+   "name": "Breakdown",
+   "bar": 64,
+   "sec": 114.627
+  },
+  {
+   "name": "Drop",
+   "bar": 88,
+   "sec": 157.612
+  },
+  {
+   "name": "Outro",
+   "bar": 120,
+   "sec": 214.925
+  }
+ ],
+ "lufs": -9.05,
+ "true_peak_dbtp": -1.35,
+ "file": "music/tracks/trance/breadth-04-starlight-drive.mp3",
+ "cover": "music/tracks/trance/breadth-04-starlight-drive.jpg",
+ "description_he": "פרוגרסיב טראנס ב-134 BPM בסולם E minor: גרוב מתגלגל שנבנה סביב ארפג'ו פלאקי עם דיליי, באס אופביט שעוקב אחרי האקורדים, פד עם טראנס-גייט, מוטיב עדין ופילטרים שנפתחים לאט. פחות סופר-סו, יותר מסע — מושלם לבניית אנרגיה לפני הפיק.",
+ "mix_tips_he": "טיפ ערבוב: 16 תיבות תופים בלבד בהתחלה, הבאס המתגלגל נכנס בתיבה 17 (Hot Cue B). הברייקדאון ב-65 נמשך 24 תיבות, הסנר-רול מוביל לדרופ בתיבה 89 (Hot Cue D). האאוטרו מתחיל בתיבה 121 והבאס יוצא בתיבה 137. אל תמקסו בזמן הברייקדאון — חכו לדרופ או לאאוטרו. שכנים ב-Camelot: 9A ↔ 10A, 8A, 9B.",
+ "instruments": [
+  "trance kick",
+  "rolling off-beat bass",
+  "plucked 16th arpeggio",
+  "trance-gated pad",
+  "pluck lead motif",
+  "pads",
+  "clap, hats, ride",
+  "snare roll & riser"
+ ],
+ "seed": 1765,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

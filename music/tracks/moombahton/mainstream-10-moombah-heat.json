@@ -1,0 +1,205 @@
+{
+ "id": "mainstream-10",
+ "title": "Moombah Heat",
+ "title_he": "חום מומבה",
+ "artist": "DJ Lab Originals",
+ "genre": "Moombahton",
+ "genre_slug": "moombahton",
+ "family": "mainstream",
+ "bpm": 108.0,
+ "key": "E minor",
+ "key_short": "Em",
+ "camelot": "9A",
+ "energy": 7,
+ "role": "peak",
+ "duration_sec": 213.333,
+ "bars": 96,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 16,
+   "start_sec": 0.0,
+   "energy": 4
+  },
+  {
+   "name": "Groove",
+   "start_bar": 16,
+   "bars": 8,
+   "start_sec": 35.556,
+   "energy": 6
+  },
+  {
+   "name": "Build",
+   "start_bar": 24,
+   "bars": 8,
+   "start_sec": 53.333,
+   "energy": 7
+  },
+  {
+   "name": "Drop",
+   "start_bar": 32,
+   "bars": 16,
+   "start_sec": 71.111,
+   "energy": 8
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 48,
+   "bars": 8,
+   "start_sec": 106.667,
+   "energy": 4
+  },
+  {
+   "name": "Build 2",
+   "start_bar": 56,
+   "bars": 8,
+   "start_sec": 124.444,
+   "energy": 7
+  },
+  {
+   "name": "Drop 2",
+   "start_bar": 64,
+   "bars": 16,
+   "start_sec": 142.222,
+   "energy": 9
+  },
+  {
+   "name": "Outro",
+   "start_bar": 80,
+   "bars": 16,
+   "start_sec": 177.778,
+   "energy": 5
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 16,
+   "sec": 35.556,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 48,
+   "sec": 106.667,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 32,
+   "sec": 71.111,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "F",
+   "name": "Drop 2",
+   "bar": 64,
+   "sec": 142.222,
+   "color": "#DE44CF",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 80,
+   "sec": 177.778,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 80,
+   "sec": 177.778,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Groove",
+   "bar": 16,
+   "sec": 35.556
+  },
+  {
+   "name": "Build",
+   "bar": 24,
+   "sec": 53.333
+  },
+  {
+   "name": "Drop",
+   "bar": 32,
+   "sec": 71.111
+  },
+  {
+   "name": "Breakdown",
+   "bar": 48,
+   "sec": 106.667
+  },
+  {
+   "name": "Build 2",
+   "bar": 56,
+   "sec": 124.444
+  },
+  {
+   "name": "Drop 2",
+   "bar": 64,
+   "sec": 142.222
+  },
+  {
+   "name": "Outro",
+   "bar": 80,
+   "sec": 177.778
+  }
+ ],
+ "lufs": -9.05,
+ "true_peak_dbtp": -1.4,
+ "file": "music/tracks/moombahton/mainstream-10-moombah-heat.mp3",
+ "cover": "music/tracks/moombahton/mainstream-10-moombah-heat.jpg",
+ "description_he": "מומבהטון חם ב-108 BPM בסולם E minor: קיק האוס ישר מתחת לריתם דמבו, גרוב טומים שבטי, ליד \"מצפצף\" בסגנון הדאץ' האוס עם גלישות וקפיצות אוקטבה, ובאס וובל כבד שמשנה קצב (שמיניות, שש-עשריות וטריולות) על לופ i–iv–VI–v. שני בילדים עם רול סנר מאיץ, טומים וסירנה, ודרופים מלאי אנרגיה — לרגע שבו רוצים להאט את הסט בלי להוריד את האנרגיה.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 16 תיבות תופים וטומים בלבד; הבאס והפלאקים נכנסים בתיבה 17 (Hot Cue B). הבילד הראשון בתיבה 25, הדרופ בתיבה 33 (Hot Cue D), ברייקדאון בתיבה 49 ודרופ שני בתיבה 65. באאוטרו (תיבה 81) הבאס נשאר 8 תיבות ו-8 התיבות האחרונות הן תופים בלבד. בגלגל הקמלוט הטראק יושב על 9A ומתערבב חלק עם 8A, 10A ו-9B. מתחבר מעולה ל-Lagos To Haifa (9B, 104 BPM) ול-Hijaz Fire (8A, 104 BPM). מעבר מומלץ: מטראק האוס ב-124–128 עושים Echo Out בסוף פרייז ונכנסים לאינטרו ב-108; גם מרגאטון (90–100 BPM) עדיף לעבור ב-Echo Out או Cut נקי בתחילת פרייז ולא בבלנד ארוך.",
+ "instruments": [
+  "house kick",
+  "dembow snare + rim",
+  "claps",
+  "tribal toms",
+  "timbale",
+  "shaker & hats",
+  "groove sub bass",
+  "wobble bass (8th / 16th / triplet)",
+  "Dutch-house squeaky lead",
+  "supersaw octave lead",
+  "square plucks",
+  "synth brass",
+  "warm pad",
+  "crowd chant",
+  "siren",
+  "snare-roll build",
+  "riser"
+ ],
+ "seed": 1595,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

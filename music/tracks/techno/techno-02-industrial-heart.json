@@ -1,0 +1,156 @@
+{
+ "id": "techno-02",
+ "title": "Industrial Heart",
+ "title_he": "לב תעשייתי",
+ "artist": "DJ Lab Originals",
+ "genre": "Peak-Time Techno",
+ "genre_slug": "techno",
+ "family": "techno",
+ "bpm": 131.0,
+ "key": "F minor",
+ "key_short": "Fm",
+ "camelot": "4A",
+ "energy": 9,
+ "role": "peak",
+ "duration_sec": 263.817,
+ "bars": 144,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 32,
+   "start_sec": 0.0,
+   "energy": 4
+  },
+  {
+   "name": "Groove",
+   "start_bar": 32,
+   "bars": 32,
+   "start_sec": 58.626,
+   "energy": 6
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 64,
+   "bars": 16,
+   "start_sec": 117.252,
+   "energy": 4
+  },
+  {
+   "name": "Drop",
+   "start_bar": 80,
+   "bars": 32,
+   "start_sec": 146.565,
+   "energy": 9
+  },
+  {
+   "name": "Outro",
+   "start_bar": 112,
+   "bars": 32,
+   "start_sec": 205.191,
+   "energy": 5
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 32,
+   "sec": 58.626,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 64,
+   "sec": 117.252,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 80,
+   "sec": 146.565,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 112,
+   "sec": 205.191,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 128,
+   "sec": 234.504,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Groove",
+   "bar": 32,
+   "sec": 58.626
+  },
+  {
+   "name": "Breakdown",
+   "bar": 64,
+   "sec": 117.252
+  },
+  {
+   "name": "Drop",
+   "bar": 80,
+   "sec": 146.565
+  },
+  {
+   "name": "Outro",
+   "bar": 112,
+   "sec": 205.191
+  }
+ ],
+ "lufs": -9.11,
+ "true_peak_dbtp": -1.1,
+ "file": "music/tracks/techno/techno-02-industrial-heart.mp3",
+ "cover": "music/tracks/techno/techno-02-industrial-heart.jpg",
+ "description_he": "טכנו פיק-טיים ב-131 BPM בסולם F minor: הצד התעשייתי, הכהה והמעוות — קיק וראמבל עם דיסטורשן, צלצולי מתכת, רעש מכונות בסטריאו, סטאבים גרוליים ודרון אפל בברייקדאון. לרגעי השיא של הסט.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 32 תיבות להכנסה נקייה, הבאס נכנס בתיבה 33 (Hot Cue B), ברייקדאון בתיבה 65, דרופ בתיבה 81, אאוטרו של 32 תיבות מתיבה 113 — מושלם למיקס החוצה. הראמבל יושב על הסאב — בזמן מעבר הורידו את ה-Low בטראק היוצא. שכנים הרמוניים ב-Camelot: 5A, 3A ו-4B. מתחבר מעולה ל-Infinite Loop (4A, 128 BPM), Micro Groove (5A, 127 BPM), Festival Main Stage (4A, 128 BPM).",
+ "instruments": [
+  "driving techno kick",
+  "sidechained reverb rumble",
+  "stereo closed & open hats",
+  "ride",
+  "clap & snare (plate)",
+  "industrial metal hits",
+  "pitched snare rolls, risers & noise sweeps",
+  "distorted kick & rumble",
+  "machine noise",
+  "bit-crushed FM sequence",
+  "growl stabs",
+  "dark drone"
+ ],
+ "seed": 1255,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

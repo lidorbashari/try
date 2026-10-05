@@ -1,0 +1,197 @@
+{
+ "id": "mainstream-16",
+ "title": "Oud Club",
+ "title_he": "מועדון העוד",
+ "artist": "DJ Lab Originals",
+ "genre": "Mediterranean House",
+ "genre_slug": "mediterranean",
+ "family": "mainstream",
+ "bpm": 125.0,
+ "key": "G minor",
+ "key_short": "Gm",
+ "camelot": "6A",
+ "energy": 8,
+ "role": "peak",
+ "duration_sec": 245.76,
+ "bars": 128,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 32,
+   "start_sec": 0.0,
+   "energy": 4
+  },
+  {
+   "name": "Groove",
+   "start_bar": 32,
+   "bars": 16,
+   "start_sec": 61.44,
+   "energy": 6
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 48,
+   "bars": 8,
+   "start_sec": 92.16,
+   "energy": 4
+  },
+  {
+   "name": "Drop",
+   "start_bar": 56,
+   "bars": 16,
+   "start_sec": 107.52,
+   "energy": 8
+  },
+  {
+   "name": "Breakdown 2",
+   "start_bar": 72,
+   "bars": 8,
+   "start_sec": 138.24,
+   "energy": 5
+  },
+  {
+   "name": "Drop 2",
+   "start_bar": 80,
+   "bars": 16,
+   "start_sec": 153.6,
+   "energy": 9
+  },
+  {
+   "name": "Outro",
+   "start_bar": 96,
+   "bars": 32,
+   "start_sec": 184.32,
+   "energy": 4
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 32,
+   "sec": 61.44,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 48,
+   "sec": 92.16,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 56,
+   "sec": 107.52,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "E",
+   "name": "Breakdown 2",
+   "bar": 72,
+   "sec": 138.24,
+   "color": "#B4BE04",
+   "type": "hot"
+  },
+  {
+   "slot": "F",
+   "name": "Drop 2",
+   "bar": 80,
+   "sec": 153.6,
+   "color": "#DE44CF",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 96,
+   "sec": 184.32,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 112,
+   "sec": 215.04,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Groove",
+   "bar": 32,
+   "sec": 61.44
+  },
+  {
+   "name": "Breakdown",
+   "bar": 48,
+   "sec": 92.16
+  },
+  {
+   "name": "Drop",
+   "bar": 56,
+   "sec": 107.52
+  },
+  {
+   "name": "Breakdown 2",
+   "bar": 72,
+   "sec": 138.24
+  },
+  {
+   "name": "Drop 2",
+   "bar": 80,
+   "sec": 153.6
+  },
+  {
+   "name": "Outro",
+   "bar": 96,
+   "sec": 184.32
+  }
+ ],
+ "lufs": -9.24,
+ "true_peak_dbtp": -1.18,
+ "file": "music/tracks/mediterranean/mainstream-16-oud-club.mp3",
+ "cover": "music/tracks/mediterranean/mainstream-16-oud-club.jpg",
+ "description_he": "האוס ים-תיכוני מועדוני ב-125 BPM בסולם G מינור: ריף עוד היפנוטי על צליל עוגב (פדאל) בחיג'אז על D, ובדרופ השני מנגינת עוד בטרמולו עם קשתות. קיק ארבע-על-הרצפה, דרבוקה וקונגות מעל, באס מתגלגל עמוק, ריק וזילים. שני ברייקדאונים קצרים עם נאי וצ'יפטטלי.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 32 תיבות תופים בלבד (דרבוקה נכנסת בתיבה 9), הבאס נכנס בתיבה 33 (Hot Cue B), ברייקדאון בתיבה 49, דרופ בתיבה 57. אאוטרו של 32 תיבות תופים בלבד מתיבה 97 — מושלם להכנסת הטראק הבא. שכנים ב-Camelot: 6A ↔ 7A, 5A, 6B.",
+ "instruments": [
+  "deep house kick",
+  "darbuka on top",
+  "congas",
+  "riq",
+  "zills",
+  "clap & snaps",
+  "shaker",
+  "deep rolling bass",
+  "oud hook (Karplus-Strong)",
+  "qanun arpeggios",
+  "ney",
+  "Arabic strings",
+  "wide pads"
+ ],
+ "seed": 1697,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}

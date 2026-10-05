@@ -1,0 +1,153 @@
+{
+ "id": "techno-09",
+ "title": "Infinite Loop",
+ "title_he": "לולאה אינסופית",
+ "artist": "DJ Lab Originals",
+ "genre": "Hypnotic Techno",
+ "genre_slug": "hypnotic_techno",
+ "family": "techno",
+ "bpm": 128.0,
+ "key": "F minor",
+ "key_short": "Fm",
+ "camelot": "4A",
+ "energy": 7,
+ "role": "build",
+ "duration_sec": 270.0,
+ "bars": 144,
+ "beats_per_bar": 4,
+ "first_downbeat_sec": 0.0,
+ "sections": [
+  {
+   "name": "Intro",
+   "start_bar": 0,
+   "bars": 32,
+   "start_sec": 0.0,
+   "energy": 4
+  },
+  {
+   "name": "Groove",
+   "start_bar": 32,
+   "bars": 40,
+   "start_sec": 60.0,
+   "energy": 6
+  },
+  {
+   "name": "Breakdown",
+   "start_bar": 72,
+   "bars": 8,
+   "start_sec": 135.0,
+   "energy": 4
+  },
+  {
+   "name": "Drop",
+   "start_bar": 80,
+   "bars": 32,
+   "start_sec": 150.0,
+   "energy": 7
+  },
+  {
+   "name": "Outro",
+   "start_bar": 112,
+   "bars": 32,
+   "start_sec": 210.0,
+   "energy": 4
+  }
+ ],
+ "cues": [
+  {
+   "slot": "A",
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0,
+   "color": "#28E214",
+   "type": "hot"
+  },
+  {
+   "slot": "B",
+   "name": "Mix-In",
+   "bar": 32,
+   "sec": 60.0,
+   "color": "#10B1E6",
+   "type": "hot"
+  },
+  {
+   "slot": "C",
+   "name": "Breakdown",
+   "bar": 72,
+   "sec": 135.0,
+   "color": "#E0641B",
+   "type": "hot"
+  },
+  {
+   "slot": "D",
+   "name": "Drop",
+   "bar": 80,
+   "sec": 150.0,
+   "color": "#E62828",
+   "type": "hot"
+  },
+  {
+   "slot": "G",
+   "name": "Outro",
+   "bar": 112,
+   "sec": 210.0,
+   "color": "#305AFF",
+   "type": "hot"
+  },
+  {
+   "slot": "H",
+   "name": "Last 16",
+   "bar": 128,
+   "sec": 240.0,
+   "color": "#8A2BE2",
+   "type": "hot"
+  }
+ ],
+ "memory_cues": [
+  {
+   "name": "Intro",
+   "bar": 0,
+   "sec": 0.0
+  },
+  {
+   "name": "Groove",
+   "bar": 32,
+   "sec": 60.0
+  },
+  {
+   "name": "Breakdown",
+   "bar": 72,
+   "sec": 135.0
+  },
+  {
+   "name": "Drop",
+   "bar": 80,
+   "sec": 150.0
+  },
+  {
+   "name": "Outro",
+   "bar": 112,
+   "sec": 210.0
+  }
+ ],
+ "lufs": -9.07,
+ "true_peak_dbtp": -1.15,
+ "file": "music/tracks/hypnotic_techno/techno-09-infinite-loop.mp3",
+ "cover": "music/tracks/hypnotic_techno/techno-09-infinite-loop.jpg",
+ "description_he": "טכנו היפנוטי עמוק כמו מנהרה: קיק עגול עם ראמבל ארוך, סאב אופביט, אקורדי דאב שנמתחים לדיליי ארוך, סיקוונס פולימטרי של 3 נגד 4 ודרון רעש שנפתח לאט — מסע פילטר אחד ארוך מהחושך אל האור וחזרה. 128 BPM בסולם F minor, דרופ אחד בלבד אחרי ברייקדאון קצר.",
+ "mix_tips_he": "טיפ ערבוב: אינטרו של 32 תיבות להכנסה נקייה, הבאס נכנס בתיבה 33 (Hot Cue B), ברייקדאון בתיבה 73, דרופ בתיבה 81, אאוטרו של 32 תיבות מתיבה 113 — מושלם למיקס החוצה. טראק לופי שמושלם לבלנד ארוך: אפשר להחזיק את שני הטראקים יחד 32 תיבות ולשחק רק עם ה-EQ. שכנים הרמוניים ב-Camelot: 5A, 3A ו-4B. מתחבר מעולה ל-Micro Groove (5A, 127 BPM), Industrial Heart (4A, 131 BPM), Festival Main Stage (4A, 128 BPM).",
+ "instruments": [
+  "deep round kick",
+  "long sidechained rumble",
+  "offbeat sub",
+  "dub chords into long delays",
+  "3/16 polymetric sequence",
+  "3/16 rim & 5/16 tick",
+  "pitched noise tunnel drone",
+  "stereo hats, shaker & ride",
+  "noise swirls"
+ ],
+ "seed": 1374,
+ "license": "CC0-1.0",
+ "engine_version": "1.0.0"
+}
