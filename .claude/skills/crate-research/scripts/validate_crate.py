@@ -16,7 +16,7 @@ sys.path.insert(0, str(ROOT / "tools"))
 import camelot  # noqa: E402
 
 HEADER = ["artist", "title", "mix", "label", "year", "bpm", "key", "camelot", "energy", "role", "verified", "notes_he"]
-ROLES = {"warmup", "build", "peak", "closing"}
+ROLES = {"warmup", "build", "peak", "closing", "anthem"}
 VERIFIED = {"yes", "partial", "no"}
 HEBREW = re.compile(r"[֐-׿]")
 

@@ -68,8 +68,15 @@ def track_xml(tid: int, item: dict, root: str) -> str:
     lines = [f'    <TRACK {a}>']
     if bpm:
         inizio = float(item.get("first_downbeat_sec", 0.0))
-        tempo = attrs(Inizio=f"{inizio:.3f}", Bpm=f"{bpm:.2f}", Metro="4/4", Battito=1)
-        lines.append(f"      <TEMPO {tempo}/>")
+        # Demos that switch decks mid-way carry a tempo_map ([{bar, bpm}, ...]): one TEMPO per segment.
+        segments = sorted(item.get("tempo_map") or [{"bar": 0, "bpm": bpm}], key=lambda s: s["bar"])
+        prev_bar, prev_bpm = 0, None
+        for seg in segments:
+            if prev_bpm is not None:
+                inizio += (seg["bar"] - prev_bar) * 240.0 / prev_bpm
+            prev_bar, prev_bpm = seg["bar"], float(seg["bpm"])
+            tempo = attrs(Inizio=f"{inizio:.3f}", Bpm=f"{prev_bpm:.2f}", Metro="4/4", Battito=1)
+            lines.append(f"      <TEMPO {tempo}/>")
     for cue in item.get("cues", []):
         slot = cue.get("slot", "A")
         num = "ABCDEFGH".index(slot) if slot in "ABCDEFGH" else 0

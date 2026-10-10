@@ -1039,6 +1039,7 @@
     </TRACK>
     <TRACK TrackID="71" Name="Echo Out: Warehouse 26 → Concrete Pulse" Artist="DJ Lab Transitions" Composer="" Album="DJ Lab — Transitions" Grouping="transition" Genre="Transition Demo" Kind="MP3 File" Size="2979125" TotalTime="74" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="128.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot - · Energy - · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/transitions/transition-04-echo_out.mp3" Remixer="" Tonality="" Label="DJ Lab" Mix="Original Mix">
       <TEMPO Inizio="0.000" Bpm="128.00" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="30.000" Bpm="130.00" Metro="4/4" Battito="1"/>
       <POSITION_MARK Name="A phrase" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
       <POSITION_MARK Name="Get ready" Type="0" Start="22.500" Num="1" Red="16" Green="177" Blue="230"/>
       <POSITION_MARK Name="Echo on" Type="0" Start="28.125" Num="2" Red="224" Green="100" Blue="27"/>
@@ -1075,6 +1076,7 @@
     </TRACK>
     <TRACK TrackID="75" Name="Tempo Change Echo Out: Dembow Fuego → Mediterranean Sunrise" Artist="DJ Lab Transitions" Composer="" Album="DJ Lab — Transitions" Grouping="transition" Genre="Transition Demo" Kind="MP3 File" Size="3482264" TotalTime="87" DiscNumber="0" TrackNumber="0" Year="2026" AverageBpm="95.00" DateAdded="2026-10-04" BitRate="320" SampleRate="44100" Comments="Camelot - · Energy - · CC0 DJ Lab" PlayCount="0" Rating="0" Location="file://localhost/C:/DJ-Lab/music/transitions/transition-08-tempo_change_echo.mp3" Remixer="" Tonality="" Label="DJ Lab" Mix="Original Mix">
       <TEMPO Inizio="0.000" Bpm="95.00" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="40.421" Bpm="124.00" Metro="4/4" Battito="1"/>
       <POSITION_MARK Name="A chorus" Type="0" Start="0.000" Num="0" Red="40" Green="226" Blue="20"/>
       <POSITION_MARK Name="Plan exit" Type="0" Start="20.211" Num="1" Red="16" Green="177" Blue="230"/>
       <POSITION_MARK Name="Echo + Low cut" Type="0" Start="39.789" Num="2" Red="224" Green="100" Blue="27"/>

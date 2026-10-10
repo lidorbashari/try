@@ -932,7 +932,7 @@ kbd, .kbd { display: inline-block; min-width: 1.6em; padding: .05em .45em; borde
 
 /* ------------------------------------------------------------------ practice */
 .practice-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr)); gap: var(--s4); }
-.pr-card { display: grid; gap: var(--s3); align-content: start; position: relative; }
+.pr-card { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s3); align-content: start; position: relative; }
 .pr-head { display: flex; gap: var(--s3); align-items: flex-start; }
 .pr-id { font-family: var(--font-head); font-weight: 800; font-size: 1.6rem; line-height: 1; color: transparent; -webkit-text-stroke: 1.2px var(--accent-2); direction: ltr; min-width: 2.2ch; }
 .pr-title { font-family: var(--font-head); font-weight: 700; font-size: 1.1rem; margin: 0; }
