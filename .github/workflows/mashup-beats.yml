@@ -75,7 +75,7 @@ jobs:
           pattern: beats-*
           merge-multiple: true
       - name: Merge into docs/mashup-lab/beats.json
-        run: python tools/mashup_lab_beats.py merge --parts parts --out docs/mashup-lab/beats.json
+        run: python tools/mashup_lab_beats.py merge --parts parts --out docs/mashup-lab/beats.json --report tools/reports/mashup-beats-report.json
       - uses: actions/upload-artifact@v4
         with:
           name: beats-detail
@@ -85,7 +85,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/mashup-lab/beats.json
+          git add docs/mashup-lab/beats.json tools/reports/mashup-beats-report.json
           if git diff --cached --quiet; then echo "no changes"; exit 0; fi
           git commit -m "Mashup Lab: beat grids from the previews"
           git pull --rebase origin "${GITHUB_REF_NAME}"

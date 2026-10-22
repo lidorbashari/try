@@ -278,6 +278,10 @@ def merge(args):
     json.dump({"meta": meta, "map": m}, open(tmp, "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
     os.replace(tmp, args.out)
     print("merged", meta)
+    if args.report:  # full per-track diagnostics (numbers only), committed outside the website
+        os.makedirs(os.path.dirname(args.report), exist_ok=True)
+        rep = {k: r for k, r in new.items() if k in keys}
+        json.dump({"meta": meta, "tracks": rep}, open(args.report, "w", encoding="utf-8"), ensure_ascii=False, indent=0, sort_keys=True)
     # a readable report for the run log: the least trustworthy grids first
     report.sort(key=lambda x: x[1]["conf"])
     for k, r in report[:40]:
@@ -304,6 +308,7 @@ def main():
     m.add_argument("--previews", default=PREVIEWS)
     m.add_argument("--model", default="final0")
     m.add_argument("--out", default=BEATS)
+    m.add_argument("--report", default="")
     sub.add_parser("selftest")
     x = ap.parse_args()
     if x.cmd == "analyze":
