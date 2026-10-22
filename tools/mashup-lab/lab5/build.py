@@ -77,7 +77,7 @@ def merge_wordplay_tracks(data, src, log):
 def build(out_dir=SP):
     log = []
     tpl = open(os.path.join(HERE, "app.html"), encoding="utf-8").read()
-    for ph in ("__DATA__", "__SRC__", "/*__ENGINE__*/", "<!--BODY-->"):
+    for ph in ("__DATA__", "__SRC__", "/*__ENGINE__*/", "<!--BODY-->", "/*__LIQUID__*/", "/*__LIQUID_CSS__*/"):
         assert tpl.count(ph) == 1, (ph, tpl.count(ph))
     dpath, spath = pick_data()
     data = json.load(open(dpath, encoding="utf-8"))
@@ -89,6 +89,10 @@ def build(out_dir=SP):
     assert "MashEngine" in eng
     s = tpl.replace("__DATA__", js(data)).replace("__SRC__", js(src))
     s = s.replace("/*__ENGINE__*/", eng.replace("</script", "<\\/script"))
+    # the Liquid Glass motion layer (ui/): its CSS joins the main stylesheet, its script runs before the app script
+    ui = lambda n: open(os.path.join(HERE, "ui", n), encoding="utf-8").read()
+    s = s.replace("/*__LIQUID_CSS__*/", ui("liquid.css").replace("</style", "<\\/style"))
+    s = s.replace("/*__LIQUID__*/", ui("liquid.js").replace("</script", "<\\/script"))
     # Wordplay ("מעברי מילים", wordplay/UI_SPEC.md §1): appended after the app script, in this order
     wp = {n: os.path.join(HERE, "wordplay", n) for n in ("links.json", "wordplay.js", "timing.js", "wordplay_ui.js")}
     wp_on = all(os.path.exists(x) for x in wp.values()) and os.environ.get("NO_WORDPLAY") != "1"

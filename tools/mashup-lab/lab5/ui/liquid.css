@@ -1,0 +1,88 @@
+/* ---------- Liquid Glass (ui/liquid.js drives the motion; these are the materials) ---------- */
+:root {
+  --plat: rgba(120,120,128,.14);
+  --lens-fill: rgba(255,255,255,.3);
+  --lens-edge: rgba(255,255,255,.95);
+  --lens-shade: rgba(20,20,40,.16);
+  --glass-top: rgba(255,255,255,.9);
+  --glass-bot: rgba(0,0,0,.05);
+  --fringe-blend: multiply;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme=light]) { --plat: rgba(255,255,255,.14); --lens-fill: rgba(255,255,255,.07); --lens-edge: rgba(255,255,255,.6); --lens-shade: rgba(0,0,0,.45); --glass-top: rgba(255,255,255,.2); --glass-bot: rgba(0,0,0,.35); --fringe-blend: screen; }
+}
+:root[data-theme=dark] { --plat: rgba(255,255,255,.14); --lens-fill: rgba(255,255,255,.07); --lens-edge: rgba(255,255,255,.6); --lens-shade: rgba(0,0,0,.45); --glass-top: rgba(255,255,255,.2); --glass-bot: rgba(0,0,0,.35); --fringe-blend: screen; }
+
+/* the material: less blur and more saturation than the old frosted glass, a bright top rim and a soft lower shade */
+.glass { -webkit-backdrop-filter: blur(14px) saturate(190%) brightness(1.04); backdrop-filter: blur(14px) saturate(190%) brightness(1.04);
+  box-shadow: var(--glass-shadow), inset 0 1px 0 var(--glass-top), inset 0 -1px 0 var(--glass-bot), inset 0 0 0 .5px var(--glass-line); }
+
+/* ---------- tab bar ---------- */
+.tabbar { position: fixed; z-index: 31; left: 50%; bottom: var(--tab-b); height: var(--tab-h); width: min(calc(100% - 2 * var(--gut)), calc(var(--tabs, 3) * 98px + 8px));
+  transform: translateX(-50%); border-radius: 32px; touch-action: none; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; padding: 0; display: block; background: none; box-shadow: none; }
+html.lq .tabbar { left: 0; transform: none; }
+.tb-mat { position: absolute; inset: 0; border-radius: inherit; background: var(--bar-glass);
+  -webkit-backdrop-filter: blur(18px) saturate(190%) brightness(1.03); backdrop-filter: blur(18px) saturate(190%) brightness(1.03);
+  box-shadow: 0 12px 34px -12px rgba(20,20,45,.28), 0 2px 8px -3px rgba(20,20,45,.1), inset 0 1px 0 var(--glass-top), inset 0 -1px 0 var(--glass-bot), inset 0 0 0 .5px var(--glass-line); }
+.tb-mat::before { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; padding: 1px;
+  background: linear-gradient(170deg, var(--glass-edge) 0%, var(--glass-edge-2) 24%, transparent 50%, transparent 66%, var(--glass-edge-2) 88%, var(--glass-edge) 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0); }
+.tb-row { position: absolute; z-index: 2; top: 4px; bottom: 4px; left: 4px; right: 4px; display: flex; will-change: transform; }
+html.lq .tb-row { right: auto; }
+.tb-plat { position: absolute; z-index: 1; top: 4px; bottom: 4px; left: 0; width: 90px; border-radius: 28px; background: var(--plat); pointer-events: none; transform: translateX(4px);
+  box-shadow: inset 0 .5px 0 rgba(255,255,255,.35); will-change: transform, opacity; }
+html:not(.lq) .tb-plat { display: none; }
+.tab { position: relative; z-index: 2; flex: 1; min-width: 0; height: 100%; border: 0; background: none; border-radius: 28px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+  color: var(--label); font-size: 10.5px; line-height: 12px; font-weight: 600; transition: color .3s; padding: 0; -webkit-tap-highlight-color: transparent; }
+.tab svg { width: 25px; height: 25px; }
+.tab[aria-selected=true] { color: var(--accent); }
+html.tb-min .tb-row, html.tb-min .tab:not([aria-selected=true]) { pointer-events: none; }
+html.tb-min .tab[aria-selected=true] { pointer-events: auto; }
+html:not(.lq) .tab[aria-selected=true] { background: var(--plat); }
+
+/* the lens: lifts above the bar, magnifies the row under it (live copies), chromatic rim, specular light */
+.tb-lens { position: absolute; z-index: 3; top: -11px; bottom: -11px; left: 0; width: 96px; border-radius: 46px; pointer-events: none; opacity: 0; transform-origin: 50% 50%;
+  will-change: transform, opacity; box-shadow: 0 16px 34px -14px rgba(0,0,0,.38), 0 3px 10px -4px rgba(0,0,0,.14); }
+.tb-lb, .tb-lv, .tb-rim, .tb-shine { position: absolute; inset: 0; border-radius: inherit; pointer-events: none; }
+.tb-lb { background: var(--lens-fill); -webkit-backdrop-filter: blur(2.5px) saturate(200%) brightness(1.07); backdrop-filter: blur(2.5px) saturate(200%) brightness(1.07); }
+.tb-lv { overflow: hidden; -webkit-mask-image: radial-gradient(closest-side, #000 86%, rgba(0,0,0,.6) 100%); mask-image: radial-gradient(closest-side, #000 86%, rgba(0,0,0,.6) 100%); }
+.tb-copy { position: absolute; left: 0; top: 0; height: calc(var(--tab-h) - 8px); display: flex; transform-origin: 0 0; will-change: transform; }
+.tbc { position: relative; flex: 1; min-width: 0; height: 100%; border: 0; background: none; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+  color: var(--label); font-size: 10.5px; line-height: 12px; font-weight: 600; padding: 0; transition: color .12s; }
+.tbc svg { width: 25px; height: 25px; }
+.tbc.on { color: var(--accent); }
+.tb-copy .badge { display: none; }
+.tb-copy.c-r, .tb-copy.c-b { mix-blend-mode: var(--fringe-blend); opacity: .55; }
+.tb-copy.c-r .tbc, .tb-copy.c-r .tbc.on { color: #ff2d55; }
+.tb-copy.c-b .tbc, .tb-copy.c-b .tbc.on { color: #1e90ff; }
+.tb-rim { padding: 1.6px; opacity: .6; transition: opacity .25s;
+  background: conic-gradient(from 210deg, rgba(255,90,150,.95), rgba(255,205,90,.8), rgba(90,240,190,.75), rgba(70,170,255,.95), rgba(175,110,255,.85), rgba(255,90,150,.95));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0); filter: blur(.35px) saturate(1.3); }
+.tb-lens.deep .tb-rim { opacity: .95; }
+.tb-shine { background: radial-gradient(120% 64% at 30% 0%, var(--lens-edge), rgba(255,255,255,0) 58%), radial-gradient(90% 46% at 72% 104%, rgba(255,255,255,.4), rgba(255,255,255,0) 62%);
+  opacity: .55; box-shadow: inset 0 0 0 .6px var(--lens-edge), inset 0 -10px 16px -12px var(--lens-shade), inset 0 10px 16px -12px rgba(255,255,255,.85); }
+
+/* ---------- mini player (placed by liquid.js next to the tab bar; docks beside the circle when it minimises) ---------- */
+html.lq .mini { left: max(var(--gut), calc(50% - 280px)); width: min(calc(100% - 2 * var(--gut)), 560px); transform: none; transition: transform .65s var(--spring), opacity .35s; }
+html.lq .mini.off { transform: translateY(150%) scale(.9); }
+html.tb-min .mini-prog { left: 20px; right: 20px; }
+
+/* ---------- segmented controls: the thumb is a small lens ---------- */
+html.lq .seg-th { left: 0; right: auto; inset-inline-start: auto; transition: box-shadow .3s, background-color .3s; will-change: transform; transform-origin: 50% 50%; }
+.seg-th.lift { background: color-mix(in srgb, var(--card-hi) 70%, transparent); -webkit-backdrop-filter: blur(6px) saturate(180%); backdrop-filter: blur(6px) saturate(180%);
+  box-shadow: 0 8px 18px -6px rgba(0,0,0,.28), inset 0 0 0 .6px var(--lens-edge), inset 0 1px 0 var(--glass-top); }
+
+/* ---------- sheets (liquid.js springs them; CSS keeps the resting states) ---------- */
+html.lq .sheet { transform: none; transition: none; will-change: transform; }
+html.lq .sheet[hidden] { display: none !important; }
+html.lq #page { transition: opacity .4s; }
+html.lq.behind #page { transform: none; }
+html.lq .scrim { transition: none; }
+.sheet.lq-morph { overflow: hidden; }
+.sheet.lq-morph > * { opacity: var(--lq-in, 1); }
+
+/* ---------- glass buttons grow and light up while pressed (iOS 26), plain buttons press in ---------- */
+.hbtn.glass { transition: transform .45s var(--spring), box-shadow .3s; }
+.hbtn.glass:active { transform: scale(1.12); box-shadow: var(--glass-shadow), 0 0 0 1px var(--lens-edge) inset, 0 0 22px -4px rgba(255,255,255,.7); }
+.mini-b:active { transform: scale(.86); }
+@media (prefers-reduced-motion: reduce) { .tb-lens { display: none; } }

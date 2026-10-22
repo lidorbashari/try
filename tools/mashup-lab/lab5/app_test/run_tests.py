@@ -10,6 +10,13 @@ SHOTS = os.path.join(HERE, "shots")
 ENGINE = sys.argv[1] if len(sys.argv) > 1 else "stub"
 RESULTS = []
 
+
+async def tab_click(pg, sel):
+    """the tab bar minimises into a circle while scrolling down (iOS 26): a user taps the circle first"""
+    await pg.evaluate("window.Liquid && Liquid.tabbar.minimized && Liquid.tabbar.expand()")
+    await pg.wait_for_timeout(450)
+    await pg.click(sel)
+
 def check(name, ok, info=""):
     RESULTS.append((name, bool(ok)))
     print(("PASS " if ok else "FAIL ") + name + (("  " + str(info)[:300]) if info and not ok else ""))
@@ -187,12 +194,12 @@ async def main():
         await pg.locator("#list .card .star").nth(0).click(); await pg.locator("#list .card .star").nth(3).click(); await pg.wait_for_timeout(400)
         favs = await pg.evaluate("JSON.parse(localStorage.getItem('mashlab.favs'))")
         check("star saves to mashlab.favs", isinstance(favs, list) and len(favs) == 2, favs)
-        await pg.click("#tab-saved"); await pg.wait_for_timeout(800)
+        await tab_click(pg, "#tab-saved"); await pg.wait_for_timeout(800)
         n_saved = await pg.evaluate("document.querySelectorAll('#savedList .card').length")
         check("saved view lists the 2 saved pairs", n_saved == 2, n_saved)
         await shot(pg, "06-saved-light")
         # search
-        await pg.click("#tab-search"); await pg.wait_for_timeout(700)
+        await tab_click(pg, "#tab-search"); await pg.wait_for_timeout(700)
         await shot(pg, "07-search-browse-light")
         await pg.fill("#q", "fisher"); await pg.wait_for_timeout(400)
         rows = await pg.evaluate("document.querySelectorAll('#sBody .srow').length")
@@ -208,7 +215,7 @@ async def main():
         if stub: check("partner card plays (loadPair + playBoth)", "loadPair" in names(c) and "playBoth" in names(c), names(c))
         sw = await pg.evaluate("document.documentElement.scrollWidth")
         check("no horizontal overflow at 390 (search)", sw <= 390, sw)
-        await pg.click("#tab-home"); await pg.wait_for_timeout(400)
+        await tab_click(pg, "#tab-home"); await pg.wait_for_timeout(400)
         check("zero console errors (light run)", not pg.errs, pg.errs)
         await pg.context.close()
 
@@ -223,7 +230,7 @@ async def main():
         await pg.evaluate("document.querySelector('#mixer').scrollTo(0, document.querySelector('#orb').offsetTop - 170)"); await pg.wait_for_timeout(600)
         await shot(pg, "14-mixer-orb-dark")
         await pg.keyboard.press("Escape"); await pg.wait_for_timeout(600)
-        await pg.click("#tab-search"); await pg.wait_for_timeout(500)
+        await tab_click(pg, "#tab-search"); await pg.wait_for_timeout(500)
         await pg.fill("#q", "עומר"); await pg.wait_for_timeout(400)
         await shot(pg, "15-search-dark")
         await pg.click('[data-act="source"] >> visible=true'); await pg.wait_for_timeout(800)
@@ -238,7 +245,7 @@ async def main():
             check("inside Claude → engine created with net:false", ["create", {"net": False}] in c, c[:2])
         vis = await pg.evaluate("!document.querySelector('#tab-dj').hidden")
         check("DJ tab visible when sample is available", vis)
-        await pg.click("#tab-dj"); await pg.wait_for_timeout(500)
+        await tab_click(pg, "#tab-dj"); await pg.wait_for_timeout(500)
         await pg.click('#sugg button >> nth=0'); await pg.wait_for_timeout(1500)
         res = await pg.evaluate("[window.__sampleCalls, (window.__toolNames||[]).join(','), document.querySelectorAll('#chat .card').length, !!document.querySelector('#chat .goto'), document.querySelector('#chat .bub.dj:last-of-type') && document.querySelector('#chat').textContent.includes('שני זוגות')]")
         check("DJ ran sample with the 5 tools and rendered 2 cards", res[0] == 1 and res[1] == "find_pairs,search_tracks,partners_for_track,present_pairs,update_view" and res[2] == 2 and res[3], res)

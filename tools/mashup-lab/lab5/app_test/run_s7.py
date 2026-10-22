@@ -10,6 +10,13 @@ SHOTS = os.path.join(HERE, "shots")
 ENGINE = sys.argv[1] if len(sys.argv) > 1 else "stub"
 RESULTS = []
 
+
+async def tab_click(pg, sel):
+    """the tab bar minimises into a circle while scrolling down (iOS 26): a user taps the circle first"""
+    await pg.evaluate("window.Liquid && Liquid.tabbar.minimized && Liquid.tabbar.expand()")
+    await pg.wait_for_timeout(450)
+    await pg.click(sel)
+
 def check(name, ok, info=""):
     RESULTS.append((name, bool(ok)))
     print(("PASS " if ok else "FAIL ") + name + (("  " + str(info)[:400]) if info and not ok else ""))
@@ -191,7 +198,7 @@ async def main():
             MashApp.addTab({ id: 'words', label: 'מעברי מילים', icon: 'spark', view: v, before: 'saved' }); MashApp.setTab('words'); })()""")
         await pg.wait_for_timeout(900)
         await shot(pg, "38-five-tabs-light")
-        geo = await pg.evaluate("(() => { const l = document.querySelector('#lens').getBoundingClientRect(), t = document.querySelector('#tab-words').getBoundingClientRect(), bar = document.querySelector('#tabbar').getBoundingClientRect(); return [Math.abs(l.left - t.left) < 2 && Math.abs(l.width - t.width) < 2, bar.width <= 390 - 32 + 0.5, document.querySelectorAll('.tab:not([hidden])').length]; })()")
+        geo = await pg.evaluate("(() => { const l = document.querySelector('.tb-plat').getBoundingClientRect(), t = document.querySelector('#tab-words').getBoundingClientRect(), bar = document.querySelector('#tabbar').getBoundingClientRect(); return [Math.abs(l.left - t.left) < 2 && Math.abs(l.width - t.width) < 2, bar.width <= 390 - 32 + 0.5, document.querySelectorAll('.tab:not([hidden])').length]; })()")
         check("addTab: 5 tabs fit at 390 and the lens sits on the new tab", geo[0] and geo[1] and geo[2] == 4 or geo[2] == 5 and geo[0] and geo[1], geo)
         check("zero console errors (5 tabs)", not pg.errs, pg.errs)
         await pg.context.close()
@@ -201,7 +208,7 @@ async def main():
             pg = await new_page(b, scheme=scheme, init=MOCK_CLAUDE)
             widths = {}
             for t in ("home", "search", "saved", "dj"):
-                await pg.click(f"#tab-{t}"); await pg.wait_for_timeout(450)
+                await tab_click(pg, f"#tab-{t}"); await pg.wait_for_timeout(450)
                 widths[t] = await pg.evaluate("document.documentElement.scrollWidth")
             await pg.click('#v-dj [data-act="source"]'); await pg.wait_for_timeout(700)
             widths["source"] = await pg.evaluate("[document.querySelector('#srcSheet').scrollWidth, document.querySelector('#srcSheet').clientWidth]")
