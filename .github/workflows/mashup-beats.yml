@@ -33,14 +33,25 @@ jobs:
   model:
     runs-on: ubuntu-latest
     steps:
-      - name: Download the Beat This! checkpoint once (shared by all shards)
+      - uses: actions/cache@v4
+        id: cache
+        with:
+          path: final0.ckpt
+          key: beat-this-final0-v1
+      - name: Download the Beat This! checkpoint once (official server, else a Hugging Face mirror of the same file)
+        if: steps.cache.outputs.cache-hit != 'true'
         run: |
-          for i in 1 2 3 4 5 6; do
-            curl -fsSL --retry 3 --retry-delay 15 -o final0.ckpt "https://cloud.cp.jku.at/public.php/dav/files/7ik4RrBKTS273gp/final0.ckpt" && break
-            echo "retry $i"; sleep $((20 * i))
+          ok=0
+          for u in "https://cloud.cp.jku.at/public.php/dav/files/7ik4RrBKTS273gp/final0.ckpt" \
+                   "https://huggingface.co/rtikw/localmusic-assets/resolve/main/analysis/beat_this-final0.ckpt"; do
+            for i in 1 2 3; do
+              if curl -fsSL --retry 2 --retry-delay 10 -A "Mozilla/5.0" -o final0.ckpt "$u" && [ "$(stat -c %s final0.ckpt)" -gt 50000000 ]; then ok=1; echo "downloaded from $u"; break 2; fi
+              echo "attempt $i failed for $u"; sleep $((15 * i))
+            done
           done
-          ls -la final0.ckpt
-          test "$(stat -c %s final0.ckpt)" -gt 10000000
+          [ "$ok" = 1 ]
+      - name: Checkpoint fingerprint (loaded with torch weights_only, so the file cannot run code)
+        run: ls -la final0.ckpt && sha256sum final0.ckpt
       - uses: actions/upload-artifact@v4
         with:
           name: model
