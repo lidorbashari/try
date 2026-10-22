@@ -40,7 +40,8 @@ jobs:
         timeout-minutes: 45
         run: |
           for i in $(seq 1 85); do
-            git fetch -q origin "${GITHUB_REF_NAME}" && git checkout FETCH_HEAD -- docs/mashup-lab/beats.json 2>/dev/null && break
+            git fetch -q origin "${GITHUB_REF_NAME}" && git checkout FETCH_HEAD -- docs/mashup-lab/beats.json 2>/dev/null \
+              && python -c "import json, sys; sys.exit(0 if json.load(open('docs/mashup-lab/beats.json'))['meta'].get('fit', 1) >= 2 else 1)" && break
             echo "waiting for beats.json ($i)"; sleep 30
           done
           test -f docs/mashup-lab/beats.json && python -c "import json; d = json.load(open('docs/mashup-lab/beats.json')); print('grids:', len(d['map']), d['meta'])"
@@ -71,7 +72,7 @@ jobs:
         run: |
           set -o pipefail
           mkdir -p tools/reports
-          python -u tools/mashup_lab_verify.py --page "${{ inputs.page || 'tools/verify/mashup-lab-next.html' }}" --pairs ${{ inputs.pairs || 30 }} \
+          VERIFY_SEED=11 python -u tools/mashup_lab_verify.py --page "${{ inputs.page || 'tools/verify/mashup-lab-next.html' }}" --pairs ${{ inputs.pairs || 30 }} \
             --checkpoint final0.ckpt 2>&1 | tee tools/reports/mashup-verify-log.txt
       - name: Commit the report
         if: always()

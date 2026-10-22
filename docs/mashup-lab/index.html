@@ -1318,17 +1318,18 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
     opts = opts || {};
     var net = opts.net !== false, root = opts.root || null, api = {}, ctx = null, master = null, comp = null, cors = null, unlocked = false, tickId = 0;
     var L = { change: [], ended: [], art: [] }, raf = 0, rafTO = 0, msTitle = "", msInit = false;
-    var S = { mode: null, seq: false, loop: false, xf: .5, cur: "A", clean: true, hold: 0, beat: "off", cue: "", bsync: true, pb: false }, rates = { A: 1, B: 1 }, D = {};
+    var S = { mode: null, seq: false, loop: false, xf: .5, cur: "A", clean: true, hold: 0, beat: "off", cue: "", bsync: true, pb: false, useBuf: true }, rates = { A: 1, B: 1 }, D = {};
     SIDES.forEach(function (s) {
       D[s] = { side: s, track: null, kind: "idle", busy: false, buffering: false, playing: false, pos: 0, dur: 0, vol: .85, eq: { low: 0, mid: 0, high: 0 },
         syncOn: true, rate: 1, eqActive: true, art: null, tok: 0, lv: 0, n: null, elC: null, elD: null, el: null, src: null, groove: null, url: null, sil: 0, why: "",
-        gate: 1, dip: 0, holdT: 0, playT: 0, moveT: 0, seekN: 0, grid: null, gridFor: null, gridDone: false };
+        gate: 1, dip: 0, holdT: 0, playT: 0, moveT: 0, seekN: 0, grid: null, gridFor: null, gridDone: false,
+        bmode: false, buf: null, sb: null, sr: 1, bs: null, t0: 0, o0: 0, ready: false, waitT: 0, noBuf: null, bsync: false };
     });
     function guard(fn) { return function () { try { return fn.apply(null, arguments); } catch (e) { try { console.warn("[MashEngine]", e); } catch (x) {} } }; }
     function fire(ev, arg) { L[ev].slice().forEach(function (f) { try { f(arg); } catch (e) { setTimeout(function () { throw e; }); } }); }
     function procMode(d) { /* clean-up only while both decks play a mashup together, on Apple previews routed through Web Audio */
       if (!S.clean || S.mode !== "both" || performance.now() < S.hold) return "off";
-      if (!bp(D.A) || !bp(D.B) || d.kind !== "apple" || d.el !== d.elC) return "off";
+      if (!bp(D.A) || !bp(D.B) || d.kind !== "apple" || !(d.bmode || d.el === d.elC)) return "off";
       return d.side === "A" ? "vocal" : "inst";
     }
     function applyProc() { SIDES.forEach(function (s) { var d = D[s]; if (d.n && d.n.proc) d.n.proc.set(procMode(d)); }); }
@@ -1351,7 +1352,7 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
     }
     function ensureCtx() {
       if (ctx || !AC) return ctx;
-      try { ctx = new AC(); } catch (e) { return null; }
+      try { ctx = new AC({ latencyHint: "playback" }); } catch (e) { try { ctx = new AC(); } catch (e2) { return null; } }
       master = gainN(ctx, MASTER); comp = ctx.createDynamicsCompressor(); comp.threshold.value = -10; comp.ratio.value = 4;
       master.connect(comp); comp.connect(ctx.destination);
       SIDES.forEach(function (s) { D[s].n = deckGraph(ctx, master); applyGains(D[s], true); hookC(D[s]); });
@@ -1404,6 +1405,7 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
       if (drop) d.el = null;
     }
     function startApple(d, url, direct) {
+      bufStop(d); d.bmode = false; d.ready = false; d.waitT = 0; d.bsync = false;
       ensureEls();
       if (!direct && cors !== false) { ensureCtx(); hookC(d); }
       direct = direct || cors === false || !d.src;
@@ -1451,7 +1453,7 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
     }
     function startStudio(d, o) {
       o = o || {};
-      stopApple(d, false); stopGroove(d);
+      stopApple(d, false); stopGroove(d); bufStop(d); d.bmode = false; d.ready = false; d.waitT = 0; d.bsync = false;
       d.tok++; d.kind = "studio"; d.eqActive = true; d.busy = false; d.buffering = false; d.playing = false; d.rate = effRate(d);
       if (!ensureCtx()) { emit(); return; }
       resumeCtx(); gateOpen(d, 0, .02); /* Studio Groove schedules its own beat grid: never muted */
@@ -1472,9 +1474,10 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
         var d = D[s], g = d.groove;
         if (g && d.playing) { act = true; g.schedule(t + lookahead(), t); if (t >= g.tEnd - .03) ended(d, g.tEnd); }
         if (d.kind === "apple" && d.playing && d.el && d.el === d.elC && cors !== true && d.n) watchdog(d);
-        if (d.kind === "apple" && d.url && S.mode === "both") wantGrid(d);
+        if (d.kind === "apple" && d.url && S.mode === "both" && !d.bmode) wantGrid(d);
         if (bp(d)) act = true;
       });
+      try { bufTick(); } catch (e) {}
       try { alignTick(); } catch (e) {}
       if (!act) { clearInterval(tickId); tickId = 0; }
     }
@@ -1590,8 +1593,15 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
       if (F.gate !== 1) gateOpen(F, al.ok ? nextEntry(L) : 0, al.ok ? .07 : .3);
     }
     function syncUi() {
-      var cue = D.A.gate !== 1 && bp(D.A) ? "A" : D.B.gate !== 1 && bp(D.B) ? "B" : "";
-      var b = cue || (al.key && !al.done) ? "aligning" : al.key && al.done && al.ok ? "locked" : "off";
+      var cue, b;
+      if (D.A.bmode || D.B.bmode) { /* decoded decks: "aligning" while one waits to enter on the beat, "locked" once both run synced */
+        var t = ctx ? ctx.currentTime : 0;
+        cue = SIDES.filter(function (s) { var d = D[s], O = D[other(s)]; return d.bmode && O.playing && S.mode === "both" && (d.busy || (d.playing && d.t0 > t + .01)); })[0] || "";
+        b = cue ? "aligning" : D.A.bsync && D.B.bsync && D.A.playing && D.B.playing ? "locked" : "off";
+      } else {
+        cue = D.A.gate !== 1 && bp(D.A) ? "A" : D.B.gate !== 1 && bp(D.B) ? "B" : "";
+        b = cue || (al.key && !al.done) ? "aligning" : al.key && al.done && al.ok ? "locked" : "off";
+      }
       if (b !== S.beat || cue !== S.cue) { S.beat = b; S.cue = cue; emit(); }
     }
     function alignTick() {
@@ -1631,15 +1641,202 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
       al.fixes++; al.next = pn + 950;
     }
 
+    /* ---- decoded-buffer decks: the main way to play Apple previews ----
+       The preview is fetched once (CORS), decoded into memory and played by an AudioBufferSourceNode, so both decks
+       run on the AudioContext clock and a synced start is exact to the sample: no seeking, no tempo nudging and no
+       media-element path (Safari feeds <audio> into Web Audio through an adaptive buffer that shifts each deck by
+       tens of ms and sometimes speeds it up). The follower is time-stretched once (pitch kept) to the leader's tempo
+       and started on the leader's next beat 1 or 3 with the same bar phase. Audio stays in memory for this page only. */
+    var BUF = {}, RAW = {};
+    function bufOk(d, url) { return net && !!AC && !!W.fetch && cors !== false && S.useBuf && !(d && url && d.noBuf === url) && !!ensureCtx(); }
+    function fetchBytes(url) {
+      return new Promise(function (res, rej) {
+        var ac = W.AbortController ? new AbortController() : null, done = false, o = { mode: "cors", credentials: "omit" };
+        if (ac) o.signal = ac.signal;
+        var to = setTimeout(function () { if (done) return; done = true; try { if (ac) ac.abort(); } catch (e) {} rej(new Error("timeout")); }, 9000);
+        W.fetch(url, o).then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.arrayBuffer(); })
+          .then(function (ab) { if (!done) { done = true; clearTimeout(to); res(ab); } }, function (e) { if (!done) { done = true; clearTimeout(to); rej(e); } });
+      });
+    }
+    function prefetchBytes(url) { if (!url || RAW[url] || BUF[url]) return; var p = RAW[url] = fetchBytes(url); p.catch(function () { if (RAW[url] === p) delete RAW[url]; }); }
+    function loadBuf(url) {
+      var e = BUF[url];
+      if (e) { e.t = Date.now(); return e.p; }
+      e = BUF[url] = { t: Date.now(), p: null, buf: null, st: null };
+      var raw = RAW[url] || fetchBytes(url); delete RAW[url];
+      e.p = raw.then(function (ab) { return decodeOn(ctx, ab); }).then(function (b) { e.buf = b; trimBuf(); return b; },
+        function () { if (BUF[url] === e) delete BUF[url]; return null; });
+      return e.p;
+    }
+    function trimBuf() { /* the two loaded tracks + two more stay decoded */
+      var used = [D.A.buf, D.B.buf], ks = Object.keys(BUF).filter(function (k) { return BUF[k].buf && used.indexOf(BUF[k].buf) < 0; });
+      ks.sort(function (a, b) { return BUF[a].t - BUF[b].t; });
+      while (ks.length > 2) delete BUF[ks.shift()];
+    }
+    function serverGrid(d) {
+      var v = d.track && BG[ckey(d.track)];
+      if (!v || !d.url || v[4] !== hex8(hash(d.url)) || !(v[3] >= .5)) return null;
+      return { bpm: v[0], b0: v[1], db: v[2], conf: v[3], src: "server" };
+    }
+    function gridOf(d) { /* server grid (Beat This! on the preview) → cached analysis → analyse the decoded audio here */
+      var g = serverGrid(d);
+      if (g) { d.grid = g; d.gridDone = true; return Promise.resolve(g); }
+      var k = d.url + "|" + Math.round(d.track.bpm || 0), b = d.buf;
+      if (BEATS[k]) { d.grid = BEATS[k].conf >= 2 ? BEATS[k] : null; d.gridDone = true; return Promise.resolve(d.grid); }
+      return bands(b).then(function (r) { return new Promise(function (res) { setTimeout(function () { res(gridFrom(r, d.track.bpm)); }, 0); }); }).then(function (x) {
+        if (x) { x.src = "local"; BEATS[k] = x; saveBeats(); }
+        if (d.buf === b) { d.grid = x && x.conf >= 2 ? x : null; d.gridDone = true; }
+        return d.grid;
+      }, function () { if (d.buf === b) { d.grid = null; d.gridDone = true; } return null; });
+    }
+    function stretchBuffer(b, r) {
+      var n = Math.min(2, b.numberOfChannels), chs = [], c;
+      for (c = 0; c < n; c++) chs.push(b.getChannelData(c));
+      var out = wsola(chs, r, b.sampleRate), ob = ctx.createBuffer(n, out[0].length, b.sampleRate);
+      for (c = 0; c < n; c++) { if (ob.copyToChannel) ob.copyToChannel(out[c], c); else ob.getChannelData(c).set(out[c]); }
+      return ob;
+    }
+    function setSB(d, r) { /* what deck d plays: the decoded original, or a copy stretched once to speed r */
+      r = Math.round(clamp(r, .5, 2) * 1e5) / 1e5;
+      if (Math.abs(r - 1) < 5e-4) { d.sb = d.buf; d.sr = 1; return; }
+      var e = BUF[d.url];
+      if (e && e.st && e.st.r === r && e.st.src === d.buf) { d.sb = e.st.b; d.sr = r; return; }
+      var b = stretchBuffer(d.buf, r);
+      if (e) e.st = { r: r, b: b, src: d.buf };
+      d.sb = b; d.sr = r;
+    }
+    function warm(d, r) { /* stretch ahead of time (a word-play handoff must start at once) */
+      var u = d.url || (d.track && cget(d.track) && cget(d.track).p), trk = d.track;
+      if (!u || Math.abs(r - 1) < 5e-4 || !bufOk(d, u)) return;
+      loadBuf(u).then(function (b) { setTimeout(guard(function () {
+        var e = BUF[u]; r = Math.round(clamp(r, .5, 2) * 1e5) / 1e5;
+        if (!b || !e || d.track !== trk || (e.st && e.st.r === r && e.st.src === b)) return;
+        e.st = { r: r, b: stretchBuffer(b, r), src: b };
+      }), 30); });
+    }
+    function posAt(d, T) { return (d.o0 + Math.max(0, T - d.t0)) * d.sr; }
+    function xOf(g, t) { return (t - g.b0) / (60 / g.bpm) - g.db; }      /* beats since a bar line */
+    function tOf(g, x) { return g.b0 + (g.db + x) * (60 / g.bpm); }
+    function qOf(gF, effL) { return [.5, 1, 2].reduce(function (x, y) { return Math.abs(gF.bpm - effL * y) < Math.abs(gF.bpm - effL * x) ? y : x; }, 1); }
+    function phasePos(F, xL, q, want) { /* follower position (s) near `want` with the leader's bar phase xL */
+      var g = F.grid, M = q === .5 ? 8 : 4, per = q * M, x0 = q * xL, x = x0 + Math.round((xOf(g, want) - x0) / per) * per, p = tOf(g, x), lim = (F.dur || 30) - 2;
+      while (p < .05) { x += per; p = tOf(g, x); }
+      if (p > lim && tOf(g, x - per) >= .05) p = tOf(g, x - per);
+      return p;
+    }
+    function phaseLead(L, xF, q, want) { /* leader position (s) near `want` whose bar phase matches follower phase xF */
+      var g = L.grid, M = q === .5 ? 8 : 4, x0 = xF / q, x = x0 + Math.round((xOf(g, want) - x0) / M) * M, p = tOf(g, x), lim = (L.dur || 30) - 2;
+      while (p < .05) { x += M; p = tOf(g, x); }
+      if (p > lim && tOf(g, x - M) >= .05) p = tOf(g, x - M);
+      return p;
+    }
+    function bufStop(d) { var s = d.bs; d.bs = null; if (!s) return; s.onended = null; try { s.stop(); } catch (e) {} try { s.disconnect(); } catch (e) {} }
+    function gateBlip(d, T) { /* 16 ms dip around a seamless handover, so the splice never clicks */
+      try { var p = d.n.gate.gain; p.cancelScheduledValues(ctx.currentTime); p.setValueAtTime(1, Math.max(ctx.currentTime, T - .016)); p.linearRampToValueAtTime(0, T); p.linearRampToValueAtTime(1, T + .016); } catch (e) {}
+    }
+    function startSrc(d, when, pos, seamless) {
+      var old = d.bs, t = ctx.currentTime, s = ctx.createBufferSource();
+      when = Math.max(when, t + .005);
+      s.buffer = d.sb; s.connect(d.n.inp);
+      var off = clamp(pos / d.sr, 0, Math.max(0, d.sb.duration - .05));
+      s.onended = guard(function () { if (s === d.bs && d.playing && d.bmode) ended(d, 0); });
+      s.start(when, off);
+      if (old) {
+        old.onended = null; try { old.stop(seamless ? when : 0); } catch (e) {}
+        if (seamless) gateBlip(d, when);
+        setTimeout(function () { try { old.disconnect(); } catch (e) {} }, Math.max(0, (when - t) * 1000) + 300);
+      }
+      d.bs = s; d.t0 = when; d.o0 = off; d.pos = off * d.sr; d.busy = false; d.playing = true; d.ready = false; d.waitT = 0; d.playT = performance.now(); d.rate = d.sr;
+      ensureTick(); emit();
+    }
+    function syncable(d, O) { /* buffer starts are exact whenever they run (even with the screen locked); only a word-play handoff opts out */
+      return S.bsync && S.mode === "both" && performance.now() >= S.hold && d.syncOn && O.syncOn && !!d.grid && !!O.track;
+    }
+    function solo(d, seamless) { /* start (or re-time a playing deck) at its own tempo, from where it is */
+      d.waitT = 0; d.bsync = false;
+      var o0 = d.o0, t0 = d.t0, r0 = d.sr, live = !!d.bs;
+      setSB(d, effRate(d));
+      var T = ctx.currentTime + .03;
+      startSrc(d, T, live ? Math.min(d.dur || 1e9, (o0 + Math.max(0, T - t0)) * r0) : d.pos, seamless);
+    }
+    function join(d, L, seamless) { /* d enters on the leader's next beat 1 or 3, at the leader's tempo, same bar phase */
+      var gL = L.grid, effL = gL.bpm * L.sr, q = qOf(d.grid, effL), r = effL * q / d.grid.bpm, want = curPos(d);
+      if (r < .9 || r > 1.1) { solo(d, seamless); return; }
+      setSB(d, r);                                                              /* stretch first: the timing below must be fresh */
+      var tref = Math.max(ctx.currentTime, L.t0), perL = 60 / gL.bpm / L.sr, xL = xOf(gL, posAt(L, tref));
+      var k = Math.ceil((xL + .2 / perL) / 2) * 2, T = tref + (k - xL) * perL;    /* ≥ 0.2 s ahead */
+      startSrc(d, T, phasePos(d, k, q, want > .05 ? want : downbeat(d.grid)), seamless);
+      d.bsync = L.bsync = true;
+    }
+    function beatJoin(B, A, seamless) { /* the beat joins a playing vocal: the beat keeps its own tempo (drums and bass are
+         never stretched); at the entry point the vocal switches once, seamlessly, to the beat's tempo */
+      var gB = B.grid, gA = A.grid, q = qOf(gA, gB.bpm), r = gB.bpm * q / gA.bpm, want = curPos(B);
+      if (r < .9 || r > 1.1) { solo(B, seamless); return; }
+      var o0 = A.o0, t0 = A.t0, r0 = A.sr, same = Math.abs(r - r0) < 1e-4;      /* the vocal's clock mapping right now */
+      setSB(B, 1); if (!same) setSB(A, r);                                       /* stretching first: the timing below must be fresh */
+      var tref = Math.max(ctx.currentTime, t0), perA = 60 / gA.bpm / r0, xA = xOf(gA, (o0 + (tref - t0)) * r0);
+      var k = Math.ceil((xA + .2 / perA) / 2) * 2, T = tref + (k - xA) * perA;    /* the vocal's next beat 1 or 3, ≥ 0.2 s ahead */
+      startSrc(B, T, phaseLead(B, k, q, want > .05 ? want : downbeat(gB)), seamless);
+      if (!same) startSrc(A, T, (o0 + (T - t0)) * r0, true);                     /* same place in the song, new tempo, from T */
+      A.bsync = B.bsync = true;
+    }
+    function together() { /* both decks loaded: start them on the same clock tick, bar lines aligned */
+      var A = D.A, B = D.B; A.waitT = B.waitT = 0;
+      if (!(A.ready && B.ready && A.busy && B.busy)) return;
+      var ok = !!(A.grid && B.grid && syncable(A, B) && syncable(B, A)), q = 1, r = 1;
+      if (ok) { q = qOf(A.grid, B.grid.bpm); r = B.grid.bpm * q / A.grid.bpm; ok = r >= .9 && r <= 1.1; }
+      if (!ok) { setSB(A, effRate(A)); setSB(B, effRate(B)); var T0 = ctx.currentTime + .08; startSrc(B, T0, B.pos); startSrc(A, T0, A.pos); return; }
+      setSB(B, 1); setSB(A, r);                                                 /* the beat keeps its own tempo; the vocal follows it */
+      var T = ctx.currentTime + .08, pB = B.pos > .05 ? B.pos : downbeat(B.grid), xB = xOf(B.grid, pB);
+      startSrc(B, T, pB); startSrc(A, T, phasePos(A, xB, q, A.pos > .05 ? A.pos : downbeat(A.grid)));
+      A.bsync = B.bsync = true;
+    }
+    function place(d) { /* decoded + grid known: start now, join the playing deck, or wait for the other one */
+      var O = D[other(d.side)];
+      if (!d.ready || !d.busy || !d.bmode) return;
+      if (syncable(d, O) && O.bmode) {
+        if (O.playing && O.grid && O.bs) { if (d.side === "B") beatJoin(d, O); else join(d, O); return; }
+        if (O.busy) { if (O.ready) together(); else { d.waitT = performance.now(); ensureTick(); } return; }
+      }
+      solo(d);
+    }
+    function startBuf(d, url) {
+      stopGroove(d); stopApple(d, false); bufStop(d);
+      var tok = ++d.tok;
+      d.kind = "apple"; d.bmode = true; d.url = url; d.el = null; d.busy = true; d.playing = false; d.buffering = false; d.why = ""; d.eqActive = true;
+      d.moveT = performance.now(); d.ready = false; d.waitT = 0; d.bsync = false; d.retry = false;
+      gateOpen(d, 0, .02);
+      var to = setTimeout(guard(function () { if (tok === d.tok && d.busy && !d.ready) { d.noBuf = url; startApple(d, url, false); } }), 8000); /* slow network: stream it */
+      loadBuf(url).then(guard(function (b) {
+        if (tok !== d.tok) return;
+        if (!b) { clearTimeout(to); d.noBuf = url; startApple(d, url, false); return; }   /* no CORS / decode error: stream it */
+        if (d.buf !== b) { d.buf = b; d.sb = null; d.sr = 1; }
+        d.dur = b.duration;
+        gridOf(d).then(guard(function () { if (tok !== d.tok) return; clearTimeout(to); d.ready = true; place(d); }));
+      }));
+      ensureTick(); emit();
+    }
+    function preload(d) { var c = d.track && cget(d.track); if (c && c.p && bufOk(d, c.p)) loadBuf(c.p); }
+    function bufTick() {
+      SIDES.forEach(function (s) {
+        var d = D[s], O = D[other(s)];
+        if (d.bmode && d.busy && d.ready && d.waitT) {
+          if (O.bmode && O.busy && O.ready) together();
+          else if (!(O.bmode && O.busy) || performance.now() - d.waitT > 2500) solo(d);   /* the other deck is late: start, it joins on the beat */
+        }
+      });
+    }
+
     /* ---- deck control ---- */
     function curPos(d) {
+      if (d.bmode && d.bs && ctx) return Math.min(d.dur || 1e9, posAt(d, ctx.currentTime));
       if (d.kind === "apple" && d.el && d.el._u) return d.el.currentTime || (d.busy ? d.pos : 0);
       if (d.kind === "studio" && d.groove) return d.groove.pos(now());
       return d.pos;
     }
     function halt(d) {
-      d.pos = curPos(d); d.tok++; d.busy = false; d.buffering = false; d.playing = false; d.playT = 0;
-      stopGroove(d); if (d.el) try { d.el.pause(); } catch (e) {}
+      d.pos = curPos(d); d.tok++; d.busy = false; d.buffering = false; d.playing = false; d.playT = 0; d.ready = false; d.waitT = 0;
+      stopGroove(d); bufStop(d); if (d.el) try { d.el.pause(); } catch (e) {}
     }
     function startDeck(d, o) {
       if (!d.track || bp(d)) return;
@@ -1647,15 +1844,15 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
       if (d.dur && d.pos >= d.dur - .25) d.pos = 0;
       if (!net) { d.why = "claude"; startStudio(d, o); return; }
       var c = cget(d.track);
-      if (c && c.p) { startApple(d, c.p, false); return; } /* cached: el.play() synchronously inside the gesture */
+      if (c && c.p) { if (bufOk(d, c.p)) startBuf(d, c.p); else startApple(d, c.p, false); return; } /* decoded buffer; or el.play() inside the gesture */
       if (c) { d.why = "miss"; startStudio(d, o); return; } /* known: Apple has no preview for this song */
       var tok = ++d.tok, trk = d.track; d.busy = true;
       var to = setTimeout(guard(function () { if (tok === d.tok && d.busy) { d.why = "slow"; startStudio(d, o); } }), 6000); /* wait ≤ 6 s */
       lookup(d.track, true).then(guard(function (r) {
         clearTimeout(to);
-        if (tok === d.tok && d.busy) { if (r && r.p) startApple(d, r.p, false); else { d.why = diag.last === "net" ? "net" : "miss"; startStudio(d, o); } return; }
+        if (tok === d.tok && d.busy) { if (r && r.p) { if (bufOk(d, r.p)) startBuf(d, r.p); else startApple(d, r.p, false); } else { d.why = diag.last === "net" ? "net" : "miss"; startStudio(d, o); } return; }
         /* late result: this deck fell back to Studio Groove for the same track and is still playing → switch to the original now */
-        if (r && r.p && d.track === trk && d.kind === "studio" && d.playing && S.mode !== "seq") { d.pos = 0; startApple(d, r.p, false); }
+        if (r && r.p && d.track === trk && d.kind === "studio" && d.playing && S.mode !== "seq") { d.pos = 0; if (bufOk(d, r.p)) startBuf(d, r.p); else startApple(d, r.p, false); }
       }));
       ensureTick(); emit();
     }
@@ -1672,6 +1869,7 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
     function setTrack(d, t) {
       halt(d); stopApple(d, true);
       d.track = t || null; d.kind = "idle"; d.pos = 0; d.url = null; d.lv = 0; d.retry = false; d.why = ""; d.grid = null; d.gridFor = null; d.gridDone = false;
+      bufStop(d); d.bmode = false; d.buf = null; d.sb = null; d.sr = 1; d.bsync = false; d.ready = false; d.waitT = 0; d.noBuf = null;
       d.art = t ? api.art(t) : null; d.eqActive = !(net && cors === false); d.rate = effRate(d);
       d.dur = t ? grooveBars(tempoOf(d)) * 240 / tempoOf(d) : 0;
     }
@@ -1680,7 +1878,9 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
       SIDES.forEach(applyRate);
     }
     function applyRate(s) {
-      var d = D[s], r = effRate(d); if (r === d.rate && !(d.groove && Math.abs(d.groove.tempo - tempoOf(d)) > 1e-6)) return;
+      var d = D[s], r = effRate(d);
+      if (d.bmode) { if (d.playing && d.buf && !d.bsync && Math.abs(r - d.sr) > 5e-4) solo(d, true); return; }
+      if (r === d.rate && !(d.groove && Math.abs(d.groove.tempo - tempoOf(d)) > 1e-6)) return;
       d.rate = r;
       [d.elC, d.elD].forEach(function (el) { if (el) pitch(el, r); });
       if (d.groove) d.groove.retempo(tempoOf(d), now());
@@ -1728,7 +1928,7 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
     });
     api.loadPair = guard(function (v, b, r) {
       SIDES.forEach(function (s) { halt(D[s]); }); setRatesInt(r); setTrack(D.A, v); setTrack(D.B, b); S.mode = null; S.seq = false; S.cur = "A";
-      SIDES.forEach(function (s) { wantGrid(D[s]); });
+      SIDES.forEach(function (s) { var d = D[s], c = d.track && cget(d.track); if (c && c.p && bufOk(d, c.p)) preload(d); else wantGrid(d); });
       if (net) { if (v) lookup(v).catch(noop); if (b) lookup(b).catch(noop); }
       emit();
     });
@@ -1742,6 +1942,7 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
       } else setRatesInt(r);
       d.dur = t ? grooveBars(tempoOf(d)) * 240 / tempoOf(d) : 0;
       if (net && t) lookup(t, was).catch(noop);
+      preload(d);
       if (was && t) playIn(s);
       emit();
     });
@@ -1762,6 +1963,15 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
     api.seek = guard(function (s, sec) {
       s = side(s); if (!s) return;
       var d = D[s]; sec = clamp(sec, 0, d.dur || 30); d.seekN++; d.moveT = performance.now(); /* the moved deck re-syncs to the other one */
+      if (d.bmode) {
+        d.pos = sec;
+        if (d.playing && d.sb && ctx) {
+          var O = D[other(s)], T = ctx.currentTime + .04;
+          if (d.bsync && O.bmode && O.playing && O.bs && O.grid && d.grid) startSrc(d, T, phasePos(d, xOf(O.grid, posAt(O, T)), qOf(d.grid, O.grid.bpm * O.sr), sec), true);
+          else startSrc(d, T, sec, true);
+        }
+        emit(); return;
+      }
       if (d.kind === "apple" && d.el && d.el._u) { try { d.el.currentTime = sec; } catch (e) {} d.pos = sec; }
       else if (d.kind === "studio" && d.groove && d.playing) { d.pos = sec; startStudio(d); }
       else d.pos = sec;
@@ -1778,7 +1988,7 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
       if (both && bp(D.A) && bp(D.B)) D.A.moveT = Math.max(D.A.moveT, D.B.moveT) + 1; /* …and stays the follower if its gate had to open early */
       emit();
     });
-    api.playOnly = guard(function (s) { s = side(s); if (!s) return; halt(D[other(s)]); S.seq = false; S.mode = s; playIn(s); emit(); });
+    api.playOnly = guard(function (s) { s = side(s); if (!s) return; halt(D[other(s)]); S.seq = false; S.mode = s; playIn(s); warm(D[other(s)], effRate(D[other(s)])); emit(); });
     api.pauseAll = guard(function () { SIDES.forEach(function (s) { halt(D[s]); }); emit(); });
     api.stopAll = guard(function () { SIDES.forEach(function (s) { var d = D[s]; halt(d); d.pos = 0; if (d.el && d.el._u) try { d.el.currentTime = 0; } catch (e) {} }); emit(); });
     api.resume = guard(function () {
@@ -1794,8 +2004,13 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
     api.setVolume = guard(function (s, v) { s = side(s); if (!s) return; D[s].vol = clamp(v, 0, 1); applyGains(D[s]); emit(); });
     api.setEq = guard(function (s, band, db) { s = side(s); if (!s || !(band in D[s].eq)) return; D[s].eq[band] = clamp(db, -24, 6); applyGains(D[s]); emit(); });
     api.setSync = guard(function (s, on) {
-      s = side(s); if (!s) return; var d = D[s]; d.syncOn = !!on; d.moveT = performance.now(); applyRate(s);
+      s = side(s); if (!s) return; var d = D[s]; d.syncOn = !!on; d.moveT = performance.now();
       var O = D[other(s)];
+      if (d.bmode && d.playing && d.buf && ctx) {
+        if (on && syncable(d, O) && O.bmode && O.playing && O.bs && O.grid) { if (s === "B") beatJoin(d, O, true); else join(d, O, true); } else solo(d, true);
+        emit(); return;
+      }
+      applyRate(s);
       if (on && d.groove && O.groove && d.playing && O.playing) { d.pos = curPos(d); startStudio(d); } /* re-lock the beat grid */
       emit();
     });
@@ -1805,7 +2020,7 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
       function cp(d) {
         var dur = d.kind === "apple" && d.el && isFinite(d.el.duration) && d.el.duration > 0 ? d.el.duration : d.dur;
         return { track: d.track, kind: d.kind, busy: d.busy, buffering: d.buffering, playing: d.playing, pos: Math.min(curPos(d), dur || 1e9), dur: dur, vol: d.vol,
-          eq: { low: d.eq.low, mid: d.eq.mid, high: d.eq.high }, syncOn: d.syncOn, rate: d.rate, eqActive: d.kind === "studio" ? true : d.eqActive, art: d.art, why: d.kind === "studio" ? (d.why || "") : "", vox: d.n && d.n.proc ? d.n.proc.mode : "off", grid: d.grid ? { bpm: d.grid.bpm, conf: d.grid.conf } : null, held: d.gate !== 1 };
+          eq: { low: d.eq.low, mid: d.eq.mid, high: d.eq.high }, syncOn: d.syncOn, rate: d.rate, eqActive: d.kind === "studio" ? true : d.eqActive, art: d.art, why: d.kind === "studio" ? (d.why || "") : "", vox: d.n && d.n.proc ? d.n.proc.mode : "off", grid: d.grid ? { bpm: d.grid.bpm, conf: d.grid.conf, src: d.grid.src || "" } : null, held: d.gate !== 1, bm: !!d.bmode, sync: !!d.bsync };
       }
       try { return { mode: S.mode, seq: S.seq, loop: S.loop, xf: S.xf, clean: S.clean, beat: S.beat, cue: S.cue, A: cp(D.A), B: cp(D.B) }; } catch (e) { return { mode: null, seq: false, loop: false, xf: .5, A: null, B: null }; }
     };
@@ -1813,7 +2028,7 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
       var ph = performance.now() / 1000 * tempoOf(d) / 60;
       return d.side === "A" ? .42 + .22 * Math.sin(ph * Math.PI * .5) + .14 * Math.sin(ph * Math.PI * 2 + 1) : .22 + .7 * Math.pow(Math.max(0, Math.cos(ph * Math.PI * 2)), 6);
     }
-    function measurable(d) { return d.n && ctx && ctx.state === "running" && (d.kind === "studio" || (d.kind === "apple" && d.el === d.elC && cors !== false)); }
+    function measurable(d) { return d.n && ctx && ctx.state === "running" && (d.kind === "studio" || (d.kind === "apple" && (d.bmode || (d.el === d.elC && cors !== false)))); }
     api.level = function (s) {
       try {
         var d = D[side(s)], raw = 0;
@@ -1844,6 +2059,10 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
     api.hintCors = function (v) { if (cors === null && typeof v === "boolean") cors = v; };
     api.setClean = guard(function (on) { S.clean = !!on; emit(); });
     api.setBeatSync = guard(function (on) { S.bsync = !!on; emit(); });
+    api.setBufMode = guard(function (on) { S.useBuf = !!on; });
+    api.prefetchAudio = guard(function (t) { var c = net && t ? cget(t) : null; if (c && c.p && bufOk(null, c.p)) prefetchBytes(c.p); });
+    api._nodes = function (s) { var d = D[side(s)]; return d ? d.n : null; };   /* tests: tap a deck's signal */
+    api._ctx = function () { return ctx; };
     api.holdClean = guard(function (ms) { S.hold = performance.now() + Math.max(0, Number(ms) || 0); setTimeout(guard(emit), (Number(ms) || 0) + 30); emit(); });
     api.diag = function () { return { net: net, cors: cors, backoff: Math.max(0, backoff - Date.now()), ok: diag.ok, miss: diag.miss, fail: diag.fail, last: diag.last, via: diag.via, fetchErr: diag.fetchErr }; };
     api.probe = function () { /* connection test for the audio-source sheet: one fresh search (cache bypassed) */
@@ -1860,7 +2079,8 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
         var d = D[s], n = d.n, g = d.groove;
         o[s] = { C: el(d.elC), D: el(d.elD), active: d.el ? (d.el === d.elC ? "C" : "D") : null, url: d.url, tempo: g ? g.tempo : null,
           groove: g ? { t0: g.t0, tStart: g.tStart, dt: g.dt, div: g.div, cOff: g.cOff, k0: g.k0, bars: g.bars, pat: g.P ? Object.keys(GP).filter(function (k) { return GP[k] === g.P; })[0] : "lead" } : null,
-          g: n ? { vol: n.vol.gain.value, gate: n.gate.gain.value, xf: n.xf.gain.value, low: n.lo.gain.value, mid: n.mid.gain.value, high: n.hi.gain.value } : null, held: d.gate !== 1 };
+          g: n ? { vol: n.vol.gain.value, gate: n.gate.gain.value, xf: n.xf.gain.value, low: n.lo.gain.value, mid: n.mid.gain.value, high: n.hi.gain.value } : null, held: d.gate !== 1,
+          buf: { bm: !!d.bmode, sr: d.sr, t0: d.t0, o0: d.o0, pos: curPos(d), dur: d.dur, sync: !!d.bsync, ready: !!d.ready, grid: d.grid ? [d.grid.bpm, d.grid.b0, d.grid.db, d.grid.src || ""] : null, now: ctx ? ctx.currentTime : 0, noBuf: d.noBuf } };
       });
       return o;
     };
@@ -1947,6 +2167,87 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
       .then(decodeAudio).then(bands).then(function (r) { return new Promise(function (res) { setTimeout(function () { res(gridFrom(r, hint)); }, 30); }); })
       .then(function (g) { delete beatPend[key]; if (g) { BEATS[key] = g; saveBeats(); } return g; }, function () { delete beatPend[key]; return null; }));
   }
+  /* ---------------- time-stretch with the pitch kept: WSOLA (as in SoundTouch's TDStretch) ----------------
+     rate > 1 plays faster. 60 ms segments joined by 12 ms raised-cosine crossfades; each splice point is searched
+     ±8 ms for the best waveform match (coarse on a 4× decimated mono mix, then sample-exact). Transient-aware:
+     a splice never crossfades through a drum hit or a consonant, and never skips or repeats one. Output position
+     t always takes input from t × rate (± the 8 ms search), so beat times map linearly. ~50 ms per 30 s preview. */
+  function wsola(chs, rate, sr) {
+    var nC = chs.length, N = chs[0].length, c, i, j;
+    if (!(rate > 0) || Math.abs(rate - 1) < 1e-6 || N < sr) return chs.map(function (x) { return new Float32Array(x); });
+    var seq = Math.round(sr * .06), ov = Math.round(sr * .012), sw = Math.round(sr * .008), hop = seq - ov;
+    var outN = Math.max(1, Math.round(N / rate)), out = [];
+    for (c = 0; c < nC; c++) out.push(new Float32Array(outN + seq + Math.round(sr * .03)));
+    var mono = new Float32Array(N), md = new Float32Array((N >> 2) + 1);
+    for (c = 0; c < nC; c++) { var xc = chs[c]; for (i = 0; i < N; i++) mono[i] += xc[i]; }
+    for (i = 0; i + 3 < N; i += 4) md[i >> 2] = mono[i] + mono[i + 1] + mono[i + 2] + mono[i + 3];
+    /* transients (drum hits, consonants): 1 ms blocks whose high-frequency energy jumps 6× above the last 20 ms */
+    var B = Math.max(1, Math.round(sr / 1000)), nb = Math.ceil(N / B) + 1, en = new Float64Array(nb), pre = new Int32Array(nb + 1), run = 0, peak = 0;
+    for (i = 1; i < N; i++) { var dd = mono[i] - mono[i - 1]; en[(i / B) | 0] += dd * dd; }
+    for (j = 0; j < nb; j++) if (en[j] > peak) peak = en[j];
+    for (j = 0; j < nb; j++) {
+      var mean = j >= 20 ? run / 20 : j ? run / j : en[0];
+      pre[j + 1] = pre[j] + (en[j] > 6 * mean && en[j] > peak * 1e-4 ? 1 : 0);
+      run += en[j]; if (j >= 20) run -= en[j - 20];
+    }
+    function hasTr(a, b2) { var ja = Math.max(0, Math.floor(a / B)), jb = Math.min(nb, Math.ceil(b2 / B)); return jb > ja && pre[jb] > pre[ja]; }
+    var w = new Float32Array(ov); for (i = 0; i < ov; i++) w[i] = .5 - .5 * Math.cos(Math.PI * (i + .5) / ov);
+    /* best splice: normalised waveform correlation with the natural continuation, minus a heavy penalty when the
+       material that would be skipped or repeated (between ref and s) holds a transient */
+    function best(a, D2, ra, lo, hi, len, ref, ideal) {
+      var bs = lo, bv = -1e30, k, s2, nrm = 0, rn = 0, cr, v;
+      for (k = 0; k < len; k++) { nrm += a[lo + k] * a[lo + k]; rn += a[ra + k] * a[ra + k]; }
+      for (s2 = lo; s2 <= hi; s2++) {
+        if (s2 > lo) { var o1 = a[s2 - 1], n1 = a[s2 + len - 1]; nrm += n1 * n1 - o1 * o1; }
+        cr = 0; for (k = 0; k < len; k++) cr += a[ra + k] * a[s2 + k];
+        v = cr / Math.sqrt(Math.max(1e-12, nrm * rn));                                   /* −1 … 1 */
+        var sx = s2 * D2; if (hasTr(Math.min(sx, ref) - B, Math.max(sx, ref) + ov + B)) v -= 3;
+        v -= .35 * Math.abs(sx - ideal) / sw;                                             /* stay close to the ideal timing */
+        if (v > bv) { bv = v; bs = s2; }
+      }
+      return bs;
+    }
+    var prev = 0, segOut = 0, filled = Math.min(seq, N);
+    for (c = 0; c < nC; c++) out[c].set(chs[c].subarray(0, filled), 0);
+    var maxExt = Math.round(sr * .025), pad = 2 * B, dev = 0, ideal = 0; /* dev: running mean of (chosen − ideal) input position */
+    while (true) {
+      /* move the splice later (≤ 25 ms) while it would crossfade through a hit, or while every candidate in the
+         search window would skip (speeding up) or repeat (slowing down) one */
+      var ext = 0, op, ref, tg, lo, hi;
+      for (;;) {
+        op = segOut + hop + ext; ref = prev + hop + ext; ideal = op * rate; tg = Math.round(ideal - .8 * dev); lo = Math.max(0, tg - sw); hi = Math.min(N - seq, tg + sw);
+        var bad = hasTr(ref - pad, ref + ov + pad) || (ref < lo && hasTr(ref, lo + ov + pad)) || (ref > hi && hasTr(hi - pad, ref + ov));
+        if (!bad || ext >= maxExt) break;
+        ext += B;
+      }
+      if (op >= outN || ref + ov > N || hi < lo) break;
+      var need = op + ov - segOut;
+      if (need > filled) { for (c = 0; c < nC; c++) out[c].set(chs[c].subarray(prev + filled, prev + need), segOut + filled); filled = need; }
+      var cs = best(md, 4, ref >> 2, lo >> 2, hi >> 2, ov >> 2, ref, ideal) << 2;
+      var sp = best(mono, 1, ref, Math.max(lo, cs - 4), Math.min(hi, cs + 4), ov, ref, ideal);
+      dev += .15 * ((sp - ideal) - dev);       /* feedback: content timing has no lasting bias in either direction */
+      for (c = 0; c < nC; c++) {
+        var o = out[c], x = chs[c];
+        for (i = 0; i < ov; i++) o[op + i] = o[op + i] * (1 - w[i]) + x[sp + i] * w[i];
+        o.set(x.subarray(sp + ov, sp + seq), op + ov);
+      }
+      prev = sp; segOut = op; filled = seq;
+    }
+    var have = segOut + filled, left = Math.min(outN - have, N - (prev + filled)); /* the last few ms: plain continuation */
+    if (left > 0) for (c = 0; c < nC; c++) out[c].set(chs[c].subarray(prev + filled, prev + filled + left), have);
+    return out.map(function (o2) { return o2.subarray(0, outN); });
+  }
+  /* beat grids measured on GitHub Actions from the previews (beats.json): key → [bpm, b0, db, conf, urlhash] */
+  var BG = {};
+  function hex8(h) { return ("0000000" + (h >>> 0).toString(16)).slice(-8); }
+  function seedBeats(map) {
+    var n = 0; if (!map || typeof map !== "object") return 0;
+    Object.keys(map).forEach(function (k) { var v = map[k]; if (v && v.length >= 5 && v[0] > 30 && v[0] < 260) { BG[k] = v; n++; } });
+    return n;
+  }
+  function decodeOn(c, ab) {
+    return new Promise(function (res, rej) { try { var p = c.decodeAudioData(ab, res, rej); if (p && p.then) p.then(res, rej); } catch (e) { rej(e); } });
+  }
   /* seed(map): preview links resolved ahead of time (previews.json, built on GitHub Actions), so a tap
      starts the original synchronously and the phone never has to call the Search API */
   function seed(map) {
@@ -1954,7 +2255,7 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
     Object.keys(map).forEach(function (k) { var v = map[k]; if (!v || typeof v !== "object") return; if (v.p) { cache[k] = { p: String(v.p), a: v.a ? String(v.a) : null }; n++; } else if (v.miss && !(cache[k] && cache[k].p)) { cache[k] = { miss: Date.now() }; } });
     return n;
   }
-  W.MashEngine = { create: create, version: "5.4", seed: seed, _render: render, _pick: pick, _proc: buildProc, _grid: grid };
+  W.MashEngine = { create: create, version: "6.0", seed: seed, seedBeats: seedBeats, _render: render, _pick: pick, _proc: buildProc, _grid: grid, _wsola: wsola, _hash: function (u) { return hex8(hash(u)); } };
 })();
 </script>
 <script>
@@ -2175,6 +2476,11 @@ if (!IN_CLAUDE && window.fetch && /^https?:$/.test(location.protocol)) {
     if (j.meta && typeof j.meta.audioCors === "boolean" && E.hintCors) E.hintCors(j.meta.audioCors);
     window.__previews = { n, meta: j.meta || null };
     try { DATA.forEach(t => applyArt(t)); } catch (e) {}
+  }).catch(() => {});
+  /* beats.json: beat grids measured from the same previews on GitHub's servers (tools/mashup_lab_beats.py) */
+  fetch("beats.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : null).then(j => {
+    if (!j || !j.map || !window.MashEngine || !MashEngine.seedBeats) return;
+    window.__beats = { n: MashEngine.seedBeats(j.map), meta: j.meta || null };
   }).catch(() => {});
 }
 const est = () => { try { return E.state(); } catch (e) { return nullEngine().state(); } };
@@ -3088,6 +3394,10 @@ function diagTxt() {
   try { const d = E.diag ? E.diag() : null; if (!d) return "";
     const parts = [`נמצאו ${d.ok} תצוגות מקדימות`, `לא נמצאו ${d.miss}`]; if (d.fail) parts.push(`תקלות רשת ${d.fail}`);
     if (d.via) parts.push(`חיבור דרך ${d.via}`); if (d.cors === false) parts.push("נגינה ישירה (בלי EQ)");
+    if (window.__beats) parts.push(`רשת ביטים מוכנה ל־${window.__beats.n} שירים`);
+    const st = est(), g = x => x && x.grid ? (x.grid.src === "server" ? "מהשרת" : "נמדדה כאן") : "אין";
+    if (st.A && st.A.bm) parts.push(`דק A: ${st.A.sync ? "מסונכרן" : "לא מסונכרן"}, רשת ${g(st.A)}`);
+    if (st.B && st.B.bm) parts.push(`דק B: ${st.B.sync ? "מסונכרן" : "לא מסונכרן"}, רשת ${g(st.B)}`);
     return parts.join(" · ") + "."; } catch (e) { return ""; }
 }
 function runProbe() {
@@ -3364,6 +3674,11 @@ document.addEventListener("change", e => {
   if (el.id === "sortSel") { state.sort = el.value; if (state.sort === "mix" || state.sort === "surprise") state.seed = (Date.now() & 0xffff) + 1; homeChanged(); }
 });
 document.addEventListener("pointerdown", e => { const r = e.target.closest && e.target.closest(".rng"); if (r) r.dataset.drag = "1"; });
+/* a finger on a card's play button: start downloading its two previews ~0.2 s before the tap lands */
+document.addEventListener("pointerdown", e => {
+  const b = e.target.closest && e.target.closest('.card [data-act="both"], .card [data-act="vocal"], .card [data-act="beat"], .card [data-act="mixer"]');
+  if (!b || !E.prefetchAudio) return; const p = pairFromEl(b); if (p) { E.prefetchAudio(p.v); E.prefetchAudio(p.b); }
+}, { passive: true });
 document.addEventListener("pointerup", () => { $$('.rng[data-drag="1"]').forEach(r => { if (r.dataset.act !== "seek") r.dataset.drag = ""; }); });
 $("#swapG").addEventListener("click", e => { [state.A, state.B] = [state.B, state.A]; [state.sgA, state.sgB] = [state.sgB, state.sgA]; e.currentTarget.classList.toggle("turn"); homeChanged(); });
 $("#segT").addEventListener("click", e => { const b = e.target.closest("button[data-max]"); if (!b) return; state.maxDiff = Number(b.dataset.max); homeChanged({ presets: true }); });

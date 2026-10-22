@@ -110,7 +110,7 @@ def main():
     ap.add_argument("--page", default=os.path.join(ROOT, "tools", "verify", "mashup-lab-next.html"))
     ap.add_argument("--pairs", type=int, default=40)
     ap.add_argument("--secs", type=float, default=10)
-    ap.add_argument("--seed", type=int, default=7)
+    ap.add_argument("--seed", type=int, default=int(os.environ.get("VERIFY_SEED", "7")))
     ap.add_argument("--checkpoint", default="final0")
     ap.add_argument("--out", default=os.path.join(ROOT, "tools", "reports", "mashup-verify-report.json"))
     ap.add_argument("--summary", default=os.path.join(ROOT, "tools", "reports", "mashup-verify.txt"))
@@ -155,7 +155,7 @@ def main():
                 row["start_s"] = round(time.time() - t0, 2)
                 pg.wait_for_timeout(1200)
                 st = pg.evaluate("MashApp.E.state()")
-                row.update({"bm": [st["A"].get("bm"), st["B"].get("bm")], "sync": [st["A"].get("sync"), st["B"].get("sync")], "beat": st.get("beat"),
+                row.update({"bm": [st["A"].get("bm"), st["B"].get("bm")], "sync": [st["A"].get("sync"), st["B"].get("sync")], "lock": st.get("beat"),
                             "src": [(st["A"].get("grid") or {}).get("src"), (st["B"].get("grid") or {}).get("src")],
                             "rate": [round(st["A"]["rate"], 5), round(st["B"]["rate"], 5)]})
                 rec = pg.evaluate(RECORD_JS, args.secs)
