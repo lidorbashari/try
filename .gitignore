@@ -10,3 +10,10 @@ node_modules/
 .DS_Store
 Thumbs.db
 _site/
+# Mashup Lab build outputs and test artefacts (sources: tools/mashup-lab/)
+tools/mashup-lab/mashup-lab.html
+tools/mashup-lab/mashup-lab-artifact.html
+tools/mashup-lab/**/shots/
+tools/mashup-lab/lab5/app_test/app.work.html
+tools/mashup-lab/lab5/app_test/out_*.html
+tools/mashup-lab/lab5/qa/log_*.txt

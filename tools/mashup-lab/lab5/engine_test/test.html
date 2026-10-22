@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Engine test</title>
+<style>body{font:14px system-ui;margin:20px}button{width:220px;height:64px;font-size:18px}</style></head>
+<body>
+<button id="go" type="button">go</button>
+<pre id="out"></pre>
+<script src="../engine.js"></script>
+<script>
+  /* Test page: the Python suite sets window.__act and then really clicks #go (trusted gesture). */
+  var q = new URLSearchParams(location.search);
+  window.T = {
+    a: { i: 1, t: "Alpha Vocal", a: "Singer One", g: "mizr", bpm: 124, k: "8A", y: 2021 },
+    b: { i: 2, t: "Bravo Beat (Extended Mix)", a: "Producer Two feat. Guest", g: "house", bpm: 124, k: "8A", y: 2019 },
+    c: { i: 3, t: "Charlie Groove", a: "Producer Three", g: "techhouse", bpm: 126, k: "9A", y: 2022 },
+    sa: { i: 4, t: "Short Alpha", a: "Singer One", g: "pop", bpm: 120, k: "5A", y: 2020 },
+    sb: { i: 5, t: "Short Bravo", a: "Producer Two", g: "edm", bpm: 120, k: "5A", y: 2020 },
+    he: { i: 6, t: "שיר בדיקה", a: "זמר ישראלי", g: "mizr", bpm: 100, k: "4A", y: 2023 },
+    miss: { i: 7, t: "Nothing Here", a: "Nobody", g: "afro", bpm: 104, k: "2A", y: 2024 },
+    dnb: { i: 8, t: "Jungle Run", a: "DnB Act", g: "dnb", bpm: 87, k: "8A", y: 2018 },
+    hh: { i: 9, t: "Slow Flow", a: "Rapper", g: "hiphop", bpm: 87, k: "8A", y: 2016 }
+  };
+  window.E = MashEngine.create({ net: q.get("net") !== "0", root: document.body });
+  window.__log = []; window.__plays = []; window.__inClick = false; window.__changes = 0;
+  E.on("ended", function (s) { __log.push("ended:" + s); });
+  E.on("art", function (t) { __log.push("art:" + t.t); });
+  E.on("change", function () { __changes++; });
+  var op = HTMLMediaElement.prototype.play;
+  HTMLMediaElement.prototype.play = function () {
+    if (String(this.getAttribute("src") || "").indexOf("data:") !== 0) __plays.push({ src: this.getAttribute("src"), inClick: window.__inClick, cors: this.crossOrigin, stack: (Error.stackTraceLimit = 40, String(new Error().stack).split("\n").slice(2, 40).join(" | ")) });
+    return op.apply(this, arguments);
+  };
+  document.getElementById("go").addEventListener("click", function () {
+    window.__inClick = true;
+    E.gesture();
+    try { if (window.__act) window.__act(); } catch (e) { window.__err = String(e && e.stack || e); }
+    window.__inClick = false;
+  });
+</script>
+</body></html>

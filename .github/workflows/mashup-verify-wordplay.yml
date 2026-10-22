@@ -1,0 +1,92 @@
+name: Mashup Lab real-music word-play check
+
+# Plays every curated word-play link through the app's word-play player in Google Chrome with the real Apple
+# previews, records the transition and checks it: A and B placed where the plan says (ms), and the "Beat This!"
+# tracker hears B's beats continue A's beat grid across the cut. Report only (numbers, no audio) →
+# tools/reports/mashup-wordplay-report.json and tools/reports/mashup-wordplay.txt.
+on:
+  workflow_dispatch:
+    inputs:
+      links:
+        description: "Links to test"
+        default: "40"
+      page:
+        description: "Page to test"
+        default: "tools/verify/mashup-lab-next.html"
+  push:
+    branches:
+      - claude/dj-course-music-agents-suitm3
+    paths:
+      - tools/verify/**
+      - tools/mashup_lab_verify_wordplay.py
+      - .github/workflows/mashup-verify-wordplay.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mashup-verify-wordplay
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Wait for the word timestamps (docs/mashup-lab/wordtimes.json from the song-analysis workflow)
+        timeout-minutes: 60
+        run: |
+          for i in $(seq 1 110); do
+            git fetch -q origin "${GITHUB_REF_NAME}" && git checkout FETCH_HEAD -- docs/mashup-lab/ 2>/dev/null \
+              && python -c "import json, sys; sys.exit(0 if json.load(open('docs/mashup-lab/wordtimes.json'))['meta'].get('links', 0) > 0 else 1)" 2>/dev/null && break
+            echo "waiting for wordtimes.json ($i)"; sleep 30
+          done
+          ls -la docs/mashup-lab/
+      - uses: actions/cache@v4
+        id: cache
+        with:
+          path: final0.ckpt
+          key: beat-this-final0-v1
+      - name: Download the Beat This! checkpoint (if not cached)
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          ok=0
+          for u in "https://cloud.cp.jku.at/public.php/dav/files/7ik4RrBKTS273gp/final0.ckpt" \
+                   "https://huggingface.co/rtikw/localmusic-assets/resolve/main/analysis/beat_this-final0.ckpt"; do
+            for i in 1 2 3; do
+              if curl -fsSL --retry 2 --retry-delay 10 -A "Mozilla/5.0" -o final0.ckpt "$u" && [ "$(stat -c %s final0.ckpt)" -gt 50000000 ]; then ok=1; break 2; fi
+              sleep $((15 * i))
+            done
+          done
+          [ "$ok" = 1 ]
+      - name: Install the beat tracker, Playwright and a static ffmpeg; check Chrome
+        timeout-minutes: 15
+        run: |
+          for i in 1 2 3; do timeout 420 pip install -q --retries 5 torch torchaudio --index-url https://download.pytorch.org/whl/cpu && break; done
+          for i in 1 2 3; do timeout 300 pip install -q --retries 5 beat-this soxr einops rotary-embedding-torch numpy playwright imageio-ffmpeg && break; done
+          google-chrome --version
+      - name: Play, record and listen
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir -p tools/reports
+          python -u tools/mashup_lab_verify_wordplay.py --page "${{ inputs.page || 'tools/verify/mashup-lab-next.html' }}" --links ${{ inputs.links || 40 }} \
+            --checkpoint final0.ckpt 2>&1 | tee tools/reports/mashup-wordplay-log.txt
+      - name: Commit the report
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git reset -q -- docs/mashup-lab/ && git checkout -- docs/mashup-lab/ && git clean -fdq docs/mashup-lab/ || true
+          git add tools/reports/ || true
+          if git diff --cached --quiet; then echo "no changes"; exit 0; fi
+          git commit -m "Mashup Lab: real-music word-play check report"
+          for i in 1 2 3 4; do
+            if git pull --rebase -X theirs origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then echo pushed; exit 0; fi
+            git rebase --abort 2>/dev/null || true; sleep 15
+          done
+          echo "could not push the report"; exit 1
