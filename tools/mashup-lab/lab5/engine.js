@@ -423,7 +423,7 @@
     opts = opts || {};
     var net = opts.net !== false, root = opts.root || null, api = {}, ctx = null, master = null, comp = null, cors = null, unlocked = false, tickId = 0;
     var L = { change: [], ended: [], art: [], wp: [] }, raf = 0, rafTO = 0, msTitle = "", msInit = false;
-    var S = { mode: null, seq: false, loop: false, xf: .5, cur: "A", clean: true, hold: 0, beat: "off", cue: "", bsync: true, pb: false, useBuf: true, keyMatch: true, loud: true }, rates = { A: 1, B: 1 }, D = {};
+    var S = { mode: null, seq: false, loop: false, xf: .5, cur: "A", clean: true, hold: 0, beat: "off", cue: "", bsync: true, pb: false, useBuf: true, keyMatch: true, loud: true, plan: null, vgate: true }, rates = { A: 1, B: 1 }, D = {};
     SIDES.forEach(function (s) {
       D[s] = { side: s, track: null, kind: "idle", busy: false, buffering: false, playing: false, pos: 0, dur: 0, vol: .85, eq: { low: 0, mid: 0, high: 0 },
         syncOn: true, rate: 1, eqActive: true, art: null, tok: 0, lv: 0, n: null, elC: null, elD: null, el: null, src: null, groove: null, url: null, sil: 0, why: "",
@@ -435,9 +435,10 @@
     function procMode(d) { /* clean-up only while both decks play a mashup together, on Apple previews routed through Web Audio */
       if (!S.clean || S.mode !== "both" || performance.now() < S.hold) return "off";
       if (!bp(D.A) || !bp(D.B) || d.kind !== "apple" || !(d.bmode || d.el === d.elC)) return "off";
+      if (d.side === "B") { var P = planFor(d); if (P && P.cleanB === false) return "off"; }
       return d.side === "A" ? "vocal" : "inst";
     }
-    function applyProc() { SIDES.forEach(function (s) { var d = D[s]; if (d.n && d.n.proc) d.n.proc.set(procMode(d)); }); }
+    function applyProc() { SIDES.forEach(function (s) { var d = D[s]; if (d.n && d.n.proc) { var m = procMode(d), was = d.n.proc.mode; d.n.proc.set(m); if (m !== was && d.side === "A") voxGate(d); } }); }
     function flush() { if (!raf) return; try { cancelAnimationFrame(raf); } catch (e) {} clearTimeout(rafTO); raf = 0; try { applyProc(); } catch (e) {} media(); fire("change"); }
     function emit() { if (raf) return; raf = W.requestAnimationFrame ? requestAnimationFrame(flush) : -1; rafTO = setTimeout(flush, 250); }
     function bp(d) { return !!(d.playing || d.busy); }
@@ -451,7 +452,7 @@
       var n = { inp: c.createGain(), lo: biq(c, "lowshelf", 220, .7), mid: biq(c, "peaking", 1100, .8), hi: biq(c, "highshelf", 4200, .7), vol: c.createGain(), gate: c.createGain(), xf: c.createGain(), an: c.createAnalyser() };
       n.an.fftSize = 1024; n.an.smoothingTimeConstant = .6; n.an.minDecibels = -90; n.an.maxDecibels = -12;
       /* gate: mutes a deck that waits to enter on the beat (beat sync); vol / xf stay the user's */
-      n.proc = buildProc(c); n.inp.connect(n.proc.input); n.proc.output.connect(n.lo); n.lo.connect(n.mid); n.mid.connect(n.hi); n.hi.connect(n.vol); n.vol.connect(n.gate); n.gate.connect(n.xf); n.xf.connect(dest); n.inp.connect(n.an);
+      n.vg = c.createGain(); n.proc = buildProc(c); n.inp.connect(n.proc.input); n.proc.output.connect(n.vg); n.vg.connect(n.lo); n.lo.connect(n.mid); n.mid.connect(n.hi); n.hi.connect(n.vol); n.vol.connect(n.gate); n.gate.connect(n.xf); n.xf.connect(dest); n.inp.connect(n.an);
       n.buf = new Float32Array(n.an.fftSize); n.fb = new Uint8Array(n.an.frequencyBinCount);
       return n;
     }
@@ -803,7 +804,7 @@
     }
     function setSB(d, r, semis) { /* what deck d plays: the decoded original, or a copy stretched once to speed r
          (and shifted by `semis` semitones when the keys need it: the vocal of a mashup, never the beat) */
-      r = Math.round(clamp(r, .5, 2) * 1e5) / 1e5; semis = Math.round(semis || 0);
+      r = Math.round(clamp(r, .5, 2) * 1e5) / 1e5; semis = Math.round((semis || 0) * 100) / 100;
       if (Math.abs(r - 1) < 5e-4 && !semis) { d.sb = d.buf; d.sr = 1; d.semis = 0; return; }
       var e = BUF[d.url];
       if (e && e.st && e.st.r === r && (e.st.s || 0) === semis && e.st.src === d.buf) { d.sb = e.st.b; d.sr = r; d.semis = semis; return; }
@@ -820,6 +821,7 @@
     }
     /* song analysis (analysis.json, measured on GitHub from the same preview): where the singing starts, where the
        beat is full, the key of the harmony and the loudness. Only used when it was measured on this exact preview. */
+    function an2Of(d) { var v = d.track && AN2[ckey(d.track)]; return v && d.url && (!v.h || v.h === hex8(hash(d.url))) ? v : null; }
     function anOf(d) { var v = d.track && AN[ckey(d.track)]; return v && !v.err && d.url && (!v.h || v.h === hex8(hash(d.url))) ? v : null; }
     function trimOf(d) { var a = S.loud && anOf(d); return a && isFinite(a.lufs) ? clamp(Math.pow(10, (-11 - a.lufs) / 20), .5, 1.5) : 1; }
     function setTrim(d) { var t = trimOf(d); if (Math.abs(t - (d.trim || 1)) > 1e-3) { d.trim = t; applyGains(d); } }
@@ -847,13 +849,26 @@
       }
       return null;
     }
-    function entryOf(d) { var t = d.side === "A" ? vocalEntry(d) : beatEntry(d); return t != null ? t : downbeat(d.grid); }
+    function entryOf(d) {
+      var P = planFor(d), O = D[other(d.side)];
+      if (P && d.grid) {                                                /* the bars the matcher chose by ear, B leading by up to 2 bars */
+        var at = d.side === "A" ? P.aAt : P.bAt, lb = Math.max(0, Math.round(P.leadBars || 0)), q = P.q || 1;
+        var preOf = function (L, x) { return x.side === "A" ? 4 * L * q * 60 / x.grid.bpm : 4 * L * 60 / x.grid.bpm; };
+        var A = D.A, B = D.B;
+        while (lb > 0 && A.grid && B.grid && (P.aAt - preOf(lb, A) < .05 || P.bAt - preOf(lb, B) < .05)) lb--;
+        var t = at - (lb ? preOf(lb, d) : 0);
+        if (isFinite(t) && t >= .02 && t < (d.dur || 30) - 4) return t;
+      }
+      var t2 = d.side === "A" ? vocalEntry(d) : beatEntry(d); return t2 != null ? t2 : downbeat(d.grid);
+    }
+    function planFor(d) { var P = S.plan; if (!P || !d || !d.track) return null; return ckey(d.track) === (d.side === "A" ? P.v : P.b) ? P : null; }
     /* key match: shift the vocal deck ±1–2 semitones when the measured keys clash and a small shift fixes it */
     function camN(k) { var m = /^(1[0-2]|[1-9])\s*([AB])$/i.exec(String(k || "").trim()); return m ? { n: +m[1], l: m[2].toUpperCase() } : null; }
     function camOk(a, b) { return !!(a && b && (a.n === b.n || (a.l === b.l && (((a.n - b.n) % 12 + 12) % 12 === 1 || ((b.n - a.n) % 12 + 12) % 12 === 1)))); }
     function keyOfDeck(d) { var a = anOf(d); if (a && a.key && a.ks >= (a.km === "e" ? .45 : .62)) return a.key; return null; }
     function semisFor(V, B) {
       if (!S.keyMatch) return 0;
+      var P = planFor(V); if (P && planFor(B) && isFinite(P.semis)) return Math.round(clamp(P.semis, -3, 3) * 100) / 100;
       var kv = camN(keyOfDeck(V)), kb = camN(keyOfDeck(B));
       if (!kv || !kb || camOk(kv, kb)) return 0;
       var order = [1, -1, 2, -2];
@@ -930,7 +945,33 @@
         setTimeout(function () { try { old.disconnect(); } catch (e) {} }, Math.max(0, (when - t) * 1000) + 300);
       }
       d.bs = s; d.t0 = when; d.o0 = off; d.pos = off * d.sr; d.busy = false; d.playing = true; d.ready = false; d.waitT = 0; d.playT = performance.now(); d.rate = d.sr;
+      if (d.side === "A") voxGate(d);
       ensureTick(); emit();
+    }
+    /* vocal gate: while the vocal deck plays the clean-up ("vocal" mode), the beats where the analysis heard no singing are
+       turned down (−20 dB): what leaks through the clean-up between phrases (A's own drums and synths) drops out, the
+       singing comes in a beat early so no pickup is lost, and it rings out for half a beat after. */
+    function vgOpen(d) { var g = d && d.n && d.n.vg; if (!g || !ctx) return; try { g.gain.cancelScheduledValues(0); g.gain.setTargetAtTime(1, ctx.currentTime, .015); } catch (e) {} d.vgOn = false; }
+    function voxGate(d) {
+      var g = d.n && d.n.vg; if (!g || !ctx) return;
+      var a = anOf(d), mode = d.n.proc && d.n.proc.mode;
+      if (!S.vgate || mode !== "vocal" || !d.bmode || !d.bs || !a || a.t0 == null || !d.grid) { if (d.vgOn) vgOpen(d); return; }
+      var l2 = an2Of(d), lev = l2 && l2.vr || a.voc, thr = l2 && l2.vr ? 3 : 4;
+      if (!lev) { if (d.vgOn) vgOpen(d); return; }
+      var p = 60 / d.grid.bpm, now = ctx.currentTime, T = function (tau) { return d.t0 + (tau / d.sr - d.o0); };
+      var on = function (i) { var x = +lev.charAt(i), nx = +lev.charAt(i + 1), pv = i > 0 ? +lev.charAt(i - 1) : 0; return x >= thr || nx >= thr + 1 || pv >= thr + 1; };
+      try {
+        g.gain.cancelScheduledValues(now);
+        var first = Math.max(0, Math.floor((d.o0 * d.sr - a.t0) / p)), cur = -1;
+        for (var i = first; i < lev.length; i++) {
+          var o = on(i) ? 1 : .1, at = T(a.t0 + i * p) - .03;
+          if (o === cur) continue;
+          if (at <= now) g.gain.setTargetAtTime(o, now, .012); else g.gain.setTargetAtTime(o, at, o > .5 ? .012 : .05);
+          cur = o;
+        }
+        if (cur !== 1) g.gain.setTargetAtTime(1, T(a.t0 + lev.length * p), .05);
+        d.vgOn = true;
+      } catch (e) {}
     }
     function syncable(d, O) { /* buffer starts are exact whenever they run (even with the screen locked); only a word-play handoff opts out */
       return S.bsync && S.mode === "both" && performance.now() >= S.hold && d.syncOn && O.syncOn && !!d.grid && !!O.track;
@@ -1164,6 +1205,7 @@
     function halt(d) {
       d.pos = curPos(d); d.tok++; d.busy = false; d.buffering = false; d.playing = false; d.playT = 0; d.ready = false; d.waitT = 0;
       stopGroove(d); bufStop(d); if (d.el) try { d.el.pause(); } catch (e) {}
+      vgOpen(d);
     }
     function startDeck(d, o) {
       if (!d.track || bp(d)) return;
@@ -1255,8 +1297,9 @@
         });
       });
     });
-    api.loadPair = guard(function (v, b, r) {
+    api.loadPair = guard(function (v, b, r, plan) {
       wpStop("load");
+      S.plan = plan && plan.v && plan.b ? plan : null;
       SIDES.forEach(function (s) { halt(D[s]); }); setRatesInt(r); setTrack(D.A, v); setTrack(D.B, b); S.mode = null; S.seq = false; S.cur = "A";
       SIDES.forEach(function (s) { var d = D[s], c = d.track && cget(d.track); if (c && c.p && bufOk(d, c.p)) preload(d); else wantGrid(d); });
       if (net) { if (v) lookup(v).catch(noop); if (b) lookup(b).catch(noop); }
@@ -1401,6 +1444,9 @@
       emit();
     });
     api.setLoudMatch = guard(function (on) { S.loud = !!on; SIDES.forEach(setTrim); emit(); });
+    /* the matcher's plan for the loaded pair: { v, b (track keys), semis, aAt, bAt, leadBars, cleanB, q } (null: own choice) */
+    api.setPlan = guard(function (P) { S.plan = P && P.v && P.b ? P : null; emit(); });
+    api.setVocalGate = guard(function (on) { S.vgate = !!on; voxGate(D.A); });
     api.prefetchAudio = guard(function (t) { var c = net && t ? cget(t) : null; if (c && c.p && bufOk(null, c.p)) prefetchBytes(c.p); });
     api._nodes = function (s) { var d = D[side(s)]; return d ? d.n : null; };   /* tests: tap a deck's signal */
     api._ctx = function () { return ctx; };
@@ -1596,10 +1642,15 @@
     return st.map(function (x) { return resampleTo(x, p, outN); });
   }
   /* beat grids measured on GitHub Actions from the previews (beats.json): key → [bpm, b0, db, conf, urlhash] */
-  var BG = {}, AN = {};
+  var BG = {}, AN = {}, AN2 = {};
   function seedAnalysis(map) {
     var n = 0; if (!map || typeof map !== "object") return 0;
     Object.keys(map).forEach(function (k) { var v = map[k]; if (v && typeof v === "object" && !v.err) { AN[k] = v; n++; } });
+    return n;
+  }
+  function seedListen(map) {             /* listen.json: per-bar notes / chords and the vocal level per beat (vr) */
+    var n = 0; if (!map || typeof map !== "object") return 0;
+    Object.keys(map).forEach(function (k) { var v = map[k]; if (v && typeof v === "object") { AN2[k] = v; n++; } });
     return n;
   }
   function hex8(h) { return ("0000000" + (h >>> 0).toString(16)).slice(-8); }
@@ -1618,5 +1669,5 @@
     Object.keys(map).forEach(function (k) { var v = map[k]; if (!v || typeof v !== "object") return; if (v.p) { cache[k] = { p: String(v.p), a: v.a ? String(v.a) : null }; n++; } else if (v.miss && !(cache[k] && cache[k].p)) { cache[k] = { miss: Date.now() }; } });
     return n;
   }
-  W.MashEngine = { create: create, version: "6.2", seed: seed, seedBeats: seedBeats, seedAnalysis: seedAnalysis, _render: render, _pick: pick, _proc: buildProc, _grid: grid, _wsola: wsola, _shift: shiftStretch, _hash: function (u) { return hex8(hash(u)); } };
+  W.MashEngine = { create: create, version: "6.3", seed: seed, seedBeats: seedBeats, seedAnalysis: seedAnalysis, seedListen: seedListen, _render: render, _pick: pick, _proc: buildProc, _grid: grid, _wsola: wsola, _shift: shiftStretch, _hash: function (u) { return hex8(hash(u)); } };
 })();

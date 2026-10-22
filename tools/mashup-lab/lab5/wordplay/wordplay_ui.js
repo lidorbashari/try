@@ -13,14 +13,47 @@
   var E = App.E, DATA = App.DATA;
   var GN = { mizr: "מזרחית", ilpop: "פופ ישראלי", house: "האוס", techhouse: "טק האוס", afrohouse: "אפרו האוס", regg: "רגאטון", latin: "לטיני", hiphop: "היפ הופ", rnb: "R&B", pop: "פופ", afro: "אפרוביטס", amapiano: "אמאפיאנו", dancehall: "דאנסהול", techno: "טכנו", edm: "EDM", dnb: "דראם אנד בייס", ukg: "UK גראז׳" };
   var REL = { same: "אותו סולם", adj: "סולמות שכנים", rel: "מז׳ור ומינור באותו מספר" };
-  var curated = [], auto = [];
+  var curated = [], auto = [], heard = [];
   try { curated = W.resolve(DATA, window.WORDPLAY_LINKS || []); } catch (e) { curated = []; }
   try { auto = W.autoLinks(DATA, { limit: 120, minConf: "mid" }); } catch (e) { auto = []; }
   var ALL = W.merge(curated, auto);
-  var f = { type: "all", compat: false, genre: "all" }, shown = 20, run = null, list = ALL, plans = {};
+  var f = { type: "all", compat: false, genre: "all", heard: true }, shown = 20, run = null, list = ALL, plans = {};
   var TK = function (t) { return String(t.t) + " | " + String(t.a); };
+  var BYKEY = {}; DATA.forEach(function (t, i) { BYKEY[TK(t)] = i; });
   function lkey(l) { return TK(DATA[l.ai]) + " || " + TK(DATA[l.bi]); }
-  function wordtimes(l) { var w = window.__wordtimes; return w && w[TK(DATA[l.ai]) + " || " + TK(DATA[l.bi])] || null; }
+  function wordtimes(l) { if (l.heard) return l.heard; var w = window.__wordtimes; return w && w[TK(DATA[l.ai]) + " || " + TK(DATA[l.bi])] || null; }
+  function purl(t) { var m = window.__previewMap; return m && m[TK(t)] && m[TK(t)].p || null; }
+  function sameHash(h, t) { if (!h) return true; var u = purl(t); return !u || !window.MashEngine || MashEngine._hash(u) === h; }
+  /* where each side's word is sung in the preview as it is now (measured on GitHub; null = not heard there) */
+  function sung(l) {
+    var w = wordtimes(l); if (!w) return null;
+    var A = DATA[l.ai], B = DATA[l.bi], drop = /דרופ|\bdrop\b/i.test(String(l.word || "").split(/→|=/)[1] || "");
+    var a = w.a && w.a.length && sameHash(w.a_h, A) ? w.a : null, b = w.b && w.b.length && sameHash(w.b_h, B) ? w.b : null;
+    return { a: a, b: b, both: !!a && (!!b || drop), drop: drop };
+  }
+  var measured = function () { return !!(window.__wordtimes && Object.keys(window.__wordtimes).some(function (k) { var v = window.__wordtimes[k]; return v && v.a && v.a.length; })) || heard.length > 0; };
+  /* links found by listening: A's preview sings B's title, and B's preview sings it too (wordtimes.json "disc") */
+  function buildHeard() {
+    var D = window.__wordDisc || [], out = [], seen = {};
+    curated.forEach(function (l) { seen[l.ai + "~" + l.bi] = 1; });
+    D.forEach(function (c) {
+      var ai = BYKEY[c.a], bi = BYKEY[c.b]; if (ai == null || bi == null || seen[ai + "~" + bi]) return;
+      var A = DATA[ai], B = DATA[bi], mix = W.mixCheck(A, B), w = String(c.w || "").trim(); if (!w) return;
+      seen[ai + "~" + bi] = 1;
+      var tech = mix.compatible ? (mix.technique === "double" ? "blend" : mix.technique) : "echo";
+      out.push({ ai: ai, bi: bi, type: "same", type_he: "השם של B בשיר A", word: w + " → " + w, conf: "high", src: "heard",
+        hype: Math.max(5, Math.min(9, Math.round((c.sc || 70) / 11))), score: c.sc || 70,
+        mix: Object.assign({}, mix, { technique: tech, technique_he: W.TECH_HE[tech] || tech }),
+        heard: { a: c.at, b: c.bt, a_h: c.a_h, b_h: c.b_h },
+        why_he: "בקטע של A שרים \"" + w + "\", בדיוק השם של B. כש־A מגיע למילה, B נכנס על הביט ושר אותה בעצמו.",
+        cueA: { he: "A שר \"" + w + "\" (נשמע בהאזנה לקטע)" }, cueB: { he: "B נכנס על הפעמה שאחרי, עם ה\"" + w + "\" שלו" }, note_he: "" });
+    });
+    out.sort(function (x, y) { return y.score - x.score; });
+    heard = out;
+    ALL = W.merge(curated, heard.concat(auto));
+  }
+  buildHeard();
+  document.addEventListener("mashlab:words", function () { buildHeard(); if (view.isConnected && !view.hidden) render(); });
   function analysis(t, h) { var m = window.__analysis && window.__analysis.map, v = m && m[TK(t)]; return v && !v.err && (!h || !v.h || v.h === h) ? v : null; }
 
   var esc = function (s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
@@ -47,14 +80,19 @@
     return '<div class="wp-mix">' + (m.compatible ? '<span class="ok">' + ic("check") + "תואם · " + k + " · " + t + "</span>" : '<span class="no">' + k + " · " + t + "</span>") +
       '<span class="tech">' + esc(m.technique_he || m.technique) + "</span><span>" + en + "</span></div>";
   }
-  function row(t, side, w) {
-    return '<div class="wp-row"><span class="wp-tag ' + side + '">' + (side === "a" ? "A" : "B") + '</span><div class="wp-tx"><bdi class="wp-t">' + hl(t.t, w) + '</bdi><span class="wp-meta"><bdi>' + esc(String(t.a).split(",")[0]) + "</bdi> · " + esc(GN[t.g] || t.g) + "</span></div></div>";
+  function mmss(x) { x = Math.max(0, x); var m = Math.floor(x / 60), s2 = x - 60 * m; return m + ":" + (s2 < 10 ? "0" : "") + s2.toFixed(1); }
+  function row(t, side, w, at) {
+    return '<div class="wp-row"><span class="wp-tag ' + side + '">' + (side === "a" ? "A" : "B") + '</span><div class="wp-tx"><bdi class="wp-t">' + hl(t.t, w) + '</bdi><span class="wp-meta"><bdi>' + esc(String(t.a).split(",")[0]) + "</bdi> · " + esc(GN[t.g] || t.g) + "</span></div>" +
+      (at ? '<span class="wp-at" title="איפה המילה נשמעת בקטע">' + ic("wave") + '<b class="ltr">' + mmss(at[0][0]) + "</b></span>" : "") + "</div>";
   }
   function cardHTML(l, n) {
     var A = DATA[l.ai], B = DATA[l.bi], w = words(l), live = run && run.link === l;
-    return '<article class="wp-card" data-wi="' + n + '" style="--d:' + Math.min(n % 20, 10) * 40 + 'ms">' +
-      '<div class="wp-head"><span class="wp-type t-' + esc(l.type) + '">' + esc(l.type_he || l.type) + "</span>" + (l.src === "curated" ? '<span class="wp-src">' + ic("spark") + "נבחר ביד</span>" : '<span class="wp-src">אוטומטי</span>') + hype(l.hype) + "</div>" +
-      row(A, "a", w.a) + '<div class="wp-arrow" aria-hidden="true">↓</div>' + row(B, "b", w.b) +
+    var sg = sung(l);
+    return '<article class="wp-card' + (sg && sg.both ? " heard" : "") + '" data-wi="' + n + '" style="--d:' + Math.min(n % 20, 10) * 40 + 'ms">' +
+      '<div class="wp-head"><span class="wp-type t-' + esc(l.type) + '">' + esc(l.type_he || l.type) + "</span>" +
+      (sg && sg.both ? '<span class="wp-src ok">' + ic("check") + "המילים נשמעות בקטעים</span>" : "") +
+      (l.src === "curated" ? '<span class="wp-src">' + ic("spark") + "נבחר ביד</span>" : l.src === "heard" ? '<span class="wp-src">' + ic("wave") + "נמצא בהאזנה</span>" : '<span class="wp-src">אוטומטי</span>') + hype(l.hype) + "</div>" +
+      row(A, "a", w.a, sg && sg.a) + '<div class="wp-arrow" aria-hidden="true">↓</div>' + row(B, "b", w.b, sg && sg.b) +
       (l.why_he ? '<p class="why">' + ic("spark") + "<span>" + esc(l.why_he) + "</span></p>" : "") +
       '<ol class="wp-plan"><li><b class="a">A</b><span>' + esc(l.cueA && l.cueA.he) + '</span></li><li><b class="b">B</b><span>' + esc(l.cueB && l.cueB.he) + "</span></li></ol>" +
       mixLine(l.mix) + (live && run.live ? liveHTML(run) : plans[lkey(l)] ? howHTML(plans[lkey(l)]) : '<p class="wp-note">' + esc(l.note_he || "הערכה לפי מבנה טיפוסי של הסגנון: לבדוק באוזן") + "</p>") +
@@ -63,7 +101,26 @@
 
   function howHTML(pl) {
     var s = (pl.summary || []).concat(pl.notes || []);
-    return s.length ? '<ul class="wp-how">' + s.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>" : "";
+    return (pl.ok !== false && pl.cut ? diagHTML(pl) : "") + (s.length ? '<ul class="wp-how">' + s.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>" : "");
+  }
+  /* the move, drawn on the clock of the transition: A's lane until the cut, B's lane from its entry, both words, the
+     beats of A's grid (bars taller), the cut on its beat; a playhead runs while it plays. Time runs left → right. */
+  function diagHTML(pl) {
+    var T = Math.max(.5, pl.cut - pl.aStart), tail = Math.min(7, Math.max(3, pl.tail || 6)), tot = T + tail, Wd = 320, x0 = 10, x1 = Wd - 10;
+    var X = function (t) { return (x0 + (x1 - x0) * Math.max(0, Math.min(tot, t)) / tot).toFixed(1); };
+    var pA = 60 / (pl.bpmA || 120), r = pl.r || 1, pre = pl.pre || 0, out = [], k;
+    for (k = 0; k * pA <= tot + 1e-6; k++) { var bar = k % 4 === 0; out.push('<line x1="' + X(k * pA) + '" x2="' + X(k * pA) + '" y1="' + (bar ? 10 : 14) + '" y2="' + (bar ? 82 : 78) + '" class="' + (bar ? "dg-bar" : "dg-beat") + '"/>'); }
+    var aw0 = pl.wA[0] - pl.aStart, aw1 = pl.wA[1] - pl.aStart, bw0 = T + (pl.wB[0] - pl.bPos) / r, bw1 = T + (pl.wB[1] - pl.bPos) / r;
+    out.push('<rect class="dg-a" x="' + X(0) + '" y="20" width="' + (X(T) - X(0)).toFixed(1) + '" height="20" rx="6"/>');
+    if (pl.echo) out.push('<rect class="dg-echo" x="' + X(T) + '" y="20" width="' + (X(T + 2 * pA) - X(T)).toFixed(1) + '" height="20" rx="6"/>');
+    out.push('<rect class="dg-b" x="' + X(T - pre) + '" y="52" width="' + (X(tot) - X(T - pre)).toFixed(1) + '" height="20" rx="6"/>');
+    if (pl.foundA !== false) out.push('<rect class="dg-wa" x="' + X(aw0) + '" y="18" width="' + Math.max(3, X(aw1) - X(aw0)).toFixed(1) + '" height="24" rx="5"/>');
+    if (pl.foundB !== false && bw0 < tot) out.push('<rect class="dg-wb" x="' + X(bw0) + '" y="50" width="' + Math.max(3, X(Math.min(tot, bw1)) - X(bw0)).toFixed(1) + '" height="24" rx="5"/>');
+    out.push('<line class="dg-cut" x1="' + X(T) + '" x2="' + X(T) + '" y1="4" y2="88"/>');
+    var lab = '<span class="dg-l a">A</span><span class="dg-l b">B</span>';
+    var legend = '<div class="dg-key"><span><i class="wa"></i>המילה של A</span><span><i class="wb"></i>המילה של B</span><span><i class="cut"></i>החיתוך' + (pl.onBeat === "1" ? " על ה־1" : pl.onBeat === "3" ? " על פעמה 3" : " על הביט") + "</span></div>";
+    return '<figure class="wp-diag" aria-label="שרטוט המעבר">' + lab + '<svg viewBox="0 0 ' + Wd + ' 92" preserveAspectRatio="none" aria-hidden="true">' + out.join("") +
+      '<line class="dg-ph" x1="' + X(0) + '" x2="' + X(0) + '" y1="2" y2="90" data-tot="' + tot.toFixed(3) + '"/></svg>' + legend + "</figure>";
   }
   function liveHTML(r) {
     return '<div class="wp-live" aria-live="polite"><div class="wp-bar" aria-hidden="true"><i class="fill"></i><b class="cutm"></b></div>' +
@@ -79,15 +136,17 @@
     '<header class="lt"><div class="lt-t"><p class="eyebrow"><svg class="logo" viewBox="0 0 22 14" aria-hidden="true"><circle class="la" cx="7" cy="7" r="6.5"/><circle class="lb" cx="15" cy="7" r="6.5"/></svg>מעבדת המשאפים</p><h1>מעברי מילים</h1></div>' +
     '<button class="hbtn glass" type="button" data-act="source" aria-label="מאיפה מגיע השמע">' + ic("wave") + "</button></header>" +
     '<p class="sec-sub wp-sub" style="margin-top:-12px"></p>' +
-    '<p class="wp-help">ההוק של שיר A נוחת על מילה, ושיר B נכנס וממשיך או עונה לה. "נגן מעבר" מנגן את A כמה תיבות לפני המילה, ובפעמה שמיד אחריה B נכנס כשהוא מותאם לקצב ולסולם של A, כך שהמילה שלו עונה על אותו ביט. מתחת לכפתור כתוב מה בדיוק נעשה (קצב, סולם, איפה החיתוך), כדי שתוכל לעשות את אותו הדבר על הדקים שלך. ההדגמה מתנגנת מקטעי התצוגה המקדימה של 30 שניות.</p>' +
+    '<p class="wp-help">שיר A שר מילה, ושיר B נכנס על הביט וממשיך אותה. "נגן מעבר" מנגן את A כמה תיבות לפני המילה, חותך על הפעמה שמיד אחריה, ו־B נכנס באותו קצב ובסולם מתאים, כך שהמילה שלו נוחתת על אותו ביט. השרטוט מראה בדיוק איפה כל מילה ואיפה החיתוך, כדי שתוכל לעשות את זה על הדקים שלך.</p>' +
     '<div class="wp-filters"><div class="chips" role="group" aria-label="סוג מעבר">' + types.map(function (t) { return '<button class="chip" type="button" data-wf="type" data-v="' + t + '" aria-pressed="' + (t === "all") + '">' + (t === "all" ? "הכל" : esc(W.TYPE_HE[t])) + "</button>"; }).join("") + "</div>" +
-    '<div class="wp-frow"><button class="tchip" type="button" data-wf="compat" aria-pressed="false">' + ic("check") + 'רק תואמים בסולם ובקצב</button><select class="wp-sel" data-wf="genre" aria-label="סגנון"><option value="all">כל הסגנונות</option>' +
+    '<div class="wp-frow"><button class="tchip" type="button" data-wf="heard" aria-pressed="true" hidden>' + ic("check") + 'רק מה שנשמע בקטעים</button><button class="tchip" type="button" data-wf="compat" aria-pressed="false">' + ic("check") + 'רק תואמים בסולם ובקצב</button><select class="wp-sel" data-wf="genre" aria-label="סגנון"><option value="all">כל הסגנונות</option>' +
     Object.keys(GN).filter(function (g) { return gset[g]; }).map(function (g) { return '<option value="' + g + '">' + esc(GN[g]) + "</option>"; }).join("") + "</select></div></div>" +
     '<div class="wp-list"></div><button class="btn n wp-more" type="button" data-wact="more" hidden>להציג עוד</button>';
-  var $l = view.querySelector(".wp-list"), $more = view.querySelector(".wp-more"), $sub = view.querySelector(".wp-sub");
+  var $l = view.querySelector(".wp-list"), $more = view.querySelector(".wp-more"), $sub = view.querySelector(".wp-sub"), $heard = view.querySelector('[data-wf="heard"]');
 
   function filtered() {
+    var useHeard = f.heard && measured();
     return ALL.filter(function (l) {
+      if (useHeard) { var sg = sung(l); if (!sg || !sg.both) return false; }
       if (f.type !== "all" && l.type !== f.type) return false;
       if (f.compat && !l.mix.compatible) return false;
       if (f.genre !== "all" && DATA[l.ai].g !== f.genre && DATA[l.bi].g !== f.genre) return false;
@@ -96,8 +155,9 @@
   }
   function render() {
     list = filtered();
-    var nc = list.filter(function (l) { return l.src === "curated"; }).length;
-    $sub.textContent = list.length + " מעברים · " + nc + " נבחרו ביד";
+    var nc = list.filter(function (l) { return l.src === "curated"; }).length, nh = list.filter(function (l) { return l.src === "heard"; }).length;
+    $sub.textContent = f.heard && measured() ? list.length + " מעברים שהמילים שלהם נשמעות בקטעים · " + nh + " נמצאו בהאזנה · " + nc + " נבחרו ביד" : list.length + " מעברים · " + nc + " נבחרו ביד";
+    $heard.hidden = !measured(); $heard.setAttribute("aria-pressed", String(!!f.heard));
     $l.innerHTML = list.length ? list.slice(0, shown).map(cardHTML).join("") : '<p class="wp-help">אין מעברים שמתאימים לסינון הזה. אפשר לבטל את "רק תואמים" או לבחור סגנון אחר.</p>';
     $more.hidden = list.length <= shown;
   }
@@ -160,6 +220,8 @@
     if (st.total > 0) { fill.style.width = Math.min(100, st.t / st.total * 100).toFixed(1) + "%"; cm.style.insetInlineStart = (st.cut / st.total * 100).toFixed(1) + "%"; cm.hidden = false; } else { fill.style.width = "0"; cm.hidden = true; }
     if (now.textContent !== r.msg) now.textContent = r.msg || "";
     if (r.plan && !box.querySelector(".wp-how")) box.insertAdjacentHTML("beforeend", howHTML(r.plan));
+    var ph = box.querySelector(".dg-ph");
+    if (ph && st.total > 0) { var tot = +ph.getAttribute("data-tot") || st.total, x = 10 + 300 * Math.min(1, st.t / tot); ph.setAttribute("x1", x.toFixed(1)); ph.setAttribute("x2", x.toFixed(1)); }
   }
   function liveTick(r) {
     if (run !== r) return;
@@ -219,6 +281,7 @@
     if (act) { var card = t.closest(".wp-card"), l = card && list[+card.dataset.wi]; if (!l) return; if (act === "play") playTransition(l, t); else if (act === "mixer") openInMixer(l, t); return; }
     if (wf === "type") { f.type = t.dataset.v; view.querySelectorAll('[data-wf="type"]').forEach(function (b) { b.setAttribute("aria-pressed", String(b === t)); }); }
     else if (wf === "compat") { f.compat = !f.compat; t.setAttribute("aria-pressed", String(f.compat)); }
+    else if (wf === "heard") { f.heard = !f.heard; t.setAttribute("aria-pressed", String(f.heard)); }
     else return;
     shown = 20; render();
   });
@@ -240,11 +303,18 @@
     ".wp-w{background:none;color:var(--accent-ink);font-weight:800;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}" +
     ".wp-plan{margin:0;padding:0;list-style:none;display:grid;gap:6px;font-size:14px;line-height:19px}.wp-plan li{display:flex;gap:8px}.wp-plan b{flex:none;font-size:11px;width:20px;height:20px;border-radius:10px;display:grid;place-items:center;color:#fff;background:var(--vocal)}.wp-plan b.b{background:var(--beat)}" +
     ".wp-mix{display:flex;flex-wrap:wrap;gap:6px;font-size:12px}.wp-mix span{display:inline-flex;align-items:center;gap:4px;padding:3px 8px;border-radius:9px;background:var(--fill)}.wp-mix .i{width:12px;height:12px}.wp-mix .ok{background:var(--good-tint);color:var(--good-ink)}.wp-mix .tech{background:var(--warn-tint);color:var(--warn-ink)}" +
-    ".wp-live{display:grid;gap:8px}.wp-bar{position:relative;height:8px;border-radius:4px;background:var(--fill);overflow:hidden}" +
+    ".wp-live{display:grid;gap:8px}.wp-bar{position:relative;height:5px;border-radius:3px;background:var(--fill);overflow:hidden;direction:ltr}" +
     ".wp-bar .fill{position:absolute;inset-block:0;inset-inline-start:0;width:0;background:linear-gradient(90deg,var(--vocal),var(--beat));border-radius:4px;transition:width .12s linear}" +
     ".wp-bar .cutm{position:absolute;inset-block:-2px;width:3px;margin-inline-start:-1px;background:var(--label);border-radius:2px}" +
     ".wp-now{margin:0;font-size:14px;font-weight:600;color:var(--label);min-height:20px}" +
     ".wp-how{margin:0;padding:0 18px 0 0;display:grid;gap:4px;font-size:13px;line-height:18px;color:var(--label-2)}" +
+    ".wp-at{flex:none;margin-inline-start:auto;display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 8px;border-radius:12px;background:var(--fill-2);color:var(--label-2);font-size:12px}.wp-at .i{width:12px;height:12px}.wp-at b{font:700 12px/1 var(--round);font-variant-numeric:tabular-nums;color:var(--label)}" +
+    ".wp-src.ok{color:var(--good-ink);font-weight:700}.wp-card.heard{box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--good) 35%,transparent)}" +
+    ".wp-diag{position:relative;margin:2px 0 0;padding:8px 8px 6px 26px;border-radius:16px;background:var(--fill-2);direction:ltr}.wp-diag svg{display:block;width:100%;height:92px}" +
+    ".dg-l{position:absolute;left:8px;font:800 11px/1 var(--round);color:#fff;width:14px;height:14px;border-radius:7px;display:grid;place-items:center}.dg-l.a{top:28px;background:var(--vocal)}.dg-l.b{top:60px;background:var(--beat)}" +
+    ".dg-beat{stroke:var(--label-3);stroke-width:.6}.dg-bar{stroke:var(--label-2);stroke-width:1}.dg-a{fill:color-mix(in srgb,var(--vocal) 26%,transparent)}.dg-echo{fill:color-mix(in srgb,var(--vocal) 12%,transparent)}.dg-b{fill:color-mix(in srgb,var(--beat) 26%,transparent)}" +
+    ".dg-wa{fill:var(--vocal)}.dg-wb{fill:var(--beat)}.dg-cut{stroke:var(--label);stroke-width:2;stroke-dasharray:3 3}.dg-ph{stroke:var(--accent);stroke-width:2.2}" +
+    ".dg-key{display:flex;flex-wrap:wrap;gap:10px;direction:rtl;font-size:11.5px;color:var(--label-2);margin-top:4px}.dg-key i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-inline-end:4px;vertical-align:-1px}.dg-key i.wa{background:var(--vocal)}.dg-key i.wb{background:var(--beat)}.dg-key i.cut{width:2px;background:var(--label)}" +
     ".wp-note{margin:0;font-size:12px;color:var(--label-2)}.wp-card .btn.pri[aria-pressed=true]{background:var(--accent);color:#fff}.wp-more{margin:14px auto 0;display:flex}" +
     "@media (prefers-reduced-motion:no-preference){.wp-card{animation:wpIn .5s cubic-bezier(.3,1.35,.45,1) both;animation-delay:var(--d,0ms)}@keyframes wpIn{from{opacity:0;transform:translateY(14px);filter:blur(10px)}}}";
   document.head.appendChild(css);
@@ -254,5 +324,5 @@
     svg: '<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5h11a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H9l-4 3.5v-3.5H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2z"/><path d="M17 9.5h3a2 2 0 0 1 2 2v4.5a2 2 0 0 1-2 2h-1v3l-3.5-3H12"/></svg>'
   });
   render();
-  window.WordplayUI = { links: ALL, curated: curated.length, auto: auto.length, render: render, play: playTransition, stop: stopRun, filter: f, planFor: planFor, key: lkey };
+  window.WordplayUI = { get links() { return ALL; }, curated: curated.length, auto: auto.length, get heard() { return heard.length; }, render: render, play: playTransition, stop: stopRun, filter: f, planFor: planFor, key: lkey, sung: sung, _how: howHTML };
 })();

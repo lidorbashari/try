@@ -25,6 +25,7 @@ def build(engine="stub", out=None):
     s = tpl.replace("__DATA__", js(data)).replace("__SRC__", js(src)).replace("/*__ENGINE__*/", eng.replace("</script", "<\\/script"))
     ui = lambda n: open(os.path.join(LAB5, "ui", n), encoding="utf-8").read()
     s = s.replace("/*__LIQUID_CSS__*/", ui("liquid.css")).replace("/*__LIQUID__*/", ui("liquid.js").replace("</script", "<\\/script"))
+    s = s.replace("/*__MATCH__*/", open(os.path.join(LAB5, "match.js"), encoding="utf-8").read().replace("</script", "<\\/script"))
     head, body = s.split("<!--BODY-->")
     doc = ('<!doctype html>\n<html lang="he" dir="rtl">\n<head>\n<meta charset="utf-8">\n'
            '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n'

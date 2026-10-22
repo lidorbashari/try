@@ -4,7 +4,7 @@
 > stopped, and continue automatically. **This file is that checkpoint.** Update it and push it after every
 > meaningful step (commit with `[skip ci]` when only this file changes).
 
-Heartbeat (UTC): 2026-10-22T21:02Z · session: https://claude.ai/code/session_01Lo7gTW4YHqF6LiS4xWstjM · status: IN PROGRESS
+Heartbeat (UTC): 2026-10-22T21:36Z · session: https://claude.ai/code/session_01Lo7gTW4YHqF6LiS4xWstjM · status: IN PROGRESS
 
 ## How to resume in a fresh session
 1. Attach the repo with push access (`add_repo lidorbashari/try`), clone to `/home/claude/try`, branch
@@ -47,13 +47,19 @@ Heartbeat (UTC): 2026-10-22T21:02Z · session: https://claude.ai/code/session_01
         `tools/reports/mashup-titlewords.json` and wordtimes.json `disc` (links found by listening). ~1 h.
 - [ ] 2. Research (web): mashability, harmonic mixing + key shift limits, phrase matching, word-play technique,
         Liquid Glass motion; write skills.
-- [ ] 3. Matching v2 from the analysis: rank by measured key fit (with best ±2 semitone shift), vocal clash,
+- [~] 3. Matching v2 (`lab5/match.js`, unit test `lab5/test/t_match.js` 11/11; app: `mPair()` in findPairs when both
+        previews are measured, MIN_MEASURED 70; engine 6.3: `E.setPlan` / loadPair(v,b,r,plan): entry bars + lead,
+        fractional key shift, B unclean when it doesn't sing there, vocal gate on A from `vr`). Needs calibration on
+        the real listen.json once CI lands. Matching v2 from the analysis: rank by measured key fit (with best ±2 semitone shift), vocal clash,
         beat-side vocal share, energy, loudness; explain "why it works" with the measured numbers.
-- [ ] 4. Word play v2: words found in more links (auto-discover links from transcripts), cut lands on the grid,
+- [~] 4. Word play v2 (wordplay_ui.js: "disc" links found by listening, default filter = words heard in both
+        previews, time chips, diagram of the move with a playhead; e2e kept compatible). Word play v2: words found in more links (auto-discover links from transcripts), cut lands on the grid,
         B beat-matched + key-shifted to A, teaching timeline.
-- [ ] 5. Liquid Glass motion system: spring physics, lens that magnifies/refracts the tab bar items while it
+- [x] 5. Liquid Glass motion system (ui/liquid.js + ui/liquid.css, committed c6f456b; screenshots looked right in
+        light + dark). Liquid Glass motion system: spring physics, lens that magnifies/refracts the tab bar items while it
         moves and when dragged, morphing segmented controls, sheet + mini-player transitions, reduced-motion.
-- [ ] 6. Finished-product pass: onboarding, empty/loading/error states, share/deep links, install prompt, about +
+- [~] 6. Finished-product pass (welcome sheet on first run, share button + #m=vi.bi deep links, matching text in the
+        about sheet, measured badge + reasons on cards). Finished-product pass: onboarding, empty/loading/error states, share/deep links, install prompt, about +
         attribution, dark mode, performance.
 - [ ] 7. Verify (local suites + CI real-music checks + screenshots), deploy, update Lidor.
 
@@ -70,6 +76,8 @@ Heartbeat (UTC): 2026-10-22T21:02Z · session: https://claude.ai/code/session_01
   lift on press/drag, chromatic rim while lifted, tab bar minimises on scroll (iOS 26), sheets with springs.
 
 ## Log (newest first)
+- 2026-10-22 21:36Z: Liquid layer + matcher + word play v2 + welcome/share written and building; waiting for the
+  analysis v2 CI run (12/22 jobs done) to calibrate the matcher on real data, then all suites + CI checks + deploy.
 - 2026-10-22 21:00Z: analysis v2 dispatched; current build in CI real-music checks; auto-resume scheduled
   (send_later trig_01Q5YdujST43ePkxZzTNRdGn at 23:15Z).
 - 2026-10-22 20:55Z: container was reset; repo re-cloned; this checkpoint file created.

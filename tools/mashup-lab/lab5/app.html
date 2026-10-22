@@ -734,6 +734,8 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
   <symbol id="i-up" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" d="M12 19V5.5M6.2 11.3 12 5.5l5.8 5.8"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" d="m5 12.6 4.4 4.4L19 7.4"/></symbol>
   <symbol id="i-spark" viewBox="0 0 24 24"><path fill="currentColor" d="M11.1 3.6c.3-.9 1.5-.9 1.8 0l1.3 3.9a3.6 3.6 0 0 0 2.3 2.3l3.9 1.3c.9.3.9 1.5 0 1.8l-3.9 1.3a3.6 3.6 0 0 0-2.3 2.3l-1.3 3.9c-.3.9-1.5.9-1.8 0l-1.3-3.9a3.6 3.6 0 0 0-2.3-2.3l-3.9-1.3c-.9-.3-.9-1.5 0-1.8l3.9-1.3a3.6 3.6 0 0 0 2.3-2.3z"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" d="M12 14.5V3.5M8 7.2 12 3.5l4 3.7M7.5 10H6.2A2.2 2.2 0 0 0 4 12.2v6.6A2.2 2.2 0 0 0 6.2 21h11.6a2.2 2.2 0 0 0 2.2-2.2v-6.6a2.2 2.2 0 0 0-2.2-2.2h-1.3"/></symbol>
+  <symbol id="i-ear" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 9.5a5 5 0 0 1 10 0c0 3.2-2.6 4.1-3.4 6.2-.6 1.6-1.4 3.8-3.6 3.8a2.6 2.6 0 0 1-2.6-2.6M10 9.8a2 2 0 0 1 4 0c0 1.2-1 1.7-1.6 2.4"/></symbol>
   <symbol id="i-plus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M12 5.5v13M5.5 12h13"/></symbol>
 </svg>
 
@@ -877,6 +879,7 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
 </section>
 
 <script>/*__LIQUID__*/</script>
+<script>/*__MATCH__*/</script>
 <script>/*__ENGINE__*/</script>
 <script>
 /* ===================================================================================
@@ -950,6 +953,17 @@ function makePair(v, b, rel, t) {
   const score = Math.max(0, Math.min(100, Math.round(base - E_PEN(Math.abs(ev.e - eb.e)) + bonus)));
   return { v, b, rel, t, base, score, en: { v: ev.e, b: eb.e, est: ev.est || eb.est } };
 }
+/* measured pair (match.js heard both previews): same shape, plus mm = { score, plan, s, cents, Hn, O, why, ... } */
+const MIN_MEASURED = 70;
+function mPair(v, b, maxDiff) {
+  if (!MEAS) return undefined;
+  if (!MashMatch.track(v) || !MashMatch.track(b)) return undefined;    /* not measured: the catalog decides */
+  const m = MashMatch.pair(v, b, { maxDiff });
+  if (!m || !m.ok || m.d > maxDiff + 1e-9) return null;
+  const ev = energyOf(v), eb = energyOf(b), t = { d: m.d, mode: m.q === 1 ? "1:1" : m.q === 2 ? "vhalf" : "vdouble" };
+  const score = Math.max(0, Math.min(100, Math.round(m.score - E_PEN(Math.abs(ev.e - eb.e)))));
+  return { v, b, rel: camRel(v.k, b.k) || "measured", t, base: m.score, score, en: { v: ev.e, b: eb.e, est: ev.est || eb.est }, mm: m };
+}
 /* scorePair(vocal, beat) → pair (as above) or null when the keys do not match. Pure; used by QA parity tests. */
 function scorePair(v, b) {
   const rel = camRel(v.k, b.k); if (!rel) return null;
@@ -960,7 +974,7 @@ const pairEnergy = p => Math.round((p.en.v + p.en.b) / 2);
 const eTxt = t => { const x = energyOf(t); return "E" + (x.est ? "~" : "") + x.e; };
 const energyBand = e => e <= 5 ? "warm" : e <= 7 ? "groove" : "peak";
 const EN_WORD = { warm: "חימום", groove: "גרוב", peak: "שיא" };
-function pairOf(v, b) { return scorePair(v, b); }
+function pairOf(v, b) { const m = mPair(v, b, 0.1); return m !== undefined ? (m && m.score >= MIN_MEASURED ? m : null) : scorePair(v, b); }
 function findPairs(gv, gb, opts) {
   opts = opts || {};
   const out = [], maxDiff = opts.maxDiff == null ? 0.06 : opts.maxDiff;
@@ -968,6 +982,14 @@ function findPairs(gv, gb, opts) {
   for (const v of vocals) for (const b of beats) {
     if (v === b) continue;
     if (firstArtist(v.a) === firstArtist(b.a)) continue;
+    const mp = mPair(v, b, maxDiff);
+    if (mp !== undefined) {                                   /* both previews measured: the matcher decides */
+      if (!mp || mp.score < MIN_MEASURED) continue;
+      if (opts.sameKey && (mp.mm.s !== 0 || mp.mm.cents)) continue;
+      if (opts.noHot && (v.hot || b.hot)) continue;
+      if (opts.energy && opts.energy !== "all" && energyBand(pairEnergy(mp)) !== opts.energy) continue;
+      out.push(mp); continue;
+    }
     const rel = camRel(v.k, b.k); if (!rel) continue;
     if (opts.sameKey && rel !== "same") continue;
     const t = tempo(v.bpm, b.bpm); if (t.d > maxDiff + 1e-9) continue;
@@ -1022,6 +1044,7 @@ const ratesOf = p => { const tg = targets(p); return { A: tg.vT / p.v.bpm, B: tg
 /* a "free" pair: two tracks that do not match by key (used by feature modules such as wordplay transitions) */
 function pairAny(v, b) {
   const p = pairOf(v, b); if (p) return p;
+  const m = mPair(v, b, 0.12); if (m) { m.free = m.score < MIN_MEASURED; return m; }
   const ev = energyOf(v), eb = energyOf(b);
   return { v, b, rel: null, t: tempo(v.bpm, b.bpm), base: null, score: null, free: true, en: { v: ev.e, b: eb.e, est: ev.est || eb.est } };
 }
@@ -1103,7 +1126,7 @@ if (!E) E = nullEngine();
 if (!IN_CLAUDE && window.fetch && /^https?:$/.test(location.protocol)) {
   fetch("previews.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : null).then(j => {
     if (!j || !j.map || !window.MashEngine || !MashEngine.seed) return;
-    const n = MashEngine.seed(j.map);
+    const n = MashEngine.seed(j.map); MD.previews = j.map; window.__previewMap = j.map; seedMatch();
     if (j.meta && typeof j.meta.audioCors === "boolean" && E.hintCors) E.hintCors(j.meta.audioCors);
     window.__previews = { n, meta: j.meta || null };
     try { DATA.forEach(t => applyArt(t)); } catch (e) {}
@@ -1112,6 +1135,7 @@ if (!IN_CLAUDE && window.fetch && /^https?:$/.test(location.protocol)) {
   fetch("beats.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : null).then(j => {
     if (!j || !j.map || !window.MashEngine || !MashEngine.seedBeats) return;
     window.__beats = { n: MashEngine.seedBeats(j.map), meta: j.meta || null };
+    MD.beats = j.map; seedMatch();
   }).catch(() => {});
   /* analysis.json + wordtimes.json: what each preview holds (key, vocal and energy per beat, loudness, sections) and
      when each word-play word is sung, measured on GitHub's servers (tools/mashup_lab_analyze.py): numbers only */
@@ -1119,11 +1143,27 @@ if (!IN_CLAUDE && window.fetch && /^https?:$/.test(location.protocol)) {
     if (!j || !j.map) return;
     window.__analysis = { map: j.map, meta: j.meta || null, n: window.MashEngine && MashEngine.seedAnalysis ? MashEngine.seedAnalysis(j.map) : Object.keys(j.map).length };
     try { document.dispatchEvent(new CustomEvent("mashlab:analysis")); } catch (e) {}
-    try { if (window.scrollY < 400 && state.sort === "best" && typeof homeChanged === "function") homeChanged(); } catch (e) {}
+    MD.an = j.map;
+    /* listen.json: per-bar sung notes / chords + vocal level per beat (analysis v2): the matcher hears pairs with it */
+    return fetch("listen.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : null).then(l => {
+      if (l && l.map) { MD.li = l.map; if (MashEngine.seedListen) MashEngine.seedListen(l.map); }
+    }).catch(() => {}).then(() => { seedMatch(); if (!MEAS) { try { if (window.scrollY < 400 && state.sort === "best" && typeof homeChanged === "function") homeChanged(); } catch (e) {} } });
   }).catch(() => {});
   fetch("wordtimes.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : null).then(j => {
     if (j && j.links) window.__wordtimes = j.links;
+    if (j && Array.isArray(j.disc)) { window.__wordDisc = j.disc; try { document.dispatchEvent(new CustomEvent("mashlab:words")); } catch (e) {} }
   }).catch(() => {});
+}
+/* the measured matcher (match.js) runs once previews + beat grids + analysis + listen.json are all in */
+const MD = { previews: null, beats: null, an: null, li: null };
+let MEAS = false;
+function seedMatch() {
+  if (!window.MashMatch || !MD.previews || !MD.beats || !MD.an || !MD.li || !window.MashEngine) return;
+  const ok = MashMatch.seed({ an: MD.an, li: MD.li, beats: MD.beats, previews: MD.previews, hash: u => MashEngine._hash(u) });
+  if (!ok || MEAS) return;
+  MEAS = true; window.__measured = true;
+  try { document.dispatchEvent(new CustomEvent("mashlab:measured")); } catch (e) {}
+  try { if (typeof homeChanged === "function") homeChanged({ presets: true, keepScroll: window.scrollY > 400 }); } catch (e) {}
 }
 const est = () => { try { return E.state(); } catch (e) { return nullEngine().state(); } };
 const artOf = t => { try { return E.art(t) || null; } catch (e) { return null; } };
@@ -1178,11 +1218,11 @@ function cardHTML(p, o) {
   const fk = pairKey(p), fav = favs.includes(fk);
   return `<article class="card${o.rise ? " rise" : ""}" data-pk="${pkOf(p)}" data-fk="${esc(fk)}"${o.rise ? ` style="--d:${o.d || 0}ms"` : ""} aria-label="${esc(ttl(p.v))} מעל ${esc(ttl(p.b))}${p.score == null ? "" : `, התאמה ${p.score}`}${p.en ? `, ${EN_WORD[energyBand(pairEnergy(p))]}` : ""}">
     <div class="c-top">
-      <div class="c-art"><div class="stack">${coverHTML(p.v, "a")}${coverHTML(p.b, "b")}</div>${p.score == null ? "" : `<span class="match ${scCls(p.score)}">התאמה <b>${p.score}</b></span>`}${enChip(p)}</div>
+      <div class="c-art"><div class="stack">${coverHTML(p.v, "a")}${coverHTML(p.b, "b")}</div>${p.score == null ? "" : `<span class="match ${scCls(p.score)}"${p.mm ? ' title="נמדד בהאזנה לשני הקטעים"' : ""}>${p.mm ? I("ear") : ""}התאמה <b>${p.score}</b></span>`}${enChip(p)}</div>
       <div class="c-rows">${rowHTML(p.v, "v", o.year)}${rowHTML(p.b, "b", o.year)}</div>
       <button class="ib star" type="button" data-act="fav" aria-pressed="${fav}" aria-label="שמירה בשמורים">${I("star", "o")}${I("star-f", "f")}</button>
     </div>
-    ${o.why ? `<p class="why">${I("spark")}<span>${esc(o.why)}</span></p>` : ""}
+    ${(o.why || (p.mm && p.mm.why && p.mm.why.length)) ? `<p class="why">${I(o.why ? "spark" : "ear")}<span>${esc(o.why || p.mm.why.slice(0, p.mm.s || p.mm.cents ? 2 : 1).join(" · "))}</span></p>` : ""}
     <div class="c-acts">
       <button class="btn pri" type="button" data-act="both" aria-pressed="false">${I("play")}<span>נגן מאש־אפ יחד</span></button>
       <button class="btn v" type="button" data-act="vocal" aria-pressed="false">${I("mic")}<span>שירה בלבד</span></button>
@@ -1224,7 +1264,8 @@ function applyLive(st) {
 function ensureLoaded(p, sync) {
   if (loaded && loaded.pk === pkOf(p)) return false;
   const want = sync == null ? !p.free : !!sync;
-  E.loadPair(p.v, p.b, want ? ratesOf(p) : { A: 1, B: 1 });
+  const mm = p.mm || (MEAS ? MashMatch.pair(p.v, p.b, {}) : null);
+  E.loadPair(p.v, p.b, want ? ratesOf(p) : { A: 1, B: 1 }, mm && mm.ok ? mm.plan : null);
   loaded = { p, pk: pkOf(p) };
   const st = est();
   if (st.A && st.A.syncOn !== want) E.setSync("A", want);
@@ -1278,7 +1319,7 @@ const PRESETS = [["mizr","house"],["mizr","afrohouse"],["afro","house"],["mizr",
    keys that fit as measured (or after the engine's ±1 semitone key match) rank a pair higher among equal scores */
 const shiftCam = (k, s) => { const n = parseInt(k, 10), l = String(k).slice(-1); return (((n - 1 + 7 * s) % 12 + 12) % 12 + 1) + l; };
 function fitOf(p) {
-  const m = window.__analysis && window.__analysis.map; if (!m) return 0;
+  const m = window.__analysis && window.__analysis.map; if (!m || p.mm) return 0;
   const a = m[p.v.t + " | " + p.v.a], b = m[p.b.t + " | " + p.b.a];
   let f = 0;
   if (a && !a.err && a.vs != null) f += a.vs >= .35 ? 2 : a.vs < .12 ? -3 : 0;
@@ -1714,6 +1755,7 @@ function mixerHTML(p) {
     <button class="rbtn" type="button" data-act="sheet-close" aria-label="סגירת המיקסר, המוזיקה ממשיכה">${I("down")}</button>
     <h2 id="mxTitle">מיקסר</h2>
     ${p.score == null ? "" : `<span class="match ${scCls(p.score)}">התאמה <b>${p.score}</b></span>`}
+    <button class="rbtn" type="button" data-act="share" aria-label="שיתוף המאש־אפ">${I("share")}</button>
     <button class="rbtn star" type="button" data-act="mx-fav" aria-pressed="${fav}" aria-label="שמירה בשמורים">${I("star", "o")}${I("star-f", "f")}</button>
   </header>
   <div class="mx-body">
@@ -2025,7 +2067,8 @@ function srcHTML() {
     <div class="now" aria-live="polite"><div class="nr"><span>דק A · שירה</span><b>${esc(kindTxt(st.A))}</b></div><div class="nr"><span>דק B · ביט</span><b>${esc(kindTxt(st.B))}</b></div></div>
     <div class="info">
       <h3>איך מתאימים זוגות</h3>
-      <p><b>סולם.</b> שני שירים מתאימים אם יש להם אותו קוד קמלוט, מספר אחד למעלה או למטה באותה אות, או אותו מספר עם אות אחרת (מז'ור ומינור).</p>
+      <p><b>הקשבה.</b> כל קטע נותח על השרתים של GitHub: הפרדה לשירה, תופים, בס וכלים, ואז בכל תיבה: אילו תווים שרים, אילו אקורדים מתנגנים, וכמה חזקה השירה. ${MEAS ? "הזוגות שמסומנים כנמדדים נבחרו כך:" : "כשהניתוח נטען, הזוגות נבחרים כך:"} שמונה התיבות של השירה שיושבות הכי טוב על האקורדים של הביט, הזזה של חצי טון או טון כשזה עוזר, וביט שאין בו שירה באותו קטע. השירה נכנסת על תחילת תיבה, אחרי שהביט כבר מתנגן.</p>
+      <p><b>סולם.</b> בלי ניתוח, שני שירים מתאימים אם יש להם אותו קוד קמלוט, מספר אחד למעלה או למטה באותה אות, או אותו מספר עם אות אחרת (מז'ור ומינור).</p>
       <p><b>קצב.</b> הפרש של עד 3% או 6%. המעבדה בודקת גם יחס של 2:1, למשל שירה ב־70 מעל ביט ב־140.</p>
       <p><b>התאמה.</b> מתחילה ב־100 ויורדת לפי הפרש הקצב, סולם שאינו זהה ויחס 2:1. "מפתיע ומקורי" מדרג לפי המרחק בין הסגנונות ופער השנים, מבין הזוגות עם התאמה 82 ומעלה.</p>
       <p><b>לפני שמנגנים בסט.</b> לשירים יש גרסאות שונות, וחלק מהשירים האיטיים רשומים בקצב כפול. כדאי לבדוק כל שיר בתוכנת הדיג׳יי.</p>
@@ -2244,6 +2287,47 @@ function disableAgent() {
 }
 function autoGrow() { const t = $("#askIn"); t.style.height = "auto"; t.style.height = Math.min(132, t.scrollHeight) + "px"; if (!agCtl) $("#askSend").disabled = !t.value.trim(); }
 
+/* ---------- share a mashup: a link that opens it in the mixer ---------- */
+function shareUrl(p) { return location.href.split("#")[0] + "#m=" + p.v.i + "." + p.b.i; }
+function sharePair(btn) {
+  if (!loaded) return;
+  const p = loaded.p, url = shareUrl(p), text = `${ttl(p.v)} מעל ${ttl(p.b)} · מאש־אפ ממעבדת המשאפים`;
+  if (navigator.share) { navigator.share({ title: "מעבדת המשאפים", text, url }).catch(() => {}); return; }
+  const done = () => island("הקישור הועתק", "share", "o");
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(done, () => island(url, "share", "o")); else island(url, "share", "o");
+}
+function openDeepLink() {
+  const m = /#m=(\d+)\.(\d+)/.exec(location.hash || ""); if (!m) return false;
+  const v = DATA[+m[1]], b = DATA[+m[2]]; if (!v || !b) return false;
+  const p = pairAny(v, b); ensureLoaded(p); openMixer(null); refreshAll();
+  try { history.replaceState(null, "", location.href.split("#")[0]); } catch (e) {}
+  return true;
+}
+/* ---------- first run: what this is, in three lines ---------- */
+function welcomeHTML() {
+  const row = (ic, cls, h, t) => `<div class="wl-row"><span class="wl-ic ${cls}">${I(ic)}</span><div><h3>${h}</h3><p>${t}</p></div></div>`;
+  return `<div class="grab" aria-hidden="true"></div>
+  <div class="wl" data-drag>
+    <div class="wl-logo" aria-hidden="true"><svg class="logo" viewBox="0 0 22 14"><circle class="la" cx="7" cy="7" r="6.5"/><circle class="lb" cx="15" cy="7" r="6.5"/></svg></div>
+    <h2 id="wlTitle">ברוכים הבאים למעבדת המשאפים</h2>
+    <p class="wl-sub">שירה משיר אחד, ביט משיר אחר, על אותו ביט.</p>
+    ${row("ear", "a", "האפליקציה הקשיבה לכל שיר", "היא יודעת איפה שרים, באיזה סולם ובאיזה קצב בכל תיבה, ובוחרת זוגות שבאמת יושבים אחד על השני. כשצריך היא מזיזה את השירה בחצי טון.")}
+    ${row("seq", "b", "מעברי מילים", "שיר אחד שר מילה, והבא ממשיך אותה בדיוק על הביט. שרטוט קטן מראה איפה המילה ואיפה חותכים, כדי שתעשה את זה לבד.")}
+    ${row("sliders", "c", "מיקסר עם שני דקים", "ווליום, EQ, SYNC וקרוספיידר כמו בקונטרולר, עם השירים המקוריים.")}
+    <button class="wl-go" type="button" data-act="welcome-go" data-autofocus>יאללה, מתחילים</button>
+    <p class="wl-foot">הקטעים מתנגנים מתצוגות מקדימות של Apple Music, באדיבות iTunes.</p>
+  </div>`;
+}
+function maybeWelcome() {
+  const force = /[?&]welcome\b/.test(location.search);
+  if (!force && (store.get("mashlab.welcome", 0) >= 1 || IN_CLAUDE || /[?&]nowelcome\b/.test(location.search) || navigator.webdriver)) return;
+  store.set("mashlab.welcome", 1);
+  let el = $("#welcome");
+  if (!el) { el = document.createElement("section"); el.className = "sheet mid"; el.id = "welcome"; el.setAttribute("role", "dialog"); el.setAttribute("aria-modal", "true"); el.setAttribute("aria-labelledby", "wlTitle"); el.tabIndex = -1; el.hidden = true; document.body.appendChild(el); }
+  el.innerHTML = welcomeHTML();
+  setTimeout(() => { if (!sheetCtx) openSheet(el, null); }, 450);
+}
+
 /* ---------- events ---------- */
 document.addEventListener("click", e => {
   if (suppressClick && e.target.closest(".tab")) { e.preventDefault(); return; }
@@ -2266,6 +2350,8 @@ document.addEventListener("click", e => {
     case "open-mixer": E.gesture(); openMixer(a); break;
     case "mini-pp": { E.gesture(); const st = est(); if (anyPlaying(st)) E.pauseAll(); else E.resume(); refreshAll(); break; }
     case "unload": unloadAll(); break;
+    case "share": sharePair(a); break;
+    case "welcome-go": closeSheet(); break;
     case "mx-fav": { if (!loaded) break; const on = toggleFav(pairKey(loaded.p)); a.setAttribute("aria-pressed", String(on)); a.classList.remove("pop"); void a.offsetWidth; if (on) a.classList.add("pop"); break; }
     case "dk-toggle": { E.gesture(); E.toggle(a.dataset.side); refreshAll(); break; }
     case "sync": { const st = est(), sd = a.dataset.side; E.setSync(sd, !(st[sd] && st[sd].syncOn)); refreshAll(); break; }
@@ -2382,6 +2468,7 @@ window.addEventListener("scroll", syncTopbar, { passive: true });
       SAMPLE = s; enableAgent();
     }).catch(() => disableAgent());
   }
-  window.MashApp = { E, DATA, state, currentPairs, findPairs, pairOf, pairAny, scorePair, energyOf, sectionPlan, targets, ratesOf, cardHTML, enChip, ttl, viewHeader, play: playPair, openMixer, closeSheet, setTab, addTab, addHomeSection, island, refresh: refreshAll, get loaded() { return loaded; } };
+  window.MashApp = { E, DATA, state, currentPairs, findPairs, pairOf, pairAny, scorePair, energyOf, sectionPlan, targets, ratesOf, cardHTML, enChip, ttl, viewHeader, play: playPair, openMixer, openSheet, closeSheet, setTab, addTab, addHomeSection, island, refresh: refreshAll, get loaded() { return loaded; }, get measured() { return MEAS; } };
+  if (!openDeepLink()) maybeWelcome();
 })();
 </script>
