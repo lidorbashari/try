@@ -4,7 +4,7 @@
 > stopped, and continue automatically. **This file is that checkpoint.** Update it and push it after every
 > meaningful step (commit with `[skip ci]` when only this file changes).
 
-Heartbeat (UTC): 2026-10-22T21:36Z · session: https://claude.ai/code/session_01Lo7gTW4YHqF6LiS4xWstjM · status: IN PROGRESS
+Heartbeat (UTC): 2026-10-22T21:46Z · session: https://claude.ai/code/session_01Lo7gTW4YHqF6LiS4xWstjM · status: IN PROGRESS
 
 ## How to resume in a fresh session
 1. Attach the repo with push access (`add_repo lidorbashari/try`), clone to `/home/claude/try`, branch
@@ -75,7 +75,20 @@ Heartbeat (UTC): 2026-10-22T21:36Z · session: https://claude.ai/code/session_01
   tab row inside the lens (+ feDisplacementMap via CSS filter on that copy), spring physics with velocity stretch,
   lift on press/drag, chromatic rim while lifted, tab bar minimises on scroll (iOS 26), sheets with springs.
 
+## Next actions (in order)
+1. When analysis run 39853312250 has merged (commit "song analysis from the previews"): `git pull`, then calibrate the
+   matcher on the real data: `node <scratch>/cal/calib.js docs/mashup-lab tools/mashup-lab/lab5/data.json`
+   (script content: loads analysis/listen/beats/previews, runs MashMatch on vocal-genre × beat-genre pairs, prints
+   score / Hn / shift distributions and top/bottom pairs). Tune MIN_MEASURED (app.html) and penalties (match.js).
+2. Build, run every suite (timing, t_match, t_wp, t_buf incl. plan, run_all), deploy to tools/verify only
+   (`python3 deploy.py` then `git checkout docs/mashup-lab/index.html`, commit tools/verify + verify scripts WITHOUT
+   [skip ci]) → CI sync check (now through MashApp.play with the plan) + word-play check (+15 links found by listening).
+3. If the reports are good: deploy docs/ (index.html, sw.js, manifest, icons) and push both branches; message Lidor.
+4. Propose skills (drafts in scratchpad/skills: mashup-listening, liquid-glass-web, dj-wordplay-transitions improvement).
+
 ## Log (newest first)
+- 2026-10-22 21:46Z: container restarted once (disk kept). Verify scripts now play through the app path and log
+  the plan; word-play check adds the discovered links.
 - 2026-10-22 21:36Z: Liquid layer + matcher + word play v2 + welcome/share written and building; waiting for the
   analysis v2 CI run (12/22 jobs done) to calibrate the matcher on real data, then all suites + CI checks + deploy.
 - 2026-10-22 21:00Z: analysis v2 dispatched; current build in CI real-music checks; auto-resume scheduled

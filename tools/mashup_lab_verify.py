@@ -48,8 +48,11 @@ RECORD_JS = """async (secs) => {
 PLAY_JS = """([ka, kb]) => {
   const D = MashApp.DATA, key = t => t.t + " | " + t.a, A = D.find(t => key(t) === ka), B = D.find(t => key(t) === kb);
   if (!A || !B) return "missing";
-  const E = MashApp.E; E.gesture(); E.stopAll();
-  E.loadPair(A, B, MashApp.ratesOf(MashApp.pairAny(A, B))); E.playBoth(); window.__t0 = performance.now(); return "ok";
+  const E = MashApp.E; E.stopAll();
+  /* the app's own path: the measured matcher's plan (entry bars, key shift, clean-up, vocal gate) goes to the engine */
+  const p = MashApp.pairAny(A, B); MashApp.play(p, "both"); window.__t0 = performance.now();
+  const m = p.mm; window.__plan = m && m.ok ? { score: m.score, s: m.s, cents: m.cents, Hn: Math.round(m.Hn * 1000) / 1000, O: Math.round(m.O * 100) / 100, aBar: m.aBar, bBar: m.bBar, cleanB: m.plan.cleanB, lead: m.plan.leadBars } : null;
+  return "ok";
 }"""
 
 
@@ -172,7 +175,11 @@ def main():
         pg.on("pageerror", lambda e: errs.append(str(e)))
         pg.goto(f"http://127.0.0.1:{args.port}/index.html")
         pg.wait_for_function("window.MashApp && window.__previews && window.__beats", timeout=30000)
-        meta = pg.evaluate("({previews: window.__previews.n, beats: window.__beats.n, engine: MashEngine.version})")
+        try:
+            pg.wait_for_function("window.__measured === true", timeout=20000)    # listen.json in: the matcher plans every pair
+        except Exception:
+            print("no measured matcher on this page (listen.json missing?)", flush=True)
+        meta = pg.evaluate("({previews: window.__previews.n, beats: window.__beats.n, engine: MashEngine.version, measured: !!window.__measured})")
         print("page ready", meta, flush=True)
         for i, (v, b) in enumerate(pairs, 1):
             row = {"vocal": key(v), "beat": key(b), "gv": v["g"], "gb": b["g"], "grid_v": bmap[key(v)][:4], "grid_b": bmap[key(b)][:4]}
@@ -184,6 +191,9 @@ def main():
                 row["start_s"] = round(time.time() - t0, 2)
                 pg.wait_for_timeout(1200)
                 st = pg.evaluate("MashApp.E.state()")
+                row["plan"] = pg.evaluate("window.__plan")
+                row["semis"] = [st["A"].get("semis"), st["B"].get("semis")]
+                row["vox"] = [st["A"].get("vox"), st["B"].get("vox")]
                 row.update({"bm": [st["A"].get("bm"), st["B"].get("bm")], "sync": [st["A"].get("sync"), st["B"].get("sync")], "lock": st.get("beat"),
                             "src": [(st["A"].get("grid") or {}).get("src"), (st["B"].get("grid") or {}).get("src")],
                             "rate": [round(st["A"]["rate"], 5), round(st["B"]["rate"], 5)]})
@@ -234,9 +244,9 @@ def main():
     summary["hits_median_abs_ms"] = round(float(np.median(hm)), 1) if hm else None
     summary["hits_within_10ms"] = round(float(np.mean(np.array(hm) <= 10)), 3) if hm else None
     lines = ["Mashup Lab real-music beat-sync check",
-             "columns: beat offset median ms | beats matched | bars matched | hit offset median ms | start s | genres | pair",
+             "columns: beat offset median ms | beats matched | bars matched | hit offset median ms | start s | genres | pair | measured plan",
              json.dumps(summary, ensure_ascii=False)] + [
-        f'{(r.get("beats") or {}).get("median_ms")}\t{(r.get("beats") or {}).get("matched")}\t{(r.get("bars") or {}).get("matched")}\t{(r.get("hits") or {}).get("median_ms")}\t{r.get("start_s")}\t{r.get("gv")}→{r.get("gb")}\t{r["vocal"]}  ×  {r["beat"]}\t{r.get("err", "")}'
+        f'{(r.get("beats") or {}).get("median_ms")}\t{(r.get("beats") or {}).get("matched")}\t{(r.get("bars") or {}).get("matched")}\t{(r.get("hits") or {}).get("median_ms")}\t{r.get("start_s")}\t{r.get("gv")}→{r.get("gb")}\t{r["vocal"]}  ×  {r["beat"]}\t{json.dumps(r.get("plan"), ensure_ascii=False) if r.get("plan") else "-"}\t{r.get("err", "")}'
         for r in rows]
     open(args.summary, "w", encoding="utf-8").write("\n".join(lines) + "\n")
     print("\n".join(lines[:3]))

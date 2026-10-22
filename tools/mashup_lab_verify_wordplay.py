@@ -138,6 +138,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--page", default=os.path.join(ROOT, "tools", "verify", "mashup-lab-next.html"))
     ap.add_argument("--links", type=int, default=40)
+    ap.add_argument("--disc", type=int, default=15, help="also play the top links found by listening (wordtimes.json disc)")
     ap.add_argument("--checkpoint", default="final0")
     ap.add_argument("--out", default=os.path.join(ROOT, "tools", "reports", "mashup-wordplay-report.json"))
     ap.add_argument("--summary", default=os.path.join(ROOT, "tools", "reports", "mashup-wordplay.txt"))
@@ -153,12 +154,13 @@ def main():
         from beat_this.inference import Audio2Beats
         a2b = Audio2Beats(checkpoint_path=args.checkpoint, device="cpu", dbn=False)
     links = json.load(open(os.path.join(args.lab, "wordplay-links.json"), encoding="utf-8"))
-    wt = {}
+    wt, disc = {}, []
     if os.path.exists(os.path.join(args.lab, "wordtimes.json")):
-        wt = json.load(open(os.path.join(args.lab, "wordtimes.json"), encoding="utf-8")).get("links", {})
+        wj = json.load(open(os.path.join(args.lab, "wordtimes.json"), encoding="utf-8"))
+        wt, disc = wj.get("links", {}), wj.get("disc") or []
     pmap = json.load(open(os.path.join(args.lab, "previews.json"), encoding="utf-8"))["map"]
     order = sorted(links, key=lambda l: (-(bool((wt.get(l["a"] + " || " + l["b"]) or {}).get("a")) + bool((wt.get(l["a"] + " || " + l["b"]) or {}).get("b"))), l["a"]))
-    order = order[: args.links]
+    order = order[: args.links] + [{"a": c["a"], "b": c["b"], "word": c.get("w"), "type": "heard"} for c in disc[: args.disc]]
     site = tempfile.mkdtemp()
     shutil.copy(args.page, os.path.join(site, "index.html"))
     for f in os.listdir(args.lab):
@@ -178,6 +180,11 @@ def main():
         pg.goto(f"http://127.0.0.1:{args.port}/index.html")
         pg.wait_for_function("window.MashApp && window.WordplayUI && window.__previews && window.__beats", timeout=30000)
         pg.wait_for_timeout(1500)
+        if disc:
+            try:
+                pg.wait_for_function("Array.isArray(window.__wordDisc) && window.WordplayUI.heard > 0", timeout=15000)
+            except Exception:
+                print("the page did not pick up the links found by listening", flush=True)
         meta = pg.evaluate("({previews: window.__previews.n, beats: window.__beats.n, analysis: window.__analysis ? window.__analysis.n : 0, words: window.__wordtimes ? Object.keys(window.__wordtimes).length : 0, engine: MashEngine.version})")
         print("page ready", meta, flush=True)
         for i, l in enumerate(order, 1):
