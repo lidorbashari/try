@@ -1,108 +1,48 @@
 == parts/log-0.txt
-shard 0: 150 of 1200 previews to analyse
-shard 0: 10/150 ok=10 (31s)
-shard 0: 20/150 ok=20 (62s)
-shard 0: 30/150 ok=30 (93s)
-shard 0: 40/150 ok=40 (122s)
-shard 0: 50/150 ok=50 (153s)
-shard 0: 60/150 ok=60 (185s)
-shard 0: 70/150 ok=70 (216s)
-shard 0: 80/150 ok=80 (247s)
-shard 0: 90/150 ok=90 (279s)
-shard 0: 100/150 ok=100 (308s)
-shard 0: 110/150 ok=110 (339s)
-shard 0: 120/150 ok=120 (369s)
-shard 0: 130/150 ok=130 (400s)
-shard 0: 140/150 ok=140 (431s)
-shard 0: 150/150 ok=150 (463s)
-shard 0 done: 150 analysed, 150 grids
+shard 0: 38 of 300 previews to analyse
+shard 0: 10/38 ok=10 (31s)
+shard 0: 20/38 ok=20 (64s)
+shard 0: 30/38 ok=30 (93s)
+shard 0 done: 38 analysed, 38 grids
 == parts/log-1.txt
-shard 1: 150 of 1200 previews to analyse
-shard 1: 10/150 ok=10 (34s)
-shard 1: 20/150 ok=20 (67s)
-shard 1: 30/150 ok=30 (99s)
-shard 1: 40/150 ok=40 (129s)
-shard 1: 50/150 ok=50 (160s)
-shard 1: 60/150 ok=60 (195s)
-shard 1: 70/150 ok=70 (230s)
-shard 1: 80/150 ok=80 (265s)
-shard 1: 90/150 ok=90 (297s)
-shard 1: 100/150 ok=100 (328s)
-shard 1: 110/150 ok=110 (360s)
-shard 1: 120/150 ok=120 (391s)
-shard 1: 130/150 ok=130 (425s)
-shard 1: 140/150 ok=140 (458s)
-shard 1: 150/150 ok=150 (490s)
-shard 1 done: 150 analysed, 150 grids
+shard 1: 38 of 300 previews to analyse
+shard 1: 10/38 ok=10 (26s)
+shard 1: 20/38 ok=20 (52s)
+shard 1: 30/38 ok=30 (78s)
+shard 1 done: 38 analysed, 38 grids
 == parts/log-2.txt
-shard 2: 150 of 1200 previews to analyse
-shard 2: 10/150 ok=10 (32s)
-shard 2: 20/150 ok=20 (64s)
-shard 2: 30/150 ok=30 (96s)
-shard 2: 40/150 ok=40 (131s)
-shard 2: 50/150 ok=50 (164s)
-shard 2: 60/150 ok=60 (198s)
-shard 2: 70/150 ok=70 (231s)
-shard 2: 80/150 ok=80 (269s)
-shard 2: 90/150 ok=90 (302s)
-shard 2: 100/150 ok=100 (336s)
-shard 2: 110/150 ok=110 (369s)
-shard 2: 120/150 ok=120 (403s)
-shard 2: 130/150 ok=130 (436s)
-shard 2: 140/150 ok=140 (470s)
-shard 2: 150/150 ok=150 (502s)
-shard 2 done: 150 analysed, 150 grids
+shard 2: 38 of 300 previews to analyse
+shard 2: 10/38 ok=10 (24s)
+shard 2: 20/38 ok=20 (51s)
+shard 2: 30/38 ok=30 (74s)
+shard 2 done: 38 analysed, 38 grids
 == parts/log-3.txt
-shard 3: 150 of 1200 previews to analyse
-shard 3: 10/150 ok=10 (35s)
-shard 3: 20/150 ok=20 (71s)
-shard 3: 30/150 ok=30 (104s)
-shard 3: 40/150 ok=40 (139s)
-shard 3: 50/150 ok=50 (173s)
-shard 3: 60/150 ok=60 (207s)
-shard 3: 70/150 ok=70 (241s)
-shard 3: 80/150 ok=80 (275s)
-shard 3: 90/150 ok=90 (309s)
-shard 3: 100/150 ok=100 (342s)
-shard 3: 110/150 ok=110 (375s)
-shard 3: 120/150 ok=120 (408s)
-shard 3: 130/150 ok=130 (442s)
-shard 3: 140/150 ok=140 (476s)
-shard 3: 150/150 ok=150 (509s)
-shard 3 done: 150 analysed, 150 grids
+shard 3: 38 of 300 previews to analyse
+shard 3: 10/38 ok=10 (21s)
+shard 3: 20/38 ok=20 (44s)
+shard 3: 30/38 ok=30 (64s)
+shard 3 done: 38 analysed, 38 grids
 == parts/log-4.txt
-shard 4: 150 of 1200 previews to analyse
-shard 4: 10/150 ok=10 (30s)
-shard 4: 20/150 ok=20 (61s)
-shard 4: 30/150 ok=30 (91s)
-shard 4: 40/150 ok=40 (119s)
-shard 4: 50/150 ok=50 (148s)
-shard 4: 60/150 ok=60 (182s)
-shard 4: 70/150 ok=70 (211s)
-shard 4: 80/150 ok=80 (243s)
-shard 4: 90/150 ok=90 (274s)
-shard 4: 100/150 ok=100 (303s)
-shard 4: 110/150 ok=110 (333s)
-shard 4: 120/150 ok=120 (363s)
-shard 4: 130/150 ok=130 (397s)
-shard 4: 140/150 ok=140 (428s)
-shard 4: 150/150 ok=150 (461s)
-shard 4 done: 150 analysed, 150 grids
+shard 4: 37 of 300 previews to analyse
+shard 4: 10/37 ok=10 (23s)
+shard 4: 20/37 ok=20 (47s)
+shard 4: 30/37 ok=30 (70s)
+shard 4 done: 37 analysed, 37 grids
 == parts/log-5.txt
-shard 5: 150 of 1200 previews to analyse
-shard 5: 10/150 ok=10 (23s)
-shard 5: 20/150 ok=20 (47s)
-shard 5: 30/150 ok=30 (70s)
-shard 5: 40/150 ok=40 (93s)
-shard 5: 50/150 ok=50 (116s)
-shard 5: 60/150 ok=60 (140s)
-shard 5: 70/150 ok=70 (164s)
-shard 5: 80/150 ok=80 (188s)
-shard 5: 90/150 ok=90 (211s)
-shard 5: 100/150 ok=100 (235s)
-shard 5: 110/150 ok=110 (258s)
-shard 5: 120/150 ok=120 (281s)
-shard 5: 130/150 ok=130 (305s)
-shard 5: 140/150 ok=140 (328s)
-shard 5: 150/150 ok=150 (351s)
-shard 5 done: 150 analysed, 150 grids
+shard 5: 37 of 300 previews to analyse
+shard 5: 10/37 ok=10 (31s)
+shard 5: 20/37 ok=20 (61s)
+shard 5: 30/37 ok=30 (90s)
+shard 5 done: 37 analysed, 37 grids
+== parts/log-6.txt
+shard 6: 37 of 300 previews to analyse
+shard 6: 10/37 ok=10 (22s)
+shard 6: 20/37 ok=20 (47s)
+shard 6: 30/37 ok=30 (69s)
+shard 6 done: 37 analysed, 37 grids
+== parts/log-7.txt
+shard 7: 37 of 300 previews to analyse
+shard 7: 10/37 ok=10 (26s)
+shard 7: 20/37 ok=20 (52s)
+shard 7: 30/37 ok=30 (77s)
+shard 7 done: 37 analysed, 37 grids
