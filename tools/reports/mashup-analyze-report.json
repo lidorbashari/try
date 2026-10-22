@@ -1,10 +1,11 @@
 {
- "generated": "2026-10-22T18:32:34+00:00",
+ "generated": "2026-10-22T21:57:00+00:00",
  "analysis": {
-  "generated": "2026-10-22T18:32:34+00:00",
-  "v": 1,
+  "generated": "2026-10-22T21:57:00+00:00",
+  "v": 2,
   "tracks": 1200,
   "ok": 1200,
+  "v2": 1129,
   "note": "Measured from the Apple Music previews: numbers only, no audio and no lyrics are stored."
  },
  "key_vs_catalog": {
@@ -12,6 +13,11 @@
    "n": 1200,
    "exact": 671,
    "near": 893
+  },
+  "numpy_only": {
+   "n": 1200,
+   "exact": 649,
+   "near": 912
   }
  },
  "links": [
@@ -491,12 +497,46 @@
    "b": 0
   }
  ],
+ "discovered": {
+  "links": 220,
+  "titles_heard": 2815,
+  "own_title_heard": 386,
+  "transcribed": 1094,
+  "top": [
+   "Without You | Avicii, Sandro Cavazza → Without You | David Guetta, Usher (Without You, 111.2)",
+   "Without You | David Guetta, Usher → Without You | Avicii, Sandro Cavazza (Without You, 111.2)",
+   "Houdini | Dua Lipa → You Need Me | Black Coffee, Maxine Ashley, Sun-El Musician (You Need Me, 108.1)",
+   "דבר אליי עם העיניים | עדן בן זקן → תרימו | עדן בן זקן (תרימו, 105.5)",
+   "Nice & Slow | Usher → Take It (Extended) | Dom Dolla (Take It, 104.8)",
+   "Wired | Sonny Fodera, Ella Eyre → Breathe | CamelPhat, Cristoph, Jem Cooke (Breathe, 104.0)",
+   "Born This Way | Lady Gaga → The Nights (Extended) | Avicii (The Nights, 104.0)",
+   "Amarillo | J Balvin → Me Gusta | Shakira, Anuel AA (Me Gusta, 102.8)",
+   "Lay Me Down | Avicii → Show Me (Extended) | John Summit, Hannah Boleyn (Show Me, 102.5)",
+   "אולי הלילה | משה פרץ → אהבנו | חיים משה (אהבנו, 102.1)",
+   "Backseat Freestyle | Kendrick Lamar → POWER | Kanye West (POWER, 101.9)",
+   "Llamado de Emergencia | Daddy Yankee → Corazón | Maluma (Corazón, 101.5)",
+   "Djadja | Aya Nakamura → Baby (Is it a Crime) | Rema (Baby, 101.4)",
+   "Soltera | Shakira → Corazón | Maluma (Corazón, 101.2)",
+   "Where You Are (Extended) | John Summit, Hayla → This Feeling | Vintage Culture, Goodboys (This Feeling, 100.5)",
+   "Temperature | Sean Paul → The Nights (Extended) | Avicii (The Nights, 99.6)",
+   "Disturbia | Rihanna → The Nights (Extended) | Avicii (The Nights, 99.4)",
+   "יהלום מעבדה | נסרין קדרי → בלילות | אודיה (בלילות, 99.0)",
+   "Save The World (Extended) | Swedish House Mafia → Wired | Sonny Fodera, Ella Eyre (Wired, 99.0)",
+   "Titanium | David Guetta, Sia → Shout | Marasi, Core music (Shout, 99.0)",
+   "Toy | נטע → Home | Martin Garrix, Bonn (Home, 98.9)",
+   "חיפשתי אותו בנרות | עדן בן זקן → וואי | עומר אדם (וואי, 98.5)",
+   "Crazy What Love Can Do | David Guetta, Becky Hill, Ella Henderson → Breathe | CamelPhat, Cristoph, Jem Cooke (Breathe, 98.5)",
+   "סיפור ישן | יואב יצחק → הלוואי | בועז שרעבי (הלוואי, 97.7)",
+   "יש לי אותך | משה פרץ → הלוואי | בועז שרעבי (הלוואי, 97.7)"
+  ]
+ },
  "words": {
-  "generated": "2026-10-22T18:32:34+00:00",
-  "v": 2,
+  "generated": "2026-10-22T21:57:00+00:00",
+  "v": 3,
   "links": 95,
   "both_found": 27,
-  "note": "When each link's word is sung in each preview (seconds). Timestamps only; no lyrics are stored."
+  "discovered": 220,
+  "note": "When each link's word is sung in each preview (seconds). Timestamps only; no lyrics are stored. disc: links found by listening (A's preview sings B's title, w = that title)."
  },
  "key_methods": {
   "e": 1200
