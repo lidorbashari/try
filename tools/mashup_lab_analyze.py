@@ -271,8 +271,9 @@ P_MAJ = np.array([6.6, 2.0, 3.5, 2.3, 4.6, 4.0, 2.5, 5.2, 2.4, 3.7, 2.3, 3.4])
 P_MIN = np.array([6.5, 2.7, 3.5, 5.4, 2.6, 3.5, 2.5, 5.2, 4.0, 2.7, 4.3, 3.2])
 
 
-def chroma(x, sr=SR, n_fft=16384, fmin=60.0, fmax=4000.0):
-    """pitch-class energy profile (C..B) from spectral peaks, normalised to max 1"""
+def chroma(x, sr=SR, n_fft=16384, fmin=80.0, fmax=4000.0):
+    """pitch-class energy profile (C..B) from spectral peaks near a semitone, normalised to max 1
+    (tuned on DJ Lab's own CC0 tracks with known keys: tools/mashup_lab_analyze.py keytest)"""
     x = np.asarray(x, np.float32)
     if len(x) < n_fft:
         return np.zeros(12)
@@ -280,7 +281,9 @@ def chroma(x, sr=SR, n_fft=16384, fmin=60.0, fmax=4000.0):
     win = np.hanning(n_fft).astype(np.float32)
     f = np.fft.rfftfreq(n_fft, 1 / sr)
     sel = (f >= fmin) & (f <= fmax)
-    pc = (np.round(69 + 12 * np.log2(f[sel] / 440.0)).astype(int)) % 12
+    midi = 69 + 12 * np.log2(f[sel] / 440.0)
+    pc = np.round(midi).astype(int) % 12
+    tuned = np.abs(midi - np.round(midi)) < .4
     C = np.zeros(12)
     for st in range(0, len(x) - n_fft + 1, hop):
         S = np.abs(np.fft.rfft(x[st:st + n_fft] * win))[sel]
@@ -288,8 +291,8 @@ def chroma(x, sr=SR, n_fft=16384, fmin=60.0, fmax=4000.0):
         if mx <= 0:
             continue
         S = S / mx
-        peak = (S > np.roll(S, 1)) & (S >= np.roll(S, -1)) & (S > .02)      # local maxima: partials, not noise
-        np.add.at(C, pc[peak], np.sqrt(S[peak]))
+        peak = (S > np.roll(S, 1)) & (S >= np.roll(S, -1)) & (S > .02) & tuned   # partials, not noise
+        np.add.at(C, pc[peak], S[peak])
     return C / C.max() if C.max() > 0 else C
 
 
