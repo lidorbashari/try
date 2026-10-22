@@ -30,7 +30,25 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  model:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download the Beat This! checkpoint once (shared by all shards)
+        run: |
+          for i in 1 2 3 4 5 6; do
+            curl -fsSL --retry 3 --retry-delay 15 -o final0.ckpt "https://cloud.cp.jku.at/public.php/dav/files/7ik4RrBKTS273gp/final0.ckpt" && break
+            echo "retry $i"; sleep $((20 * i))
+          done
+          ls -la final0.ckpt
+          test "$(stat -c %s final0.ckpt)" -gt 10000000
+      - uses: actions/upload-artifact@v4
+        with:
+          name: model
+          path: final0.ckpt
+          retention-days: 3
+
   analyze:
+    needs: model
     runs-on: ubuntu-latest
     timeout-minutes: 120
     strategy:
@@ -42,26 +60,36 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+      - uses: actions/download-artifact@v4
+        with:
+          name: model
       - name: Install ffmpeg and the beat tracker (CPU)
         run: |
           command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
           pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu
           pip install -q beat-this soxr einops rotary-embedding-torch numpy
+          python -c "import beat_this.inference, torch; print('beat_this ok, torch', torch.__version__)"
       - name: Self-test of the grid fit
         run: python tools/mashup_lab_beats.py selftest
       - name: Analyse previews (shard ${{ matrix.shard }})
-        run: >
-          python tools/mashup_lab_beats.py analyze --shard ${{ matrix.shard }} --shards 8
-          --out beats-${{ matrix.shard }}.json --limit ${{ inputs.limit || 0 }} ${{ inputs.force && '--force' || '' }}
+        shell: bash
+        run: |
+          set -o pipefail
+          python -u tools/mashup_lab_beats.py analyze --shard ${{ matrix.shard }} --shards 8 --checkpoint final0.ckpt \
+            --out beats-${{ matrix.shard }}.json --limit ${{ inputs.limit || 0 }} ${{ inputs.force && '--force' || '' }} 2>&1 | tee log-${{ matrix.shard }}.txt
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: beats-${{ matrix.shard }}
-          path: beats-${{ matrix.shard }}.json
+          path: |
+            beats-${{ matrix.shard }}.json
+            log-${{ matrix.shard }}.txt
+          if-no-files-found: ignore
           retention-days: 7
 
   merge:
     needs: analyze
-    if: ${{ !cancelled() }}
+    if: ${{ always() }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -75,22 +103,23 @@ jobs:
           pattern: beats-*
           merge-multiple: true
       - name: Merge into docs/mashup-lab/beats.json
-        run: python tools/mashup_lab_beats.py merge --parts parts --out docs/mashup-lab/beats.json --report tools/reports/mashup-beats-report.json
-      - uses: actions/upload-artifact@v4
-        with:
-          name: beats-detail
-          path: parts
-          retention-days: 7
+        run: |
+          mkdir -p tools/reports
+          (for f in parts/log-*.txt; do echo "== $f"; tail -n 60 "$f"; done) > tools/reports/mashup-beats-log.txt 2>/dev/null || true
+          python tools/mashup_lab_beats.py merge --parts parts --out docs/mashup-lab/beats.json --report tools/reports/mashup-beats-report.json || echo "merge found no grids"
       - name: Commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/mashup-lab/beats.json tools/reports/mashup-beats-report.json
+          git add tools/reports/mashup-beats-log.txt
+          [ -f docs/mashup-lab/beats.json ] && git add docs/mashup-lab/beats.json
+          [ -f tools/reports/mashup-beats-report.json ] && git add tools/reports/mashup-beats-report.json
           if git diff --cached --quiet; then echo "no changes"; exit 0; fi
           git commit -m "Mashup Lab: beat grids from the previews"
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
       - name: Redeploy the site
+        if: ${{ hashFiles('docs/mashup-lab/beats.json') != '' }}
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run pages.yml --ref "${GITHUB_REF_NAME}"

@@ -194,8 +194,12 @@ def analyze(args):
         mine = mine[: args.limit]
     print(f"shard {args.shard}: {len(mine)} of {len(todo)} previews to analyse", flush=True)
     from beat_this.inference import Audio2Beats  # heavy import only in CI
-    a2b = Audio2Beats(checkpoint_path=args.model, device="cpu", dbn=False)
+    a2b = Audio2Beats(checkpoint_path=args.checkpoint or args.model, device="cpu", dbn=False)
     out, n_ok, t0 = {}, 0, time.time()
+    def save():
+        tmp = args.out + ".tmp"
+        json.dump(out, open(tmp, "w", encoding="utf-8"), ensure_ascii=False, default=float)
+        os.replace(tmp, args.out)
     with tempfile.TemporaryDirectory() as tmp:
         for i, (t, url, h) in enumerate(mine, 1):
             path = os.path.join(tmp, "p.m4a")
@@ -217,7 +221,8 @@ def analyze(args):
                             rec["kick"] = kick_check(x, g)
                             n_ok += 1
             except Exception as e:  # never stop the shard on one bad file
-                rec["err"] = "exc:" + str(e)[:80]
+                rec["err"] = "exc:" + type(e).__name__ + ":" + str(e)[:80]
+                print("error", key(t), rec["err"], flush=True)
             finally:
                 try:
                     os.remove(path)  # no audio is kept
@@ -225,8 +230,9 @@ def analyze(args):
                     pass
             out[key(t)] = rec
             if i % 10 == 0:
+                save()
                 print(f"shard {args.shard}: {i}/{len(mine)} ok={n_ok} ({time.time() - t0:.0f}s)", flush=True)
-    json.dump(out, open(args.out, "w", encoding="utf-8"), ensure_ascii=False)
+    save()
     print(f"shard {args.shard} done: {len(mine)} analysed, {n_ok} grids")
     return 0
 
@@ -242,7 +248,7 @@ def merge(args):
         except Exception:
             old = {}
     new = {}
-    for f in sorted(glob.glob(os.path.join(args.parts, "**", "*.json"), recursive=True)):
+    for f in sorted(glob.glob(os.path.join(args.parts, "**", "beats-*.json"), recursive=True)):
         try:
             new.update(json.load(open(f, encoding="utf-8")))
         except Exception as e:
@@ -299,6 +305,7 @@ def main():
     a.add_argument("--previews", default=PREVIEWS)
     a.add_argument("--existing", default=BEATS)
     a.add_argument("--model", default="final0")
+    a.add_argument("--checkpoint", default="", help="local .ckpt file (downloaded once for all shards)")
     a.add_argument("--limit", type=int, default=0)
     a.add_argument("--force", action="store_true")
     a.add_argument("--out", required=True)
