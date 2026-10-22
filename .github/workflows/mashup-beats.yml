@@ -1,0 +1,96 @@
+name: Mashup Lab beat grids
+
+# Measures the beat grid (tempo, first beat, bar start) of every Mashup Lab preview on GitHub's servers with the
+# "Beat This!" tracker and commits docs/mashup-lab/beats.json (numbers only, no audio). The app uses these grids to
+# start both decks on one audio clock, so the vocal sits exactly on the beat. Only new or changed links are analysed.
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Re-analyse every preview"
+        type: boolean
+        default: false
+      limit:
+        description: "Max previews per shard (0 = all)"
+        default: "0"
+  push:
+    branches:
+      - claude/dj-course-music-agents-suitm3
+    paths:
+      - docs/mashup-lab/previews.json
+      - tools/mashup_lab_beats.py
+      - .github/workflows/mashup-beats.yml
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: mashup-beats
+  cancel-in-progress: true
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install ffmpeg and the beat tracker (CPU)
+        run: |
+          command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
+          pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+          pip install -q beat-this soxr einops rotary-embedding-torch numpy
+      - name: Self-test of the grid fit
+        run: python tools/mashup_lab_beats.py selftest
+      - name: Analyse previews (shard ${{ matrix.shard }})
+        run: >
+          python tools/mashup_lab_beats.py analyze --shard ${{ matrix.shard }} --shards 8
+          --out beats-${{ matrix.shard }}.json --limit ${{ inputs.limit || 0 }} ${{ inputs.force && '--force' || '' }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: beats-${{ matrix.shard }}
+          path: beats-${{ matrix.shard }}.json
+          retention-days: 7
+
+  merge:
+    needs: analyze
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -q numpy
+      - uses: actions/download-artifact@v4
+        with:
+          path: parts
+          pattern: beats-*
+          merge-multiple: true
+      - name: Merge into docs/mashup-lab/beats.json
+        run: python tools/mashup_lab_beats.py merge --parts parts --out docs/mashup-lab/beats.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: beats-detail
+          path: parts
+          retention-days: 7
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/mashup-lab/beats.json
+          if git diff --cached --quiet; then echo "no changes"; exit 0; fi
+          git commit -m "Mashup Lab: beat grids from the previews"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+      - name: Redeploy the site
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --ref "${GITHUB_REF_NAME}"
