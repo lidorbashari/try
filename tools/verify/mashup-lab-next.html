@@ -1730,6 +1730,34 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
       if (p > lim && tOf(g, x - M) >= .05) p = tOf(g, x - M);
       return p;
     }
+    /* fine alignment on the real audio: a beat grid can be off by a frame or two (and a stretch has a few ms of bias),
+       so right before a synced start the follower's drum hits are matched against the leader's, ±40 ms, on 1 ms
+       onset envelopes of the decoded audio (low band = kicks, high band = claps / hats). The shift is used only when
+       the match has a clear peak inside the window. */
+    function onsetEnv(buf, off, secs) {
+      var sr = buf.sampleRate, n = Math.floor(secs * 1000), B = Math.max(1, Math.round(sr / 1000)), i0 = Math.round(off * sr);
+      var L = buf.getChannelData(0), R = buf.numberOfChannels > 1 ? buf.getChannelData(1) : L, lo = new Float32Array(n), hi = new Float32Array(n);
+      var a = Math.exp(-2 * Math.PI * 150 / sr), y = 0, prev = 0, j, k;
+      for (j = 0; j < n; j++) {
+        var el = 0, eh = 0;
+        for (k = 0; k < B; k++) { var t = i0 + j * B + k, x = t >= 0 && t < L.length ? .5 * (L[t] + R[t]) : 0; y = a * y + (1 - a) * x; el += y * y; var dx = x - prev; eh += dx * dx; prev = x; }
+        lo[j] = Math.log(1e-7 + el); hi[j] = Math.log(1e-9 + eh);
+      }
+      var e = new Float32Array(n);
+      for (j = 1; j < n; j++) { var dl = lo[j] - lo[j - 1], dh = hi[j] - hi[j - 1]; e[j] = .35 * (dl > 0 ? dl : 0) + (dh > 0 ? dh : 0); }
+      return e;
+    }
+    function fineLag(F, oF, L, oL) { /* seconds the follower's content is late against the leader (offsets in their playing buffers) */
+      try {
+        var W = Math.min(8, (F.sb.duration - oF) - .1, (L.sb.duration - oL) - .1), K = 40;
+        if (!(W > 3)) return 0;
+        var eL = onsetEnv(L.sb, oL, W), eF = onsetEnv(F.sb, oF - K / 1000, W + 2 * K / 1000), n = eL.length - 2 * K, c = [], best = -1, bk = 0, sum = 0, i, k;
+        for (k = -K; k <= K; k++) { var v = 0; for (i = K; i < K + n; i++) v += eL[i] * eF[i + k + K]; c.push(v); sum += v; if (v > best) { best = v; bk = k; } }
+        var mean = sum / c.length;
+        if (bk <= -K + 2 || bk >= K - 2 || !(best > 1.12 * mean)) return 0;   /* no clear peak inside ±40 ms: trust the grids */
+        return bk / 1000;
+      } catch (e) { return 0; }
+    }
     function bufStop(d) { var s = d.bs; d.bs = null; if (!s) return; s.onended = null; try { s.stop(); } catch (e) {} try { s.disconnect(); } catch (e) {} }
     function gateBlip(d, T) { /* 16 ms dip around a seamless handover, so the splice never clicks */
       try { var p = d.n.gate.gain; p.cancelScheduledValues(ctx.currentTime); p.setValueAtTime(1, Math.max(ctx.currentTime, T - .016)); p.linearRampToValueAtTime(0, T); p.linearRampToValueAtTime(1, T + .016); } catch (e) {}
@@ -1765,7 +1793,8 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
       setSB(d, r);                                                              /* stretch first: the timing below must be fresh */
       var tref = Math.max(ctx.currentTime, L.t0), perL = 60 / gL.bpm / L.sr, xL = xOf(gL, posAt(L, tref));
       var k = Math.ceil((xL + .2 / perL) / 2) * 2, T = tref + (k - xL) * perL;    /* ≥ 0.2 s ahead */
-      startSrc(d, T, phasePos(d, k, q, want > .05 ? want : downbeat(d.grid)), seamless);
+      var pF = phasePos(d, k, q, want > .05 ? want : downbeat(d.grid)), lag = fineLag(d, pF / d.sr, L, posAt(L, T) / L.sr);
+      d.fine = lag; startSrc(d, T, pF + lag * d.sr, seamless);
       d.bsync = L.bsync = true;
     }
     function beatJoin(B, A, seamless) { /* the beat joins a playing vocal: the beat keeps its own tempo (drums and bass are
@@ -1776,8 +1805,10 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
       setSB(B, 1); if (!same) setSB(A, r);                                       /* stretching first: the timing below must be fresh */
       var tref = Math.max(ctx.currentTime, t0), perA = 60 / gA.bpm / r0, xA = xOf(gA, (o0 + (tref - t0)) * r0);
       var k = Math.ceil((xA + .2 / perA) / 2) * 2, T = tref + (k - xA) * perA;    /* the vocal's next beat 1 or 3, ≥ 0.2 s ahead */
-      startSrc(B, T, phaseLead(B, k, q, want > .05 ? want : downbeat(gB)), seamless);
-      if (!same) startSrc(A, T, (o0 + (T - t0)) * r0, true);                     /* same place in the song, new tempo, from T */
+      var pB = phaseLead(B, k, q, want > .05 ? want : downbeat(gB)), pA = (o0 + (T - t0)) * r0;
+      var lagB = fineLag(B, pB, A, pA / A.sr);                                   /* B is never stretched: offset = position */
+      B.fine = lagB; startSrc(B, T, pB + lagB, seamless);
+      if (!same) startSrc(A, T, pA, true);                                       /* same place in the song, new tempo, from T */
       A.bsync = B.bsync = true;
     }
     function together() { /* both decks loaded: start them on the same clock tick, bar lines aligned */
@@ -1787,8 +1818,11 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
       if (ok) { q = qOf(A.grid, B.grid.bpm); r = B.grid.bpm * q / A.grid.bpm; ok = r >= .9 && r <= 1.1; }
       if (!ok) { setSB(A, effRate(A)); setSB(B, effRate(B)); var T0 = ctx.currentTime + .08; startSrc(B, T0, B.pos); startSrc(A, T0, A.pos); return; }
       setSB(B, 1); setSB(A, r);                                                 /* the beat keeps its own tempo; the vocal follows it */
-      var T = ctx.currentTime + .08, pB = B.pos > .05 ? B.pos : downbeat(B.grid), xB = xOf(B.grid, pB);
-      startSrc(B, T, pB); startSrc(A, T, phasePos(A, xB, q, A.pos > .05 ? A.pos : downbeat(A.grid)));
+      var pB = B.pos > .05 ? B.pos : downbeat(B.grid), xB = xOf(B.grid, pB), pA = phasePos(A, xB, q, A.pos > .05 ? A.pos : downbeat(A.grid));
+      var lag = fineLag(A, pA / A.sr, B, pB);                                    /* the vocal's hits against the beat's, ±40 ms */
+      A.fine = lag;
+      var T = ctx.currentTime + .08;
+      startSrc(B, T, pB); startSrc(A, T, pA + lag * A.sr);
       A.bsync = B.bsync = true;
     }
     function place(d) { /* decoded + grid known: start now, join the playing deck, or wait for the other one */
@@ -2080,7 +2114,7 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
         o[s] = { C: el(d.elC), D: el(d.elD), active: d.el ? (d.el === d.elC ? "C" : "D") : null, url: d.url, tempo: g ? g.tempo : null,
           groove: g ? { t0: g.t0, tStart: g.tStart, dt: g.dt, div: g.div, cOff: g.cOff, k0: g.k0, bars: g.bars, pat: g.P ? Object.keys(GP).filter(function (k) { return GP[k] === g.P; })[0] : "lead" } : null,
           g: n ? { vol: n.vol.gain.value, gate: n.gate.gain.value, xf: n.xf.gain.value, low: n.lo.gain.value, mid: n.mid.gain.value, high: n.hi.gain.value } : null, held: d.gate !== 1,
-          buf: { bm: !!d.bmode, sr: d.sr, t0: d.t0, o0: d.o0, pos: curPos(d), dur: d.dur, sync: !!d.bsync, ready: !!d.ready, grid: d.grid ? [d.grid.bpm, d.grid.b0, d.grid.db, d.grid.src || ""] : null, now: ctx ? ctx.currentTime : 0, noBuf: d.noBuf } };
+          buf: { bm: !!d.bmode, sr: d.sr, t0: d.t0, o0: d.o0, pos: curPos(d), dur: d.dur, sync: !!d.bsync, ready: !!d.ready, fine: d.fine || 0, grid: d.grid ? [d.grid.bpm, d.grid.b0, d.grid.db, d.grid.src || ""] : null, now: ctx ? ctx.currentTime : 0, noBuf: d.noBuf } };
       });
       return o;
     };

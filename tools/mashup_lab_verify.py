@@ -105,6 +105,30 @@ def stats(a, b, tol):
             "p90_abs_ms": round(float(np.percentile(np.abs(near), 90)) * 1000, 1) if len(near) else None}
 
 
+def stats_beats(bA, bB, tol):
+    """beat offsets measured from the sparser list: a vocal heard at double density (every eighth note) is not a miss"""
+    if len(bA) > 1.4 * len(bB) and len(bB):
+        r = stats(bB, bA, tol)
+        if r and r["median_ms"] is not None:
+            r["median_ms"] = -r["median_ms"]
+        if r: r["from"] = "beat deck"
+        return r
+    return stats(bA, bB, tol)
+
+
+def hits(x, sr):
+    """claps / snares / hats onsets (s): high-passed energy per 1 ms, positive log-difference, local peaks"""
+    d = np.diff(x, prepend=x[0]); hop = max(1, sr // 1000); n = len(d) // hop
+    e = np.log1p(1e5 * np.add.reduceat(d[: n * hop] ** 2, np.arange(0, n * hop, hop)))
+    o = np.maximum(0, np.diff(e, prepend=e[0]))
+    th = np.percentile(o, 99) * .25
+    out = []
+    for j in range(1, len(o) - 1):
+        if o[j] > th and o[j] >= o[j - 1] and o[j] > o[j + 1] and (not out or j - out[-1] > 25):
+            out.append(j)
+    return np.array(out, float) / 1000.0
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--page", default=os.path.join(ROOT, "tools", "verify", "mashup-lab-next.html"))
@@ -117,6 +141,7 @@ def main():
     ap.add_argument("--lab", default=LAB, help="folder with tracks.json, previews.json, beats.json")
     ap.add_argument("--browser", default="chrome", help="chrome (has AAC for Apple previews) or chromium (local dry runs)")
     ap.add_argument("--port", type=int, default=8890)
+    ap.add_argument("--reuse", default=os.environ.get("VERIFY_REUSE", ""), help="a previous report: test exactly its pairs (before/after)")
     args = ap.parse_args()
 
     from beat_this.inference import Audio2Beats
@@ -124,6 +149,10 @@ def main():
     a2b = Audio2Beats(checkpoint_path=args.checkpoint, device="cpu", dbn=False)
 
     pairs, bmap = choose_pairs(args.pairs, args.seed, args.lab)
+    if args.reuse and os.path.exists(args.reuse):
+        tracks = {key(t): t for t in json.load(open(os.path.join(args.lab, "tracks.json"), encoding="utf-8"))}
+        prev = json.load(open(args.reuse, encoding="utf-8"))["rows"]
+        pairs = [(tracks[r["vocal"]], tracks[r["beat"]]) for r in prev if r.get("vocal") in tracks and r.get("beat") in tracks and r["vocal"] in bmap and r["beat"] in bmap]
     print(f"{len(pairs)} pairs chosen", flush=True)
     site = tempfile.mkdtemp()
     shutil.copy(args.page, os.path.join(site, "index.html"))
@@ -173,14 +202,16 @@ def main():
                 sel = lambda z: z[(z >= lo) & (z <= hi)]
                 bA, dA, bB, dB = sel(bA), sel(dA), sel(bB), sel(dB)
                 ibi = float(np.median(np.diff(bB))) if len(bB) > 2 else 0.5
-                row["beats"] = stats(bA, bB, min(0.12, ibi / 3))
+                row["beats"] = stats_beats(bA, bB, min(0.12, ibi / 3))
+                hA, hB = hits(xA, sr) + tA, hits(xB, sr) + tB
+                row["hits"] = stats(sel(hA), sel(hB), 0.03)          # second opinion at 1 ms resolution
                 row["bars"] = stats(dA, dB, 0.08)
                 row["ibi_ms"] = [round(float(np.median(np.diff(bA))) * 1000, 1) if len(bA) > 2 else None, round(ibi * 1000, 1)]
             except Exception as e:
                 row["err"] = type(e).__name__ + ": " + str(e)[:160]
             rows.append(row)
             bt = row.get("beats") or {}
-            print(f'{i:2d}/{len(pairs)} {row.get("gv")}→{row.get("gb")} start {row.get("start_s")} s  beats: median {bt.get("median_ms")} ms, '
+            print(f'{i:2d}/{len(pairs)} {row.get("gv")}→{row.get("gb")} start {row.get("start_s")} s  hits median {(row.get("hits") or {}).get("median_ms")} ms  beats: median {bt.get("median_ms")} ms, '
                   f'p90 {bt.get("p90_abs_ms")} ms, matched {bt.get("matched")}  bars matched {(row.get("bars") or {}).get("matched")}  {row.get("src")} {row.get("err", "")}', flush=True)
         br.close()
     srv.shutdown()
@@ -199,11 +230,16 @@ def main():
     }
     os.makedirs(os.path.dirname(args.out), exist_ok=True)
     json.dump({"summary": summary, "rows": rows}, open(args.out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-    lines = ["Mashup Lab real-music beat-sync check", json.dumps(summary, ensure_ascii=False)] + [
-        f'{(r.get("beats") or {}).get("median_ms")}\t{(r.get("beats") or {}).get("matched")}\t{(r.get("bars") or {}).get("matched")}\t{r.get("start_s")}\t{r.get("gv")}→{r.get("gb")}\t{r["vocal"]}  ×  {r["beat"]}\t{r.get("err", "")}'
+    hm = [abs(r["hits"]["median_ms"]) for r in rows if r.get("hits") and r["hits"]["median_ms"] is not None]
+    summary["hits_median_abs_ms"] = round(float(np.median(hm)), 1) if hm else None
+    summary["hits_within_10ms"] = round(float(np.mean(np.array(hm) <= 10)), 3) if hm else None
+    lines = ["Mashup Lab real-music beat-sync check",
+             "columns: beat offset median ms | beats matched | bars matched | hit offset median ms | start s | genres | pair",
+             json.dumps(summary, ensure_ascii=False)] + [
+        f'{(r.get("beats") or {}).get("median_ms")}\t{(r.get("beats") or {}).get("matched")}\t{(r.get("bars") or {}).get("matched")}\t{(r.get("hits") or {}).get("median_ms")}\t{r.get("start_s")}\t{r.get("gv")}→{r.get("gb")}\t{r["vocal"]}  ×  {r["beat"]}\t{r.get("err", "")}'
         for r in rows]
     open(args.summary, "w", encoding="utf-8").write("\n".join(lines) + "\n")
-    print("\n".join(lines[:2]))
+    print("\n".join(lines[:3]))
     return 0
 
 
