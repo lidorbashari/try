@@ -1,0 +1,85 @@
+name: Mashup Lab real-music sync check
+
+# Plays real Apple previews through the app's engine in Google Chrome, records both decks separately and lets the
+# Beat This! tracker listen to each recording: the vocal's beats must land on the beat deck's beats. Report only
+# (numbers, no audio) → tools/reports/mashup-verify-report.json and tools/reports/mashup-verify.txt.
+on:
+  workflow_dispatch:
+    inputs:
+      pairs:
+        description: "Pairs to test"
+        default: "30"
+      page:
+        description: "Page to test"
+        default: "tools/verify/mashup-lab-next.html"
+  push:
+    branches:
+      - claude/dj-course-music-agents-suitm3
+    paths:
+      - tools/verify/**
+      - tools/mashup_lab_verify.py
+      - .github/workflows/mashup-verify.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mashup-verify
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 80
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Wait for the beat grids (docs/mashup-lab/beats.json from the beat-grid workflow)
+        timeout-minutes: 45
+        run: |
+          for i in $(seq 1 85); do
+            git fetch -q origin "${GITHUB_REF_NAME}" && git checkout FETCH_HEAD -- docs/mashup-lab/beats.json 2>/dev/null && break
+            echo "waiting for beats.json ($i)"; sleep 30
+          done
+          test -f docs/mashup-lab/beats.json && python -c "import json; d = json.load(open('docs/mashup-lab/beats.json')); print('grids:', len(d['map']), d['meta'])"
+      - uses: actions/cache@v4
+        id: cache
+        with:
+          path: final0.ckpt
+          key: beat-this-final0-v1
+      - name: Download the Beat This! checkpoint (if not cached)
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          ok=0
+          for u in "https://cloud.cp.jku.at/public.php/dav/files/7ik4RrBKTS273gp/final0.ckpt" \
+                   "https://huggingface.co/rtikw/localmusic-assets/resolve/main/analysis/beat_this-final0.ckpt"; do
+            for i in 1 2 3; do
+              if curl -fsSL --retry 2 --retry-delay 10 -A "Mozilla/5.0" -o final0.ckpt "$u" && [ "$(stat -c %s final0.ckpt)" -gt 50000000 ]; then ok=1; break 2; fi
+              sleep $((15 * i))
+            done
+          done
+          [ "$ok" = 1 ]
+      - name: Install the beat tracker, Playwright and check Chrome
+        run: |
+          pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+          pip install -q beat-this soxr einops rotary-embedding-torch numpy playwright
+          google-chrome --version
+      - name: Play, record and listen
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir -p tools/reports
+          python -u tools/mashup_lab_verify.py --page "${{ inputs.page || 'tools/verify/mashup-lab-next.html' }}" --pairs ${{ inputs.pairs || 30 }} \
+            --checkpoint final0.ckpt 2>&1 | tee tools/reports/mashup-verify-log.txt
+      - name: Commit the report
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tools/reports/ || true
+          if git diff --cached --quiet; then echo "no changes"; exit 0; fi
+          git commit -m "Mashup Lab: real-music sync check report"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
