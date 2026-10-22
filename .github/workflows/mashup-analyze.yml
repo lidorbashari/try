@@ -95,7 +95,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shard: [0, 1, 2, 3, 4, 5]
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -117,7 +117,7 @@ jobs:
         shell: bash
         run: |
           set -o pipefail
-          python -u tools/mashup_lab_analyze.py words --shard ${{ matrix.shard }} --shards 6 \
+          python -u tools/mashup_lab_analyze.py words --shard ${{ matrix.shard }} --shards 8 \
             --out wd-${{ matrix.shard }}.json --limit ${{ inputs.limit || 0 }} 2>&1 | tee wlog-${{ matrix.shard }}.txt
       - uses: actions/upload-artifact@v4
         if: always()

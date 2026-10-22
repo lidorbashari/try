@@ -56,7 +56,7 @@ LAB = os.path.join(ROOT, "docs", "mashup-lab")
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15"
 SR = 44100
 AN_VERSION = 1
-WD_VERSION = 1
+WD_VERSION = 2
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from mashup_lab_beats import fnv32  # noqa: E402  (same hash as the app)
 
@@ -232,7 +232,7 @@ def refine_word(env, s, e, hop=0.01):
     if b <= a or a >= n:
         return None
     pk = float(env[a:b + 1].max())
-    ref = float(np.percentile(env, 95)) if n > 10 else pk
+    ref = max(float(np.percentile(env, 95)) if n > 10 else pk, .25 * float(env.max()))   # sparse vocals: their own peak
     if ref <= 0 or pk < .12 * ref:
         return None
     on, off = .25 * pk, .2 * pk
@@ -383,6 +383,10 @@ def selftest():
     w = refine_word(env, 1.30, 2.60)
     chk(f"late/early Whisper bounds pulled in (got {w})", w is not None and abs(w[0] - 1.5) < .011 and abs(w[1] - 2.3) < .011)
     chk("no voice -> rejected", refine_word(env, 3.0, 3.5) is None)
+    sparse = np.zeros(3000)
+    sparse[1000:1060] = .4                                       # one short word in 30 s of silence
+    w = refine_word(sparse, 10.02, 10.5)
+    chk(f"a sparse vocal (one word in a silent clip) is kept (got {w})", w is not None and abs(w[0] - 10.0) < .011)
     t = np.arange(SR * 8) / SR                                   # A minor triad + bass A: 8A
     sig = sum(np.sin(2 * np.pi * f * t) for f in (110.0, 220.0, 261.63, 329.63, 440.0)) + .3 * np.sin(2 * np.pi * 196.0 * t)
     k, s = key_from_chroma(chroma(sig))
@@ -628,20 +632,31 @@ def cmd_words(args):
                 continue
             voc = st["vocals"].mean(0)
             env = envelope(voc)
-            v16 = resample16(voc)
-            heard = {}                                               # lang -> words heard (never stored or printed)
+            dur = len(voc) / SR
+            inputs = {"voc": resample16(voc)}                        # the separated vocal, then the full mix
+            heard = {}                                               # (input, lang, hot) -> words heard (never stored or printed)
             hot = " ".join(sorted({p for _, _, p in need[k]}))
             stats["tracks"] += 1
             for lid, side, phrase in need[k]:
                 stats["phrases"] += 1
                 occ = []
-                for lang in phrase_langs(phrase):
-                    if lang not in heard:
-                        heard[lang] = models.words(v16, lang, hot)
-                    for s, e, p, nt in find_phrase(heard[lang], phrase):
-                        r = refine_word(env, s, e)
-                        if r:
-                            occ.append([r[0], r[1], p, nt])
+                # passes: vocal stem, full mix, then the vocal stem hinted with the link words (hints alone tend to
+                # make Whisper insert the word at the clip edges, so a hinted match must pass the same checks)
+                for src, use_hot in (("voc", False), ("mix", False), ("voc", True)):
+                    for lang in phrase_langs(phrase):
+                        kk = (src, lang, use_hot)
+                        if kk not in heard:
+                            if src not in inputs:
+                                inputs[src] = resample16(st["mix"].mean(0))
+                            heard[kk] = models.words(inputs[src], lang, hot if use_hot else None)
+                        for s0, e0, p, nt in find_phrase(heard[kk], phrase):
+                            if p < .3 or e0 - s0 > 1.2 * max(1, nt) + .8 or s0 < .15 or e0 > dur - .15:
+                                continue                             # unsure, implausibly long, or at the clip edge
+                            r = refine_word(env, s0, e0)
+                            if r:
+                                occ.append([r[0], r[1], p, nt])
+                        if occ:
+                            break
                     if occ:
                         break
                 rec = out.setdefault(lid, {})
