@@ -64,6 +64,21 @@ jobs:
           <body><p>מעבירים אתכם ל-<a href="docs/">DJ Lab</a>…</p><script>location.replace('docs/' + location.search + location.hash)</script></body>
           </html>
           EOF
+          # short link for Mashup Lab: /mashup-lab/ → /docs/mashup-lab/
+          mkdir -p _site/mashup-lab
+          cat > _site/mashup-lab/index.html <<'EOF'
+          <!doctype html>
+          <html lang="he" dir="rtl">
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>מעבדת המשאפים</title>
+            <meta http-equiv="refresh" content="0; url=../docs/mashup-lab/">
+            <link rel="canonical" href="../docs/mashup-lab/">
+          </head>
+          <body><p>מעבירים למעבדת המשאפים… <a href="../docs/mashup-lab/">לחצו כאן</a></p><script>location.replace('../docs/mashup-lab/' + location.search + location.hash)</script></body>
+          </html>
+          EOF
           # docs/404.html is self-contained, so it works at the site root too
           cp _site/docs/404.html _site/404.html
           du -sh _site
