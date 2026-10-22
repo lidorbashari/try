@@ -1723,6 +1723,22 @@ const ENTER_AT = { club: "הגרוב המרכזי", amapiano: "הבית וההו
 const DROP_AT = { club: "הדרופ", amapiano: "דרופ הלוג־דראם", song: "הפזמון השני" };
 const SEC_SHORT = { intro: "אינטרו", groove: "גרוב", breakdown: "ברייק", drop: "דרופ", outro: "אאוטרו", verse: "בית", chorus: "פזמון", bridge: "ברידג׳", hook: "בית והוק", logdrum: "לוג־דראם" };
 const cue = (side, s) => `<span class="cue ${side === "A" ? "ca" : "cb"}"><span class="ltr">${side} ${fmtT(s)}</span></span>`;
+/* what the lab heard in this pair (match.js): how the vocal sits on the chords, the key shift, the beat's own vocal,
+   and where both decks come in. Shown on top of the "how to play it" plan. */
+function heardHTML(p) {
+  const m = p.mm || (MEAS ? MashMatch.pair(p.v, p.b, {}) : null); if (!m || !m.ok) return "";
+  const fit = Math.round(Math.min(1, m.Hn) * 100), pl = m.plan, t2 = x => { x = Math.max(0, x); const mm = Math.floor(x / 60), ss = x - 60 * mm; return mm + ":" + (ss < 10 ? "0" : "") + ss.toFixed(1); };
+  const shift = m.s ? `מוזזת ${m.s > 0 ? "למעלה" : "למטה"} ${Math.abs(m.s) === 1 ? "חצי טון" : "טון"}` : "בלי הזזה";
+  const keys = m.keyV && m.keyB ? ` <span class="ltr">(${esc(m.keyV)} → ${esc(m.keyB)})</span>` : "";
+  const leadBars = pl.leadBars || 0;
+  return `<div class="heard" aria-label="מה המעבדה שמעה">
+    <div class="hd-h">${I("ear")}<b>מה המעבדה שמעה בזוג הזה</b></div>
+    <div class="hd-row"><span>השירה על האקורדים של הביט</span><span class="hd-m"><i style="width:${fit}%"></i></span><b class="num">${fit}%</b></div>
+    <div class="hd-row"><span>סולם</span><b>${shift}${m.cents ? ` ועוד <span class="ltr">${Math.abs(m.cents)}</span> סנט` : ""}${keys}</b></div>
+    <div class="hd-row"><span>השירה של הביט</span><b>${pl.cleanB ? "מנוקה מתחת לשירה" : "כמעט אין בקטע, הביט מלא"}</b></div>
+    <div class="hd-row"><span>כניסות</span><b>הביט מ־<span class="ltr">${t2(pl.bAt - (pl.lead || 0))}</span>${leadBars > 0 ? `, השירה אחרי <span class="ltr">${leadBars}</span> תיבות` : ", השירה איתו"} (מ־<span class="ltr">${t2(pl.aAt)}</span> בקטע שלה)</b></div>
+  </div>`;
+}
 function planHTML(p) {
   const tg = targets(p), half = p.t.mode !== "1:1", sp = sectionPlan(p), [s1, s2, s3, s4, s5] = sp.steps;
   const fa = sp.A.form, fb = sp.B.form, total = sp.B.total, pc = x => (clamp(x / total, 0, 1) * 100).toFixed(2) + "%";
@@ -1732,6 +1748,7 @@ function planHTML(p) {
   const marks = [s2.tB, s4.tB].map(x => `<span class="mk" style="left:${pc(x)}"><i></i><span>${fmtT(x)}</span></span>`).join("");
   return `<section class="plan" aria-labelledby="planT">
     <div class="plan-h"><h3 id="planT">איך לנגן את זה</h3><p class="plan-tag">${I("spark")}${sp.label}</p></div>
+    ${heardHTML(p)}
     <div class="arr" dir="ltr" aria-hidden="true">
       <span class="ln lb"><b>B</b><span class="track">${bBlocks}</span></span>
       <span class="ln la"><b>A</b><span class="track">${aSegs}</span></span>

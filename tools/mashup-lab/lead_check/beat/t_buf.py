@@ -370,6 +370,51 @@ def sc_analysis(br):
     check("analysis: no engine errors", not errs, errs[:3]); ctx.close()
 
 
+def sc_plan(br):
+    """the matcher's plan (match.js → E.loadPair(v, b, r, plan)): the beat starts 2 bars before the bar chosen for it,
+    the vocal comes in exactly on that bar, the vocal deck takes the plan's fractional key shift, the beat plays full
+    when the plan says it doesn't sing there, and the vocal gate (listen.json vr) turns the vocal deck down between
+    sung beats and opens it on time"""
+    ctx, pg, errs = page(br); seed_truth(pg, ["x", "y"])
+    tx, ty = TR["x"], TR["y"]; dx, dy = tx["down"], ty["down"]
+    vr = "0000" * 6 + "7777" * 8 + "0000" * 8
+    an = {"X | Test": {"key": "8A", "ks": .8, "km": "e", "lufs": -9.0, "t0": round(dx, 4), "voc": vr.replace("7", "8"), "nrg": "9999" * 20},
+          "Y | Test": {"key": "8A", "ks": .8, "km": "e", "lufs": -9.0, "t0": round(dy, 4), "voc": "0000" * 20, "nrg": "9999" * 20}}
+    li = {"X | Test": {"vr": vr}}
+    pg.evaluate("""([an, li]) => { for (const k of Object.keys(an)) { const t = Object.values(T).find(x => x.t + " | Test" === k); an[k].h = MashEngine._hash(BASE + "/" + t.f + ".wav"); if (li[k]) li[k].h = an[k].h; } MashEngine.seedAnalysis(an); MashEngine.seedListen(li); }""", [an, li])
+    aAt, bAt = dx + 24 * tx["p"], dy + 16 * ty["p"]                 # vocal bar 6 (its singing starts there), beat bar 4
+    plan = {"v": "X | Test", "b": "Y | Test", "semis": 1.3, "aAt": aAt, "bAt": bAt, "leadBars": 2, "cleanB": False, "q": 1}
+    act(pg, f"E.loadPair(T.x, T.y, {{A: 126/124, B: 1}}, {json.dumps(plan)}); E.playBoth();")
+    ok = False; t0 = time.time()
+    while time.time() - t0 < 6:
+        st = pg.evaluate("E.state()")
+        if st["A"]["playing"] and st["B"]["playing"]: ok = True; break
+        pg.wait_for_timeout(50)
+    pg.wait_for_timeout(250)
+    st = pg.evaluate("E.state()"); dbg = pg.evaluate("E._dbg()")
+    A, B = dbg["A"]["buf"], dbg["B"]["buf"]
+    startA, startB = A["o0"] * A["sr"], B["o0"] * B["sr"]
+    check("plan: both play, synced", ok and st["A"]["sync"] and st["B"]["sync"], [st["A"]["sync"], st["B"]["sync"]])
+    check("plan: the beat starts 2 bars before its chosen bar", abs(startB - (bAt - 8 * ty["p"] + B.get("fine", 0))) < .06, [round(startB, 3), round(bAt - 8 * ty["p"], 3)])
+    check("plan: the vocal starts 2 of its bars before its phrase, so the phrase lands on the chosen bar", abs(startA - (aAt - 8 * tx["p"] + A.get("fine", 0) * A["sr"])) < .06, [round(startA, 3), round(aAt - 8 * tx["p"], 3)])
+    check("plan: fractional key shift on the vocal deck (+1.3 semitones), none on the beat", abs(st["A"]["semis"] - 1.3) < 1e-6 and st["B"]["semis"] == 0, [st["A"]["semis"], st["B"]["semis"]])
+    check("plan: the beat plays full (it does not sing there), the vocal deck is cleaned", st["B"]["vox"] == "off" and st["A"]["vox"] == "vocal", [st["A"]["vox"], st["B"]["vox"]])
+    # the vocal gate: closed during the 2-bar lead-in (no singing), open once the phrase is on
+    g = pg.evaluate("E._nodes('A').vg.gain.value")
+    check("plan: vocal gate down while A has no singing (lead-in)", g < .3, g)
+    t_open = (8 * tx["p"]) / A["sr"] + .25                            # real seconds from A's start to its phrase (+ margin)
+    pg.wait_for_timeout(int(max(0, t_open - .25 + .4) * 1000))
+    g2 = pg.evaluate("E._nodes('A').vg.gain.value")
+    check("plan: vocal gate open once A sings", g2 > .8, g2)
+    rec = pg.evaluate("record(5)")
+    lag = kick_lag_ms(rec, ty["p"])
+    check("plan: the shifted vocal stays on the beat (median ≤ 6 ms, 90 % ≤ 16 ms)", lag_ok(lag), lag)
+    act(pg, "E.setPlan(null); E.setClean(false);"); pg.wait_for_timeout(300)
+    g3 = pg.evaluate("E._nodes('A').vg.gain.value")
+    check("plan: clean-up off → the vocal gate opens", g3 > .8, g3)
+    check("plan: no engine errors", not errs, errs[:3]); ctx.close()
+
+
 def main():
     srv = [http.server.ThreadingHTTPServer(("127.0.0.1", PORT), functools.partial(H, directory=os.path.join(HERE, "media"))),
            http.server.ThreadingHTTPServer(("127.0.0.1", NPORT), functools.partial(HN, directory=os.path.join(HERE, "media")))]
@@ -383,7 +428,7 @@ def main():
                          ("griderr", lambda: sc_pair(br, "vocal grid 25 ms early → fixed on the audio", "x", "y", {"A": 125 / 124, "B": 125 / 126}, True, err={"x": -0.025})[0].close()),
                          ("griderr2", lambda: sc_pair(br, "beat grid 30 ms late → fixed on the audio", "x", "y", {"A": 125 / 124, "B": 125 / 126}, True, err={"y": 0.03})[0].close()),
                          ("ops", lambda: sc_ops(br)), ("loop", lambda: sc_loop(br)), ("wordplay", lambda: sc_wordplay(br)), ("nocors", lambda: sc_nocors(br)),
-                         ("analysis", lambda: sc_analysis(br))]:
+                         ("analysis", lambda: sc_analysis(br)), ("plan", lambda: sc_plan(br))]:
             if FILT and FILT not in name: continue
             try: fn()
             except Exception as e: check(name + " crashed", False, repr(e)[:500])

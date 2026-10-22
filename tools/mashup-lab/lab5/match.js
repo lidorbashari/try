@@ -132,7 +132,7 @@
     var cents = Math.round((B.tc || 0) - (V.tc || 0)); if (Math.abs(cents) < 15) cents = 0;
     var semis = best.s + cents / 100;
     var lead = Math.min(2, best.b);                                  /* B plays up to 2 bars before the vocal comes in */
-    var plan = { v: V.k, b: B.k, semis: Math.round(semis * 100) / 100, aAt: V.t0 + 4 * best.a * V.p, bAt: B.t0 + 4 * best.b * B.p, lead: lead * 4 * B.p,
+    var plan = { v: V.k, b: B.k, semis: Math.round(semis * 100) / 100, aAt: V.t0 + 4 * best.a * V.p, bAt: B.t0 + 4 * best.b * B.p, leadBars: lead, lead: lead * 4 * B.p,
       cleanB: best.bvoc >= 2.5, q: q, r: Math.round(r * 1e4) / 1e4 };
     return { ok: true, score: score, plan: plan, s: best.s, cents: cents, H: best.H, Hn: best.Hn, Hown: best.Hown, O: best.O, R: R, d: d, q: q,
       aBar: best.a, bBar: best.b, bars: best.w, keyV: V.key, keyB: B.key, why: whyOf(V, B, best, cents, d, R) };
