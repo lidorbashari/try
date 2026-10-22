@@ -54,39 +54,48 @@ def key(t):
 
 
 # ---------------------------------------------------------------- grid fit (pure numpy, unit-tested)
+FIT_VERSION = 2   # bump to re-analyse every preview after a change in fit_grid
+
+
 def fit_grid(beats, downbeats, dur=30.0):
-    """Constant-tempo grid through detected beat times (robust to missed / extra beats).
-    Returns dict(bpm, b0, db, conf, rms, n, bar) or None."""
+    """Constant-tempo grid through detected beat times (robust to missed / extra beats and to the tracker's 20 ms
+    frame grid). Beat numbers are assigned step by step from each inter-beat interval, so a slightly wrong first
+    guess of the period cannot add up to whole-beat errors across the excerpt. Returns dict or None."""
     b = np.asarray(sorted(float(x) for x in beats if 0 <= x <= dur + 1), float)
     if len(b) < 8:
         return None
     ibi = np.diff(b)
-    P = float(np.median(ibi))
-    if not (0.25 <= P <= 1.6):  # 37.5 .. 240 BPM
+    P0 = float(np.median(ibi))
+    if not (0.25 <= P0 <= 1.6):  # 37.5 .. 240 BPM
         return None
-    # integer beat index per detection (handles gaps), then iterative robust least squares
-    k = np.round((b - b[0]) / P).astype(int)
-    keep = np.ones(len(b), bool)
+    # period: the one (within ±4 % of the median interval) at which the most detections share one phase; this
+    # coherence ignores random extra hits and missed beats, and is not fooled by the tracker's 20 ms frame grid
+    cand = P0 * np.linspace(0.96, 1.04, 1601)
+    z = np.abs(np.exp(2j * np.pi * b[None, :] / cand[:, None]).mean(axis=1))
+    P1 = float(cand[int(np.argmax(z))])
+    c1 = float(np.angle(np.exp(2j * np.pi * b / P1).sum()) / (2 * np.pi) * P1)
+    k = np.round((b - c1) / P1).astype(int)
+    keep = np.abs(b - (c1 + k * P1)) < 0.2 * P1
+    if keep.sum() < 8:
+        return None
+    P, c = P1, c1
     for _ in range(4):
         A = np.vstack([k[keep], np.ones(keep.sum())]).T
         (P, c), *_ = np.linalg.lstsq(A, b[keep], rcond=None)
-        res = b - (c + k * P)
         k = np.round((b - c) / P).astype(int)
         res = b - (c + k * P)
-        keep = np.abs(res) < max(0.035, 2.5 * np.std(res[keep]) if keep.sum() > 4 else 0.035)
+        sd = np.std(res[keep]) if keep.sum() > 4 else 0.035
+        keep = np.abs(res) < max(0.035, 2.5 * sd)
         if keep.sum() < 8:
             return None
     res = b - (c + k * P)
     rms = float(np.sqrt(np.mean(res[keep] ** 2)))
-    # fraction of grid beats inside the analysed span that have a detection within 40 ms
-    first, last = b[keep][0], b[keep][-1]
-    grid_n = int(round((last - first) / P)) + 1
+    first, last_t = b[keep][0], b[keep][-1]
+    grid_n = int(round((last_t - first) / P)) + 1
     hit = len(set(k[keep & (np.abs(res) < 0.04)].tolist()))
     cover = hit / max(1, grid_n)
-    # b0 = first grid beat at or after t = 0 (the engine's convention), index shift s
-    s = int(np.ceil((0 - c) / P - 1e-9))
-    b0 = c + s * P
-    # downbeats → which grid index mod 4 starts a bar
+    s0 = int(np.ceil((0 - c) / P - 1e-9))
+    b0 = c + s0 * P
     db, dbc, bar = 0, 0.0, 4
     d = np.asarray([float(x) for x in downbeats if 0 <= x <= dur + 1], float)
     if len(d) >= 2:
@@ -99,8 +108,9 @@ def fit_grid(beats, downbeats, dur=30.0):
             m4 = np.bincount(kd % 4, minlength=4)
             db = int(np.argmax(m4))
             dbc = float(m4[db] / max(1, m4.sum()))
-    conf = float(np.clip(cover, 0, 1) * np.clip(1 - (rms - 0.008) / 0.03, 0, 1) * (0.6 + 0.4 * dbc) * (1.0 if bar == 4 else 0.7))
-    return {"bpm": round(60.0 / P, 3), "b0": round(float(b0), 4), "db": db, "conf": round(conf, 3), "rms": round(rms, 4),
+    # frame quantisation alone gives ~6 ms rms; real timing ~10 ms; > 30 ms means no steady grid
+    conf = float(np.clip(cover, 0, 1) * np.clip(1 - (rms - 0.012) / 0.03, 0, 1) * (0.6 + 0.4 * dbc) * (1.0 if bar == 4 else 0.7))
+    return {"bpm": round(float(60.0 / P), 3), "b0": round(float(b0), 4), "db": db, "conf": round(conf, 3), "rms": round(rms, 4),
             "n": int(keep.sum()), "cover": round(cover, 3), "dbc": round(dbc, 3), "bar": bar}
 
 
@@ -108,15 +118,16 @@ def selftest():
     rng = np.random.default_rng(7)
     ok = True
     for bpm, b0, db, jit, miss, extra in [(124, 0.41, 0, 0.004, 0.05, 0.02), (92, 0.62, 1, 0.006, 0.1, 0.05),
-                                          (174, 0.05, 3, 0.003, 0.0, 0.0), (100.37, 0.3, 2, 0.008, 0.15, 0.08)]:
+                                          (174, 0.05, 3, 0.003, 0.0, 0.0), (100.37, 0.3, 2, 0.008, 0.15, 0.08),
+                                          (126, 0.15, 2, 0.003, 0.02, 0.0), (128, 0.2, 1, 0.003, 0.0, 0.3), (122.7, 0.33, 3, 0.005, 0.2, 0.1)]:
         P = 60 / bpm
         n = int(30 / P)
-        beats = b0 + np.arange(n) * P + rng.normal(0, jit, n)
+        beats = np.round((b0 + np.arange(n) * P + rng.normal(0, jit, n)) / 0.02) * 0.02  # the tracker's 50 fps frames
         keepm = rng.random(n) > miss
         bt = list(beats[keepm]) + list(rng.uniform(0, 30, int(extra * n)))
         downs = [x for i, x in enumerate(beats) if (i - db) % 4 == 0 and keepm[i]]
         g = fit_grid(bt, downs)
-        good = g and abs(g["bpm"] - bpm) < 0.05 and abs(g["b0"] - b0) < 0.006 and g["db"] == db and g["conf"] > 0.5
+        good = g and abs(g["bpm"] - bpm) < 0.05 and abs(g["b0"] - b0) < 0.008 and g["db"] == db and g["conf"] > 0.5
         print("selftest", bpm, b0, db, "→", g, "OK" if good else "FAIL")
         ok &= bool(good)
     # a drifting performance must get a low confidence
@@ -176,7 +187,9 @@ def analyze(args):
     old = {}
     if os.path.exists(args.existing) and not args.force:
         try:
-            old = json.load(open(args.existing, encoding="utf-8")).get("map", {})
+            ex = json.load(open(args.existing, encoding="utf-8"))
+            if ex.get("meta", {}).get("fit") == FIT_VERSION:
+                old = ex.get("map", {})
         except Exception:
             old = {}
     todo = []
@@ -213,6 +226,8 @@ def analyze(args):
                         rec["err"] = "decode"
                     else:
                         beats, downs = a2b(x, SR)
+                        rec["beats"] = [round(float(v), 3) for v in beats]
+                        rec["downs"] = [round(float(v), 3) for v in downs]
                         g = fit_grid(beats, downs, dur=len(x) / SR)
                         if not g:
                             rec["err"] = "nogrid"
@@ -244,7 +259,9 @@ def merge(args):
     old = {}
     if os.path.exists(args.out):
         try:
-            old = json.load(open(args.out, encoding="utf-8")).get("map", {})
+            ex = json.load(open(args.out, encoding="utf-8"))
+            if ex.get("meta", {}).get("fit") == FIT_VERSION:
+                old = ex.get("map", {})
         except Exception:
             old = {}
     new = {}
@@ -277,7 +294,7 @@ def merge(args):
     if not m:
         print("no grids; keeping the existing file")
         return 1
-    meta = {"generated": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"),
+    meta = {"generated": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"), "fit": FIT_VERSION,
             "model": "beat_this " + args.model, "tracks": len(keys), "grids": len(m), **stats,
             "note": "Beat grids measured from the Apple Music previews (numbers only; no audio is stored)."}
     tmp = args.out + ".tmp"
