@@ -106,9 +106,10 @@
       for (var si = 0; si < shifts.length; si++) {
         var s = shifts[si];
         for (var bi = 0; bi < bS.length; bi++) {
-          var b0 = bS[bi], hs = 0, hw = 0, clash = 0, bv = 0, bn = 0;
+          var b0 = bS[bi], hs = 0, hw = 0, clash = 0, bv = 0, bn = 0, cov = 0;
           for (i = 0; i < w; i++) {
             var j = q === 2 ? b0 + Math.floor(i / 2) : q === .5 ? b0 + 2 * i : b0 + i; if (j >= B.nb) break;
+            cov++;
             var hb = q === .5 && j + 1 < B.nb && HB[j] && HB[j + 1] ? unit(HB[j].map(function (x, k) { return x + HB[j + 1][k]; })) : HB[j];
             var vb = V.vb[a + i], wl = V.vlev[a + i] >= 3 ? V.vlev[a + i] : 0;
             bv += B.vlev[j]; bn++;
@@ -120,7 +121,7 @@
           var H = hs / hw, Hn = Math.min(1.1, H / Math.max(.3, Hown)), O = clash / hw;
           var phrase = (B.sec || []).indexOf(b0) >= 0 ? 2 : 0;
           var penS = [0, 4, 10][Math.abs(s)] + (s > 0 && V.vp >= 65 ? 5 : 0) + (s < 0 && V.vp && V.vp <= 50 ? 5 : 0);
-          var sc = 100 - 70 * Math.max(0, .97 - Hn) - penS - 22 * O + phrase;
+          var sc = 100 - 70 * Math.max(0, .97 - Hn) - penS - 22 * O + phrase - 20 * (1 - cov / w);   /* the beat must last under the vocal */
           if (!best || sc > best.sc) best = { sc: sc, a: a, b: b0, s: s, w: w, H: H, Hn: Hn, Hown: Hown, O: O, bvoc: bn ? bv / bn : 0 };
         }
       }

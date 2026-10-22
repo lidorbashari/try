@@ -1162,6 +1162,7 @@ function seedMatch() {
   const ok = MashMatch.seed({ an: MD.an, li: MD.li, beats: MD.beats, previews: MD.previews, hash: u => MashEngine._hash(u) });
   if (!ok || MEAS) return;
   MEAS = true; window.__measured = true;
+  try { if (loaded && !anyPlaying(est())) { const m = MashMatch.pair(loaded.p.v, loaded.p.b, {}); if (m && m.ok && E.setPlan) E.setPlan(m.plan); } } catch (e) {}   /* a pair loaded before the data (deep link) */
   try { document.dispatchEvent(new CustomEvent("mashlab:measured")); } catch (e) {}
   try { if (typeof homeChanged === "function") homeChanged({ presets: true, keepScroll: window.scrollY > 400 }); } catch (e) {}
 }
@@ -1845,9 +1846,11 @@ function updateMixer(st, force) {
     if (sb.dataset.k !== key) { sb.dataset.k = key; sb.className = "srcb" + (b.cls ? " " + b.cls : ""); sb.innerHTML = b.html; }
     const sy = $(".syncb", el); sy.setAttribute("aria-pressed", String(!!d.syncOn));
     const t = d.track || (sd === "A" ? loaded.p.v : loaded.p.b), rate = d.syncOn ? (d.rate || 1) : 1;
-    const eff = Math.round(t.bpm * rate * 10) / 10, pc = Math.round((rate - 1) * 1000) / 10;
-    const ks = d.semis ? ` <span class="kshift" title="השירה הוזזה ${Math.abs(d.semis) === 1 ? "בחצי טון" : "בטון"} כדי שהסולם שלה יתאים לביט">${d.semis > 0 ? "+" : "−"}${Math.abs(d.semis)}</span>` : "";
-    const lcd = $("[data-lcd]", el), lt = `<b>${eff}</b> BPM · ${esc(t.k)}${ks} · ${fmtPct(pc)} · <span class="le" title="אנרגיה${energyOf(t).est ? " משוערת" : ""}">${eTxt(t)}</span>`; if (lcd.dataset.k !== lt) { lcd.dataset.k = lt; lcd.innerHTML = lt; }
+    const base = d.grid && d.grid.bpm > 30 ? d.grid.bpm : t.bpm, eff = Math.round(base * rate * 10) / 10, pc = Math.round((rate - 1) * 1000) / 10;
+    const mt = MEAS ? MashMatch.track(t) : null, kk = mt && mt.key || t.k;   /* measured on the preview when known */
+    const sr = Math.round(d.semis || 0), sc = Math.round(((d.semis || 0) - sr) * 100);
+    const ks = d.semis ? ` <span class="kshift" title="השירה הוזזה כדי שתשב על האקורדים של הביט">${sr ? (sr > 0 ? "+" : "−") + Math.abs(sr) : ""}${sc ? (sr ? " " : "") + (sc > 0 ? "+" : "−") + Math.abs(sc) + "¢" : ""}</span>` : "";
+    const lcd = $("[data-lcd]", el), lt = `<b>${eff}</b> BPM · ${esc(kk)}${ks} · ${fmtPct(pc)} · <span class="le" title="אנרגיה${energyOf(t).est ? " משוערת" : ""}">${eTxt(t)}</span>`; if (lcd.dataset.k !== lt) { lcd.dataset.k = lt; lcd.innerHTML = lt; }
     const eqOn = d.eqActive !== false || d.kind === "idle";
     $("[data-eq]", el).classList.toggle("off", !eqOn); $("[data-eqnote]", el).hidden = eqOn;
     $$('[data-act="eq"]', el).forEach(inp => { inp.disabled = !eqOn; const v = d.eq ? d.eq[inp.dataset.band] : 0; setRange(inp, v || 0, force); const o = inp.parentElement.querySelector("output"); if (o && inp.dataset.drag !== "1") o.textContent = fmtDb(Number(inp.value)); });

@@ -74,7 +74,8 @@
       copies.forEach(function (c) { c.style.width = (w - 8) + "px"; });
       bar.style.width = w + "px";                                   /* measure at full width */
       var br = row.getBoundingClientRect(), tabs = vis().map(function (b) { var r = b.getBoundingClientRect(); return { b: b, x: r.left - br.left + 4, w: r.width, c: r.left - br.left + 4 + r.width / 2 }; });
-      G = { w: w, h: h, vw: vw, g: g, tabs: tabs };
+      var bb = bar.getBoundingClientRect();                         /* the bar's distance from the bottom (safe area included) */
+      G = { w: w, h: h, vw: vw, g: g, tabs: tabs, tb: Math.max(0, (W.innerHeight || bb.bottom) - bb.bottom) };
       lens.style.width = lensW() + "px";
     }
     function lensW() { var t = G && G.tabs[0]; return Math.round((t ? t.w : 80) + 14); }
@@ -228,7 +229,7 @@
       var mz = clamp(tabbar._springs.MZ.x, 0, 1);
       if (!force && Math.abs(mz - lastMz) < 1e-4) return;
       lastMz = mz;
-      var vw = G.vw, g = G.g, tb = parseFloat(getComputedStyle(root).getPropertyValue("--tab-b")) || 14;
+      var vw = G.vw, g = G.g, tb = G.tb != null ? G.tb : 14;
       var wf = Math.min(vw - 2 * g, 560), wm = vw - 2 * g - G.h - 10;
       el.style.width = r2(lerp(wf, wm, mz)) + "px"; el.style.left = r2(lerp((vw - wf) / 2, g, mz)) + "px";
       el.style.bottom = r2(lerp(tb + G.h + 10, tb + (G.h - 60) / 2, mz)) + "px";
