@@ -1,0 +1,250 @@
+== parts/alog-0.txt
+shard 0: 0 of 0 previews
+== parts/alog-1.txt
+shard 1: 0 of 0 previews
+== parts/alog-10.txt
+shard 10: 0 of 0 previews
+== parts/alog-11.txt
+shard 11: 0 of 0 previews
+== parts/alog-12.txt
+shard 12: 0 of 0 previews
+== parts/alog-13.txt
+shard 13: 0 of 0 previews
+== parts/alog-14.txt
+shard 14: 0 of 0 previews
+== parts/alog-15.txt
+shard 15: 0 of 0 previews
+== parts/alog-2.txt
+shard 2: 0 of 0 previews
+== parts/alog-3.txt
+shard 3: 0 of 0 previews
+== parts/alog-4.txt
+shard 4: 0 of 0 previews
+== parts/alog-5.txt
+shard 5: 0 of 0 previews
+== parts/alog-6.txt
+shard 6: 0 of 0 previews
+== parts/alog-7.txt
+shard 7: 0 of 0 previews
+== parts/alog-8.txt
+shard 8: 0 of 0 previews
+== parts/alog-9.txt
+shard 9: 0 of 0 previews
+== parts/wlog-0.txt
+words shard 0: 22 tracks
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+whisper model: large-v3-turbo
+1/22 phrases found 1/1 (whisper runs 1)
+2/22 phrases found 0/1 (whisper runs 9)
+3/22 phrases found 0/1 (whisper runs 9)
+4/22 phrases found 1/1 (whisper runs 1)
+5/22 phrases found 0/1 (whisper runs 9)
+6/22 phrases found 0/1 (whisper runs 9)
+7/22 phrases found 0/1 (whisper runs 9)
+8/22 phrases found 1/1 (whisper runs 1)
+9/22 phrases found 1/1 (whisper runs 4)
+10/22 phrases found 1/1 (whisper runs 1)
+11/22 phrases found 1/1 (whisper runs 1)
+12/22 phrases found 1/1 (whisper runs 1)
+13/22 phrases found 0/1 (whisper runs 9)
+14/22 phrases found 0/1 (whisper runs 9)
+15/22 phrases found 0/1 (whisper runs 9)
+whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
+16/22 phrases found 1/1 (whisper runs 1)
+17/22 phrases found 2/2 (whisper runs 1)
+18/22 phrases found 0/1 (whisper runs 3)
+19/22 phrases found 0/1 (whisper runs 3)
+20/22 phrases found 0/1 (whisper runs 3)
+21/22 phrases found 1/1 (whisper runs 1)
+22/22 phrases found 1/1 (whisper runs 1)
+words stats: {'tracks': 22, 'phrases': 23, 'found': 12}
+== parts/wlog-1.txt
+words shard 1: 22 tracks
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
+1/22 phrases found 1/1 (whisper runs 1)
+whisper model: large-v3-turbo
+2/22 phrases found 0/1 (whisper runs 9)
+3/22 phrases found 0/2 (whisper runs 9)
+4/22 phrases found 1/1 (whisper runs 1)
+5/22 phrases found 0/2 (whisper runs 9)
+6/22 phrases found 0/1 (whisper runs 9)
+7/22 phrases found 1/1 (whisper runs 1)
+8/22 phrases found 1/1 (whisper runs 1)
+9/22 phrases found 1/1 (whisper runs 1)
+10/22 phrases found 0/1 (whisper runs 9)
+11/22 phrases found 0/1 (whisper runs 9)
+12/22 phrases found 1/1 (whisper runs 1)
+13/22 phrases found 0/2 (whisper runs 9)
+14/22 phrases found 1/1 (whisper runs 1)
+15/22 phrases found 1/1 (whisper runs 1)
+16/22 phrases found 1/1 (whisper runs 1)
+17/22 phrases found 2/2 (whisper runs 1)
+18/22 phrases found 0/1 (whisper runs 3)
+19/22 phrases found 0/1 (whisper runs 3)
+20/22 phrases found 0/1 (whisper runs 3)
+21/22 phrases found 0/1 (whisper runs 3)
+22/22 phrases found 0/2 (whisper runs 3)
+words stats: {'tracks': 22, 'phrases': 27, 'found': 11}
+== parts/wlog-2.txt
+words shard 2: 21 tracks
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+whisper model: large-v3-turbo
+1/21 phrases found 2/2 (whisper runs 7)
+2/21 phrases found 1/1 (whisper runs 1)
+3/21 phrases found 1/1 (whisper runs 1)
+4/21 phrases found 1/1 (whisper runs 1)
+5/21 phrases found 2/2 (whisper runs 1)
+6/21 phrases found 1/1 (whisper runs 1)
+7/21 phrases found 1/1 (whisper runs 3)
+8/21 phrases found 1/1 (whisper runs 1)
+9/21 phrases found 0/1 (whisper runs 9)
+10/21 phrases found 1/1 (whisper runs 1)
+11/21 phrases found 1/1 (whisper runs 1)
+12/21 phrases found 0/1 (whisper runs 9)
+13/21 phrases found 1/1 (whisper runs 1)
+14/21 phrases found 0/1 (whisper runs 9)
+15/21 phrases found 0/1 (whisper runs 9)
+whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
+16/21 phrases found 0/1 (whisper runs 3)
+17/21 phrases found 0/1 (whisper runs 3)
+18/21 phrases found 1/1 (whisper runs 1)
+19/21 phrases found 0/1 (whisper runs 3)
+20/21 phrases found 1/1 (whisper runs 1)
+21/21 phrases found 0/1 (whisper runs 3)
+words stats: {'tracks': 21, 'phrases': 23, 'found': 15}
+== parts/wlog-3.txt
+words shard 3: 21 tracks
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+whisper model: large-v3-turbo
+1/21 phrases found 1/1 (whisper runs 1)
+2/21 phrases found 1/1 (whisper runs 1)
+3/21 phrases found 1/1 (whisper runs 1)
+4/21 phrases found 0/1 (whisper runs 9)
+5/21 phrases found 0/1 (whisper runs 9)
+6/21 phrases found 0/1 (whisper runs 9)
+7/21 phrases found 0/2 (whisper runs 9)
+8/21 phrases found 0/1 (whisper runs 9)
+9/21 phrases found 0/1 (whisper runs 9)
+10/21 phrases found 1/1 (whisper runs 1)
+11/21 phrases found 0/1 (whisper runs 9)
+12/21 phrases found 1/1 (whisper runs 1)
+13/21 phrases found 1/1 (whisper runs 1)
+14/21 phrases found 0/1 (whisper runs 9)
+15/21 phrases found 0/2 (whisper runs 9)
+whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
+16/21 phrases found 1/1 (whisper runs 3)
+17/21 phrases found 1/1 (whisper runs 1)
+18/21 phrases found 0/1 (whisper runs 3)
+19/21 phrases found 0/1 (whisper runs 3)
+20/21 phrases found 1/1 (whisper runs 1)
+21/21 phrases found 1/1 (whisper runs 1)
+words stats: {'tracks': 21, 'phrases': 23, 'found': 10}
+== parts/wlog-4.txt
+words shard 4: 21 tracks
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+whisper model: large-v3-turbo
+1/21 phrases found 1/1 (whisper runs 1)
+2/21 phrases found 0/1 (whisper runs 9)
+3/21 phrases found 1/1 (whisper runs 1)
+4/21 phrases found 1/1 (whisper runs 1)
+5/21 phrases found 0/1 (whisper runs 9)
+6/21 phrases found 1/1 (whisper runs 1)
+7/21 phrases found 1/1 (whisper runs 1)
+8/21 phrases found 0/1 (whisper runs 9)
+9/21 phrases found 1/1 (whisper runs 7)
+10/21 phrases found 1/1 (whisper runs 7)
+11/21 phrases found 1/1 (whisper runs 1)
+12/21 phrases found 0/1 (whisper runs 9)
+13/21 phrases found 0/1 (whisper runs 9)
+14/21 phrases found 0/1 (whisper runs 9)
+whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
+15/21 phrases found 1/1 (whisper runs 1)
+16/21 phrases found 0/2 (whisper runs 3)
+17/21 phrases found 1/1 (whisper runs 1)
+18/21 phrases found 1/1 (whisper runs 2)
+19/21 phrases found 0/1 (whisper runs 3)
+20/21 phrases found 1/1 (whisper runs 1)
+21/21 phrases found 0/1 (whisper runs 3)
+words stats: {'tracks': 21, 'phrases': 22, 'found': 12}
+== parts/wlog-5.txt
+words shard 5: 21 tracks
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+whisper model: large-v3-turbo
+1/21 phrases found 0/1 (whisper runs 9)
+2/21 phrases found 1/1 (whisper runs 1)
+3/21 phrases found 1/1 (whisper runs 1)
+4/21 phrases found 1/1 (whisper runs 1)
+5/21 phrases found 1/1 (whisper runs 1)
+6/21 phrases found 1/1 (whisper runs 1)
+7/21 phrases found 0/1 (whisper runs 9)
+8/21 phrases found 1/1 (whisper runs 1)
+9/21 phrases found 1/1 (whisper runs 4)
+10/21 phrases found 0/1 (whisper runs 9)
+11/21 phrases found 1/1 (whisper runs 1)
+12/21 phrases found 0/1 (whisper runs 9)
+13/21 phrases found 1/1 (whisper runs 1)
+14/21 phrases found 0/1 (whisper runs 9)
+whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
+15/21 phrases found 1/1 (whisper runs 1)
+16/21 phrases found 1/1 (whisper runs 1)
+17/21 phrases found 1/1 (whisper runs 1)
+18/21 phrases found 1/1 (whisper runs 1)
+19/21 phrases found 1/1 (whisper runs 1)
+20/21 phrases found 0/1 (whisper runs 3)
+21/21 phrases found 0/1 (whisper runs 3)
+words stats: {'tracks': 21, 'phrases': 21, 'found': 14}
+== parts/wlog-6.txt
+words shard 6: 21 tracks
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+whisper model: large-v3-turbo
+1/21 phrases found 1/1 (whisper runs 1)
+2/21 phrases found 1/1 (whisper runs 2)
+3/21 phrases found 0/1 (whisper runs 9)
+4/21 phrases found 0/1 (whisper runs 9)
+5/21 phrases found 0/1 (whisper runs 9)
+6/21 phrases found 1/1 (whisper runs 7)
+7/21 phrases found 0/1 (whisper runs 9)
+8/21 phrases found 0/1 (whisper runs 9)
+9/21 phrases found 1/1 (whisper runs 1)
+10/21 phrases found 1/1 (whisper runs 1)
+11/21 phrases found 1/1 (whisper runs 1)
+12/21 phrases found 1/1 (whisper runs 1)
+13/21 phrases found 0/1 (whisper runs 9)
+14/21 phrases found 1/1 (whisper runs 1)
+whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
+15/21 phrases found 0/1 (whisper runs 3)
+16/21 phrases found 0/1 (whisper runs 3)
+17/21 phrases found 0/1 (whisper runs 3)
+18/21 phrases found 0/1 (whisper runs 3)
+19/21 phrases found 0/1 (whisper runs 3)
+20/21 phrases found 1/1 (whisper runs 2)
+21/21 phrases found 0/1 (whisper runs 3)
+words stats: {'tracks': 21, 'phrases': 21, 'found': 9}
+== parts/wlog-7.txt
+words shard 7: 21 tracks
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+whisper model: large-v3-turbo
+1/21 phrases found 1/1 (whisper runs 1)
+2/21 phrases found 1/1 (whisper runs 1)
+3/21 phrases found 1/1 (whisper runs 1)
+4/21 phrases found 1/1 (whisper runs 1)
+5/21 phrases found 1/1 (whisper runs 1)
+6/21 phrases found 1/1 (whisper runs 1)
+7/21 phrases found 1/1 (whisper runs 9)
+8/21 phrases found 0/1 (whisper runs 9)
+9/21 phrases found 1/1 (whisper runs 3)
+10/21 phrases found 1/2 (whisper runs 9)
+11/21 phrases found 0/1 (whisper runs 9)
+12/21 phrases found 1/1 (whisper runs 1)
+13/21 phrases found 0/1 (whisper runs 9)
+14/21 phrases found 1/1 (whisper runs 1)
+whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
+15/21 phrases found 1/1 (whisper runs 1)
+16/21 phrases found 1/1 (whisper runs 1)
+17/21 phrases found 1/1 (whisper runs 1)
+18/21 phrases found 1/1 (whisper runs 1)
+19/21 phrases found 1/1 (whisper runs 1)
+20/21 phrases found 1/1 (whisper runs 1)
+21/21 phrases found 0/1 (whisper runs 3)
+words stats: {'tracks': 21, 'phrases': 22, 'found': 17}
