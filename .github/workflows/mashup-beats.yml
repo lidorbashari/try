@@ -74,12 +74,12 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: model
-      - name: Install ffmpeg and the beat tracker (CPU)
+      - name: Install the beat tracker (CPU) and a static ffmpeg
         timeout-minutes: 12
         run: |
-          command -v ffmpeg || (timeout 300 sudo apt-get update -qq && timeout 300 sudo apt-get install -y -qq ffmpeg)
           for i in 1 2 3; do timeout 400 pip install -q --default-timeout 60 --retries 5 torch torchaudio --index-url https://download.pytorch.org/whl/cpu && break; done
-          for i in 1 2 3; do timeout 300 pip install -q --default-timeout 60 --retries 5 beat-this soxr einops rotary-embedding-torch numpy && break; done
+          for i in 1 2 3; do timeout 300 pip install -q --default-timeout 60 --retries 5 beat-this soxr einops rotary-embedding-torch numpy imageio-ffmpeg && break; done
+          python -c "import sys; sys.path.insert(0, 'tools'); from mashup_lab_beats import ffmpeg_exe; print('ffmpeg:', ffmpeg_exe())"
           python -c "import beat_this.inference, torch; print('beat_this ok, torch', torch.__version__)"
       - name: Use the newest beat grids (only missing previews are analysed)
         run: git fetch -q origin "${GITHUB_REF_NAME}" && git checkout FETCH_HEAD -- docs/mashup-lab/beats.json 2>/dev/null || echo "no beats.json yet"

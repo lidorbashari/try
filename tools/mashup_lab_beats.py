@@ -22,6 +22,7 @@ import datetime
 import glob
 import json
 import os
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -152,8 +153,17 @@ def fetch(url, path):
     return False
 
 
+def ffmpeg_exe():
+    """system ffmpeg, else the static build shipped inside the imageio-ffmpeg wheel (no apt-get on the runner)"""
+    exe = shutil.which("ffmpeg")
+    if exe:
+        return exe
+    import imageio_ffmpeg
+    return imageio_ffmpeg.get_ffmpeg_exe()
+
+
 def decode(path):
-    p = subprocess.run(["ffmpeg", "-v", "error", "-i", path, "-ac", "1", "-ar", str(SR), "-f", "f32le", "-"],
+    p = subprocess.run([ffmpeg_exe(), "-v", "error", "-i", path, "-ac", "1", "-ar", str(SR), "-f", "f32le", "-"],
                        capture_output=True, timeout=60)
     if p.returncode != 0:
         return None
