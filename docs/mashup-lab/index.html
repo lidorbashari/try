@@ -1640,6 +1640,7 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
     api.off = function (ev, fn) { if (L[ev]) L[ev] = L[ev].filter(function (f) { return f !== fn; }); return api; };
     api.art = function (t) { try { var c = net && t ? cget(t) : null; return c && c.a || null; } catch (e) { return null; } };
     api.prefetch = function (t) { try { return net && t ? lookup(t).catch(function () { return null; }) : Promise.resolve(null); } catch (e) { return Promise.resolve(null); } };
+    api.hintCors = function (v) { if (cors === null && typeof v === "boolean") cors = v; };
     api.diag = function () { return { net: net, cors: cors, backoff: Math.max(0, backoff - Date.now()), ok: diag.ok, miss: diag.miss, fail: diag.fail, last: diag.last, via: diag.via, fetchErr: diag.fetchErr }; };
     api.probe = function () { /* connection test for the audio-source sheet: one fresh search (cache bypassed) */
       if (!net) return Promise.resolve({ ok: false, err: "net-off", ms: 0 });
@@ -1678,7 +1679,14 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
     });
     return oc.startRendering();
   }
-  W.MashEngine = { create: create, version: "5.0", _render: render, _pick: pick };
+  /* seed(map): preview links resolved ahead of time (previews.json, built on GitHub Actions), so a tap
+     starts the original synchronously and the phone never has to call the Search API */
+  function seed(map) {
+    var n = 0; if (!map || typeof map !== "object") return 0;
+    Object.keys(map).forEach(function (k) { var v = map[k]; if (!v || typeof v !== "object") return; if (v.p) { cache[k] = { p: String(v.p), a: v.a ? String(v.a) : null }; n++; } else if (v.miss && !(cache[k] && cache[k].p)) { cache[k] = { miss: Date.now() }; } });
+    return n;
+  }
+  W.MashEngine = { create: create, version: "5.1", seed: seed, _render: render, _pick: pick };
 })();
 </script>
 <script>
@@ -1891,6 +1899,16 @@ function nullEngine() {
 let E;
 try { E = (window.MashEngine && typeof MashEngine.create === "function") ? MashEngine.create({ net: !IN_CLAUDE, root: document.body }) : null; } catch (e) { E = null; }
 if (!E) E = nullEngine();
+/* previews.json: Apple preview links resolved on GitHub's servers (see tools/mashup_lab_previews.py) */
+if (!IN_CLAUDE && window.fetch && /^https?:$/.test(location.protocol)) {
+  fetch("previews.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : null).then(j => {
+    if (!j || !j.map || !window.MashEngine || !MashEngine.seed) return;
+    const n = MashEngine.seed(j.map);
+    if (j.meta && typeof j.meta.audioCors === "boolean" && E.hintCors) E.hintCors(j.meta.audioCors);
+    window.__previews = { n, meta: j.meta || null };
+    try { DATA.forEach(t => applyArt(t)); } catch (e) {}
+  }).catch(() => {});
+}
 const est = () => { try { return E.state(); } catch (e) { return nullEngine().state(); } };
 const artOf = t => { try { return E.art(t) || null; } catch (e) { return null; } };
 const busyOrPlaying = d => !!(d && (d.playing || d.busy));

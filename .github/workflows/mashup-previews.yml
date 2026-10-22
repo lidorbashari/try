@@ -1,0 +1,74 @@
+name: Mashup Lab previews
+
+# Resolves Apple Music preview links for every Mashup Lab track on GitHub's servers and commits
+# docs/mashup-lab/previews.json, so phones play the originals without calling the iTunes Search API.
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - claude/dj-course-music-agents-suitm3
+    paths:
+      - docs/mashup-lab/tracks.json
+      - tools/mashup_lab_previews.py
+      - .github/workflows/mashup-previews.yml
+  schedule:
+    - cron: "17 3 * * 1"   # weekly refresh, Monday 03:17 UTC
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: mashup-previews
+  cancel-in-progress: true
+
+jobs:
+  resolve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Resolve preview links (shard ${{ matrix.shard }})
+        run: python tools/mashup_lab_previews.py resolve --shard ${{ matrix.shard }} --shards 8 --out previews-${{ matrix.shard }}.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: previews-${{ matrix.shard }}
+          path: previews-${{ matrix.shard }}.json
+          retention-days: 3
+
+  merge:
+    needs: resolve
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/download-artifact@v4
+        with:
+          path: parts
+          pattern: previews-*
+          merge-multiple: true
+      - name: Merge into docs/mashup-lab/previews.json
+        run: python tools/mashup_lab_previews.py merge --parts parts --out docs/mashup-lab/previews.json
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/mashup-lab/previews.json
+          if git diff --cached --quiet; then echo "no changes"; exit 0; fi
+          git commit -m "Mashup Lab: refresh Apple preview links"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+      - name: Redeploy the site
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --ref "${GITHUB_REF_NAME}"
