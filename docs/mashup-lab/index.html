@@ -1290,7 +1290,7 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
     var S = { mode: null, seq: false, loop: false, xf: .5, cur: "A" }, rates = { A: 1, B: 1 }, D = {};
     SIDES.forEach(function (s) {
       D[s] = { side: s, track: null, kind: "idle", busy: false, buffering: false, playing: false, pos: 0, dur: 0, vol: .85, eq: { low: 0, mid: 0, high: 0 },
-        syncOn: true, rate: 1, eqActive: true, art: null, tok: 0, lv: 0, n: null, elC: null, elD: null, el: null, src: null, groove: null, url: null, sil: 0 };
+        syncOn: true, rate: 1, eqActive: true, art: null, tok: 0, lv: 0, n: null, elC: null, elD: null, el: null, src: null, groove: null, url: null, sil: 0, why: "" };
     });
     function guard(fn) { return function () { try { return fn.apply(null, arguments); } catch (e) { try { console.warn("[MashEngine]", e); } catch (x) {} } }; }
     function fire(ev, arg) { L[ev].slice().forEach(function (f) { try { f(arg); } catch (e) { setTimeout(function () { throw e; }); } }); }
@@ -1357,7 +1357,7 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
       else if (ev === "ended") { if (d.playing) ended(d, 0); }
       else if (ev === "error") {
         if (d.busy) appleFail(d, d.tok, "MediaError", el === d.elD);
-        else if (d.playing) { d.pos = el.currentTime || d.pos; startStudio(d); } /* error mid-play → Studio Groove */
+        else if (d.playing) { d.pos = el.currentTime || d.pos; d.why = "media"; startStudio(d); } /* error mid-play → Studio Groove */
       }
     }
     function stopApple(d, drop) {
@@ -1377,7 +1377,7 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
       pitch(el, d.rate = effRate(d)); applyGains(d);
       var p; try { p = el.play(); } catch (e) { p = Promise.reject(e); }
       if (!p || !p.then) p = Promise.resolve();
-      p.then(function () { if (tok !== d.tok) return; d.busy = false; d.playing = true; ensureTick(); emit(); },
+      p.then(function () { if (tok !== d.tok) return; d.busy = false; d.playing = true; d.why = ""; d.retry = false; ensureTick(); emit(); },
         function (e) { appleFail(d, tok, e && e.name, direct); });
       ensureTick(); emit();
     }
@@ -1385,6 +1385,12 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
       if (tok !== d.tok || d.kind !== "apple") return;
       if (name === "AbortError" && d.el && !d.el.paused) return;
       if (name !== "NotAllowedError" && !direct && cors !== true) { cors = false; startApple(d, d.url, true); return; } /* retry once, direct */
+      if (name !== "NotAllowedError" && direct && !d.retry) { /* one retry for a flaky (mobile) network before giving up on the original */
+        d.retry = true; var rt = d.tok;
+        setTimeout(guard(function () { if (rt === d.tok && d.kind === "apple" && d.busy) startApple(d, d.url, true); }), 500);
+        return;
+      }
+      d.why = name === "NotAllowedError" ? "blocked" : "media";
       startStudio(d); /* never silent: Studio Groove */
     }
     function switchDirect(d) { var pos = d.el ? d.el.currentTime : d.pos; cors = false; d.pos = pos; startApple(d, d.url, true); }
@@ -1431,7 +1437,7 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
       if (peakOf(d) > 1e-4) { cors = true; d.sil = 0; return; }
       if (d.el.currentTime <= .8 || d.el.paused) { d.sil = 0; return; }
       var pn = performance.now();
-      if (!d.sil) d.sil = pn; else if (pn - d.sil > 1800) switchDirect(d);
+      if (!d.sil) d.sil = pn; else if (pn - d.sil > 3000) switchDirect(d); /* 3 s of pure digital silence → CORS-blocked data */
     }
 
     /* ---- deck control ---- */
@@ -1448,15 +1454,15 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
       if (!d.track || bp(d)) return;
       d.rate = effRate(d);
       if (d.dur && d.pos >= d.dur - .25) d.pos = 0;
-      if (!net) { startStudio(d, o); return; }
+      if (!net) { d.why = "claude"; startStudio(d, o); return; }
       var c = cget(d.track);
       if (c && c.p) { startApple(d, c.p, false); return; } /* cached: el.play() synchronously inside the gesture */
-      if (c || Date.now() < backoff) { startStudio(d, o); return; }
+      if (c) { d.why = "miss"; startStudio(d, o); return; } /* known: Apple has no preview for this song */
       var tok = ++d.tok, trk = d.track; d.busy = true;
-      var to = setTimeout(guard(function () { if (tok === d.tok && d.busy) startStudio(d, o); }), 6000); /* wait ≤ 6 s */
+      var to = setTimeout(guard(function () { if (tok === d.tok && d.busy) { d.why = "slow"; startStudio(d, o); } }), 6000); /* wait ≤ 6 s */
       lookup(d.track, true).then(guard(function (r) {
         clearTimeout(to);
-        if (tok === d.tok && d.busy) { if (r && r.p) startApple(d, r.p, false); else startStudio(d, o); return; }
+        if (tok === d.tok && d.busy) { if (r && r.p) startApple(d, r.p, false); else { d.why = diag.last === "net" ? "net" : "miss"; startStudio(d, o); } return; }
         /* late result: this deck fell back to Studio Groove for the same track and is still playing → switch to the original now */
         if (r && r.p && d.track === trk && d.kind === "studio" && d.playing && S.mode !== "seq") { d.pos = 0; startApple(d, r.p, false); }
       }));
@@ -1474,7 +1480,7 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
     }
     function setTrack(d, t) {
       halt(d); stopApple(d, true);
-      d.track = t || null; d.kind = "idle"; d.pos = 0; d.url = null; d.lv = 0;
+      d.track = t || null; d.kind = "idle"; d.pos = 0; d.url = null; d.lv = 0; d.retry = false; d.why = "";
       d.art = t ? api.art(t) : null; d.eqActive = !(net && cors === false); d.rate = effRate(d);
       d.dur = t ? grooveBars(tempoOf(d)) * 240 / tempoOf(d) : 0;
     }
@@ -1598,7 +1604,7 @@ html.behind .tabbar, html.behind .mini { opacity: 0 !important; visibility: hidd
       function cp(d) {
         var dur = d.kind === "apple" && d.el && isFinite(d.el.duration) && d.el.duration > 0 ? d.el.duration : d.dur;
         return { track: d.track, kind: d.kind, busy: d.busy, buffering: d.buffering, playing: d.playing, pos: Math.min(curPos(d), dur || 1e9), dur: dur, vol: d.vol,
-          eq: { low: d.eq.low, mid: d.eq.mid, high: d.eq.high }, syncOn: d.syncOn, rate: d.rate, eqActive: d.kind === "studio" ? true : d.eqActive, art: d.art };
+          eq: { low: d.eq.low, mid: d.eq.mid, high: d.eq.high }, syncOn: d.syncOn, rate: d.rate, eqActive: d.kind === "studio" ? true : d.eqActive, art: d.art, why: d.kind === "studio" ? (d.why || "") : "" };
       }
       try { return { mode: S.mode, seq: S.seq, loop: S.loop, xf: S.xf, A: cp(D.A), B: cp(D.B) }; } catch (e) { return { mode: null, seq: false, loop: false, xf: .5, A: null, B: null }; }
     };
@@ -2118,9 +2124,17 @@ function renderList(animate) {
     $("#more").hidden = true; return;
   }
   list.innerHTML = ps.slice(0, state.shown).map((p, i) => cardHTML(p, { rise: animate !== false && i < 8, d: i * 45, year: state.sort === "era" || state.sort === "surprise" })).join("");
+  prefetchTop(ps);
   updateMore();
   applyLive();
   try { history.replaceState(null, "", "#" + state.A + "-" + state.B); } catch (e) {}
+}
+/* look up the Apple previews of the top pairs in the background, so a tap can start the original
+   synchronously inside the gesture (what iPhone Safari needs); the engine queues ≤ 1 request / 2.5 s */
+let pfT = 0;
+function prefetchTop(ps) {
+  clearTimeout(pfT);
+  pfT = setTimeout(() => { try { if (!E.prefetch) return; ps.slice(0, 6).forEach(p => { E.prefetch(p.v); E.prefetch(p.b); }); } catch (e) {} }, 900);
 }
 function updateMore() { const n = listCache.length - state.shown; $("#more").hidden = n <= 0; $("#more").innerHTML = `${I("plus")}להציג עוד <span class="num">(${Math.max(0, n)})</span>`; }
 function showMore() {
@@ -2513,10 +2527,13 @@ function paintRange(inp) {
   const mn = Number(inp.min), mx = Number(inp.max), v = Number(inp.value);
   inp.style.setProperty("--p", ((v - mn) / ((mx - mn) || 1) * 100).toFixed(2) + "%");
 }
+/* why a deck plays Studio Groove instead of the Apple preview (engine DeckState.why) */
+const WHY_LONG = { claude: "Claude חוסם שמע חיצוני", miss: "השיר לא נמצא ב־Apple", net: "אין חיבור ל־Apple", slow: "Apple לא ענה בזמן", blocked: "Safari עצר את הנגינה. לחיצה נוספת על ▶ תנגן את המקור", media: "הקטע של Apple לא נטען" };
+const WHY_SHORT = { miss: "לא נמצא ב־Apple", net: "אין חיבור", slow: "Apple איטי", blocked: "לחץ ▶ שוב למקור", media: "הקטע לא נטען" };
 function badgeFor(d) {
   if (d.busy) return { cls: "", html: `<span class="spin" aria-hidden="true"></span>מחפש תצוגה מקדימה…` };
   if (d.kind === "apple") return { cls: "apple", html: `${I("note")}<span>Apple Music · תצוגה מקדימה באדיבות iTunes</span>` };
-  if (d.kind === "studio") return { cls: "studio", html: `${I("studio")}גרוב סטודיו · לפי הקצב והסולם` };
+  if (d.kind === "studio") return { cls: "studio", html: `${I("studio")}גרוב סטודיו · ${WHY_LONG[d.why] || "לפי הקצב והסולם"}` };
   return { cls: "", html: `${I("note")}מוכן לנגינה` };
 }
 function updateMixer(st, force) {
@@ -2565,9 +2582,11 @@ function statusText(st) {
   const live = (st.A && st.A.playing) || (st.B && st.B.playing);
   if (!live) return "מושהה";
   if (st.mode === "seq" || st.seq) return "רצף" + (st.B.playing ? " · דק B" : " · דק A");
-  if (st.A.playing && st.B.playing) return "מאש־אפ · שני הדקים";
-  if (st.A.playing) return "שירה בלבד";
-  return "ביט בלבד";
+  const why = rel.filter(d => d && d.playing && d.kind === "studio" && WHY_SHORT[d.why]).map(d => `גרוב ב־${d === st.A ? "A" : "B"}: ${WHY_SHORT[d.why]}`);
+  const tail = why.length ? " · " + why.join(" · ") : "";
+  if (st.A.playing && st.B.playing) return "מאש־אפ · שני הדקים" + tail;
+  if (st.A.playing) return "שירה בלבד" + tail;
+  return "ביט בלבד" + tail;
 }
 function updateMini(st) {
   const mini = $("#mini"), has = !!loaded;
