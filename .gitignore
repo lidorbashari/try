@@ -17,3 +17,6 @@ tools/mashup-lab/**/shots/
 tools/mashup-lab/lab5/app_test/app.work.html
 tools/mashup-lab/lab5/app_test/out_*.html
 tools/mashup-lab/lab5/qa/log_*.txt
+tools/mashup-lab/lab5/engine_test/art/
+tools/mashup-lab/lab5/engine_test/wav/
+tools/mashup-lab/lab5/qa/media/
