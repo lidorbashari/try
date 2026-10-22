@@ -369,6 +369,45 @@
     return { present: present, dismiss: dismiss, drag: drag, release: release, get open() { return !!S && !S.closing; } };
   })();
 
+  /* ================================================================== touch light
+     iOS 26 interactive glass lights up where the finger is: a soft bloom follows the touch inside the control and
+     fades when the finger lifts. One fixed element, re-fitted to the control's rect every frame, so it follows the
+     control's own press scale; its border radius clips the bloom to the control's shape. */
+  var light = (function () {
+    var SEL = ".hbtn.glass, .btn, .wl-go, .chip, .mini-b", el = null, on = null, last = null, pid = null, fx = .5, fy = .5, rad = "0px";
+    var A = new Spring(0, { response: .16, damping: 1, eps: .004 });
+    var job = { springs: [A], hold: function () { return !!on; }, render: function () {
+      var t = on || last;
+      if (!el) return;
+      if (!t || !t.isConnected || A.x < .01) { if (el.style.visibility !== "hidden") el.style.visibility = "hidden"; return; }
+      var r = t.getBoundingClientRect(), w = Math.max(1, r.width), h = Math.max(1, r.height);
+      el.style.visibility = "visible";
+      el.style.transform = "translate(" + r2(r.left) + "px," + r2(r.top) + "px)";
+      el.style.width = r2(w) + "px"; el.style.height = r2(h) + "px"; el.style.borderRadius = rad;
+      el.style.setProperty("--lx", r2(fx * w) + "px"); el.style.setProperty("--ly", r2(fy * h) + "px");
+      el.style.setProperty("--lr", r2(Math.max(w, h) * .7 + 26) + "px");
+      el.style.opacity = r2(clamp(A.x, 0, 1));
+    } };
+    function aim(e, t) { var r = t.getBoundingClientRect(); fx = clamp((e.clientX - r.left) / Math.max(1, r.width), 0, 1); fy = clamp((e.clientY - r.top) / Math.max(1, r.height), 0, 1); }
+    function down(e) {
+      if (REDUCED || (e.pointerType === "mouse" && e.button !== 0)) return;
+      var t = e.target && e.target.closest && e.target.closest(SEL);
+      if (!t || t.disabled || t.getAttribute("aria-disabled") === "true") return;
+      if (!el) { el = D.createElement("i"); el.className = "lq-light"; el.setAttribute("aria-hidden", "true"); D.body.appendChild(el); }
+      on = last = t; pid = e.pointerId; aim(e, t);
+      try { rad = W.getComputedStyle(t).borderRadius || "0px"; } catch (x) { rad = "0px"; }
+      A.to(1, { response: .14, damping: 1 }); kick(job);
+    }
+    function move(e) { if (on && e.pointerId === pid) aim(e, on); }
+    function up(e) { if (!on || (e && e.pointerId != null && e.pointerId !== pid)) return; on = null; A.to(0, { response: .55, damping: 1 }); kick(job); }
+    D.addEventListener("pointerdown", down, { capture: true, passive: true });
+    D.addEventListener("pointermove", move, { capture: true, passive: true });
+    D.addEventListener("pointerup", up, { capture: true, passive: true });
+    D.addEventListener("pointercancel", up, { capture: true, passive: true });
+    W.addEventListener("scroll", function () { if (on) up(); }, { capture: true, passive: true });
+    return { get active() { return !!on; } };
+  })();
+
   /* auto-attach to segmented controls that appear later (search view re-renders its role toggle) */
   var scanQ = 0;
   function scanSoon() { if (scanQ) return; scanQ = requestAnimationFrame(function () { scanQ = 0; segAll(); }); }
@@ -376,5 +415,5 @@
     for (var i = 0; i < ms.length; i++) for (var j = 0; j < ms[i].addedNodes.length; j++) { var n = ms[i].addedNodes[j]; if (n.nodeType === 1 && (n.classList.contains("seg") || n.querySelector && n.querySelector(".seg"))) { scanSoon(); return; } }
   }).observe(D.documentElement, { childList: true, subtree: true });
 
-  W.Liquid = { Spring: Spring, kick: kick, tabbar: tabbar, dock: dock, seg: seg, segAll: segAll, sheet: sheet, get reduced() { return REDUCED; } };
+  W.Liquid = { Spring: Spring, kick: kick, tabbar: tabbar, dock: dock, seg: seg, segAll: segAll, sheet: sheet, light: light, get reduced() { return REDUCED; } };
 })();

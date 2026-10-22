@@ -9,9 +9,9 @@
   --fringe-blend: multiply;
 }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme=light]) { --plat: rgba(255,255,255,.14); --lens-fill: rgba(255,255,255,.07); --lens-edge: rgba(255,255,255,.6); --lens-shade: rgba(0,0,0,.45); --glass-top: rgba(255,255,255,.2); --glass-bot: rgba(0,0,0,.35); --fringe-blend: screen; }
+  :root:not([data-theme=light]) { --plat: rgba(255,255,255,.14); --lens-fill: rgba(255,255,255,.07); --lens-edge: rgba(255,255,255,.6); --lens-shade: rgba(0,0,0,.45); --glass-top: rgba(255,255,255,.2); --glass-bot: rgba(0,0,0,.35); --fringe-blend: screen; --light-a: .22; --light-b: .07; }
 }
-:root[data-theme=dark] { --plat: rgba(255,255,255,.14); --lens-fill: rgba(255,255,255,.07); --lens-edge: rgba(255,255,255,.6); --lens-shade: rgba(0,0,0,.45); --glass-top: rgba(255,255,255,.2); --glass-bot: rgba(0,0,0,.35); --fringe-blend: screen; }
+:root[data-theme=dark] { --plat: rgba(255,255,255,.14); --lens-fill: rgba(255,255,255,.07); --lens-edge: rgba(255,255,255,.6); --lens-shade: rgba(0,0,0,.45); --glass-top: rgba(255,255,255,.2); --glass-bot: rgba(0,0,0,.35); --fringe-blend: screen; --light-a: .22; --light-b: .07; }
 
 /* the material: less blur and more saturation than the old frosted glass, a bright top rim and a soft lower shade */
 .glass { -webkit-backdrop-filter: blur(14px) saturate(190%) brightness(1.04); backdrop-filter: blur(14px) saturate(190%) brightness(1.04);
@@ -85,6 +85,10 @@ html.lq .scrim { transition: none; }
 .hbtn.glass { transition: transform .45s var(--spring), box-shadow .3s; }
 .hbtn.glass:active { transform: scale(1.12); box-shadow: var(--glass-shadow), 0 0 0 1px var(--lens-edge) inset, 0 0 22px -4px rgba(255,255,255,.7); }
 .mini-b:active { transform: scale(.86); }
+/* touch light: the glass lights up under the finger (liquid.js fits one fixed element to the pressed control) */
+.lq-light { position: fixed; left: 0; top: 0; z-index: 2147483000; pointer-events: none; visibility: hidden; opacity: 0; will-change: transform, opacity;
+  background: radial-gradient(var(--lr, 80px) circle at var(--lx, 50%) var(--ly, 50%), rgba(255,255,255,var(--light-a, .30)), rgba(255,255,255,var(--light-b, .10)) 42%, rgba(255,255,255,0) 72%);
+  mix-blend-mode: plus-lighter; }
 @media (prefers-reduced-motion: reduce) { .tb-lens { display: none; } }
 
 /* ---------- first run (welcome sheet) ---------- */
