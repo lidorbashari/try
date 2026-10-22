@@ -1,0 +1,162 @@
+name: Mashup Lab song analysis
+
+# Listens to every Mashup Lab preview on GitHub's servers and commits numbers only (no audio, no lyrics):
+#   docs/mashup-lab/analysis.json   key, pitch-class profiles, loudness, vocal / energy per beat, sections (Demucs stems)
+#   docs/mashup-lab/wordtimes.json  when each word-play link's word is sung in each preview (Whisper word timestamps)
+# The app uses them to pick better pairs, enter the vocal on a phrase, match keys and loudness, and to cut a word-play
+# transition exactly on the words and on the beat. Only new or changed previews are analysed.
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Re-analyse every preview"
+        type: boolean
+        default: false
+      limit:
+        description: "Max previews per shard (0 = all)"
+        default: "0"
+      part:
+        description: "What to run"
+        type: choice
+        options: [all, tracks, words]
+        default: all
+  push:
+    branches:
+      - claude/dj-course-music-agents-suitm3
+    paths:
+      - tools/mashup_lab_analyze.py
+      - docs/mashup-lab/wordplay-links.json
+      - .github/workflows/mashup-analyze.yml
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: mashup-analyze
+  cancel-in-progress: true
+
+env:
+  PIP_DEFAULT_TIMEOUT: "60"
+
+jobs:
+  tracks:
+    if: ${{ github.event_name != 'workflow_dispatch' || inputs.part != 'words' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 170
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/torch/hub/checkpoints
+          key: demucs-htdemucs-v1
+      - name: Install Demucs (CPU), loudness, key and a static ffmpeg
+        timeout-minutes: 15
+        run: |
+          for i in 1 2 3; do timeout 420 pip install -q --retries 5 torch==2.5.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cpu && break; done
+          for i in 1 2 3; do timeout 300 pip install -q --retries 5 demucs==4.0.1 pyloudnorm imageio-ffmpeg "numpy<2.3" && break; done
+          timeout 300 pip install -q --retries 3 essentia || echo "essentia not available: the numpy key estimate is used"
+          python -c "import demucs, torch; print('demucs ok, torch', torch.__version__)"
+          python -c "import essentia; print('essentia', essentia.__version__)" || true
+      - name: Use the newest analysis (only missing previews are analysed)
+        run: git fetch -q origin "${GITHUB_REF_NAME}" && git checkout FETCH_HEAD -- docs/mashup-lab/analysis.json docs/mashup-lab/beats.json 2>/dev/null || echo "no analysis.json yet"
+      - name: Self-test
+        run: python tools/mashup_lab_analyze.py selftest
+      - name: Analyse previews (shard ${{ matrix.shard }})
+        shell: bash
+        run: |
+          set -o pipefail
+          python -u tools/mashup_lab_analyze.py tracks --shard ${{ matrix.shard }} --shards 16 \
+            --out an-${{ matrix.shard }}.json --limit ${{ inputs.limit || 0 }} ${{ inputs.force && '--force' || '' }} 2>&1 | tee alog-${{ matrix.shard }}.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: an-${{ matrix.shard }}
+          path: |
+            an-${{ matrix.shard }}.json
+            alog-${{ matrix.shard }}.txt
+          if-no-files-found: ignore
+          retention-days: 7
+
+  words:
+    if: ${{ github.event_name != 'workflow_dispatch' || inputs.part != 'tracks' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 170
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/torch/hub/checkpoints
+          key: demucs-htdemucs-v1
+      - name: Install Demucs (CPU), faster-whisper and a static ffmpeg
+        timeout-minutes: 15
+        run: |
+          for i in 1 2 3; do timeout 420 pip install -q --retries 5 torch==2.5.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cpu && break; done
+          for i in 1 2 3; do timeout 300 pip install -q --retries 5 demucs==4.0.1 faster-whisper imageio-ffmpeg "numpy<2.3" && break; done
+          python -c "import demucs, faster_whisper; print('demucs + faster-whisper', faster_whisper.__version__)"
+      - name: Self-test
+        run: python tools/mashup_lab_analyze.py selftest
+      - name: Find the words (shard ${{ matrix.shard }})
+        shell: bash
+        run: |
+          set -o pipefail
+          python -u tools/mashup_lab_analyze.py words --shard ${{ matrix.shard }} --shards 6 \
+            --out wd-${{ matrix.shard }}.json --limit ${{ inputs.limit || 0 }} 2>&1 | tee wlog-${{ matrix.shard }}.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: wd-${{ matrix.shard }}
+          path: |
+            wd-${{ matrix.shard }}.json
+            wlog-${{ matrix.shard }}.txt
+          if-no-files-found: ignore
+          retention-days: 7
+
+  merge:
+    needs: [tracks, words]
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -q numpy
+      - uses: actions/download-artifact@v4
+        with:
+          path: parts
+          pattern: "*-*"
+          merge-multiple: true
+      - name: Merge into docs/mashup-lab/analysis.json and wordtimes.json
+        run: |
+          git fetch -q origin "${GITHUB_REF_NAME}" && git checkout FETCH_HEAD -- docs/mashup-lab/ 2>/dev/null || true
+          mkdir -p tools/reports
+          (for f in parts/alog-*.txt parts/wlog-*.txt; do [ -f "$f" ] && { echo "== $f"; tail -n 40 "$f"; }; done) > tools/reports/mashup-analyze-log.txt 2>/dev/null || true
+          python tools/mashup_lab_analyze.py merge --parts parts --report tools/reports/mashup-analyze-report.json || echo "merge found nothing"
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tools/reports/mashup-analyze-log.txt
+          for f in docs/mashup-lab/analysis.json docs/mashup-lab/wordtimes.json tools/reports/mashup-analyze-report.json; do [ -f "$f" ] && git add "$f"; done
+          if git diff --cached --quiet; then echo "no changes"; exit 0; fi
+          git commit -m "Mashup Lab: song analysis from the previews (numbers only)"
+          for i in 1 2 3; do git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && break; sleep 10; done
+      - name: Redeploy the site
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --ref "${GITHUB_REF_NAME}"
