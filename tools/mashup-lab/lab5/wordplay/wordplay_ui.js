@@ -101,7 +101,8 @@
 
   function howHTML(pl) {
     var s = (pl.summary || []).concat(pl.notes || []);
-    return (pl.ok !== false && pl.cut ? diagHTML(pl) : "") + (s.length ? '<ul class="wp-how">' + s.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>" : "");
+    var h = (pl.ok !== false && pl.cut ? diagHTML(pl) : "") + (s.length ? '<ul class="wp-how">' + s.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>" : "");
+    return h ? '<div class="wp-done">' + h + "</div>" : "";             /* one element: the diagram + the steps travel together */
   }
   /* the move, drawn on the clock of the transition: A's lane until the cut, B's lane from its entry, both words, the
      beats of A's grid (bars taller), the cut on its beat; a playhead runs while it plays. Time runs left → right. */
@@ -215,11 +216,11 @@
   function paintLive(r) {
     var c = cardOf(r); if (!c) return;
     var box = c.querySelector(".wp-live");
-    if (!box) { var note = c.querySelector(".wp-note, .wp-how"); var tmp = document.createElement("div"); tmp.innerHTML = liveHTML(r); box = tmp.firstChild; if (note) note.replaceWith(box); else c.querySelector(".c-acts").before(box); }
+    if (!box) { var note = c.querySelector(".wp-note, .wp-done"); var tmp = document.createElement("div"); tmp.innerHTML = liveHTML(r); box = tmp.firstChild; if (note) note.replaceWith(box); else c.querySelector(".c-acts").before(box); }
     var st = r.st || {}, fill = box.querySelector(".fill"), cm = box.querySelector(".cutm"), now = box.querySelector(".wp-now");
     if (st.total > 0) { fill.style.width = Math.min(100, st.t / st.total * 100).toFixed(1) + "%"; cm.style.insetInlineStart = (st.cut / st.total * 100).toFixed(1) + "%"; cm.hidden = false; } else { fill.style.width = "0"; cm.hidden = true; }
     if (now.textContent !== r.msg) now.textContent = r.msg || "";
-    if (r.plan && !box.querySelector(".wp-how")) box.insertAdjacentHTML("beforeend", howHTML(r.plan));
+    if (r.plan && !box.querySelector(".wp-done")) box.insertAdjacentHTML("beforeend", howHTML(r.plan));
     var ph = box.querySelector(".dg-ph");
     if (ph && st.total > 0) { var tot = +ph.getAttribute("data-tot") || st.total, x = 10 + 300 * Math.min(1, st.t / tot); ph.setAttribute("x1", x.toFixed(1)); ph.setAttribute("x2", x.toFixed(1)); }
   }
@@ -307,6 +308,7 @@
     ".wp-bar .fill{position:absolute;inset-block:0;inset-inline-start:0;width:0;background:linear-gradient(90deg,var(--vocal),var(--beat));border-radius:4px;transition:width .12s linear}" +
     ".wp-bar .cutm{position:absolute;inset-block:-2px;width:3px;margin-inline-start:-1px;background:var(--label);border-radius:2px}" +
     ".wp-now{margin:0;font-size:14px;font-weight:600;color:var(--label);min-height:20px}" +
+    ".wp-done{display:contents}" +
     ".wp-how{margin:0;padding:0 18px 0 0;display:grid;gap:4px;font-size:13px;line-height:18px;color:var(--label-2)}" +
     ".wp-at{flex:none;margin-inline-start:auto;display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 8px;border-radius:12px;background:var(--fill-2);color:var(--label-2);font-size:12px}.wp-at .i{width:12px;height:12px}.wp-at b{font:700 12px/1 var(--round);font-variant-numeric:tabular-nums;color:var(--label)}" +
     ".wp-src.ok{color:var(--good-ink);font-weight:700}.wp-card.heard{box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--good) 35%,transparent)}" +
