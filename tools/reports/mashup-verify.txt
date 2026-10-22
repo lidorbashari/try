@@ -1,33 +1,33 @@
 Mashup Lab real-music beat-sync check
 columns: beat offset median ms | beats matched | bars matched | hit offset median ms | start s | genres | pair
-{"pairs": 30, "measured": 30, "on_beat": 25, "share_on_beat": 0.833, "median_abs_offset_ms": 2.9, "p90_abs_offset_ms": 22.9, "median_start_s": 0.27, "bars_matched_median": 0.732, "page": {"previews": 1200, "beats": 1200, "engine": "6.0"}, "page_errors": [], "hits_median_abs_ms": 1.0, "hits_within_10ms": 1.0}
-2.9	1.0	0.5	-2.1	0.42	afro→afrohouse	On the Low | Burna Boy  ×  Ready For You | Black Coffee, Celeste	
-2.9	1.0	1.0	0.9	0.35	dancehall→edm	Bailando (English Version) | Enrique Iglesias, Sean Paul, Descemer Bueno, Gente De Zona  ×  Hey Mama | David Guetta, Nicki Minaj, Bebe Rexha, Afrojack	
-2.9	1.0	1.0	0.9	0.23	hiphop→edm	Superman | Eminem  ×  In the Name of Love | Martin Garrix, Bebe Rexha	
-22.9	1.0	1.0	-0.1	0.97	ilpop→techhouse	אמת או חובה | ריקי גל  ×  Disco Boy | Disco Lines	
-2.9	1.0	1.0	2.9	0.21	latin→edm	La Bicicleta | Carlos Vives, Shakira  ×  Hey Mama | David Guetta, Nicki Minaj, Bebe Rexha, Afrojack	
-2.9	1.0	0.333	1.9	1.05	mizr→techno	עכשיו את מאושרת | בן אל  ×  Jambo | Indira Paganotto	
--2.9	1.0	0.0	2.1	0.18	pop→techhouse	Abracadabra | Lady Gaga  ×  Your Mind Is Dirty (Extended) | Mau P	
--2.9	1.0	1.0	-1.9	0.18	regg→edm	BUBALU | Feid  ×  Pressure | Martin Garrix, Tove Lo	
--2.9	1.0	1.0	-1.4	0.22	rnb→edm	Run It! | Chris Brown  ×  Don't You Worry Child | Swedish House Mafia, John Martin	
-2.9	1.0	1.0	0.9	0.6	afro→amapiano	Bad Girl | Wizkid  ×  Mnike | Tyler ICU, Tumela_za, DJ Maphorisa	
-2.9	1.0	0.714	1.9	0.25	dancehall→afrohouse	Fever | Vybz Kartel  ×  Ready For You | Black Coffee, Celeste	
--2.9	1.0	0.5	0.1	1.08	hiphop→afrohouse	NOKIA | Drake  ×  Tondo | Disclosure, Eko Roosevelt	
--2.9	1.0	0.667	0.1	0.88	ilpop→afrohouse	מדברים | נועה קירל  ×  Ready For You | Black Coffee, Celeste	
--2.9	0.704	0.556	1.1	0.18	latin→house	Propuesta Indecente | Romeo Santos  ×  (It Goes Like) Nanana | Peggy Gou	
-2.9	1.0	0.2	0.9	0.37	mizr→techno	בחורים טובים | עומר אדם  ×  Underneath The Strobelights | Amelie Lens	
-5.5	1.0	1.0	-1.5	0.2	pop→techhouse	Bad Romance | Lady Gaga  ×  Deceiver | Chris Lake	
--17.4	1.0	1.0	1.6	0.23	regg→edm	Señor Juez | Ozuna  ×  Leave Me Like This | Skrillex, Bobby Raps	
--2.9	1.0	0.8	1.1	0.18	rnb→edm	Heartless | The Weeknd  ×  Hey Mama | David Guetta, Nicki Minaj, Bebe Rexha, Afrojack	
-2.9	0.941	0.5	-0.1	0.51	afro→amapiano	ONE CALL | Tyla, Omah Lay, SPINALL  ×  Liyangishonela | Kabza De Small	
--2.9	1.0	1.0	0.1	0.22	dancehall→edm	Fever | Vybz Kartel  ×  Lonely Together | Avicii, Rita Ora	
--17.1	1.0	0.556	-2.1	0.51	hiphop→house	BAND4BAND | Central Cee, Lil Baby  ×  Delilah (pull me out of this) | Fred again..	
-22.9	1.0	1.0	0.9	0.28	ilpop→house	צ'יק צ'ק | סטטיק  ×  In the Dark | Purple Disco Machine, Sophie and the Giants	
--2.9	1.0	1.0	0.1	0.12	latin→afrohouse	Hips Don't Lie | Shakira, Wyclef Jean  ×  Ready For You | Black Coffee, Celeste	
--2.9	1.0	0.6	-1.9	0.82	mizr→techno	החיים עוד לפנייך | זוהר אשירוב  ×  Girls MIA (Extended) | Anyma, Carly Gibert	
-22.9	1.0	0.167	0.9	0.81	pop→house	Bitch Better Have My Money | Rihanna  ×  Hypnotized (Extended) | Purple Disco Machine, Sophie and the Giants	
-42.9	1.0	0.231	0.9	0.18	regg→techno	Touching The Sky | Rauw Alejandro  ×  Jambo | Indira Paganotto	
--2.9	1.0	1.0	2.1	0.39	rnb→amapiano	Ayo | Chris Brown, Tyga  ×  Dlala Ka Yona | DJ Maphorisa	
-22.9	0.5	0.5	0.9	0.2	afro→edm	DYNAMITE | Tyla, Wizkid  ×  Lonely Together | Avicii, Rita Ora	
--2.9	1.0	0.714	-1.9	0.87	dancehall→afrohouse	(When You Gonna) Give It Up to Me | Sean Paul, Keyshia Cole  ×  Ready For You | Black Coffee, Celeste	
--17.1	1.0	0.75	0.9	0.22	hiphop→afrohouse	I THINK | Tyler, The Creator  ×  Secret ID | Da Capo, Moojo	
+{"pairs": 30, "measured": 30, "on_beat": 25, "share_on_beat": 0.833, "median_abs_offset_ms": 2.9, "p90_abs_offset_ms": 22.9, "median_start_s": 0.52, "bars_matched_median": 0.857, "page": {"previews": 1200, "beats": 1200, "engine": "6.2"}, "page_errors": [], "hits_median_abs_ms": 1.1, "hits_within_10ms": 1.0}
+2.9	1.0	0.714	1.9	1.21	afro→afrohouse	On the Low | Burna Boy  ×  Ready For You | Black Coffee, Celeste	
+0.0	1.0	1.0	2.0	0.58	dancehall→edm	Bailando (English Version) | Enrique Iglesias, Sean Paul, Descemer Bueno, Gente De Zona  ×  Hey Mama | David Guetta, Nicki Minaj, Bebe Rexha, Afrojack	
+-2.9	1.0	1.0	1.1	0.22	hiphop→edm	Superman | Eminem  ×  In the Name of Love | Martin Garrix, Bebe Rexha	
+22.9	1.0	1.0	1.4	0.63	ilpop→techhouse	אמת או חובה | ריקי גל  ×  Disco Boy | Disco Lines	
+0.0	1.0	1.0	1.0	0.23	latin→edm	La Bicicleta | Carlos Vives, Shakira  ×  Hey Mama | David Guetta, Nicki Minaj, Bebe Rexha, Afrojack	
+-2.9	1.0	0.333	0.1	0.91	mizr→techno	עכשיו את מאושרת | בן אל  ×  Jambo | Indira Paganotto	
+-2.9	1.0	0.0	2.1	0.28	pop→techhouse	Abracadabra | Lady Gaga  ×  Your Mind Is Dirty (Extended) | Mau P	
+2.9	1.0	1.0	-0.1	0.29	regg→edm	BUBALU | Feid  ×  Pressure | Martin Garrix, Tove Lo	
+-2.9	1.0	1.0	0.1	0.6	rnb→edm	Run It! | Chris Brown  ×  Don't You Worry Child | Swedish House Mafia, John Martin	
+2.9	1.0	1.0	-1.1	0.47	afro→amapiano	Bad Girl | Wizkid  ×  Mnike | Tyler ICU, Tumela_za, DJ Maphorisa	
+-2.9	1.0	0.714	-0.9	0.19	dancehall→afrohouse	Fever | Vybz Kartel  ×  Ready For You | Black Coffee, Celeste	
+0.0	1.0	0.5	2.0	0.26	hiphop→afrohouse	NOKIA | Drake  ×  Tondo | Disclosure, Eko Roosevelt	
+2.9	1.0	0.667	-0.1	0.89	ilpop→afrohouse	מדברים | נועה קירל  ×  Ready For You | Black Coffee, Celeste	
+-5.8	1.0	0.625	3.2	0.2	latin→house	Propuesta Indecente | Romeo Santos  ×  (It Goes Like) Nanana | Peggy Gou	
+0.0	1.0	0.2	-1.0	0.73	mizr→techno	בחורים טובים | עומר אדם  ×  Underneath The Strobelights | Amelie Lens	
+-2.9	1.0	1.0	-0.9	0.23	pop→techhouse	Bad Romance | Lady Gaga  ×  Deceiver | Chris Lake	
+-22.9	1.0	1.0	0.6	0.58	regg→edm	Señor Juez | Ozuna  ×  Leave Me Like This | Skrillex, Bobby Raps	
+2.9	1.0	1.0	-1.1	0.31	rnb→edm	Heartless | The Weeknd  ×  Hey Mama | David Guetta, Nicki Minaj, Bebe Rexha, Afrojack	
+2.9	1.0	1.0	-0.1	0.59	afro→amapiano	ONE CALL | Tyla, Omah Lay, SPINALL  ×  Liyangishonela | Kabza De Small	
+-2.9	1.0	1.0	0.1	1.35	dancehall→edm	Fever | Vybz Kartel  ×  Lonely Together | Avicii, Rita Ora	
+2.9	0.792	0.571	-3.1	0.4	hiphop→house	BAND4BAND | Central Cee, Lil Baby  ×  Delilah (pull me out of this) | Fred again..	
+22.9	1.0	1.0	1.9	0.3	ilpop→house	צ'יק צ'ק | סטטיק  ×  In the Dark | Purple Disco Machine, Sophie and the Giants	
+-2.9	1.0	1.0	0.1	0.15	latin→afrohouse	Hips Don't Lie | Shakira, Wyclef Jean  ×  Ready For You | Black Coffee, Celeste	
+-2.9	1.0	0.6	1.1	0.93	mizr→techno	החיים עוד לפנייך | זוהר אשירוב  ×  Girls MIA (Extended) | Anyma, Carly Gibert	
+2.9	1.0	0.0	-1.1	0.87	pop→house	Bitch Better Have My Money | Rihanna  ×  Hypnotized (Extended) | Purple Disco Machine, Sophie and the Giants	
+39.7	1.0	0.158	-0.3	1.04	regg→techno	Touching The Sky | Rauw Alejandro  ×  Jambo | Indira Paganotto	
+0.0	0.941	1.0	-2.0	0.75	rnb→amapiano	Ayo | Chris Brown, Tyga  ×  Dlala Ka Yona | DJ Maphorisa	
+-2.9	0.81	0.5	-1.9	0.21	afro→edm	DYNAMITE | Tyla, Wizkid  ×  Lonely Together | Avicii, Rita Ora	
+-22.9	1.0	0.714	0.1	0.26	dancehall→afrohouse	(When You Gonna) Give It Up to Me | Sean Paul, Keyshia Cole  ×  Ready For You | Black Coffee, Celeste	
+2.9	1.0	0.0	-1.1	0.87	hiphop→afrohouse	I THINK | Tyler, The Creator  ×  Secret ID | Da Capo, Moojo	
