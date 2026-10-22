@@ -1,0 +1,1550 @@
+{
+ "summary": {
+  "pairs": 30,
+  "measured": 30,
+  "on_beat": 27,
+  "share_on_beat": 0.9,
+  "median_abs_offset_ms": 1.5,
+  "p90_abs_offset_ms": 4.6,
+  "median_start_s": 0.29,
+  "bars_matched_median": 1.0,
+  "page": {
+   "previews": 1200,
+   "beats": 1050,
+   "engine": "6.0"
+  },
+  "page_errors": []
+ },
+ "rows": [
+  {
+   "vocal": "Commas | Ayra Starr",
+   "beat": "locked",
+   "gv": "afro",
+   "gb": "edm",
+   "grid_v": [
+    99.988,
+    0.137,
+    1,
+    0.971
+   ],
+   "grid_b": [
+    103.02,
+    0.5506,
+    3,
+    0.991
+   ],
+   "start_s": 0.64,
+   "bm": [
+    true,
+    true
+   ],
+   "sync": [
+    true,
+    true
+   ],
+   "src": [
+    "server",
+    "server"
+   ],
+   "rate": [
+    1.03032,
+    1
+   ],
+   "beats": {
+    "n": 16,
+    "matched": 1.0,
+    "median_ms": -1.6,
+    "p90_abs_ms": 11.6
+   },
+   "bars": {
+    "n": 4,
+    "matched": 1.0,
+    "median_ms": -11.6,
+    "p90_abs_ms": 11.6
+   },
+   "ibi_ms": [
+    580.0,
+    580.0
+   ]
+  },
+  {
+   "vocal": "Live Your Life | Vybz Kartel",
+   "beat": "locked",
+   "gv": "dancehall",
+   "gb": "edm",
+   "grid_v": [
+    99.986,
+    0.0372,
+    1,
+    0.871
+   ],
+   "grid_b": [
+    103.02,
+    0.5506,
+    3,
+    0.991
+   ],
+   "start_s": 1.06,
+   "bm": [
+    true,
+    true
+   ],
+   "sync": [
+    true,
+    true
+   ],
+   "src": [
+    "server",
+    "server"
+   ],
+   "rate": [
+    1.03034,
+    1
+   ],
+   "beats": {
+    "n": 16,
+    "matched": 1.0,
+    "median_ms": 0.0,
+    "p90_abs_ms": 10.0
+   },
+   "bars": {
+    "n": 6,
+    "matched": 1.0,
+    "median_ms": 0.0,
+    "p90_abs_ms": 0.0
+   },
+   "ibi_ms": [
+    580.0,
+    580.0
+   ]
+  },
+  {
+   "vocal": "Passionfruit | Drake",
+   "beat": "locked",
+   "gv": "hiphop",
+   "gb": "amapiano",
+   "grid_v": [
+    112.075,
+    0.0617,
+    2,
+    0.865
+   ],
+   "grid_b": [
+    112.007,
+    0.2266,
+    2,
+    1.0
+   ],
+   "start_s": 0.3,
+   "bm": [
+    true,
+    true
+   ],
+   "sync": [
+    true,
+    true
+   ],
+   "src": [
+    "server",
+    "server"
+   ],
+   "rate": [
+    0.99939,
+    1
+   ],
+   "beats": {
+    "n": 16,
+    "matched": 1.0,
+    "median_ms": 1.3,
+    "p90_abs_ms": 11.3
+   },
+   "bars": {
+    "n": 4,
+    "matched": 0.0,
+    "median_ms": null,
+    "p90_abs_ms": null
+   },
+   "ibi_ms": [
+    540.0,
+    540.0
+   ]
+  },
+  {
+   "vocal": "כשנגמרת הסופה | עדן חסון",
+   "beat": "locked",
+   "gv": "ilpop",
+   "gb": "edm",
+   "grid_v": [
+    68.005,
+    0.2241,
+    2,
+    1.0
+   ],
+   "grid_b": [
+    69.99,
+    0.0059,
+    0,
+    0.604
+   ],
+   "start_s": 0.22,
+   "bm": [
+    true,
+    true
+   ],
+   "sync": [
+    true,
+    true
+   ],
+   "src": [
+    "server",
+    "server"
+   ],
+   "rate": [
+    1.02919,
+    1
+   ],
+   "beats": {
+    "n": 21,
+    "matched": 0.524,
+    "median_ms": -2.9,
+    "p90_abs_ms": 22.9
+   },
+   "bars": {
+    "n": 6,
+    "matched": 0.5,
+    "median_ms": -2.9,
+    "p90_abs_ms": 14.3
+   },
+   "ibi_ms": [
+    430.0,
+    860.0
+   ]
+  },
+  {
+   "vocal": "BELLAKEO | Peso Pluma, Anitta",
+   "beat": "locked",
+   "gv": "latin",
+   "gb": "edm",
+   "grid_v": [
+    89.991,
+    0.3661,
+    0,
+    1.0
+   ],
+   "grid_b": [
+    86.045,
+    0.1716,
+    3,
+    0.889
+   ],
+   "start_s": 0.69,
+   "bm": [
+    true,
+    true
+   ],
+   "sync": [
+    true,
+    true
+   ],
+   "src": [
+    "server",
+    "server"
+   ],
+   "rate": [
+    0.95615,
+    1
+   ],
+   "beats": {
+    "n": 13,
+    "matched": 1.0,
+    "median_ms": -2.9,
+    "p90_abs_ms": 21.7
+   },
+   "bars": {
+    "n": 3,
+    "matched": 1.0,
+    "median_ms": -2.9,
+    "p90_abs_ms": 14.3
+   },
+   "ibi_ms": [
+    700.0,
+    340.0
+   ]
+  },
+  {
+   "vocal": "בסיבוב הבא | עדן בן זקן",
+   "beat": "locked",
+   "gv": "mizr",
+   "gb": "edm",
+   "grid_v": [
+    70.003,
+    0.4407,
+    0,
+    0.781
+   ],
+   "grid_b": [
+    69.99,
+    0.0059,
+    0,
+    0.604
+   ],
+   "start_s": 0.13,
+   "bm": [
+    true,
+    true
+   ],
+   "sync": [
+    true,
+    true
+   ],
+   "src": [
+    "server",
+    "server"
+   ],
+   "rate": [
+    1,
+    1
+   ],
+   "beats": {
+    "n": 11,
+    "matched": 1.0,
+    "median_ms": 0.0,
+    "p90_abs_ms": 20.0
+   },
+   "bars": {
+    "n": 6,
+    "matched": 0.5,
+    "median_ms": 0.0,
+    "p90_abs_ms": 0.0
+   },
+   "ibi_ms": [
+    860.0,
+    860.0
+   ]
+  },
+  {
+   "vocal": "24K Magic | Bruno Mars",
+   "beat": "locked",
+   "gv": "pop",
+   "gb": "house",
+   "grid_v": [
+    107.017,
+    0.1722,
+    1,
+    1.0
+   ],
+   "grid_b": [
+    107.964,
+    0.0074,
+    3,
+    0.981
+   ],
+   "start_s": 0.18,
+   "bm": [
+    true,
+    true
+   ],
+   "sync": [
+    true,
+    true
+   ],
+   "src": [
+    "server",
+    "server"
+   ],
+   "rate": [
+    1.00885,
+    1
+   ],
+   "beats": {
+    "n": 16,
+    "matched": 1.0,
+    "median_ms": 22.9,
+    "p90_abs_ms": 22.9
+   },
+   "bars": {
+    "n": 4,
+    "matched": 1.0,
+    "median_ms": 22.9,
+    "p90_abs_ms": 22.9
+   },
+   "ibi_ms": [
+    560.0,
+    560.0
+   ]
+  },
+  {
+   "vocal": "Caramelo (Remix) | Ozuna, Karol G, Myke Towers",
+   "beat": "locked",
+   "gv": "regg",
+   "gb": "edm",
+   "grid_v": [
+    84.01,
+    0.5446,
+    0,
+    0.56
+   ],
+   "grid_b": [
+    86.045,
+    0.1716,
+    3,
+    0.889
+   ],
+   "start_s": 0.39,
+   "bm": [
+    true,
+    true
+   ],
+   "sync": [
+    true,
+    true
+   ],
+   "src": [
+    "server",
+    "server"
+   ],
+   "rate": [
+    1.02422,
+    1
+   ],
+   "beats": {
+    "n": 13,
+    "matched": 1.0,
+    "median_ms": 0.0,
+    "p90_abs_ms": 20.0
+   },
+   "bars": {
+    "n": 3,
+    "matched": 1.0,
+    "median_ms": 0.0,
+    "p90_abs_ms": 16.0
+   },
+   "ibi_ms": [
+    700.0,
+    340.0
+   ]
+  },
+  {
+   "vocal": "Freaky Friday | Lil Dicky, Chris Brown",
+   "beat": "locked",
+   "gv": "rnb",
+   "gb": "edm",
+   "grid_v": [
+    100.023,
+    0.2972,
+    3,
+    0.893
+   ],
+   "grid_b": [
+    103.02,
+    0.5506,
+    3,
+    0.991
+   ],
+   "start_s": 0.16,
+   "bm": [
+    true,
+    true
+   ],
+   "sync": [
+    true,
+    true
+   ],
+   "src": [
+    "server",
+    "server"
+   ],
+   "rate": [
+    1.02996,
+    1
+   ],
+   "beats": {
+    "n": 16,
+    "matched": 1.0,
+    "median_ms": 0.0,
+    "p90_abs_ms": 10.0
+   },
+   "bars": {
+    "n": 4,
+    "matched": 1.0,
+    "median_ms": 0.0,
+    "p90_abs_ms": 0.0
+   },
+   "ibi_ms": [
+    580.0,
+    580.0
+   ]
+  },
+  {
+   "vocal": "BODY (danz) | CKay",
+   "beat": "locked",
+   "gv": "afro",
+   "gb": "afrohouse",
+   "grid_v": [
+    129.981,
+    0.0268,
+    3,
+    1.0
+   ],
+   "grid_b": [
+    123.957,
+    0.0646,
+    3,
+    0.953
+   ],
+   "start_s": 0.3,
+   "bm": [
+    true,
+    true
+   ],
+   "sync": [
+    true,
+    true
+   ],
+   "src": [
+    "server",
+    "server"
+   ],
+   "rate": [
+    0.95365,
+    1
+   ],
+   "beats": {
+    "n": 18,
+    "matched": 1.0,
+    "median_ms": 0.0,
+    "p90_abs_ms": 20.0
+   },
+   "bars": {
+    "n": 5,
+    "matched": 1.0,
+    "median_ms": 0.0,
+    "p90_abs_ms": 20.0
+   },
+   "ibi_ms": [
+    480.0,
+    260.0
+   ]
+  },
+  {
+   "vocal": "Mr. Officer | Vybz Kartel",
+   "beat": "locked",
+   "gv": "dancehall",
+   "gb": "afrohouse",
+   "grid_v": [
+    109.999,
+    0.3334,
+    2,
+    1.0
+   ],
+   "grid_b": [
+    114.987,
+    0.0543,
+    0,
+    1.0
+   ],
+   "start_s": 0.72,
+   "bm": [
+    true,
+    true
+   ],
+   "sync": [
+    true,
+    true
+   ],
+   "src": [
+    "server",
+    "server"
+   ],
+   "rate": [
+    1.04535,
+    1
+   ],
+   "beats": {
+    "n": 17,
+    "matched": 1.0,
+    "median_ms": -2.9,
+    "p90_abs_ms": 17.1
+   },
+   "bars": {
+    "n": 5,
+    "matched": 1.0,
+    "median_ms": -2.9,
+    "p90_abs_ms": 11.4
+   },
+   "ibi_ms": [
+    520.0,
+    520.0
+   ]
+  },
+  {
+   "vocal": "Wet Dreamz | J. Cole",
+   "beat": "locked",
+   "gv": "hiphop",
+   "gb": "edm",
+   "grid_v": [
+    87.975,
+    0.0273,
+    2,
+    1.0
+   ],
+   "grid_b": [
+    86.045,
+    0.1716,
+    3,
+    0.889
+   ],
+   "start_s": 0.17,
+   "bm": [
+    true,
+    true
+   ],
+   "sync": [
+    true,
+    true
+   ],
+   "src": [
+    "server",
+    "server"
+   ],
+   "rate": [
+    0.97806,
+    1
+   ],
+   "beats": {
+    "n": 13,
+    "matched": 1.0,
+    "median_ms": -2.9,
+    "p90_abs_ms": 21.7
+   },
+   "bars": {
+    "n": 3,
+    "matched": 1.0,
+    "median_ms": -22.9,
+    "p90_abs_ms": 22.9
+   },
+   "ibi_ms": [
+    700.0,
+    340.0
+   ]
+  },
+  {
+   "vocal": "על הראסי | סטטיק",
+   "beat": "locked",
+   "gv": "ilpop",
+   "gb": "techhouse",
+   "grid_v": [
+    125.028,
+    0.0609,
+    2,
+    0.916
+   ],
+   "grid_b": [
+    126.014,
+    0.0135,
+    0,
+    0.952
+   ],
+   "start_s": 0.28,
+   "bm": [
+    true,
+    true
+   ],
+   "sync": [
+    true,
+    true
+   ],
+   "src": [
+    "server",
+    "server"
+   ],
+   "rate": [
+    1.00789,
+    1
+   ],
+   "beats": {
+    "n": 20,
+    "matched": 0.7,
+    "median_ms": 0.0,
+    "p90_abs_ms": 54.0
+   },
+   "bars": {
+    "n": 15,
+    "matched": 0.133,
+    "median_ms": 10.0,
+    "p90_abs_ms": 18.0
+   },
+   "ibi_ms": [
+    460.0,
+    480.0
+   ]
+  },
+  {
+   "vocal": "Soltera | Shakira",
+   "beat": "locked",
+   "gv": "latin",
+   "gb": "edm",
+   "grid_v": [
+    99.995,
+    0.0181,
+    0,
+    1.0
+   ],
+   "grid_b": [
+    103.02,
+    0.5506,
+    3,
+    0.991
+   ],
+   "start_s": 0.16,
+   "bm": [
+    true,
+    true
+   ],
+   "sync": [
+    true,
+    true
+   ],
+   "src": [
+    "server",
+    "server"
+   ],
+   "rate": [
+    1.03025,
+    1
+   ],
+   "beats": {
+    "n": 16,
+    "matched": 1.0,
+    "median_ms": 0.0,
+    "p90_abs_ms": 20.0
+   },
+   "bars": {
+    "n": 4,
+    "matched": 1.0,
+    "median_ms": 0.0,
+    "p90_abs_ms": 14.0
+   },
+   "ibi_ms": [
+    580.0,
+    580.0
+   ]
+  },
+  {
+   "vocal": "בדם אהבתי | יואב יצחק",
+   "beat": "locked",
+   "gv": "mizr",
+   "gb": "amapiano",
+   "grid_v": [
+    110.013,
+    0.2149,
+    0,
+    1.0
+   ],
+   "grid_b": [
+    114.998,
+    0.0089,
+    0,
+    0.63
+   ],
+   "start_s": 1.0,
+   "bm": [
+    true,
+    true
+   ],
+   "sync": [
+    true,
+    true
+   ],
+   "src": [
+    "server",
+    "server"
+   ],
+   "rate": [
+    1.04531,
+    1
+   ],
+   "beats": {
+    "n": 17,
+    "matched": 1.0,
+    "median_ms": 0.0,
+    "p90_abs_ms": 20.0
+   },
+   "bars": {
+    "n": 5,
+    "matched": 1.0,
+    "median_ms": 0.0,
+    "p90_abs_ms": 12.0
+   },
+   "ibi_ms": [
+    520.0,
+    520.0
+   ]
+  },
+  {
+   "vocal": "Born This Way | Lady Gaga",
+   "beat": "locked",
+   "gv": "pop",
+   "gb": "edm",
+   "grid_v": [
+    124.02,
+    0.344,
+    0,
+    1.0
+   ],
+   "grid_b": [
+    125.006,
+    0.0744,
+    1,
+    0.957
+   ],
+   "start_s": 0.17,
+   "bm": [
+    true,
+    true
+   ],
+   "sync": [
+    true,
+    true
+   ],
+   "src": [
+    "server",
+    "server"
+   ],
+   "rate": [
+    1.00795,
+    1
+   ],
+   "beats": {
+    "n": 18,
+    "matched": 0.722,
+    "median_ms": 2.9,
+    "p90_abs_ms": 22.9
+   },
+   "bars": {
+    "n": 5,
+    "matched": 0.8,
+    "median_ms": 2.9,
+    "p90_abs_ms": 2.9
+   },
+   "ibi_ms": [
+    480.0,
+    460.0
+   ]
+  },
+  {
+   "vocal": "El Apagón | Bad Bunny",
+   "beat": "locked",
+   "gv": "regg",
+   "gb": "afrohouse",
+   "grid_v": [
+    111.108,
+    0.2596,
+    3,
+    1.0
+   ],
+   "grid_b": [
+    114.987,
+    0.0543,
+    0,
+    1.0
+   ],
+   "start_s": 0.93,
+   "bm": [
+    true,
+    true
+   ],
+   "sync": [
+    true,
+    true
+   ],
+   "src": [
+    "server",
+    "server"
+   ],
+   "rate": [
+    1.03491,
+    1
+   ],
+   "beats": {
+    "n": 17,
+    "matched": 1.0,
+    "median_ms": 0.0,
+    "p90_abs_ms": 20.0
+   },
+   "bars": {
+    "n": 9,
+    "matched": 1.0,
+    "median_ms": 0.0,
+    "p90_abs_ms": 20.0
+   },
+   "ibi_ms": [
+    520.0,
+    520.0
+   ]
+  },
+  {
+   "vocal": "Saturn | SZA",
+   "beat": "locked",
+   "gv": "rnb",
+   "gb": "edm",
+   "grid_v": [
+    89.081,
+    0.1643,
+    1,
+    0.537
+   ],
+   "grid_b": [
+    86.045,
+    0.1716,
+    3,
+    0.889
+   ],
+   "start_s": 0.18,
+   "bm": [
+    true,
+    true
+   ],
+   "sync": [
+    true,
+    true
+   ],
+   "src": [
+    "server",
+    "server"
+   ],
+   "rate": [
+    0.96592,
+    1
+   ],
+   "beats": {
+    "n": 13,
+    "matched": 1.0,
+    "median_ms": 0.0,
+    "p90_abs_ms": 20.0
+   },
+   "bars": {
+    "n": 4,
+    "matched": 0.25,
+    "median_ms": -20.0,
+    "p90_abs_ms": 20.0
+   },
+   "ibi_ms": [
+    700.0,
+    340.0
+   ]
+  },
+  {
+   "vocal": "Trouble Maker | Rema",
+   "beat": "locked",
+   "gv": "afro",
+   "gb": "edm",
+   "grid_v": [
+    100.007,
+    0.1806,
+    2,
+    1.0
+   ],
+   "grid_b": [
+    103.02,
+    0.5506,
+    3,
+    0.991
+   ],
+   "start_s": 0.97,
+   "bm": [
+    true,
+    true
+   ],
+   "sync": [
+    true,
+    true
+   ],
+   "src": [
+    "server",
+    "server"
+   ],
+   "rate": [
+    1.03013,
+    1
+   ],
+   "beats": {
+    "n": 16,
+    "matched": 1.0,
+    "median_ms": 2.9,
+    "p90_abs_ms": 22.9
+   },
+   "bars": {
+    "n": 4,
+    "matched": 1.0,
+    "median_ms": 2.9,
+    "p90_abs_ms": 2.9
+   },
+   "ibi_ms": [
+    580.0,
+    580.0
+   ]
+  },
+  {
+   "vocal": "Mr. Officer | Vybz Kartel",
+   "beat": "locked",
+   "gv": "dancehall",
+   "gb": "house",
+   "grid_v": [
+    109.999,
+    0.3334,
+    2,
+    1.0
+   ],
+   "grid_b": [
+    107.964,
+    0.0074,
+    3,
+    0.981
+   ],
+   "start_s": 0.16,
+   "bm": [
+    true,
+    true
+   ],
+   "sync": [
+    true,
+    true
+   ],
+   "src": [
+    "server",
+    "server"
+   ],
+   "rate": [
+    0.9815,
+    1
+   ],
+   "beats": {
+    "n": 16,
+    "matched": 1.0,
+    "median_ms": 2.9,
+    "p90_abs_ms": 2.9
+   },
+   "bars": {
+    "n": 4,
+    "matched": 1.0,
+    "median_ms": 2.9,
+    "p90_abs_ms": 2.9
+   },
+   "ibi_ms": [
+    560.0,
+    560.0
+   ]
+  },
+  {
+   "vocal": "DIE TRYING | PARTYNEXTDOOR, Drake",
+   "beat": "locked",
+   "gv": "hiphop",
+   "gb": "amapiano",
+   "grid_v": [
+    110.504,
+    0.4475,
+    0,
+    1.0
+   ],
+   "grid_b": [
+    112.012,
+    0.2277,
+    1,
+    0.598
+   ],
+   "start_s": 0.41,
+   "bm": [
+    true,
+    true
+   ],
+   "sync": [
+    true,
+    true
+   ],
+   "src": [
+    "server",
+    "server"
+   ],
+   "rate": [
+    1.01365,
+    1
+   ],
+   "beats": {
+    "n": 16,
+    "matched": 1.0,
+    "median_ms": 0.0,
+    "p90_abs_ms": 0.0
+   },
+   "bars": {
+    "n": 6,
+    "matched": 1.0,
+    "median_ms": 0.0,
+    "p90_abs_ms": 10.0
+   },
+   "ibi_ms": [
+    540.0,
+    540.0
+   ]
+  },
+  {
+   "vocal": "ילדה סוכר | מוקי",
+   "beat": "locked",
+   "gv": "ilpop",
+   "gb": "house",
+   "grid_v": [
+    111.93,
+    0.4854,
+    0,
+    1.0
+   ],
+   "grid_b": [
+    114.981,
+    0.3381,
+    0,
+    1.0
+   ],
+   "start_s": 0.78,
+   "bm": [
+    true,
+    true
+   ],
+   "sync": [
+    true,
+    true
+   ],
+   "src": [
+    "server",
+    "server"
+   ],
+   "rate": [
+    1.02726,
+    1
+   ],
+   "beats": {
+    "n": 17,
+    "matched": 1.0,
+    "median_ms": 0.0,
+    "p90_abs_ms": 20.0
+   },
+   "bars": {
+    "n": 5,
+    "matched": 1.0,
+    "median_ms": 0.0,
+    "p90_abs_ms": 20.0
+   },
+   "ibi_ms": [
+    520.0,
+    520.0
+   ]
+  },
+  {
+   "vocal": "La Bicicleta | Carlos Vives, Shakira",
+   "beat": "locked",
+   "gv": "latin",
+   "gb": "edm",
+   "grid_v": [
+    89.99,
+    0.558,
+    1,
+    1.0
+   ],
+   "grid_b": [
+    86.045,
+    0.1716,
+    3,
+    0.889
+   ],
+   "start_s": 0.35,
+   "bm": [
+    true,
+    true
+   ],
+   "sync": [
+    true,
+    true
+   ],
+   "src": [
+    "server",
+    "server"
+   ],
+   "rate": [
+    0.95616,
+    1
+   ],
+   "beats": {
+    "n": 13,
+    "matched": 1.0,
+    "median_ms": 0.0,
+    "p90_abs_ms": 20.0
+   },
+   "bars": {
+    "n": 3,
+    "matched": 1.0,
+    "median_ms": 0.0,
+    "p90_abs_ms": 16.0
+   },
+   "ibi_ms": [
+    700.0,
+    340.0
+   ]
+  },
+  {
+   "vocal": "DXB to TLV | עומר אדם",
+   "beat": "locked",
+   "gv": "mizr",
+   "gb": "edm",
+   "grid_v": [
+    123.063,
+    0.3453,
+    3,
+    0.766
+   ],
+   "grid_b": [
+    124.959,
+    0.0449,
+    3,
+    0.948
+   ],
+   "start_s": 0.83,
+   "bm": [
+    true,
+    true
+   ],
+   "sync": [
+    true,
+    true
+   ],
+   "src": [
+    "server",
+    "server"
+   ],
+   "rate": [
+    1.01541,
+    1
+   ],
+   "beats": {
+    "n": 30,
+    "matched": 0.5,
+    "median_ms": -20.0,
+    "p90_abs_ms": 92.0
+   },
+   "bars": {
+    "n": 10,
+    "matched": 0.3,
+    "median_ms": -20.0,
+    "p90_abs_ms": 36.0
+   },
+   "ibi_ms": [
+    280.0,
+    480.0
+   ]
+  },
+  {
+   "vocal": "Just Dance | Lady Gaga, Colby O'Donis",
+   "beat": "locked",
+   "gv": "pop",
+   "gb": "amapiano",
+   "grid_v": [
+    118.981,
+    0.2714,
+    0,
+    1.0
+   ],
+   "grid_b": [
+    114.998,
+    0.0089,
+    0,
+    0.63
+   ],
+   "start_s": 0.16,
+   "bm": [
+    true,
+    true
+   ],
+   "sync": [
+    true,
+    true
+   ],
+   "src": [
+    "server",
+    "server"
+   ],
+   "rate": [
+    0.96652,
+    1
+   ],
+   "beats": {
+    "n": 17,
+    "matched": 1.0,
+    "median_ms": -2.9,
+    "p90_abs_ms": 2.9
+   },
+   "bars": {
+    "n": 5,
+    "matched": 1.0,
+    "median_ms": -2.9,
+    "p90_abs_ms": 2.9
+   },
+   "ibi_ms": [
+    520.0,
+    520.0
+   ]
+  },
+  {
+   "vocal": "Si Te Vas | Sech, Ozuna",
+   "beat": "locked",
+   "gv": "regg",
+   "gb": "edm",
+   "grid_v": [
+    87.088,
+    0.1384,
+    0,
+    0.977
+   ],
+   "grid_b": [
+    86.045,
+    0.1716,
+    3,
+    0.889
+   ],
+   "start_s": 0.19,
+   "bm": [
+    true,
+    true
+   ],
+   "sync": [
+    true,
+    true
+   ],
+   "src": [
+    "server",
+    "server"
+   ],
+   "rate": [
+    0.98802,
+    1
+   ],
+   "beats": {
+    "n": 14,
+    "matched": 1.0,
+    "median_ms": 20.0,
+    "p90_abs_ms": 20.0
+   },
+   "bars": {
+    "n": 3,
+    "matched": 1.0,
+    "median_ms": 0.0,
+    "p90_abs_ms": 0.0
+   },
+   "ibi_ms": [
+    700.0,
+    340.0
+   ]
+  },
+  {
+   "vocal": "Caught Up | Usher",
+   "beat": "locked",
+   "gv": "rnb",
+   "gb": "amapiano",
+   "grid_v": [
+    110.123,
+    0.2219,
+    0,
+    1.0
+   ],
+   "grid_b": [
+    114.998,
+    0.0089,
+    0,
+    0.63
+   ],
+   "start_s": 0.15,
+   "bm": [
+    true,
+    true
+   ],
+   "sync": [
+    true,
+    true
+   ],
+   "src": [
+    "server",
+    "server"
+   ],
+   "rate": [
+    1.04427,
+    1
+   ],
+   "beats": {
+    "n": 17,
+    "matched": 1.0,
+    "median_ms": 0.0,
+    "p90_abs_ms": 8.0
+   },
+   "bars": {
+    "n": 5,
+    "matched": 1.0,
+    "median_ms": 0.0,
+    "p90_abs_ms": 12.0
+   },
+   "ibi_ms": [
+    520.0,
+    520.0
+   ]
+  },
+  {
+   "vocal": "DND | Rema",
+   "beat": "locked",
+   "gv": "afro",
+   "gb": "amapiano",
+   "grid_v": [
+    107.008,
+    0.1617,
+    0,
+    1.0
+   ],
+   "grid_b": [
+    112.012,
+    0.2277,
+    1,
+    0.598
+   ],
+   "start_s": 0.16,
+   "bm": [
+    true,
+    true
+   ],
+   "sync": [
+    true,
+    true
+   ],
+   "src": [
+    "server",
+    "server"
+   ],
+   "rate": [
+    1.04676,
+    1
+   ],
+   "beats": {
+    "n": 16,
+    "matched": 1.0,
+    "median_ms": 2.9,
+    "p90_abs_ms": 17.1
+   },
+   "bars": {
+    "n": 4,
+    "matched": 1.0,
+    "median_ms": 2.9,
+    "p90_abs_ms": 2.9
+   },
+   "ibi_ms": [
+    540.0,
+    540.0
+   ]
+  },
+  {
+   "vocal": "Fever | Vybz Kartel",
+   "beat": "locked",
+   "gv": "dancehall",
+   "gb": "edm",
+   "grid_v": [
+    97.997,
+    0.2979,
+    3,
+    1.0
+   ],
+   "grid_b": [
+    103.02,
+    0.5506,
+    3,
+    0.991
+   ],
+   "start_s": 0.25,
+   "bm": [
+    true,
+    true
+   ],
+   "sync": [
+    true,
+    true
+   ],
+   "src": [
+    "server",
+    "server"
+   ],
+   "rate": [
+    1.05126,
+    1
+   ],
+   "beats": {
+    "n": 16,
+    "matched": 1.0,
+    "median_ms": 2.9,
+    "p90_abs_ms": 20.0
+   },
+   "bars": {
+    "n": 4,
+    "matched": 1.0,
+    "median_ms": 2.9,
+    "p90_abs_ms": 12.8
+   },
+   "ibi_ms": [
+    580.0,
+    580.0
+   ]
+  },
+  {
+   "vocal": "Mockingbird | Eminem",
+   "beat": "locked",
+   "gv": "hiphop",
+   "gb": "edm",
+   "grid_v": [
+    84.593,
+    0.1107,
+    1,
+    1.0
+   ],
+   "grid_b": [
+    86.045,
+    0.1716,
+    3,
+    0.889
+   ],
+   "start_s": 0.49,
+   "bm": [
+    true,
+    true
+   ],
+   "sync": [
+    true,
+    true
+   ],
+   "src": [
+    "server",
+    "server"
+   ],
+   "rate": [
+    1.01716,
+    1
+   ],
+   "beats": {
+    "n": 13,
+    "matched": 1.0,
+    "median_ms": 2.9,
+    "p90_abs_ms": 22.9
+   },
+   "bars": {
+    "n": 3,
+    "matched": 1.0,
+    "median_ms": -17.1,
+    "p90_abs_ms": 17.1
+   },
+   "ibi_ms": [
+    700.0,
+    340.0
+   ]
+  }
+ ]
+}
