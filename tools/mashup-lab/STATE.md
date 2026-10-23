@@ -4,7 +4,7 @@
 > stopped, and continue automatically. **This file is that checkpoint.** Update it and push it after every
 > meaningful step (commit with `[skip ci]` when only this file changes).
 
-Heartbeat (UTC): 2026-10-23T14:45Z · session: https://claude.ai/code/session_01Lo7gTW4YHqF6LiS4xWstjM · status: IN PROGRESS (Lidor 17:13 local: "עדיין לא על הוואן")
+Heartbeat (UTC): 2026-10-23T14:55Z · session: https://claude.ai/code/session_01Lo7gTW4YHqF6LiS4xWstjM · status: DONE (on-the-one release live 8fe38c1)
 
 ## How to resume in a fresh session
 1. Attach the repo with push access (`add_repo lidorbashari/try`), clone to `/home/claude/try`, branch
@@ -76,16 +76,14 @@ Heartbeat (UTC): 2026-10-23T14:45Z · session: https://claude.ai/code/session_01
   lift on press/drag, chromatic rim while lifted, tab bar minimises on scroll (iOS 26), sheets with springs.
 
 ## Next actions (in order)
-0. Lidor (2026-10-23 17:13 local): "still not on the one". Done (e80a87f, local suites green: t_timing 32, t_buf 141,
-   t_sync 58, e2e 35/25, UI 32/26/55): word play cuts ON A's next bar line after the word and B enters from ITS bar
-   line (timing.js place(); A echoes out right after the word when it sings on: plan.aOut < cut; plan.bFade for words
-   that start ≤ 30 ms before B's 1); engine wpSchedule uses aOut/bFade; join()/beatJoin() wait for the next 1 (not
-   1-or-3). CI word-play check now reports B's downbeats vs A's bar grid (share_on_one, first_downbeat_median_abs_ms).
-   Build 2694fb0234 pushed to tools/verify → CI running.
-1. When the word-play report lands: want share_on_one high (≥ .8) and beat continuity still ~.8. If good:
-   `cd tools/mashup-lab/lab5 && python3 build.py && python3 deploy.py && git checkout tools/verify/mashup-lab-next.html`,
-   commit docs/mashup-lab/{index.html,sw.js}, push both branches, tell Lidor (Hebrew).
-2. If bars are off in many links: check Beat This! downbeats (beats.json db) on those previews.
+0. RELEASED 2026-10-23 14:53Z (8fe38c1, both branches): on the one. CI on the candidate (e80a87f): B's first
+   downbeat on A's 1 in 48/49 word-play links (±60 ms; the one miss = "Not An Angel", whose beat grid has conf 0),
+   beat continuity 0.81, placeB ±8 ms 91 %; sync check 0.93 on beat, bars matched 0.875. Word gap median now 1.7 s
+   (was 0.7 s) because the cut waits for the 1. Lidor told (Hebrew).
+   A re-run of the word-play check with the corrected bar metric (fitted beat grid instead of a quantised bar length)
+   was triggered by 8fe38c1; read share_on_one / share_first_on_one in tools/reports/mashup-wordplay.txt.
+1. Optional: previews whose beat grid confidence is 0 (e.g. "Not An Angel | Tems") can land a beat off; consider
+   excluding links whose grids have conf < .5 from word play, or re-tracking them.
 
 ## Research notes (2026-10-22, for the skills)
 - AutoMashUpper (Davies et al., IEEE TASLP 2014): beat-synchronous chroma cross-correlated over all 12 shifts;
@@ -103,6 +101,7 @@ Heartbeat (UTC): 2026-10-23T14:45Z · session: https://claude.ai/code/session_01
   loop roll = 1-beat loop halved into B's drop.
 
 ## Log (newest first)
+- 2026-10-23 14:53Z: on-the-one release live (8fe38c1).
 - 2026-10-23 14:45Z: on-the-one rework of word play + deck joins; CI running.
 - 2026-10-23 03:00Z: DONE. Word-play round 2: 0.80 continuity. Auto-resume fallback removed (work finished).
 - 2026-10-23 02:47Z: RELEASE live (379801b): sync 0.90 on beat, word play 0.82, new amapiano/techno tracks.
