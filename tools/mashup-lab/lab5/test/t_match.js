@@ -43,6 +43,11 @@ chk("B sings in the same bars: clash lowers the score, B gets cleaned", sing.ok 
 chk("tempo 124 vs 150: not a pair", fast && fast.ok === false && fast.why === "tempo", fast);
 chk("B tuned 30 cents low: the vocal follows (−0.3 semitone)", tuned.ok && tuned.cents === -30 && Math.abs(tuned.plan.semis + .3) < 1e-9, [tuned.cents, tuned.plan.semis]);
 chk("plan times: entry at the bar lines (t0 + 4 beats per bar)", Math.abs(same.plan.aAt - (.5 + 4 * 2 * 60 / 124)) < 1e-9 && same.plan.lead >= 0, same.plan);
+M.seed({ an, li, beats, previews, hash: () => "x" });
+const lite = M.pair(t("V"), t("Bwt"), { min: 70 }), full = M.pair(t("V"), t("Bwt")), same2 = M.pair(t("V"), t("Bsame"), { min: 70 });
+chk("list query (min 70): a pair that cannot reach 70 is answered from its upper bound, without the bar search", lite && lite.ok && lite.lite && lite.score < 70 && !lite.plan, lite);
+chk("the same pair asked without min gets the full plan, and its score is within the bound", full && full.ok && !full.lite && full.plan && full.score <= lite.score, [full && full.score, lite && lite.score]);
+chk("a pair that can reach 70 gets the full plan even in a list query", same2 && same2.ok && !same2.lite && same2.plan && same2.score >= 95, same2 && same2.score);
 chk("two tracks on the same preview are never a pair", (r => r && r.ok === false && r.why === "same")(M.pair(t("Bsame"), t("Dup"))), M.pair(t("Bsame"), t("Dup")));
 chk("Hebrew reasons", Array.isArray(same.why) && same.why.length >= 2 && /[א-ת]/.test(same.why[0]), same.why);
 const t0 = Date.now(); for (let i = 0; i < 2000; i++) { M.seed({ an, li, beats, previews, hash: () => "x" }); M.pair(t("V"), t("Btone")); } const ms = (Date.now() - t0) / 2000;

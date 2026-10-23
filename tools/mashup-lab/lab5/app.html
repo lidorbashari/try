@@ -955,11 +955,12 @@ function makePair(v, b, rel, t) {
 }
 /* measured pair (match.js heard both previews): same shape, plus mm = { score, plan, s, cents, Hn, O, why, ... } */
 const MIN_MEASURED = 70;
-function mPair(v, b, maxDiff) {
+function mPair(v, b, maxDiff, min) {
   if (!MEAS) return undefined;
   if (!MashMatch.track(v) || !MashMatch.track(b)) return undefined;    /* not measured: the catalog decides */
-  const m = MashMatch.pair(v, b, { maxDiff });
+  const m = MashMatch.pair(v, b, min == null ? { maxDiff } : { maxDiff, min });   /* min: lists only need pairs that can reach it */
   if (!m || !m.ok || m.d > maxDiff + 1e-9) return null;
+  if (m.lite) return null;
   const ev = energyOf(v), eb = energyOf(b), t = { d: m.d, mode: m.q === 1 ? "1:1" : m.q === 2 ? "vhalf" : "vdouble" };
   const score = Math.max(0, Math.min(100, Math.round(m.score - E_PEN(Math.abs(ev.e - eb.e)))));
   return { v, b, rel: camRel(v.k, b.k) || "measured", t, base: m.score, score, en: { v: ev.e, b: eb.e, est: ev.est || eb.est }, mm: m };
@@ -975,14 +976,23 @@ const eTxt = t => { const x = energyOf(t); return "E" + (x.est ? "~" : "") + x.e
 const energyBand = e => e <= 5 ? "warm" : e <= 7 ? "groove" : "peak";
 const EN_WORD = { warm: "חימום", groove: "גרוב", peak: "שיא" };
 function pairOf(v, b) { const m = mPair(v, b, 0.1); return m !== undefined ? (m && m.score >= MIN_MEASURED ? m : null) : scorePair(v, b); }
+const FP_MEMO = new Map();                                  /* findPairs answers per genre pair + filters (cleared when the matcher's data arrives) */
 function findPairs(gv, gb, opts) {
   opts = opts || {};
+  const mk = gv + ">" + gb + "|" + [opts.maxDiff, !!opts.sameKey, !!opts.noHot, opts.energy || "all", MEAS ? 1 : 0].join(",");
+  const hit = FP_MEMO.get(mk); if (hit) return hit.slice();
+  const res = findPairs0(gv, gb, opts);
+  if (FP_MEMO.size > 400) FP_MEMO.clear();
+  FP_MEMO.set(mk, res);
+  return res.slice();
+}
+function findPairs0(gv, gb, opts) {
   const out = [], maxDiff = opts.maxDiff == null ? 0.06 : opts.maxDiff;
   const vocals = DATA.filter(t => t.g === gv), beats = DATA.filter(t => t.g === gb);
   for (const v of vocals) for (const b of beats) {
     if (v === b) continue;
     if (firstArtist(v.a) === firstArtist(b.a)) continue;
-    const mp = mPair(v, b, maxDiff);
+    const mp = mPair(v, b, maxDiff, MIN_MEASURED);
     if (mp !== undefined) {                                   /* both previews measured: the matcher decides */
       if (!mp || mp.score < MIN_MEASURED) continue;
       if (opts.sameKey && (mp.mm.s !== 0 || mp.mm.cents)) continue;
@@ -1159,12 +1169,43 @@ const MD = { previews: null, beats: null, an: null, li: null };
 let MEAS = false;
 function seedMatch() {
   if (!window.MashMatch || !MD.previews || !MD.beats || !MD.an || !MD.li || !window.MashEngine) return;
+  if (MEAS || seedMatch.busy) return;
   const ok = MashMatch.seed({ an: MD.an, li: MD.li, beats: MD.beats, previews: MD.previews, hash: u => MashEngine._hash(u) });
-  if (!ok || MEAS) return;
-  MEAS = true; window.__measured = true;
+  if (!ok) return;
+  seedMatch.busy = true;
   try { if (loaded && !anyPlaying(est())) { const m = MashMatch.pair(loaded.p.v, loaded.p.b, {}); if (m && m.ok && E.setPlan) E.setPlan(m.plan); } } catch (e) {}   /* a pair loaded before the data (deep link) */
-  try { document.dispatchEvent(new CustomEvent("mashlab:measured")); } catch (e) {}
-  try { if (typeof homeChanged === "function") homeChanged({ presets: true, keepScroll: window.scrollY > 400 }); } catch (e) {}
+  /* hear every pair the home page shows in small slices (≤ 10 ms each), so the page never freezes on a phone; the list
+     switches to the measured pairs once its genres are heard, the presets once all of them are */
+  const sel = [state.A, state.B], jobs = [sel].concat(PRESETS.filter(g => g[0] !== sel[0] || g[1] !== sel[1]));
+  let gi = 0, vi = 0, V = null, B = null, listDone = false;
+  const next = () => { const g = jobs[gi]; if (!g) return false; V = DATA.filter(t => t.g === g[0]); B = DATA.filter(t => t.g === g[1]); return true; };
+  next();
+  const done = () => {
+    MEAS = true; FP_MEMO.clear();
+    /* the answers the home page asks for, one genre pair per slice, then one render that only reads the memo */
+    const pre = { maxDiff: state.maxDiff, noHot: state.noHot, sameKey: state.sameKey };
+    const asks = [[state.A, state.B, Object.assign({ energy: state.energy }, pre)]].concat(PRESETS.map(g => [g[0], g[1], pre]));
+    const ask = () => {
+      const t0 = performance.now();
+      while (asks.length && performance.now() - t0 < 8) { const [a, b, o] = asks.shift(); try { findPairs(a, b, o); } catch (e) {} }
+      if (asks.length) { setTimeout(ask, 0); return; }
+      window.__measured = true;
+      try { document.dispatchEvent(new CustomEvent("mashlab:measured")); } catch (e) {}
+      try { if (typeof homeChanged === "function") homeChanged({ presets: true, keepScroll: window.scrollY > 400 }); } catch (e) {}
+    };
+    setTimeout(ask, 0);
+  };
+  const step = () => {
+    const t0 = performance.now();
+    while (performance.now() - t0 < 10) {
+      if (!V) { done(); return; }
+      if (vi >= V.length) { gi++; vi = 0; if (!next()) { V = null; continue; } continue; }
+      const v = V[vi++];
+      if (MashMatch.track(v)) for (const b of B) if (v !== b && MashMatch.track(b)) MashMatch.pair(v, b, { maxDiff: 0.1, min: MIN_MEASURED });
+    }
+    setTimeout(step, 0);
+  };
+  setTimeout(step, 0);
 }
 const est = () => { try { return E.state(); } catch (e) { return nullEngine().state(); } };
 const artOf = t => { try { return E.art(t) || null; } catch (e) { return null; } };

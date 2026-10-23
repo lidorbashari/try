@@ -92,12 +92,16 @@
   function camN(k) { var m = /^(1[0-2]|[1-9])([AB])$/.exec(String(k || "")); return m ? { n: +m[1], l: m[2] } : null; }
 
   /* the full measured match of vocal track v over beat track b; null when either preview is not measured */
+  /* o.maxDiff: tempo reach (anything up to 10 % gives the same answer, so it shares one cache entry);
+     o.min: the caller only needs pairs scoring at least this much. When even the best case (perfect bars, no clash)
+     stays below it, the bar-by-bar search is skipped and a "lite" answer (ok, score = that upper bound, no plan) is
+     returned: lists and presets stay fast on a phone. Callers without o.min always get the full plan. */
   function pair(v, b, o) {
     o = o || {};
     var V = track(v), B = track(b); if (!V || !B) return null;
-    var ck = V.k + " >> " + B.k + " | " + (o.maxDiff || 0.06);
-    if (CACHE.has(ck)) return CACHE.get(ck);
-    var res = compute(V, B, o);
+    var md = Math.max(.1, +o.maxDiff || 0), ck = V.k + " >> " + B.k + " | " + md.toFixed(3), c = CACHE.get(ck);
+    if (c && (!c.lite || (o.min != null && c.score < o.min))) return c;
+    var res = compute(V, B, { maxDiff: md, min: o.min });
     CACHE.set(ck, res);
     return res;
   }
@@ -117,6 +121,14 @@
     });
     cand.sort(function (x, y) { return y[1] - x[1]; });
     var shifts = [cand[0][0]]; if (cand[1][1] >= cand[0][1] - .05) shifts.push(cand[1][0]);
+    var R0 = V.rp && B.rp ? cos(V.rp, B.rp) : null;
+    var penT0 = d <= .02 ? 150 * d : 3 + 400 * (d - .02), penQ0 = (V.vdb < -12 ? 6 : V.vdb < -9 ? 3 : 0) + (V.vs < .15 ? 6 : 0);
+    if (o.min != null) {                                     /* the best this pair can reach: perfect bars, no clash */
+      var ub = -1e9;
+      shifts.forEach(function (s) { ub = Math.max(ub, 100 - 55 * p * clamp((.65 - fk[s]) / .55, 0, 1.3) - ([0, 3, 8][Math.abs(s)] + (s > 0 && V.vp >= 65 ? 4 : 0) + (s < 0 && V.vp && V.vp <= 50 ? 4 : 0))); });
+      ub += 1.5 - penT0 - penQ0 + (R0 == null ? 0 : Math.max(-5, Math.min(3, 8 * (R0 - .6))));
+      if (ub < o.min) return { ok: true, lite: true, score: Math.max(0, Math.round(ub)), s: shifts[0], d: d, q: q };
+    }
     var starts = vocalStarts(V); if (!starts.length) return { ok: false, why: "vocal" };
     var W = 8, best = null;
     for (var ai = 0; ai < starts.length; ai++) {
