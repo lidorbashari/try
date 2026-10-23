@@ -4,7 +4,7 @@
 > stopped, and continue automatically. **This file is that checkpoint.** Update it and push it after every
 > meaningful step (commit with `[skip ci]` when only this file changes).
 
-Heartbeat (UTC): 2026-10-23T03:00Z · session: https://claude.ai/code/session_01Lo7gTW4YHqF6LiS4xWstjM · status: DONE (released 379801b; optional follow-ups below)
+Heartbeat (UTC): 2026-10-23T14:45Z · session: https://claude.ai/code/session_01Lo7gTW4YHqF6LiS4xWstjM · status: IN PROGRESS (Lidor 17:13 local: "עדיין לא על הוואן")
 
 ## How to resume in a fresh session
 1. Attach the repo with push access (`add_repo lidorbashari/try`), clone to `/home/claude/try`, branch
@@ -76,18 +76,16 @@ Heartbeat (UTC): 2026-10-23T03:00Z · session: https://claude.ai/code/session_01
   lift on press/drag, chromatic rim while lifted, tab bar minimises on scroll (iOS 26), sheets with springs.
 
 ## Next actions (in order)
-0. RELEASED 2026-10-23 02:47Z: GitHub Pages serves 379801b (both branches pushed). Contents: matcher v2.1 (Pearson,
-   calibrated), engine 6.4 (hit lock, Tempo Ride, key by ear), free pairs synced, no freeze on data arrival, Liquid
-   Glass + touch light, welcome/share/PWA, 38 amapiano + 84 techno tracks (16 measured from their previews).
-   CI on the release candidate: sync share_on_beat 0.90 (median 2.9 ms), word play beat continues 0.82 (round 1;
-   round 2: 0.80, placeB within 8 ms 97 %).
-   Lidor was messaged (Hebrew) with what changed.
-1. Follow-ups (nice to have, none blocking):
-   - The 21 new tracks have no word times yet (part=words of mashup-analyze was not run for them); dispatch
-     mashup-analyze {"part":"words","force":false} if word-play links should use them.
-   - "Without You | Avicii, Sandro Cavazza" lost its preview to the Guetta track (same title); fine, or fix by hand.
-   - Initial page render costs ~0.5 s on a 4× slower CPU (catalog lists before the measured data) — could be sliced too.
-   - Skills were proposed to Lidor (review card); if he saved them, nothing to do.
+0. Lidor (2026-10-23 17:13 local): "still not on the one". Done (e80a87f, local suites green: t_timing 32, t_buf 141,
+   t_sync 58, e2e 35/25, UI 32/26/55): word play cuts ON A's next bar line after the word and B enters from ITS bar
+   line (timing.js place(); A echoes out right after the word when it sings on: plan.aOut < cut; plan.bFade for words
+   that start ≤ 30 ms before B's 1); engine wpSchedule uses aOut/bFade; join()/beatJoin() wait for the next 1 (not
+   1-or-3). CI word-play check now reports B's downbeats vs A's bar grid (share_on_one, first_downbeat_median_abs_ms).
+   Build 2694fb0234 pushed to tools/verify → CI running.
+1. When the word-play report lands: want share_on_one high (≥ .8) and beat continuity still ~.8. If good:
+   `cd tools/mashup-lab/lab5 && python3 build.py && python3 deploy.py && git checkout tools/verify/mashup-lab-next.html`,
+   commit docs/mashup-lab/{index.html,sw.js}, push both branches, tell Lidor (Hebrew).
+2. If bars are off in many links: check Beat This! downbeats (beats.json db) on those previews.
 
 ## Research notes (2026-10-22, for the skills)
 - AutoMashUpper (Davies et al., IEEE TASLP 2014): beat-synchronous chroma cross-correlated over all 12 shifts;
@@ -105,6 +103,7 @@ Heartbeat (UTC): 2026-10-23T03:00Z · session: https://claude.ai/code/session_01
   loop roll = 1-beat loop halved into B's drop.
 
 ## Log (newest first)
+- 2026-10-23 14:45Z: on-the-one rework of word play + deck joins; CI running.
 - 2026-10-23 03:00Z: DONE. Word-play round 2: 0.80 continuity. Auto-resume fallback removed (work finished).
 - 2026-10-23 02:47Z: RELEASE live (379801b): sync 0.90 on beat, word play 0.82, new amapiano/techno tracks.
 - 2026-10-23 02:30Z: word play 0.82 continuity; sync fix + perf fix in CI; beat grids for new tracks running.
