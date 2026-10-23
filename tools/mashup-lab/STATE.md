@@ -4,7 +4,7 @@
 > stopped, and continue automatically. **This file is that checkpoint.** Update it and push it after every
 > meaningful step (commit with `[skip ci]` when only this file changes).
 
-Heartbeat (UTC): 2026-10-23T02:50Z · session: https://claude.ai/code/session_01Lo7gTW4YHqF6LiS4xWstjM · status: RELEASED (live 379801b); small follow-ups below
+Heartbeat (UTC): 2026-10-23T03:00Z · session: https://claude.ai/code/session_01Lo7gTW4YHqF6LiS4xWstjM · status: DONE (released 379801b; optional follow-ups below)
 
 ## How to resume in a fresh session
 1. Attach the repo with push access (`add_repo lidorbashari/try`), clone to `/home/claude/try`, branch
@@ -80,7 +80,7 @@ Heartbeat (UTC): 2026-10-23T02:50Z · session: https://claude.ai/code/session_01
    calibrated), engine 6.4 (hit lock, Tempo Ride, key by ear), free pairs synced, no freeze on data arrival, Liquid
    Glass + touch light, welcome/share/PWA, 38 amapiano + 84 techno tracks (16 measured from their previews).
    CI on the release candidate: sync share_on_beat 0.90 (median 2.9 ms), word play beat continues 0.82 (round 1;
-   round 2 run 39889642571 still running at 02:50Z — read tools/reports/mashup-wordplay.txt when it lands).
+   round 2: 0.80, placeB within 8 ms 97 %).
    Lidor was messaged (Hebrew) with what changed.
 1. Follow-ups (nice to have, none blocking):
    - The 21 new tracks have no word times yet (part=words of mashup-analyze was not run for them); dispatch
@@ -105,6 +105,7 @@ Heartbeat (UTC): 2026-10-23T02:50Z · session: https://claude.ai/code/session_01
   loop roll = 1-beat loop halved into B's drop.
 
 ## Log (newest first)
+- 2026-10-23 03:00Z: DONE. Word-play round 2: 0.80 continuity. Auto-resume fallback removed (work finished).
 - 2026-10-23 02:47Z: RELEASE live (379801b): sync 0.90 on beat, word play 0.82, new amapiano/techno tracks.
 - 2026-10-23 02:30Z: word play 0.82 continuity; sync fix + perf fix in CI; beat grids for new tracks running.
 - 2026-10-23 02:20Z: sync check exposed unsynced free pairs (fixed b894672); new amapiano/techno tracks in the pipeline.
