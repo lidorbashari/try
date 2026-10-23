@@ -1,17 +1,18 @@
 {
  "summary": {
   "pairs": 30,
-  "measured": 30,
-  "on_beat": 25,
-  "share_on_beat": 0.833,
-  "median_abs_offset_ms": 2.9,
-  "p90_abs_offset_ms": 22.9,
-  "median_start_s": 0.52,
-  "bars_matched_median": 0.857,
+  "measured": 28,
+  "on_beat": 8,
+  "share_on_beat": 0.286,
+  "median_abs_offset_ms": 20.0,
+  "p90_abs_offset_ms": 73.0,
+  "median_start_s": 0.19,
+  "bars_matched_median": 0.291,
   "page": {
    "previews": 1200,
    "beats": 1200,
-   "engine": "6.2"
+   "engine": "6.4",
+   "measured": true
   },
   "page_errors": []
  },
@@ -33,7 +34,26 @@
     0,
     1.0
    ],
-   "start_s": 1.21,
+   "start_s": 0.46,
+   "plan": {
+    "score": 97,
+    "s": -1,
+    "cents": 0,
+    "Hn": 0.961,
+    "O": 0,
+    "aBar": 0,
+    "bBar": 4,
+    "cleanB": true,
+    "lead": 2
+   },
+   "semis": [
+    -1,
+    0
+   ],
+   "vox": [
+    "vocal",
+    "inst"
+   ],
    "bm": [
     true,
     true
@@ -48,26 +68,26 @@
     "server"
    ],
    "rate": [
-    1,
+    0.99987,
     1
    ],
    "beats": {
     "n": 15,
     "matched": 1.0,
-    "median_ms": 2.9,
-    "p90_abs_ms": 22.9
+    "median_ms": 0.0,
+    "p90_abs_ms": 20.0
    },
    "hits": {
     "n": 295,
     "matched": 1.0,
-    "median_ms": 1.9,
-    "p90_abs_ms": 13.9
+    "median_ms": 0.0,
+    "p90_abs_ms": 13.0
    },
    "bars": {
     "n": 7,
-    "matched": 0.714,
-    "median_ms": 2.9,
-    "p90_abs_ms": 20.6
+    "matched": 0.429,
+    "median_ms": 0.0,
+    "p90_abs_ms": 16.0
    },
    "ibi_ms": [
     600.0,
@@ -91,44 +111,63 @@
     3,
     1.0
    ],
-   "start_s": 0.58,
+   "start_s": 0.19,
+   "plan": {
+    "score": 48,
+    "s": 0,
+    "cents": 0,
+    "Hn": 0.828,
+    "O": 1,
+    "aBar": 1,
+    "bBar": 0,
+    "cleanB": true,
+    "lead": 0
+   },
+   "semis": [
+    0,
+    0
+   ],
+   "vox": [
+    "vocal",
+    "inst"
+   ],
    "bm": [
     true,
     true
    ],
    "sync": [
-    true,
-    true
+    false,
+    false
    ],
-   "lock": "locked",
+   "lock": "off",
    "src": [
     "server",
     "server"
    ],
    "rate": [
-    0.94565,
+    1,
     1
    ],
    "beats": {
     "n": 13,
-    "matched": 1.0,
-    "median_ms": 0.0,
-    "p90_abs_ms": 20.0
+    "matched": 0.615,
+    "median_ms": 30.0,
+    "p90_abs_ms": 86.0
    },
    "hits": {
-    "n": 314,
+    "n": 309,
     "matched": 1.0,
-    "median_ms": 2.0,
+    "median_ms": 1.0,
     "p90_abs_ms": 13.0
    },
    "bars": {
     "n": 6,
-    "matched": 1.0,
-    "median_ms": 0.0,
-    "p90_abs_ms": 10.0
+    "matched": 0.0,
+    "median_ms": null,
+    "p90_abs_ms": null
    },
    "ibi_ms": [
-    700.0,
+    660.0,
     340.0
    ]
   },
@@ -149,44 +188,63 @@
     2,
     0.607
    ],
-   "start_s": 0.22,
+   "start_s": 0.17,
+   "plan": {
+    "score": 26,
+    "s": 1,
+    "cents": 0,
+    "Hn": 0.242,
+    "O": 1,
+    "aBar": 0,
+    "bBar": 0,
+    "cleanB": true,
+    "lead": 0
+   },
+   "semis": [
+    0,
+    0
+   ],
+   "vox": [
+    "vocal",
+    "inst"
+   ],
    "bm": [
     true,
     true
    ],
    "sync": [
-    true,
-    true
+    false,
+    false
    ],
-   "lock": "locked",
+   "lock": "off",
    "src": [
     "server",
     "server"
    ],
    "rate": [
-    1.03093,
+    1,
     1
    ],
    "beats": {
     "n": 10,
-    "matched": 1.0,
-    "median_ms": -2.9,
-    "p90_abs_ms": 17.1
+    "matched": 0.4,
+    "median_ms": 70.0,
+    "p90_abs_ms": 94.0
    },
    "hits": {
-    "n": 276,
+    "n": 267,
     "matched": 1.0,
-    "median_ms": 1.1,
-    "p90_abs_ms": 13.1
+    "median_ms": -1.0,
+    "p90_abs_ms": 13.0
    },
    "bars": {
-    "n": 5,
-    "matched": 1.0,
-    "median_ms": -2.9,
-    "p90_abs_ms": 17.1
+    "n": 4,
+    "matched": 0.0,
+    "median_ms": null,
+    "p90_abs_ms": null
    },
    "ibi_ms": [
-    900.0,
+    920.0,
     440.0
    ]
   },
@@ -207,44 +265,63 @@
     2,
     1.0
    ],
-   "start_s": 0.63,
+   "start_s": 0.17,
+   "plan": {
+    "score": 15,
+    "s": 0,
+    "cents": 0,
+    "Hn": 0.275,
+    "O": 0,
+    "aBar": 0,
+    "bBar": 7,
+    "cleanB": false,
+    "lead": 2
+   },
+   "semis": [
+    0,
+    0
+   ],
+   "vox": [
+    "vocal",
+    "off"
+   ],
    "bm": [
     true,
     true
    ],
    "sync": [
-    true,
-    true
+    false,
+    false
    ],
-   "lock": "locked",
+   "lock": "off",
    "src": [
     "server",
     "server"
    ],
    "rate": [
-    0.95401,
+    1,
     1
    ],
    "beats": {
-    "n": 19,
-    "matched": 1.0,
-    "median_ms": 22.9,
-    "p90_abs_ms": 42.9
+    "n": 20,
+    "matched": 0.4,
+    "median_ms": -70.0,
+    "p90_abs_ms": 120.0
    },
    "hits": {
-    "n": 294,
-    "matched": 1.0,
-    "median_ms": 1.4,
-    "p90_abs_ms": 12.9
+    "n": 301,
+    "matched": 0.917,
+    "median_ms": 1.0,
+    "p90_abs_ms": 14.0
    },
    "bars": {
     "n": 5,
-    "matched": 1.0,
-    "median_ms": 22.9,
-    "p90_abs_ms": 40.6
+    "matched": 0.0,
+    "median_ms": null,
+    "p90_abs_ms": null
    },
    "ibi_ms": [
-    460.0,
+    440.0,
     460.0
    ]
   },
@@ -265,44 +342,63 @@
     3,
     1.0
    ],
-   "start_s": 0.23,
+   "start_s": 0.16,
+   "plan": {
+    "score": 65,
+    "s": 0,
+    "cents": 0,
+    "Hn": 0.968,
+    "O": 1,
+    "aBar": 0,
+    "bBar": 1,
+    "cleanB": true,
+    "lead": 1
+   },
+   "semis": [
+    0,
+    0
+   ],
+   "vox": [
+    "vocal",
+    "inst"
+   ],
    "bm": [
     true,
     true
    ],
    "sync": [
-    true,
-    true
+    false,
+    false
    ],
-   "lock": "locked",
+   "lock": "off",
    "src": [
     "server",
     "server"
    ],
    "rate": [
-    0.95616,
+    1,
     1
    ],
    "beats": {
-    "n": 13,
-    "matched": 1.0,
+    "n": 14,
+    "matched": 0.643,
     "median_ms": 0.0,
-    "p90_abs_ms": 20.0
+    "p90_abs_ms": 80.0
    },
    "hits": {
-    "n": 307,
+    "n": 309,
     "matched": 1.0,
-    "median_ms": 1.0,
+    "median_ms": 4.0,
     "p90_abs_ms": 13.0
    },
    "bars": {
-    "n": 4,
-    "matched": 1.0,
-    "median_ms": 0.0,
-    "p90_abs_ms": 14.0
+    "n": 3,
+    "matched": 0.333,
+    "median_ms": 20.0,
+    "p90_abs_ms": 20.0
    },
    "ibi_ms": [
-    700.0,
+    660.0,
     340.0
    ]
   },
@@ -323,44 +419,63 @@
     0,
     0.547
    ],
-   "start_s": 0.91,
+   "start_s": 0.4,
+   "plan": {
+    "score": 62,
+    "s": 0,
+    "cents": 41,
+    "Hn": 0.713,
+    "O": 0,
+    "aBar": 0,
+    "bBar": 4,
+    "cleanB": false,
+    "lead": 2
+   },
+   "semis": [
+    0,
+    0
+   ],
+   "vox": [
+    "vocal",
+    "off"
+   ],
    "bm": [
     true,
     true
    ],
    "sync": [
-    true,
-    true
+    false,
+    false
    ],
-   "lock": "locked",
+   "lock": "off",
    "src": [
     "server",
     "server"
    ],
    "rate": [
-    0.95668,
+    1,
     1
    ],
    "beats": {
-    "n": 20,
-    "matched": 1.0,
-    "median_ms": -2.9,
-    "p90_abs_ms": 22.9
+    "n": 21,
+    "matched": 0.476,
+    "median_ms": 0.0,
+    "p90_abs_ms": 84.0
    },
    "hits": {
-    "n": 317,
+    "n": 314,
     "matched": 1.0,
-    "median_ms": 0.1,
-    "p90_abs_ms": 13.1
+    "median_ms": 0.0,
+    "p90_abs_ms": 13.0
    },
    "bars": {
-    "n": 6,
-    "matched": 0.333,
-    "median_ms": -2.9,
-    "p90_abs_ms": 2.9
+    "n": 5,
+    "matched": 0.0,
+    "median_ms": null,
+    "p90_abs_ms": null
    },
    "ibi_ms": [
-    440.0,
+    420.0,
     440.0
    ]
   },
@@ -381,44 +496,63 @@
     3,
     0.956
    ],
-   "start_s": 0.28,
+   "start_s": 0.16,
+   "plan": {
+    "score": 66,
+    "s": 0,
+    "cents": 0,
+    "Hn": 0.644,
+    "O": 0,
+    "aBar": 0,
+    "bBar": 0,
+    "cleanB": false,
+    "lead": 0
+   },
+   "semis": [
+    0,
+    0
+   ],
+   "vox": [
+    "vocal",
+    "off"
+   ],
    "bm": [
     true,
     true
    ],
    "sync": [
-    true,
-    true
+    false,
+    false
    ],
-   "lock": "locked",
+   "lock": "off",
    "src": [
     "server",
     "server"
    ],
    "rate": [
-    1.0161,
+    1,
     1
    ],
    "beats": {
     "n": 19,
-    "matched": 1.0,
-    "median_ms": -2.9,
-    "p90_abs_ms": 22.9
+    "matched": 0.895,
+    "median_ms": 40.0,
+    "p90_abs_ms": 80.0
    },
    "hits": {
     "n": 308,
     "matched": 1.0,
-    "median_ms": 2.1,
-    "p90_abs_ms": 13.9
+    "median_ms": 0.0,
+    "p90_abs_ms": 14.0
    },
    "bars": {
-    "n": 5,
-    "matched": 0.0,
-    "median_ms": null,
-    "p90_abs_ms": null
+    "n": 6,
+    "matched": 0.5,
+    "median_ms": 20.0,
+    "p90_abs_ms": 52.0
    },
    "ibi_ms": [
-    460.0,
+    480.0,
     460.0
    ]
   },
@@ -439,44 +573,63 @@
     0,
     1.0
    ],
-   "start_s": 0.29,
+   "start_s": 0.17,
+   "plan": {
+    "score": 69,
+    "s": -1,
+    "cents": 0,
+    "Hn": 0.695,
+    "O": 0,
+    "aBar": 4,
+    "bBar": 1,
+    "cleanB": true,
+    "lead": 1
+   },
+   "semis": [
+    0,
+    0
+   ],
+   "vox": [
+    "vocal",
+    "inst"
+   ],
    "bm": [
     true,
     true
    ],
    "sync": [
-    true,
-    true
+    false,
+    false
    ],
-   "lock": "locked",
+   "lock": "off",
    "src": [
     "server",
     "server"
    ],
    "rate": [
-    1.0268,
+    1,
     1
    ],
    "beats": {
     "n": 17,
-    "matched": 1.0,
-    "median_ms": 2.9,
-    "p90_abs_ms": 22.9
+    "matched": 0.471,
+    "median_ms": -90.0,
+    "p90_abs_ms": 106.0
    },
    "hits": {
-    "n": 305,
-    "matched": 0.993,
-    "median_ms": -0.1,
-    "p90_abs_ms": 14.1
+    "n": 293,
+    "matched": 0.997,
+    "median_ms": -3.5,
+    "p90_abs_ms": 15.0
    },
    "bars": {
-    "n": 5,
-    "matched": 1.0,
-    "median_ms": 2.9,
-    "p90_abs_ms": 22.9
+    "n": 4,
+    "matched": 0.0,
+    "median_ms": null,
+    "p90_abs_ms": null
    },
    "ibi_ms": [
-    520.0,
+    540.0,
     520.0
    ]
   },
@@ -497,44 +650,63 @@
     3,
     1.0
    ],
-   "start_s": 0.6,
+   "start_s": 0.32,
+   "plan": {
+    "score": 54,
+    "s": 0,
+    "cents": 0,
+    "Hn": 0.777,
+    "O": 0.87,
+    "aBar": 3,
+    "bBar": 2,
+    "cleanB": true,
+    "lead": 2
+   },
+   "semis": [
+    0,
+    0
+   ],
+   "vox": [
+    "vocal",
+    "inst"
+   ],
    "bm": [
     true,
     true
    ],
    "sync": [
-    true,
-    true
+    false,
+    false
    ],
-   "lock": "locked",
+   "lock": "off",
    "src": [
     "server",
     "server"
    ],
    "rate": [
-    1.0098,
+    1,
     1
    ],
    "beats": {
     "n": 15,
-    "matched": 1.0,
-    "median_ms": -2.9,
-    "p90_abs_ms": 17.1
+    "matched": 0.0,
+    "median_ms": null,
+    "p90_abs_ms": null
    },
    "hits": {
-    "n": 304,
+    "n": 287,
     "matched": 1.0,
-    "median_ms": 0.1,
-    "p90_abs_ms": 13.1
+    "median_ms": -1.0,
+    "p90_abs_ms": 13.0
    },
    "bars": {
     "n": 4,
-    "matched": 1.0,
-    "median_ms": -2.9,
-    "p90_abs_ms": 21.2
+    "matched": 0.0,
+    "median_ms": null,
+    "p90_abs_ms": null
    },
    "ibi_ms": [
-    580.0,
+    600.0,
     580.0
    ]
   },
@@ -555,7 +727,26 @@
     3,
     1.0
    ],
-   "start_s": 0.47,
+   "start_s": 0.45,
+   "plan": {
+    "score": 78,
+    "s": 1,
+    "cents": 0,
+    "Hn": 1,
+    "O": 1,
+    "aBar": 0,
+    "bBar": 0,
+    "cleanB": true,
+    "lead": 0
+   },
+   "semis": [
+    1,
+    0
+   ],
+   "vox": [
+    "vocal",
+    "inst"
+   ],
    "bm": [
     true,
     true
@@ -576,20 +767,20 @@
    "beats": {
     "n": 16,
     "matched": 1.0,
-    "median_ms": 2.9,
-    "p90_abs_ms": 17.1
+    "median_ms": 0.0,
+    "p90_abs_ms": 20.0
    },
    "hits": {
-    "n": 294,
+    "n": 292,
     "matched": 1.0,
-    "median_ms": -1.1,
-    "p90_abs_ms": 13.1
+    "median_ms": -2.0,
+    "p90_abs_ms": 13.0
    },
    "bars": {
     "n": 4,
     "matched": 1.0,
-    "median_ms": 2.9,
-    "p90_abs_ms": 2.9
+    "median_ms": 0.0,
+    "p90_abs_ms": 0.0
    },
    "ibi_ms": [
     540.0,
@@ -613,44 +804,63 @@
     0,
     1.0
    ],
-   "start_s": 0.19,
+   "start_s": 0.39,
+   "plan": {
+    "score": 63,
+    "s": 1,
+    "cents": 0,
+    "Hn": 0.673,
+    "O": 0,
+    "aBar": 3,
+    "bBar": 3,
+    "cleanB": true,
+    "lead": 2
+   },
+   "semis": [
+    0,
+    0
+   ],
+   "vox": [
+    "vocal",
+    "inst"
+   ],
    "bm": [
     true,
     true
    ],
    "sync": [
-    true,
-    true
+    false,
+    false
    ],
-   "lock": "locked",
+   "lock": "off",
    "src": [
     "server",
     "server"
    ],
    "rate": [
-    1.02027,
+    1,
     1
    ],
    "beats": {
-    "n": 15,
-    "matched": 1.0,
-    "median_ms": -2.9,
-    "p90_abs_ms": 20.6
+    "n": 14,
+    "matched": 0.786,
+    "median_ms": 40.0,
+    "p90_abs_ms": 100.0
    },
    "hits": {
-    "n": 303,
+    "n": 298,
     "matched": 1.0,
-    "median_ms": -0.9,
-    "p90_abs_ms": 13.1
+    "median_ms": -2.0,
+    "p90_abs_ms": 13.0
    },
    "bars": {
-    "n": 7,
-    "matched": 0.714,
-    "median_ms": -2.9,
-    "p90_abs_ms": 11.4
+    "n": 4,
+    "matched": 0.5,
+    "median_ms": 10.0,
+    "p90_abs_ms": 38.0
    },
    "ibi_ms": [
-    600.0,
+    620.0,
     600.0
    ]
   },
@@ -671,44 +881,63 @@
     1,
     0.985
    ],
-   "start_s": 0.26,
+   "start_s": 0.16,
+   "plan": {
+    "score": 69,
+    "s": -2,
+    "cents": 0,
+    "Hn": 0.487,
+    "O": 0,
+    "aBar": 2,
+    "bBar": 4,
+    "cleanB": false,
+    "lead": 2
+   },
+   "semis": [
+    0,
+    0
+   ],
+   "vox": [
+    "vocal",
+    "off"
+   ],
    "bm": [
     true,
     true
    ],
    "sync": [
-    true,
-    true
+    false,
+    false
    ],
-   "lock": "locked",
+   "lock": "off",
    "src": [
     "server",
     "server"
    ],
    "rate": [
-    1.04753,
+    1,
     1
    ],
    "beats": {
-    "n": 20,
-    "matched": 1.0,
-    "median_ms": 0.0,
-    "p90_abs_ms": 20.0
+    "n": 19,
+    "matched": 0.368,
+    "median_ms": 40.0,
+    "p90_abs_ms": 88.0
    },
    "hits": {
-    "n": 286,
-    "matched": 1.0,
-    "median_ms": 2.0,
-    "p90_abs_ms": 13.0
+    "n": 289,
+    "matched": 0.983,
+    "median_ms": -1.0,
+    "p90_abs_ms": 13.7
    },
    "bars": {
-    "n": 10,
-    "matched": 0.5,
-    "median_ms": 0.0,
-    "p90_abs_ms": 0.0
+    "n": 4,
+    "matched": 0.0,
+    "median_ms": null,
+    "p90_abs_ms": null
    },
    "ibi_ms": [
-    460.0,
+    480.0,
     460.0
    ]
   },
@@ -729,7 +958,26 @@
     0,
     1.0
    ],
-   "start_s": 0.89,
+   "start_s": 0.79,
+   "plan": {
+    "score": 80,
+    "s": 0,
+    "cents": 0,
+    "Hn": 0.763,
+    "O": 0,
+    "aBar": 5,
+    "bBar": 4,
+    "cleanB": true,
+    "lead": 2
+   },
+   "semis": [
+    0,
+    0
+   ],
+   "vox": [
+    "vocal",
+    "inst"
+   ],
    "bm": [
     true,
     true
@@ -750,20 +998,20 @@
    "beats": {
     "n": 15,
     "matched": 1.0,
-    "median_ms": 2.9,
-    "p90_abs_ms": 22.9
+    "median_ms": 0.0,
+    "p90_abs_ms": 20.0
    },
    "hits": {
-    "n": 298,
-    "matched": 0.997,
-    "median_ms": -0.1,
-    "p90_abs_ms": 13.1
+    "n": 294,
+    "matched": 1.0,
+    "median_ms": -1.0,
+    "p90_abs_ms": 14.0
    },
    "bars": {
-    "n": 6,
-    "matched": 0.667,
-    "median_ms": 12.9,
-    "p90_abs_ms": 22.9
+    "n": 4,
+    "matched": 1.0,
+    "median_ms": 0.0,
+    "p90_abs_ms": 14.0
    },
    "ibi_ms": [
     600.0,
@@ -787,44 +1035,63 @@
     1,
     1.0
    ],
-   "start_s": 0.2,
+   "start_s": 0.18,
+   "plan": {
+    "score": 67,
+    "s": 1,
+    "cents": 0,
+    "Hn": 0.888,
+    "O": 0,
+    "aBar": 0,
+    "bBar": 9,
+    "cleanB": false,
+    "lead": 2
+   },
+   "semis": [
+    0,
+    0
+   ],
+   "vox": [
+    "vocal",
+    "off"
+   ],
    "bm": [
     true,
     true
    ],
    "sync": [
-    true,
-    true
+    false,
+    false
    ],
-   "lock": "locked",
+   "lock": "off",
    "src": [
     "server",
     "server"
    ],
    "rate": [
-    1.0565,
+    1,
     1
    ],
    "beats": {
-    "n": 19,
-    "matched": 1.0,
-    "median_ms": -5.8,
-    "p90_abs_ms": 34.2
+    "n": 23,
+    "matched": 0.522,
+    "median_ms": -20.0,
+    "p90_abs_ms": 98.0
    },
    "hits": {
-    "n": 312,
+    "n": 320,
     "matched": 1.0,
-    "median_ms": 3.2,
-    "p90_abs_ms": 12.8
+    "median_ms": -1.5,
+    "p90_abs_ms": 13.0
    },
    "bars": {
     "n": 8,
-    "matched": 0.625,
-    "median_ms": -5.8,
-    "p90_abs_ms": 34.2
+    "matched": 0.25,
+    "median_ms": 10.0,
+    "p90_abs_ms": 58.0
    },
    "ibi_ms": [
-    460.0,
+    480.0,
     460.0
    ]
   },
@@ -845,7 +1112,26 @@
     2,
     0.821
    ],
-   "start_s": 0.73,
+   "start_s": 0.45,
+   "plan": {
+    "score": 85,
+    "s": -1,
+    "cents": 0,
+    "Hn": 0.866,
+    "O": 0,
+    "aBar": 2,
+    "bBar": 10,
+    "cleanB": false,
+    "lead": 2
+   },
+   "semis": [
+    -1,
+    0
+   ],
+   "vox": [
+    "vocal",
+    "off"
+   ],
    "bm": [
     true,
     true
@@ -864,25 +1150,25 @@
     1
    ],
    "beats": {
-    "n": 22,
+    "n": 13,
     "matched": 1.0,
     "median_ms": 0.0,
-    "p90_abs_ms": 20.0
+    "p90_abs_ms": 40.0
    },
    "hits": {
-    "n": 278,
+    "n": 265,
     "matched": 1.0,
-    "median_ms": -1.0,
-    "p90_abs_ms": 14.0
+    "median_ms": 0.0,
+    "p90_abs_ms": 12.0
    },
    "bars": {
-    "n": 5,
-    "matched": 0.2,
-    "median_ms": 0.0,
-    "p90_abs_ms": 0.0
+    "n": 4,
+    "matched": 1.0,
+    "median_ms": 10.0,
+    "p90_abs_ms": 34.0
    },
    "ibi_ms": [
-    400.0,
+    780.0,
     400.0
    ]
   },
@@ -903,44 +1189,63 @@
     0,
     0.569
    ],
-   "start_s": 0.23,
+   "start_s": 0.15,
+   "plan": {
+    "score": 46,
+    "s": 2,
+    "cents": -23,
+    "Hn": 0.761,
+    "O": 0.45,
+    "aBar": 0,
+    "bBar": 0,
+    "cleanB": true,
+    "lead": 0
+   },
+   "semis": [
+    0,
+    0
+   ],
+   "vox": [
+    "vocal",
+    "inst"
+   ],
    "bm": [
     true,
     true
    ],
    "sync": [
-    true,
-    true
+    false,
+    false
    ],
-   "lock": "locked",
+   "lock": "off",
    "src": [
     "server",
     "server"
    ],
    "rate": [
-    1.04219,
+    1,
     1
    ],
    "beats": {
     "n": 18,
-    "matched": 1.0,
-    "median_ms": -2.9,
-    "p90_abs_ms": 7.2
+    "matched": 0.5,
+    "median_ms": -20.0,
+    "p90_abs_ms": 84.0
    },
    "hits": {
-    "n": 293,
+    "n": 290,
     "matched": 1.0,
-    "median_ms": -0.9,
-    "p90_abs_ms": 13.9
+    "median_ms": -1.0,
+    "p90_abs_ms": 14.0
    },
    "bars": {
-    "n": 5,
-    "matched": 1.0,
-    "median_ms": -2.9,
-    "p90_abs_ms": 11.4
+    "n": 4,
+    "matched": 0.0,
+    "median_ms": null,
+    "p90_abs_ms": null
    },
    "ibi_ms": [
-    480.0,
+    500.0,
     480.0
    ]
   },
@@ -961,44 +1266,63 @@
     1,
     1.0
    ],
-   "start_s": 0.58,
+   "start_s": 0.33,
+   "plan": {
+    "score": 50,
+    "s": -2,
+    "cents": 0,
+    "Hn": 0.863,
+    "O": 1,
+    "aBar": 5,
+    "bBar": 0,
+    "cleanB": true,
+    "lead": 0
+   },
+   "semis": [
+    0,
+    0
+   ],
+   "vox": [
+    "vocal",
+    "inst"
+   ],
    "bm": [
     true,
     true
    ],
    "sync": [
-    true,
-    true
+    false,
+    false
    ],
-   "lock": "locked",
+   "lock": "off",
    "src": [
     "server",
     "server"
    ],
    "rate": [
-    0.96149,
+    1,
     1
    ],
    "beats": {
-    "n": 19,
-    "matched": 1.0,
-    "median_ms": -22.9,
-    "p90_abs_ms": 22.9
+    "n": 20,
+    "matched": 0.3,
+    "median_ms": -60.0,
+    "p90_abs_ms": 90.0
    },
    "hits": {
-    "n": 304,
+    "n": 302,
     "matched": 1.0,
-    "median_ms": 0.6,
-    "p90_abs_ms": 12.9
+    "median_ms": -1.0,
+    "p90_abs_ms": 13.0
    },
    "bars": {
     "n": 5,
-    "matched": 1.0,
-    "median_ms": -22.9,
-    "p90_abs_ms": 22.9
+    "matched": 0.0,
+    "median_ms": null,
+    "p90_abs_ms": null
    },
    "ibi_ms": [
-    480.0,
+    460.0,
     480.0
    ]
   },
@@ -1019,44 +1343,63 @@
     3,
     1.0
    ],
-   "start_s": 0.31,
+   "start_s": 0.16,
+   "plan": {
+    "score": 52,
+    "s": 1,
+    "cents": 0,
+    "Hn": 0.781,
+    "O": 1,
+    "aBar": 0,
+    "bBar": 0,
+    "cleanB": true,
+    "lead": 0
+   },
+   "semis": [
+    0,
+    0
+   ],
+   "vox": [
+    "vocal",
+    "inst"
+   ],
    "bm": [
     true,
     true
    ],
    "sync": [
-    true,
-    true
+    false,
+    false
    ],
-   "lock": "locked",
+   "lock": "off",
    "src": [
     "server",
     "server"
    ],
    "rate": [
-    1.01233,
+    1,
     1
    ],
    "beats": {
-    "n": 25,
-    "matched": 1.0,
-    "median_ms": 2.9,
-    "p90_abs_ms": 17.1
+    "n": 13,
+    "matched": 0.154,
+    "median_ms": -80.0,
+    "p90_abs_ms": 80.0
    },
    "hits": {
-    "n": 303,
+    "n": 308,
     "matched": 1.0,
-    "median_ms": -1.1,
-    "p90_abs_ms": 12.9
+    "median_ms": 3.0,
+    "p90_abs_ms": 13.0
    },
    "bars": {
-    "n": 4,
-    "matched": 1.0,
-    "median_ms": -7.1,
-    "p90_abs_ms": 17.1
+    "n": 5,
+    "matched": 0.0,
+    "median_ms": null,
+    "p90_abs_ms": null
    },
    "ibi_ms": [
-    340.0,
+    700.0,
     340.0
    ]
   },
@@ -1077,7 +1420,26 @@
     1,
     1.0
    ],
-   "start_s": 0.59,
+   "start_s": 0.35,
+   "plan": {
+    "score": 84,
+    "s": 2,
+    "cents": 15,
+    "Hn": 1,
+    "O": 0,
+    "aBar": 0,
+    "bBar": 0,
+    "cleanB": false,
+    "lead": 0
+   },
+   "semis": [
+    2.15,
+    0
+   ],
+   "vox": [
+    "vocal",
+    "off"
+   ],
    "bm": [
     true,
     true
@@ -1096,25 +1458,25 @@
     1
    ],
    "beats": {
-    "n": 16,
-    "matched": 1.0,
-    "median_ms": 2.9,
-    "p90_abs_ms": 12.9
+    "n": 20,
+    "matched": 0.3,
+    "median_ms": 0.0,
+    "p90_abs_ms": 0.0
    },
    "hits": {
-    "n": 298,
+    "n": 313,
     "matched": 1.0,
-    "median_ms": -0.1,
-    "p90_abs_ms": 12.9
+    "median_ms": 0.0,
+    "p90_abs_ms": 13.0
    },
    "bars": {
     "n": 4,
-    "matched": 1.0,
-    "median_ms": 2.9,
-    "p90_abs_ms": 16.9
+    "matched": 0.25,
+    "median_ms": 0.0,
+    "p90_abs_ms": 0.0
    },
    "ibi_ms": [
-    540.0,
+    520.0,
     520.0
    ]
   },
@@ -1135,44 +1497,63 @@
     3,
     1.0
    ],
-   "start_s": 1.35,
+   "start_s": 0.15,
+   "plan": {
+    "score": 43,
+    "s": 1,
+    "cents": 0,
+    "Hn": 0.763,
+    "O": 0.75,
+    "aBar": 3,
+    "bBar": 3,
+    "cleanB": true,
+    "lead": 2
+   },
+   "semis": [
+    0,
+    0
+   ],
+   "vox": [
+    "vocal",
+    "inst"
+   ],
    "bm": [
     true,
     true
    ],
    "sync": [
-    true,
-    true
+    false,
+    false
    ],
-   "lock": "locked",
+   "lock": "off",
    "src": [
     "server",
     "server"
    ],
    "rate": [
-    1.05126,
+    1,
     1
    ],
    "beats": {
-    "n": 16,
-    "matched": 1.0,
-    "median_ms": -2.9,
-    "p90_abs_ms": 20.0
+    "n": 14,
+    "matched": 0.571,
+    "median_ms": -0.0,
+    "p90_abs_ms": 100.0
    },
    "hits": {
-    "n": 303,
+    "n": 298,
     "matched": 1.0,
-    "median_ms": 0.1,
-    "p90_abs_ms": 13.1
+    "median_ms": -1.5,
+    "p90_abs_ms": 14.0
    },
    "bars": {
     "n": 4,
-    "matched": 1.0,
-    "median_ms": -2.9,
-    "p90_abs_ms": 16.9
+    "matched": 0.5,
+    "median_ms": 10.0,
+    "p90_abs_ms": 58.0
    },
    "ibi_ms": [
-    580.0,
+    620.0,
     580.0
    ]
   },
@@ -1193,44 +1574,63 @@
     3,
     1.0
    ],
-   "start_s": 0.4,
+   "start_s": 0.16,
+   "plan": {
+    "score": 69,
+    "s": 1,
+    "cents": 0,
+    "Hn": 0.849,
+    "O": 0.13,
+    "aBar": 5,
+    "bBar": 1,
+    "cleanB": false,
+    "lead": 1
+   },
+   "semis": [
+    0,
+    0
+   ],
+   "vox": [
+    "vocal",
+    "off"
+   ],
    "bm": [
     true,
     true
    ],
    "sync": [
-    true,
-    true
+    false,
+    false
    ],
-   "lock": "locked",
+   "lock": "off",
    "src": [
     "server",
     "server"
    ],
    "rate": [
-    0.95732,
+    1,
     1
    ],
    "beats": {
-    "n": 24,
-    "matched": 0.792,
-    "median_ms": 2.9,
-    "p90_abs_ms": 57.1
+    "n": 21,
+    "matched": 0.619,
+    "median_ms": -20.0,
+    "p90_abs_ms": 100.0
    },
    "hits": {
-    "n": 301,
+    "n": 293,
     "matched": 1.0,
-    "median_ms": -3.1,
-    "p90_abs_ms": 13.1
+    "median_ms": 1.0,
+    "p90_abs_ms": 13.0
    },
    "bars": {
     "n": 7,
-    "matched": 0.571,
-    "median_ms": -7.1,
-    "p90_abs_ms": 45.1
+    "matched": 0.429,
+    "median_ms": -20.0,
+    "p90_abs_ms": 76.0
    },
    "ibi_ms": [
-    440.0,
+    420.0,
     440.0
    ]
   },
@@ -1251,44 +1651,63 @@
     1,
     1.0
    ],
-   "start_s": 0.3,
+   "start_s": 0.16,
+   "plan": {
+    "score": 68,
+    "s": 2,
+    "cents": 0,
+    "Hn": 0.98,
+    "O": 0.71,
+    "aBar": 4,
+    "bBar": 6,
+    "cleanB": true,
+    "lead": 2
+   },
+   "semis": [
+    0,
+    0
+   ],
+   "vox": [
+    "vocal",
+    "inst"
+   ],
    "bm": [
     true,
     true
    ],
    "sync": [
-    true,
-    true
+    false,
+    false
    ],
-   "lock": "locked",
+   "lock": "off",
    "src": [
     "server",
     "server"
    ],
    "rate": [
-    1.03564,
+    1,
     1
    ],
    "beats": {
-    "n": 17,
-    "matched": 1.0,
-    "median_ms": 22.9,
-    "p90_abs_ms": 42.9
+    "n": 16,
+    "matched": 0.625,
+    "median_ms": 30.0,
+    "p90_abs_ms": 102.0
    },
    "hits": {
-    "n": 302,
+    "n": 299,
     "matched": 1.0,
-    "median_ms": 1.9,
-    "p90_abs_ms": 13.1
+    "median_ms": 0.0,
+    "p90_abs_ms": 12.0
    },
    "bars": {
-    "n": 5,
-    "matched": 1.0,
-    "median_ms": 22.9,
-    "p90_abs_ms": 34.9
+    "n": 4,
+    "matched": 0.5,
+    "median_ms": 0.0,
+    "p90_abs_ms": 40.0
    },
    "ibi_ms": [
-    520.0,
+    540.0,
     520.0
    ]
   },
@@ -1309,16 +1728,35 @@
     0,
     1.0
    ],
-   "start_s": 0.15,
+   "start_s": 0.17,
+   "plan": {
+    "score": 69,
+    "s": 2,
+    "cents": 0,
+    "Hn": 0.735,
+    "O": 0,
+    "aBar": 4,
+    "bBar": 4,
+    "cleanB": true,
+    "lead": 2
+   },
+   "semis": [
+    0,
+    0
+   ],
+   "vox": [
+    "vocal",
+    "inst"
+   ],
    "bm": [
     true,
     true
    ],
    "sync": [
-    true,
-    true
+    false,
+    false
    ],
-   "lock": "locked",
+   "lock": "off",
    "src": [
     "server",
     "server"
@@ -1329,21 +1767,21 @@
    ],
    "beats": {
     "n": 15,
-    "matched": 1.0,
-    "median_ms": -2.9,
-    "p90_abs_ms": 22.9
+    "matched": 0.0,
+    "median_ms": null,
+    "p90_abs_ms": null
    },
    "hits": {
-    "n": 305,
+    "n": 299,
     "matched": 1.0,
-    "median_ms": 0.1,
-    "p90_abs_ms": 13.6
+    "median_ms": 2.0,
+    "p90_abs_ms": 13.0
    },
    "bars": {
     "n": 4,
-    "matched": 1.0,
-    "median_ms": -2.9,
-    "p90_abs_ms": 21.2
+    "matched": 0.0,
+    "median_ms": null,
+    "p90_abs_ms": null
    },
    "ibi_ms": [
     600.0,
@@ -1367,44 +1805,63 @@
     2,
     0.832
    ],
-   "start_s": 0.93,
+   "start_s": 0.21,
+   "plan": {
+    "score": 64,
+    "s": -1,
+    "cents": -17,
+    "Hn": 0.801,
+    "O": 0,
+    "aBar": 10,
+    "bBar": 0,
+    "cleanB": false,
+    "lead": 0
+   },
+   "semis": [
+    0,
+    0
+   ],
+   "vox": [
+    "vocal",
+    "off"
+   ],
    "bm": [
     true,
     true
    ],
    "sync": [
-    true,
-    true
+    false,
+    false
    ],
-   "lock": "locked",
+   "lock": "off",
    "src": [
     "server",
     "server"
    ],
    "rate": [
-    0.94206,
+    1,
     1
    ],
    "beats": {
     "n": 20,
-    "matched": 1.0,
-    "median_ms": -2.9,
-    "p90_abs_ms": 22.9
+    "matched": 0.4,
+    "median_ms": 0.0,
+    "p90_abs_ms": 86.0
    },
    "hits": {
-    "n": 309,
+    "n": 311,
     "matched": 0.994,
-    "median_ms": 1.1,
-    "p90_abs_ms": 15.1
+    "median_ms": 0.0,
+    "p90_abs_ms": 17.0
    },
    "bars": {
     "n": 5,
-    "matched": 0.6,
-    "median_ms": -2.9,
-    "p90_abs_ms": 2.9
+    "matched": 0.4,
+    "median_ms": 10.0,
+    "p90_abs_ms": 58.0
    },
    "ibi_ms": [
-    460.0,
+    440.0,
     460.0
    ]
   },
@@ -1425,7 +1882,26 @@
     3,
     0.981
    ],
-   "start_s": 0.87,
+   "start_s": 0.29,
+   "plan": {
+    "score": 73,
+    "s": -1,
+    "cents": 0,
+    "Hn": 0.993,
+    "O": 0.44,
+    "aBar": 0,
+    "bBar": 4,
+    "cleanB": true,
+    "lead": 2
+   },
+   "semis": [
+    -1,
+    0
+   ],
+   "vox": [
+    "vocal",
+    "inst"
+   ],
    "bm": [
     true,
     true
@@ -1446,17 +1922,17 @@
    "beats": {
     "n": 16,
     "matched": 1.0,
-    "median_ms": 2.9,
-    "p90_abs_ms": 22.9
+    "median_ms": 20.0,
+    "p90_abs_ms": 20.0
    },
    "hits": {
-    "n": 308,
+    "n": 307,
     "matched": 1.0,
-    "median_ms": -1.1,
-    "p90_abs_ms": 13.9
+    "median_ms": -1.0,
+    "p90_abs_ms": 13.0
    },
    "bars": {
-    "n": 4,
+    "n": 6,
     "matched": 0.0,
     "median_ms": null,
     "p90_abs_ms": null
@@ -1483,44 +1959,63 @@
     0,
     0.547
    ],
-   "start_s": 1.04,
+   "start_s": 0.16,
+   "plan": {
+    "score": 0,
+    "s": 0,
+    "cents": 41,
+    "Hn": 0.096,
+    "O": 0,
+    "aBar": 0,
+    "bBar": 8,
+    "cleanB": false,
+    "lead": 2
+   },
+   "semis": [
+    0,
+    0
+   ],
+   "vox": [
+    "vocal",
+    "off"
+   ],
    "bm": [
     true,
     true
    ],
    "sync": [
-    true,
-    true
+    false,
+    false
    ],
-   "lock": "locked",
+   "lock": "off",
    "src": [
     "server",
     "server"
    ],
    "rate": [
-    1.04694,
+    1,
     1
    ],
    "beats": {
-    "n": 21,
-    "matched": 1.0,
-    "median_ms": 39.7,
-    "p90_abs_ms": 39.7
+    "n": 19,
+    "matched": 0.421,
+    "median_ms": -20.0,
+    "p90_abs_ms": 80.0
    },
    "hits": {
-    "n": 311,
-    "matched": 0.997,
-    "median_ms": -0.3,
-    "p90_abs_ms": 12.7
+    "n": 314,
+    "matched": 1.0,
+    "median_ms": 0.0,
+    "p90_abs_ms": 13.0
    },
    "bars": {
-    "n": 19,
-    "matched": 0.158,
-    "median_ms": 39.7,
-    "p90_abs_ms": 39.7
+    "n": 15,
+    "matched": 0.133,
+    "median_ms": -40.0,
+    "p90_abs_ms": 72.0
    },
    "ibi_ms": [
-    440.0,
+    460.0,
     440.0
    ]
   },
@@ -1541,7 +2036,26 @@
     1,
     0.598
    ],
-   "start_s": 0.75,
+   "start_s": 0.3,
+   "plan": {
+    "score": 73,
+    "s": -1,
+    "cents": 0,
+    "Hn": 0.889,
+    "O": 0,
+    "aBar": 3,
+    "bBar": 0,
+    "cleanB": false,
+    "lead": 0
+   },
+   "semis": [
+    -1,
+    0
+   ],
+   "vox": [
+    "vocal",
+    "off"
+   ],
    "bm": [
     true,
     true
@@ -1560,22 +2074,22 @@
     1
    ],
    "beats": {
-    "n": 17,
-    "matched": 0.941,
+    "n": 16,
+    "matched": 1.0,
     "median_ms": 0.0,
     "p90_abs_ms": 20.0
    },
    "hits": {
-    "n": 260,
+    "n": 276,
     "matched": 1.0,
-    "median_ms": -2.0,
-    "p90_abs_ms": 12.0
+    "median_ms": 1.0,
+    "p90_abs_ms": 13.5
    },
    "bars": {
-    "n": 8,
+    "n": 5,
     "matched": 1.0,
     "median_ms": 0.0,
-    "p90_abs_ms": 20.0
+    "p90_abs_ms": 0.0
    },
    "ibi_ms": [
     540.0,
@@ -1599,7 +2113,26 @@
     3,
     1.0
    ],
-   "start_s": 0.21,
+   "start_s": 0.28,
+   "plan": {
+    "score": 78,
+    "s": 0,
+    "cents": 0,
+    "Hn": 1,
+    "O": 0.77,
+    "aBar": 0,
+    "bBar": 3,
+    "cleanB": true,
+    "lead": 2
+   },
+   "semis": [
+    0,
+    0
+   ],
+   "vox": [
+    "vocal",
+    "inst"
+   ],
    "bm": [
     true,
     true
@@ -1618,25 +2151,26 @@
     1
    ],
    "beats": {
-    "n": 21,
-    "matched": 0.81,
-    "median_ms": -2.9,
-    "p90_abs_ms": 22.9
+    "n": 16,
+    "matched": 0.938,
+    "median_ms": -0.0,
+    "p90_abs_ms": 40.0,
+    "from": "beat deck"
    },
    "hits": {
-    "n": 299,
+    "n": 297,
     "matched": 1.0,
-    "median_ms": -1.9,
-    "p90_abs_ms": 13.9
+    "median_ms": 2.0,
+    "p90_abs_ms": 14.0
    },
    "bars": {
-    "n": 8,
-    "matched": 0.5,
-    "median_ms": -2.9,
-    "p90_abs_ms": 21.2
+    "n": 7,
+    "matched": 0.429,
+    "median_ms": 0.0,
+    "p90_abs_ms": 32.0
    },
    "ibi_ms": [
-    550.0,
+    290.0,
     580.0
    ]
   },
@@ -1657,7 +2191,26 @@
     0,
     1.0
    ],
-   "start_s": 0.26,
+   "start_s": 0.22,
+   "plan": {
+    "score": 84,
+    "s": -2,
+    "cents": 0,
+    "Hn": 1,
+    "O": 0,
+    "aBar": 0,
+    "bBar": 4,
+    "cleanB": true,
+    "lead": 2
+   },
+   "semis": [
+    -2,
+    0
+   ],
+   "vox": [
+    "vocal",
+    "inst"
+   ],
    "bm": [
     true,
     true
@@ -1678,20 +2231,20 @@
    "beats": {
     "n": 15,
     "matched": 1.0,
-    "median_ms": -22.9,
-    "p90_abs_ms": 22.9
+    "median_ms": 0.0,
+    "p90_abs_ms": 20.0
    },
    "hits": {
-    "n": 305,
+    "n": 303,
     "matched": 1.0,
-    "median_ms": 0.1,
-    "p90_abs_ms": 13.6
+    "median_ms": 1.0,
+    "p90_abs_ms": 13.0
    },
    "bars": {
-    "n": 7,
-    "matched": 0.714,
-    "median_ms": -2.9,
-    "p90_abs_ms": 22.9
+    "n": 6,
+    "matched": 0.333,
+    "median_ms": 0.0,
+    "p90_abs_ms": 0.0
    },
    "ibi_ms": [
     600.0,
@@ -1715,44 +2268,63 @@
     0,
     0.56
    ],
-   "start_s": 0.87,
+   "start_s": 0.19,
+   "plan": {
+    "score": 59,
+    "s": 1,
+    "cents": 0,
+    "Hn": 0.632,
+    "O": 0,
+    "aBar": 8,
+    "bBar": 0,
+    "cleanB": false,
+    "lead": 0
+   },
+   "semis": [
+    0,
+    0
+   ],
+   "vox": [
+    "vocal",
+    "off"
+   ],
    "bm": [
     true,
     true
    ],
    "sync": [
-    true,
-    true
+    false,
+    false
    ],
-   "lock": "locked",
+   "lock": "off",
    "src": [
     "server",
     "server"
    ],
    "rate": [
-    1.01701,
+    1,
     1
    ],
    "beats": {
-    "n": 13,
-    "matched": 1.0,
-    "median_ms": 2.9,
-    "p90_abs_ms": 21.7
+    "n": 9,
+    "matched": 0.111,
+    "median_ms": 100.0,
+    "p90_abs_ms": 100.0
    },
    "hits": {
-    "n": 306,
-    "matched": 1.0,
-    "median_ms": -1.1,
-    "p90_abs_ms": 15.1
+    "n": 280,
+    "matched": 0.989,
+    "median_ms": 0.0,
+    "p90_abs_ms": 16.0
    },
    "bars": {
-    "n": 5,
+    "n": 4,
     "matched": 0.0,
     "median_ms": null,
     "p90_abs_ms": null
    },
    "ibi_ms": [
-    500.0,
+    1020.0,
     500.0
    ]
   }
