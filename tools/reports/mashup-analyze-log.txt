@@ -1,240 +1,117 @@
 == parts/alog-0.txt
-shard 0: 60 of 1200 previews
-titles to listen for: 1186
+shard 0: 2 of 28 previews
+titles to listen for: 1206
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 whisper model: large-v3-turbo
-whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
-shard 0: 10/60 (291s) last: key 8B e vocal share None tuning None pitch 50 | titles heard so far 28
-shard 0: 20/60 (588s) last: key 11B e vocal share 0.559 tuning -7 pitch 61 | titles heard so far 64
-shard 0: 30/60 (851s) last: key 9B e vocal share 0.081 tuning -6 pitch 67 | titles heard so far 87
-shard 0: 40/60 (1098s) last: key 11B e vocal share 0.921 tuning 6 pitch 66 | titles heard so far 109
-shard 0: 50/60 (1337s) last: key 2A e vocal share 0.119 tuning 7 pitch 63 | titles heard so far 123
-shard 0: 60/60 (1625s) last: key 4B e vocal share 0.419 tuning -8 pitch 63 | titles heard so far 162
+shard 0: 2/2 (36s) last: key 3A e vocal share 0.0 tuning -1 pitch 82 | titles heard so far 3
 == parts/alog-1.txt
-shard 1: 60 of 1200 previews
-titles to listen for: 1186
+shard 1: 2 of 28 previews
+titles to listen for: 1206
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 whisper model: large-v3-turbo
-whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
-shard 1: 10/60 (403s) last: key 3B e vocal share 0.678 tuning 3 pitch 58 | titles heard so far 13
-shard 1: 20/60 (775s) last: key 9B e vocal share 0.0 tuning -1 pitch 62 | titles heard so far 40
-shard 1: 30/60 (1103s) last: key 9B e vocal share 0.0 tuning -1 pitch 69 | titles heard so far 66
-shard 1: 40/60 (1487s) last: key 6A e vocal share None tuning None pitch 54 | titles heard so far 93
-shard 1: 50/60 (1913s) last: key 12A e vocal share 0.169 tuning -3 pitch 64 | titles heard so far 121
-shard 1: 60/60 (2307s) last: key 11A e vocal share 0.081 tuning -20 pitch 64 | titles heard so far 160
+shard 1: 2/2 (71s) last: key 1A e vocal share 0.0 tuning 2 pitch 54 | titles heard so far 6
 == parts/alog-10.txt
-shard 10: 60 of 1200 previews
-titles to listen for: 1186
+shard 10: 1 of 28 previews
+titles to listen for: 1206
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 whisper model: large-v3-turbo
-whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
-shard 10: 10/60 (455s) last: key 3B e vocal share 0.812 tuning -1 pitch 61 | titles heard so far 22
-shard 10: 20/60 (885s) last: key 5A e vocal share 0.262 tuning -6 pitch 60 | titles heard so far 49
-shard 10: 30/60 (1289s) last: key 8A e vocal share 0.0 tuning -19 pitch 56 | titles heard so far 78
-shard 10: 40/60 (1787s) last: key 12B e vocal share 0.82 tuning 0 pitch 61 | titles heard so far 96
-shard 10: 50/60 (2241s) last: key 8A e vocal share 0.262 tuning 2 pitch 60 | titles heard so far 110
-shard 10: 60/60 (2629s) last: key 5B e vocal share 0.667 tuning 2 pitch 63 | titles heard so far 143
+shard 10: 1/1 (43s) last: key 6A e vocal share 0.296 tuning -2 pitch 58 | titles heard so far 0
 == parts/alog-11.txt
-shard 11: 60 of 1200 previews
-titles to listen for: 1186
+shard 11: 1 of 28 previews
+titles to listen for: 1206
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
-whisper model: large-v3-turbo
-whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
-shard 11: 10/60 (315s) last: key 1B e vocal share 0.5 tuning -1 pitch 54 | titles heard so far 16
-shard 11: 20/60 (624s) last: key 5A e vocal share 0.583 tuning 2 pitch 60 | titles heard so far 43
-shard 11: 30/60 (889s) last: key 2B e vocal share 0.015 tuning -8 pitch 62 | titles heard so far 70
-shard 11: 40/60 (1205s) last: key 6A e vocal share 0.0 tuning 0 pitch 58 | titles heard so far 89
-shard 11: 50/60 (1513s) last: key 2B e vocal share 0.417 tuning 4 pitch 56 | titles heard so far 103
-shard 11: 60/60 (1786s) last: key 8B e vocal share 0.0 tuning -2 pitch 58 | titles heard so far 136
+shard 11: 1/1 (23s) last: key 2B e vocal share 0.0 tuning -12 pitch 57 | titles heard so far 0
 == parts/alog-12.txt
-shard 12: 60 of 1200 previews
-titles to listen for: 1186
+shard 12: 1 of 28 previews
+titles to listen for: 1206
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 whisper model: large-v3-turbo
-whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
-shard 12: 10/60 (184s) last: key 12A e vocal share 0.318 tuning 0 pitch 59 | titles heard so far 21
-shard 12: 20/60 (394s) last: key 4A e vocal share 0.098 tuning -15 pitch 56 | titles heard so far 56
-shard 12: 30/60 (561s) last: key 7B e vocal share 0.118 tuning 2 pitch 60 | titles heard so far 88
-shard 12: 40/60 (754s) last: key 10B e vocal share 0.921 tuning -2 pitch 62 | titles heard so far 115
-shard 12: 50/60 (941s) last: key 1A e vocal share 0.61 tuning -3 pitch 61 | titles heard so far 134
-shard 12: 60/60 (1144s) last: key 8A e vocal share 0.0 tuning 33 pitch 71 | titles heard so far 172
+shard 12: 1/1 (54s) last: key 3A e vocal share None tuning None pitch 55 | titles heard so far 2
 == parts/alog-13.txt
-shard 13: 60 of 1200 previews
-titles to listen for: 1186
+shard 13: 1 of 28 previews
+titles to listen for: 1206
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
-whisper model: large-v3-turbo
-whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
-shard 13: 10/60 (382s) last: key 4B e vocal share 0.771 tuning 0 pitch 53 | titles heard so far 19
-shard 13: 20/60 (817s) last: key 4B e vocal share 0.2 tuning -11 pitch 56 | titles heard so far 45
-shard 13: 30/60 (1213s) last: key 10A e vocal share 0.016 tuning -4 pitch 61 | titles heard so far 71
-shard 13: 40/60 (1622s) last: key 12A e vocal share 0.85 tuning -2 pitch 65 | titles heard so far 90
-shard 13: 50/60 (2067s) last: key 5A e vocal share 0.367 tuning -10 pitch 60 | titles heard so far 102
-shard 13: 60/60 (2411s) last: key 5A e vocal share 0.323 tuning 1 pitch 62 | titles heard so far 135
+shard 13: 1/1 (14s) last: key 6B e vocal share 0.019 tuning 13 pitch 58 | titles heard so far 0
 == parts/alog-14.txt
-shard 14: 60 of 1200 previews
-titles to listen for: 1186
+shard 14: 1 of 28 previews
+titles to listen for: 1206
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 whisper model: large-v3-turbo
-whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
-shard 14: 10/60 (310s) last: key 8A e vocal share 0.574 tuning -1 pitch 59 | titles heard so far 27
-shard 14: 20/60 (644s) last: key 6A e vocal share 0.435 tuning -10 pitch 62 | titles heard so far 55
-shard 14: 30/60 (910s) last: key 4A e vocal share 0.0 tuning -2 pitch 53 | titles heard so far 73
-shard 14: 40/60 (1199s) last: key 7B e vocal share 0.83 tuning -3 pitch 65 | titles heard so far 97
-shard 14: 50/60 (1483s) last: key 10A e vocal share 0.414 tuning -8 pitch 57 | titles heard so far 105
-shard 14: 60/60 (1767s) last: key 5A e vocal share 0.017 tuning 6 pitch 70 | titles heard so far 138
+shard 14: 1/1 (43s) last: key 4A e vocal share 0.037 tuning 19 pitch 41 | titles heard so far 0
 == parts/alog-15.txt
-shard 15: 60 of 1200 previews
-titles to listen for: 1186
+shard 15: 1 of 28 previews
+titles to listen for: 1206
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
-whisper model: large-v3-turbo
-whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
-shard 15: 10/60 (289s) last: key 1A e vocal share 0.33 tuning -3 pitch 56 | titles heard so far 21
-shard 15: 20/60 (572s) last: key 1A e vocal share 0.306 tuning -20 pitch 60 | titles heard so far 44
-shard 15: 30/60 (788s) last: key 9B e vocal share 0.0 tuning -2 pitch 68 | titles heard so far 72
-shard 15: 40/60 (1071s) last: key 4B e vocal share None tuning None pitch 58 | titles heard so far 101
-shard 15: 50/60 (1405s) last: key 8A e vocal share 0.814 tuning -1 pitch 62 | titles heard so far 124
-shard 15: 60/60 (1656s) last: key 1A e vocal share 0.258 tuning 26 pitch 61 | titles heard so far 157
+shard 15: 1/1 (24s) last: key 5B e vocal share 0.0 tuning -6 pitch 63 | titles heard so far 0
 == parts/alog-16.txt
-shard 16: 60 of 1200 previews
-titles to listen for: 1186
+shard 16: 1 of 28 previews
+titles to listen for: 1206
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 whisper model: large-v3-turbo
-whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
-shard 16: 10/60 (291s) last: key 7B e vocal share 0.816 tuning 3 pitch 57 | titles heard so far 22
-shard 16: 20/60 (609s) last: key 8A e vocal share 0.524 tuning 2 pitch 62 | titles heard so far 45
-shard 16: 30/60 (869s) last: key 2A e vocal share 0.246 tuning 0 pitch 61 | titles heard so far 72
-shard 16: 40/60 (1172s) last: key 2B e vocal share 0.729 tuning -2 pitch 66 | titles heard so far 86
-shard 16: 50/60 (1463s) last: key 12A e vocal share 0.667 tuning -2 pitch 56 | titles heard so far 106
-shard 16: 60/60 (1753s) last: key 3B e vocal share 0.082 tuning -8 pitch 58 | titles heard so far 144
+shard 16: 1/1 (49s) last: key 4A e vocal share 0.759 tuning 1 pitch 60 | titles heard so far 0
 == parts/alog-17.txt
-shard 17: 60 of 1200 previews
-titles to listen for: 1186
+shard 17: 1 of 28 previews
+titles to listen for: 1206
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 whisper model: large-v3-turbo
-whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
-shard 17: 10/60 (433s) last: key 8B e vocal share 0.673 tuning 1 pitch 52 | titles heard so far 19
-shard 17: 20/60 (906s) last: key 5B e vocal share 0.333 tuning -22 pitch 56 | titles heard so far 36
-shard 17: 30/60 (1289s) last: key 12B e vocal share 0.0 tuning -16 pitch 52 | titles heard so far 59
-shard 17: 40/60 (1693s) last: key 8B e vocal share 0.661 tuning 3 pitch 60 | titles heard so far 73
-shard 17: 50/60 (2099s) last: key 8A e vocal share 0.0 tuning 8 pitch 57 | titles heard so far 92
-shard 17: 60/60 (2467s) last: key 7A e vocal share 0.103 tuning -5 pitch 55 | titles heard so far 134
+shard 17: 1/1 (57s) last: key 7A e vocal share 0.63 tuning 1 pitch 53 | titles heard so far 0
 == parts/alog-18.txt
-shard 18: 60 of 1200 previews
-titles to listen for: 1186
+shard 18: 1 of 28 previews
+titles to listen for: 1206
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 whisper model: large-v3-turbo
-whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
-shard 18: 10/60 (202s) last: key 7A e vocal share 0.8 tuning 1 pitch 55 | titles heard so far 10
-shard 18: 20/60 (461s) last: key 11B e vocal share 0.033 tuning -33 pitch 67 | titles heard so far 45
-shard 18: 30/60 (624s) last: key 4A e vocal share 0.0 tuning 3 pitch 60 | titles heard so far 69
-shard 18: 40/60 (806s) last: key 11B e vocal share 0.845 tuning 0 pitch 57 | titles heard so far 85
-shard 18: 50/60 (1021s) last: key 4A e vocal share 0.684 tuning -3 pitch 64 | titles heard so far 95
-shard 18: 60/60 (1226s) last: key 6A e vocal share 0.113 tuning -9 pitch 60 | titles heard so far 116
+shard 18: 1/1 (46s) last: key 5A e vocal share 0.037 tuning -14 pitch 61 | titles heard so far 1
 == parts/alog-19.txt
-shard 19: 60 of 1200 previews
-titles to listen for: 1186
+shard 19: 1 of 28 previews
+titles to listen for: 1206
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 whisper model: large-v3-turbo
-whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
-shard 19: 10/60 (179s) last: key 5B e vocal share 0.805 tuning 1 pitch 55 | titles heard so far 15
-shard 19: 20/60 (374s) last: key 4A e vocal share 0.103 tuning 0 pitch 68 | titles heard so far 31
-shard 19: 30/60 (536s) last: key 4A e vocal share 0.0 tuning -12 pitch 57 | titles heard so far 56
-shard 19: 40/60 (742s) last: key 2B e vocal share 0.9 tuning 2 pitch 58 | titles heard so far 88
-shard 19: 50/60 (929s) last: key 4B e vocal share 0.417 tuning -43 pitch 56 | titles heard so far 98
-shard 19: 60/60 (1084s) last: key 8A e vocal share 0.0 tuning -9 pitch 50 | titles heard so far 137
+shard 19: 1/1 (42s) last: key 2A e vocal share 0.527 tuning -14 pitch 59 | titles heard so far 0
 == parts/alog-2.txt
-shard 2: 60 of 1200 previews
-titles to listen for: 1186
+shard 2: 2 of 28 previews
+titles to listen for: 1206
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 whisper model: large-v3-turbo
-whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
-shard 2: 10/60 (343s) last: key 4A e vocal share 1.0 tuning 3 pitch 56 | titles heard so far 23
-shard 2: 20/60 (779s) last: key 2A e vocal share 0.065 tuning 6 pitch 56 | titles heard so far 48
-shard 2: 30/60 (1139s) last: key 4A e vocal share 0.048 tuning -9 pitch 65 | titles heard so far 71
-shard 2: 40/60 (1608s) last: key 4A e vocal share 0.528 tuning 2 pitch 67 | titles heard so far 82
-shard 2: 50/60 (2108s) last: key 11A e vocal share 0.368 tuning 0 pitch 59 | titles heard so far 103
-shard 2: 60/60 (2453s) last: key 6A e vocal share 0.0 tuning 0 pitch 62 | titles heard so far 136
+shard 2: 2/2 (71s) last: key 3A e vocal share 0.0 tuning 5 pitch 61 | titles heard so far 4
 == parts/alog-3.txt
-shard 3: 60 of 1200 previews
-titles to listen for: 1186
+shard 3: 2 of 28 previews
+titles to listen for: 1206
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 whisper model: large-v3-turbo
-whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
-shard 3: 10/60 (374s) last: key 9A e vocal share 0.852 tuning -3 pitch 55 | titles heard so far 17
-shard 3: 20/60 (776s) last: key 9A e vocal share 0.361 tuning -2 pitch 55 | titles heard so far 28
-shard 3: 30/60 (1189s) last: key 7A e vocal share 0.672 tuning -4 pitch 60 | titles heard so far 64
-shard 3: 40/60 (1608s) last: key 1B e vocal share 0.54 tuning 2 pitch 59 | titles heard so far 88
-shard 3: 50/60 (1931s) last: key 12B e vocal share 0.0 tuning -8 pitch 77 | titles heard so far 93
-shard 3: 60/60 (2303s) last: key 7B e vocal share 0.403 tuning -1 pitch 53 | titles heard so far 118
+shard 3: 2/2 (55s) last: key 8A e vocal share 0.0 tuning -32 pitch 57 | titles heard so far 2
 == parts/alog-4.txt
-shard 4: 60 of 1200 previews
-titles to listen for: 1186
+shard 4: 2 of 28 previews
+titles to listen for: 1206
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 whisper model: large-v3-turbo
-whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
-shard 4: 10/60 (449s) last: key 6A e vocal share 0.8 tuning 0 pitch 61 | titles heard so far 20
-shard 4: 20/60 (968s) last: key 3A e vocal share 0.554 tuning 0 pitch 63 | titles heard so far 38
-shard 4: 30/60 (1344s) last: key 7A e vocal share None tuning None pitch 50 | titles heard so far 70
-shard 4: 40/60 (1762s) last: key 6A e vocal share 0.441 tuning 1 pitch 58 | titles heard so far 94
-shard 4: 50/60 (2180s) last: key 4B e vocal share 0.0 tuning 0 pitch 56 | titles heard so far 113
-shard 4: 60/60 (2547s) last: key 7B e vocal share 0.565 tuning -3 pitch 57 | titles heard so far 143
+shard 4: 2/2 (87s) last: key 7B e vocal share 0.476 tuning -9 pitch 72 | titles heard so far 2
 == parts/alog-5.txt
-shard 5: 60 of 1200 previews
-titles to listen for: 1186
+shard 5: 2 of 28 previews
+titles to listen for: 1206
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 whisper model: large-v3-turbo
-whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
-shard 5: 10/60 (396s) last: key 12A e vocal share 0.63 tuning -19 pitch 59 | titles heard so far 14
-shard 5: 20/60 (854s) last: key 11A e vocal share 0.579 tuning -1 pitch 66 | titles heard so far 33
-shard 5: 30/60 (1259s) last: key 2A e vocal share 0.377 tuning -13 pitch 63 | titles heard so far 65
-shard 5: 40/60 (1679s) last: key 4A e vocal share 0.159 tuning 10 pitch 42 | titles heard so far 81
-shard 5: 50/60 (2057s) last: key 3B e vocal share 0.0 tuning -5 pitch 63 | titles heard so far 99
-shard 5: 60/60 (2396s) last: key 12B e vocal share 0.016 tuning -9 pitch 51 | titles heard so far 123
+shard 5: 2/2 (49s) last: key 4A e vocal share 0.0 tuning -30 pitch 53 | titles heard so far 4
 == parts/alog-6.txt
-shard 6: 60 of 1200 previews
-titles to listen for: 1186
+shard 6: 2 of 28 previews
+titles to listen for: 1206
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 whisper model: large-v3-turbo
-whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
-shard 6: 10/60 (424s) last: key 12A e vocal share 0.955 tuning -4 pitch 59 | titles heard so far 21
-shard 6: 20/60 (877s) last: key 11A e vocal share 0.883 tuning 0 pitch 59 | titles heard so far 52
-shard 6: 30/60 (1291s) last: key 7A e vocal share 0.603 tuning -16 pitch 48 | titles heard so far 82
-shard 6: 40/60 (1684s) last: key 7B e vocal share 0.767 tuning -4 pitch 65 | titles heard so far 101
-shard 6: 50/60 (2121s) last: key 9A e vocal share 0.917 tuning -3 pitch 54 | titles heard so far 117
-shard 6: 60/60 (2470s) last: key 9A e vocal share 0.885 tuning -30 pitch 60 | titles heard so far 142
+shard 6: 2/2 (42s) last: key 2A e vocal share 0.0 tuning -4 pitch 58 | titles heard so far 3
 == parts/alog-7.txt
-shard 7: 60 of 1200 previews
-titles to listen for: 1186
+shard 7: 2 of 28 previews
+titles to listen for: 1206
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 whisper model: large-v3-turbo
-whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
-shard 7: 10/60 (307s) last: key 9B e vocal share 0.926 tuning 0 pitch 57 | titles heard so far 23
-shard 7: 20/60 (678s) last: key 9A e vocal share 0.828 tuning 3 pitch 62 | titles heard so far 40
-shard 7: 30/60 (970s) last: key 6B e vocal share 0.6 tuning -16 pitch 63 | titles heard so far 71
-shard 7: 40/60 (1233s) last: key 6A e vocal share 0.612 tuning 2 pitch 49 | titles heard so far 89
-shard 7: 50/60 (1533s) last: key 7B e vocal share 0.0 tuning -1 pitch 69 | titles heard so far 108
-shard 7: 60/60 (1839s) last: key 7A e vocal share 0.441 tuning -12 pitch 58 | titles heard so far 142
+shard 7: 2/2 (88s) last: key 4B e vocal share 0.0 tuning -15 pitch 77 | titles heard so far 0
 == parts/alog-8.txt
-shard 8: 60 of 1200 previews
-titles to listen for: 1186
+shard 8: 1 of 28 previews
+titles to listen for: 1206
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 whisper model: large-v3-turbo
-whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
-shard 8: 10/60 (368s) last: key 8A e vocal share 0.564 tuning 2 pitch 57 | titles heard so far 18
-shard 8: 20/60 (874s) last: key 11A e vocal share 0.625 tuning -5 pitch 59 | titles heard so far 49
-shard 8: 30/60 (1245s) last: key 3A e vocal share 0.0 tuning -38 pitch 62 | titles heard so far 64
-shard 8: 40/60 (1650s) last: key 10B e vocal share 0.0 tuning -2 pitch 62 | titles heard so far 84
-shard 8: 50/60 (2125s) last: key 9A e vocal share 0.617 tuning -4 pitch 64 | titles heard so far 91
-shard 8: 60/60 (2519s) last: key 8A e vocal share 0.0 tuning 12 pitch 51 | titles heard so far 120
+shard 8: 1/1 (45s) last: key 11A e vocal share 0.245 tuning -2 pitch 56 | titles heard so far 0
 == parts/alog-9.txt
-shard 9: 60 of 1200 previews
-titles to listen for: 1186
+shard 9: 1 of 28 previews
+titles to listen for: 1206
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 whisper model: large-v3-turbo
-whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
-shard 9: 10/60 (299s) last: key 9B e vocal share 0.945 tuning -3 pitch 57 | titles heard so far 17
-shard 9: 20/60 (607s) last: key 10B e vocal share 0.52 tuning 3 pitch 62 | titles heard so far 50
-shard 9: 30/60 (845s) last: key 9B e vocal share 0.0 tuning 41 pitch 67 | titles heard so far 84
-shard 9: 40/60 (1154s) last: key 11A e vocal share 1.0 tuning 0 pitch 60 | titles heard so far 101
-shard 9: 50/60 (1441s) last: key 5A e vocal share 0.172 tuning -1 pitch 66 | titles heard so far 121
-shard 9: 60/60 (1745s) last: key 9B e vocal share 0.476 tuning -9 pitch 66 | titles heard so far 157
+shard 9: 1/1 (49s) last: key 6A e vocal share 0.821 tuning -2 pitch 58 | titles heard so far 2
