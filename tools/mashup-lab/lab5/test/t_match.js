@@ -21,12 +21,14 @@ const T = {
   Bsame: track({ bars: prog, vlev: new Array(12).fill(0) }),
   Btone: track({ bars: [Bm, G2, D, A, Bm, G2, D, A, Bm, G2, D, A], vlev: new Array(12).fill(0), key: "10A" }),
   Bfar: track({ bars: [CSm, A, [4, 8, 11], [11, 3, 6], CSm, A, [4, 8, 11], [11, 3, 6], CSm, A, [4, 8, 11], [11, 3, 6]], vlev: new Array(12).fill(0), key: "12A" }),
+  Bwt: track({ bars: [[0, 4, 8], [2, 6, 10], [0, 4, 8], [2, 6, 10], [0, 4, 8], [2, 6, 10], [0, 4, 8], [2, 6, 10], [0, 4, 8], [2, 6, 10], [0, 4, 8], [2, 6, 10]], vlev: new Array(12).fill(0), key: "1A" }),
   Bsing: track({ bars: prog, vlev: new Array(12).fill(8) }),
   Bfast: track({ bars: prog, vlev: new Array(12).fill(0), bpm: 150 }),
   Btuned: track({ bars: prog, vlev: new Array(12).fill(0), tc: -30 }),
 };
 const an = {}, li = {}, beats = {}, previews = {};
-for (const k in T) { const key = k + " | x"; an[key] = T[k].an; li[key] = T[k].li; beats[key] = T[k].beat; previews[key] = { p: "u" }; }
+for (const k in T) { const key = k + " | x"; an[key] = T[k].an; li[key] = T[k].li; beats[key] = T[k].beat; previews[key] = { p: "u/" + k }; }
+an["Dup | x"] = T.Bsame.an; li["Dup | x"] = T.Bsame.li; beats["Dup | x"] = T.Bsame.beat; previews["Dup | x"] = { p: "u/Bsame" };   /* two catalog entries on one preview */
 M.seed({ an, li, beats, previews, hash: () => "x" });
 const t = k => ({ t: k, a: "x" });
 const same = M.pair(t("V"), t("Bsame")), tone = M.pair(t("V"), t("Btone")), far = M.pair(t("V"), t("Bfar")), sing = M.pair(t("V"), t("Bsing")), fast = M.pair(t("V"), t("Bfast")), tuned = M.pair(t("V"), t("Btuned"));
@@ -34,11 +36,14 @@ chk("same chords: no shift, high score", same.ok && same.s === 0 && same.score >
 chk("same chords: the vocal starts where it starts singing (bar 2), over the same chords of B (bar 2)", same.aBar === 2 && same.bBar === 2, [same.aBar, same.bBar]);
 chk("B a whole tone up: vocal shifted +2", tone.ok && tone.s === 2, [tone.score, tone.s, tone.Hn]);
 chk("shifted pair scores below the unshifted one", tone.score < same.score, [tone.score, same.score]);
-chk("B a major third away (out of ±2): low score", far.ok && far.score < tone.score - 8, [far.score, far.s, far.Hn]);
+chk("B a major third away: the vocal moves a semitone into the neighbouring key (Camelot ±1), below the same-key pair", far.ok && far.s === -1 && far.score < same.score, [far.score, far.s, far.Hn]);
+const wt = M.pair(t("V"), t("Bwt"));
+chk("B's harmony fits no shift (whole-tone chords): low score", wt.ok && wt.score < 60 && wt.score < tone.score - 25, [wt.score, wt.s, wt.Hn]);
 chk("B sings in the same bars: clash lowers the score, B gets cleaned", sing.ok && sing.score <= same.score - 15 && sing.plan.cleanB === true && same.plan.cleanB === false, [sing.score, sing.O]);
 chk("tempo 124 vs 150: not a pair", fast && fast.ok === false && fast.why === "tempo", fast);
 chk("B tuned 30 cents low: the vocal follows (−0.3 semitone)", tuned.ok && tuned.cents === -30 && Math.abs(tuned.plan.semis + .3) < 1e-9, [tuned.cents, tuned.plan.semis]);
 chk("plan times: entry at the bar lines (t0 + 4 beats per bar)", Math.abs(same.plan.aAt - (.5 + 4 * 2 * 60 / 124)) < 1e-9 && same.plan.lead >= 0, same.plan);
+chk("two tracks on the same preview are never a pair", (r => r && r.ok === false && r.why === "same")(M.pair(t("Bsame"), t("Dup"))), M.pair(t("Bsame"), t("Dup")));
 chk("Hebrew reasons", Array.isArray(same.why) && same.why.length >= 2 && /[א-ת]/.test(same.why[0]), same.why);
 const t0 = Date.now(); for (let i = 0; i < 2000; i++) { M.seed({ an, li, beats, previews, hash: () => "x" }); M.pair(t("V"), t("Btone")); } const ms = (Date.now() - t0) / 2000;
 chk("fast enough (< 0.4 ms per pair here)", ms < .4, ms);
