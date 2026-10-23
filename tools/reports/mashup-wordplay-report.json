@@ -2,28 +2,31 @@
  "summary": {
   "links": 55,
   "played": 55,
-  "beat_measured": 51,
-  "beat_continues": 41,
-  "share_beat_continues": 0.804,
-  "beat_median_abs_ms": 12.1,
+  "beat_measured": 53,
+  "beat_continues": 43,
+  "share_beat_continues": 0.811,
+  "beat_median_abs_ms": 9.4,
   "placeA_median_abs_ms": 0.0,
-  "placeB_median_abs_ms": 1.0,
-  "placeB_within_8ms": 0.968,
+  "placeB_median_abs_ms": 2.0,
+  "placeB_within_8ms": 0.906,
   "both_words_found": 34,
-  "word_gap_median_s": 0.73,
+  "word_gap_median_s": 1.69,
   "styles": {
-   "cut": 3,
-   "echo": 51,
-   "blend": 1,
+   "cut": 2,
+   "echo": 53,
+   "blend": 0,
    "drop": 0
   },
   "synced": 52,
   "ride": 13,
-  "key_shifted": 19,
+  "key_shifted": 20,
+  "on_one_measured": 49,
+  "share_on_one": 0.327,
+  "first_downbeat_median_abs_ms": 20.0,
   "page": {
    "previews": 1220,
-   "beats": 1200,
-   "analysis": 1200,
+   "beats": 1220,
+   "analysis": 1221,
    "words": 94,
    "engine": "6.4"
   },
@@ -43,12 +46,14 @@
     "rel": "ear",
     "style": "echo",
     "aStart": 14.325,
-    "cut": 25.192,
-    "bPos": 4.484,
+    "cut": 25.664,
+    "aOut": 25.178,
+    "bPos": 11.801,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 16,
-    "gap": 0.196,
-    "onBeat": "beat",
+    "gap": 1.127,
+    "onBeat": "1",
     "foundA": true,
     "foundB": true,
     "drop": false,
@@ -56,15 +61,21 @@
     "keyB": "8B",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
+   "latency_ms": 185.8,
    "placeA_ms": 0,
    "placeB_ms": 2,
    "beat": {
     "n": 16,
-    "median_ms": -2.1,
-    "p90_abs_ms": 11.5,
-    "ibi_A_ms": 472.4,
+    "median_ms": -3.1,
+    "p90_abs_ms": 10.6,
+    "ibi_A_ms": 472.5,
     "ibi_B_ms": 480.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 0.2,
+    "median_ms": -100.0,
+    "first_ms": -40.0
    }
   },
   {
@@ -79,13 +90,15 @@
     "semis": 0,
     "rel": null,
     "style": "echo",
-    "aStart": 11.745,
-    "cut": 21.745,
-    "bPos": 19.531,
+    "aStart": 0.316,
+    "cut": 6.03,
+    "aOut": 5.539,
+    "bPos": 19.018,
+    "bFade": 0.012,
     "pre": 0,
-    "tail": 9.327,
-    "gap": 0.734,
-    "onBeat": "beat",
+    "tail": 9.803,
+    "gap": 1.485,
+    "onBeat": "1",
     "foundA": true,
     "foundB": true,
     "drop": false,
@@ -93,15 +106,21 @@
     "keyB": "7A",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
+   "latency_ms": 185.8,
    "placeA_ms": 0,
-   "placeB_ms": 0,
+   "placeB_ms": 1,
    "beat": {
-    "n": 15,
-    "median_ms": -7.0,
-    "p90_abs_ms": 18.0,
-    "ibi_A_ms": 476.5,
+    "n": 16,
+    "median_ms": 13.6,
+    "p90_abs_ms": 24.2,
+    "ibi_A_ms": 474.9,
     "ibi_B_ms": 480.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 0.6,
+    "median_ms": -60.0,
+    "first_ms": -20.0
    }
   },
   {
@@ -118,10 +137,12 @@
     "style": "echo",
     "aStart": 3.841,
     "cut": 13.518,
-    "bPos": 12.369,
+    "aOut": 13.518,
+    "bPos": 11.446,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 16,
-    "gap": 0.664,
+    "gap": 1.632,
     "onBeat": "1",
     "foundA": true,
     "foundB": true,
@@ -130,15 +151,21 @@
     "keyB": "6B",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
     "n": 16,
-    "median_ms": 12.1,
-    "p90_abs_ms": 21.2,
-    "ibi_A_ms": 483.6,
+    "median_ms": 23.5,
+    "p90_abs_ms": 31.1,
+    "ibi_A_ms": 483.1,
     "ibi_B_ms": 480.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 0.6,
+    "median_ms": 60.0,
+    "first_ms": 20.0
    }
   },
   {
@@ -148,34 +175,42 @@
    "plan": {
     "synced": true,
     "ride": null,
-    "q": 1,
+    "q": 2,
     "r": 1.017,
-    "semis": 0,
-    "rel": null,
+    "semis": 1,
+    "rel": "ear",
     "style": "echo",
     "aStart": 4.128,
-    "cut": 12.894,
-    "bPos": 8.351,
+    "cut": 14.917,
+    "aOut": 12.85,
+    "bPos": 7.332,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 16,
-    "gap": 0.839,
-    "onBeat": "beat",
+    "gap": 2.187,
+    "onBeat": "1",
     "foundA": true,
     "foundB": false,
     "drop": false,
     "keyA": "10B",
-    "keyB": null,
-    "keySrc": null
+    "keyB": "4A",
+    "keySrc": "measured"
    },
    "latency_ms": 185.8,
    "placeA_ms": 0,
-   "placeB_ms": 2,
+   "placeB_ms": -2,
    "beat": {
     "n": 11,
-    "median_ms": 8.9,
-    "p90_abs_ms": 20.9,
-    "ibi_A_ms": 674.0,
+    "median_ms": 1.6,
+    "p90_abs_ms": 10.7,
+    "ibi_A_ms": 673.5,
     "ibi_B_ms": 680.0
+   },
+   "bars": {
+    "n": 4,
+    "on_one": 0.5,
+    "median_ms": -70.0,
+    "first_ms": -20.0
    }
   },
   {
@@ -186,8 +221,8 @@
     "synced": true,
     "ride": {
      "r0": 0.769,
-     "i1": 10.269,
-     "i2": 25.042,
+     "i1": 9.807,
+     "i2": 24.581,
      "hold": 4,
      "bars": 8
     },
@@ -197,12 +232,14 @@
     "rel": "ear",
     "style": "echo",
     "aStart": 5.839,
-    "cut": 13.641,
-    "bPos": 2.882,
+    "cut": 13.041,
+    "aOut": 12.87,
+    "bPos": 2.421,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 16,
-    "gap": 0.408,
-    "onBeat": "beat",
+    "gap": 1.148,
+    "onBeat": "1",
     "foundA": true,
     "foundB": true,
     "drop": false,
@@ -218,7 +255,13 @@
     "median_ms": 0.0,
     "p90_abs_ms": 20.0,
     "ibi_A_ms": 600.0,
-    "ibi_B_ms": 610.0
+    "ibi_B_ms": 600.0
+   },
+   "bars": {
+    "n": 4,
+    "on_one": 1.0,
+    "median_ms": 20.0,
+    "first_ms": 20.0
    }
   },
   {
@@ -233,13 +276,15 @@
     "semis": 0,
     "rel": null,
     "style": "echo",
-    "aStart": 4.952,
-    "cut": 11.827,
-    "bPos": 15.232,
+    "aStart": 2.452,
+    "cut": 7.452,
+    "aOut": 7.35,
+    "bPos": 14.632,
+    "bFade": 0.012,
     "pre": 0,
-    "tail": 14.937,
-    "gap": 1.007,
-    "onBeat": "beat",
+    "tail": 15.562,
+    "gap": 1.397,
+    "onBeat": "1",
     "foundA": true,
     "foundB": true,
     "drop": false,
@@ -249,14 +294,15 @@
    },
    "latency_ms": 185.8,
    "placeA_ms": 0,
-   "placeB_ms": null,
+   "placeB_ms": -2,
    "beat": {
     "n": 12,
-    "median_ms": -0.7,
-    "p90_abs_ms": 11.9,
-    "ibi_A_ms": 624.7,
+    "median_ms": 3.0,
+    "p90_abs_ms": 12.6,
+    "ibi_A_ms": 624.6,
     "ibi_B_ms": 620.0
-   }
+   },
+   "bars": null
   },
   {
    "link": "Just Dance | Lady Gaga, Colby O'Donis || היא רק רוצה לרקוד | עומר אדם, משה פרץ",
@@ -271,12 +317,14 @@
     "rel": "ear-ok",
     "style": "echo",
     "aStart": 14.391,
-    "cut": 25.486,
+    "cut": 26.494,
+    "aOut": 25.09,
     "bPos": 2.319,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 16,
-    "gap": 1.019,
-    "onBeat": "3",
+    "gap": 2.027,
+    "onBeat": "1",
     "foundA": true,
     "foundB": true,
     "drop": false,
@@ -289,10 +337,16 @@
    "placeB_ms": -1,
    "beat": {
     "n": 15,
-    "median_ms": 7.6,
-    "p90_abs_ms": 15.6,
-    "ibi_A_ms": 504.3,
+    "median_ms": 11.4,
+    "p90_abs_ms": 22.3,
+    "ibi_A_ms": 504.2,
     "ibi_B_ms": 500.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 0.6,
+    "median_ms": 60.0,
+    "first_ms": 0.0
    }
   },
   {
@@ -309,10 +363,12 @@
     "style": "echo",
     "aStart": 2.709,
     "cut": 12.626,
-    "bPos": 5.859,
+    "aOut": 12.626,
+    "bPos": 4.892,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 16,
-    "gap": 0.973,
+    "gap": 1.965,
     "onBeat": "1",
     "foundA": false,
     "foundB": true,
@@ -326,10 +382,16 @@
    "placeB_ms": null,
    "beat": {
     "n": 16,
-    "median_ms": -25.5,
-    "p90_abs_ms": 43.2,
-    "ibi_A_ms": 496.1,
+    "median_ms": -19.6,
+    "p90_abs_ms": 31.8,
+    "ibi_A_ms": 495.7,
     "ibi_B_ms": 500.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 0.4,
+    "median_ms": -80.0,
+    "first_ms": -40.0
    }
   },
   {
@@ -340,8 +402,8 @@
     "synced": true,
     "ride": {
      "r0": 1.129,
-     "i1": 11.016,
-     "i2": 26.499,
+     "i1": 11.5,
+     "i2": 26.983,
      "hold": 4,
      "bars": 8
     },
@@ -351,12 +413,14 @@
     "rel": "ear",
     "style": "echo",
     "aStart": 1.518,
-    "cut": 7.946,
-    "bPos": 3.275,
+    "cut": 8.375,
+    "aOut": 7.767,
+    "bPos": 3.759,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 16,
-    "gap": 0.714,
-    "onBeat": "beat",
+    "gap": 0.715,
+    "onBeat": "1",
     "foundA": true,
     "foundB": false,
     "drop": false,
@@ -369,10 +433,16 @@
    "placeB_ms": 0,
    "beat": {
     "n": 16,
-    "median_ms": -36.3,
-    "p90_abs_ms": 179.7,
-    "ibi_A_ms": 389.7,
+    "median_ms": -6.1,
+    "p90_abs_ms": 117.9,
+    "ibi_A_ms": 296.8,
     "ibi_B_ms": 420.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 0.0,
+    "median_ms": 100.0,
+    "first_ms": 420.0
    }
   },
   {
@@ -394,12 +464,14 @@
     "rel": "ear",
     "style": "echo",
     "aStart": 0,
-    "cut": 2.253,
+    "cut": 3.536,
+    "aOut": 2.07,
     "bPos": 11.335,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 16,
-    "gap": 0.402,
-    "onBeat": "3",
+    "gap": 1.685,
+    "onBeat": "1",
     "foundA": true,
     "foundB": true,
     "drop": false,
@@ -407,10 +479,11 @@
     "keyB": "10A",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
+   "latency_ms": 185.8,
    "placeA_ms": 0,
    "placeB_ms": null,
-   "beat": null
+   "beat": null,
+   "bars": null
   },
   {
    "link": "Rain On Me | Lady Gaga, Ariana Grande || ברוך מוריד הגשם | פאר טסי",
@@ -424,12 +497,14 @@
     "semis": 1,
     "rel": "ear",
     "style": "echo",
-    "aStart": 2.04,
-    "cut": 13.751,
+    "aStart": 0.088,
+    "cut": 11.799,
+    "aOut": 10.97,
     "bPos": 0.58,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 16,
-    "gap": 0.754,
+    "gap": 1.763,
     "onBeat": "1",
     "foundA": true,
     "foundB": true,
@@ -443,10 +518,16 @@
    "placeB_ms": null,
    "beat": {
     "n": 16,
-    "median_ms": 13.0,
-    "p90_abs_ms": 25.1,
-    "ibi_A_ms": 488.1,
+    "median_ms": 3.8,
+    "p90_abs_ms": 15.0,
+    "ibi_A_ms": 488.5,
     "ibi_B_ms": 480.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 0.2,
+    "median_ms": 100.0,
+    "first_ms": 40.0
    }
   },
   {
@@ -463,10 +544,12 @@
     "style": "echo",
     "aStart": 3.111,
     "cut": 12.486,
-    "bPos": 15.831,
+    "aOut": 12.486,
+    "bPos": 0.352,
+    "bFade": 0.012,
     "pre": 0,
-    "tail": 13.319,
-    "gap": 0.859,
+    "tail": 16,
+    "gap": 0.761,
     "onBeat": "1",
     "foundA": true,
     "foundB": true,
@@ -480,10 +563,16 @@
    "placeB_ms": 1,
    "beat": {
     "n": 17,
-    "median_ms": -15.2,
-    "p90_abs_ms": 26.1,
-    "ibi_A_ms": 469.2,
+    "median_ms": -11.3,
+    "p90_abs_ms": 19.1,
+    "ibi_A_ms": 469.0,
     "ibi_B_ms": 460.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 0.2,
+    "median_ms": 100.0,
+    "first_ms": 40.0
    }
   },
   {
@@ -500,7 +589,9 @@
     "style": "cut",
     "aStart": 1.475,
     "cut": 12.906,
+    "aOut": 12.906,
     "bPos": 2.141,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 16,
     "gap": 0.727,
@@ -512,15 +603,21 @@
     "keyB": "10A",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
+   "latency_ms": 185.8,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
     "n": 14,
-    "median_ms": -14.6,
-    "p90_abs_ms": 22.5,
-    "ibi_A_ms": 571.7,
+    "median_ms": -7.3,
+    "p90_abs_ms": 13.7,
+    "ibi_A_ms": 571.2,
     "ibi_B_ms": 580.0
+   },
+   "bars": {
+    "n": 4,
+    "on_one": 0.25,
+    "median_ms": -100.0,
+    "first_ms": -40.0
    }
   },
   {
@@ -536,12 +633,14 @@
     "rel": "ear-ok",
     "style": "echo",
     "aStart": 0.925,
-    "cut": 11.308,
-    "bPos": 21.788,
+    "cut": 12.828,
+    "aOut": 11.33,
+    "bPos": 20.282,
+    "bFade": 0.012,
     "pre": 0,
-    "tail": 7.485,
-    "gap": 0.148,
-    "onBeat": "off",
+    "tail": 8.942,
+    "gap": 3.124,
+    "onBeat": "1",
     "foundA": true,
     "foundB": true,
     "drop": false,
@@ -549,15 +648,21 @@
     "keyB": "8B",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
-   "placeA_ms": -9,
+   "latency_ms": 185.8,
+   "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
-    "n": 11,
-    "median_ms": -30.3,
-    "p90_abs_ms": 36.6,
-    "ibi_A_ms": 495.2,
+    "n": 14,
+    "median_ms": -29.4,
+    "p90_abs_ms": 38.3,
+    "ibi_A_ms": 495.7,
     "ibi_B_ms": 500.0
+   },
+   "bars": {
+    "n": 4,
+    "on_one": 0.5,
+    "median_ms": -70.0,
+    "first_ms": -40.0
    }
   },
   {
@@ -574,10 +679,12 @@
     "style": "echo",
     "aStart": 12.251,
     "cut": 22.088,
-    "bPos": 16.787,
+    "aOut": 22.03,
+    "bPos": 15.864,
+    "bFade": 0.012,
     "pre": 0,
-    "tail": 13.625,
-    "gap": 0.501,
+    "tail": 14.609,
+    "gap": 1.165,
     "onBeat": "1",
     "foundA": true,
     "foundB": true,
@@ -586,7 +693,7 @@
     "keyB": "4A",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
+   "latency_ms": 185.8,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
@@ -595,6 +702,12 @@
     "p90_abs_ms": 26.6,
     "ibi_A_ms": 491.5,
     "ibi_B_ms": 500.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 0.4,
+    "median_ms": -80.0,
+    "first_ms": -20.0
    }
   },
   {
@@ -605,10 +718,10 @@
     "synced": true,
     "ride": {
      "r0": 0.864,
-     "i1": 18.331,
+     "i1": 22.802,
      "i2": 29.629,
-     "hold": 4,
-     "bars": 6
+     "hold": 2,
+     "bars": 4
     },
     "q": 1,
     "r": 0.864,
@@ -616,12 +729,14 @@
     "rel": null,
     "style": "echo",
     "aStart": 8.073,
-    "cut": 19.453,
-    "bPos": 11.177,
+    "cut": 20.487,
+    "aOut": 19.2,
+    "bPos": 19.225,
+    "bFade": 0.012,
     "pre": 0,
-    "tail": 16,
-    "gap": 0.908,
-    "onBeat": "3",
+    "tail": 11.365,
+    "gap": 2.142,
+    "onBeat": "1",
     "foundA": true,
     "foundB": true,
     "drop": false,
@@ -629,15 +744,21 @@
     "keyB": "4A",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
+   "latency_ms": 185.8,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
-    "n": 15,
-    "median_ms": -13.9,
-    "p90_abs_ms": 25.5,
+    "n": 7,
+    "median_ms": -5.6,
+    "p90_abs_ms": 42.2,
     "ibi_A_ms": 516.8,
     "ibi_B_ms": 520.0
+   },
+   "bars": {
+    "n": 2,
+    "on_one": 1.0,
+    "median_ms": -30.0,
+    "first_ms": -20.0
    }
   },
   {
@@ -648,10 +769,10 @@
     "synced": true,
     "ride": {
      "r0": 1.216,
-     "i1": 19.475,
+     "i1": 18.342,
      "i2": 29.629,
      "hold": 4,
-     "bars": 4
+     "bars": 5
     },
     "q": 1,
     "r": 1.216,
@@ -660,10 +781,12 @@
     "style": "echo",
     "aStart": 13.057,
     "cut": 22.363,
-    "bPos": 10.418,
+    "aOut": 21.956,
+    "bPos": 9.285,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 16,
-    "gap": 0.887,
+    "gap": 1.818,
     "onBeat": "1",
     "foundA": true,
     "foundB": true,
@@ -672,15 +795,21 @@
     "keyB": "10A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
     "n": 16,
-    "median_ms": 18.3,
-    "p90_abs_ms": 27.0,
-    "ibi_A_ms": 464.7,
+    "median_ms": 8.1,
+    "p90_abs_ms": 15.8,
+    "ibi_A_ms": 465.2,
     "ibi_B_ms": 460.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 0.4,
+    "median_ms": 80.0,
+    "first_ms": 20.0
    }
   },
   {
@@ -696,12 +825,14 @@
     "rel": "ear",
     "style": "echo",
     "aStart": 14.033,
-    "cut": 22.431,
-    "bPos": 14.638,
+    "cut": 23.631,
+    "aOut": 21.95,
+    "bPos": 16.26,
+    "bFade": 0.012,
     "pre": 0,
-    "tail": 14.937,
-    "gap": 0.734,
-    "onBeat": "3",
+    "tail": 13.316,
+    "gap": 3.042,
+    "onBeat": "1",
     "foundA": true,
     "foundB": true,
     "drop": false,
@@ -714,10 +845,16 @@
    "placeB_ms": 0,
    "beat": {
     "n": 9,
-    "median_ms": 164.3,
-    "p90_abs_ms": 171.7,
-    "ibi_A_ms": 540.3,
-    "ibi_B_ms": 820.0
+    "median_ms": 216.5,
+    "p90_abs_ms": 308.6,
+    "ibi_A_ms": 778.7,
+    "ibi_B_ms": 810.0
+   },
+   "bars": {
+    "n": 3,
+    "on_one": 1.0,
+    "median_ms": 20.0,
+    "first_ms": -20.0
    }
   },
   {
@@ -733,12 +870,14 @@
     "rel": null,
     "style": "echo",
     "aStart": 0,
-    "cut": 3.704,
-    "bPos": 8.324,
+    "cut": 4.166,
+    "aOut": 3.765,
+    "bPos": 6.86,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 16,
-    "gap": 0.268,
-    "onBeat": "beat",
+    "gap": 2.114,
+    "onBeat": "1",
     "foundA": true,
     "foundB": true,
     "drop": false,
@@ -752,10 +891,11 @@
    "beat": {
     "n": 17,
     "median_ms": 20.0,
-    "p90_abs_ms": 40.0,
+    "p90_abs_ms": 28.0,
     "ibi_A_ms": 460.0,
     "ibi_B_ms": 460.0
-   }
+   },
+   "bars": null
   },
   {
    "link": "השעות הקטנות | שילה בן סעדון || No Sleep | Martin Garrix, Bonn",
@@ -765,7 +905,7 @@
     "synced": true,
     "ride": {
      "r0": 1.265,
-     "i1": 15.77,
+     "i1": 16.239,
      "i2": 29.675,
      "hold": 2,
      "bars": 7
@@ -776,12 +916,14 @@
     "rel": "ear",
     "style": "echo",
     "aStart": 0,
-    "cut": 4.351,
-    "bPos": 12.021,
+    "cut": 4.721,
+    "aOut": 4.283,
+    "bPos": 12.49,
+    "bFade": 0.012,
     "pre": 0,
-    "tail": 15.142,
+    "tail": 14.728,
     "gap": 1.163,
-    "onBeat": "beat",
+    "onBeat": "1",
     "foundA": true,
     "foundB": true,
     "drop": false,
@@ -793,11 +935,17 @@
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
-    "n": 8,
-    "median_ms": -10.2,
-    "p90_abs_ms": 16.0,
-    "ibi_A_ms": 370.7,
+    "n": 7,
+    "median_ms": -4.1,
+    "p90_abs_ms": 19.6,
+    "ibi_A_ms": 369.6,
     "ibi_B_ms": 380.0
+   },
+   "bars": {
+    "n": 2,
+    "on_one": 0.5,
+    "median_ms": 70.0,
+    "first_ms": 60.0
    }
   },
   {
@@ -820,7 +968,9 @@
     "style": "echo",
     "aStart": 13.912,
     "cut": 24.196,
+    "aOut": 24.196,
     "bPos": 1.951,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 16,
     "gap": 1.609,
@@ -832,7 +982,7 @@
     "keyB": "11B",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
+   "latency_ms": 185.8,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
@@ -841,6 +991,12 @@
     "p90_abs_ms": 27.9,
     "ibi_A_ms": 856.5,
     "ibi_B_ms": 860.0
+   },
+   "bars": {
+    "n": 4,
+    "on_one": 0.75,
+    "median_ms": -30.0,
+    "first_ms": -20.0
    }
   },
   {
@@ -851,7 +1007,7 @@
     "synced": true,
     "ride": {
      "r0": 0.795,
-     "i1": 23.345,
+     "i1": 22.849,
      "i2": 29.676,
      "hold": 4,
      "bars": 3
@@ -862,12 +1018,14 @@
     "rel": "ear",
     "style": "echo",
     "aStart": 5.35,
-    "cut": 14.724,
-    "bPos": 15.401,
+    "cut": 15.349,
+    "aOut": 14.49,
+    "bPos": 14.904,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 16,
-    "gap": 0.756,
-    "onBeat": "beat",
+    "gap": 2.006,
+    "onBeat": "1",
     "foundA": true,
     "foundB": true,
     "drop": false,
@@ -880,10 +1038,16 @@
    "placeB_ms": -2,
    "beat": {
     "n": 12,
-    "median_ms": -27.1,
-    "p90_abs_ms": 33.9,
-    "ibi_A_ms": 625.8,
+    "median_ms": -17.9,
+    "p90_abs_ms": 25.0,
+    "ibi_A_ms": 625.3,
     "ibi_B_ms": 620.0
+   },
+   "bars": {
+    "n": 4,
+    "on_one": 1.0,
+    "median_ms": 10.0,
+    "first_ms": 0.0
    }
   },
   {
@@ -900,7 +1064,9 @@
     "style": "echo",
     "aStart": 4.747,
     "cut": 19.748,
+    "aOut": 19.52,
     "bPos": 14.289,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 14.812,
     "gap": 1.26,
@@ -917,10 +1083,16 @@
    "placeB_ms": 2,
    "beat": {
     "n": 17,
-    "median_ms": 22.1,
-    "p90_abs_ms": 126.8,
-    "ibi_A_ms": 453.0,
+    "median_ms": -75.1,
+    "p90_abs_ms": 185.3,
+    "ibi_A_ms": 486.6,
     "ibi_B_ms": 460.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 0.2,
+    "median_ms": -160.0,
+    "first_ms": -60.0
    }
   },
   {
@@ -936,12 +1108,14 @@
     "rel": "ear-ok",
     "style": "echo",
     "aStart": 1.828,
-    "cut": 8.296,
+    "cut": 9.22,
+    "aOut": 8.076,
     "bPos": 18.761,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 10.638,
-    "gap": 0.779,
-    "onBeat": "3",
+    "gap": 1.703,
+    "onBeat": "1",
     "foundA": true,
     "foundB": true,
     "drop": false,
@@ -954,10 +1128,16 @@
    "placeB_ms": null,
    "beat": {
     "n": 17,
-    "median_ms": 36.7,
-    "p90_abs_ms": 37.1,
-    "ibi_A_ms": 460.1,
+    "median_ms": 22.4,
+    "p90_abs_ms": 40.8,
+    "ibi_A_ms": 460.4,
     "ibi_B_ms": 460.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 1.0,
+    "median_ms": 20.0,
+    "first_ms": -0.0
    }
   },
   {
@@ -968,7 +1148,7 @@
     "synced": true,
     "ride": {
      "r0": 1.223,
-     "i1": 15.194,
+     "i1": 15.255,
      "i2": 29.676,
      "hold": 4,
      "bars": 7
@@ -979,12 +1159,14 @@
     "rel": "ear-ok",
     "style": "echo",
     "aStart": 3.43,
-    "cut": 12.977,
-    "bPos": 7.371,
+    "cut": 13.027,
+    "aOut": 13.027,
+    "bPos": 7.432,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 16,
     "gap": 0.05,
-    "onBeat": "off",
+    "onBeat": "1",
     "foundA": false,
     "foundB": false,
     "drop": false,
@@ -992,15 +1174,21 @@
     "keyB": "11A",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
+   "latency_ms": 185.8,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
-    "n": 15,
-    "median_ms": -12.1,
-    "p90_abs_ms": 13.4,
-    "ibi_A_ms": 399.9,
+    "n": 16,
+    "median_ms": 0.0,
+    "p90_abs_ms": 0.0,
+    "ibi_A_ms": 400.0,
     "ibi_B_ms": 400.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 1.0,
+    "median_ms": 0.0,
+    "first_ms": 0.0
    }
   },
   {
@@ -1011,10 +1199,10 @@
     "synced": true,
     "ride": {
      "r0": 0.755,
-     "i1": 25.012,
+     "i1": 24.794,
      "i2": 29.676,
      "hold": 4,
-     "bars": 2
+     "bars": 3
     },
     "q": 1,
     "r": 0.755,
@@ -1022,12 +1210,14 @@
     "rel": null,
     "style": "echo",
     "aStart": 0,
-    "cut": 2.015,
-    "bPos": 17.392,
+    "cut": 2.989,
+    "aOut": 2.02,
+    "bPos": 17.175,
+    "bFade": 0.012,
     "pre": 0,
-    "tail": 15.307,
-    "gap": 0.165,
-    "onBeat": "off",
+    "tail": 15.555,
+    "gap": 1.427,
+    "onBeat": "1",
     "foundA": true,
     "foundB": true,
     "drop": false,
@@ -1036,9 +1226,10 @@
     "keySrc": "measured"
    },
    "latency_ms": 259.8,
-   "placeA_ms": -33,
+   "placeA_ms": -22,
    "placeB_ms": null,
-   "beat": null
+   "beat": null,
+   "bars": null
   },
   {
    "link": "2AM (Extended) | MK || Watch The Sunrise | Chris Lake, Aatig",
@@ -1052,13 +1243,15 @@
     "semis": 0,
     "rel": "ear",
     "style": "echo",
-    "aStart": 3.996,
-    "cut": 14.24,
-    "bPos": 7.347,
+    "aStart": 0.094,
+    "cut": 5.947,
+    "aOut": 5.947,
+    "bPos": 7.823,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 16,
-    "gap": 0.838,
-    "onBeat": "beat",
+    "gap": 0.017,
+    "onBeat": "1",
     "foundA": true,
     "foundB": false,
     "drop": false,
@@ -1071,10 +1264,16 @@
    "placeB_ms": 0,
    "beat": {
     "n": 16,
-    "median_ms": -11.8,
-    "p90_abs_ms": 23.4,
-    "ibi_A_ms": 487.9,
+    "median_ms": 3.7,
+    "p90_abs_ms": 16.9,
+    "ibi_A_ms": 487.0,
     "ibi_B_ms": 480.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 0.6,
+    "median_ms": 60.0,
+    "first_ms": 0.0
    }
   },
   {
@@ -1090,12 +1289,14 @@
     "rel": null,
     "style": "echo",
     "aStart": 7.138,
-    "cut": 18.289,
-    "bPos": 7.987,
+    "cut": 19.882,
+    "aOut": 17.98,
+    "bPos": 8.681,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 16,
-    "gap": 1.123,
-    "onBeat": "beat",
+    "gap": 2.022,
+    "onBeat": "1",
     "foundA": true,
     "foundB": false,
     "drop": false,
@@ -1103,15 +1304,21 @@
     "keyB": "12A",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
+   "latency_ms": 185.8,
    "placeA_ms": 0,
    "placeB_ms": 0,
    "beat": {
-    "n": 12,
-    "median_ms": -50.0,
-    "p90_abs_ms": 81.2,
-    "ibi_A_ms": 530.5,
+    "n": 10,
+    "median_ms": 66.4,
+    "p90_abs_ms": 182.7,
+    "ibi_A_ms": 529.9,
     "ibi_B_ms": 540.0
+   },
+   "bars": {
+    "n": 4,
+    "on_one": 0.5,
+    "median_ms": 50.0,
+    "first_ms": 40.0
    }
   },
   {
@@ -1122,10 +1329,10 @@
     "synced": true,
     "ride": {
      "r0": 0.884,
-     "i1": 23.737,
+     "i1": 24.025,
      "i2": 29.652,
      "hold": 2,
-     "bars": 3
+     "bars": 2
     },
     "q": 1,
     "r": 0.884,
@@ -1133,12 +1340,14 @@
     "rel": "ear",
     "style": "echo",
     "aStart": 11.568,
-    "cut": 17.764,
-    "bPos": 19.124,
+    "cut": 19.395,
+    "aOut": 17.57,
+    "bPos": 19.412,
+    "bFade": 0.012,
     "pre": 0,
-    "tail": 11.398,
-    "gap": 0.64,
-    "onBeat": "off",
+    "tail": 11.092,
+    "gap": 1.945,
+    "onBeat": "1",
     "foundA": true,
     "foundB": false,
     "drop": false,
@@ -1150,11 +1359,17 @@
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
-    "n": 8,
-    "median_ms": 3.0,
-    "p90_abs_ms": 16.4,
-    "ibi_A_ms": 651.2,
-    "ibi_B_ms": 640.0
+    "n": 7,
+    "median_ms": 2.8,
+    "p90_abs_ms": 9.5,
+    "ibi_A_ms": 651.9,
+    "ibi_B_ms": 650.0
+   },
+   "bars": {
+    "n": 2,
+    "on_one": 1.0,
+    "median_ms": -40.0,
+    "first_ms": -20.0
    }
   },
   {
@@ -1171,7 +1386,9 @@
     "style": "echo",
     "aStart": 7.419,
     "cut": 14.62,
+    "aOut": 14.62,
     "bPos": 9.481,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 16,
     "gap": 0.885,
@@ -1188,10 +1405,16 @@
    "placeB_ms": 2,
    "beat": {
     "n": 13,
-    "median_ms": -0.0,
+    "median_ms": 0.0,
     "p90_abs_ms": 0.0,
     "ibi_A_ms": 600.0,
     "ibi_B_ms": 600.0
+   },
+   "bars": {
+    "n": 4,
+    "on_one": 1.0,
+    "median_ms": -0.0,
+    "first_ms": 0.0
    }
   },
   {
@@ -1208,10 +1431,12 @@
     "style": "cut",
     "aStart": 10.812,
     "cut": 21.07,
-    "bPos": 15.947,
+    "aOut": 21.07,
+    "bPos": 15.002,
+    "bFade": 0.012,
     "pre": 0,
-    "tail": 14.795,
-    "gap": 0.542,
+    "tail": 15.821,
+    "gap": 1.568,
     "onBeat": "1",
     "foundA": true,
     "foundB": false,
@@ -1220,15 +1445,21 @@
     "keyB": "8A",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
-   "placeA_ms": 0,
-   "placeB_ms": 2,
+   "latency_ms": 185.8,
+   "placeA_ms": -12,
+   "placeB_ms": -14,
    "beat": {
     "n": 15,
-    "median_ms": 4.1,
-    "p90_abs_ms": 11.3,
-    "ibi_A_ms": 512.9,
+    "median_ms": 18.4,
+    "p90_abs_ms": 26.7,
+    "ibi_A_ms": 512.0,
     "ibi_B_ms": 520.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 0.4,
+    "median_ms": -80.0,
+    "first_ms": -20.0
    }
   },
   {
@@ -1245,10 +1476,12 @@
     "style": "echo",
     "aStart": 4.116,
     "cut": 14.287,
-    "bPos": 12.08,
+    "aOut": 14.287,
+    "bPos": 4.08,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 16,
-    "gap": 0.518,
+    "gap": 0.559,
     "onBeat": "1",
     "foundA": false,
     "foundB": true,
@@ -1259,13 +1492,19 @@
    },
    "latency_ms": 185.8,
    "placeA_ms": 0,
-   "placeB_ms": -1,
+   "placeB_ms": 0,
    "beat": {
     "n": 15,
-    "median_ms": -13.4,
-    "p90_abs_ms": 21.9,
-    "ibi_A_ms": 508.5,
+    "median_ms": -17.6,
+    "p90_abs_ms": 26.9,
+    "ibi_A_ms": 508.8,
     "ibi_B_ms": 500.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 0.4,
+    "median_ms": 80.0,
+    "first_ms": 20.0
    }
   },
   {
@@ -1282,10 +1521,12 @@
     "style": "echo",
     "aStart": 3.359,
     "cut": 12.666,
-    "bPos": 16.69,
+    "aOut": 12.666,
+    "bPos": 15.759,
+    "bFade": 0.012,
     "pre": 0,
-    "tail": 12.885,
-    "gap": 0.32,
+    "tail": 13.816,
+    "gap": 1.251,
     "onBeat": "1",
     "foundA": false,
     "foundB": true,
@@ -1294,15 +1535,21 @@
     "keyB": "9B",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
+   "latency_ms": 185.8,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
     "n": 17,
-    "median_ms": 1.7,
-    "p90_abs_ms": 11.0,
-    "ibi_A_ms": 464.9,
+    "median_ms": 0.4,
+    "p90_abs_ms": 10.4,
+    "ibi_A_ms": 465.0,
     "ibi_B_ms": 460.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 0.8,
+    "median_ms": 60.0,
+    "first_ms": 20.0
    }
   },
   {
@@ -1313,7 +1560,7 @@
     "synced": true,
     "ride": {
      "r0": 0.845,
-     "i1": 17.66,
+     "i1": 17.143,
      "i2": 29.676,
      "hold": 4,
      "bars": 6
@@ -1324,12 +1571,14 @@
     "rel": "ear-ok",
     "style": "echo",
     "aStart": 6.743,
-    "cut": 13.477,
-    "bPos": 9.384,
+    "cut": 14.089,
+    "aOut": 14.089,
+    "bPos": 8.866,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 16,
-    "gap": 0.916,
-    "onBeat": "beat",
+    "gap": 2.14,
+    "onBeat": "1",
     "foundA": false,
     "foundB": true,
     "drop": false,
@@ -1339,13 +1588,19 @@
    },
    "latency_ms": 185.8,
    "placeA_ms": 0,
-   "placeB_ms": -2,
+   "placeB_ms": null,
    "beat": {
     "n": 13,
-    "median_ms": -19.1,
-    "p90_abs_ms": 26.3,
-    "ibi_A_ms": 612.0,
+    "median_ms": -0.2,
+    "p90_abs_ms": 10.2,
+    "ibi_A_ms": 611.2,
     "ibi_B_ms": 620.0
+   },
+   "bars": {
+    "n": 4,
+    "on_one": 0.5,
+    "median_ms": -80.0,
+    "first_ms": -20.0
    }
   },
   {
@@ -1361,12 +1616,14 @@
     "rel": null,
     "style": "echo",
     "aStart": 2.328,
-    "cut": 12.816,
-    "bPos": 16.879,
+    "cut": 14.036,
+    "aOut": 12.74,
+    "bPos": 17.125,
+    "bFade": 0.012,
     "pre": 0,
-    "tail": 12.59,
-    "gap": 0.44,
-    "onBeat": "off",
+    "tail": 12.346,
+    "gap": 1.416,
+    "onBeat": "1",
     "foundA": true,
     "foundB": false,
     "drop": false,
@@ -1378,11 +1635,17 @@
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
-    "n": 15,
-    "median_ms": 10.1,
-    "p90_abs_ms": 19.7,
-    "ibi_A_ms": 487.5,
+    "n": 16,
+    "median_ms": 10.3,
+    "p90_abs_ms": 18.7,
+    "ibi_A_ms": 487.7,
     "ibi_B_ms": 480.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 0.4,
+    "median_ms": 100.0,
+    "first_ms": 40.0
    }
   },
   {
@@ -1398,12 +1661,14 @@
     "rel": "ear-ok",
     "style": "echo",
     "aStart": 4.861,
-    "cut": 13.108,
-    "bPos": 18.195,
+    "cut": 13.14,
+    "aOut": 13.14,
+    "bPos": 18.23,
+    "bFade": 0.012,
     "pre": 0,
-    "tail": 10.359,
+    "tail": 10.328,
     "gap": 0.068,
-    "onBeat": "off",
+    "onBeat": "1",
     "foundA": false,
     "foundB": true,
     "drop": false,
@@ -1411,7 +1676,7 @@
     "keyB": "5A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
@@ -1420,6 +1685,12 @@
     "p90_abs_ms": 12.3,
     "ibi_A_ms": 412.8,
     "ibi_B_ms": 420.0
+   },
+   "bars": {
+    "n": 6,
+    "on_one": 0.333,
+    "median_ms": -110.0,
+    "first_ms": -40.0
    }
   },
   {
@@ -1433,14 +1704,16 @@
     "r": 0.938,
     "semis": 0,
     "rel": "ear",
-    "style": "cut",
+    "style": "echo",
     "aStart": 10.11,
-    "cut": 21.613,
-    "bPos": 3.357,
+    "cut": 22.113,
+    "aOut": 21.29,
+    "bPos": 3.826,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 16,
     "gap": 0.943,
-    "onBeat": "beat",
+    "onBeat": "1",
     "foundA": true,
     "foundB": false,
     "drop": false,
@@ -1448,15 +1721,21 @@
     "keyB": "12A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
-   "placeA_ms": 0,
-   "placeB_ms": -1,
+   "latency_ms": 180.0,
+   "placeA_ms": -6,
+   "placeB_ms": -9,
    "beat": {
-    "n": 15,
-    "median_ms": 9.0,
-    "p90_abs_ms": 9.2,
-    "ibi_A_ms": 500.0,
+    "n": 16,
+    "median_ms": 10.4,
+    "p90_abs_ms": 13.0,
+    "ibi_A_ms": 499.6,
     "ibi_B_ms": 500.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 1.0,
+    "median_ms": 0.0,
+    "first_ms": 0.0
    }
   },
   {
@@ -1473,7 +1752,9 @@
     "style": "echo",
     "aStart": 3.859,
     "cut": 13.456,
+    "aOut": 13.456,
     "bPos": 14.1,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 15.345,
     "gap": 0.546,
@@ -1490,10 +1771,16 @@
    "placeB_ms": 2,
    "beat": {
     "n": 16,
-    "median_ms": 0.0,
-    "p90_abs_ms": 20.0,
-    "ibi_A_ms": 480.0,
+    "median_ms": 11.2,
+    "p90_abs_ms": 16.7,
+    "ibi_A_ms": 479.1,
     "ibi_B_ms": 480.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 1.0,
+    "median_ms": -20.0,
+    "first_ms": -20.0
    }
   },
   {
@@ -1516,7 +1803,9 @@
     "style": "echo",
     "aStart": 3.186,
     "cut": 13.022,
+    "aOut": 13.022,
     "bPos": 8.939,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 16,
     "gap": 0.283,
@@ -1533,10 +1822,16 @@
    "placeB_ms": 2,
    "beat": {
     "n": 15,
-    "median_ms": 3.6,
-    "p90_abs_ms": 11.4,
-    "ibi_A_ms": 492.1,
+    "median_ms": -2.9,
+    "p90_abs_ms": 10.4,
+    "ibi_A_ms": 492.3,
     "ibi_B_ms": 500.0
+   },
+   "bars": {
+    "n": 4,
+    "on_one": 0.5,
+    "median_ms": -80.0,
+    "first_ms": -20.0
    }
   },
   {
@@ -1553,10 +1848,12 @@
     "style": "echo",
     "aStart": 1.275,
     "cut": 6.223,
-    "bPos": 7.759,
+    "aOut": 5.71,
+    "bPos": 8.173,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 16,
-    "gap": 1.047,
+    "gap": 0.633,
     "onBeat": "1",
     "foundA": true,
     "foundB": false,
@@ -1568,7 +1865,14 @@
    "latency_ms": 185.8,
    "placeA_ms": 0,
    "placeB_ms": 0,
-   "beat": null
+   "beat": {
+    "n": 19,
+    "median_ms": 22.9,
+    "p90_abs_ms": 228.7,
+    "ibi_A_ms": 618.3,
+    "ibi_B_ms": 420.0
+   },
+   "bars": null
   },
   {
    "link": "Houdini | Dua Lipa || You Need Me | Black Coffee, Maxine Ashley, Sun-El Musician",
@@ -1583,12 +1887,14 @@
     "rel": "ear",
     "style": "echo",
     "aStart": 0.555,
-    "cut": 8.707,
-    "bPos": 19.08,
+    "cut": 8.761,
+    "aOut": 8.761,
+    "bPos": 19.133,
+    "bFade": 0.015,
     "pre": 0,
-    "tail": 10.582,
-    "gap": 0.047,
-    "onBeat": "off",
+    "tail": 10.529,
+    "gap": 0.051,
+    "onBeat": "1",
     "foundA": true,
     "foundB": true,
     "drop": false,
@@ -1596,15 +1902,21 @@
     "keyB": "8A",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
+   "latency_ms": 185.8,
    "placeA_ms": 0,
-   "placeB_ms": -1,
+   "placeB_ms": -2,
    "beat": {
     "n": 15,
-    "median_ms": -17.6,
-    "p90_abs_ms": 24.7,
-    "ibi_A_ms": 513.2,
+    "median_ms": -9.4,
+    "p90_abs_ms": 18.7,
+    "ibi_A_ms": 512.7,
     "ibi_B_ms": 520.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 0.4,
+    "median_ms": -80.0,
+    "first_ms": -40.0
    }
   },
   {
@@ -1620,12 +1932,14 @@
     "rel": "ear",
     "style": "echo",
     "aStart": 0.59,
-    "cut": 10.677,
-    "bPos": 0.64,
+    "cut": 12.119,
+    "aOut": 10.47,
+    "bPos": 0.161,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 16,
-    "gap": 0.567,
-    "onBeat": "beat",
+    "gap": 2.489,
+    "onBeat": "1",
     "foundA": true,
     "foundB": true,
     "drop": false,
@@ -1633,15 +1947,21 @@
     "keyB": "10A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
     "n": 16,
-    "median_ms": 23.0,
-    "p90_abs_ms": 26.0,
-    "ibi_A_ms": 479.7,
+    "median_ms": 37.4,
+    "p90_abs_ms": 52.7,
+    "ibi_A_ms": 479.3,
     "ibi_B_ms": 480.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 1.0,
+    "median_ms": 40.0,
+    "first_ms": 40.0
    }
   },
   {
@@ -1658,7 +1978,9 @@
     "style": "echo",
     "aStart": 1.258,
     "cut": 13.048,
+    "aOut": 13.048,
     "bPos": 12.537,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 16,
     "gap": 0.567,
@@ -1670,7 +1992,7 @@
     "keyB": "5A",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
+   "latency_ms": 185.8,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
@@ -1679,6 +2001,12 @@
     "p90_abs_ms": 25.6,
     "ibi_A_ms": 491.3,
     "ibi_B_ms": 500.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 0.2,
+    "median_ms": -120.0,
+    "first_ms": -40.0
    }
   },
   {
@@ -1695,10 +2023,12 @@
     "style": "echo",
     "aStart": 6.994,
     "cut": 16.594,
-    "bPos": 18.439,
+    "aOut": 16.5,
+    "bPos": 17.479,
+    "bFade": 0.012,
     "pre": 0,
-    "tail": 11.135,
-    "gap": 0.765,
+    "tail": 12.094,
+    "gap": 1.725,
     "onBeat": "1",
     "foundA": true,
     "foundB": true,
@@ -1707,15 +2037,21 @@
     "keyB": "8A",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
+   "latency_ms": 185.8,
    "placeA_ms": 0,
-   "placeB_ms": 0,
+   "placeB_ms": -6,
    "beat": {
     "n": 16,
     "median_ms": -0.0,
     "p90_abs_ms": 0.0,
     "ibi_A_ms": 480.0,
     "ibi_B_ms": 480.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 1.0,
+    "median_ms": -0.0,
+    "first_ms": 0.0
    }
   },
   {
@@ -1731,12 +2067,14 @@
     "rel": "ear",
     "style": "echo",
     "aStart": 0.344,
-    "cut": 6.467,
-    "bPos": 12.181,
+    "cut": 8.085,
+    "aOut": 6.55,
+    "bPos": 10.916,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 16,
-    "gap": 0.087,
-    "onBeat": "off",
+    "gap": 2.99,
+    "onBeat": "1",
     "foundA": true,
     "foundB": true,
     "drop": false,
@@ -1749,10 +2087,16 @@
    "placeB_ms": null,
    "beat": {
     "n": 16,
-    "median_ms": 6.4,
-    "p90_abs_ms": 16.4,
-    "ibi_A_ms": 483.6,
+    "median_ms": 16.4,
+    "p90_abs_ms": 29.1,
+    "ibi_A_ms": 483.0,
     "ibi_B_ms": 480.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 0.6,
+    "median_ms": 60.0,
+    "first_ms": 40.0
    }
   },
   {
@@ -1768,12 +2112,14 @@
     "rel": null,
     "style": "echo",
     "aStart": 3.695,
-    "cut": 10.217,
+    "cut": 11.521,
+    "aOut": 10.25,
     "bPos": 4.893,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 16,
-    "gap": 0.144,
-    "onBeat": "3",
+    "gap": 1.448,
+    "onBeat": "1",
     "foundA": true,
     "foundB": true,
     "drop": false,
@@ -1786,10 +2132,16 @@
    "placeB_ms": 0,
    "beat": {
     "n": 12,
-    "median_ms": -14.6,
-    "p90_abs_ms": 22.8,
-    "ibi_A_ms": 653.6,
+    "median_ms": -17.5,
+    "p90_abs_ms": 27.0,
+    "ibi_A_ms": 653.5,
     "ibi_B_ms": 660.0
+   },
+   "bars": {
+    "n": 4,
+    "on_one": 0.5,
+    "median_ms": -80.0,
+    "first_ms": -20.0
    }
   },
   {
@@ -1805,12 +2157,14 @@
     "rel": "ear-ok",
     "style": "echo",
     "aStart": 3.049,
-    "cut": 12.603,
-    "bPos": 7.282,
+    "cut": 12.653,
+    "aOut": 12.653,
+    "bPos": 7.331,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 16,
     "gap": 0.05,
-    "onBeat": "off",
+    "onBeat": "1",
     "foundA": false,
     "foundB": false,
     "drop": false,
@@ -1818,15 +2172,21 @@
     "keyB": "7A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": -2,
    "beat": {
     "n": 16,
-    "median_ms": 3.7,
-    "p90_abs_ms": 8.0,
-    "ibi_A_ms": 480.7,
+    "median_ms": 20.0,
+    "p90_abs_ms": 20.0,
+    "ibi_A_ms": 480.0,
     "ibi_B_ms": 480.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 1.0,
+    "median_ms": 20.0,
+    "first_ms": 20.0
    }
   },
   {
@@ -1840,14 +2200,16 @@
     "r": 0.992,
     "semis": 0,
     "rel": "ear",
-    "style": "blend",
+    "style": "echo",
     "aStart": 4.552,
-    "cut": 14.395,
-    "bPos": 3.531,
-    "pre": 1.875,
+    "cut": 15.802,
+    "aOut": 14.177,
+    "bPos": 3.066,
+    "bFade": 0.012,
+    "pre": 0,
     "tail": 16,
-    "gap": 0.889,
-    "onBeat": "beat",
+    "gap": 2.764,
+    "onBeat": "1",
     "foundA": true,
     "foundB": true,
     "drop": false,
@@ -1855,15 +2217,21 @@
     "keyB": "9A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
-   "placeB_ms": -3,
+   "placeB_ms": -5,
    "beat": {
     "n": 17,
-    "median_ms": 9.5,
-    "p90_abs_ms": 18.7,
-    "ibi_A_ms": 468.4,
+    "median_ms": -6.5,
+    "p90_abs_ms": 16.5,
+    "ibi_A_ms": 469.1,
     "ibi_B_ms": 460.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 0.2,
+    "median_ms": 100.0,
+    "first_ms": 40.0
    }
   },
   {
@@ -1880,7 +2248,9 @@
     "style": "echo",
     "aStart": 11.25,
     "cut": 20.601,
+    "aOut": 20.601,
     "bPos": 18.964,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 10.611,
     "gap": 0.407,
@@ -1892,15 +2262,21 @@
     "keyB": "5A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
-   "placeA_ms": 0,
-   "placeB_ms": 0,
+   "latency_ms": 182.9,
+   "placeA_ms": -3,
+   "placeB_ms": -3,
    "beat": {
-    "n": 14,
-    "median_ms": -20.0,
-    "p90_abs_ms": 380.0,
-    "ibi_A_ms": 780.0,
+    "n": 15,
+    "median_ms": 3.5,
+    "p90_abs_ms": 387.1,
+    "ibi_A_ms": 777.9,
     "ibi_B_ms": 400.0
+   },
+   "bars": {
+    "n": 7,
+    "on_one": 0.429,
+    "median_ms": 0.0,
+    "first_ms": 0.0
    }
   },
   {
@@ -1916,12 +2292,14 @@
     "rel": "ear",
     "style": "echo",
     "aStart": 4.294,
-    "cut": 12.253,
-    "bPos": 7.142,
+    "cut": 14.089,
+    "aOut": 11.89,
+    "bPos": 6.536,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 16,
-    "gap": 1.117,
-    "onBeat": "beat",
+    "gap": 3.566,
+    "onBeat": "1",
     "foundA": true,
     "foundB": true,
     "drop": false,
@@ -1929,15 +2307,21 @@
     "keyB": "8A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": -1,
    "beat": {
     "n": 13,
-    "median_ms": -11.3,
-    "p90_abs_ms": 18.5,
-    "ibi_A_ms": 612.4,
+    "median_ms": -3.5,
+    "p90_abs_ms": 11.3,
+    "ibi_A_ms": 612.1,
     "ibi_B_ms": 620.0
+   },
+   "bars": {
+    "n": 4,
+    "on_one": 0.25,
+    "median_ms": -90.0,
+    "first_ms": -40.0
    }
   },
   {
@@ -1954,10 +2338,12 @@
     "style": "echo",
     "aStart": 11.832,
     "cut": 19.179,
-    "bPos": 17.331,
+    "aOut": 19.07,
+    "bPos": 7.437,
+    "bFade": 0.012,
     "pre": 0,
-    "tail": 12.123,
-    "gap": 0.327,
+    "tail": 16,
+    "gap": 0.261,
     "onBeat": "1",
     "foundA": true,
     "foundB": true,
@@ -1966,15 +2352,21 @@
     "keyB": "5A",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
-   "placeA_ms": -6,
-   "placeB_ms": -4,
+   "latency_ms": 185.8,
+   "placeA_ms": 0,
+   "placeB_ms": 1,
    "beat": {
     "n": 13,
-    "median_ms": 1.0,
-    "p90_abs_ms": 9.1,
-    "ibi_A_ms": 612.5,
+    "median_ms": 2.2,
+    "p90_abs_ms": 18.0,
+    "ibi_A_ms": 611.4,
     "ibi_B_ms": 610.0
+   },
+   "bars": {
+    "n": 4,
+    "on_one": 0.25,
+    "median_ms": -90.0,
+    "first_ms": -20.0
    }
   },
   {
@@ -1990,12 +2382,14 @@
     "rel": "ear",
     "style": "echo",
     "aStart": 7.218,
-    "cut": 15.019,
-    "bPos": 7.142,
+    "cut": 16.819,
+    "aOut": 15.01,
+    "bPos": 6.536,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 16,
-    "gap": 0.751,
-    "onBeat": "beat",
+    "gap": 3.151,
+    "onBeat": "1",
     "foundA": true,
     "foundB": true,
     "drop": false,
@@ -2008,10 +2402,16 @@
    "placeB_ms": 1,
    "beat": {
     "n": 13,
-    "median_ms": -0.0,
+    "median_ms": 0.0,
     "p90_abs_ms": 0.0,
     "ibi_A_ms": 600.0,
     "ibi_B_ms": 600.0
+   },
+   "bars": {
+    "n": 4,
+    "on_one": 1.0,
+    "median_ms": 0.0,
+    "first_ms": 0.0
    }
   },
   {
@@ -2027,12 +2427,14 @@
     "rel": "ear",
     "style": "echo",
     "aStart": 7.36,
-    "cut": 18.317,
-    "bPos": 16.94,
+    "cut": 18.794,
+    "aOut": 18.379,
+    "bPos": 16.46,
+    "bFade": 0.012,
     "pre": 0,
-    "tail": 12.516,
-    "gap": 0.186,
-    "onBeat": "beat",
+    "tail": 12.992,
+    "gap": 1.139,
+    "onBeat": "1",
     "foundA": true,
     "foundB": true,
     "drop": false,
@@ -2040,15 +2442,21 @@
     "keyB": "12A",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
-   "placeA_ms": -18,
-   "placeB_ms": null,
+   "latency_ms": 185.8,
+   "placeA_ms": 0,
+   "placeB_ms": -6,
    "beat": {
     "n": 16,
-    "median_ms": 14.1,
-    "p90_abs_ms": 22.5,
-    "ibi_A_ms": 475.4,
+    "median_ms": 10.2,
+    "p90_abs_ms": 17.8,
+    "ibi_A_ms": 475.9,
     "ibi_B_ms": 480.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 1.0,
+    "median_ms": -40.0,
+    "first_ms": -0.0
    }
   },
   {
@@ -2063,13 +2471,15 @@
     "semis": 0,
     "rel": "ear-ok",
     "style": "echo",
-    "aStart": 2.66,
-    "cut": 12.741,
-    "bPos": 11.392,
+    "aStart": 8.421,
+    "cut": 18.021,
+    "aOut": 17.32,
+    "bPos": 10.916,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 16,
-    "gap": 0.965,
-    "onBeat": "beat",
+    "gap": 2.145,
+    "onBeat": "1",
     "foundA": true,
     "foundB": true,
     "drop": false,
@@ -2082,10 +2492,16 @@
    "placeB_ms": -2,
    "beat": {
     "n": 16,
-    "median_ms": -1.1,
-    "p90_abs_ms": 1.1,
+    "median_ms": -2.9,
+    "p90_abs_ms": 3.2,
     "ibi_A_ms": 480.0,
     "ibi_B_ms": 480.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 1.0,
+    "median_ms": 0.0,
+    "first_ms": 20.0
    }
   },
   {
@@ -2101,12 +2517,14 @@
     "rel": "ear",
     "style": "echo",
     "aStart": 0,
-    "cut": 2.021,
-    "bPos": 12.106,
+    "cut": 3.702,
+    "aOut": 2.04,
+    "bPos": 10.916,
+    "bFade": 0.012,
     "pre": 0,
     "tail": 16,
-    "gap": 0.225,
-    "onBeat": "off",
+    "gap": 3.107,
+    "onBeat": "1",
     "foundA": true,
     "foundB": true,
     "drop": false,
@@ -2117,7 +2535,14 @@
    "latency_ms": 185.8,
    "placeA_ms": 0,
    "placeB_ms": null,
-   "beat": null
+   "beat": {
+    "n": 16,
+    "median_ms": -6.7,
+    "p90_abs_ms": 13.3,
+    "ibi_A_ms": 480.0,
+    "ibi_B_ms": 480.0
+   },
+   "bars": null
   }
  ]
 }
