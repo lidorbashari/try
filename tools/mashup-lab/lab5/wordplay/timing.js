@@ -55,6 +55,28 @@
     });
     return best || { semis: 0, rel: null, keyB: camStr(B) };
   }
+  /* the key decision by ear (analysis v2 profiles of the two previews, 12 pitch classes each: hc = harmony, vc = singing):
+     B moved by s semitones fits A when A's chords and B's chords agree, A's last word (and its echo) sits on B's chords,
+     and B's first word sits on A's key. Pearson correlation (mean-centred), so any two songs score about 0 by chance. */
+  function prof(sv) { if (!sv || String(sv).length !== 12) return null; var v = [], m = 0, i, n = 0; for (i = 0; i < 12; i++) { v.push(+String(sv).charAt(i) || 0); m += v[i]; } m /= 12;
+    for (i = 0; i < 12; i++) { v[i] -= m; n += v[i] * v[i]; } n = Math.sqrt(n); if (!(n > 1e-6)) return null; for (i = 0; i < 12; i++) v[i] /= n; return v; }
+  function corrRot(a, b, s) { var c = 0; for (var i = 0; i < 12; i++) c += a[i] * b[mod(i + s, 12)]; return c; }   /* a vs b moved by s */
+  function earFit(anA, anB, maxShift) {
+    var hA = prof(anA && anA.hc), hB = prof(anB && anB.hc), vA = prof(anA && anA.vc), vB = prof(anB && anB.vc);
+    if (!hA || !hB) return null;
+    var best = null;
+    [0, 1, -1, 2, -2].forEach(function (s) {
+      if (Math.abs(s) > maxShift) return;
+      /* B's profile moved up by s: bin i of A meets bin i − s of B */
+      var f = .5 * corrRot(hA, hB, -s), w = .5;
+      if (vA) { f += .25 * corrRot(vA, hB, -s); w += .25; }
+      if (vB) { f += .25 * corrRot(hA, vB, -s); w += .25; }
+      f /= w;
+      var sc = f - .05 * Math.abs(s);
+      if (!best || sc > best.sc + 1e-9) best = { semis: s, fit: f, sc: sc };
+    });
+    return { semis: best.semis, fit: Math.round(best.fit * 100) / 100, rel: best.fit >= .45 ? "ear" : best.fit >= .25 ? "ear-ok" : null };
+  }
   function keyOf(an, fallback) {        /* the key measured on the preview when it is clear, else the catalog key */
     if (an && an.key && (an.ks >= (an.km === "e" ? .45 : .62))) return { k: an.key, src: "measured" };
     return fallback ? { k: fallback, src: "catalog" } : null;
@@ -218,8 +240,10 @@
     /* key */
     var kA = keyOf(anA, link.mix && link.mix.keyA), kB = keyOf(anB, link.mix && link.mix.keyB);
     var tech = String(link.technique || (link.mix && link.mix.technique) || ""), want = drop ? "drop" : /^(double|blend|callresp)$/.test(tech) ? "blend" : tech === "cut" ? "cut" : "echo";
-    var fit = kA && kB ? keyFit(kA.k, kB.k, want === "blend" || want === "drop" ? 2 : 1) : { semis: 0, rel: undefined, keyB: kB && kB.k };
-    if (!tr.synced) fit = { semis: 0, rel: kA && kB ? camRel(camParse(kA.k), camParse(kB.k)) : undefined, keyB: kB && kB.k };
+    var maxS = want === "blend" || want === "drop" ? 2 : 1, ear = earFit(anA, anB, maxS);
+    var fit = kA && kB ? keyFit(kA.k, kB.k, maxS) : { semis: 0, rel: undefined, keyB: kB && kB.k };
+    if (ear) fit = { semis: ear.semis, rel: ear.rel, keyB: kB ? camStr(camShift(camParse(kB.k), ear.semis)) || kB.k : null, ear: ear.fit };   /* the ear decides */
+    if (!tr.synced) fit = { semis: 0, rel: ear ? (earFit(anA, anB, 0) || {}).rel : kA && kB ? camRel(camParse(kA.k), camParse(kB.k)) : undefined, keyB: kB && kB.k, ear: ear ? (earFit(anA, anB, 0) || {}).fit : undefined };
     var style = want;
     if (!tr.synced && style !== "cut") style = "echo";                  /* a tempo change: cut with an echo on A's word */
     if (fit.rel === null && style === "blend") style = "echo";          /* clashing keys: no overlap */
@@ -242,7 +266,7 @@
     function trim(an) { return an && isFinite(an.lufs) ? r3(clamp(Math.pow(10, (-11 - an.lufs) / 20), .45, 1.6)) : 1; }
     var echo = style === "echo" || style === "drop" ? { d: r3(.75 * pA <= .6 ? .75 * pA : .5 * pA), fb: .42, wet: .5 } : null;
     var out = {
-      ok: true, synced: tr.synced, q: tr.q, r: r3(rB), ride: ride, semis: fit.semis || 0, rel: fit.rel, keyA: kA ? kA.k : null, keyB: kB ? kB.k : null, keyB2: fit.keyB || null,
+      ok: true, synced: tr.synced, q: tr.q, r: r3(rB), ride: ride, semis: fit.semis || 0, rel: fit.rel, ear: fit.ear == null ? null : fit.ear, keyA: kA ? kA.k : null, keyB: kB ? kB.k : null, keyB2: fit.keyB || null,
       keySrc: kA && kB ? (kA.src === "measured" && kB.src === "measured" ? "measured" : "catalog") : null,
       style: style, aStart: r3(aStart), cut: r3(pl.cut), bPos: r3(pl.bPos), pre: r3(pre), tail: r3(tail),
       wA: [r3(a.s), r3(a.e)], wB: [r3(b.s), r3(b.e)], foundA: a.found, foundB: b.found, drop: !!b.drop,
@@ -262,9 +286,10 @@
       else s.push("שני השירים כמעט באותו קצב, אז B נכנס כמו שהוא והביט ממשיך בלי קפיצה.");
       if (p.q !== 1) s.push("יחס קצב " + (p.q === 2 ? "1:2" : "2:1") + ": פעמה של שיר אחד היא שתי פעמות של השני.");
     } else s.push("הקצבים רחוקים מדי למתיחה (" + p.bpmA + " מול " + p.bpmB + " BPM), אז B נכנס בקצב שלו בדיוק על פעמה, ואקו על המילה של A מחליק את המעבר.");
-    if (p.semis) s.push("B מוזז " + (Math.abs(p.semis) === 1 ? "חצי טון" : "טון שלם") + " " + (p.semis > 0 ? "למעלה" : "למטה") + " (" + p.keyB + " → " + p.keyB2 + ") כדי להתאים לסולם של A (" + p.keyA + ").");
-    else if (p.rel) s.push("הסולמות מתאימים (" + p.keyA + " ו־" + p.keyB + ").");
-    else if (p.rel === null) s.push("הסולמות מתנגשים (" + p.keyA + " מול " + p.keyB + "), אז אין חפיפה: חיתוך נקי" + (p.echo ? " עם אקו." : "."));
+    var ks = p.keyA && p.keyB ? " (" + p.keyA + " ו־" + p.keyB + ")" : "";
+    if (p.semis) s.push("B מוזז " + (Math.abs(p.semis) === 1 ? "חצי טון" : "טון שלם") + " " + (p.semis > 0 ? "למעלה" : "למטה") + (p.keyB && p.keyB2 ? " (" + p.keyB + " → " + p.keyB2 + ")" : "") + (p.ear != null ? ": ככה, לפי ההאזנה לשני הקטעים, האקורדים והמילים של שניהם יושבים הכי טוב אחד על השני." : " כדי להתאים לסולם של A (" + p.keyA + ")."));
+    else if (p.rel) s.push(p.ear != null ? "לפי ההאזנה לשני הקטעים, האקורדים והמילים של שניהם יושבים טוב אחד על השני" + ks + "." : "הסולמות מתאימים" + ks + ".");
+    else if (p.rel === null) s.push((p.ear != null ? "לפי ההאזנה, ההרמוניות של שני הקטעים לא מסתדרות" : "הסולמות מתנגשים" + (p.keyA && p.keyB ? " (" + p.keyA + " מול " + p.keyB + ")" : "")) + ", אז אין חפיפה: חיתוך נקי" + (p.echo ? " עם אקו." : "."));
     var where = p.onBeat === "1" ? "על ה־1 של התיבה" : p.onBeat === "3" ? "על הפעמה השלישית בתיבה" : p.onBeat === "beat" ? "על פעמה" : "רגע לפני המילה של B";
     if (p.drop) s.push("החיתוך " + where + ": הדרופ של B נוחת מיד אחרי המילים של A.");
     else s.push("החיתוך " + where + ", מיד אחרי המילה של A, והמילה של B נכנסת " + (p.gap < .35 ? "מיד אחריה" : "אחרי " + (Math.round(p.gap * 10) / 10) + " שניות") + ".");
@@ -275,7 +300,7 @@
   }
 
   var api = { plan: plan, summary: summary, keyFit: keyFit, camRel: function (a, b) { return camRel(camParse(a), camParse(b)); }, camShift: function (k, s) { return camStr(camShift(camParse(k), s)); },
-    tempoRel: tempoRel, rideOut: rideOut, place: place, dropAt: dropAt, phraseEnds: phraseEnds, phraseStarts: phraseStarts, xOf: xOf, tOf: tOf, wordsOf: wordsOf };
+    tempoRel: tempoRel, rideOut: rideOut, earFit: earFit, place: place, dropAt: dropAt, phraseEnds: phraseEnds, phraseStarts: phraseStarts, xOf: xOf, tOf: tOf, wordsOf: wordsOf };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   root.WordTiming = api;
 })(typeof window !== "undefined" ? window : this);

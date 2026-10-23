@@ -54,6 +54,19 @@ p = T.plan(Object.assign({}, link, { technique: "double" }), { gA, gB, durA: 30,
   anA: { key: "8A", ks: .8, km: "e" }, anB: { key: "10A", ks: .8, km: "e" } });
 chk("blend asks for a key fit: 10A → 8A is -2 semitones", p.ok && p.semis === -2 && p.rel === "same", JSON.stringify({ s: p.semis, rel: p.rel, k: p.keyB2 }));
 
+// the key decision by ear (analysis v2 profiles): C major chords + singing vs the same a whole tone up
+const rot = (str, k) => str.split("").map((_, i) => str[((i - k) % 12 + 12) % 12]).join("");   /* pitch classes moved up by k */
+const Cmaj = "905090590509", Cvoc = "703080480306";
+let e = T.earFit({ hc: Cmaj, vc: Cvoc }, { hc: Cmaj, vc: Cvoc }, 2);
+chk("ear: the same harmony needs no shift and fits", e && e.semis === 0 && e.rel === "ear" && e.fit > .9, JSON.stringify(e));
+e = T.earFit({ hc: Cmaj, vc: Cvoc }, { hc: rot(Cmaj, 2), vc: rot(Cvoc, 2) }, 2);
+chk("ear: B a whole tone up → B moved down 2 semitones", e && e.semis === -2 && e.rel === "ear", JSON.stringify(e));
+e = T.earFit({ hc: Cmaj, vc: Cvoc }, { hc: "909090909090", vc: "505050505050" }, 2);
+chk("ear: whole-tone harmony fits no shift → clash (no overlap)", e && e.rel === null, JSON.stringify(e));
+p = T.plan(Object.assign({}, link, { technique: "double" }), { gA, gB, durA: 30, durB: 30 }, { wt: { a: [[10.25, 10.82, .9, 1]], b: [[8.0, 8.6, .9, 1]] },
+  anA: { key: "8B", ks: .8, km: "e", hc: Cmaj, vc: Cvoc }, anB: { key: "10B", ks: .8, km: "e", hc: rot(Cmaj, 2), vc: rot(Cvoc, 2) } });
+chk("plan: the ear decides the shift and says so (Hebrew)", p.ok && p.semis === -2 && p.ear > .9 && p.summary.some(x => /לפי ההאזנה/.test(x)), JSON.stringify({ s: p.semis, ear: p.ear, k: p.keyB2 }));
+
 // word not in the preview → phrase boundary from the vocal per beat
 const anA = { t0: .1, voc: "0000" + "5555" + "5550" + "0000" + "6666" + "6600" + "0000" + "0000" + "7777" + "7777" + "0000" + "0000" + "0000" + "0000" + "0000", key: "8A", ks: .3 };
 const anB = { t0: .78, voc: "0000" + "0000" + "0006" + "6666" + "0000" + "0000" + "0000" + "0000" + "0000" + "0000" + "0000" + "0000" + "0000" + "0000" };
