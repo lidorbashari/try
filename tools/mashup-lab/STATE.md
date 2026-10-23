@@ -4,7 +4,7 @@
 > stopped, and continue automatically. **This file is that checkpoint.** Update it and push it after every
 > meaningful step (commit with `[skip ci]` when only this file changes).
 
-Heartbeat (UTC): 2026-10-23T02:03Z · session: https://claude.ai/code/session_01Lo7gTW4YHqF6LiS4xWstjM · status: IN PROGRESS (resume from "Next actions")
+Heartbeat (UTC): 2026-10-23T02:20Z · session: https://claude.ai/code/session_01Lo7gTW4YHqF6LiS4xWstjM · status: IN PROGRESS (resume from "Next actions")
 
 ## How to resume in a fresh session
 1. Attach the repo with push access (`add_repo lidorbashari/try`), clone to `/home/claude/try`, branch
@@ -76,21 +76,28 @@ Heartbeat (UTC): 2026-10-23T02:03Z · session: https://claude.ai/code/session_01
   lift on press/drag, chromatic rim while lifted, tab bar minimises on scroll (iOS 26), sheets with springs.
 
 ## Next actions (in order)
-0. Done since the last checkpoint (all pushed): analysis v2 merged (7c0bba7); matcher v2.1 (cccd8a6); engine 6.4 hit
-   lock + Tempo Ride (06ad5f3); word-play key by ear (187e3f0); ride stripe on the diagram (80609b8); skills proposed
-   to Lidor (mashup-listening, liquid-glass-web, dj-wordplay-transitions improvement — drafts in scratchpad/skills).
-   Full local QA green on the final build: t_buf 141/141, t_match 13/13, t_timing OK, grep 32, e2e_audio 35,
-   e2e_wordplay 25, UI 32/26/55, sync 58. Build bbf3ce92d2 pushed to tools/verify (69ab29c) → CI runs
-   39887177487 (sync) and 39887177489 (word play) started 02:00Z.
-1. (done) CI checks running on build bbf3ce92d2. Reports: tools/reports/mashup-verify.txt, mashup-wordplay.txt (want: sync hits ≤ 10 ms as before;
-   word play share_beat_continues well above the old 0.51, ride links measured while holding).
-2. If the reports are good: deploy docs/ (index.html, sw.js, manifest, icons) — `python3 deploy.py` and commit
-   docs/mashup-lab/* — push both branches (`claude/dj-course-music-agents-suitm3` and `mashup-lab-site`); message Lidor
-   in Hebrew (what changed, how to try it).
-3. Propose skills with propose_skills (drafts in scratchpad/skills: mashup-listening, liquid-glass-web,
-   dj-wordplay-transitions improvement) — update them with: Pearson profiles + calibration numbers, hit lock, tempo ride.
-4. Still open: more well-known techno and amapiano tracks (task 8); word-play key choice from the measured profiles
-   (hc/vc Pearson) instead of Camelot labels (idea).
+0. State at 02:20Z (all pushed unless noted):
+   - Sync check on build bbf3ce92d2 (report 2eab145) FOUND A BUG: pairs below the key-match threshold ("free") played
+     at rate 1 (no tempo sync) → share_on_beat 0.29 (was 0.83 on 6.2). Fixed in b894672 (sync whenever tempo ≤ 12 %).
+     The "hits" metric in that check is meaningless (dense onsets match by chance); judge by beats + bars.
+   - Word-play check on bbf3ce92d2 still running (run 39887177489). Do NOT push tools/verify/** until it finishes
+     (cancel-in-progress).
+   - Local, NOT committed: tools/mashup_lab_verify.py filter (choose only tracks with a catalog BPM, not "pending").
+   - New tracks (6d4ff47): 5 verified added to data.json + tracks.json (Tshwala Bam, Imnandi Lento, Selema (Po Po),
+     Amantombazane, Your Mind); 16 "pending" (bpm/k null, "pending": true) only in docs/mashup-lab/tracks.json:
+     Ke Star, Adiwele, Dalie, Umsebenzi Wethu, Emcimbini, Sponono, Yahyuppiyah, Tanzania, Space Date, Symbiosis,
+     Singularity, The Bells, The Age of Love (CdW & ES Remix), Ghetto Kraviz, Strings of Life, Energy Flash.
+     Uncle Waffles' 7 tracks now genre amapiano. Pipeline: previews run 39888082284 (02:10Z) → beats workflow (auto on
+     previews.json) → then dispatch mashup-analyze with part=tracks (not force) → then add the pending tracks to
+     data.json with the MEASURED bpm (beats.json [0]) and key (analysis.json key when ks ≥ .45), source "measured",
+     drop "pending" in tracks.json, rebuild. Previews merge now gives a preview found for two entries only to the
+     better match ("Without You" Avicii vs Guetta).
+1. When the word-play report is in: read tools/reports/mashup-wordplay.txt (want share_beat_continues ≫ 0.51; ride
+   links measured while holding). Then build + deploy.py + `git checkout docs/mashup-lab/index.html`, commit
+   tools/verify/** + tools/mashup_lab_verify.py WITHOUT [skip ci] → both checks again (sync must be back to ~0.8+).
+2. If the reports are good: deploy docs/ (index.html, sw.js, manifest, icons) and push both branches
+   (`claude/dj-course-music-agents-suitm3` and `mashup-lab-site`); message Lidor in Hebrew.
+3. Then finish the new-tracks pipeline (step 0) and deploy again.
 
 ## Research notes (2026-10-22, for the skills)
 - AutoMashUpper (Davies et al., IEEE TASLP 2014): beat-synchronous chroma cross-correlated over all 12 shifts;
@@ -108,6 +115,7 @@ Heartbeat (UTC): 2026-10-23T02:03Z · session: https://claude.ai/code/session_01
   loop roll = 1-beat loop halved into B's drop.
 
 ## Log (newest first)
+- 2026-10-23 02:20Z: sync check exposed unsynced free pairs (fixed b894672); new amapiano/techno tracks in the pipeline.
 - 2026-10-23 02:03Z: QA all green; build bbf3ce92d2 in CI real-music checks; skills proposed.
 - 2026-10-23 02:20Z: resumed after the usage pause (Lidor: continue from the state file). Matcher v2.1, engine 6.4 (hit lock + tempo ride) pushed; full QA running.
 - 2026-10-22 21:53Z: Lidor warned the session limit is near; checkpoint pushed (see Next actions 0).
