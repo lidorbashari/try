@@ -108,7 +108,10 @@
   /* the move, drawn on the clock of the transition: A's lane until the cut, B's lane from its entry, both words, the
      beats of A's grid (bars taller), the cut on its beat; a playhead runs while it plays. Time runs left → right. */
   function diagHTML(pl) {
-    var T = Math.max(.5, pl.cut - pl.aStart), tail = Math.min(7, Math.max(3, pl.tail || 6)), tot = T + tail, Wd = 320, x0 = 10, x1 = Wd - 10;
+    var T = Math.max(.5, pl.cut - pl.aStart), tail = Math.min(7, Math.max(3, pl.tail || 6)), Wd = 320, x0 = 10, x1 = Wd - 10;
+    var RO0 = window.WordTiming && window.WordTiming.rideOut;
+    if (pl.ride && RO0) tail = Math.min(Math.max(3, pl.tail || 6), Math.max(tail, RO0(pl.ride, pl.ride.i1) - RO0(pl.ride, pl.bPos) + 3.5));   /* show where B starts riding home */
+    var tot = T + tail;
     var X = function (t) { return (x0 + (x1 - x0) * Math.max(0, Math.min(tot, t)) / tot).toFixed(1); };
     var pA = 60 / (pl.bpmA || 120), r = pl.r || 1, pre = pl.pre || 0, out = [], k;
     for (k = 0; k * pA <= tot + 1e-6; k++) { var bar = k % 4 === 0; out.push('<line x1="' + X(k * pA) + '" x2="' + X(k * pA) + '" y1="' + (bar ? 10 : 14) + '" y2="' + (bar ? 82 : 78) + '" class="' + (bar ? "dg-bar" : "dg-beat") + '"/>'); }
