@@ -119,10 +119,23 @@ def env_lag(rec, sr, t_rec0, t1, t2, src, pos0, tau0, rate):
     return bk - 40
 
 
-def continuity(beats, t0, tc, te):
-    """A's tracked beats before the cut define one grid; B's tracked beats after it must continue that grid"""
+def ride_out(rd, i):
+    """heard seconds from B's 0 to B's time i under the word play's tempo ride (timing.js rideOut)"""
+    o1 = rd["i1"] / rd["r0"]
+    if i <= rd["i1"]:
+        return i / rd["r0"]
+    T2 = 2 * (rd["i2"] - rd["i1"]) / (rd["r0"] + 1)
+    if i >= rd["i2"]:
+        return o1 + T2 + (i - rd["i2"])
+    a, b, c = (1 - rd["r0"]) / (2 * T2), rd["r0"], -(i - rd["i1"])
+    return o1 + (-b + (b * b - 4 * a * c) ** .5) / (2 * a)
+
+
+def continuity(beats, t0, tc, te, hold_end=None):
+    """A's tracked beats before the cut define one grid; B's tracked beats after it must continue that grid
+    (with a tempo ride only while B still holds A's tempo: after that it glides home on purpose)"""
     bA = beats[(beats > t0 + .8) & (beats < tc - .15)]
-    bB = beats[(beats > tc + .3) & (beats < min(te - 1.8, tc + 8))]
+    bB = beats[(beats > tc + .3) & (beats < min(te - 1.8, tc + 8, hold_end or 1e9))]
     if len(bA) < 6 or len(bB) < 4:
         return None
     k = np.round((bA - bA[0]) / np.median(np.diff(bA)))
@@ -160,6 +173,7 @@ def main():
         wt, disc = wj.get("links", {}), wj.get("disc") or []
     pmap = json.load(open(os.path.join(args.lab, "previews.json"), encoding="utf-8"))["map"]
     order = sorted(links, key=lambda l: (-(bool((wt.get(l["a"] + " || " + l["b"]) or {}).get("a")) + bool((wt.get(l["a"] + " || " + l["b"]) or {}).get("b"))), l["a"]))
+    disc = [c for c in disc if not (c.get("a_h") and c.get("a_h") == c.get("b_h"))]   # one preview for two entries: not two songs
     order = order[: args.links] + [{"a": c["a"], "b": c["b"], "word": c.get("w"), "type": "heard"} for c in disc[: args.disc]]
     site = tempfile.mkdtemp()
     shutil.copy(args.page, os.path.join(site, "index.html"))
@@ -195,7 +209,7 @@ def main():
                 if r.get("err"):
                     row["err"] = r["err"]; row["plan"] = r.get("plan"); rows.append(row); print(f"{i:2d} {lk[:60]} {r['err']}", flush=True); continue
                 pl, nd = r["plan"], r["nodes"]
-                row["plan"] = {k: pl.get(k) for k in ("synced", "q", "r", "semis", "rel", "style", "aStart", "cut", "bPos", "pre", "tail", "gap", "onBeat", "foundA", "foundB", "drop", "keyA", "keyB", "keySrc")}
+                row["plan"] = {k: pl.get(k) for k in ("synced", "ride", "q", "r", "semis", "rel", "style", "aStart", "cut", "bPos", "pre", "tail", "gap", "onBeat", "foundA", "foundB", "drop", "keyA", "keyB", "keySrc")}
                 sr = r["rec"]["sr"]
                 x = np.frombuffer(base64.b64decode(r["rec"]["b64"]), dtype="<i2").astype(np.float32) / 32767
                 nz = np.flatnonzero(np.abs(x) > 1e-4)
@@ -210,11 +224,13 @@ def main():
                 if B is not None:
                     pA = 60 / max(1, pl.get("bpmA") or 120)
                     s0 = nd["tc"] + (7.5 * pA if pl.get("echo") else .3)                  # after the echo of A's word died away
-                    row["placeB_ms"] = env_lag(x, sr, t_rec0, s0, min(nd["te"] - 1.7, s0 + 5), B, pl["bPos"] + r["lag"] * pl["r"], nd["tc"], pl["r"])
+                    hold_end = nd["tc"] + ride_out(pl["ride"], pl["ride"]["i1"]) - ride_out(pl["ride"], pl["bPos"]) if pl.get("ride") else None
+                    row["placeB_ms"] = env_lag(x, sr, t_rec0, s0, min(nd["te"] - 1.7, s0 + 5, hold_end or 1e9), B, pl["bPos"] + r["lag"] * pl["r"], nd["tc"], pl["r"])
                 if a2b:
                     bt, _db = a2b(x, sr)
                     bt = np.asarray(bt) + t_rec0
-                    row["beat"] = continuity(bt, nd["t0"], nd["tc"], nd["te"])
+                    hold_end = nd["tc"] + ride_out(pl["ride"], pl["ride"]["i1"]) - ride_out(pl["ride"], pl["bPos"]) if pl.get("ride") else None
+                    row["beat"] = continuity(bt, nd["t0"], nd["tc"], nd["te"], hold_end)
             except Exception as e:
                 row["err"] = type(e).__name__ + ": " + str(e)[:160]
             rows.append(row)
@@ -240,6 +256,7 @@ def main():
         "word_gap_median_s": round(float(np.median(gaps)), 2) if gaps else None,
         "styles": {s: len([r for r in rows if (r.get("plan") or {}).get("style") == s]) for s in ("cut", "echo", "blend", "drop")},
         "synced": len([r for r in rows if (r.get("plan") or {}).get("synced")]),
+        "ride": len([r for r in rows if (r.get("plan") or {}).get("ride")]),
         "key_shifted": len([r for r in rows if (r.get("plan") or {}).get("semis")]),
         "page": meta, "page_errors": errs[:5],
     }
