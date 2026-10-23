@@ -4,7 +4,7 @@
 > stopped, and continue automatically. **This file is that checkpoint.** Update it and push it after every
 > meaningful step (commit with `[skip ci]` when only this file changes).
 
-Heartbeat (UTC): 2026-10-23T02:20Z · session: https://claude.ai/code/session_01Lo7gTW4YHqF6LiS4xWstjM · status: IN PROGRESS (resume from "Next actions")
+Heartbeat (UTC): 2026-10-23T02:03Z · session: https://claude.ai/code/session_01Lo7gTW4YHqF6LiS4xWstjM · status: IN PROGRESS (resume from "Next actions")
 
 ## How to resume in a fresh session
 1. Attach the repo with push access (`add_repo lidorbashari/try`), clone to `/home/claude/try`, branch
@@ -76,16 +76,13 @@ Heartbeat (UTC): 2026-10-23T02:20Z · session: https://claude.ai/code/session_01
   lift on press/drag, chromatic rim while lifted, tab bar minimises on scroll (iOS 26), sheets with springs.
 
 ## Next actions (in order)
-0. Done since the last checkpoint (all pushed): analysis v2 merged (7c0bba7: listen.json for 1,129 previews, analysis v2,
-   wordtimes disc = 220 links found by listening); matcher v2.1 calibrated on it (cccd8a6); engine 6.4 (06ad5f3): hit
-   lock in WSOLA (drum hits within ~2 ms at any rate, was up to 12 ms) + word-play Tempo Ride (tempos 10–30 % apart:
-   B enters at A's tempo on the same beat, holds 2–4 bars, glides back to its own; timing.js `ride`, engine
-   `rideMap`, diagram stripe); same-preview links skipped (UI, analyzer, CI check). CI word-play check knows the ride
-   (continuity measured while B holds A's tempo). Local: t_buf 141/141, t_match 13/13, t_timing OK.
-   Running at 02:20Z: `qa/run_all.sh` → scratchpad qa_full4.log.
-1. If run_all is green: `cd tools/mashup-lab/lab5 && python3 build.py && python3 deploy.py && git checkout docs/mashup-lab/index.html`,
-   commit tools/verify/** + tools/mashup_lab_verify*.py WITHOUT [skip ci] → CI runs the real-music sync check and the
-   word-play check. Reports: tools/reports/mashup-verify.txt, mashup-wordplay.txt (want: sync hits ≤ 10 ms as before;
+0. Done since the last checkpoint (all pushed): analysis v2 merged (7c0bba7); matcher v2.1 (cccd8a6); engine 6.4 hit
+   lock + Tempo Ride (06ad5f3); word-play key by ear (187e3f0); ride stripe on the diagram (80609b8); skills proposed
+   to Lidor (mashup-listening, liquid-glass-web, dj-wordplay-transitions improvement — drafts in scratchpad/skills).
+   Full local QA green on the final build: t_buf 141/141, t_match 13/13, t_timing OK, grep 32, e2e_audio 35,
+   e2e_wordplay 25, UI 32/26/55, sync 58. Build bbf3ce92d2 pushed to tools/verify (69ab29c) → CI runs
+   39887177487 (sync) and 39887177489 (word play) started 02:00Z.
+1. (done) CI checks running on build bbf3ce92d2. Reports: tools/reports/mashup-verify.txt, mashup-wordplay.txt (want: sync hits ≤ 10 ms as before;
    word play share_beat_continues well above the old 0.51, ride links measured while holding).
 2. If the reports are good: deploy docs/ (index.html, sw.js, manifest, icons) — `python3 deploy.py` and commit
    docs/mashup-lab/* — push both branches (`claude/dj-course-music-agents-suitm3` and `mashup-lab-site`); message Lidor
@@ -111,6 +108,7 @@ Heartbeat (UTC): 2026-10-23T02:20Z · session: https://claude.ai/code/session_01
   loop roll = 1-beat loop halved into B's drop.
 
 ## Log (newest first)
+- 2026-10-23 02:03Z: QA all green; build bbf3ce92d2 in CI real-music checks; skills proposed.
 - 2026-10-23 02:20Z: resumed after the usage pause (Lidor: continue from the state file). Matcher v2.1, engine 6.4 (hit lock + tempo ride) pushed; full QA running.
 - 2026-10-22 21:53Z: Lidor warned the session limit is near; checkpoint pushed (see Next actions 0).
 - 2026-10-22 21:46Z: container restarted once (disk kept). Verify scripts now play through the app path and log
