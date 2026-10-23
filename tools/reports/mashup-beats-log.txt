@@ -1,48 +1,24 @@
 == parts/log-0.txt
-shard 0: 38 of 300 previews to analyse
-shard 0: 10/38 ok=10 (31s)
-shard 0: 20/38 ok=20 (64s)
-shard 0: 30/38 ok=30 (93s)
-shard 0 done: 38 analysed, 38 grids
+shard 0: 4 of 28 previews to analyse
+shard 0 done: 4 analysed, 4 grids
 == parts/log-1.txt
-shard 1: 38 of 300 previews to analyse
-shard 1: 10/38 ok=10 (26s)
-shard 1: 20/38 ok=20 (52s)
-shard 1: 30/38 ok=30 (78s)
-shard 1 done: 38 analysed, 38 grids
+shard 1: 4 of 28 previews to analyse
+shard 1 done: 4 analysed, 4 grids
 == parts/log-2.txt
-shard 2: 38 of 300 previews to analyse
-shard 2: 10/38 ok=10 (24s)
-shard 2: 20/38 ok=20 (51s)
-shard 2: 30/38 ok=30 (74s)
-shard 2 done: 38 analysed, 38 grids
+shard 2: 4 of 28 previews to analyse
+shard 2 done: 4 analysed, 4 grids
 == parts/log-3.txt
-shard 3: 38 of 300 previews to analyse
-shard 3: 10/38 ok=10 (21s)
-shard 3: 20/38 ok=20 (44s)
-shard 3: 30/38 ok=30 (64s)
-shard 3 done: 38 analysed, 38 grids
+shard 3: 4 of 28 previews to analyse
+shard 3 done: 4 analysed, 4 grids
 == parts/log-4.txt
-shard 4: 37 of 300 previews to analyse
-shard 4: 10/37 ok=10 (23s)
-shard 4: 20/37 ok=20 (47s)
-shard 4: 30/37 ok=30 (70s)
-shard 4 done: 37 analysed, 37 grids
+shard 4: 3 of 28 previews to analyse
+shard 4 done: 3 analysed, 3 grids
 == parts/log-5.txt
-shard 5: 37 of 300 previews to analyse
-shard 5: 10/37 ok=10 (31s)
-shard 5: 20/37 ok=20 (61s)
-shard 5: 30/37 ok=30 (90s)
-shard 5 done: 37 analysed, 37 grids
+shard 5: 3 of 28 previews to analyse
+shard 5 done: 3 analysed, 3 grids
 == parts/log-6.txt
-shard 6: 37 of 300 previews to analyse
-shard 6: 10/37 ok=10 (22s)
-shard 6: 20/37 ok=20 (47s)
-shard 6: 30/37 ok=30 (69s)
-shard 6 done: 37 analysed, 37 grids
+shard 6: 3 of 28 previews to analyse
+shard 6 done: 3 analysed, 3 grids
 == parts/log-7.txt
-shard 7: 37 of 300 previews to analyse
-shard 7: 10/37 ok=10 (26s)
-shard 7: 20/37 ok=20 (52s)
-shard 7: 30/37 ok=30 (77s)
-shard 7 done: 37 analysed, 37 grids
+shard 7: 3 of 28 previews to analyse
+shard 7 done: 3 analysed, 3 grids
