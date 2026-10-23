@@ -2610,12 +2610,12 @@ html.lq .scrim { transition: none; }
       var T = ctx.currentTime + .03;
       startSrc(d, T, live ? Math.min(d.dur || 1e9, (o0 + Math.max(0, T - t0)) * r0) : d.pos, seamless);
     }
-    function join(d, L, seamless) { /* d enters on the leader's next beat 1 or 3, at the leader's tempo, same bar phase */
+    function join(d, L, seamless) { /* d enters ON THE ONE: the leader's next bar line, at the leader's tempo, same bar phase */
       var gL = L.grid, effL = gL.bpm * L.sr, q = qOf(d.grid, effL), r = effL * q / d.grid.bpm, want = curPos(d);
       if (r < .9 || r > 1.1) { solo(d, seamless); return; }
       setSB(d, r, d.side === "A" ? semisFor(d, L) : 0);                        /* stretch first: the timing below must be fresh */
       var tref = Math.max(ctx.currentTime, L.t0), perL = 60 / gL.bpm / L.sr, xL = xOf(gL, posAt(L, tref));
-      var k = Math.ceil((xL + .2 / perL) / 2) * 2, T = tref + (k - xL) * perL;    /* ≥ 0.2 s ahead */
+      var k = Math.ceil((xL + .2 / perL) / 4) * 4, T = tref + (k - xL) * perL;    /* the next 1, ≥ 0.2 s ahead */
       var pF = phasePos(d, k, q, want > .05 ? want : entryOf(d)), lag = fineLag(d, pF / d.sr, L, posAt(L, T) / L.sr);
       d.fine = lag; startSrc(d, T, pF + lag * d.sr, seamless);
       d.bsync = L.bsync = true;
@@ -2627,7 +2627,7 @@ html.lq .scrim { transition: none; }
       var o0 = A.o0, t0 = A.t0, r0 = A.sr, sm = semisFor(A, B), same = Math.abs(r - r0) < 1e-4 && sm === (A.semis || 0);   /* the vocal's clock mapping right now */
       setSB(B, 1); if (!same) setSB(A, r, sm);                                   /* stretching first: the timing below must be fresh */
       var tref = Math.max(ctx.currentTime, t0), perA = 60 / gA.bpm / r0, xA = xOf(gA, (o0 + (tref - t0)) * r0);
-      var k = Math.ceil((xA + .2 / perA) / 2) * 2, T = tref + (k - xA) * perA;    /* the vocal's next beat 1 or 3, ≥ 0.2 s ahead */
+      var k = Math.ceil((xA + .2 / perA) / 4) * 4, T = tref + (k - xA) * perA;    /* the vocal's next 1, ≥ 0.2 s ahead */
       var pB = phaseLead(B, k, q, want > .05 ? want : entryOf(B)), pA = (o0 + (T - t0)) * r0;
       var lagB = fineLag(B, pB, A, pA / A.sr);                                   /* B is never stretched: offset = position */
       B.fine = lagB; startSrc(B, T, pB + lagB, seamless);
@@ -2752,10 +2752,13 @@ html.lq .scrim { transition: none; }
       var offB = pl.bPos / pl.r, lag = pl.synced ? fineLag({ sb: bb }, offB, { sb: A.buf }, pl.cut) : 0;  /* B's hits on A's, ±40 ms */
       offB = Math.max(0, offB + lag); r.lag = lag;
       var gA = .85 * (pl.trimA || 1), gB = .85 * (pl.trimB || 1), st = pl.style;
-      var pre = Math.max(0, Math.min(pl.pre || 0, offB - x - .01, Tc - T0 - x)), Tb = Tc - pre - x;
+      /* on the one: B comes in on the cut (A's 1) from its own 1; A's fader may close earlier, right after its word, when
+         it sings on (its echo carries the beat to the 1). xb: B's fade-in, longer when its word starts a hair early. */
+      var Ta = Math.min(Tc, T0 + Math.max(.2, (pl.aOut != null ? pl.aOut : pl.cut) - pl.aStart)), xb = clamp(pl.bFade || x, x, .06);
+      var pre = Math.max(0, Math.min(pl.pre || 0, offB - xb - .01, Tc - T0 - xb)), Tb = Tc - pre - xb;
       vA.g.gain.setValueAtTime(gA, T0);
       vA.src.start(T0, clamp(pl.aStart, 0, A.buf.duration - .1));
-      vB.src.start(Tb, Math.max(0, offB - pre - x));
+      vB.src.start(Tb, Math.max(0, offB - pre - xb));
       if (st === "blend" && pre > 0) {                                 /* one bar of B without bass, bass swap on the cut */
         vB.ls.gain.setValueAtTime(-26, Tb); vB.ls.gain.setValueAtTime(-26, Tc - .02); vB.ls.gain.linearRampToValueAtTime(0, Tc + .02);
         vB.g.gain.setValueAtTime(0, Tb); vB.g.gain.linearRampToValueAtTime(.7 * gB, Tc - .02); vB.g.gain.linearRampToValueAtTime(gB, Tc + .02);
@@ -2765,22 +2768,23 @@ html.lq .scrim { transition: none; }
       } else if (st === "drop" && pre > 0) {                           /* B's build-up opens under A; the drop after the words */
         vB.hp.frequency.setValueAtTime(1400, Tb); vB.hp.frequency.exponentialRampToValueAtTime(14, Tc);
         vB.g.gain.setValueAtTime(.3 * gB, Tb); vB.g.gain.linearRampToValueAtTime(.85 * gB, Tc - .01); vB.g.gain.linearRampToValueAtTime(gB, Tc);
-        vA.hp.frequency.setValueAtTime(12, Tb); vA.hp.frequency.exponentialRampToValueAtTime(420, Tc);
-        vA.g.gain.setValueAtTime(gA, Tc - x); vA.g.gain.linearRampToValueAtTime(0, Tc);
-        vA.src.stop(Tc + .05);
-      } else {                                                         /* clean entry on the beat (12 ms crossfade) */
+        vA.hp.frequency.setValueAtTime(12, Tb); vA.hp.frequency.exponentialRampToValueAtTime(420, Math.max(Tb + .05, Ta));
+        vA.g.gain.setValueAtTime(gA, Ta - x); vA.g.gain.linearRampToValueAtTime(0, Ta);
+        vA.src.stop(Ta + .05);
+      } else {                                                         /* clean entry on the one (A out at Ta ≤ Tc, B in at Tc) */
         vB.g.gain.setValueAtTime(0, Tb); vB.g.gain.linearRampToValueAtTime(gB, Tc);
-        vA.g.gain.setValueAtTime(gA, Tc - x); vA.g.gain.linearRampToValueAtTime(0, Tc);
-        vA.src.stop(Tc + .05);
+        vA.g.gain.setValueAtTime(gA, Ta - x); vA.g.gain.linearRampToValueAtTime(0, Ta);
+        vA.src.stop(Ta + .05);
       }
       if (pl.echo) {                                                   /* A's last beat (its word) rings on, in time */
         var e = { send: gainN(c, 0), dl: c.createDelay(2), fb: gainN(c, pl.echo.fb), hp: biq(c, "highpass", 280, .6), lp: biq(c, "lowpass", 5200, .6), wet: gainN(c, pl.echo.wet) };
         e.dl.delayTime.value = clamp(pl.echo.d, .05, 1.9);
         vA.ls.connect(e.send); e.send.connect(e.dl); e.dl.connect(e.hp); e.hp.connect(e.lp); e.lp.connect(e.fb); e.fb.connect(e.dl); e.lp.connect(e.wet); e.wet.connect(bus);
         r.nodes.push(e.send, e.dl, e.fb, e.hp, e.lp, e.wet);
-        var s0 = Math.max(T0 + .01, Tc - pA);
-        e.send.gain.setValueAtTime(0, s0); e.send.gain.linearRampToValueAtTime(gA, s0 + .01); e.send.gain.setValueAtTime(gA, Tc - .006); e.send.gain.linearRampToValueAtTime(0, Tc + .004);
-        e.fb.gain.setValueAtTime(pl.echo.fb, Tc + 4 * pA); e.fb.gain.linearRampToValueAtTime(0, Tc + 7 * pA);
+        var s0 = Math.max(T0 + .01, Ta - pA);                           /* the echo hears A's last beat: its word */
+        e.send.gain.setValueAtTime(0, s0); e.send.gain.linearRampToValueAtTime(gA, s0 + .01); e.send.gain.setValueAtTime(gA, Ta - .006); e.send.gain.linearRampToValueAtTime(0, Ta + .004);
+        e.fb.gain.setValueAtTime(pl.echo.fb, Tc + 2 * pA); e.fb.gain.linearRampToValueAtTime(0, Tc + 5 * pA);
+        e.wet.gain.setValueAtTime(pl.echo.wet, Tc); e.wet.gain.linearRampToValueAtTime(pl.echo.wet * .45, Tc + 2 * pA);   /* B on its 1 takes over */
       }
       var Te = Tc + Math.max(2, pl.tail || 10);
       vB.g.gain.setValueAtTime(gB, Te - 1.6); vB.g.gain.linearRampToValueAtTime(0, Te);
@@ -5784,52 +5788,18 @@ window.addEventListener("scroll", syncTopbar, { passive: true });
     var a = (1 - rd.r0) / (2 * T2), b = rd.r0, c = -(i - rd.i1);
     return o1 + (Math.abs(a) < 1e-9 ? -c / b : (-b + Math.sqrt(Math.max(0, b * b - 4 * a * c))) / (2 * a));
   }
-  /* one candidate (A word end eA, B word start sB) → timing, or null */
+  /* one candidate (A word end eA, B word start sB) → timing ON THE ONE, or null. The cut is A's first bar line after its
+     word (A's "1"); at that moment B comes in from its own bar line (B's "1"), the last one before its word, so the two
+     bars line up (B stretched to A's tempo when synced, its bar lines on A's). A word may end ≤ 50 ms after a bar line
+     (its tail fades under the cut); B's word may start ≤ 30 ms before its bar line. */
   function place(eA, sB, gA, gB, tr, durB) {
-    var pA = 60 / gA.bpm, xe = xOf(gA, eA), cands = [], c, q = tr.q;
-    if (tr.synced) {
-      var per = (q === .5 ? 8 : 4) * q, xs = xOf(gB, sB), gapX = .04 / pA, opts = [];
-      var k = Math.floor((xs - q * (xe + gapX)) / per);
-      opts.push({ c: per * k, half: false });
-      /* the other half of the period: still bar on bar when q ≠ 1; for q = 1 it puts B's bar line on A's beat 3 */
-      opts.push({ c: per * Math.floor((xs - q * (xe + gapX) - per / 2) / per) + per / 2, half: q === 1 });
-      opts.forEach(function (o) {
-        var xw = (xs - o.c) / q;                                   /* B's word start in A beats */
-        var lo1 = xe - .06 / pA, lo = xe + .03 / pA, hi = xw - .05 / pA, pts = [];
-        for (var x = Math.ceil(lo1); x <= hi; x++) {
-          var bar = mod(x, 4) === 0;
-          if (x < lo && !bar) continue;
-          pts.push({ x: x, on: bar ? "1" : mod(x, 4) === 2 ? "3" : "beat" });
-        }
-        for (x = Math.ceil(lo * 2) / 2; x <= hi && pts.length < 1; x += .5) pts.push({ x: x, on: "off" });
-        if (!pts.length && hi >= lo1) pts.push({ x: hi, on: "off" });     /* words back to back: just before B's word */
-        /* the first grid point after the word; a bar line wins when it is within ~1 beat */
-        pts.sort(function (a, b) { return a.x - b.x; });
-        var pick = null;
-        for (var i = 0; i < pts.length; i++) {
-          var pt = pts[i], bPos = tOf(gB, q * pt.x + o.c);
-          if (bPos < .05) continue;
-          if (!pick) pick = pt;
-          if (pt.on === "1" && pt.x - xe <= 1.25 && pick.on !== "1") { pick = pt; break; }
-          if (pick.on === "1") break;
-        }
-        if (!pick) return;
-        var bP = tOf(gB, q * pick.x + o.c);
-        cands.push({ cut: tOf(gA, pick.x), bPos: bP, on: pick.on, half: o.half, gap: (xw - xe) * pA, wait: (xw - pick.x) * pA });
-      });
-      if (!cands.length) return null;
-      cands.sort(function (a, b) { return a.gap + (a.half ? .8 : 0) - (b.gap + (b.half ? .8 : 0)); });
-      c = cands[0];
-      return c.gap > 4 ? null : c;
-    }
-    /* tempos too far apart: B keeps its own tempo; the cut on A's beat, B starts on its own beat before its word */
-    var pB = 60 / gB.bpm, x2 = Math.ceil(xe + .03 / pA), xbar = Math.ceil((xe - .06 / pA) / 4) * 4;
-    var xc = xbar - xe <= 1.25 ? xbar : x2, cut = tOf(gA, xc);
-    var xs2 = xOf(gB, sB), xb = Math.floor(xs2 - .05 / pB), xbb = Math.floor((xs2 - .05 / pB) / 4) * 4;
-    if (xs2 - xbb <= 1.5) xb = xbb;                                 /* enter on B's bar line when the word sits near it */
-    var bPos = tOf(gB, xb);
-    if (bPos < .05) { xb += Math.ceil((.05 - bPos) / pB); bPos = tOf(gB, xb); if (bPos > sB - .02) return null; }
-    return { cut: cut, bPos: bPos, on: mod(xc, 4) === 0 ? "1" : mod(xc, 4) === 2 ? "3" : "beat", half: false, gap: (cut - eA) + (sB - bPos), wait: sB - bPos };
+    var pA = 60 / gA.bpm, pB = 60 / gB.bpm, rB = tr.synced ? tr.r : 1;
+    var xe = xOf(gA, eA), xc = Math.ceil((xe - .05 / pA) / 4 - 1e-9) * 4;
+    var xs = xOf(gB, sB), xb = Math.floor((xs + .03 / pB) / 4 + 1e-9) * 4;
+    var bPos = tOf(gB, xb), cut = tOf(gA, xc);
+    if (bPos < .05 || bPos > durB - 3) return null;                  /* B's word sits before its first full bar in the clip */
+    var gapA = Math.max(0, cut - eA), gapB = Math.max(0, sB - bPos) / rB;
+    return { cut: cut, bPos: bPos, on: "1", half: false, gap: gapA + gapB, gapA: gapA, gapB: gapB, wait: gapB };
   }
 
   function wordsOf(link) {
@@ -5864,15 +5834,16 @@ window.addEventListener("scroll", syncTopbar, { passive: true });
       occB.forEach(function (b) {
         var pl = place(a.e, b.s, gA, gB, tr, durB);
         if (!pl) return;
-        var leadIn = a.s - 0, rB = tr.synced ? tr.r : 1, tail = (durB - .4 - pl.bPos) / rB;
-        var sc = 2 * (a.p + b.p) + (a.n > 1 ? .6 : 0) + (b.n > 1 ? .6 : 0) - 1.2 * Math.max(0, pl.gap) - (pl.gap > 2.2 ? 3 : 0);
+        var leadIn = a.s - 0, rB = tr.synced ? tr.r : 1, tail = (durB - .4 - pl.bPos) / rB, pA0 = 60 / gA.bpm, pB0 = 60 / gB.bpm;
+        var bA = pl.gapA / pA0, bB = pl.gapB * rB / pB0;            /* the waits in beats: A's word → its 1, B's 1 → its word */
+        var sc = 2 * (a.p + b.p) + (a.n > 1 ? .6 : 0) + (b.n > 1 ? .6 : 0) - .7 * Math.max(0, bA - 1) - .6 * Math.max(0, bB - 1) - .4 * Math.max(0, pl.gap - 2.5);
         if (leadIn < 4) sc -= (4 - leadIn) * 1.2;
         if (tail < 9) sc -= (9 - tail) * 1.5;
-        if (pl.half) sc -= .8;
-        if (pl.on === "off") sc -= 1.5;
-        var vb = vocalMax(anB, gB, b.s - 2 * 60 / gB.bpm, b.s - .05), va = vocalMax(anA, gA, a.e + .05, a.e + 2 * 60 / gA.bpm);
+        var vb = vocalMax(anB, gB, b.s - 2 * pB0, b.s - .05), va = vocalMax(anA, gA, a.e + .05, a.e + 2 * pA0);
         if (vb >= 0 && vb <= 2) sc += .8;                          /* B's word starts a line */
         if (va >= 0 && va <= 2) sc += .5;                          /* A's word ends a line */
+        if (vocalMax(anB, gB, pl.bPos, b.s - .05) >= 5) sc -= 1;    /* B would sing other words between its 1 and its word */
+        if (vocalMax(anA, gA, a.e + .06, pl.cut - .03) >= 5) sc -= .4;   /* A sings on before its 1: it has to echo out early */
         if (!best || sc > best.sc) best = { sc: sc, a: a, b: b, pl: pl, tail: tail };
       });
     });
@@ -5894,27 +5865,35 @@ window.addEventListener("scroll", syncTopbar, { passive: true });
     if (!tr.synced && style !== "cut") style = "echo";                  /* a tempo change: cut with an echo on A's word */
     if (fit.rel === null && style === "blend") style = "echo";          /* clashing keys: no overlap */
     /* B under A before the cut: blend 1 bar of B's instrumental, drop the 2-bar build-up */
-    var pre = 0, barB = 4 * 60 / gB.bpm;
+    var pre = 0, barB = 4 * 60 / gB.bpm, barA = 4 * pA * Math.max(1, 1 / tr.q);   /* whole bars of both songs (q: B beats per A beat) */
     if (style === "blend") {
-      pre = 4 * pA;
+      pre = barA;
       if (pl.bPos - pre * rB < .05 || vocalMax(anB, gB, pl.bPos - pre * rB, pl.bPos - .05) >= 5) { pre = 0; style = "echo"; }
     } else if (style === "drop") {
-      pre = pl.bPos - 2 * barB >= .05 ? 8 * pA : pl.bPos - barB >= .05 ? 4 * pA : 0;
+      pre = pl.bPos - 2 * barA * rB >= .05 ? 2 * barA : pl.bPos - barA * rB >= .05 ? barA : 0;
     }
+    /* A between its word and its 1: when it goes on singing (or we can't tell and the wait is long), its fader closes
+       right after the word and a tempo-synced echo of the word carries the beat to the 1, where B comes in */
+    var aSings = vocalMax(anA, gA, a.e + .06, pl.cut - .03), early = pl.gapA > .3 * pA && (aSings >= 4 || (aSings < 0 && pl.gapA > 1.6 * pA));
+    var aOut = early ? Math.min(pl.cut, a.e + Math.min(.12, .25 * pA)) : pl.cut;
+    if (early && style !== "drop") { style = "echo"; pre = 0; }
     var ride = null;
     if (tr.ride) {                                   /* hold A's tempo for a few of B's bars after its word, then glide home */
       var bB = 4 * 60 / gB.bpm, room = durB - .5 - pl.bPos, hold = room / rB >= 14 ? 4 : 2;
-      var i1 = Math.max(pl.bPos + hold * bB, b.e + 60 / gB.bpm), i2 = Math.min(durB - .3, i1 + 8 * bB);
+      var i1 = Math.max(pl.bPos + hold * bB, b.e + 60 / gB.bpm), i2;
+      i1 = pl.bPos + Math.ceil((i1 - pl.bPos) / bB - 1e-9) * bB;    /* the glide starts on one of B's bar lines too */
+      i2 = Math.min(durB - .3, i1 + 8 * bB);
       if (i2 - i1 >= 2 * bB) ride = { r0: r3(rB), i1: r3(i1), i2: r3(i2), hold: hold, bars: Math.round((i2 - i1) / bB) };
     }
     var tailRaw = ride ? rideOut(ride, durB - .4) - rideOut(ride, pl.bPos) : best.tail;
     var tail = clamp(tailRaw, 3, 16);
     function trim(an) { return an && isFinite(an.lufs) ? r3(clamp(Math.pow(10, (-11 - an.lufs) / 20), .45, 1.6)) : 1; }
-    var echo = style === "echo" || style === "drop" ? { d: r3(.75 * pA <= .6 ? .75 * pA : .5 * pA), fb: .42, wet: .5 } : null;
+    var echo = style === "echo" || style === "drop" ? { d: r3(.75 * pA <= .6 ? .75 * pA : .5 * pA), fb: pl.cut - aOut > 2 * pA ? .55 : .42, wet: .5 } : null;
     var out = {
       ok: true, synced: tr.synced, q: tr.q, r: r3(rB), ride: ride, semis: fit.semis || 0, rel: fit.rel, ear: fit.ear == null ? null : fit.ear, keyA: kA ? kA.k : null, keyB: kB ? kB.k : null, keyB2: fit.keyB || null,
       keySrc: kA && kB ? (kA.src === "measured" && kB.src === "measured" ? "measured" : "catalog") : null,
-      style: style, aStart: r3(aStart), cut: r3(pl.cut), bPos: r3(pl.bPos), pre: r3(pre), tail: r3(tail),
+      style: style, aStart: r3(aStart), cut: r3(pl.cut), aOut: r3(aOut), bPos: r3(pl.bPos), pre: r3(pre), tail: r3(tail),
+      bFade: r3(Math.max(.012, (pl.bPos - b.s) / rB + .012)),        /* B fades in over its word's anticipation (≤ 30 ms before its 1) */
       wA: [r3(a.s), r3(a.e)], wB: [r3(b.s), r3(b.e)], foundA: a.found, foundB: b.found, drop: !!b.drop,
       gap: r3(pl.gap), half: pl.half, onBeat: pl.on, bpmA: Math.round(gA.bpm * 10) / 10, bpmB: Math.round(gB.bpm * 10) / 10,
       trimA: trim(anA), trimB: trim(anB), echo: echo, notes: notes, words: w
@@ -5936,9 +5915,10 @@ window.addEventListener("scroll", syncTopbar, { passive: true });
     if (p.semis) s.push("B מוזז " + (Math.abs(p.semis) === 1 ? "חצי טון" : "טון שלם") + " " + (p.semis > 0 ? "למעלה" : "למטה") + (p.keyB && p.keyB2 ? " (" + p.keyB + " → " + p.keyB2 + ")" : "") + (p.ear != null ? ": ככה, לפי ההאזנה לשני הקטעים, האקורדים והמילים של שניהם יושבים הכי טוב אחד על השני." : " כדי להתאים לסולם של A (" + p.keyA + ")."));
     else if (p.rel) s.push(p.ear != null ? "לפי ההאזנה לשני הקטעים, האקורדים והמילים של שניהם יושבים טוב אחד על השני" + ks + "." : "הסולמות מתאימים" + ks + ".");
     else if (p.rel === null) s.push((p.ear != null ? "לפי ההאזנה, ההרמוניות של שני הקטעים לא מסתדרות" : "הסולמות מתנגשים" + (p.keyA && p.keyB ? " (" + p.keyA + " מול " + p.keyB + ")" : "")) + ", אז אין חפיפה: חיתוך נקי" + (p.echo ? " עם אקו." : "."));
-    var where = p.onBeat === "1" ? "על ה־1 של התיבה" : p.onBeat === "3" ? "על הפעמה השלישית בתיבה" : p.onBeat === "beat" ? "על פעמה" : "רגע לפני המילה של B";
-    if (p.drop) s.push("החיתוך " + where + ": הדרופ של B נוחת מיד אחרי המילים של A.");
-    else s.push("החיתוך " + where + ", מיד אחרי המילה של A, והמילה של B נכנסת " + (p.gap < .35 ? "מיד אחריה" : "אחרי " + (Math.round(p.gap * 10) / 10) + " שניות") + ".");
+    var early = p.aOut != null && p.aOut < p.cut - .05;
+    if (p.drop) s.push("על ה־1 שאחרי המילה של A הדרופ של B נוחת, מה־1 של התיבה שלו (On The One).");
+    else s.push("B נכנס בדיוק על ה־1: ה־1 של התיבה של A שאחרי המילה, ומה־1 של התיבה של B" + (p.gap < .35 ? ", והמילה שלו מיד שם." : ", והמילה שלו אחרי " + (Math.round(p.gap * 10) / 10) + " שניות."));
+    if (early) s.push("A ממשיך לשיר אחרי המילה, אז הפיידר שלו נסגר מיד אחריה, והאקו של המילה ממשיך את הביט עד ה־1.");
     if (p.style === "echo") s.push("אקו מסונכרן לקצב ממשיך את המילה של A לתוך B.");
     else if (p.style === "blend") s.push("B מתנגן תיבה אחת מתחת ל־A בלי הבס, ובחיתוך מחליפים את הבס (Bass Swap).");
     else if (p.style === "drop") s.push("ה־Build-up של B עולה מתחת ל־A עם פילטר שנפתח.");
@@ -6069,8 +6049,9 @@ window.addEventListener("scroll", syncTopbar, { passive: true });
     var pA = 60 / (pl.bpmA || 120), r = pl.r || 1, pre = pl.pre || 0, out = [], k;
     for (k = 0; k * pA <= tot + 1e-6; k++) { var bar = k % 4 === 0; out.push('<line x1="' + X(k * pA) + '" x2="' + X(k * pA) + '" y1="' + (bar ? 10 : 14) + '" y2="' + (bar ? 82 : 78) + '" class="' + (bar ? "dg-bar" : "dg-beat") + '"/>'); }
     var aw0 = pl.wA[0] - pl.aStart, aw1 = pl.wA[1] - pl.aStart, bw0 = T + (pl.wB[0] - pl.bPos) / r, bw1 = T + (pl.wB[1] - pl.bPos) / r;
-    out.push('<rect class="dg-a" x="' + X(0) + '" y="20" width="' + (X(T) - X(0)).toFixed(1) + '" height="20" rx="6"/>');
-    if (pl.echo) out.push('<rect class="dg-echo" x="' + X(T) + '" y="20" width="' + (X(T + 2 * pA) - X(T)).toFixed(1) + '" height="20" rx="6"/>');
+    var Tout = Math.min(T, Math.max(0, (pl.aOut != null ? pl.aOut : pl.cut) - pl.aStart));      /* A's fader closes here (≤ the cut) */
+    out.push('<rect class="dg-a" x="' + X(0) + '" y="20" width="' + (X(Tout) - X(0)).toFixed(1) + '" height="20" rx="6"/>');
+    if (pl.echo) out.push('<rect class="dg-echo" x="' + X(Tout) + '" y="20" width="' + (X(T + 2 * pA) - X(Tout)).toFixed(1) + '" height="20" rx="6"/>');
     out.push('<rect class="dg-b" x="' + X(T - pre) + '" y="52" width="' + (X(tot) - X(T - pre)).toFixed(1) + '" height="20" rx="6"/>');
     var rd = pl.ride, RO = window.WordTiming && window.WordTiming.rideOut, rideOn = false;
     if (rd && RO) {                                        /* the tempo ride: B glides from A's tempo back to its own */
@@ -6081,7 +6062,7 @@ window.addEventListener("scroll", syncTopbar, { passive: true });
     if (pl.foundB !== false && bw0 < tot) out.push('<rect class="dg-wb" x="' + X(bw0) + '" y="50" width="' + Math.max(3, X(Math.min(tot, bw1)) - X(bw0)).toFixed(1) + '" height="24" rx="5"/>');
     out.push('<line class="dg-cut" x1="' + X(T) + '" x2="' + X(T) + '" y1="4" y2="88"/>');
     var lab = '<span class="dg-l a">A</span><span class="dg-l b">B</span>';
-    var legend = '<div class="dg-key"><span><i class="wa"></i>המילה של A</span><span><i class="wb"></i>המילה של B</span><span><i class="cut"></i>החיתוך' + (pl.onBeat === "1" ? " על ה־1" : pl.onBeat === "3" ? " על פעמה 3" : " על הביט") + "</span>" +
+    var legend = '<div class="dg-key"><span><i class="wa"></i>המילה של A</span><span><i class="wb"></i>המילה של B</span><span><i class="cut"></i>' + (pl.onBeat === "1" ? "ה־1: B נכנס מה־1 שלו" : "החיתוך על הביט") + "</span>" +
       (rideOn ? '<span><i class="ride"></i>B חוזר לקצב שלו</span>' : "") + "</div>";
     var defs = rideOn ? '<defs><pattern id="dg-ride-p" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="2" height="5" style="fill:var(--beat);opacity:.55"/></pattern></defs>' : "";
     return '<figure class="wp-diag" aria-label="שרטוט המעבר">' + lab + '<svg viewBox="0 0 ' + Wd + ' 92" preserveAspectRatio="none" aria-hidden="true">' + defs + out.join("") +
@@ -6195,8 +6176,8 @@ window.addEventListener("scroll", syncTopbar, { passive: true });
     if (st.phase === "load" || !pl) r.msg = "מכין את המעבר: מפענח את שני הקטעים ומתאים קצב וסולם…";
     else if (st.phase === "a") {
       var toWord = (pl.wA[0] - pl.aStart) - st.t, toCut = st.cut - st.t;
-      r.msg = toWord > .25 ? "A מתנגן · המילה " + (pl.foundA ? "של A" : "(סוף המשפט)") + " בעוד " + Math.ceil(toWord) + " שנ׳" : toCut > 0 ? "המילה של A… ו־B נכנס על הביט" : "";
-    } else r.msg = pl.drop ? "הדרופ של B! ממשיכים עם B" : "B ענה על הביט · ממשיכים עם B";
+      r.msg = toWord > .25 ? "A מתנגן · המילה " + (pl.foundA ? "של A" : "(סוף המשפט)") + " בעוד " + Math.ceil(toWord) + " שנ׳" : toCut > 0 ? "המילה של A… ו־B נכנס על ה־1" : "";
+    } else r.msg = pl.drop ? "הדרופ של B על ה־1! ממשיכים עם B" : "B נכנס על ה־1 · ממשיכים עם B";
     paintLive(r);
   }
   function playTransition(l, btn) {

@@ -132,18 +132,26 @@ def ride_out(rd, i):
 
 
 def bars_on_one(downs, beats, t0, tc, te, hold_end=None):
-    """on the one: A's tracked downbeats before the cut set a bar grid; B's tracked downbeats after it must sit on it
+    """on the one: A's tracked beats before the cut give one beat grid (least squares, like continuity()) and A's tracked
+    downbeats tell which grid beats are its 1s; every downbeat B shows after the cut must fall on one of those 1s
     (B came in from its own 1 on A's 1, so its bars continue A's bars)"""
+    bA = beats[(beats > t0 + .8) & (beats < tc - .15)]
     dA = downs[(downs > t0 + .8) & (downs < tc - .15)]
     dB = downs[(downs > tc - .1) & (downs < min(te - 1.8, tc + 8.5, hold_end or 1e9))]
-    bA = beats[(beats > t0 + .8) & (beats < tc - .15)]
-    if len(dA) < 2 or len(dB) < 1 or len(bA) < 6:
+    if len(bA) < 6 or len(dA) < 2 or len(dB) < 1:
         return None
-    bar = 4 * float(np.median(np.diff(bA)))
-    off = ((dB - dA[-1]) / bar - np.round((dB - dA[-1]) / bar)) * bar * 1000
-    first = float(off[0]) if abs(dB[0] - tc) < .25 * bar else None          # B's first downbeat right at the cut
-    return {"n": int(len(off)), "on_one": round(float(np.mean(np.abs(off) <= 70)), 3), "median_ms": round(float(np.median(off)), 1),
-            "first_ms": round(first, 1) if first is not None else None}
+    k = np.round((bA - bA[0]) / np.median(np.diff(bA)))
+    per, ph = np.polyfit(k, bA, 1)
+    kd = np.round((dA - ph) / per).astype(int) % 4
+    m = int(np.bincount(kd, minlength=4).argmax())                   # A's 1 = grid beats with index ≡ m (mod 4)
+    kb = (dB - ph) / per
+    kr = np.round(kb).astype(int)
+    off = (kb - kr) * per * 1000
+    on = ((kr - m) % 4 == 0) & (np.abs(off) <= 70)
+    first = 0 if abs(dB[0] - tc) < 2 * per else None
+    return {"n": int(len(dB)), "on_one": round(float(np.mean(on)), 3), "median_ms": round(float(np.median(off)), 1),
+            "beat_of_bar": [int((x - m) % 4) + 1 for x in kr[:6]],
+            "first_ms": round(float(off[0]), 1) if first is not None else None, "first_on_one": bool(on[0]) if first is not None else None}
 
 
 def continuity(beats, t0, tc, te, hold_end=None):
@@ -279,6 +287,8 @@ def main():
         "share_on_one": round(float(np.mean([r["bars"]["on_one"] >= .99 for r in rows if r.get("bars")])), 3) if any(r.get("bars") for r in rows) else None,
         "first_downbeat_median_abs_ms": round(float(np.median([abs(r["bars"]["first_ms"]) for r in rows if r.get("bars") and r["bars"].get("first_ms") is not None])), 1)
             if any(r.get("bars") and r["bars"].get("first_ms") is not None for r in rows) else None,
+        "share_first_on_one": round(float(np.mean([bool(r["bars"]["first_on_one"]) for r in rows if r.get("bars") and r["bars"].get("first_on_one") is not None])), 3)
+            if any(r.get("bars") and r["bars"].get("first_on_one") is not None for r in rows) else None,
         "page": meta, "page_errors": errs[:5],
     }
     os.makedirs(os.path.dirname(args.out), exist_ok=True)
