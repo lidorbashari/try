@@ -1264,7 +1264,9 @@ function applyLive(st) {
 /* ---------- loading & playing ---------- */
 function ensureLoaded(p, sync) {
   if (loaded && loaded.pk === pkOf(p)) return false;
-  const want = sync == null ? !p.free : !!sync;
+  /* sync whenever the tempos are within reach (≤ 12 %, half / double counted), also for a pair that is not a key match:
+     two songs at different tempos never sound right together */
+  const want = sync == null ? (!p.free || !!(p.t && p.t.d <= 0.12 + 1e-9)) : !!sync;
   const mm = p.mm || (MEAS ? MashMatch.pair(p.v, p.b, {}) : null);
   E.loadPair(p.v, p.b, want ? ratesOf(p) : { A: 1, B: 1 }, mm && mm.ok ? mm.plan : null);
   loaded = { p, pk: pkOf(p) };
