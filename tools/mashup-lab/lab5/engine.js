@@ -1085,16 +1085,18 @@
         });
       });
     }
-    function procBuf(url, b, r, semis) { /* B as the word play needs it: stretched to A's tempo, maybe shifted in key */
+    function procBuf(url, b, r, semis, ride) { /* B as the word play needs it: stretched to A's tempo (maybe riding back
+                                                  to its own), maybe shifted in key */
       r = Math.round(clamp(r, .5, 2) * 1e4) / 1e4; semis = Math.round(clamp(semis || 0, -3, 3));
+      var rd = ride && ride.i2 > ride.i1 && Math.abs(r - 1) >= 5e-4 ? { i1: +ride.i1, i2: +ride.i2 } : null, rk = rd ? rd.i1 + "-" + rd.i2 : "";
       if (Math.abs(r - 1) < 5e-4 && !semis) return b;
       var e = BUF[url];
-      if (e && e.wp && e.wp.r === r && e.wp.s === semis && e.wp.src === b) return e.wp.b;
+      if (e && e.wp && e.wp.r === r && e.wp.s === semis && e.wp.rk === rk && e.wp.src === b) return e.wp.b;
       var n = Math.min(2, b.numberOfChannels), chs = [], c;
       for (c = 0; c < n; c++) chs.push(b.getChannelData(c));
-      var out = shiftStretch(chs, r, semis, b.sampleRate), ob = ctx.createBuffer(n, out[0].length, b.sampleRate);
+      var out = shiftStretch(chs, r, semis, b.sampleRate, rd), ob = ctx.createBuffer(n, out[0].length, b.sampleRate);
       for (c = 0; c < n; c++) { if (ob.copyToChannel) ob.copyToChannel(out[c], c); else ob.getChannelData(c).set(out[c]); }
-      if (e) e.wp = { r: r, s: semis, b: ob, src: b };
+      if (e) e.wp = { r: r, s: semis, rk: rk, b: ob, src: b };
       return ob;
     }
     function wpVoice(buf, dest) {
@@ -1177,7 +1179,7 @@
           return new Promise(function (res) { setTimeout(res, 30); }).then(function () {   /* the card paints "preparing" first */
             if (WP !== r) return null;
             if (ctx.state !== "running") resumeCtx();
-            wpSchedule(r, A, B, procBuf(B.url, B.buf, pl.r, pl.semis), pl);
+            wpSchedule(r, A, B, procBuf(B.url, B.buf, pl.r, pl.semis, pl.ride), pl);
             return pl;
           });
         }).catch(function (e) {
@@ -1559,11 +1561,11 @@
      ±8 ms for the best waveform match (coarse on a 4× decimated mono mix, then sample-exact). Transient-aware:
      a splice never crossfades through a drum hit or a consonant, and never skips or repeats one. Output position
      t always takes input from t × rate (± the 8 ms search), so beat times map linearly. ~50 ms per 30 s preview. */
-  function wsola(chs, rate, sr) {
+  function wsola(chs, rate, sr, map) {          /* map (optional): { inAt(outSample) → inSample, outN } for a varying rate */
     var nC = chs.length, N = chs[0].length, c, i, j;
-    if (!(rate > 0) || Math.abs(rate - 1) < 1e-6 || N < sr) return chs.map(function (x) { return new Float32Array(x); });
+    if (!map && (!(rate > 0) || Math.abs(rate - 1) < 1e-6 || N < sr)) return chs.map(function (x) { return new Float32Array(x); });
     var seq = Math.round(sr * .06), ov = Math.round(sr * .012), sw = Math.round(sr * .008), hop = seq - ov;
-    var outN = Math.max(1, Math.round(N / rate)), out = [];
+    var outN = Math.max(1, map ? Math.round(map.outN) : Math.round(N / rate)), out = [];
     for (c = 0; c < nC; c++) out.push(new Float32Array(outN + seq + Math.round(sr * .03)));
     var mono = new Float32Array(N), md = new Float32Array((N >> 2) + 1);
     for (c = 0; c < nC; c++) { var xc = chs[c]; for (i = 0; i < N; i++) mono[i] += xc[i]; }
@@ -1578,6 +1580,13 @@
       run += en[j]; if (j >= 20) run -= en[j - 20];
     }
     function hasTr(a, b2) { var ja = Math.max(0, Math.floor(a / B)), jb = Math.min(nb, Math.ceil(b2 / B)); return jb > ja && pre[jb] > pre[ja]; }
+    function firstTr(a, b2) {                       /* input sample of the first transient block in [a, b2), or −1 */
+      var ja = Math.max(0, Math.floor(a / B)), jb = Math.min(nb, Math.ceil(b2 / B));
+      if (jb <= ja || pre[jb] === pre[ja]) return -1;
+      for (var k = ja; k < jb; k++) if (pre[k + 1] > pre[k]) return k * B;
+      return -1;
+    }
+    var outAt = map ? map.outAt : function (x) { return x / rate; };
     var w = new Float32Array(ov); for (i = 0; i < ov; i++) w[i] = .5 - .5 * Math.cos(Math.PI * (i + .5) / ov);
     /* best splice: normalised waveform correlation with the natural continuation, minus a heavy penalty when the
        material that would be skipped or repeated (between ref and s) holds a transient */
@@ -1602,10 +1611,26 @@
          search window would skip (speeding up) or repeat (slowing down) one */
       var ext = 0, op, ref, tg, lo, hi;
       for (;;) {
-        op = segOut + hop + ext; ref = prev + hop + ext; ideal = op * rate; tg = Math.round(ideal - .8 * dev); lo = Math.max(0, tg - sw); hi = Math.min(N - seq, tg + sw);
+        op = segOut + hop + ext; ref = prev + hop + ext; ideal = map ? map.inAt(op) : op * rate; tg = Math.round(ideal - .8 * dev); lo = Math.max(0, tg - sw); hi = Math.min(N - seq, tg + sw);
         var bad = hasTr(ref - pad, ref + ov + pad) || (ref < lo && hasTr(ref, lo + ov + pad)) || (ref > hi && hasTr(hi - pad, ref + ov));
         if (!bad || ext >= maxExt) break;
         ext += B;
+      }
+      /* hit lock: the next hit not yet heard gets a splice of its own, placed so that it sounds at its own time (output =
+         map⁻¹ of its input time) instead of (1 − rate) × its depth in a 60 ms segment early or late. The segment start
+         may move against the regular hop, as long as the hit sits in the body (never in a crossfade), the previous
+         segment's run-on stops before the hit, and nothing else is skipped or repeated. */
+      if (outAt) {
+        var trI = firstTr(prev + seq + B, Math.min(N - seq, prev + seq + hop + maxExt + seq));
+        if (trI >= 0) {
+          var oT = outAt(trI), L1 = Math.max(oT - seq + 3 * B, segOut + ov + 2 * B), H1 = Math.min(oT - ov - 3 * B, segOut + hop + maxExt, segOut + (trI - prev) - ov - 2 * B);
+          if (L1 <= H1) {
+            var opL = Math.round(clamp(segOut + hop, L1, H1)), spL = Math.round(trI - (oT - opL)), refL = prev + (opL - segOut);
+            if (spL >= 0 && spL + seq <= N && opL < outN && !hasTr(Math.min(spL, refL) - B, Math.max(spL, refL) + ov + B)) {
+              op = opL; ref = refL; ideal = spL; tg = spL; lo = Math.max(0, spL - 2 * B); hi = Math.min(N - seq, spL + 2 * B);
+            }
+          }
+        }
       }
       if (op >= outN || ref + ov > N || hi < lo) break;
       var need = op + ov - segOut;
@@ -1636,9 +1661,27 @@
     }
     return y;
   }
-  function shiftStretch(chs, rate, semis, sr) {
-    if (!semis) return wsola(chs, rate, sr);
-    var p = Math.pow(2, semis / 12), st = wsola(chs, rate / p, sr), outN = Math.max(1, Math.round(chs[0].length / rate));
+  /* a tempo ride (word play, tempos 10–30 % apart): rate r0 until input sample i1, then the rate glides linearly in
+     output time to 1 by input sample i2, then 1. B keeps A's beat at the cut and comes home to its own tempo. */
+  function rideMap(N, r0, i1, i2) {
+    i1 = Math.max(0, Math.min(N, i1)); i2 = Math.max(i1, Math.min(N, i2));
+    var o1 = i1 / r0, T2 = i2 > i1 ? 2 * (i2 - i1) / (r0 + 1) : 0, o2 = o1 + T2;
+    return { outN: Math.max(1, Math.round(o2 + (N - i2))), inAt: function (o) {
+      if (o <= o1) return o * r0;
+      if (o <= o2) { var u = o - o1; return i1 + r0 * u + (1 - r0) * u * u / (2 * T2); }
+      return i2 + (o - o2);
+    }, outAt: function (i) {
+      if (i <= i1) return i / r0;
+      if (i >= i2) return o2 + (i - i2);
+      var a = (1 - r0) / (2 * T2), c = -(i - i1);
+      return o1 + (Math.abs(a) < 1e-12 ? -c / r0 : (-r0 + Math.sqrt(Math.max(0, r0 * r0 - 4 * a * c))) / (2 * a));
+    } };
+  }
+  function shiftStretch(chs, rate, semis, sr, ride) {
+    var map = ride && ride.i2 > ride.i1 ? rideMap(chs[0].length, rate, ride.i1 * sr, ride.i2 * sr) : null;
+    if (!semis) return wsola(chs, rate, sr, map);
+    var p = Math.pow(2, semis / 12), outN = map ? map.outN : Math.max(1, Math.round(chs[0].length / rate));
+    var st = wsola(chs, rate / p, sr, map ? { outN: map.outN * p, inAt: function (o) { return map.inAt(o / p); }, outAt: function (i) { return map.outAt(i) * p; } } : null);
     return st.map(function (x) { return resampleTo(x, p, outN); });
   }
   /* beat grids measured on GitHub Actions from the previews (beats.json): key → [bpm, b0, db, conf, urlhash] */
@@ -1669,5 +1712,5 @@
     Object.keys(map).forEach(function (k) { var v = map[k]; if (!v || typeof v !== "object") return; if (v.p) { cache[k] = { p: String(v.p), a: v.a ? String(v.a) : null }; n++; } else if (v.miss && !(cache[k] && cache[k].p)) { cache[k] = { miss: Date.now() }; } });
     return n;
   }
-  W.MashEngine = { create: create, version: "6.3", seed: seed, seedBeats: seedBeats, seedAnalysis: seedAnalysis, seedListen: seedListen, _render: render, _pick: pick, _proc: buildProc, _grid: grid, _wsola: wsola, _shift: shiftStretch, _hash: function (u) { return hex8(hash(u)); } };
+  W.MashEngine = { create: create, version: "6.4", seed: seed, seedBeats: seedBeats, seedAnalysis: seedAnalysis, seedListen: seedListen, _render: render, _pick: pick, _proc: buildProc, _grid: grid, _wsola: wsola, _shift: shiftStretch, _rideMap: rideMap, _hash: function (u) { return hex8(hash(u)); } };
 })();

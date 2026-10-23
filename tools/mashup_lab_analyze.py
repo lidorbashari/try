@@ -566,6 +566,9 @@ def discover_links(an, titlewords, bpm_of, titles, limit=220):
             bocc = (titlewords.get(kb) or {}).get("ow")
             if not bocc or kb == ka:
                 continue
+            ha, hb_ = (an.get(ka) or {}).get("h"), (an.get(kb) or {}).get("h")
+            if ha and ha == hb_:                                          # one preview found for two catalog entries
+                continue
             ba, bb = bpm_of(ka), bpm_of(kb)
             if not ba or not bb:
                 continue

@@ -38,6 +38,7 @@
     curated.forEach(function (l) { seen[l.ai + "~" + l.bi] = 1; });
     D.forEach(function (c) {
       var ai = BYKEY[c.a], bi = BYKEY[c.b]; if (ai == null || bi == null || seen[ai + "~" + bi]) return;
+      if (c.a_h && c.a_h === c.b_h) return;                        /* one preview found for two catalog entries: not two songs */
       var A = DATA[ai], B = DATA[bi], mix = W.mixCheck(A, B), w = String(c.w || "").trim(); if (!w) return;
       seen[ai + "~" + bi] = 1;
       var tech = mix.compatible ? (mix.technique === "double" ? "blend" : mix.technique) : "echo";
@@ -115,12 +116,19 @@
     out.push('<rect class="dg-a" x="' + X(0) + '" y="20" width="' + (X(T) - X(0)).toFixed(1) + '" height="20" rx="6"/>');
     if (pl.echo) out.push('<rect class="dg-echo" x="' + X(T) + '" y="20" width="' + (X(T + 2 * pA) - X(T)).toFixed(1) + '" height="20" rx="6"/>');
     out.push('<rect class="dg-b" x="' + X(T - pre) + '" y="52" width="' + (X(tot) - X(T - pre)).toFixed(1) + '" height="20" rx="6"/>');
+    var rd = pl.ride, RO = window.WordTiming && window.WordTiming.rideOut, rideOn = false;
+    if (rd && RO) {                                        /* the tempo ride: B glides from A's tempo back to its own */
+      var o1 = T + RO(rd, rd.i1) - RO(rd, pl.bPos), o2 = T + RO(rd, rd.i2) - RO(rd, pl.bPos);
+      if (o1 < tot - .2) { rideOn = true; out.push('<rect class="dg-ride" x="' + X(o1) + '" y="52" width="' + Math.max(2, X(Math.min(o2, tot)) - X(o1)).toFixed(1) + '" height="20" rx="6"/>'); }
+    }
     if (pl.foundA !== false) out.push('<rect class="dg-wa" x="' + X(aw0) + '" y="18" width="' + Math.max(3, X(aw1) - X(aw0)).toFixed(1) + '" height="24" rx="5"/>');
     if (pl.foundB !== false && bw0 < tot) out.push('<rect class="dg-wb" x="' + X(bw0) + '" y="50" width="' + Math.max(3, X(Math.min(tot, bw1)) - X(bw0)).toFixed(1) + '" height="24" rx="5"/>');
     out.push('<line class="dg-cut" x1="' + X(T) + '" x2="' + X(T) + '" y1="4" y2="88"/>');
     var lab = '<span class="dg-l a">A</span><span class="dg-l b">B</span>';
-    var legend = '<div class="dg-key"><span><i class="wa"></i>המילה של A</span><span><i class="wb"></i>המילה של B</span><span><i class="cut"></i>החיתוך' + (pl.onBeat === "1" ? " על ה־1" : pl.onBeat === "3" ? " על פעמה 3" : " על הביט") + "</span></div>";
-    return '<figure class="wp-diag" aria-label="שרטוט המעבר">' + lab + '<svg viewBox="0 0 ' + Wd + ' 92" preserveAspectRatio="none" aria-hidden="true">' + out.join("") +
+    var legend = '<div class="dg-key"><span><i class="wa"></i>המילה של A</span><span><i class="wb"></i>המילה של B</span><span><i class="cut"></i>החיתוך' + (pl.onBeat === "1" ? " על ה־1" : pl.onBeat === "3" ? " על פעמה 3" : " על הביט") + "</span>" +
+      (rideOn ? '<span><i class="ride"></i>B חוזר לקצב שלו</span>' : "") + "</div>";
+    var defs = rideOn ? '<defs><pattern id="dg-ride-p" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="2" height="5" style="fill:var(--beat);opacity:.55"/></pattern></defs>' : "";
+    return '<figure class="wp-diag" aria-label="שרטוט המעבר">' + lab + '<svg viewBox="0 0 ' + Wd + ' 92" preserveAspectRatio="none" aria-hidden="true">' + defs + out.join("") +
       '<line class="dg-ph" x1="' + X(0) + '" x2="' + X(0) + '" y1="2" y2="90" data-tot="' + tot.toFixed(3) + '"/></svg>' + legend + "</figure>";
   }
   function liveHTML(r) {
@@ -314,9 +322,9 @@
     ".wp-src.ok{color:var(--good-ink);font-weight:700}.wp-card.heard{box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--good) 35%,transparent)}" +
     ".wp-diag{position:relative;margin:2px 0 0;padding:8px 8px 6px 26px;border-radius:16px;background:var(--fill-2);direction:ltr}.wp-diag svg{display:block;width:100%;height:92px}" +
     ".dg-l{position:absolute;left:8px;font:800 11px/1 var(--round);color:#fff;width:14px;height:14px;border-radius:7px;display:grid;place-items:center}.dg-l.a{top:28px;background:var(--vocal)}.dg-l.b{top:60px;background:var(--beat)}" +
-    ".dg-beat{stroke:var(--label-3);stroke-width:.6}.dg-bar{stroke:var(--label-2);stroke-width:1}.dg-a{fill:color-mix(in srgb,var(--vocal) 26%,transparent)}.dg-echo{fill:color-mix(in srgb,var(--vocal) 12%,transparent)}.dg-b{fill:color-mix(in srgb,var(--beat) 26%,transparent)}" +
+    ".dg-beat{stroke:var(--label-3);stroke-width:.6}.dg-bar{stroke:var(--label-2);stroke-width:1}.dg-a{fill:color-mix(in srgb,var(--vocal) 26%,transparent)}.dg-echo{fill:color-mix(in srgb,var(--vocal) 12%,transparent)}.dg-b{fill:color-mix(in srgb,var(--beat) 26%,transparent)}.dg-ride{fill:url(#dg-ride-p)}" +
     ".dg-wa{fill:var(--vocal)}.dg-wb{fill:var(--beat)}.dg-cut{stroke:var(--label);stroke-width:2;stroke-dasharray:3 3}.dg-ph{stroke:var(--accent);stroke-width:2.2}" +
-    ".dg-key{display:flex;flex-wrap:wrap;gap:10px;direction:rtl;font-size:11.5px;color:var(--label-2);margin-top:4px}.dg-key i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-inline-end:4px;vertical-align:-1px}.dg-key i.wa{background:var(--vocal)}.dg-key i.wb{background:var(--beat)}.dg-key i.cut{width:2px;background:var(--label)}" +
+    ".dg-key{display:flex;flex-wrap:wrap;gap:10px;direction:rtl;font-size:11.5px;color:var(--label-2);margin-top:4px}.dg-key i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-inline-end:4px;vertical-align:-1px}.dg-key i.wa{background:var(--vocal)}.dg-key i.wb{background:var(--beat)}.dg-key i.cut{width:2px;background:var(--label)}.dg-key i.ride{background:repeating-linear-gradient(135deg,var(--beat) 0 2px,transparent 2px 4px)}" +
     ".wp-note{margin:0;font-size:12px;color:var(--label-2)}.wp-card .btn.pri[aria-pressed=true]{background:var(--accent);color:#fff}.wp-more{margin:14px auto 0;display:flex}" +
     "@media (prefers-reduced-motion:no-preference){.wp-card{animation:wpIn .5s cubic-bezier(.3,1.35,.45,1) both;animation-delay:var(--d,0ms)}@keyframes wpIn{from{opacity:0;transform:translateY(14px);filter:blur(10px)}}}";
   document.head.appendChild(css);

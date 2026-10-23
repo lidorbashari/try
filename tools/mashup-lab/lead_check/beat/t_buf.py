@@ -205,6 +205,51 @@ def sc_wsola(br):
     check("stretch: no engine errors", not errs, errs[:3]); ctx.close()
 
 
+def sc_ride(br):
+    """word play, tempos 10-30 % apart: B is stretched to A's tempo, holds it, then glides back to its own (tempo ride)"""
+    ctx, pg, errs = page(br)
+    r = pg.evaluate("""() => {
+      const sr = 44100, N = sr * 20, x = new Float32Array(N);
+      for (let i = 0; i < N; i++) x[i] = .3 * Math.sin(2 * Math.PI * 220 * i / sr);
+      /* clicks: a decaying 2.5 kHz burst (a pure Nyquist buzz would not survive the key-shift resampler) */
+      const clicks = []; for (let c = 0; c < 39; c++) { const t = .25 + c * .5, k = Math.round(t * sr); clicks.push(t); for (let j = 0; j < 300; j++) x[k + j] += .9 * Math.exp(-j / 40) * Math.sin(2 * Math.PI * 2500 * j / sr + Math.PI / 2); }
+      const out = (rd, i) => { const o1 = rd.i1 / rd.r0; if (i <= rd.i1) return i / rd.r0; const T2 = 2 * (rd.i2 - rd.i1) / (rd.r0 + 1); if (i >= rd.i2) return o1 + T2 + (i - rd.i2);
+        const a = (1 - rd.r0) / (2 * T2), b = rd.r0, c = -(i - rd.i1); return o1 + (-b + Math.sqrt(b * b - 4 * a * c)) / (2 * a); };
+      const res = {};
+      for (const [r0, semis] of [[.8, 0], [1.25, 0], [.8, 1]]) {
+        const rd = { r0, i1: 6, i2: 14 }, t0 = performance.now(), y = MashEngine._shift([x], r0, semis, sr, { i1: rd.i1, i2: rd.i2 })[0], ms = performance.now() - t0;
+        const onI = []; for (let i = 1; i < y.length; i++) if (Math.abs(y[i]) > .55 && Math.abs(y[i - 1]) <= .55 && (!onI.length || i - onI[onI.length - 1] > sr * .2)) onI.push(i);
+        const on = onI.map(i => i / sr), want = clicks.map(t => out(rd, t)).filter(t => t < y.length / sr - .05);
+        const sg = want.map(w => { let b = 1e9; for (const o of on) if (Math.abs(o - w) < Math.abs(b)) b = o - w; return b * 1000; });
+        const med = a => a.slice().sort((p, q) => p - q)[a.length >> 1], o1 = rd.i1 / r0, o2 = out(rd, rd.i2);
+        const H = sg.filter((e, i) => want[i] < o1 - .1), P = sg.filter((e, i) => want[i] > o2 + .1), G = sg.filter((e, i) => want[i] >= o1 - .1 && want[i] <= o2 + .1);
+        const offH = med(H), offP = med(P), jH = Math.max(...H.map(e => Math.abs(e - offH))), jP = Math.max(...P.map(e => Math.abs(e - offP)));
+        const lo = Math.min(offH, offP) - 5, hi = Math.max(offH, offP) + 5, gOut = G.filter(e => e < lo || e > hi).length;
+        const off = offH, err = sg.map(e => Math.abs(e - offH));
+        const worst = sg.map((e, i) => [Math.round(e * 10) / 10, Math.round(want[i] * 100) / 100]).sort((p, q) => Math.abs(q[0]) - Math.abs(p[0])).slice(0, 4);
+        /* pitch over the last 3 s (rate 1 there): 220 Hz × 2^(semis/12) */
+        const lp = new Float32Array(y.length); let a = 0; for (let i = 0; i < y.length; i++) { a = a * .97 + y[i] * .03; lp[i] = a; }
+        let zc = 0; const i0 = Math.round((y.length / sr - 3.2) * sr), i1 = Math.round((y.length / sr - .2) * sr);
+        for (let i = i0 + 1; i < i1; i++) if ((lp[i - 1] < 0) !== (lp[i] < 0)) zc++;
+        res[r0 + "/" + semis] = { len: y.length / sr, wantLen: out(rd, 20), clicks: on.length, want: want.length, maxErr: Math.max(...err), off, offP, jH, jP, gOut, nH: H.length, nP: P.length, nG: G.length, worst, f: zc / 2 / ((i1 - i0) / sr), fWant: 220 * Math.pow(2, semis / 12), ms };
+      }
+      return res;
+    }""")
+    for k, v in r.items():
+        check(f"ride {k}: length follows the ride map (± 5 ms)", abs(v["len"] - v["wantLen"]) <= .005, v)
+        # WSOLA copies 60 ms segments at rate 1, so at a 20-25 % stretch every hit sits ~(1 - r) x 50 ms early: a constant
+        # offset that the word play's fineLag removes at the cut (it lines B's hits up with A's); what must hold is the beat
+        # spacing, i.e. every hit within a few ms of the map once that constant is removed
+        # (the offset is ~(1 - r) x 50 ms, so it fades to 0 along the glide: inaudible, B plays alone by then)
+        lim = 4 if k.endswith("/0") else 7
+        check(f"ride {k}: steady beats while B holds A's tempo (offset ≤ 15 ms, each beat ≤ {lim} ms from it)", v["clicks"] >= v["want"] and v["nH"] >= 6 and abs(v["off"]) <= 15 and v["jH"] <= lim, v)
+        check(f"ride {k}: on time after the glide (offset ≤ 4 ms, each beat ≤ {lim} ms)", v["nP"] >= 6 and abs(v["offP"]) <= 4 and v["jP"] <= lim, v)
+        check(f"ride {k}: during the glide every beat stays between the two (± 5 ms)", v["nG"] >= 10 and v["gOut"] == 0, v)
+        check(f"ride {k}: pitch kept after the glide", abs(v["f"] - v["fWant"]) / v["fWant"] < .015, v)
+    print("   ride:", {k: {kk: round(vv, 3) if isinstance(vv, float) else vv for kk, vv in v.items()} for k, v in r.items()})
+    check("ride: no engine errors", not errs, errs[:3]); ctx.close()
+
+
 def seed_truth(pg, keys, err=None):
     """beats.json the way GitHub Actions writes it, from the ground truth (exact grids); err = {key: b0 error in s}"""
     m = {}
@@ -427,7 +472,7 @@ def main():
                          ("half", lambda: sc_pair(br, "half-time vocal (62 over 124)", "h", "x", {"A": 1, "B": 1}, True, q=.5)[0].close()),
                          ("griderr", lambda: sc_pair(br, "vocal grid 25 ms early → fixed on the audio", "x", "y", {"A": 125 / 124, "B": 125 / 126}, True, err={"x": -0.025})[0].close()),
                          ("griderr2", lambda: sc_pair(br, "beat grid 30 ms late → fixed on the audio", "x", "y", {"A": 125 / 124, "B": 125 / 126}, True, err={"y": 0.03})[0].close()),
-                         ("ops", lambda: sc_ops(br)), ("loop", lambda: sc_loop(br)), ("wordplay", lambda: sc_wordplay(br)), ("nocors", lambda: sc_nocors(br)),
+                         ("ops", lambda: sc_ops(br)), ("loop", lambda: sc_loop(br)), ("wordplay", lambda: sc_wordplay(br)), ("ride", lambda: sc_ride(br)), ("nocors", lambda: sc_nocors(br)),
                          ("analysis", lambda: sc_analysis(br)), ("plan", lambda: sc_plan(br))]:
             if FILT and FILT not in name: continue
             try: fn()

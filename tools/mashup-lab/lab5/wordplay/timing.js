@@ -7,6 +7,9 @@
      opts   { wt: wordtimes entry {a: [[start, end, p, n]...], b: [...]}, anA, anB: analysis records, drop: bool }
    plan = {
      ok, synced, q, r          tempo: B plays r× faster (WSOLA, pitch kept) so its beats continue A's (q = B beats per A beat)
+     ride                      tempos 10–30 % apart: B still enters at A's tempo (r), holds it a few bars, then glides back
+                               to its own tempo (DJs ride the pitch fader): { r0, i1, i2 } = rate r0 until B's time i1, a
+                               linear glide to 1 by i2 (s, B's preview time); null when B keeps r for the whole tail
      semis, rel, keyA, keyB    B shifted by `semis` semitones so the keys fit (rel: same | rel | adj | null = clash)
      style                     cut | echo | blend | drop
      aStart                    A starts here (s, A's preview time), a bar line some bars before A's word
@@ -95,10 +98,23 @@
   }
 
   /* ---------- where to cut ---------- */
+  var RIDE_LO = .75, RIDE_HI = 1.3;                 /* beyond this a stretch of the whole mix sounds wrong: cut + echo instead */
   function tempoRel(gA, gB) {
-    var q = [.5, 1, 2].reduce(function (x, y) { return Math.abs(gB.bpm - gA.bpm * y) < Math.abs(gB.bpm - gA.bpm * x) ? y : x; }, 1);
-    var r = gA.bpm * q / gB.bpm;
-    return { q: q, r: r, synced: r >= .9 && r <= 1.1 };
+    var best = null;
+    [1, .5, 2].forEach(function (q) {               /* the beat ratio that needs the smallest stretch of B */
+      var r = gA.bpm * q / gB.bpm, cost = Math.abs(Math.log(r));
+      if (!best || cost < best.cost - 1e-9) best = { q: q, r: r, cost: cost };
+    });
+    var q = best.q, r = best.r, near = r >= .9 && r <= 1.1, ride = !near && r >= RIDE_LO && r <= RIDE_HI;
+    return { q: q, r: r, synced: near || ride, ride: ride };
+  }
+  /* the ride mapping (B's time ↔ the time B is heard): rate r0 until i1, a glide (linear in heard time) to 1 by i2, then 1 */
+  function rideOut(rd, i) {                         /* heard seconds from B's 0 to B's time i */
+    var o1 = rd.i1 / rd.r0; if (i <= rd.i1) return i / rd.r0;
+    var T2 = 2 * (rd.i2 - rd.i1) / (rd.r0 + 1);
+    if (i >= rd.i2) return o1 + T2 + (i - rd.i2);
+    var a = (1 - rd.r0) / (2 * T2), b = rd.r0, c = -(i - rd.i1);
+    return o1 + (Math.abs(a) < 1e-9 ? -c / b : (-b + Math.sqrt(Math.max(0, b * b - 4 * a * c))) / (2 * a));
   }
   /* one candidate (A word end eA, B word start sB) → timing, or null */
   function place(eA, sB, gA, gB, tr, durB) {
@@ -215,11 +231,18 @@
     } else if (style === "drop") {
       pre = pl.bPos - 2 * barB >= .05 ? 8 * pA : pl.bPos - barB >= .05 ? 4 * pA : 0;
     }
-    var tail = clamp(best.tail, 3, 16);
+    var ride = null;
+    if (tr.ride) {                                   /* hold A's tempo for a few of B's bars after its word, then glide home */
+      var bB = 4 * 60 / gB.bpm, room = durB - .5 - pl.bPos, hold = room / rB >= 14 ? 4 : 2;
+      var i1 = Math.max(pl.bPos + hold * bB, b.e + 60 / gB.bpm), i2 = Math.min(durB - .3, i1 + 8 * bB);
+      if (i2 - i1 >= 2 * bB) ride = { r0: r3(rB), i1: r3(i1), i2: r3(i2), hold: hold, bars: Math.round((i2 - i1) / bB) };
+    }
+    var tailRaw = ride ? rideOut(ride, durB - .4) - rideOut(ride, pl.bPos) : best.tail;
+    var tail = clamp(tailRaw, 3, 16);
     function trim(an) { return an && isFinite(an.lufs) ? r3(clamp(Math.pow(10, (-11 - an.lufs) / 20), .45, 1.6)) : 1; }
     var echo = style === "echo" || style === "drop" ? { d: r3(.75 * pA <= .6 ? .75 * pA : .5 * pA), fb: .42, wet: .5 } : null;
     var out = {
-      ok: true, synced: tr.synced, q: tr.q, r: r3(rB), semis: fit.semis || 0, rel: fit.rel, keyA: kA ? kA.k : null, keyB: kB ? kB.k : null, keyB2: fit.keyB || null,
+      ok: true, synced: tr.synced, q: tr.q, r: r3(rB), ride: ride, semis: fit.semis || 0, rel: fit.rel, keyA: kA ? kA.k : null, keyB: kB ? kB.k : null, keyB2: fit.keyB || null,
       keySrc: kA && kB ? (kA.src === "measured" && kB.src === "measured" ? "measured" : "catalog") : null,
       style: style, aStart: r3(aStart), cut: r3(pl.cut), bPos: r3(pl.bPos), pre: r3(pre), tail: r3(tail),
       wA: [r3(a.s), r3(a.e)], wB: [r3(b.s), r3(b.e)], foundA: a.found, foundB: b.found, drop: !!b.drop,
@@ -234,7 +257,8 @@
   function summary(p) {
     var s = [], pct = Math.round((p.r - 1) * 1000) / 10;
     if (p.synced) {
-      if (Math.abs(pct) >= .3) s.push("B " + (pct > 0 ? "מואץ" : "מואט") + " מ־" + p.bpmB + " ל־" + Math.round(p.bpmB * p.r * 10) / 10 + " BPM (" + (pct > 0 ? "+" : "") + pct + "%), כדי שהביט שלו ימשיך בדיוק את הביט של A.");
+      if (p.ride) s.push("הקצבים רחוקים (" + p.bpmA + " מול " + p.bpmB + " BPM), ובכל זאת B נכנס בדיוק בקצב של A (" + (pct > 0 ? "מואץ" : "מואט") + " " + Math.abs(pct) + "%) כדי שהביט ימשיך בלי קפיצה. אחרי " + p.ride.hold + " תיבות הוא חוזר בהדרגה לקצב שלו במשך " + p.ride.bars + " תיבות, כמו דיג'יי שרוכב על ה־Pitch (Tempo Ride).");
+      else if (Math.abs(pct) >= .3) s.push("B " + (pct > 0 ? "מואץ" : "מואט") + " מ־" + p.bpmB + " ל־" + Math.round(p.bpmB * p.r * 10) / 10 + " BPM (" + (pct > 0 ? "+" : "") + pct + "%), כדי שהביט שלו ימשיך בדיוק את הביט של A.");
       else s.push("שני השירים כמעט באותו קצב, אז B נכנס כמו שהוא והביט ממשיך בלי קפיצה.");
       if (p.q !== 1) s.push("יחס קצב " + (p.q === 2 ? "1:2" : "2:1") + ": פעמה של שיר אחד היא שתי פעמות של השני.");
     } else s.push("הקצבים רחוקים מדי למתיחה (" + p.bpmA + " מול " + p.bpmB + " BPM), אז B נכנס בקצב שלו בדיוק על פעמה, ואקו על המילה של A מחליק את המעבר.");
@@ -251,7 +275,7 @@
   }
 
   var api = { plan: plan, summary: summary, keyFit: keyFit, camRel: function (a, b) { return camRel(camParse(a), camParse(b)); }, camShift: function (k, s) { return camStr(camShift(camParse(k), s)); },
-    tempoRel: tempoRel, place: place, dropAt: dropAt, phraseEnds: phraseEnds, phraseStarts: phraseStarts, xOf: xOf, tOf: tOf, wordsOf: wordsOf };
+    tempoRel: tempoRel, rideOut: rideOut, place: place, dropAt: dropAt, phraseEnds: phraseEnds, phraseStarts: phraseStarts, xOf: xOf, tOf: tOf, wordsOf: wordsOf };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   root.WordTiming = api;
 })(typeof window !== "undefined" ? window : this);

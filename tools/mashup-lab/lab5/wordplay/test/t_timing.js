@@ -32,10 +32,18 @@ p = T.plan(link, { gA, gB: { bpm: 120, b0: .1, db: 0 }, durA: 30, durB: 30 }, { 
 chk("cut lands on the 1 when it is within a beat after the word", p.ok && p.onBeat === "1" && near(p.cut, 10.1, 1e-3), p.cut + " " + p.onBeat);
 chk("then B's word (on its beat 1.5 of the bar) follows 0.15 s later", near((p.wB[0] - p.bPos) / p.r, .15, .01), String((p.wB[0] - p.bPos) / p.r));
 
-// tempos too far apart
-p = T.plan(link, { gA: { bpm: 95, b0: .2, db: 0 }, gB: { bpm: 126, b0: .1, db: 0 }, durA: 30, durB: 30 }, { wt: { a: [[12.0, 12.6, .9, 1]], b: [[9.6, 10.1, .9, 1]] } });
-chk("no stretch when the tempos are far (95 vs 126): echo style, B native", p.ok && !p.synced && p.r === 1 && p.style === "echo", JSON.stringify({ s: p.synced, r: p.r, st: p.style }));
-chk("B enters on its own beat before its word", (() => { const x = T.xOf({ bpm: 126, b0: .1, db: 0 }, p.bPos); return near(x, Math.round(x), 1e-2) && p.bPos < 9.6; })(), "bPos " + p.bPos);
+// tempos 10–30 % apart: B enters at A's tempo, then rides back to its own
+const gR = { bpm: 126, b0: .1, db: 0 };
+p = T.plan(link, { gA: { bpm: 95, b0: .2, db: 0 }, gB: gR, durA: 30, durB: 30 }, { wt: { a: [[12.0, 12.6, .9, 1]], b: [[9.6, 10.1, .9, 1]] } });
+chk("95 vs 126: B enters at A's tempo (r = 95/126) and rides back (Tempo Ride)", p.ok && p.synced && near(p.r, 95 / 126, 1e-3) && p.ride && near(p.ride.r0, p.r, 1e-9), JSON.stringify({ s: p.synced, r: p.r, ride: p.ride }));
+chk("ride: B's bar lines on A's bar lines at the cut", (() => { const xB = T.xOf(gR, p.bPos), xA = T.xOf({ bpm: 95, b0: .2, db: 0 }, p.cut), m = ((xB - xA) % 4 + 4) % 4; return Math.min(m, 4 - m) < .01; })(), "bPos " + p.bPos + " cut " + p.cut);
+chk("ride: the glide starts after B's word and holds A's tempo at least 2 bars", p.ride.i1 >= p.wB[1] && p.ride.i1 - p.bPos >= 2 * 4 * 60 / 126 - 1e-6 && p.ride.i2 > p.ride.i1, JSON.stringify(p.ride));
+chk("ride: heard time is continuous and monotonic (rate r0 → 1)", (() => { const rd = p.ride; let prev = -1, ok2 = true; for (let i = 0; i <= 30; i += .05) { const o = T.rideOut(rd, i); if (!(o > prev)) ok2 = false; prev = o; }
+  const d1 = T.rideOut(rd, rd.i1) - T.rideOut(rd, rd.i1 - .01), d2 = T.rideOut(rd, rd.i2 + .01) - T.rideOut(rd, rd.i2); return ok2 && near(d1, .01 / rd.r0, 1e-4) && near(d2, .01, 1e-4); })());
+chk("ride: summary says so", p.summary.some(x => /Tempo Ride/.test(x)), p.summary[0]);
+p = T.plan(link, { gA: { bpm: 100, b0: .2, db: 0 }, gB: { bpm: 136, b0: .1, db: 0 }, durA: 30, durB: 30 }, { wt: { a: [[12.0, 12.6, .9, 1]], b: [[9.6, 10.1, .9, 1]] } });
+chk("100 vs 136 (beyond a natural stretch): echo style, B native", p.ok && !p.synced && p.r === 1 && !p.ride && p.style === "echo", JSON.stringify({ s: p.synced, r: p.r, st: p.style }));
+chk("B enters on its own beat before its word", (() => { const x = T.xOf({ bpm: 136, b0: .1, db: 0 }, p.bPos); return near(x, Math.round(x), 1e-2) && p.bPos < 9.6; })(), "bPos " + p.bPos);
 
 // half / double time
 p = T.plan(link, { gA: { bpm: 70, b0: .2, db: 0 }, gB: { bpm: 140, b0: .1, db: 2 }, durA: 30, durB: 30 }, { wt: { a: [[14.0, 14.5, .9, 1]], b: [[12.1, 12.5, .9, 1]] } });
