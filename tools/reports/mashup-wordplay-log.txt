@@ -1,59 +1,59 @@
-page ready {'previews': 1200, 'beats': 1200, 'analysis': 1200, 'words': 94, 'engine': '6.4'}
- 1/55 echo r 1.032 semis -1 on beat gap 0.196 words True/True placeA 0 placeB 2 beat median -11.1 p90 18.7 | 12 בלילה | איתי לוי || 2AM (Extended) | MK 
+page ready {'previews': 1220, 'beats': 1200, 'analysis': 1200, 'words': 94, 'engine': '6.4'}
+ 1/55 echo r 1.032 semis -1 on beat gap 0.196 words True/True placeA 0 placeB 2 beat median -2.1 p90 11.5 | 12 בלילה | איתי לוי || 2AM (Extended) | MK 
  2/55 echo r 1.077 semis 0 on beat gap 0.734 words True/True placeA 0 placeB 0 beat median -7.0 p90 18.0 | Abracadabra | Lady Gaga || Houdini | Dua Lipa 
  3/55 echo r 0.954 semis 0 on 1 gap 0.664 words True/True placeA 0 placeB None beat median 12.1 p90 21.2 | Bad Memories (Extended) | Meduza, James Carter, Elley Duhé, FAST BOY | 
- 4/55 echo r 1.017 semis 1 on beat gap 0.491 words True/True placeA 0 placeB -2 beat median -14.5 p90 22.9 | Despacito | Luis Fonsi, Daddy Yankee || Push The Tempo | Sub Focus 
- 5/55 echo r 0.769 semis 1 on beat gap 0.408 words True/True placeA 0 placeB 1 beat median 20.0 p90 20.0 | Further Up (Na, Na, Na, Na, Na) | סטטיק ובן אל, Pitbull || (It Goes Li 
- 6/55 echo r 0.96 semis 0 on beat gap 1.007 words True/True placeA 0 placeB None beat median -19.0 p90 25.8 | Gasolina | Daddy Yankee || DYNAMITE | Tyla, Wizkid 
- 7/55 echo r 0.915 semis 0 on 3 gap 1.019 words True/True placeA 0 placeB -1 beat median 2.7 p90 14.0 | Just Dance | Lady Gaga, Colby O'Donis || היא רק רוצה לרקוד | עומר אדם, 
+ 4/55 echo r 1.017 semis 0 on beat gap 0.839 words True/False placeA 0 placeB 2 beat median 8.9 p90 20.9 | Despacito | Luis Fonsi, Daddy Yankee || Push The Tempo | Sub Focus 
+ 5/55 echo r 0.769 semis 1 on beat gap 0.408 words True/True placeA 0 placeB 1 beat median 0.0 p90 20.0 | Further Up (Na, Na, Na, Na, Na) | סטטיק ובן אל, Pitbull || (It Goes Li 
+ 6/55 echo r 0.96 semis 0 on beat gap 1.007 words True/True placeA 0 placeB None beat median -0.7 p90 11.9 | Gasolina | Daddy Yankee || DYNAMITE | Tyla, Wizkid 
+ 7/55 echo r 0.915 semis 0 on 3 gap 1.019 words True/True placeA 0 placeB -1 beat median 7.6 p90 15.6 | Just Dance | Lady Gaga, Colby O'Donis || היא רק רוצה לרקוד | עומר אדם, 
  8/55 echo r 0.976 semis 2 on 1 gap 0.973 words False/True placeA 0 placeB None beat median -25.5 p90 43.2 | Just Lose It | Eminem || Lose Control (Extended) | Meduza, Becky Hill, 
  9/55 echo r 1.129 semis 0 on beat gap 0.714 words True/False placeA 0 placeB 0 beat median -36.3 p90 179.7 | Not An Angel | Tems || Angel | Sonny Fodera, Clementine Douglas 
 10/55 echo r 0.754 semis 0 on 3 gap 0.402 words True/True placeA 0 placeB None beat median None p90 None | PUSH 2 START | Tyla || Don't Start Now | Dua Lipa 
-11/55 echo r 1.008 semis 1 on 1 gap 0.754 words True/True placeA 0 placeB None beat median -0.8 p90 13.0 | Rain On Me | Lady Gaga, Ariana Grande || ברוך מוריד הגשם | פאר טסי 
+11/55 echo r 1.008 semis 1 on 1 gap 0.754 words True/True placeA 0 placeB None beat median 13.0 p90 25.1 | Rain On Me | Lady Gaga, Ariana Grande || ברוך מוריד הגשם | פאר טסי 
 12/55 echo r 1.032 semis 0 on 1 gap 0.859 words True/True placeA 0 placeB 1 beat median -15.2 p90 26.1 | Scream | Usher || Shout | Marasi, Core music 
-13/55 cut r 0.913 semis 0 on 1 gap 0.727 words False/True placeA 0 placeB None beat median -7.3 p90 13.7 | Sha La La | עידו שוהם, רועי מכלוף || LaLaLa | Black Coffee, Usher 
-14/55 echo r 1.034 semis 0 on off gap 0.148 words True/True placeA 0 placeB None beat median -43.7 p90 51.3 | Take My Breath | The Weeknd || Every Breath You Take | Kayote, Slender 
+13/55 cut r 0.913 semis 0 on 1 gap 0.727 words False/True placeA 0 placeB None beat median -14.6 p90 22.5 | Sha La La | עידו שוהם, רועי מכלוף || LaLaLa | Black Coffee, Usher 
+14/55 echo r 1.034 semis 0 on off gap 0.148 words True/True placeA -9 placeB None beat median -30.3 p90 36.6 | Take My Breath | The Weeknd || Every Breath You Take | Kayote, Slender 
 15/55 echo r 0.939 semis 0 on 1 gap 0.501 words True/True placeA 0 placeB None beat median 18.8 p90 26.6 | Telephone | Lady Gaga, Beyoncé || הלו הלו | עדן בן זקן 
 16/55 echo r 0.864 semis 0 on 3 gap 0.908 words True/True placeA 0 placeB None beat median -13.9 p90 25.5 | Truth or Dare | Tyla || אמת או חובה | ריקי גל 
 17/55 echo r 1.216 semis -1 on 1 gap 0.887 words True/True placeA 0 placeB None beat median 18.3 p90 27.0 | Waiting For Tonight | FISHER, Jennifer Lopez || עד שהגעת | יואב יצחק 
-18/55 echo r 1 semis 0 on 3 gap 0.734 words True/True placeA 0 placeB 0 beat median -21.0 p90 81.2 | אם את כבר הולכת | נדב חנציס || Leave The Door Open | Bruno Mars, Ander 
-19/55 echo r 1.057 semis 2 on beat gap 0.268 words True/True placeA -14 placeB -15 beat median 10.7 p90 25.8 | היא רק רוצה לרקוד | עומר אדם, משה פרץ || Dance With Me | SHADU 
-20/55 echo r 1.265 semis 0 on beat gap 1.163 words True/True placeA 0 placeB None beat median -15.4 p90 24.0 | השעות הקטנות | שילה בן סעדון || No Sleep | Martin Garrix, Bonn 
+18/55 echo r 1 semis 0 on 3 gap 0.734 words True/True placeA 0 placeB 0 beat median 164.3 p90 171.7 | אם את כבר הולכת | נדב חנציס || Leave The Door Open | Bruno Mars, Ander 
+19/55 echo r 1.057 semis 2 on beat gap 0.268 words True/True placeA -14 placeB -15 beat median 20.0 p90 40.0 | היא רק רוצה לרקוד | עומר אדם, משה פרץ || Dance With Me | SHADU 
+20/55 echo r 1.265 semis 0 on beat gap 1.163 words True/True placeA 0 placeB None beat median -10.2 p90 16.0 | השעות הקטנות | שילה בן סעדון || No Sleep | Martin Garrix, Bonn 
 21/55 echo r 0.804 semis 0 on 1 gap 1.609 words True/True placeA 0 placeB None beat median -18.3 p90 27.9 | טרנטולה | סטטיק, אגם בוחבוט || Tarantula | Pendulum 
-22/55 echo r 0.795 semis -1 on beat gap 0.756 words True/True placeA 0 placeB -2 beat median -30.4 p90 39.3 | יש לי אותך | משה פרץ || I Got U | Duke Dumont, Jax Jones 
-23/55 echo r 1.032 semis 0 on 1 gap 1.26 words True/True placeA 0 placeB 2 beat median -75.1 p90 185.3 | מה אתה רוצה ממני | חנן בן ארי || One Kiss | Calvin Harris, Dua Lipa 
-24/55 echo r 1.014 semis 1 on 3 gap 0.779 words True/True placeA 0 placeB None beat median 43.2 p90 45.9 | מסיבה עם פפיון | אייל גולן, ליאור נרקיס || Dress Code (Extended) | Mau 
-25/55 echo r 1.223 semis -1 on off gap 0.05 words False/False placeA 0 placeB None beat median -2.0 p90 21.5 | נעצור את זה כאן | קובי ממן || Don't Stop The Music | Rihanna 
+22/55 echo r 0.795 semis -1 on beat gap 0.756 words True/True placeA 0 placeB -2 beat median -27.1 p90 33.9 | יש לי אותך | משה פרץ || I Got U | Duke Dumont, Jax Jones 
+23/55 echo r 1.032 semis 0 on 1 gap 1.26 words True/True placeA 0 placeB 2 beat median 22.1 p90 126.8 | מה אתה רוצה ממני | חנן בן ארי || One Kiss | Calvin Harris, Dua Lipa 
+24/55 echo r 1.014 semis 1 on 3 gap 0.779 words True/True placeA 0 placeB None beat median 36.7 p90 37.1 | מסיבה עם פפיון | אייל גולן, ליאור נרקיס || Dress Code (Extended) | Mau 
+25/55 echo r 1.223 semis -1 on off gap 0.05 words False/False placeA 0 placeB None beat median -12.1 p90 13.4 | נעצור את זה כאן | קובי ממן || Don't Stop The Music | Rihanna 
 26/55 echo r 0.755 semis -1 on off gap 0.165 words True/True placeA -33 placeB None beat median None p90 None | פסיכולוגית | אודיה || Psycho | Chris Lake 
 27/55 echo r 0.976 semis 0 on beat gap 0.838 words True/False placeA 0 placeB 0 beat median -11.8 p90 23.4 | 2AM (Extended) | MK || Watch The Sunrise | Chris Lake, Aatig 
 28/55 echo r 1 semis 0 on beat gap 1.123 words True/False placeA 0 placeB 0 beat median -50.0 p90 81.2 | Break My Heart | Dua Lipa || תשבור לי ת'לב | אודיה 
-29/55 echo r 0.884 semis 0 on off gap 0.64 words True/False placeA 0 placeB None beat median 0.0 p90 14.3 | Diamonds | Rihanna || לקנות לך יהלום | אייל גולן 
-30/55 echo r 0.98 semis 1 on 1 gap 0.885 words False/True placeA 0 placeB 2 beat median 12.7 p90 18.0 | Hips Don't Lie | Shakira, Wyclef Jean || No Lie | Sean Paul, Dua Lipa 
-31/55 cut r 0.921 semis 0 on 1 gap 0.542 words True/False placeA 0 placeB 2 beat median 12.2 p90 18.9 | Houdini | Dua Lipa || Houdini | Eminem 
-32/55 echo r 0.983 semis 2 on 1 gap 0.518 words False/True placeA 0 placeB -1 beat median -2.8 p90 13.0 | I THINK | Tyler, The Creator || Think Of Me | HUGEL, David Guetta, Keh 
+29/55 echo r 0.884 semis 0 on off gap 0.64 words True/False placeA 0 placeB None beat median 3.0 p90 16.4 | Diamonds | Rihanna || לקנות לך יהלום | אייל גולן 
+30/55 echo r 0.98 semis 1 on 1 gap 0.885 words False/True placeA 0 placeB 2 beat median -0.0 p90 0.0 | Hips Don't Lie | Shakira, Wyclef Jean || No Lie | Sean Paul, Dua Lipa 
+31/55 cut r 0.921 semis 0 on 1 gap 0.542 words True/False placeA 0 placeB 2 beat median 4.1 p90 11.3 | Houdini | Dua Lipa || Houdini | Eminem 
+32/55 echo r 0.983 semis 2 on 1 gap 0.518 words False/True placeA 0 placeB -1 beat median -13.4 p90 21.9 | I THINK | Tyler, The Creator || Think Of Me | HUGEL, David Guetta, Keh 
 33/55 echo r 1 semis 1 on 1 gap 0.32 words False/True placeA 0 placeB None beat median 1.7 p90 11.0 | Isha Yafa | איציק קלה || Pretty Girl | Rema, Ice Spice 
 34/55 echo r 0.845 semis -1 on beat gap 0.916 words False/True placeA 0 placeB -2 beat median -19.1 p90 26.3 | Llamado de Emergencia | Daddy Yankee || 911 | Sech 
-35/55 echo r 1.008 semis -1 on off gap 0.44 words True/False placeA 0 placeB None beat median 13.2 p90 19.9 | Marea (we've lost dancing) | Fred again.., The Blessed Madonna || We D 
+35/55 echo r 1.008 semis -1 on off gap 0.44 words True/False placeA 0 placeB None beat median 10.1 p90 19.7 | Marea (we've lost dancing) | Fred again.., The Blessed Madonna || We D 
 36/55 echo r 1.099 semis 0 on off gap 0.068 words False/True placeA 0 placeB None beat median -1.0 p90 12.3 | Marry You | Bruno Mars || חתונה של השמחות | דודו אהרון 
 37/55 cut r 0.938 semis 0 on beat gap 0.943 words True/False placeA 0 placeB -1 beat median 9.0 p90 9.2 | Move | Adam Port, Stryv, Keinemusik, Orso, Malachiii || זז בטירוף | אי 
-38/55 echo r 1.009 semis 0 on 1 gap 0.546 words False/True placeA 0 placeB 2 beat median 11.2 p90 16.7 | Paradise | עומר אדם || Paradise (Extended) | Meduza, Dermot Kennedy 
+38/55 echo r 1.009 semis 0 on 1 gap 0.546 words False/True placeA 0 placeB 2 beat median 0.0 p90 20.0 | Paradise | עומר אדם || Paradise (Extended) | Meduza, Dermot Kennedy 
 39/55 echo r 1.162 semis 0 on 1 gap 0.283 words False/True placeA 0 placeB 2 beat median 3.6 p90 11.4 | She Wolf | Shakira || זאבה רעבה | איתי לוי 
 40/55 echo r 1 semis 0 on 1 gap 1.047 words True/False placeA 0 placeB 0 beat median None p90 None | Single Ladies (Put a Ring on It) | Beyoncé || Marry You | Bruno Mars 
 41/55 echo r 0.992 semis 0 on off gap 0.047 words True/True placeA 0 placeB -1 beat median -17.6 p90 24.7 | Houdini | Dua Lipa || You Need Me | Black Coffee, Maxine Ashley, Sun-E 
-42/55 echo r 0.999 semis 2 on beat gap 0.567 words True/True placeA 0 placeB None beat median 4.6 p90 25.4 | דבר אליי עם העיניים | עדן בן זקן || תרימו | עדן בן זקן 
+42/55 echo r 0.999 semis 2 on beat gap 0.567 words True/True placeA 0 placeB None beat median 23.0 p90 26.0 | דבר אליי עם העיניים | עדן בן זקן || תרימו | עדן בן זקן 
 43/55 echo r 0.993 semis -2 on 1 gap 0.567 words False/True placeA 0 placeB None beat median -17.0 p90 25.6 | Nice & Slow | Usher || Take It (Extended) | Dom Dolla 
 44/55 echo r 1 semis 0 on 1 gap 0.765 words True/True placeA 0 placeB 0 beat median -0.0 p90 0.0 | Wired | Sonny Fodera, Ella Eyre || Breathe | CamelPhat, Cristoph, Jem  
-45/55 echo r 0.984 semis 0 on off gap 0.087 words True/True placeA 0 placeB None beat median 18.4 p90 40.5 | Born This Way | Lady Gaga || The Nights (Extended) | Avicii 
+45/55 echo r 0.984 semis 0 on off gap 0.087 words True/True placeA 0 placeB None beat median 6.4 p90 16.4 | Born This Way | Lady Gaga || The Nights (Extended) | Avicii 
 46/55 echo r 1 semis 0 on 3 gap 0.144 words True/True placeA 0 placeB 0 beat median -14.6 p90 22.8 | Amarillo | J Balvin || Me Gusta | Shakira, Anuel AA 
-47/55 echo r 0.992 semis 0 on off gap 0.05 words False/False placeA 0 placeB -2 beat median 9.6 p90 12.3 | Lay Me Down | Avicii || Show Me (Extended) | John Summit, Hannah Boley 
+47/55 echo r 0.992 semis 0 on off gap 0.05 words False/False placeA 0 placeB -2 beat median 3.7 p90 8.0 | Lay Me Down | Avicii || Show Me (Extended) | John Summit, Hannah Boley 
 48/55 blend r 0.992 semis 0 on beat gap 0.889 words True/True placeA 0 placeB -3 beat median 9.5 p90 18.7 | אולי הלילה | משה פרץ || אהבנו | חיים משה 
 49/55 echo r 1 semis 0 on 1 gap 0.407 words True/True placeA 0 placeB 0 beat median -20.0 p90 380.0 | Backseat Freestyle | Kendrick Lamar || POWER | Kanye West 
 50/55 echo r 0.99 semis 0 on beat gap 1.117 words True/True placeA 0 placeB -1 beat median -11.3 p90 18.5 | Llamado de Emergencia | Daddy Yankee || Corazón | Maluma 
-51/55 echo r 1.01 semis 0 on 1 gap 0.327 words True/True placeA 0 placeB 2 beat median 1.0 p90 9.1 | Djadja | Aya Nakamura || Baby (Is it a Crime) | Rema 
-52/55 echo r 1.01 semis 0 on beat gap 0.751 words True/True placeA 0 placeB 1 beat median -0.5 p90 1.4 | Soltera | Shakira || Corazón | Maluma 
-53/55 echo r 1.008 semis 1 on beat gap 0.186 words True/True placeA 0 placeB None beat median 4.6 p90 16.0 | Where You Are (Extended) | John Summit, Hayla || This Feeling | Vintag 
+51/55 echo r 1.01 semis 0 on 1 gap 0.327 words True/True placeA -6 placeB -4 beat median 1.0 p90 9.1 | Djadja | Aya Nakamura || Baby (Is it a Crime) | Rema 
+52/55 echo r 1.01 semis 0 on beat gap 0.751 words True/True placeA 0 placeB 1 beat median -0.0 p90 0.0 | Soltera | Shakira || Corazón | Maluma 
+53/55 echo r 1.008 semis 1 on beat gap 0.186 words True/True placeA -18 placeB None beat median 14.1 p90 22.5 | Where You Are (Extended) | John Summit, Hayla || This Feeling | Vintag 
 54/55 echo r 0.992 semis 0 on beat gap 0.965 words True/True placeA 0 placeB -2 beat median -1.1 p90 1.1 | Temperature | Sean Paul || The Nights (Extended) | Avicii 
 55/55 echo r 0.992 semis 1 on off gap 0.225 words True/True placeA 0 placeB None beat median None p90 None | Disturbia | Rihanna || The Nights (Extended) | Avicii 
 Mashup Lab real-music word-play check
 columns: beat continuity median ms | p90 ms | place A ms | place B ms | style | rate | semis | cut on | word gap s | words found | link
-{"links": 55, "played": 55, "beat_measured": 51, "beat_continues": 42, "share_beat_continues": 0.824, "beat_median_abs_ms": 12.2, "placeA_median_abs_ms": 0.0, "placeB_median_abs_ms": 1.0, "placeB_within_8ms": 0.968, "both_words_found": 35, "word_gap_median_s": 0.73, "styles": {"cut": 3, "echo": 51, "blend": 1, "drop": 0}, "synced": 52, "ride": 13, "key_shifted": 20, "page": {"previews": 1200, "beats": 1200, "analysis": 1200, "words": 94, "engine": "6.4"}, "page_errors": []}
+{"links": 55, "played": 55, "beat_measured": 51, "beat_continues": 41, "share_beat_continues": 0.804, "beat_median_abs_ms": 12.1, "placeA_median_abs_ms": 0.0, "placeB_median_abs_ms": 1.0, "placeB_within_8ms": 0.968, "both_words_found": 34, "word_gap_median_s": 0.73, "styles": {"cut": 3, "echo": 51, "blend": 1, "drop": 0}, "synced": 52, "ride": 13, "key_shifted": 19, "page": {"previews": 1220, "beats": 1200, "analysis": 1200, "words": 94, "engine": "6.4"}, "page_errors": []}

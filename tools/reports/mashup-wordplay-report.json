@@ -3,13 +3,13 @@
   "links": 55,
   "played": 55,
   "beat_measured": 51,
-  "beat_continues": 42,
-  "share_beat_continues": 0.824,
-  "beat_median_abs_ms": 12.2,
+  "beat_continues": 41,
+  "share_beat_continues": 0.804,
+  "beat_median_abs_ms": 12.1,
   "placeA_median_abs_ms": 0.0,
   "placeB_median_abs_ms": 1.0,
   "placeB_within_8ms": 0.968,
-  "both_words_found": 35,
+  "both_words_found": 34,
   "word_gap_median_s": 0.73,
   "styles": {
    "cut": 3,
@@ -19,9 +19,9 @@
   },
   "synced": 52,
   "ride": 13,
-  "key_shifted": 20,
+  "key_shifted": 19,
   "page": {
-   "previews": 1200,
+   "previews": 1220,
    "beats": 1200,
    "analysis": 1200,
    "words": 94,
@@ -56,14 +56,14 @@
     "keyB": "8B",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": 2,
    "beat": {
     "n": 16,
-    "median_ms": -11.1,
-    "p90_abs_ms": 18.7,
-    "ibi_A_ms": 472.7,
+    "median_ms": -2.1,
+    "p90_abs_ms": 11.5,
+    "ibi_A_ms": 472.4,
     "ibi_B_ms": 480.0
    }
   },
@@ -93,7 +93,7 @@
     "keyB": "7A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": 0,
    "beat": {
@@ -148,33 +148,33 @@
    "plan": {
     "synced": true,
     "ride": null,
-    "q": 2,
+    "q": 1,
     "r": 1.017,
-    "semis": 1,
-    "rel": "ear-ok",
+    "semis": 0,
+    "rel": null,
     "style": "echo",
     "aStart": 4.128,
     "cut": 12.894,
-    "bPos": 13.538,
+    "bPos": 8.351,
     "pre": 0,
-    "tail": 15.769,
-    "gap": 0.491,
+    "tail": 16,
+    "gap": 0.839,
     "onBeat": "beat",
     "foundA": true,
-    "foundB": true,
+    "foundB": false,
     "drop": false,
     "keyA": "10B",
-    "keyB": "4A",
-    "keySrc": "measured"
+    "keyB": null,
+    "keySrc": null
    },
    "latency_ms": 185.8,
    "placeA_ms": 0,
-   "placeB_ms": -2,
+   "placeB_ms": 2,
    "beat": {
     "n": 11,
-    "median_ms": -14.5,
-    "p90_abs_ms": 22.9,
-    "ibi_A_ms": 674.7,
+    "median_ms": 8.9,
+    "p90_abs_ms": 20.9,
+    "ibi_A_ms": 674.0,
     "ibi_B_ms": 680.0
    }
   },
@@ -215,10 +215,10 @@
    "placeB_ms": 1,
    "beat": {
     "n": 13,
-    "median_ms": 20.0,
+    "median_ms": 0.0,
     "p90_abs_ms": 20.0,
     "ibi_A_ms": 600.0,
-    "ibi_B_ms": 600.0
+    "ibi_B_ms": 610.0
    }
   },
   {
@@ -252,9 +252,9 @@
    "placeB_ms": null,
    "beat": {
     "n": 12,
-    "median_ms": -19.0,
-    "p90_abs_ms": 25.8,
-    "ibi_A_ms": 626.0,
+    "median_ms": -0.7,
+    "p90_abs_ms": 11.9,
+    "ibi_A_ms": 624.7,
     "ibi_B_ms": 620.0
    }
   },
@@ -289,9 +289,9 @@
    "placeB_ms": -1,
    "beat": {
     "n": 15,
-    "median_ms": 2.7,
-    "p90_abs_ms": 14.0,
-    "ibi_A_ms": 504.6,
+    "median_ms": 7.6,
+    "p90_abs_ms": 15.6,
+    "ibi_A_ms": 504.3,
     "ibi_B_ms": 500.0
    }
   },
@@ -438,14 +438,14 @@
     "keyB": "5A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
     "n": 16,
-    "median_ms": -0.8,
-    "p90_abs_ms": 13.0,
-    "ibi_A_ms": 488.4,
+    "median_ms": 13.0,
+    "p90_abs_ms": 25.1,
+    "ibi_A_ms": 488.1,
     "ibi_B_ms": 480.0
    }
   },
@@ -512,14 +512,14 @@
     "keyB": "10A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
     "n": 14,
-    "median_ms": -7.3,
-    "p90_abs_ms": 13.7,
-    "ibi_A_ms": 571.2,
+    "median_ms": -14.6,
+    "p90_abs_ms": 22.5,
+    "ibi_A_ms": 571.7,
     "ibi_B_ms": 580.0
    }
   },
@@ -549,14 +549,14 @@
     "keyB": "8B",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
-   "placeA_ms": 0,
+   "latency_ms": 182.9,
+   "placeA_ms": -9,
    "placeB_ms": null,
    "beat": {
     "n": 11,
-    "median_ms": -43.7,
-    "p90_abs_ms": 51.3,
-    "ibi_A_ms": 496.2,
+    "median_ms": -30.3,
+    "p90_abs_ms": 36.6,
+    "ibi_A_ms": 495.2,
     "ibi_B_ms": 500.0
    }
   },
@@ -586,7 +586,7 @@
     "keyB": "4A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
@@ -629,7 +629,7 @@
     "keyB": "4A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
@@ -714,10 +714,10 @@
    "placeB_ms": 0,
    "beat": {
     "n": 9,
-    "median_ms": -21.0,
-    "p90_abs_ms": 81.2,
-    "ibi_A_ms": 825.1,
-    "ibi_B_ms": 800.0
+    "median_ms": 164.3,
+    "p90_abs_ms": 171.7,
+    "ibi_A_ms": 540.3,
+    "ibi_B_ms": 820.0
    }
   },
   {
@@ -751,9 +751,9 @@
    "placeB_ms": -15,
    "beat": {
     "n": 17,
-    "median_ms": 10.7,
-    "p90_abs_ms": 25.8,
-    "ibi_A_ms": 460.6,
+    "median_ms": 20.0,
+    "p90_abs_ms": 40.0,
+    "ibi_A_ms": 460.0,
     "ibi_B_ms": 460.0
    }
   },
@@ -794,9 +794,9 @@
    "placeB_ms": null,
    "beat": {
     "n": 8,
-    "median_ms": -15.4,
-    "p90_abs_ms": 24.0,
-    "ibi_A_ms": 371.0,
+    "median_ms": -10.2,
+    "p90_abs_ms": 16.0,
+    "ibi_A_ms": 370.7,
     "ibi_B_ms": 380.0
    }
   },
@@ -832,7 +832,7 @@
     "keyB": "11B",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
@@ -880,9 +880,9 @@
    "placeB_ms": -2,
    "beat": {
     "n": 12,
-    "median_ms": -30.4,
-    "p90_abs_ms": 39.3,
-    "ibi_A_ms": 626.0,
+    "median_ms": -27.1,
+    "p90_abs_ms": 33.9,
+    "ibi_A_ms": 625.8,
     "ibi_B_ms": 620.0
    }
   },
@@ -917,9 +917,9 @@
    "placeB_ms": 2,
    "beat": {
     "n": 17,
-    "median_ms": -75.1,
-    "p90_abs_ms": 185.3,
-    "ibi_A_ms": 486.6,
+    "median_ms": 22.1,
+    "p90_abs_ms": 126.8,
+    "ibi_A_ms": 453.0,
     "ibi_B_ms": 460.0
    }
   },
@@ -954,9 +954,9 @@
    "placeB_ms": null,
    "beat": {
     "n": 17,
-    "median_ms": 43.2,
-    "p90_abs_ms": 45.9,
-    "ibi_A_ms": 459.6,
+    "median_ms": 36.7,
+    "p90_abs_ms": 37.1,
+    "ibi_A_ms": 460.1,
     "ibi_B_ms": 460.0
    }
   },
@@ -992,14 +992,14 @@
     "keyB": "11A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
     "n": 15,
-    "median_ms": -2.0,
-    "p90_abs_ms": 21.5,
-    "ibi_A_ms": 400.2,
+    "median_ms": -12.1,
+    "p90_abs_ms": 13.4,
+    "ibi_A_ms": 399.9,
     "ibi_B_ms": 400.0
    }
   },
@@ -1035,7 +1035,7 @@
     "keyB": "7B",
     "keySrc": "measured"
    },
-   "latency_ms": 256.9,
+   "latency_ms": 259.8,
    "placeA_ms": -33,
    "placeB_ms": null,
    "beat": null
@@ -1103,7 +1103,7 @@
     "keyB": "12A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": 0,
    "beat": {
@@ -1151,8 +1151,8 @@
    "placeB_ms": null,
    "beat": {
     "n": 8,
-    "median_ms": 0.0,
-    "p90_abs_ms": 14.3,
+    "median_ms": 3.0,
+    "p90_abs_ms": 16.4,
     "ibi_A_ms": 651.2,
     "ibi_B_ms": 640.0
    }
@@ -1183,14 +1183,14 @@
     "keyB": "7A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": 2,
    "beat": {
     "n": 13,
-    "median_ms": 12.7,
-    "p90_abs_ms": 18.0,
-    "ibi_A_ms": 598.9,
+    "median_ms": -0.0,
+    "p90_abs_ms": 0.0,
+    "ibi_A_ms": 600.0,
     "ibi_B_ms": 600.0
    }
   },
@@ -1220,14 +1220,14 @@
     "keyB": "8A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": 2,
    "beat": {
     "n": 15,
-    "median_ms": 12.2,
-    "p90_abs_ms": 18.9,
-    "ibi_A_ms": 512.5,
+    "median_ms": 4.1,
+    "p90_abs_ms": 11.3,
+    "ibi_A_ms": 512.9,
     "ibi_B_ms": 520.0
    }
   },
@@ -1262,9 +1262,9 @@
    "placeB_ms": -1,
    "beat": {
     "n": 15,
-    "median_ms": -2.8,
-    "p90_abs_ms": 13.0,
-    "ibi_A_ms": 507.9,
+    "median_ms": -13.4,
+    "p90_abs_ms": 21.9,
+    "ibi_A_ms": 508.5,
     "ibi_B_ms": 500.0
    }
   },
@@ -1294,7 +1294,7 @@
     "keyB": "9B",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
@@ -1374,14 +1374,14 @@
     "keyB": "10A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
     "n": 15,
-    "median_ms": 13.2,
-    "p90_abs_ms": 19.9,
-    "ibi_A_ms": 487.6,
+    "median_ms": 10.1,
+    "p90_abs_ms": 19.7,
+    "ibi_A_ms": 487.5,
     "ibi_B_ms": 480.0
    }
   },
@@ -1490,9 +1490,9 @@
    "placeB_ms": 2,
    "beat": {
     "n": 16,
-    "median_ms": 11.2,
-    "p90_abs_ms": 16.7,
-    "ibi_A_ms": 479.1,
+    "median_ms": 0.0,
+    "p90_abs_ms": 20.0,
+    "ibi_A_ms": 480.0,
     "ibi_B_ms": 480.0
    }
   },
@@ -1596,7 +1596,7 @@
     "keyB": "8A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": -1,
    "beat": {
@@ -1638,9 +1638,9 @@
    "placeB_ms": null,
    "beat": {
     "n": 16,
-    "median_ms": 4.6,
-    "p90_abs_ms": 25.4,
-    "ibi_A_ms": 479.8,
+    "median_ms": 23.0,
+    "p90_abs_ms": 26.0,
+    "ibi_A_ms": 479.7,
     "ibi_B_ms": 480.0
    }
   },
@@ -1670,7 +1670,7 @@
     "keyB": "5A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
@@ -1707,7 +1707,7 @@
     "keyB": "8A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": 0,
    "beat": {
@@ -1749,9 +1749,9 @@
    "placeB_ms": null,
    "beat": {
     "n": 16,
-    "median_ms": 18.4,
-    "p90_abs_ms": 40.5,
-    "ibi_A_ms": 482.5,
+    "median_ms": 6.4,
+    "p90_abs_ms": 16.4,
+    "ibi_A_ms": 483.6,
     "ibi_B_ms": 480.0
    }
   },
@@ -1823,9 +1823,9 @@
    "placeB_ms": -2,
    "beat": {
     "n": 16,
-    "median_ms": 9.6,
-    "p90_abs_ms": 12.3,
-    "ibi_A_ms": 480.5,
+    "median_ms": 3.7,
+    "p90_abs_ms": 8.0,
+    "ibi_A_ms": 480.7,
     "ibi_B_ms": 480.0
    }
   },
@@ -1855,7 +1855,7 @@
     "keyB": "9A",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
+   "latency_ms": 185.8,
    "placeA_ms": 0,
    "placeB_ms": -3,
    "beat": {
@@ -1966,9 +1966,9 @@
     "keyB": "5A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
-   "placeA_ms": 0,
-   "placeB_ms": 2,
+   "latency_ms": 182.9,
+   "placeA_ms": -6,
+   "placeB_ms": -4,
    "beat": {
     "n": 13,
     "median_ms": 1.0,
@@ -2008,9 +2008,9 @@
    "placeB_ms": 1,
    "beat": {
     "n": 13,
-    "median_ms": -0.5,
-    "p90_abs_ms": 1.4,
-    "ibi_A_ms": 600.2,
+    "median_ms": -0.0,
+    "p90_abs_ms": 0.0,
+    "ibi_A_ms": 600.0,
     "ibi_B_ms": 600.0
    }
   },
@@ -2040,14 +2040,14 @@
     "keyB": "12A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
-   "placeA_ms": 0,
+   "latency_ms": 182.9,
+   "placeA_ms": -18,
    "placeB_ms": null,
    "beat": {
     "n": 16,
-    "median_ms": 4.6,
-    "p90_abs_ms": 16.0,
-    "ibi_A_ms": 476.0,
+    "median_ms": 14.1,
+    "p90_abs_ms": 22.5,
+    "ibi_A_ms": 475.4,
     "ibi_B_ms": 480.0
    }
   },

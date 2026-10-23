@@ -1,58 +1,58 @@
 Mashup Lab real-music word-play check
 columns: beat continuity median ms | p90 ms | place A ms | place B ms | style | rate | semis | cut on | word gap s | words found | link
-{"links": 55, "played": 55, "beat_measured": 51, "beat_continues": 42, "share_beat_continues": 0.824, "beat_median_abs_ms": 12.2, "placeA_median_abs_ms": 0.0, "placeB_median_abs_ms": 1.0, "placeB_within_8ms": 0.968, "both_words_found": 35, "word_gap_median_s": 0.73, "styles": {"cut": 3, "echo": 51, "blend": 1, "drop": 0}, "synced": 52, "ride": 13, "key_shifted": 20, "page": {"previews": 1200, "beats": 1200, "analysis": 1200, "words": 94, "engine": "6.4"}, "page_errors": []}
--11.1	18.7	0	2	echo	1.032	-1	beat	0.196	True/True	12 בלילה | איתי לוי || 2AM (Extended) | MK	
+{"links": 55, "played": 55, "beat_measured": 51, "beat_continues": 41, "share_beat_continues": 0.804, "beat_median_abs_ms": 12.1, "placeA_median_abs_ms": 0.0, "placeB_median_abs_ms": 1.0, "placeB_within_8ms": 0.968, "both_words_found": 34, "word_gap_median_s": 0.73, "styles": {"cut": 3, "echo": 51, "blend": 1, "drop": 0}, "synced": 52, "ride": 13, "key_shifted": 19, "page": {"previews": 1220, "beats": 1200, "analysis": 1200, "words": 94, "engine": "6.4"}, "page_errors": []}
+-2.1	11.5	0	2	echo	1.032	-1	beat	0.196	True/True	12 בלילה | איתי לוי || 2AM (Extended) | MK	
 -7.0	18.0	0	0	echo	1.077	0	beat	0.734	True/True	Abracadabra | Lady Gaga || Houdini | Dua Lipa	
 12.1	21.2	0	None	echo	0.954	0	1	0.664	True/True	Bad Memories (Extended) | Meduza, James Carter, Elley Duhé, FAST BOY || Memories (Extended) | David Guetta, Kid Cudi	
--14.5	22.9	0	-2	echo	1.017	1	beat	0.491	True/True	Despacito | Luis Fonsi, Daddy Yankee || Push The Tempo | Sub Focus	
-20.0	20.0	0	1	echo	0.769	1	beat	0.408	True/True	Further Up (Na, Na, Na, Na, Na) | סטטיק ובן אל, Pitbull || (It Goes Like) Nanana | Peggy Gou	
--19.0	25.8	0	None	echo	0.96	0	beat	1.007	True/True	Gasolina | Daddy Yankee || DYNAMITE | Tyla, Wizkid	
-2.7	14.0	0	-1	echo	0.915	0	3	1.019	True/True	Just Dance | Lady Gaga, Colby O'Donis || היא רק רוצה לרקוד | עומר אדם, משה פרץ	
+8.9	20.9	0	2	echo	1.017	0	beat	0.839	True/False	Despacito | Luis Fonsi, Daddy Yankee || Push The Tempo | Sub Focus	
+0.0	20.0	0	1	echo	0.769	1	beat	0.408	True/True	Further Up (Na, Na, Na, Na, Na) | סטטיק ובן אל, Pitbull || (It Goes Like) Nanana | Peggy Gou	
+-0.7	11.9	0	None	echo	0.96	0	beat	1.007	True/True	Gasolina | Daddy Yankee || DYNAMITE | Tyla, Wizkid	
+7.6	15.6	0	-1	echo	0.915	0	3	1.019	True/True	Just Dance | Lady Gaga, Colby O'Donis || היא רק רוצה לרקוד | עומר אדם, משה פרץ	
 -25.5	43.2	0	None	echo	0.976	2	1	0.973	False/True	Just Lose It | Eminem || Lose Control (Extended) | Meduza, Becky Hill, Goodboys	
 -36.3	179.7	0	0	echo	1.129	0	beat	0.714	True/False	Not An Angel | Tems || Angel | Sonny Fodera, Clementine Douglas	
 None	None	0	None	echo	0.754	0	3	0.402	True/True	PUSH 2 START | Tyla || Don't Start Now | Dua Lipa	
--0.8	13.0	0	None	echo	1.008	1	1	0.754	True/True	Rain On Me | Lady Gaga, Ariana Grande || ברוך מוריד הגשם | פאר טסי	
+13.0	25.1	0	None	echo	1.008	1	1	0.754	True/True	Rain On Me | Lady Gaga, Ariana Grande || ברוך מוריד הגשם | פאר טסי	
 -15.2	26.1	0	1	echo	1.032	0	1	0.859	True/True	Scream | Usher || Shout | Marasi, Core music	
--7.3	13.7	0	None	cut	0.913	0	1	0.727	False/True	Sha La La | עידו שוהם, רועי מכלוף || LaLaLa | Black Coffee, Usher	
--43.7	51.3	0	None	echo	1.034	0	off	0.148	True/True	Take My Breath | The Weeknd || Every Breath You Take | Kayote, Slenderino, Gabriel Wittner, Luciana Silva	
+-14.6	22.5	0	None	cut	0.913	0	1	0.727	False/True	Sha La La | עידו שוהם, רועי מכלוף || LaLaLa | Black Coffee, Usher	
+-30.3	36.6	-9	None	echo	1.034	0	off	0.148	True/True	Take My Breath | The Weeknd || Every Breath You Take | Kayote, Slenderino, Gabriel Wittner, Luciana Silva	
 18.8	26.6	0	None	echo	0.939	0	1	0.501	True/True	Telephone | Lady Gaga, Beyoncé || הלו הלו | עדן בן זקן	
 -13.9	25.5	0	None	echo	0.864	0	3	0.908	True/True	Truth or Dare | Tyla || אמת או חובה | ריקי גל	
 18.3	27.0	0	None	echo	1.216	-1	1	0.887	True/True	Waiting For Tonight | FISHER, Jennifer Lopez || עד שהגעת | יואב יצחק	
--21.0	81.2	0	0	echo	1	0	3	0.734	True/True	אם את כבר הולכת | נדב חנציס || Leave The Door Open | Bruno Mars, Anderson .Paak, Silk Sonic	
-10.7	25.8	-14	-15	echo	1.057	2	beat	0.268	True/True	היא רק רוצה לרקוד | עומר אדם, משה פרץ || Dance With Me | SHADU	
--15.4	24.0	0	None	echo	1.265	0	beat	1.163	True/True	השעות הקטנות | שילה בן סעדון || No Sleep | Martin Garrix, Bonn	
+164.3	171.7	0	0	echo	1	0	3	0.734	True/True	אם את כבר הולכת | נדב חנציס || Leave The Door Open | Bruno Mars, Anderson .Paak, Silk Sonic	
+20.0	40.0	-14	-15	echo	1.057	2	beat	0.268	True/True	היא רק רוצה לרקוד | עומר אדם, משה פרץ || Dance With Me | SHADU	
+-10.2	16.0	0	None	echo	1.265	0	beat	1.163	True/True	השעות הקטנות | שילה בן סעדון || No Sleep | Martin Garrix, Bonn	
 -18.3	27.9	0	None	echo	0.804	0	1	1.609	True/True	טרנטולה | סטטיק, אגם בוחבוט || Tarantula | Pendulum	
--30.4	39.3	0	-2	echo	0.795	-1	beat	0.756	True/True	יש לי אותך | משה פרץ || I Got U | Duke Dumont, Jax Jones	
--75.1	185.3	0	2	echo	1.032	0	1	1.26	True/True	מה אתה רוצה ממני | חנן בן ארי || One Kiss | Calvin Harris, Dua Lipa	
-43.2	45.9	0	None	echo	1.014	1	3	0.779	True/True	מסיבה עם פפיון | אייל גולן, ליאור נרקיס || Dress Code (Extended) | Mau P	
--2.0	21.5	0	None	echo	1.223	-1	off	0.05	False/False	נעצור את זה כאן | קובי ממן || Don't Stop The Music | Rihanna	
+-27.1	33.9	0	-2	echo	0.795	-1	beat	0.756	True/True	יש לי אותך | משה פרץ || I Got U | Duke Dumont, Jax Jones	
+22.1	126.8	0	2	echo	1.032	0	1	1.26	True/True	מה אתה רוצה ממני | חנן בן ארי || One Kiss | Calvin Harris, Dua Lipa	
+36.7	37.1	0	None	echo	1.014	1	3	0.779	True/True	מסיבה עם פפיון | אייל גולן, ליאור נרקיס || Dress Code (Extended) | Mau P	
+-12.1	13.4	0	None	echo	1.223	-1	off	0.05	False/False	נעצור את זה כאן | קובי ממן || Don't Stop The Music | Rihanna	
 None	None	-33	None	echo	0.755	-1	off	0.165	True/True	פסיכולוגית | אודיה || Psycho | Chris Lake	
 -11.8	23.4	0	0	echo	0.976	0	beat	0.838	True/False	2AM (Extended) | MK || Watch The Sunrise | Chris Lake, Aatig	
 -50.0	81.2	0	0	echo	1	0	beat	1.123	True/False	Break My Heart | Dua Lipa || תשבור לי ת'לב | אודיה	
-0.0	14.3	0	None	echo	0.884	0	off	0.64	True/False	Diamonds | Rihanna || לקנות לך יהלום | אייל גולן	
-12.7	18.0	0	2	echo	0.98	1	1	0.885	False/True	Hips Don't Lie | Shakira, Wyclef Jean || No Lie | Sean Paul, Dua Lipa	
-12.2	18.9	0	2	cut	0.921	0	1	0.542	True/False	Houdini | Dua Lipa || Houdini | Eminem	
--2.8	13.0	0	-1	echo	0.983	2	1	0.518	False/True	I THINK | Tyler, The Creator || Think Of Me | HUGEL, David Guetta, Kehlani, Daecolm	
+3.0	16.4	0	None	echo	0.884	0	off	0.64	True/False	Diamonds | Rihanna || לקנות לך יהלום | אייל גולן	
+-0.0	0.0	0	2	echo	0.98	1	1	0.885	False/True	Hips Don't Lie | Shakira, Wyclef Jean || No Lie | Sean Paul, Dua Lipa	
+4.1	11.3	0	2	cut	0.921	0	1	0.542	True/False	Houdini | Dua Lipa || Houdini | Eminem	
+-13.4	21.9	0	-1	echo	0.983	2	1	0.518	False/True	I THINK | Tyler, The Creator || Think Of Me | HUGEL, David Guetta, Kehlani, Daecolm	
 1.7	11.0	0	None	echo	1	1	1	0.32	False/True	Isha Yafa | איציק קלה || Pretty Girl | Rema, Ice Spice	
 -19.1	26.3	0	-2	echo	0.845	-1	beat	0.916	False/True	Llamado de Emergencia | Daddy Yankee || 911 | Sech	
-13.2	19.9	0	None	echo	1.008	-1	off	0.44	True/False	Marea (we've lost dancing) | Fred again.., The Blessed Madonna || We Dance Again | Black Coffee, Nakhane	
+10.1	19.7	0	None	echo	1.008	-1	off	0.44	True/False	Marea (we've lost dancing) | Fred again.., The Blessed Madonna || We Dance Again | Black Coffee, Nakhane	
 -1.0	12.3	0	None	echo	1.099	0	off	0.068	False/True	Marry You | Bruno Mars || חתונה של השמחות | דודו אהרון	
 9.0	9.2	0	-1	cut	0.938	0	beat	0.943	True/False	Move | Adam Port, Stryv, Keinemusik, Orso, Malachiii || זז בטירוף | איתי לוי	
-11.2	16.7	0	2	echo	1.009	0	1	0.546	False/True	Paradise | עומר אדם || Paradise (Extended) | Meduza, Dermot Kennedy	
+0.0	20.0	0	2	echo	1.009	0	1	0.546	False/True	Paradise | עומר אדם || Paradise (Extended) | Meduza, Dermot Kennedy	
 3.6	11.4	0	2	echo	1.162	0	1	0.283	False/True	She Wolf | Shakira || זאבה רעבה | איתי לוי	
 None	None	0	0	echo	1	0	1	1.047	True/False	Single Ladies (Put a Ring on It) | Beyoncé || Marry You | Bruno Mars	
 -17.6	24.7	0	-1	echo	0.992	0	off	0.047	True/True	Houdini | Dua Lipa || You Need Me | Black Coffee, Maxine Ashley, Sun-El Musician	
-4.6	25.4	0	None	echo	0.999	2	beat	0.567	True/True	דבר אליי עם העיניים | עדן בן זקן || תרימו | עדן בן זקן	
+23.0	26.0	0	None	echo	0.999	2	beat	0.567	True/True	דבר אליי עם העיניים | עדן בן זקן || תרימו | עדן בן זקן	
 -17.0	25.6	0	None	echo	0.993	-2	1	0.567	False/True	Nice & Slow | Usher || Take It (Extended) | Dom Dolla	
 -0.0	0.0	0	0	echo	1	0	1	0.765	True/True	Wired | Sonny Fodera, Ella Eyre || Breathe | CamelPhat, Cristoph, Jem Cooke	
-18.4	40.5	0	None	echo	0.984	0	off	0.087	True/True	Born This Way | Lady Gaga || The Nights (Extended) | Avicii	
+6.4	16.4	0	None	echo	0.984	0	off	0.087	True/True	Born This Way | Lady Gaga || The Nights (Extended) | Avicii	
 -14.6	22.8	0	0	echo	1	0	3	0.144	True/True	Amarillo | J Balvin || Me Gusta | Shakira, Anuel AA	
-9.6	12.3	0	-2	echo	0.992	0	off	0.05	False/False	Lay Me Down | Avicii || Show Me (Extended) | John Summit, Hannah Boleyn	
+3.7	8.0	0	-2	echo	0.992	0	off	0.05	False/False	Lay Me Down | Avicii || Show Me (Extended) | John Summit, Hannah Boleyn	
 9.5	18.7	0	-3	blend	0.992	0	beat	0.889	True/True	אולי הלילה | משה פרץ || אהבנו | חיים משה	
 -20.0	380.0	0	0	echo	1	0	1	0.407	True/True	Backseat Freestyle | Kendrick Lamar || POWER | Kanye West	
 -11.3	18.5	0	-1	echo	0.99	0	beat	1.117	True/True	Llamado de Emergencia | Daddy Yankee || Corazón | Maluma	
-1.0	9.1	0	2	echo	1.01	0	1	0.327	True/True	Djadja | Aya Nakamura || Baby (Is it a Crime) | Rema	
--0.5	1.4	0	1	echo	1.01	0	beat	0.751	True/True	Soltera | Shakira || Corazón | Maluma	
-4.6	16.0	0	None	echo	1.008	1	beat	0.186	True/True	Where You Are (Extended) | John Summit, Hayla || This Feeling | Vintage Culture, Goodboys	
+1.0	9.1	-6	-4	echo	1.01	0	1	0.327	True/True	Djadja | Aya Nakamura || Baby (Is it a Crime) | Rema	
+-0.0	0.0	0	1	echo	1.01	0	beat	0.751	True/True	Soltera | Shakira || Corazón | Maluma	
+14.1	22.5	-18	None	echo	1.008	1	beat	0.186	True/True	Where You Are (Extended) | John Summit, Hayla || This Feeling | Vintage Culture, Goodboys	
 -1.1	1.1	0	-2	echo	0.992	0	beat	0.965	True/True	Temperature | Sean Paul || The Nights (Extended) | Avicii	
 None	None	0	None	echo	0.992	1	off	0.225	True/True	Disturbia | Rihanna || The Nights (Extended) | Avicii	
