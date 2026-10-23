@@ -4,7 +4,7 @@
 > stopped, and continue automatically. **This file is that checkpoint.** Update it and push it after every
 > meaningful step (commit with `[skip ci]` when only this file changes).
 
-Heartbeat (UTC): 2026-10-23T02:30Z · session: https://claude.ai/code/session_01Lo7gTW4YHqF6LiS4xWstjM · status: IN PROGRESS (resume from "Next actions")
+Heartbeat (UTC): 2026-10-23T02:50Z · session: https://claude.ai/code/session_01Lo7gTW4YHqF6LiS4xWstjM · status: RELEASED (live 379801b); small follow-ups below
 
 ## How to resume in a fresh session
 1. Attach the repo with push access (`add_repo lidorbashari/try`), clone to `/home/claude/try`, branch
@@ -76,23 +76,18 @@ Heartbeat (UTC): 2026-10-23T02:30Z · session: https://claude.ai/code/session_01
   lift on press/drag, chromatic rim while lifted, tab bar minimises on scroll (iOS 26), sheets with springs.
 
 ## Next actions (in order)
-0. State at 02:30Z (all pushed):
-   - Word-play check on 6.4 (report f41af73): share_beat_continues 0.82 (was 0.51), synced 52/55, ride 13 (11 continue),
-     placeB within 8 ms 97 %. Good.
-   - Sync check on 6.4 found unsynced "free" pairs → fixed (b894672). Startup freeze fixed (d6352ae: sliced warm-up,
-     memo, matcher upper bound; 4× CPU: 4.4 s → 0.2 s). Build f048bb0352 pushed to tools/verify (2bcd2ef) → CI runs
-     39889642592 (sync) + 39889642571 (word play), started 02:27Z. Want sync share_on_beat back ≥ 0.8.
-   - New tracks: previews found for all 21 (7b18919). Beat grids dispatched: run 39889654430 (28 previews: 21 new +
-     7 whose Apple link changed). NEXT after it merges ("beat grids" commit): dispatch mashup-analyze with
-     {"part":"tracks","force":"false"} (curl POST .../actions/workflows/mashup-analyze.yml/dispatches, JSON body
-     {"ref":"claude/dj-course-music-agents-suitm3","inputs":{"part":"tracks","force":"false"}}), then add the 16
-     pending tracks to data.json with measured bpm (beats.json [0], conf ≥ .5) and key (analysis key, ks ≥ .45, else
-     the catalog key of a similar track is NOT allowed: leave them out), source "measured" (add a src.json entry
-     {"id":"measured","n":"נמדד מהקטע של Apple (Beat This! + essentia)","u":""}), drop "pending" in tracks.json.
-1. If the sync + word-play reports are good: `python3 deploy.py`, commit docs/mashup-lab/{index.html,sw.js,
-   manifest.webmanifest,icons/*}, push both branches (`claude/dj-course-music-agents-suitm3`, `mashup-lab-site`);
-   message Lidor in Hebrew.
-2. Then the new tracks (step 0) → rebuild → deploy again.
+0. RELEASED 2026-10-23 02:47Z: GitHub Pages serves 379801b (both branches pushed). Contents: matcher v2.1 (Pearson,
+   calibrated), engine 6.4 (hit lock, Tempo Ride, key by ear), free pairs synced, no freeze on data arrival, Liquid
+   Glass + touch light, welcome/share/PWA, 38 amapiano + 84 techno tracks (16 measured from their previews).
+   CI on the release candidate: sync share_on_beat 0.90 (median 2.9 ms), word play beat continues 0.82 (round 1;
+   round 2 run 39889642571 still running at 02:50Z — read tools/reports/mashup-wordplay.txt when it lands).
+   Lidor was messaged (Hebrew) with what changed.
+1. Follow-ups (nice to have, none blocking):
+   - The 21 new tracks have no word times yet (part=words of mashup-analyze was not run for them); dispatch
+     mashup-analyze {"part":"words","force":false} if word-play links should use them.
+   - "Without You | Avicii, Sandro Cavazza" lost its preview to the Guetta track (same title); fine, or fix by hand.
+   - Initial page render costs ~0.5 s on a 4× slower CPU (catalog lists before the measured data) — could be sliced too.
+   - Skills were proposed to Lidor (review card); if he saved them, nothing to do.
 
 ## Research notes (2026-10-22, for the skills)
 - AutoMashUpper (Davies et al., IEEE TASLP 2014): beat-synchronous chroma cross-correlated over all 12 shifts;
@@ -110,6 +105,7 @@ Heartbeat (UTC): 2026-10-23T02:30Z · session: https://claude.ai/code/session_01
   loop roll = 1-beat loop halved into B's drop.
 
 ## Log (newest first)
+- 2026-10-23 02:47Z: RELEASE live (379801b): sync 0.90 on beat, word play 0.82, new amapiano/techno tracks.
 - 2026-10-23 02:30Z: word play 0.82 continuity; sync fix + perf fix in CI; beat grids for new tracks running.
 - 2026-10-23 02:20Z: sync check exposed unsynced free pairs (fixed b894672); new amapiano/techno tracks in the pipeline.
 - 2026-10-23 02:03Z: QA all green; build bbf3ce92d2 in CI real-music checks; skills proposed.
