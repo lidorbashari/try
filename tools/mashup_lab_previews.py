@@ -73,7 +73,7 @@ def pick(results, t):
     if bs < 6:
         return None
     art = best.get("artworkUrl100")
-    return {"p": best["previewUrl"], "a": art.replace("100x100bb", "600x600bb") if art else None}
+    return {"p": best["previewUrl"], "a": art.replace("100x100bb", "600x600bb") if art else None, "s": bs}
 
 
 def key(t):
@@ -160,6 +160,22 @@ def merge(args):
     tracks = json.load(open(args.tracks, encoding="utf-8"))
     keys = {key(t) for t in tracks}
     merged = {k: v for k, v in merged.items() if k in keys}
+    # one preview found for two catalog entries (same title, other artist): only the better match keeps it
+    by_url = {}
+    for k in sorted(merged):
+        v = merged[k]
+        if v.get("p"):
+            by_url.setdefault(v["p"], []).append(k)
+    for url, ks in by_url.items():
+        if len(ks) > 1:
+            ks.sort(key=lambda k: -(merged[k].get("s") or 0))
+            if (merged[ks[0]].get("s") or 0) > (merged[ks[1]].get("s") or 0):
+                for k in ks[1:]:
+                    merged[k] = {"miss": 1, "dup": ks[0]}
+            else:                                                     # no way to tell which song it is: neither
+                for k in ks:
+                    merged[k] = {"miss": 1, "dup": url[-24:]}
+            print("one preview for", ks, flush=True)
     found = sum(1 for v in merged.values() if v.get("p"))
     sample = next((v["p"] for v in merged.values() if v.get("p")), None)
     meta = {"generated": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"),
