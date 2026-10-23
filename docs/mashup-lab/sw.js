@@ -2,7 +2,7 @@
    Same-origin files only (the page, its data files and icons), network first so a new version shows at once.
    Apple's previews, artwork and search are never cached or stored: they always stream from Apple. */
 "use strict";
-const V = "mashlab-16b65d235a";
+const V = "mashlab-d6d9bb3256";
 const SHELL = ["./", "manifest.webmanifest", "icons/icon-192.png", "icons/icon-512.png", "icons/apple-touch-icon.png", "icons/favicon-64.png"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(V).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => {
