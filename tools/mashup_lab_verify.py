@@ -64,7 +64,7 @@ def choose_pairs(n, seed, lab):
     tracks = json.load(open(os.path.join(lab, "tracks.json"), encoding="utf-8"))
     pmap = json.load(open(os.path.join(lab, "previews.json"), encoding="utf-8"))["map"]
     bmap = json.load(open(os.path.join(lab, "beats.json"), encoding="utf-8"))["map"] if os.path.exists(os.path.join(lab, "beats.json")) else {}
-    ok = [t for t in tracks if (pmap.get(key(t)) or {}).get("p") and key(t) in bmap and bmap[key(t)][3] >= 0.5]
+    ok = [t for t in tracks if t.get("bpm") and not t.get("pending") and (pmap.get(key(t)) or {}).get("p") and key(t) in bmap and bmap[key(t)][3] >= 0.5]
     vs = [t for t in ok if t["g"] in VOC]
     bs = [t for t in ok if t["g"] in BEAT]
     rng = random.Random(seed)
