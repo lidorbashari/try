@@ -20,9 +20,10 @@ const gA = { bpm: 120, b0: .1, db: 0 }, gB = { bpm: 125, b0: .3, db: 1 };
 const link = { type: "answer", technique: "echo", word: "X → Y", mix: { keyA: "8A", keyB: "8A" } };
 let p = T.plan(link, { gA, gB, durA: 30, durB: 30 }, { wt: { a: [[10.25, 10.82, .9, 1]], b: [[8.0, 8.6, .9, 1]] } });
 chk("plan ok + synced (B slowed to 120)", p.ok && p.synced && near(p.r, .96, 1e-3), JSON.stringify({ ok: p.ok, r: p.r }));
-chk("cut on A's beat 3 right after the word (11.10 s)", near(p.cut, 11.1, 1e-3) && p.onBeat === "3", "cut " + p.cut + " " + p.onBeat);
-chk("B enters at 7.50 s (its own beat 3), its word 0.52 s after the cut", near(p.bPos, 7.5, 1e-3) && near((p.wB[0] - p.bPos) / p.r, .52, .01), "bPos " + p.bPos);
-chk("gap between the words 0.8 s", near(p.gap, .8, .01), "gap " + p.gap);
+chk("on the one: the cut is A's first bar line after the word (12.10 s)", near(p.cut, 12.1, 1e-3) && p.onBeat === "1", "cut " + p.cut + " " + p.onBeat);
+chk("on the one: B enters from its own bar line (6.54 s), its word 1.52 s after its 1", near(p.bPos, 6.54, 1e-3) && near((p.wB[0] - p.bPos) / p.r, 1.52, .01) && near(((T.xOf(gB, p.bPos) % 4) + 4) % 4, 0, 1e-6), "bPos " + p.bPos);
+chk("gap between the words 2.8 s (both waits on the grid)", near(p.gap, 2.8, .01), "gap " + p.gap);
+chk("A doesn't sing after its word here (unknown, wait < 2 beats? no: 2.6 beats) → it echoes out right after the word", p.aOut < p.cut && p.style === "echo" && p.echo, JSON.stringify({ aOut: p.aOut, st: p.style }));
 chk("A starts on a bar line 4 bars before its word's bar", near(p.aStart, T.tOf(gA, 20 - 16), 1e-3), "aStart " + p.aStart);
 chk("B's bar lines on A's bar lines after the cut", (() => { const xB = T.xOf(gB, p.bPos), xA = T.xOf(gA, p.cut); return near(((xB - xA) % 4 + 4) % 4, 0, 1e-6); })());
 chk("summary in Hebrew", p.summary.length >= 3 && /B/.test(p.summary[0]), p.summary.join(" | "));
@@ -92,7 +93,10 @@ for (const l of links) {
     if (!q.ok) continue;
     okc++; if (q.synced) synced++; ons[q.onBeat] = (ons[q.onBeat] || 0) + 1; gaps.push(q.gap);
     if (!(q.cut >= sA + .55 - .061) || !(q.cut <= sA + .55 + 4.1) || !(q.bPos >= .05) || !(q.aStart >= 0 && q.aStart < sA)) { bad++; console.log("FAIL sanity", l.a, "||", l.b, JSON.stringify(q).slice(0, 300)); }
-    if (q.synced && q.foundB) { const heard = (q.wB[0] - q.bPos) / q.r; if (!(heard >= .03)) { bad++; console.log("FAIL B word before the cut", heard); } }
+    if (q.foundB) { const heard = (q.wB[0] - q.bPos) / q.r; if (!(heard >= -.031) || !(q.bFade >= -heard)) { bad++; console.log("FAIL B word before its entry", heard, q.bFade); } }
+    { const xa = ((T.xOf(g1, q.cut) % 4) + 4) % 4, xb = ((T.xOf(g2, q.bPos) % 4) + 4) % 4;   /* on the one, both sides */
+      if (Math.min(xa, 4 - xa) > .01 || Math.min(xb, 4 - xb) > .01 || q.onBeat !== "1") { bad++; console.log("FAIL not on the one", xa, xb, q.onBeat); } }
+    if (!(q.aOut <= q.cut + 1e-9) || !(q.aOut >= sA + .55 - .061)) { bad++; console.log("FAIL A out", q.aOut, q.cut); }
   }
 }
 gaps.sort((x, y) => x - y);

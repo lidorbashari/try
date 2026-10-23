@@ -116,8 +116,9 @@
     var pA = 60 / (pl.bpmA || 120), r = pl.r || 1, pre = pl.pre || 0, out = [], k;
     for (k = 0; k * pA <= tot + 1e-6; k++) { var bar = k % 4 === 0; out.push('<line x1="' + X(k * pA) + '" x2="' + X(k * pA) + '" y1="' + (bar ? 10 : 14) + '" y2="' + (bar ? 82 : 78) + '" class="' + (bar ? "dg-bar" : "dg-beat") + '"/>'); }
     var aw0 = pl.wA[0] - pl.aStart, aw1 = pl.wA[1] - pl.aStart, bw0 = T + (pl.wB[0] - pl.bPos) / r, bw1 = T + (pl.wB[1] - pl.bPos) / r;
-    out.push('<rect class="dg-a" x="' + X(0) + '" y="20" width="' + (X(T) - X(0)).toFixed(1) + '" height="20" rx="6"/>');
-    if (pl.echo) out.push('<rect class="dg-echo" x="' + X(T) + '" y="20" width="' + (X(T + 2 * pA) - X(T)).toFixed(1) + '" height="20" rx="6"/>');
+    var Tout = Math.min(T, Math.max(0, (pl.aOut != null ? pl.aOut : pl.cut) - pl.aStart));      /* A's fader closes here (≤ the cut) */
+    out.push('<rect class="dg-a" x="' + X(0) + '" y="20" width="' + (X(Tout) - X(0)).toFixed(1) + '" height="20" rx="6"/>');
+    if (pl.echo) out.push('<rect class="dg-echo" x="' + X(Tout) + '" y="20" width="' + (X(T + 2 * pA) - X(Tout)).toFixed(1) + '" height="20" rx="6"/>');
     out.push('<rect class="dg-b" x="' + X(T - pre) + '" y="52" width="' + (X(tot) - X(T - pre)).toFixed(1) + '" height="20" rx="6"/>');
     var rd = pl.ride, RO = window.WordTiming && window.WordTiming.rideOut, rideOn = false;
     if (rd && RO) {                                        /* the tempo ride: B glides from A's tempo back to its own */
@@ -128,7 +129,7 @@
     if (pl.foundB !== false && bw0 < tot) out.push('<rect class="dg-wb" x="' + X(bw0) + '" y="50" width="' + Math.max(3, X(Math.min(tot, bw1)) - X(bw0)).toFixed(1) + '" height="24" rx="5"/>');
     out.push('<line class="dg-cut" x1="' + X(T) + '" x2="' + X(T) + '" y1="4" y2="88"/>');
     var lab = '<span class="dg-l a">A</span><span class="dg-l b">B</span>';
-    var legend = '<div class="dg-key"><span><i class="wa"></i>המילה של A</span><span><i class="wb"></i>המילה של B</span><span><i class="cut"></i>החיתוך' + (pl.onBeat === "1" ? " על ה־1" : pl.onBeat === "3" ? " על פעמה 3" : " על הביט") + "</span>" +
+    var legend = '<div class="dg-key"><span><i class="wa"></i>המילה של A</span><span><i class="wb"></i>המילה של B</span><span><i class="cut"></i>' + (pl.onBeat === "1" ? "ה־1: B נכנס מה־1 שלו" : "החיתוך על הביט") + "</span>" +
       (rideOn ? '<span><i class="ride"></i>B חוזר לקצב שלו</span>' : "") + "</div>";
     var defs = rideOn ? '<defs><pattern id="dg-ride-p" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="2" height="5" style="fill:var(--beat);opacity:.55"/></pattern></defs>' : "";
     return '<figure class="wp-diag" aria-label="שרטוט המעבר">' + lab + '<svg viewBox="0 0 ' + Wd + ' 92" preserveAspectRatio="none" aria-hidden="true">' + defs + out.join("") +
@@ -242,8 +243,8 @@
     if (st.phase === "load" || !pl) r.msg = "מכין את המעבר: מפענח את שני הקטעים ומתאים קצב וסולם…";
     else if (st.phase === "a") {
       var toWord = (pl.wA[0] - pl.aStart) - st.t, toCut = st.cut - st.t;
-      r.msg = toWord > .25 ? "A מתנגן · המילה " + (pl.foundA ? "של A" : "(סוף המשפט)") + " בעוד " + Math.ceil(toWord) + " שנ׳" : toCut > 0 ? "המילה של A… ו־B נכנס על הביט" : "";
-    } else r.msg = pl.drop ? "הדרופ של B! ממשיכים עם B" : "B ענה על הביט · ממשיכים עם B";
+      r.msg = toWord > .25 ? "A מתנגן · המילה " + (pl.foundA ? "של A" : "(סוף המשפט)") + " בעוד " + Math.ceil(toWord) + " שנ׳" : toCut > 0 ? "המילה של A… ו־B נכנס על ה־1" : "";
+    } else r.msg = pl.drop ? "הדרופ של B על ה־1! ממשיכים עם B" : "B נכנס על ה־1 · ממשיכים עם B";
     paintLive(r);
   }
   function playTransition(l, btn) {

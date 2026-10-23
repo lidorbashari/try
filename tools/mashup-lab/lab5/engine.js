@@ -983,12 +983,12 @@
       var T = ctx.currentTime + .03;
       startSrc(d, T, live ? Math.min(d.dur || 1e9, (o0 + Math.max(0, T - t0)) * r0) : d.pos, seamless);
     }
-    function join(d, L, seamless) { /* d enters on the leader's next beat 1 or 3, at the leader's tempo, same bar phase */
+    function join(d, L, seamless) { /* d enters ON THE ONE: the leader's next bar line, at the leader's tempo, same bar phase */
       var gL = L.grid, effL = gL.bpm * L.sr, q = qOf(d.grid, effL), r = effL * q / d.grid.bpm, want = curPos(d);
       if (r < .9 || r > 1.1) { solo(d, seamless); return; }
       setSB(d, r, d.side === "A" ? semisFor(d, L) : 0);                        /* stretch first: the timing below must be fresh */
       var tref = Math.max(ctx.currentTime, L.t0), perL = 60 / gL.bpm / L.sr, xL = xOf(gL, posAt(L, tref));
-      var k = Math.ceil((xL + .2 / perL) / 2) * 2, T = tref + (k - xL) * perL;    /* ≥ 0.2 s ahead */
+      var k = Math.ceil((xL + .2 / perL) / 4) * 4, T = tref + (k - xL) * perL;    /* the next 1, ≥ 0.2 s ahead */
       var pF = phasePos(d, k, q, want > .05 ? want : entryOf(d)), lag = fineLag(d, pF / d.sr, L, posAt(L, T) / L.sr);
       d.fine = lag; startSrc(d, T, pF + lag * d.sr, seamless);
       d.bsync = L.bsync = true;
@@ -1000,7 +1000,7 @@
       var o0 = A.o0, t0 = A.t0, r0 = A.sr, sm = semisFor(A, B), same = Math.abs(r - r0) < 1e-4 && sm === (A.semis || 0);   /* the vocal's clock mapping right now */
       setSB(B, 1); if (!same) setSB(A, r, sm);                                   /* stretching first: the timing below must be fresh */
       var tref = Math.max(ctx.currentTime, t0), perA = 60 / gA.bpm / r0, xA = xOf(gA, (o0 + (tref - t0)) * r0);
-      var k = Math.ceil((xA + .2 / perA) / 2) * 2, T = tref + (k - xA) * perA;    /* the vocal's next beat 1 or 3, ≥ 0.2 s ahead */
+      var k = Math.ceil((xA + .2 / perA) / 4) * 4, T = tref + (k - xA) * perA;    /* the vocal's next 1, ≥ 0.2 s ahead */
       var pB = phaseLead(B, k, q, want > .05 ? want : entryOf(B)), pA = (o0 + (T - t0)) * r0;
       var lagB = fineLag(B, pB, A, pA / A.sr);                                   /* B is never stretched: offset = position */
       B.fine = lagB; startSrc(B, T, pB + lagB, seamless);
@@ -1125,10 +1125,13 @@
       var offB = pl.bPos / pl.r, lag = pl.synced ? fineLag({ sb: bb }, offB, { sb: A.buf }, pl.cut) : 0;  /* B's hits on A's, ±40 ms */
       offB = Math.max(0, offB + lag); r.lag = lag;
       var gA = .85 * (pl.trimA || 1), gB = .85 * (pl.trimB || 1), st = pl.style;
-      var pre = Math.max(0, Math.min(pl.pre || 0, offB - x - .01, Tc - T0 - x)), Tb = Tc - pre - x;
+      /* on the one: B comes in on the cut (A's 1) from its own 1; A's fader may close earlier, right after its word, when
+         it sings on (its echo carries the beat to the 1). xb: B's fade-in, longer when its word starts a hair early. */
+      var Ta = Math.min(Tc, T0 + Math.max(.2, (pl.aOut != null ? pl.aOut : pl.cut) - pl.aStart)), xb = clamp(pl.bFade || x, x, .06);
+      var pre = Math.max(0, Math.min(pl.pre || 0, offB - xb - .01, Tc - T0 - xb)), Tb = Tc - pre - xb;
       vA.g.gain.setValueAtTime(gA, T0);
       vA.src.start(T0, clamp(pl.aStart, 0, A.buf.duration - .1));
-      vB.src.start(Tb, Math.max(0, offB - pre - x));
+      vB.src.start(Tb, Math.max(0, offB - pre - xb));
       if (st === "blend" && pre > 0) {                                 /* one bar of B without bass, bass swap on the cut */
         vB.ls.gain.setValueAtTime(-26, Tb); vB.ls.gain.setValueAtTime(-26, Tc - .02); vB.ls.gain.linearRampToValueAtTime(0, Tc + .02);
         vB.g.gain.setValueAtTime(0, Tb); vB.g.gain.linearRampToValueAtTime(.7 * gB, Tc - .02); vB.g.gain.linearRampToValueAtTime(gB, Tc + .02);
@@ -1138,22 +1141,23 @@
       } else if (st === "drop" && pre > 0) {                           /* B's build-up opens under A; the drop after the words */
         vB.hp.frequency.setValueAtTime(1400, Tb); vB.hp.frequency.exponentialRampToValueAtTime(14, Tc);
         vB.g.gain.setValueAtTime(.3 * gB, Tb); vB.g.gain.linearRampToValueAtTime(.85 * gB, Tc - .01); vB.g.gain.linearRampToValueAtTime(gB, Tc);
-        vA.hp.frequency.setValueAtTime(12, Tb); vA.hp.frequency.exponentialRampToValueAtTime(420, Tc);
-        vA.g.gain.setValueAtTime(gA, Tc - x); vA.g.gain.linearRampToValueAtTime(0, Tc);
-        vA.src.stop(Tc + .05);
-      } else {                                                         /* clean entry on the beat (12 ms crossfade) */
+        vA.hp.frequency.setValueAtTime(12, Tb); vA.hp.frequency.exponentialRampToValueAtTime(420, Math.max(Tb + .05, Ta));
+        vA.g.gain.setValueAtTime(gA, Ta - x); vA.g.gain.linearRampToValueAtTime(0, Ta);
+        vA.src.stop(Ta + .05);
+      } else {                                                         /* clean entry on the one (A out at Ta ≤ Tc, B in at Tc) */
         vB.g.gain.setValueAtTime(0, Tb); vB.g.gain.linearRampToValueAtTime(gB, Tc);
-        vA.g.gain.setValueAtTime(gA, Tc - x); vA.g.gain.linearRampToValueAtTime(0, Tc);
-        vA.src.stop(Tc + .05);
+        vA.g.gain.setValueAtTime(gA, Ta - x); vA.g.gain.linearRampToValueAtTime(0, Ta);
+        vA.src.stop(Ta + .05);
       }
       if (pl.echo) {                                                   /* A's last beat (its word) rings on, in time */
         var e = { send: gainN(c, 0), dl: c.createDelay(2), fb: gainN(c, pl.echo.fb), hp: biq(c, "highpass", 280, .6), lp: biq(c, "lowpass", 5200, .6), wet: gainN(c, pl.echo.wet) };
         e.dl.delayTime.value = clamp(pl.echo.d, .05, 1.9);
         vA.ls.connect(e.send); e.send.connect(e.dl); e.dl.connect(e.hp); e.hp.connect(e.lp); e.lp.connect(e.fb); e.fb.connect(e.dl); e.lp.connect(e.wet); e.wet.connect(bus);
         r.nodes.push(e.send, e.dl, e.fb, e.hp, e.lp, e.wet);
-        var s0 = Math.max(T0 + .01, Tc - pA);
-        e.send.gain.setValueAtTime(0, s0); e.send.gain.linearRampToValueAtTime(gA, s0 + .01); e.send.gain.setValueAtTime(gA, Tc - .006); e.send.gain.linearRampToValueAtTime(0, Tc + .004);
-        e.fb.gain.setValueAtTime(pl.echo.fb, Tc + 4 * pA); e.fb.gain.linearRampToValueAtTime(0, Tc + 7 * pA);
+        var s0 = Math.max(T0 + .01, Ta - pA);                           /* the echo hears A's last beat: its word */
+        e.send.gain.setValueAtTime(0, s0); e.send.gain.linearRampToValueAtTime(gA, s0 + .01); e.send.gain.setValueAtTime(gA, Ta - .006); e.send.gain.linearRampToValueAtTime(0, Ta + .004);
+        e.fb.gain.setValueAtTime(pl.echo.fb, Tc + 2 * pA); e.fb.gain.linearRampToValueAtTime(0, Tc + 5 * pA);
+        e.wet.gain.setValueAtTime(pl.echo.wet, Tc); e.wet.gain.linearRampToValueAtTime(pl.echo.wet * .45, Tc + 2 * pA);   /* B on its 1 takes over */
       }
       var Te = Tc + Math.max(2, pl.tail || 10);
       vB.g.gain.setValueAtTime(gB, Te - 1.6); vB.g.gain.linearRampToValueAtTime(0, Te);

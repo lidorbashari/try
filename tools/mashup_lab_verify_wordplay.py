@@ -131,6 +131,21 @@ def ride_out(rd, i):
     return o1 + (-b + (b * b - 4 * a * c) ** .5) / (2 * a)
 
 
+def bars_on_one(downs, beats, t0, tc, te, hold_end=None):
+    """on the one: A's tracked downbeats before the cut set a bar grid; B's tracked downbeats after it must sit on it
+    (B came in from its own 1 on A's 1, so its bars continue A's bars)"""
+    dA = downs[(downs > t0 + .8) & (downs < tc - .15)]
+    dB = downs[(downs > tc - .1) & (downs < min(te - 1.8, tc + 8.5, hold_end or 1e9))]
+    bA = beats[(beats > t0 + .8) & (beats < tc - .15)]
+    if len(dA) < 2 or len(dB) < 1 or len(bA) < 6:
+        return None
+    bar = 4 * float(np.median(np.diff(bA)))
+    off = ((dB - dA[-1]) / bar - np.round((dB - dA[-1]) / bar)) * bar * 1000
+    first = float(off[0]) if abs(dB[0] - tc) < .25 * bar else None          # B's first downbeat right at the cut
+    return {"n": int(len(off)), "on_one": round(float(np.mean(np.abs(off) <= 70)), 3), "median_ms": round(float(np.median(off)), 1),
+            "first_ms": round(first, 1) if first is not None else None}
+
+
 def continuity(beats, t0, tc, te, hold_end=None):
     """A's tracked beats before the cut define one grid; B's tracked beats after it must continue that grid
     (with a tempo ride only while B still holds A's tempo: after that it glides home on purpose)"""
@@ -209,7 +224,7 @@ def main():
                 if r.get("err"):
                     row["err"] = r["err"]; row["plan"] = r.get("plan"); rows.append(row); print(f"{i:2d} {lk[:60]} {r['err']}", flush=True); continue
                 pl, nd = r["plan"], r["nodes"]
-                row["plan"] = {k: pl.get(k) for k in ("synced", "ride", "q", "r", "semis", "rel", "style", "aStart", "cut", "bPos", "pre", "tail", "gap", "onBeat", "foundA", "foundB", "drop", "keyA", "keyB", "keySrc")}
+                row["plan"] = {k: pl.get(k) for k in ("synced", "ride", "q", "r", "semis", "rel", "style", "aStart", "cut", "aOut", "bPos", "bFade", "pre", "tail", "gap", "onBeat", "foundA", "foundB", "drop", "keyA", "keyB", "keySrc")}
                 sr = r["rec"]["sr"]
                 x = np.frombuffer(base64.b64decode(r["rec"]["b64"]), dtype="<i2").astype(np.float32) / 32767
                 nz = np.flatnonzero(np.abs(x) > 1e-4)
@@ -227,17 +242,19 @@ def main():
                     hold_end = nd["tc"] + ride_out(pl["ride"], pl["ride"]["i1"]) - ride_out(pl["ride"], pl["bPos"]) if pl.get("ride") else None
                     row["placeB_ms"] = env_lag(x, sr, t_rec0, s0, min(nd["te"] - 1.7, s0 + 5, hold_end or 1e9), B, pl["bPos"] + r["lag"] * pl["r"], nd["tc"], pl["r"])
                 if a2b:
-                    bt, _db = a2b(x, sr)
+                    bt, db_ = a2b(x, sr)
                     bt = np.asarray(bt) + t_rec0
+                    db_ = np.asarray(db_) + t_rec0
                     hold_end = nd["tc"] + ride_out(pl["ride"], pl["ride"]["i1"]) - ride_out(pl["ride"], pl["bPos"]) if pl.get("ride") else None
                     row["beat"] = continuity(bt, nd["t0"], nd["tc"], nd["te"], hold_end)
+                    row["bars"] = bars_on_one(db_, bt, nd["t0"], nd["tc"], nd["te"], hold_end)
             except Exception as e:
                 row["err"] = type(e).__name__ + ": " + str(e)[:160]
             rows.append(row)
             b = row.get("beat") or {}
             p = row.get("plan") or {}
             print(f'{i:2d}/{len(order)} {p.get("style")} r {p.get("r")} semis {p.get("semis")} on {p.get("onBeat")} gap {p.get("gap")} words {p.get("foundA")}/{p.get("foundB")} '
-                  f'placeA {row.get("placeA_ms")} placeB {row.get("placeB_ms")} beat median {b.get("median_ms")} p90 {b.get("p90_abs_ms")} | {lk[:70]} {row.get("err", "")}', flush=True)
+                  f'placeA {row.get("placeA_ms")} placeB {row.get("placeB_ms")} beat median {b.get("median_ms")} p90 {b.get("p90_abs_ms")} bars {row.get("bars")} | {lk[:70]} {row.get("err", "")}', flush=True)
         br.close()
     srv.shutdown()
 
@@ -258,15 +275,19 @@ def main():
         "synced": len([r for r in rows if (r.get("plan") or {}).get("synced")]),
         "ride": len([r for r in rows if (r.get("plan") or {}).get("ride")]),
         "key_shifted": len([r for r in rows if (r.get("plan") or {}).get("semis")]),
+        "on_one_measured": len([r for r in rows if r.get("bars")]),
+        "share_on_one": round(float(np.mean([r["bars"]["on_one"] >= .99 for r in rows if r.get("bars")])), 3) if any(r.get("bars") for r in rows) else None,
+        "first_downbeat_median_abs_ms": round(float(np.median([abs(r["bars"]["first_ms"]) for r in rows if r.get("bars") and r["bars"].get("first_ms") is not None])), 1)
+            if any(r.get("bars") and r["bars"].get("first_ms") is not None for r in rows) else None,
         "page": meta, "page_errors": errs[:5],
     }
     os.makedirs(os.path.dirname(args.out), exist_ok=True)
     json.dump({"summary": summary, "rows": rows}, open(args.out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     lines = ["Mashup Lab real-music word-play check",
-             "columns: beat continuity median ms | p90 ms | place A ms | place B ms | style | rate | semis | cut on | word gap s | words found | link",
+             "columns: beat continuity median ms | p90 ms | place A ms | place B ms | style | rate | semis | cut on | B's bars on A's (share) | B's first 1 vs A's grid ms | word gap s | words found | link",
              json.dumps(summary, ensure_ascii=False)] + [
         f'{(r.get("beat") or {}).get("median_ms")}\t{(r.get("beat") or {}).get("p90_abs_ms")}\t{r.get("placeA_ms")}\t{r.get("placeB_ms")}\t{(r.get("plan") or {}).get("style")}\t'
-        f'{(r.get("plan") or {}).get("r")}\t{(r.get("plan") or {}).get("semis")}\t{(r.get("plan") or {}).get("onBeat")}\t{(r.get("plan") or {}).get("gap")}\t'
+        f'{(r.get("plan") or {}).get("r")}\t{(r.get("plan") or {}).get("semis")}\t{(r.get("plan") or {}).get("onBeat")}\t{(r.get("bars") or {}).get("on_one")}\t{(r.get("bars") or {}).get("first_ms")}\t{(r.get("plan") or {}).get("gap")}\t'
         f'{(r.get("plan") or {}).get("foundA")}/{(r.get("plan") or {}).get("foundB")}\t{r["link"]}\t{r.get("err", "")}' for r in rows]
     open(args.summary, "w", encoding="utf-8").write("\n".join(lines) + "\n")
     print("\n".join(lines[:3]))
