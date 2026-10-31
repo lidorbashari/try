@@ -51,6 +51,7 @@ async def new_page(b, w=390, h=844, scheme="light", reduced=None, init=None, dpr
         await pg.route("**/itunes.apple.com/**", lambda r: r.fulfill(status=200, content_type="application/json", headers={"Access-Control-Allow-Origin": "*"}, body='{"resultCount":0,"results":[]}'))
     else:
         await pg.route("**/itunes.apple.com/**", lambda r: r.abort())
+    if ENGINE == "real": await pg.add_init_script("window.__mashTestGroove = true;")   # UI flows need a deck that plays; no real audio here
     if init: await pg.add_init_script(init)
     await pg.goto("file://" + os.path.join(HERE, f"out_{ENGINE}.html"))
     await pg.wait_for_timeout(700)

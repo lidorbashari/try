@@ -101,6 +101,11 @@ Heartbeat (UTC): 2026-10-23T14:55Z · session: https://claude.ai/code/session_01
   loop roll = 1-beat loop halved into B's drop.
 
 ## Log (newest first)
+- 2026-10-31 late: Lidor: "I want everything with the original songs". Originals only: the engine never plays the
+  Studio Groove for a real song (ORIGINALS; noOriginal() stops the deck, sets why, fires "noorig" → island
+  message); "slow" keeps waiting for the original. Songs marked miss in previews.json are removed from pairs,
+  search, recent, DJ agent and word play. Preview lookup gets a second chance (title alone, more stores) to find the
+  72 missing songs. UI suites set window.__mashTestGroove (test-only) so flows can run without real audio.
 - 2026-10-31: Lidor: "many songs are in the wrong key; find many more word links, it must really sound good".
   Keys: 3-source consensus for all 1,292 tracks (catalog vs SongBPM/Spotify full-track key vs the essentia key
   measured on the preview); `kc` in data.json = how many sources agree (3: 374, 2: 648, 1: 270 unresolved).

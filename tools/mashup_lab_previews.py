@@ -125,6 +125,16 @@ def resolve(args):
             hit = pick(res, t)
             if hit:
                 break
+        if not hit and reached:
+            # second chance (originals only: every song should play itself): title alone, and more stores.
+            # Stricter: the artist must match too, except a Hebrew title in the Israeli store (artist names are often
+            # spelled in English there, and Hebrew titles are distinctive).
+            for c in (["il", "us"] if hebrew(t) else ["us", "gb", "mx", "es", "fr", "za", "ng", "de", "il"]):
+                res = search(clean_title(t["t"]), c)
+                h = pick(res, t) if res else None
+                if h and (h.get("s", 0) >= 9 or (hebrew(t) and c == "il")):
+                    hit = h
+                    break
         if hit:
             out[key(t)] = hit
             found += 1

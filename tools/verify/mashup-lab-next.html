@@ -2049,7 +2049,7 @@ html.lq .scrim { transition: none; }
   function create(opts) {
     opts = opts || {};
     var net = opts.net !== false, root = opts.root || null, api = {}, ctx = null, master = null, comp = null, cors = null, unlocked = false, tickId = 0;
-    var L = { change: [], ended: [], art: [], wp: [] }, raf = 0, rafTO = 0, msTitle = "", msInit = false;
+    var L = { change: [], ended: [], art: [], wp: [], noorig: [] }, raf = 0, rafTO = 0, msTitle = "", msInit = false;
     var S = { mode: null, seq: false, loop: false, xf: .5, cur: "A", clean: true, hold: 0, beat: "off", cue: "", bsync: true, pb: false, useBuf: true, keyMatch: true, loud: true, plan: null, vgate: true }, rates = { A: 1, B: 1 }, D = {};
     SIDES.forEach(function (s) {
       D[s] = { side: s, track: null, kind: "idle", busy: false, buffering: false, playing: false, pos: 0, dur: 0, vol: .85, eq: { low: 0, mid: 0, high: 0 },
@@ -2184,7 +2184,16 @@ html.lq .scrim { transition: none; }
       if (kN >= N.kEnd - 4) { kN = Math.round((kO % SO) / SO * SN); idx = 0; }
       return { at: tb, k0: kN, cOff: ((cO - idx) % 4 + 4) % 4 };
     }
-    function startStudio(d, o) {
+    /* Originals only (Lidor, 2026-10-31): a real song is never replaced by the synthesized Studio Groove. When the
+       original can't play, the deck stops, says why (d.why) and fires "noorig" so the app can tell the listener. */
+    var ORIGINALS = !(typeof window !== "undefined" && window.__mashTestGroove);   /* UI test suites only: let a deck "play" without real audio */
+    function noOriginal(d, why) {
+      stopApple(d, false); stopGroove(d); bufStop(d); d.bmode = false; d.ready = false; d.waitT = 0; d.bsync = false;
+      d.tok++; d.kind = "idle"; d.busy = false; d.buffering = false; d.playing = false; d.why = why || d.why || "media";
+      fire("noorig", { side: d.side, why: d.why, track: d.track }); emit();
+    }
+    function startStudio(d, o) { if (ORIGINALS) { noOriginal(d, d.why); return; } startGroove(d, o); }
+    function startGroove(d, o) {
       o = o || {};
       stopApple(d, false); stopGroove(d); bufStop(d); d.bmode = false; d.ready = false; d.waitT = 0; d.bsync = false;
       d.tok++; d.kind = "studio"; d.eqActive = true; d.busy = false; d.buffering = false; d.playing = false; d.rate = effRate(d);
@@ -2820,6 +2829,7 @@ html.lq .scrim { transition: none; }
       } catch (e) { return Promise.reject(e); }
     };
     api.wpStop = guard(function () { wpStop("user"); });
+    api.originalsOnly = function (on) { if (on != null) ORIGINALS = !!on; return ORIGINALS; };
     api.wpState = function () {
       var r = WP; if (!r) return { phase: "idle" };
       if (r.phase === "load" || !ctx) return { phase: "load", id: r.id, plan: r.plan };
@@ -2849,7 +2859,7 @@ html.lq .scrim { transition: none; }
       if (c && c.p) { if (bufOk(d, c.p)) startBuf(d, c.p); else startApple(d, c.p, false); return; } /* decoded buffer; or el.play() inside the gesture */
       if (c) { d.why = "miss"; startStudio(d, o); return; } /* known: Apple has no preview for this song */
       var tok = ++d.tok, trk = d.track; d.busy = true;
-      var to = setTimeout(guard(function () { if (tok === d.tok && d.busy) { d.why = "slow"; startStudio(d, o); } }), 6000); /* wait ≤ 6 s */
+      var to = setTimeout(guard(function () { if (tok === d.tok && d.busy) { d.why = "slow"; if (ORIGINALS) emit(); else startStudio(d, o); } }), 6000); /* slow: keep waiting for the original */
       lookup(d.track, true).then(guard(function (r) {
         clearTimeout(to);
         if (tok === d.tok && d.busy) { if (r && r.p) { if (bufOk(d, r.p)) startBuf(d, r.p); else startApple(d, r.p, false); } else { d.why = diag.last === "net" ? "net" : "miss"; startStudio(d, o); } return; }
@@ -3027,7 +3037,7 @@ html.lq .scrim { transition: none; }
       function cp(d) {
         var dur = d.kind === "apple" && d.el && isFinite(d.el.duration) && d.el.duration > 0 ? d.el.duration : d.dur;
         return { track: d.track, kind: d.kind, busy: d.busy, buffering: d.buffering, playing: d.playing, pos: Math.min(curPos(d), dur || 1e9), dur: dur, vol: d.vol,
-          eq: { low: d.eq.low, mid: d.eq.mid, high: d.eq.high }, syncOn: d.syncOn, rate: d.rate, eqActive: d.kind === "studio" ? true : d.eqActive, art: d.art, why: d.kind === "studio" ? (d.why || "") : "", vox: d.n && d.n.proc ? d.n.proc.mode : "off", grid: d.grid ? { bpm: d.grid.bpm, conf: d.grid.conf, src: d.grid.src || "" } : null, held: d.gate !== 1, bm: !!d.bmode, sync: !!d.bsync, semis: d.semis || 0, trim: Math.round((d.trim || 1) * 1000) / 1000, an: !!anOf(d) };
+          eq: { low: d.eq.low, mid: d.eq.mid, high: d.eq.high }, syncOn: d.syncOn, rate: d.rate, eqActive: d.kind === "studio" ? true : d.eqActive, art: d.art, why: d.kind === "studio" || (!d.playing && !d.busy) || (d.busy && d.why === "slow") ? (d.why || "") : "", vox: d.n && d.n.proc ? d.n.proc.mode : "off", grid: d.grid ? { bpm: d.grid.bpm, conf: d.grid.conf, src: d.grid.src || "" } : null, held: d.gate !== 1, bm: !!d.bmode, sync: !!d.bsync, semis: d.semis || 0, trim: Math.round((d.trim || 1) * 1000) / 1000, an: !!anOf(d) };
       }
       try { return { mode: S.mode, seq: S.seq, loop: S.loop, xf: S.xf, clean: S.clean, beat: S.beat, cue: S.cue, keyMatch: S.keyMatch, A: cp(D.A), B: cp(D.B) }; } catch (e) { return { mode: null, seq: false, loop: false, xf: .5, A: null, B: null }; }
     };
@@ -3453,7 +3463,7 @@ function findPairs(gv, gb, opts) {
 }
 function findPairs0(gv, gb, opts) {
   const out = [], maxDiff = opts.maxDiff == null ? 0.06 : opts.maxDiff;
-  const vocals = DATA.filter(t => t.g === gv), beats = DATA.filter(t => t.g === gb);
+  const vocals = DATA.filter(t => t.g === gv && !t.nop), beats = DATA.filter(t => t.g === gb && !t.nop);   /* originals only: no Apple preview → not offered */
   for (const v of vocals) for (const b of beats) {
     if (v === b) continue;
     if (firstArtist(v.a) === firstArtist(b.a)) continue;
@@ -3555,7 +3565,7 @@ const BARS = `<span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i>
 const REDUCED = !!(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
 const LQ = !!window.Liquid;
 const byTrackKey = new Map(DATA.map(t => [t.t + " | " + t.a, t]));
-function pairFromKey(k) { const [v, b] = String(k).split(" >> "); const tv = byTrackKey.get(v), tb = byTrackKey.get(b); return tv && tb ? pairAny(tv, tb) : null; }
+function pairFromKey(k) { const [v, b] = String(k).split(" >> "); const tv = byTrackKey.get(v), tb = byTrackKey.get(b); return tv && tb && !tv.nop && !tb.nop ? pairAny(tv, tb) : null; }
 
 /* genre colors (hue, saturation, lightness): saturated mid-tones */
 const GHSL = { mizr:[30,95,52], ilpop:[44,96,47], house:[176,74,36], techhouse:[199,84,40], afrohouse:[112,40,38], regg:[343,82,56], latin:[9,86,56], hiphop:[252,58,57], rnb:[288,50,52],
@@ -3605,6 +3615,9 @@ if (!IN_CLAUDE && window.fetch && /^https?:$/.test(location.protocol)) {
     if (j.meta && typeof j.meta.audioCors === "boolean" && E.hintCors) E.hintCors(j.meta.audioCors);
     window.__previews = { n, meta: j.meta || null };
     try { DATA.forEach(t => applyArt(t)); } catch (e) {}
+    /* originals only: songs Apple has no preview for are taken out of every list (pairs, search, recent, DJ) */
+    let nop = 0; DATA.forEach(t => { const v = j.map[t.t + " | " + t.a]; t.nop = !!(v && v.miss); if (t.nop) nop++; });
+    if (nop) { try { FP_MEMO.clear(); } catch (e) {} try { refreshAll(); } catch (e) {} }
     try { document.dispatchEvent(new CustomEvent("mashlab:previews")); } catch (e) {}
   }).catch(() => {});
   /* beats.json: beat grids measured from the same previews on GitHub's servers (tools/mashup_lab_beats.py) */
@@ -3644,7 +3657,7 @@ function seedMatch() {
      switches to the measured pairs once its genres are heard, the presets once all of them are */
   const sel = [state.A, state.B], jobs = [sel].concat(PRESETS.filter(g => g[0] !== sel[0] || g[1] !== sel[1]));
   let gi = 0, vi = 0, V = null, B = null, listDone = false;
-  const next = () => { const g = jobs[gi]; if (!g) return false; V = DATA.filter(t => t.g === g[0]); B = DATA.filter(t => t.g === g[1]); return true; };
+  const next = () => { const g = jobs[gi]; if (!g) return false; V = DATA.filter(t => t.g === g[0] && !t.nop); B = DATA.filter(t => t.g === g[1] && !t.nop); return true; };
   next();
   const done = () => {
     MEAS = true; FP_MEMO.clear();
@@ -3952,7 +3965,7 @@ const SIDX = DATA.map(t => norm(t.t + " " + t.a));
 function searchTracks(q, g) {
   const words = norm(q).split(/\s+/).filter(Boolean);
   const hits = [];
-  DATA.forEach((t, i) => { if ((!g || t.g === g) && words.every(w => SIDX[i].includes(w))) hits.push(t); });
+  DATA.forEach((t, i) => { if (!t.nop && (!g || t.g === g) && words.every(w => SIDX[i].includes(w))) hits.push(t); });
   const w0 = words[0] || "";
   const rank = t => (w0 && norm(t.t).startsWith(w0) ? 0 : w0 && norm(firstArtistRaw(t.a)).startsWith(w0) ? 1 : 2);
   hits.sort((x, y) => rank(x) - rank(y) || (y.y || 0) - (x.y || 0) || x.t.localeCompare(y.t));
@@ -4342,6 +4355,7 @@ function badgeFor(d) {
   if (d.busy) return { cls: "", html: `<span class="spin" aria-hidden="true"></span>מחפש תצוגה מקדימה…` };
   if (d.kind === "apple") return { cls: "apple", html: `${I("note")}<span>Apple Music · ${d.vox === "vocal" ? "רק השירה" : d.vox === "inst" ? "בלי השירה" : "תצוגה מקדימה"} באדיבות iTunes</span>` };
   if (d.kind === "studio") return { cls: "studio", html: `${I("studio")}גרוב סטודיו · ${WHY_LONG[d.why] || "לפי הקצב והסולם"}` };
+  if (d.why && WHY_LONG[d.why]) return { cls: "", html: `${I("note")}${WHY_LONG[d.why]} · לא מנגנים תחליף` };
   return { cls: "", html: `${I("note")}מוכן לנגינה` };
 }
 function updateMixer(st, force) {
@@ -4575,6 +4589,7 @@ function refreshAll() {
 try { E.on("change", refreshAll); } catch (e) {}
 try { E.on("art", t => { applyArt(t); }); } catch (e) {}
 try { E.on("ended", () => { refreshAll(); }); } catch (e) {}
+try { E.on("noorig", ev => { island((WHY_LONG[ev && ev.why] || "השיר המקורי לא נטען") + (ev && ev.why === "blocked" ? "" : " · לא מנגנים תחליף"), "wave"); refreshAll(); }); } catch (e) {}
 
 /* ---------- audio source sheet ---------- */
 function srcHTML() {
@@ -4590,7 +4605,7 @@ function srcHTML() {
       <a class="safari" id="safariBtn" target="_blank" rel="noopener" aria-disabled="true">${I("compass")}פתח ב־Safari לשירים המקוריים</a></div></div>`
     : `
     <div class="src-row"><span class="sq ap">${I("note")}</span><div><h3>תצוגות מקדימות של Apple Music</h3><p>כל שיר מתנגן מקטע של 30 שניות, תצוגה מקדימה באדיבות iTunes. הקטעים מושמעים בסטרימינג בלבד ולא נשמרים במכשיר. דק A ודק B הם שני נגנים נפרדים, כך ששני השירים נשמעים באותו זמן, כל אחד עם ווליום, EQ ו־SYNC משלו.</p></div></div>
-    <div class="src-row"><span class="sq st">${I("studio")}</span><div><h3>גרוב סטודיו, כשאין תצוגה מקדימה</h3><p>אם אין חיבור או שלשיר אין קטע, הדק מנגן גרוב שנבנה מהקצב, מהסולם ומהסגנון של השיר: בדק A שירה ומלודיה, בדק B תופים ובס. תמיד יש מה לשמוע. אם התצוגה המקדימה מגיעה באיחור, הדק עובר אליה לבד.</p></div></div>
+    <div class="src-row"><span class="sq ap">${I("note")}</span><div><h3>רק השירים המקוריים</h3><p>כל מה שמתנגן כאן הוא השיר המקורי. שירים שאין להם קטע ב־Apple לא מוצגים בזוגות, בחיפוש ובמעברים. אם קטע לא נטען, למשל כשאין חיבור, הדק עוצר ומופיעה הודעה, ולא מתנגן תחליף.</p></div></div>
     <div class="src-row"><span class="sq ap">${I("wave")}</span><div><h3>בדיקת חיבור ל־Apple Music</h3><p id="probeOut">${esc(diagTxt())}</p><button class="btn" type="button" id="probeBtn" style="margin-top:8px">לבדוק עכשיו</button></div></div>`;
   return `${top}
     <div class="now" aria-live="polite"><div class="nr"><span>דק A · שירה</span><b>${esc(kindTxt(st.A))}</b></div><div class="nr"><span>דק B · ביט</span><b>${esc(kindTxt(st.B))}</b></div></div>
@@ -4690,7 +4705,7 @@ function makeTools(ctx) {
         ctx.log("מחפש שירים");
         const q = String(inp.text || "").trim().toLowerCase(); const g = genreOf(inp.genre);
         const words = q.split(/\s+/).filter(Boolean);
-        const hits = DATA.filter(t => (!g || t.g === g) && words.every(w => (t.t + " " + t.a).toLowerCase().includes(w))).slice(0, 12);
+        const hits = DATA.filter(t => !t.nop && (!g || t.g === g) && words.every(w => (t.t + " " + t.a).toLowerCase().includes(w))).slice(0, 12);
         return hits.length ? hits.map(tshort) : "לא נמצאו שירים כאלה במאגר.";
       } },
     { name: "partners_for_track", description: "מחזיר זוגות תואמים לשיר אחד מהמאגר. role אומר אם השיר הזה נותן את השירה (vocal) או את הביט (beat). אפשר להגביל לסגנון של השיר השני.",

@@ -193,9 +193,11 @@ def flow_nocors(b):
 def flow_blocked(b):
     p = P(b, mock=Mock(mode="abort"), allow=("net::ERR", "Failed to load resource"))
     card(p).locator('[data-act="both"]').click()
-    check("blocked: both decks play", p.wait(BOTH, 12000), p.st())
-    s = p.st(); check("blocked: Studio Groove on both decks", s["A"]["k"] == s["B"]["k"] == "studio", s)
-    lv = p.levels(); check("blocked: levels > 0 on both", lv["A"] > 0.01 and lv["B"] > 0.01, lv)
+    # originals only: when the originals can't play, nothing synthetic plays in their place; the decks stop and say why
+    ok = p.wait("(() => { const s = MashApp.E.state(); return !s.A.busy && !s.B.busy && !s.A.playing && !s.B.playing && s.A.why && s.B.why; })()", 12000)
+    s = p.st(); check("blocked: no substitute plays, both decks stop and say why", ok and s["A"]["k"] != "studio" and s["B"]["k"] != "studio", s)
+    isl = p.ev("(document.querySelector('#island') || {}).textContent || ''"); check("blocked: the listener is told (island)", bool(isl.strip()), isl)
+    lv = p.levels(); check("blocked: silent decks (no Studio Groove)", lv["A"] < 0.01 and lv["B"] < 0.01, lv)
     check("blocked: zero app console errors", not p.errors(), p.errors()[:4]); p.close()
 
 
@@ -203,9 +205,9 @@ def flow_claude(b):
     m = Mock(); p = P(b, mock=m, init=MOCK_CLAUDE)
     check("claude: engine net:false", p.dbg()["net"] is False, p.dbg()["net"])
     card(p).locator('[data-act="both"]').click()
-    check("claude: card plays both decks", p.wait(BOTH, 6000), p.st())
-    s = p.st(); check("claude: Studio Groove on both decks", s["A"]["k"] == s["B"]["k"] == "studio", s)
-    lv = p.levels(); check("claude: levels > 0 on both", lv["A"] > 0.01 and lv["B"] > 0.01, lv)
+    ok = p.wait("(() => { const s = MashApp.E.state(); return !s.A.playing && !s.B.playing && s.A.why === 'claude' && s.B.why === 'claude'; })()", 6000)
+    s = p.st(); check("claude: no substitute plays (originals only), decks say why", ok and s["A"]["k"] != "studio", s)
+    lv = p.levels(); check("claude: silent decks (no Studio Groove)", lv["A"] < 0.01 and lv["B"] < 0.01, lv)
     p.pg.wait_for_timeout(500); check("claude: zero iTunes requests", not m.calls, m.calls[:3])
     ext = p.ev("Array.from(document.querySelectorAll('a[target=_blank], a[href^=http]')).length")
     check("claude: at most one external link element in DOM (the Safari link)", ext <= 1, ext)

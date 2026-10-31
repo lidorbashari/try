@@ -422,7 +422,7 @@
   function create(opts) {
     opts = opts || {};
     var net = opts.net !== false, root = opts.root || null, api = {}, ctx = null, master = null, comp = null, cors = null, unlocked = false, tickId = 0;
-    var L = { change: [], ended: [], art: [], wp: [] }, raf = 0, rafTO = 0, msTitle = "", msInit = false;
+    var L = { change: [], ended: [], art: [], wp: [], noorig: [] }, raf = 0, rafTO = 0, msTitle = "", msInit = false;
     var S = { mode: null, seq: false, loop: false, xf: .5, cur: "A", clean: true, hold: 0, beat: "off", cue: "", bsync: true, pb: false, useBuf: true, keyMatch: true, loud: true, plan: null, vgate: true }, rates = { A: 1, B: 1 }, D = {};
     SIDES.forEach(function (s) {
       D[s] = { side: s, track: null, kind: "idle", busy: false, buffering: false, playing: false, pos: 0, dur: 0, vol: .85, eq: { low: 0, mid: 0, high: 0 },
@@ -557,7 +557,16 @@
       if (kN >= N.kEnd - 4) { kN = Math.round((kO % SO) / SO * SN); idx = 0; }
       return { at: tb, k0: kN, cOff: ((cO - idx) % 4 + 4) % 4 };
     }
-    function startStudio(d, o) {
+    /* Originals only (Lidor, 2026-10-31): a real song is never replaced by the synthesized Studio Groove. When the
+       original can't play, the deck stops, says why (d.why) and fires "noorig" so the app can tell the listener. */
+    var ORIGINALS = !(typeof window !== "undefined" && window.__mashTestGroove);   /* UI test suites only: let a deck "play" without real audio */
+    function noOriginal(d, why) {
+      stopApple(d, false); stopGroove(d); bufStop(d); d.bmode = false; d.ready = false; d.waitT = 0; d.bsync = false;
+      d.tok++; d.kind = "idle"; d.busy = false; d.buffering = false; d.playing = false; d.why = why || d.why || "media";
+      fire("noorig", { side: d.side, why: d.why, track: d.track }); emit();
+    }
+    function startStudio(d, o) { if (ORIGINALS) { noOriginal(d, d.why); return; } startGroove(d, o); }
+    function startGroove(d, o) {
       o = o || {};
       stopApple(d, false); stopGroove(d); bufStop(d); d.bmode = false; d.ready = false; d.waitT = 0; d.bsync = false;
       d.tok++; d.kind = "studio"; d.eqActive = true; d.busy = false; d.buffering = false; d.playing = false; d.rate = effRate(d);
@@ -1193,6 +1202,7 @@
       } catch (e) { return Promise.reject(e); }
     };
     api.wpStop = guard(function () { wpStop("user"); });
+    api.originalsOnly = function (on) { if (on != null) ORIGINALS = !!on; return ORIGINALS; };
     api.wpState = function () {
       var r = WP; if (!r) return { phase: "idle" };
       if (r.phase === "load" || !ctx) return { phase: "load", id: r.id, plan: r.plan };
@@ -1222,7 +1232,7 @@
       if (c && c.p) { if (bufOk(d, c.p)) startBuf(d, c.p); else startApple(d, c.p, false); return; } /* decoded buffer; or el.play() inside the gesture */
       if (c) { d.why = "miss"; startStudio(d, o); return; } /* known: Apple has no preview for this song */
       var tok = ++d.tok, trk = d.track; d.busy = true;
-      var to = setTimeout(guard(function () { if (tok === d.tok && d.busy) { d.why = "slow"; startStudio(d, o); } }), 6000); /* wait ≤ 6 s */
+      var to = setTimeout(guard(function () { if (tok === d.tok && d.busy) { d.why = "slow"; if (ORIGINALS) emit(); else startStudio(d, o); } }), 6000); /* slow: keep waiting for the original */
       lookup(d.track, true).then(guard(function (r) {
         clearTimeout(to);
         if (tok === d.tok && d.busy) { if (r && r.p) { if (bufOk(d, r.p)) startBuf(d, r.p); else startApple(d, r.p, false); } else { d.why = diag.last === "net" ? "net" : "miss"; startStudio(d, o); } return; }
@@ -1400,7 +1410,7 @@
       function cp(d) {
         var dur = d.kind === "apple" && d.el && isFinite(d.el.duration) && d.el.duration > 0 ? d.el.duration : d.dur;
         return { track: d.track, kind: d.kind, busy: d.busy, buffering: d.buffering, playing: d.playing, pos: Math.min(curPos(d), dur || 1e9), dur: dur, vol: d.vol,
-          eq: { low: d.eq.low, mid: d.eq.mid, high: d.eq.high }, syncOn: d.syncOn, rate: d.rate, eqActive: d.kind === "studio" ? true : d.eqActive, art: d.art, why: d.kind === "studio" ? (d.why || "") : "", vox: d.n && d.n.proc ? d.n.proc.mode : "off", grid: d.grid ? { bpm: d.grid.bpm, conf: d.grid.conf, src: d.grid.src || "" } : null, held: d.gate !== 1, bm: !!d.bmode, sync: !!d.bsync, semis: d.semis || 0, trim: Math.round((d.trim || 1) * 1000) / 1000, an: !!anOf(d) };
+          eq: { low: d.eq.low, mid: d.eq.mid, high: d.eq.high }, syncOn: d.syncOn, rate: d.rate, eqActive: d.kind === "studio" ? true : d.eqActive, art: d.art, why: d.kind === "studio" || (!d.playing && !d.busy) || (d.busy && d.why === "slow") ? (d.why || "") : "", vox: d.n && d.n.proc ? d.n.proc.mode : "off", grid: d.grid ? { bpm: d.grid.bpm, conf: d.grid.conf, src: d.grid.src || "" } : null, held: d.gate !== 1, bm: !!d.bmode, sync: !!d.bsync, semis: d.semis || 0, trim: Math.round((d.trim || 1) * 1000) / 1000, an: !!anOf(d) };
       }
       try { return { mode: S.mode, seq: S.seq, loop: S.loop, xf: S.xf, clean: S.clean, beat: S.beat, cue: S.cue, keyMatch: S.keyMatch, A: cp(D.A), B: cp(D.B) }; } catch (e) { return { mode: null, seq: false, loop: false, xf: .5, A: null, B: null }; }
     };
