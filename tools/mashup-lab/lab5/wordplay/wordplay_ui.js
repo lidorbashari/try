@@ -54,6 +54,7 @@
     ALL = W.merge(curated, heard.concat(auto));
   }
   buildHeard();
+  document.addEventListener("mashlab:previews", function () { if (view.isConnected && !view.hidden) render(); });
   document.addEventListener("mashlab:words", function () { buildHeard(); if (view.isConnected && !view.hidden) render(); });
   /* the measured key profiles arrived: re-check every link by ear (compatibility + technique), then redraw */
   document.addEventListener("mashlab:analysis", function () {
@@ -161,9 +162,12 @@
     '<div class="wp-list"></div><button class="btn n wp-more" type="button" data-wact="more" hidden>להציג עוד</button>';
   var $l = view.querySelector(".wp-list"), $more = view.querySelector(".wp-more"), $sub = view.querySelector(".wp-sub"), $heard = view.querySelector('[data-wf="heard"]');
 
+  /* a link can only be played when both songs have an Apple preview: previews.json marks the songs Apple has none for ("miss") */
+  function playable(l) { var m = window.__previewMap; if (!m) return true; var a = m[TK(DATA[l.ai])], b = m[TK(DATA[l.bi])]; return !(a && a.miss) && !(b && b.miss); }
   function filtered() {
     var useHeard = f.heard && measured();
     return ALL.filter(function (l) {
+      if (!playable(l)) return false;
       if (useHeard) { var sg = sung(l); if (!sg || !sg.both) return false; }
       if (f.type !== "all" && l.type !== f.type) return false;
       if (f.compat && !l.mix.compatible) return false;
@@ -222,7 +226,7 @@
     if (!r.fired) {
       if (a.busy || a.buffering || !a.playing) {
         if (r.p0 != null && !a.playing && !a.busy && !a.buffering) stopRun();          /* paused from elsewhere */
-        else if (r.p0 == null && Date.now() - r.start > 9000) stopRun();               /* never started */
+        else if (r.p0 == null && Date.now() - r.start > 9000) { stopRun(); E.pauseAll && E.pauseAll(); if (App.island) App.island("הקטעים לא נטענו. בדוק את החיבור ונסה שוב", "wave"); }   /* never started: say so, never fail silently */
         return;
       }
       if (r.p0 == null) { r.p0 = a.pos; return; }

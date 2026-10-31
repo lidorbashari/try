@@ -1140,6 +1140,7 @@ if (!IN_CLAUDE && window.fetch && /^https?:$/.test(location.protocol)) {
     if (j.meta && typeof j.meta.audioCors === "boolean" && E.hintCors) E.hintCors(j.meta.audioCors);
     window.__previews = { n, meta: j.meta || null };
     try { DATA.forEach(t => applyArt(t)); } catch (e) {}
+    try { document.dispatchEvent(new CustomEvent("mashlab:previews")); } catch (e) {}
   }).catch(() => {});
   /* beats.json: beat grids measured from the same previews on GitHub's servers (tools/mashup_lab_beats.py) */
   fetch("beats.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : null).then(j => {

@@ -3605,6 +3605,7 @@ if (!IN_CLAUDE && window.fetch && /^https?:$/.test(location.protocol)) {
     if (j.meta && typeof j.meta.audioCors === "boolean" && E.hintCors) E.hintCors(j.meta.audioCors);
     window.__previews = { n, meta: j.meta || null };
     try { DATA.forEach(t => applyArt(t)); } catch (e) {}
+    try { document.dispatchEvent(new CustomEvent("mashlab:previews")); } catch (e) {}
   }).catch(() => {});
   /* beats.json: beat grids measured from the same previews on GitHub's servers (tools/mashup_lab_beats.py) */
   fetch("beats.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : null).then(j => {
@@ -5874,7 +5875,11 @@ window.addEventListener("scroll", syncTopbar, { passive: true });
         if (!best || sc > best.sc) best = { sc: sc, a: a, b: b, pl: pl, tail: tail };
       });
     });
-    if (!best) return { ok: false, why: "place" };
+    if (!best) {                     /* no cut fits the words found: retry on sung phrases, then on plain bar lines */
+      if (!opts._retry) return plan(link, info, Object.assign({}, opts, { wt: {}, _retry: 1 }));
+      if (opts._retry === 1) return plan(link, info, Object.assign({}, opts, { wt: {}, anA: null, anB: null, _retry: 2 }));
+      return { ok: false, why: "place" };
+    }
     var pl = best.pl, a = best.a, b = best.b, pA = 60 / gA.bpm, rB = tr.synced ? tr.r : 1;
     /* A's lead-in: from a bar line 4 bars (2 when slow) before the bar of its word */
     var nb = 16 * pA <= 9.5 ? 4 : 2, xw = Math.floor(xOf(gA, a.s) / 4) * 4, xs = xw - 4 * nb;
@@ -5917,7 +5922,7 @@ window.addEventListener("scroll", syncTopbar, { passive: true });
     function trim(an) { return an && isFinite(an.lufs) ? r3(clamp(Math.pow(10, (-11 - an.lufs) / 20), .45, 1.6)) : 1; }
     var echo = style === "echo" || style === "drop" ? { d: r3(.75 * pA <= .6 ? .75 * pA : .5 * pA), fb: pl.cut - aOut > 2 * pA ? .55 : .42, wet: .5 } : null;
     var out = {
-      ok: true, synced: tr.synced, q: tr.q, r: r3(rB), ride: ride, semis: fit.semis || 0, rel: fit.rel, ear: fit.ear == null ? null : fit.ear, keyA: kA ? kA.k : null, keyB: kB ? kB.k : null, keyB2: fit.keyB || null,
+      ok: true, fallback: opts._retry || 0, synced: tr.synced, q: tr.q, r: r3(rB), ride: ride, semis: fit.semis || 0, rel: fit.rel, ear: fit.ear == null ? null : fit.ear, keyA: kA ? kA.k : null, keyB: kB ? kB.k : null, keyB2: fit.keyB || null,
       keySrc: kA && kB ? (kA.src === "measured" && kB.src === "measured" ? "measured" : "catalog") : null,
       style: style, aStart: r3(aStart), cut: r3(pl.cut), aOut: r3(aOut), bPos: r3(pl.bPos), pre: r3(pre), tail: r3(tail),
       bFade: r3(Math.max(.012, (pl.bPos - b.s) / rB + .012)),        /* B fades in over its word's anticipation (≤ 30 ms before its 1) */
@@ -6014,6 +6019,7 @@ window.addEventListener("scroll", syncTopbar, { passive: true });
     ALL = W.merge(curated, heard.concat(auto));
   }
   buildHeard();
+  document.addEventListener("mashlab:previews", function () { if (view.isConnected && !view.hidden) render(); });
   document.addEventListener("mashlab:words", function () { buildHeard(); if (view.isConnected && !view.hidden) render(); });
   /* the measured key profiles arrived: re-check every link by ear (compatibility + technique), then redraw */
   document.addEventListener("mashlab:analysis", function () {
@@ -6121,9 +6127,12 @@ window.addEventListener("scroll", syncTopbar, { passive: true });
     '<div class="wp-list"></div><button class="btn n wp-more" type="button" data-wact="more" hidden>להציג עוד</button>';
   var $l = view.querySelector(".wp-list"), $more = view.querySelector(".wp-more"), $sub = view.querySelector(".wp-sub"), $heard = view.querySelector('[data-wf="heard"]');
 
+  /* a link can only be played when both songs have an Apple preview: previews.json marks the songs Apple has none for ("miss") */
+  function playable(l) { var m = window.__previewMap; if (!m) return true; var a = m[TK(DATA[l.ai])], b = m[TK(DATA[l.bi])]; return !(a && a.miss) && !(b && b.miss); }
   function filtered() {
     var useHeard = f.heard && measured();
     return ALL.filter(function (l) {
+      if (!playable(l)) return false;
       if (useHeard) { var sg = sung(l); if (!sg || !sg.both) return false; }
       if (f.type !== "all" && l.type !== f.type) return false;
       if (f.compat && !l.mix.compatible) return false;
@@ -6182,7 +6191,7 @@ window.addEventListener("scroll", syncTopbar, { passive: true });
     if (!r.fired) {
       if (a.busy || a.buffering || !a.playing) {
         if (r.p0 != null && !a.playing && !a.busy && !a.buffering) stopRun();          /* paused from elsewhere */
-        else if (r.p0 == null && Date.now() - r.start > 9000) stopRun();               /* never started */
+        else if (r.p0 == null && Date.now() - r.start > 9000) { stopRun(); E.pauseAll && E.pauseAll(); if (App.island) App.island("הקטעים לא נטענו. בדוק את החיבור ונסה שוב", "wave"); }   /* never started: say so, never fail silently */
         return;
       }
       if (r.p0 == null) { r.p0 = a.pos; return; }

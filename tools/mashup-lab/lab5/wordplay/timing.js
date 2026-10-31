@@ -197,7 +197,11 @@
         if (!best || sc > best.sc) best = { sc: sc, a: a, b: b, pl: pl, tail: tail };
       });
     });
-    if (!best) return { ok: false, why: "place" };
+    if (!best) {                     /* no cut fits the words found: retry on sung phrases, then on plain bar lines */
+      if (!opts._retry) return plan(link, info, Object.assign({}, opts, { wt: {}, _retry: 1 }));
+      if (opts._retry === 1) return plan(link, info, Object.assign({}, opts, { wt: {}, anA: null, anB: null, _retry: 2 }));
+      return { ok: false, why: "place" };
+    }
     var pl = best.pl, a = best.a, b = best.b, pA = 60 / gA.bpm, rB = tr.synced ? tr.r : 1;
     /* A's lead-in: from a bar line 4 bars (2 when slow) before the bar of its word */
     var nb = 16 * pA <= 9.5 ? 4 : 2, xw = Math.floor(xOf(gA, a.s) / 4) * 4, xs = xw - 4 * nb;
@@ -240,7 +244,7 @@
     function trim(an) { return an && isFinite(an.lufs) ? r3(clamp(Math.pow(10, (-11 - an.lufs) / 20), .45, 1.6)) : 1; }
     var echo = style === "echo" || style === "drop" ? { d: r3(.75 * pA <= .6 ? .75 * pA : .5 * pA), fb: pl.cut - aOut > 2 * pA ? .55 : .42, wet: .5 } : null;
     var out = {
-      ok: true, synced: tr.synced, q: tr.q, r: r3(rB), ride: ride, semis: fit.semis || 0, rel: fit.rel, ear: fit.ear == null ? null : fit.ear, keyA: kA ? kA.k : null, keyB: kB ? kB.k : null, keyB2: fit.keyB || null,
+      ok: true, fallback: opts._retry || 0, synced: tr.synced, q: tr.q, r: r3(rB), ride: ride, semis: fit.semis || 0, rel: fit.rel, ear: fit.ear == null ? null : fit.ear, keyA: kA ? kA.k : null, keyB: kB ? kB.k : null, keyB2: fit.keyB || null,
       keySrc: kA && kB ? (kA.src === "measured" && kB.src === "measured" ? "measured" : "catalog") : null,
       style: style, aStart: r3(aStart), cut: r3(pl.cut), aOut: r3(aOut), bPos: r3(pl.bPos), pre: r3(pre), tail: r3(tail),
       bFade: r3(Math.max(.012, (pl.bPos - b.s) / rB + .012)),        /* B fades in over its word's anticipation (≤ 30 ms before its 1) */

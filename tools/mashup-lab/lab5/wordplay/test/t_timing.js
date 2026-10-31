@@ -91,6 +91,7 @@ for (const l of links) {
     n++;
     const q = T.plan(l, { gA: g1, gB: g2, durA: 30, durB: 30 }, { wt: { a: [[sA, sA + .55, .8, 1]], b: [[sB, sB + .5, .8, 1]] } });
     if (!q.ok) continue;
+    if (q.fallback) { okc++; continue; }   /* words could not be placed: planned on phrases / bar lines instead */
     okc++; if (q.synced) synced++; ons[q.onBeat] = (ons[q.onBeat] || 0) + 1; gaps.push(q.gap);
     if (!(q.cut >= sA + .55 - .061) || !(q.cut <= sA + .55 + 4.1) || !(q.bPos >= .05) || !(q.aStart >= 0 && q.aStart < sA)) { bad++; console.log("FAIL sanity", l.a, "||", l.b, JSON.stringify(q).slice(0, 300)); }
     if (q.foundB) { const heard = (q.wB[0] - q.bPos) / q.r; if (!(heard >= -.031) || !(q.bFade >= -heard)) { bad++; console.log("FAIL B word before its entry", heard, q.bFade, l.a, "||", l.b, sA, sB, q.r, q.synced, q.ride ? "ride" : ""); } }
