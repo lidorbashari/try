@@ -343,9 +343,10 @@ def atomic_json(path, obj, check):
 def check_data(rows):
     assert isinstance(rows, list) and rows
     for r in rows:
-        assert set(r) <= {"g", "t", "a", "bpm", "k", "y", "hot", "s", "sg", "e"} and {"g", "t", "a", "bpm", "k", "y", "hot", "s"} <= set(r), r
+        assert set(r) <= {"g", "t", "a", "bpm", "k", "y", "hot", "s", "sg", "e", "kc"} and {"g", "t", "a", "bpm", "k", "y", "hot", "s"} <= set(r), r
         assert r["g"] in GENRES and KEY_RE.fullmatch(r["k"]) and 55 <= r["bpm"] <= 200 and isinstance(r["hot"], bool), r
         assert "e" not in r or (isinstance(r["e"], int) and 1 <= r["e"] <= 10), r
+        assert "kc" not in r or r["kc"] in (1, 2, 3), r   # key certainty: sources that agree on k
         assert r["y"] is None or 1950 <= r["y"] <= 2026, r
 
 def check_src(src, rows):

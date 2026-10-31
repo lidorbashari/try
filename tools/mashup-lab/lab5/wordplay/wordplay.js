@@ -72,8 +72,31 @@
   var SEC_HE = { intro: "אינטרו", verse1: "בית ראשון", chorus1: "פזמון ראשון", verse2: "בית שני", chorus2: "פזמון שני", bridge: "ברידג׳", chorus3: "פזמון אחרון", groove: "גרוב מרכזי", breakdown: "ברייקדאון", drop: "דרופ", outro: "אאוטרו", hook: "ההוק", logdrum: "דרופ לוג־דראם" };
 
   /* mixCheck(a, b): is A → B mixable, and with which technique */
+  /* key fit BY EAR: Pearson correlation of the measured pitch-class profiles of the two previews (analysis.json:
+     hc = harmony, vc = singing), B moved by s ∈ {0, ±1} semitones. Catalog keys are often wrong; the ear is not
+     fooled by a label. Returns null when either preview has no measured profile (then the Camelot keys decide). */
+  function prof12(sv) { if (!sv || String(sv).length !== 12) return null; var v = [], m = 0, i, n = 0; for (i = 0; i < 12; i++) { v.push(parseInt(String(sv).charAt(i), 16) || 0); m += v[i]; } m /= 12;
+    for (i = 0; i < 12; i++) { v[i] -= m; n += v[i] * v[i]; } n = Math.sqrt(n); if (!(n > 1e-6)) return null; for (i = 0; i < 12; i++) v[i] /= n; return v; }
+  function rot(a, b, s) { var c = 0; for (var i = 0; i < 12; i++) c += a[i] * b[((i + s) % 12 + 12) % 12]; return c; }
+  function anOf(t) { var m = root.__analysis && root.__analysis.map, v = m && t && m[String(t.t) + " | " + String(t.a)]; return v && !v.err ? v : null; }
+  function earKey(a, b) {
+    var A = anOf(a), B = anOf(b); if (!A || !B) return null;
+    var hA = prof12(A.hc), hB = prof12(B.hc), vA = prof12(A.vc), vB = prof12(B.vc); if (!hA || !hB) return null;
+    var best = null;
+    [0, 1, -1].forEach(function (s) {
+      var f = .5 * rot(hA, hB, -s), w = .5;
+      if (vA) { f += .25 * rot(vA, hB, -s); w += .25; }
+      if (vB) { f += .25 * rot(hA, vB, -s); w += .25; }
+      f /= w; var sc = f - .06 * Math.abs(s);
+      if (!best || sc > best.sc) best = { semis: s, fit: Math.round(f * 100) / 100, sc: sc };
+    });
+    best.rel = best.fit >= .45 ? "ear" : best.fit >= .3 ? "ear-ok" : null;
+    return best;
+  }
   function mixCheck(a, b) {
-    var rel = camRel(a.k, b.k), t = tempo(a.bpm, b.bpm), d = t.d;
+    var rel = camRel(a.k, b.k), t = tempo(a.bpm, b.bpm), d = t.d, ear = earKey(a, b);
+    if (ear) rel = ear.rel;                       /* the ear decides when both previews were measured */
+    else if (a.kc === 1 || b.kc === 1) rel = null; /* key not confirmed by a second source: don't overlap */
     var keyOk = !!rel, tempoOk = d <= 0.06 + 1e-9, compatible = keyOk && tempoOk;
     var eA = energyOf(a), eB = energyOf(b), dE = eB.e - eA.e;
     var bClub = !!CLUB_G[b.g] || b.g === "amapiano";
@@ -86,7 +109,7 @@
     var tg = targets(a, b, t);
     return {
       compatible: compatible, rel: rel, keyOk: keyOk, tempoOk: tempoOk,
-      tempoDiffPct: r1(d * 100), tempoMode: t.mode,
+      tempoDiffPct: r1(d * 100), tempoMode: t.mode, ear: ear ? ear.fit : null, semis: ear ? ear.semis : 0,
       eA: eA.e, eB: eB.e, est: eA.est || eB.est, dE: dE, energyOk: dE >= -1,
       technique: tech, technique_he: TECH_HE[tech],
       rates: compatible ? { A: tg.vT / a.bpm, B: tg.bT / b.bpm } : { A: 1, B: 1 },
@@ -594,12 +617,16 @@
       if (ai < 0 || bi < 0) return;
       var A = DATA[ai], B = DATA[bi], mix = mixCheck(A, B);
       var tech = L.technique || mix.technique;
+      /* a long overlap (blend / double drop / call-and-response / acapella) needs keys that really fit: when they
+         don't (by ear, or by the corrected keys), never overlap: cut or echo on the word, with a fresh cue plan */
+      var overlap = { blend: 1, double: 1, callresp: 1, acapella: 1 }, forced = false;
+      if (overlap[tech] && !mix.compatible) { tech = mix.technique; if (overlap[tech]) tech = "echo"; forced = true; }
       var cues = cuePlan(A, B, mix, { secA: L.secA, secB: L.secB, technique: tech });
       if (L.cueA) cues.cueA.he = L.cueA;
-      if (L.cueB) cues.cueB.he = L.cueB;
+      if (L.cueB && !forced) cues.cueB.he = L.cueB;
       out.push({
         ai: ai, bi: bi, type: L.type, type_he: TYPE_HE[L.type] || L.type, word: L.word, conf: L.conf || "high",
-        hype: L.hype || hypeOf(L.type, 3, A, B, mix),
+        hype: L.hype || hypeOf(L.type, L.conf === "mid" ? 2 : L.conf === "low" ? 1 : 3, A, B, mix),
         score: Math.min(100, (L.hype || 7) * 10 + 8 + (mix.compatible ? 2 : 0)),
         mix: Object.assign({}, mix, { technique: tech, technique_he: TECH_HE[tech] || tech }),
         cueA: cues.cueA, cueB: cues.cueB, note_he: cues.note_he, why_he: L.why_he || "", src: "curated"
@@ -637,7 +664,7 @@
 
   var api = {
     index: index, autoLinks: autoLinks, mixCheck: mixCheck, resolve: resolve, merge: merge, cuePlan: cuePlan, previewPlan: previewPlan,
-    energyOf: energyOf, formOf: formOf, camRel: camRel, tempo: tempo,
+    energyOf: energyOf, formOf: formOf, camRel: camRel, tempo: tempo, earKey: earKey,
     TYPE_HE: TYPE_HE, TECH_HE: TECH_HE, SEC_HE: SEC_HE,
     _norm: { normText: normText, splitTitle: splitTitle }
   };

@@ -101,6 +101,14 @@ Heartbeat (UTC): 2026-10-23T14:55Z · session: https://claude.ai/code/session_01
   loop roll = 1-beat loop halved into B's drop.
 
 ## Log (newest first)
+- 2026-10-31: Lidor: "many songs are in the wrong key; find many more word links, it must really sound good".
+  Keys: 3-source consensus for all 1,292 tracks (catalog vs SongBPM/Spotify full-track key vs the essentia key
+  measured on the preview); `kc` in data.json = how many sources agree (3: 374, 2: 648, 1: 270 unresolved).
+  331 keys and 51 BPMs corrected (BPM only when SongBPM and the measured beat grid agree against the catalog).
+  Word play: mixCheck decides key fit BY EAR (Pearson of the measured hc/vc profiles, B ±1 semitone) and never
+  calls an unconfirmed key (kc 1) compatible; resolve() downgrades blend/double/call-response to echo when the keys
+  don't really fit (old links had "double" on clashing keys). Stale key claims removed from old texts.
+  +209 curated links (304 total), titles only. Pushing wordplay-links.json starts mashup-analyze (word times).
 - 2026-10-23 14:53Z: on-the-one release live (8fe38c1).
 - 2026-10-23 14:45Z: on-the-one rework of word play + deck joins; CI running.
 - 2026-10-23 03:00Z: DONE. Word-play round 2: 0.80 continuity. Auto-resume fallback removed (work finished).

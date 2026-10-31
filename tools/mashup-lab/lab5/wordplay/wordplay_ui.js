@@ -12,7 +12,7 @@
   if (!App || !W || !App.E || !App.DATA) return;
   var E = App.E, DATA = App.DATA;
   var GN = { mizr: "מזרחית", ilpop: "פופ ישראלי", house: "האוס", techhouse: "טק האוס", afrohouse: "אפרו האוס", regg: "רגאטון", latin: "לטיני", hiphop: "היפ הופ", rnb: "R&B", pop: "פופ", afro: "אפרוביטס", amapiano: "אמאפיאנו", dancehall: "דאנסהול", techno: "טכנו", edm: "EDM", dnb: "דראם אנד בייס", ukg: "UK גראז׳" };
-  var REL = { same: "אותו סולם", adj: "סולמות שכנים", rel: "מז׳ור ומינור באותו מספר" };
+  var REL = { same: "אותו סולם", adj: "סולמות שכנים", rel: "מז׳ור ומינור באותו מספר", ear: "לפי האזנה: יושבים טוב", "ear-ok": "לפי האזנה: מתאים" };
   var curated = [], auto = [], heard = [];
   try { curated = W.resolve(DATA, window.WORDPLAY_LINKS || []); } catch (e) { curated = []; }
   try { auto = W.autoLinks(DATA, { limit: 120, minConf: "mid" }); } catch (e) { auto = []; }
@@ -55,6 +55,11 @@
   }
   buildHeard();
   document.addEventListener("mashlab:words", function () { buildHeard(); if (view.isConnected && !view.hidden) render(); });
+  /* the measured key profiles arrived: re-check every link by ear (compatibility + technique), then redraw */
+  document.addEventListener("mashlab:analysis", function () {
+    try { curated = W.resolve(DATA, window.WORDPLAY_LINKS || []); } catch (e) {}
+    buildHeard(); if (view.isConnected && !view.hidden) render();
+  });
   function analysis(t, h) { var m = window.__analysis && window.__analysis.map, v = m && m[TK(t)]; return v && !v.err && (!h || !v.h || v.h === h) ? v : null; }
 
   var esc = function (s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
@@ -76,7 +81,7 @@
   }
   function mixLine(m) {
     var t = m.tempoMode && m.tempoMode !== "1:1" ? "יחס קצב 2:1" : (m.tempoDiffPct ? "הפרש קצב " + m.tempoDiffPct + "%" : "אותו קצב");
-    var k = m.rel ? REL[m.rel] : "סולמות מתנגשים";
+    var k = m.rel ? REL[m.rel] + (m.semis ? " (B " + (m.semis > 0 ? "+" : "−") + "חצי טון)" : "") : (m.ear != null ? "לפי האזנה: מתנגשים, רק קאט/אקו" : "סולמות מתנגשים");
     var en = m.dE >= 1 ? "האנרגיה עולה" : m.dE >= -1 ? "האנרגיה נשמרת" : "האנרגיה יורדת";
     return '<div class="wp-mix">' + (m.compatible ? '<span class="ok">' + ic("check") + "תואם · " + k + " · " + t + "</span>" : '<span class="no">' + k + " · " + t + "</span>") +
       '<span class="tech">' + esc(m.technique_he || m.technique) + "</span><span>" + en + "</span></div>";

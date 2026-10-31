@@ -1,6 +1,6 @@
 """QA lead: "מעברי מילים" (wordplay) E2E on the RELEASE file with the real engine + CORS WAV previews.
 usage: python3 qa/e2e_wordplay.py      prints FAIL lines + summary; exit 1 on failure."""
-import re, sys, time
+import json, os, re, sys, time
 from e2e_audio import *
 
 RES2 = RESULTS
@@ -20,7 +20,8 @@ def run(b, scheme):
         h1: v && v.querySelector('h1').textContent, sub: v && v.querySelector('.wp-sub').textContent, n: WordplayUI.links.length, cur: WordplayUI.curated,
         sw: document.documentElement.scrollWidth }; })()""")
     check(f"wp[{scheme}]: view visible with title 'מעברי מילים' and 20 cards", info["vis"] and info["h1"] == "מעברי מילים" and info["cards"] == 20, info)
-    check(f"wp[{scheme}]: 95 curated links resolve, sub line counts match", info["cur"] == 95 and re.match(rf"{info['n']} מעברים · 95 נבחרו ביד", info["sub"] or ""), info)
+    NCUR = len(json.load(open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "wordplay", "links.json"), encoding="utf-8")))
+    check(f"wp[{scheme}]: all {NCUR} curated links resolve, sub line counts match", info["cur"] == NCUR and re.match(rf"{info['n']} מעברים · {NCUR} נבחרו ביד", info["sub"] or ""), info)
     check(f"wp[{scheme}]: no horizontal overflow at 390", info["sw"] <= 390, info["sw"])
     marks = p.ev("Array.from(document.querySelectorAll('.wp-card .wp-t')).map(t => { const m = t.querySelector('mark'); return !m || t.textContent.includes(m.textContent); })")
     check(f"wp[{scheme}]: highlighted words are title words (no lyric lines)", all(marks), marks)
