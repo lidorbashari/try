@@ -3,29 +3,29 @@
   "links": 55,
   "played": 55,
   "beat_measured": 53,
-  "beat_continues": 40,
-  "share_beat_continues": 0.755,
-  "beat_median_abs_ms": 9.4,
+  "beat_continues": 43,
+  "share_beat_continues": 0.811,
+  "beat_median_abs_ms": 10.3,
   "placeA_median_abs_ms": 0.0,
-  "placeB_median_abs_ms": 1.0,
-  "placeB_within_8ms": 0.969,
-  "both_words_found": 34,
+  "placeB_median_abs_ms": 2.0,
+  "placeB_within_8ms": 0.97,
+  "both_words_found": 32,
   "word_gap_median_s": 1.69,
   "styles": {
    "cut": 2,
-   "echo": 53,
-   "blend": 0,
+   "echo": 52,
+   "blend": 1,
    "drop": 0
   },
   "synced": 52,
   "ride": 13,
-  "key_shifted": 20,
+  "key_shifted": 18,
   "on_one_measured": 49,
   "share_on_one": 0.878,
-  "first_downbeat_median_abs_ms": 7.5,
+  "first_downbeat_median_abs_ms": 8.2,
   "share_first_on_one": 0.939,
   "page": {
-   "previews": 1220,
+   "previews": 1219,
    "beats": 1220,
    "analysis": 1221,
    "words": 94,
@@ -115,7 +115,7 @@
     "keyB": "7A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": 1,
    "beat": {
@@ -168,7 +168,7 @@
     "keyB": "6B",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
+   "latency_ms": 185.8,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
@@ -284,22 +284,22 @@
    "placeB_ms": 1,
    "beat": {
     "n": 13,
-    "median_ms": 17.8,
-    "p90_abs_ms": 20.2,
-    "ibi_A_ms": 599.6,
+    "median_ms": 0.0,
+    "p90_abs_ms": 20.0,
+    "ibi_A_ms": 600.0,
     "ibi_B_ms": 600.0
    },
    "bars": {
     "n": 4,
     "on_one": 1.0,
-    "median_ms": 18.2,
+    "median_ms": 20.0,
     "beat_of_bar": [
      1,
      1,
      1,
      1
     ],
-    "first_ms": 16.0,
+    "first_ms": 20.0,
     "first_on_one": true
    }
   },
@@ -371,20 +371,20 @@
     "keyB": "10A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": -1,
    "beat": {
     "n": 15,
-    "median_ms": 4.2,
-    "p90_abs_ms": 14.4,
-    "ibi_A_ms": 504.4,
+    "median_ms": 11.4,
+    "p90_abs_ms": 22.3,
+    "ibi_A_ms": 504.2,
     "ibi_B_ms": 500.0
    },
    "bars": {
     "n": 5,
     "on_one": 1.0,
-    "median_ms": 10.6,
+    "median_ms": 15.6,
     "beat_of_bar": [
      1,
      1,
@@ -392,7 +392,7 @@
      1,
      1
     ],
-    "first_ms": -11.7,
+    "first_ms": -10.9,
     "first_on_one": true
    }
   },
@@ -405,8 +405,8 @@
     "ride": null,
     "q": 1,
     "r": 0.976,
-    "semis": 2,
-    "rel": "ear-ok",
+    "semis": 0,
+    "rel": null,
     "style": "echo",
     "aStart": 2.709,
     "cut": 12.626,
@@ -426,18 +426,18 @@
    },
    "latency_ms": 182.9,
    "placeA_ms": 0,
-   "placeB_ms": null,
+   "placeB_ms": -2,
    "beat": {
     "n": 16,
-    "median_ms": -19.9,
-    "p90_abs_ms": 32.0,
-    "ibi_A_ms": 495.9,
+    "median_ms": -19.6,
+    "p90_abs_ms": 31.0,
+    "ibi_A_ms": 495.7,
     "ibi_B_ms": 500.0
    },
    "bars": {
     "n": 5,
     "on_one": 1.0,
-    "median_ms": -18.1,
+    "median_ms": -18.2,
     "beat_of_bar": [
      1,
      1,
@@ -445,7 +445,7 @@
      1,
      1
     ],
-    "first_ms": -11.0,
+    "first_ms": 7.5,
     "first_on_one": true
    }
   },
@@ -456,25 +456,25 @@
    "plan": {
     "synced": true,
     "ride": {
-     "r0": 1.129,
+     "r0": 0.847,
      "i1": 11.5,
      "i2": 26.983,
      "hold": 4,
      "bars": 8
     },
     "q": 1,
-    "r": 1.129,
+    "r": 0.847,
     "semis": 0,
     "rel": "ear",
     "style": "echo",
-    "aStart": 1.518,
-    "cut": 8.375,
-    "aOut": 7.767,
+    "aStart": 0.517,
+    "cut": 9.661,
+    "aOut": 7.78,
     "bPos": 3.759,
-    "bFade": 0.012,
+    "bFade": 0.013,
     "pre": 0,
     "tail": 16,
-    "gap": 0.715,
+    "gap": 2.001,
     "onBeat": "1",
     "foundA": true,
     "foundB": false,
@@ -485,26 +485,25 @@
    },
    "latency_ms": 182.9,
    "placeA_ms": 0,
-   "placeB_ms": 0,
+   "placeB_ms": 1,
    "beat": {
-    "n": 16,
-    "median_ms": 16.2,
-    "p90_abs_ms": 133.1,
-    "ibi_A_ms": 319.0,
-    "ibi_B_ms": 420.0
+    "n": 14,
+    "median_ms": -115.6,
+    "p90_abs_ms": 122.2,
+    "ibi_A_ms": 570.8,
+    "ibi_B_ms": 580.0
    },
    "bars": {
-    "n": 5,
-    "on_one": 0.2,
-    "median_ms": 24.1,
+    "n": 4,
+    "on_one": 0.0,
+    "median_ms": -110.3,
     "beat_of_bar": [
-     2,
-     4,
      1,
-     2,
-     4
+     1,
+     1,
+     1
     ],
-    "first_ms": 72.7,
+    "first_ms": -85.8,
     "first_on_one": false
    }
   },
@@ -542,7 +541,7 @@
     "keyB": "10A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": null,
@@ -576,7 +575,7 @@
     "keyB": "5A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
@@ -634,15 +633,15 @@
    "placeB_ms": 1,
    "beat": {
     "n": 17,
-    "median_ms": -20.2,
-    "p90_abs_ms": 30.3,
-    "ibi_A_ms": 469.3,
+    "median_ms": -11.3,
+    "p90_abs_ms": 19.1,
+    "ibi_A_ms": 469.0,
     "ibi_B_ms": 460.0
    },
    "bars": {
     "n": 5,
     "on_one": 1.0,
-    "median_ms": -18.8,
+    "median_ms": -7.3,
     "beat_of_bar": [
      1,
      1,
@@ -650,7 +649,7 @@
      1,
      1
     ],
-    "first_ms": -4.2,
+    "first_ms": -3.3,
     "first_on_one": true
    }
   },
@@ -682,27 +681,27 @@
     "keyB": "10A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
     "n": 14,
-    "median_ms": -14.6,
-    "p90_abs_ms": 22.5,
-    "ibi_A_ms": 571.7,
+    "median_ms": -7.3,
+    "p90_abs_ms": 13.7,
+    "ibi_A_ms": 571.2,
     "ibi_B_ms": 580.0
    },
    "bars": {
     "n": 4,
     "on_one": 1.0,
-    "median_ms": -13.0,
+    "median_ms": -2.9,
     "beat_of_bar": [
      1,
      1,
      1,
      1
     ],
-    "first_ms": -3.0,
+    "first_ms": 4.4,
     "first_on_one": true
    }
   },
@@ -739,22 +738,22 @@
    "placeB_ms": null,
    "beat": {
     "n": 14,
-    "median_ms": -34.4,
-    "p90_abs_ms": 42.1,
-    "ibi_A_ms": 495.8,
+    "median_ms": -29.4,
+    "p90_abs_ms": 38.3,
+    "ibi_A_ms": 495.7,
     "ibi_B_ms": 500.0
    },
    "bars": {
     "n": 4,
     "on_one": 1.0,
-    "median_ms": -31.6,
+    "median_ms": -30.2,
     "beat_of_bar": [
      1,
      1,
      1,
      1
     ],
-    "first_ms": -23.1,
+    "first_ms": -26.0,
     "first_on_one": true
    }
   },
@@ -792,14 +791,14 @@
    "beat": {
     "n": 16,
     "median_ms": 18.8,
-    "p90_abs_ms": 26.1,
+    "p90_abs_ms": 26.6,
     "ibi_A_ms": 491.5,
     "ibi_B_ms": 500.0
    },
    "bars": {
     "n": 5,
     "on_one": 1.0,
-    "median_ms": 19.2,
+    "median_ms": 18.5,
     "beat_of_bar": [
      1,
      1,
@@ -807,7 +806,7 @@
      1,
      1
     ],
-    "first_ms": 11.5,
+    "first_ms": 10.6,
     "first_on_one": true
    }
   },
@@ -845,25 +844,25 @@
     "keyB": "4A",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
-   "placeA_ms": -3,
+   "latency_ms": 185.8,
+   "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
     "n": 7,
-    "median_ms": -9.3,
-    "p90_abs_ms": 38.8,
-    "ibi_A_ms": 516.6,
+    "median_ms": -5.6,
+    "p90_abs_ms": 42.2,
+    "ibi_A_ms": 516.8,
     "ibi_B_ms": 520.0
    },
    "bars": {
     "n": 2,
     "on_one": 1.0,
-    "median_ms": -6.1,
+    "median_ms": -2.0,
     "beat_of_bar": [
      1,
      1
     ],
-    "first_ms": -2.9,
+    "first_ms": 1.6,
     "first_on_one": true
    }
   },
@@ -901,7 +900,7 @@
     "keyB": "10A",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
+   "latency_ms": 185.8,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
@@ -986,7 +985,7 @@
     "ride": null,
     "q": 1,
     "r": 1.057,
-    "semis": 2,
+    "semis": 0,
     "rel": null,
     "style": "echo",
     "aStart": 0,
@@ -1007,11 +1006,11 @@
    },
    "latency_ms": 197.1,
    "placeA_ms": -14,
-   "placeB_ms": -15,
+   "placeB_ms": -13,
    "beat": {
     "n": 17,
     "median_ms": -7.1,
-    "p90_abs_ms": 18.7,
+    "p90_abs_ms": 22.6,
     "ibi_A_ms": 462.1,
     "ibi_B_ms": 460.0
    },
@@ -1051,7 +1050,7 @@
     "keyB": "1B",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
+   "latency_ms": 185.8,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
@@ -1112,23 +1111,22 @@
    "placeB_ms": null,
    "beat": {
     "n": 8,
-    "median_ms": -26.0,
-    "p90_abs_ms": 33.1,
-    "ibi_A_ms": 857.5,
+    "median_ms": -18.3,
+    "p90_abs_ms": 27.9,
+    "ibi_A_ms": 856.5,
     "ibi_B_ms": 860.0
    },
    "bars": {
-    "n": 5,
-    "on_one": 0.6,
-    "median_ms": -22.2,
+    "n": 4,
+    "on_one": 0.75,
+    "median_ms": -13.5,
     "beat_of_bar": [
      1,
-     3,
      1,
      3,
      1
     ],
-    "first_ms": -17.5,
+    "first_ms": -13.8,
     "first_on_one": true
    }
   },
@@ -1171,22 +1169,22 @@
    "placeB_ms": -2,
    "beat": {
     "n": 12,
-    "median_ms": -17.9,
-    "p90_abs_ms": 25.0,
-    "ibi_A_ms": 625.3,
+    "median_ms": -27.0,
+    "p90_abs_ms": 33.1,
+    "ibi_A_ms": 625.8,
     "ibi_B_ms": 620.0
    },
    "bars": {
     "n": 4,
     "on_one": 1.0,
-    "median_ms": -23.2,
+    "median_ms": -28.3,
     "beat_of_bar": [
      1,
      1,
      1,
      1
     ],
-    "first_ms": -1.3,
+    "first_ms": -3.5,
     "first_on_one": true
    }
   },
@@ -1218,7 +1216,7 @@
     "keyB": "7B",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
+   "latency_ms": 185.8,
    "placeA_ms": 0,
    "placeB_ms": 2,
    "beat": {
@@ -1276,15 +1274,15 @@
    "placeB_ms": null,
    "beat": {
     "n": 17,
-    "median_ms": 22.4,
-    "p90_abs_ms": 40.8,
-    "ibi_A_ms": 460.4,
+    "median_ms": 19.6,
+    "p90_abs_ms": 40.5,
+    "ibi_A_ms": 459.8,
     "ibi_B_ms": 460.0
    },
    "bars": {
     "n": 5,
     "on_one": 1.0,
-    "median_ms": 20.3,
+    "median_ms": 19.1,
     "beat_of_bar": [
      1,
      1,
@@ -1292,7 +1290,7 @@
      1,
      1
     ],
-    "first_ms": 5.9,
+    "first_ms": 17.4,
     "first_on_one": true
    }
   },
@@ -1330,12 +1328,12 @@
     "keyB": "11A",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
+   "latency_ms": 185.8,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
     "n": 16,
-    "median_ms": 0.0,
+    "median_ms": -0.0,
     "p90_abs_ms": 0.0,
     "ibi_A_ms": 400.0,
     "ibi_B_ms": 400.0
@@ -1343,7 +1341,7 @@
    "bars": {
     "n": 5,
     "on_one": 1.0,
-    "median_ms": 0.0,
+    "median_ms": -0.0,
     "beat_of_bar": [
      1,
      1,
@@ -1351,7 +1349,7 @@
      1,
      1
     ],
-    "first_ms": 0.0,
+    "first_ms": -0.0,
     "first_on_one": true
    }
   },
@@ -1363,31 +1361,31 @@
     "synced": true,
     "ride": {
      "r0": 0.755,
-     "i1": 24.794,
-     "i2": 29.676,
+     "i1": 15.571,
+     "i2": 29.652,
      "hold": 4,
-     "bars": 3
+     "bars": 7
     },
     "q": 1,
     "r": 0.755,
-    "semis": -1,
+    "semis": 0,
     "rel": null,
     "style": "echo",
     "aStart": 0,
     "cut": 2.989,
     "aOut": 2.02,
-    "bPos": 17.175,
+    "bPos": 7.954,
     "bFade": 0.012,
     "pre": 0,
-    "tail": 15.555,
-    "gap": 1.427,
+    "tail": 16,
+    "gap": 1.089,
     "onBeat": "1",
     "foundA": true,
-    "foundB": true,
+    "foundB": false,
     "drop": false,
     "keyA": "6A",
-    "keyB": "7B",
-    "keySrc": "measured"
+    "keyB": null,
+    "keySrc": null
    },
    "latency_ms": 256.9,
    "placeA_ms": -22,
@@ -1534,22 +1532,21 @@
     "keyB": "11B",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
-    "n": 8,
-    "median_ms": -0.7,
-    "p90_abs_ms": 12.8,
+    "n": 7,
+    "median_ms": 2.8,
+    "p90_abs_ms": 9.5,
     "ibi_A_ms": 651.9,
-    "ibi_B_ms": 660.0
+    "ibi_B_ms": 650.0
    },
    "bars": {
-    "n": 3,
+    "n": 2,
     "on_one": 1.0,
-    "median_ms": 7.2,
+    "median_ms": 10.9,
     "beat_of_bar": [
-     1,
      1,
      1
     ],
@@ -1637,7 +1634,7 @@
     "keyB": "8A",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
+   "latency_ms": 185.8,
    "placeA_ms": 0,
    "placeB_ms": -2,
    "beat": {
@@ -1671,8 +1668,8 @@
     "ride": null,
     "q": 1,
     "r": 0.983,
-    "semis": 2,
-    "rel": "ear",
+    "semis": -1,
+    "rel": null,
     "style": "echo",
     "aStart": 4.116,
     "cut": 14.287,
@@ -1690,20 +1687,20 @@
     "keyB": "3B",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
-   "placeB_ms": 0,
+   "placeB_ms": 1,
    "beat": {
     "n": 15,
-    "median_ms": -16.4,
-    "p90_abs_ms": 23.9,
-    "ibi_A_ms": 508.5,
+    "median_ms": -14.9,
+    "p90_abs_ms": 24.6,
+    "ibi_A_ms": 508.8,
     "ibi_B_ms": 500.0
    },
    "bars": {
     "n": 5,
     "on_one": 1.0,
-    "median_ms": -13.5,
+    "median_ms": -14.4,
     "beat_of_bar": [
      1,
      1,
@@ -1711,7 +1708,7 @@
      1,
      1
     ],
-    "first_ms": 3.3,
+    "first_ms": -8.4,
     "first_on_one": true
    }
   },
@@ -1907,7 +1904,7 @@
     "keyB": "5A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
@@ -1961,7 +1958,7 @@
     "keyB": "12A",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
+   "latency_ms": 185.8,
    "placeA_ms": 0,
    "placeB_ms": -1,
    "beat": {
@@ -2014,12 +2011,12 @@
     "keyB": "1A",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
+   "latency_ms": 185.8,
    "placeA_ms": 0,
    "placeB_ms": 2,
    "beat": {
     "n": 16,
-    "median_ms": -0.0,
+    "median_ms": 0.0,
     "p90_abs_ms": 10.0,
     "ibi_A_ms": 480.0,
     "ibi_B_ms": 480.0
@@ -2027,7 +2024,7 @@
    "bars": {
     "n": 5,
     "on_one": 1.0,
-    "median_ms": -0.0,
+    "median_ms": 0.0,
     "beat_of_bar": [
      1,
      1,
@@ -2035,7 +2032,7 @@
      1,
      1
     ],
-    "first_ms": -0.0,
+    "first_ms": 0.0,
     "first_on_one": true
    }
   },
@@ -2073,7 +2070,7 @@
     "keyB": "7A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": 2,
    "beat": {
@@ -2125,7 +2122,7 @@
     "keyB": "7B",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": 0,
    "beat": {
@@ -2218,7 +2215,7 @@
     "keyB": "10A",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
+   "latency_ms": 185.8,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
@@ -2271,7 +2268,7 @@
     "keyB": "5A",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
+   "latency_ms": 185.8,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
@@ -2377,20 +2374,20 @@
     "keyB": "2B",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
     "n": 16,
-    "median_ms": 22.2,
-    "p90_abs_ms": 29.5,
-    "ibi_A_ms": 482.7,
+    "median_ms": 16.4,
+    "p90_abs_ms": 29.1,
+    "ibi_A_ms": 483.0,
     "ibi_B_ms": 480.0
    },
    "bars": {
     "n": 5,
     "on_one": 1.0,
-    "median_ms": 24.5,
+    "median_ms": 21.5,
     "beat_of_bar": [
      1,
      1,
@@ -2398,7 +2395,7 @@
      1,
      1
     ],
-    "first_ms": 28.1,
+    "first_ms": 21.5,
     "first_on_one": true
    }
   },
@@ -2430,7 +2427,7 @@
     "keyB": "12B",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
+   "latency_ms": 185.8,
    "placeA_ms": 0,
    "placeB_ms": 0,
    "beat": {
@@ -2482,20 +2479,20 @@
     "keyB": "7A",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
+   "latency_ms": 185.8,
    "placeA_ms": 0,
    "placeB_ms": -2,
    "beat": {
     "n": 16,
-    "median_ms": -0.0,
-    "p90_abs_ms": 0.0,
+    "median_ms": 20.0,
+    "p90_abs_ms": 20.0,
     "ibi_A_ms": 480.0,
     "ibi_B_ms": 480.0
    },
    "bars": {
     "n": 5,
     "on_one": 1.0,
-    "median_ms": -0.0,
+    "median_ms": 20.0,
     "beat_of_bar": [
      1,
      1,
@@ -2503,7 +2500,7 @@
      1,
      1
     ],
-    "first_ms": -0.0,
+    "first_ms": 20.0,
     "first_on_one": true
    }
   },
@@ -2517,38 +2514,38 @@
     "q": 1,
     "r": 0.992,
     "semis": 0,
-    "rel": "ear",
-    "style": "echo",
-    "aStart": 4.552,
-    "cut": 15.802,
-    "aOut": 14.177,
+    "rel": null,
+    "style": "blend",
+    "aStart": 4.056,
+    "cut": 13.429,
+    "aOut": 13.429,
     "bPos": 3.066,
     "bFade": 0.012,
-    "pre": 0,
+    "pre": 1.875,
     "tail": 16,
-    "gap": 2.764,
+    "gap": 1.072,
     "onBeat": "1",
-    "foundA": true,
+    "foundA": false,
     "foundB": true,
     "drop": false,
-    "keyA": "9B",
+    "keyA": null,
     "keyB": "9A",
-    "keySrc": "measured"
+    "keySrc": null
    },
    "latency_ms": 182.9,
-   "placeA_ms": 0,
-   "placeB_ms": -5,
+   "placeA_ms": -3,
+   "placeB_ms": -6,
    "beat": {
     "n": 17,
-    "median_ms": 0.8,
-    "p90_abs_ms": 10.6,
-    "ibi_A_ms": 468.7,
+    "median_ms": 14.0,
+    "p90_abs_ms": 21.7,
+    "ibi_A_ms": 468.2,
     "ibi_B_ms": 460.0
    },
    "bars": {
     "n": 5,
     "on_one": 1.0,
-    "median_ms": 3.5,
+    "median_ms": 13.2,
     "beat_of_bar": [
      1,
      1,
@@ -2556,7 +2553,7 @@
      1,
      1
     ],
-    "first_ms": 7.5,
+    "first_ms": 11.2,
     "first_on_one": true
    }
   },
@@ -2588,7 +2585,7 @@
     "keyB": "5A",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
+   "latency_ms": 185.8,
    "placeA_ms": 0,
    "placeB_ms": 0,
    "beat": {
@@ -2675,8 +2672,8 @@
     "ride": null,
     "q": 1,
     "r": 1.01,
-    "semis": 0,
-    "rel": "ear-ok",
+    "semis": 2,
+    "rel": "ear",
     "style": "echo",
     "aStart": 11.832,
     "cut": 19.179,
@@ -2696,25 +2693,25 @@
    },
    "latency_ms": 182.9,
    "placeA_ms": 0,
-   "placeB_ms": 1,
+   "placeB_ms": -2,
    "beat": {
     "n": 13,
-    "median_ms": -4.1,
-    "p90_abs_ms": 16.0,
-    "ibi_A_ms": 612.5,
+    "median_ms": 2.2,
+    "p90_abs_ms": 12.0,
+    "ibi_A_ms": 611.4,
     "ibi_B_ms": 620.0
    },
    "bars": {
     "n": 4,
     "on_one": 1.0,
-    "median_ms": -11.6,
+    "median_ms": -0.6,
     "beat_of_bar": [
      1,
      1,
      1,
      1
     ],
-    "first_ms": -6.7,
+    "first_ms": 13.3,
     "first_on_one": true
    }
   },
@@ -2766,7 +2763,7 @@
      1,
      1
     ],
-    "first_ms": -0.0,
+    "first_ms": 0.0,
     "first_on_one": true
    }
   },
@@ -2803,15 +2800,15 @@
    "placeB_ms": -6,
    "beat": {
     "n": 16,
-    "median_ms": 6.9,
-    "p90_abs_ms": 15.5,
+    "median_ms": 10.2,
+    "p90_abs_ms": 17.8,
     "ibi_A_ms": 475.9,
     "ibi_B_ms": 480.0
    },
    "bars": {
     "n": 5,
     "on_one": 1.0,
-    "median_ms": 6.6,
+    "median_ms": 7.3,
     "beat_of_bar": [
      1,
      1,
@@ -2819,7 +2816,7 @@
      1,
      1
     ],
-    "first_ms": 10.1,
+    "first_ms": 7.3,
     "first_on_one": true
    }
   },
@@ -2851,20 +2848,20 @@
     "keyB": "2B",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": -2,
    "beat": {
     "n": 16,
-    "median_ms": -4.9,
-    "p90_abs_ms": 24.5,
-    "ibi_A_ms": 480.2,
+    "median_ms": -2.9,
+    "p90_abs_ms": 3.2,
+    "ibi_A_ms": 480.0,
     "ibi_B_ms": 480.0
    },
    "bars": {
     "n": 5,
     "on_one": 1.0,
-    "median_ms": -5.1,
+    "median_ms": -2.8,
     "beat_of_bar": [
      1,
      1,
@@ -2872,7 +2869,7 @@
      1,
      1
     ],
-    "first_ms": -2.9,
+    "first_ms": 17.4,
     "first_on_one": true
    }
   },
@@ -2909,8 +2906,8 @@
    "placeB_ms": null,
    "beat": {
     "n": 16,
-    "median_ms": -6.7,
-    "p90_abs_ms": 13.3,
+    "median_ms": 0.0,
+    "p90_abs_ms": 10.0,
     "ibi_A_ms": 480.0,
     "ibi_B_ms": 480.0
    },
