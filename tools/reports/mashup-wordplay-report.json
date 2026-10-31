@@ -3,32 +3,32 @@
   "links": 55,
   "played": 55,
   "beat_measured": 53,
-  "beat_continues": 43,
-  "share_beat_continues": 0.811,
-  "beat_median_abs_ms": 10.3,
+  "beat_continues": 41,
+  "share_beat_continues": 0.774,
+  "beat_median_abs_ms": 8.1,
   "placeA_median_abs_ms": 0.0,
-  "placeB_median_abs_ms": 2.0,
-  "placeB_within_8ms": 0.97,
-  "both_words_found": 32,
-  "word_gap_median_s": 1.69,
+  "placeB_median_abs_ms": 1.0,
+  "placeB_within_8ms": 1.0,
+  "both_words_found": 42,
+  "word_gap_median_s": 1.78,
   "styles": {
-   "cut": 2,
-   "echo": 52,
-   "blend": 1,
+   "cut": 1,
+   "echo": 54,
+   "blend": 0,
    "drop": 0
   },
-  "synced": 52,
-  "ride": 13,
-  "key_shifted": 18,
-  "on_one_measured": 49,
-  "share_on_one": 0.878,
-  "first_downbeat_median_abs_ms": 8.2,
-  "share_first_on_one": 0.939,
+  "synced": 51,
+  "ride": 16,
+  "key_shifted": 14,
+  "on_one_measured": 50,
+  "share_on_one": 0.8,
+  "first_downbeat_median_abs_ms": 6.8,
+  "share_first_on_one": 0.898,
   "page": {
-   "previews": 1219,
+   "previews": 1220,
    "beats": 1220,
    "analysis": 1221,
-   "words": 94,
+   "words": 302,
    "engine": "6.4"
   },
   "page_errors": []
@@ -88,6 +88,63 @@
    }
   },
   {
+   "link": "24K Magic | Bruno Mars || קסם | עומר אדם, איציק קלה",
+   "word": "Magic → קסם",
+   "type": "lang",
+   "plan": {
+    "synced": true,
+    "ride": {
+     "r0": 1.23,
+     "i1": 19.953,
+     "i2": 29.676,
+     "hold": 2,
+     "bars": 4
+    },
+    "q": 1,
+    "r": 1.23,
+    "semis": 0,
+    "rel": null,
+    "style": "echo",
+    "aStart": 0.733,
+    "cut": 11.946,
+    "aOut": 11.31,
+    "bPos": 14.436,
+    "bFade": 0.012,
+    "pre": 0,
+    "tail": 13.105,
+    "gap": 2.93,
+    "onBeat": "1",
+    "foundA": true,
+    "foundB": true,
+    "drop": false,
+    "keyA": "4A",
+    "keyB": "6A",
+    "keySrc": "measured"
+   },
+   "latency_ms": 185.8,
+   "placeA_ms": 0,
+   "placeB_ms": null,
+   "beat": {
+    "n": 8,
+    "median_ms": -3.7,
+    "p90_abs_ms": 17.8,
+    "ibi_A_ms": 561.1,
+    "ibi_B_ms": 560.0
+   },
+   "bars": {
+    "n": 3,
+    "on_one": 1.0,
+    "median_ms": -0.9,
+    "beat_of_bar": [
+     1,
+     1,
+     1
+    ],
+    "first_ms": 3.7,
+    "first_on_one": true
+   }
+  },
+  {
    "link": "Abracadabra | Lady Gaga || Houdini | Dua Lipa",
    "word": "Abracadabra → Houdini",
    "type": "theme",
@@ -106,7 +163,7 @@
     "bFade": 0.012,
     "pre": 0,
     "tail": 9.803,
-    "gap": 1.485,
+    "gap": 1.503,
     "onBeat": "1",
     "foundA": true,
     "foundB": true,
@@ -141,6 +198,65 @@
    }
   },
   {
+   "link": "Addicted To You | Avicii || Adicto | Tainy, Anuel AA, Ozuna",
+   "word": "Addicted To You → Adicto",
+   "type": "lang",
+   "plan": {
+    "synced": true,
+    "ride": {
+     "r0": 0.801,
+     "i1": 11.433,
+     "i2": 23.436,
+     "hold": 4,
+     "bars": 8
+    },
+    "q": 1,
+    "r": 0.801,
+    "semis": 0,
+    "rel": "ear-ok",
+    "style": "echo",
+    "aStart": 5.376,
+    "cut": 16.621,
+    "aOut": 15.087,
+    "bPos": 5.431,
+    "bFade": 0.012,
+    "pre": 0,
+    "tail": 16,
+    "gap": 2.162,
+    "onBeat": "1",
+    "foundA": true,
+    "foundB": true,
+    "drop": false,
+    "keyA": "12A",
+    "keyB": "4A",
+    "keySrc": "measured"
+   },
+   "latency_ms": 182.9,
+   "placeA_ms": 0,
+   "placeB_ms": 1,
+   "beat": {
+    "n": 16,
+    "median_ms": -10.0,
+    "p90_abs_ms": 19.5,
+    "ibi_A_ms": 468.5,
+    "ibi_B_ms": 460.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 1.0,
+    "median_ms": -7.3,
+    "beat_of_bar": [
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "first_ms": 6.8,
+    "first_on_one": true
+   }
+  },
+  {
    "link": "Bad Memories (Extended) | Meduza, James Carter, Elley Duhé, FAST BOY || Memories (Extended) | David Guetta, Kid Cudi",
    "word": "Memories",
    "type": "chain",
@@ -152,14 +268,14 @@
     "semis": 0,
     "rel": "ear",
     "style": "echo",
-    "aStart": 3.841,
-    "cut": 13.518,
-    "aOut": 13.518,
+    "aStart": 1.905,
+    "cut": 5.776,
+    "aOut": 5.72,
     "bPos": 11.446,
     "bFade": 0.012,
     "pre": 0,
     "tail": 16,
-    "gap": 1.632,
+    "gap": 1.69,
     "onBeat": "1",
     "foundA": true,
     "foundB": true,
@@ -168,20 +284,221 @@
     "keyB": "6B",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
     "n": 16,
-    "median_ms": 23.5,
-    "p90_abs_ms": 31.1,
-    "ibi_A_ms": 483.1,
+    "median_ms": 10.2,
+    "p90_abs_ms": 17.0,
+    "ibi_A_ms": 483.4,
     "ibi_B_ms": 480.0
+   },
+   "bars": null
+  },
+  {
+   "link": "Baila Baila Baila | Ozuna || Bailando (English Version) | Enrique Iglesias, Sean Paul, Descemer Bueno, Gente De Zona",
+   "word": "Baila → Bailando",
+   "type": "same",
+   "plan": {
+    "synced": true,
+    "ride": null,
+    "q": 1,
+    "r": 1.099,
+    "semis": 0,
+    "rel": "ear",
+    "style": "echo",
+    "aStart": 0.33,
+    "cut": 7.529,
+    "aOut": 6.79,
+    "bPos": 5.35,
+    "bFade": 0.012,
+    "pre": 0,
+    "tail": 16,
+    "gap": 1.36,
+    "onBeat": "1",
+    "foundA": true,
+    "foundB": true,
+    "drop": false,
+    "keyA": "9A",
+    "keyB": "9A",
+    "keySrc": "measured"
+   },
+   "latency_ms": 182.9,
+   "placeA_ms": 0,
+   "placeB_ms": 0,
+   "beat": {
+    "n": 13,
+    "median_ms": -1.8,
+    "p90_abs_ms": 14.8,
+    "ibi_A_ms": 599.4,
+    "ibi_B_ms": 600.0
+   },
+   "bars": {
+    "n": 4,
+    "on_one": 1.0,
+    "median_ms": -3.0,
+    "beat_of_bar": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "first_ms": -6.7,
+    "first_on_one": true
+   }
+  },
+  {
+   "link": "Blinding Lights | The Weeknd || Turn On The Lights again.. | Fred again.., Swedish House Mafia, Future",
+   "word": "Lights → Turn On The Lights",
+   "type": "same",
+   "plan": {
+    "synced": true,
+    "ride": {
+     "r0": 1.296,
+     "i1": 18.409,
+     "i2": 29.676,
+     "hold": 2,
+     "bars": 6
+    },
+    "q": 2,
+    "r": 1.296,
+    "semis": 0,
+    "rel": null,
+    "style": "echo",
+    "aStart": 6.385,
+    "cut": 14.804,
+    "aOut": 14.804,
+    "bPos": 14.771,
+    "bFade": 0.012,
+    "pre": 0,
+    "tail": 12.521,
+    "gap": 0.35,
+    "onBeat": "1",
+    "foundA": false,
+    "foundB": true,
+    "drop": false,
+    "keyA": null,
+    "keyB": "11A",
+    "keySrc": null
+   },
+   "latency_ms": 182.9,
+   "placeA_ms": 0,
+   "placeB_ms": null,
+   "beat": {
+    "n": 10,
+    "median_ms": 122.1,
+    "p90_abs_ms": 165.4,
+    "ibi_A_ms": 351.1,
+    "ibi_B_ms": 300.0
+   },
+   "bars": {
+    "n": 3,
+    "on_one": 0.0,
+    "median_ms": 139.9,
+    "beat_of_bar": [
+     1,
+     4,
+     1
+    ],
+    "first_ms": null,
+    "first_on_one": null
+   }
+  },
+  {
+   "link": "Burn | Usher || Burning | Tems",
+   "word": "Burn → Burning",
+   "type": "same",
+   "plan": {
+    "synced": false,
+    "ride": null,
+    "q": 2,
+    "r": 1,
+    "semis": 0,
+    "rel": null,
+    "style": "echo",
+    "aStart": 8.28,
+    "cut": 24.281,
+    "aOut": 20.87,
+    "bPos": 14.622,
+    "bFade": 0.012,
+    "pre": 0,
+    "tail": 14.953,
+    "gap": 4.069,
+    "onBeat": "1",
+    "foundA": true,
+    "foundB": true,
+    "drop": false,
+    "keyA": "3B",
+    "keyB": "12A",
+    "keySrc": "measured"
+   },
+   "latency_ms": 182.9,
+   "placeA_ms": 0,
+   "placeB_ms": 0,
+   "beat": {
+    "n": 12,
+    "median_ms": 181.5,
+    "p90_abs_ms": 297.4,
+    "ibi_A_ms": 631.5,
+    "ibi_B_ms": 660.0
+   },
+   "bars": {
+    "n": 4,
+    "on_one": 0.0,
+    "median_ms": 121.7,
+    "beat_of_bar": [
+     1,
+     1,
+     1,
+     2
+    ],
+    "first_ms": 84.7,
+    "first_on_one": false
+   }
+  },
+  {
+   "link": "Champion | Rampa, Keinemusik, Sparrow & Barbossa || Champion Sound | Davido, Focalistic",
+   "word": "Champion → Champion Sound",
+   "type": "same",
+   "plan": {
+    "synced": true,
+    "ride": null,
+    "q": 1,
+    "r": 1.071,
+    "semis": -1,
+    "rel": "ear",
+    "style": "echo",
+    "aStart": 7.853,
+    "cut": 19.757,
+    "aOut": 18.21,
+    "bPos": 14.723,
+    "bFade": 0.012,
+    "pre": 0,
+    "tail": 13.873,
+    "gap": 3.149,
+    "onBeat": "1",
+    "foundA": true,
+    "foundB": true,
+    "drop": false,
+    "keyA": "5A",
+    "keyB": "12A",
+    "keySrc": "measured"
+   },
+   "latency_ms": 182.9,
+   "placeA_ms": 0,
+   "placeB_ms": -2,
+   "beat": {
+    "n": 16,
+    "median_ms": 6.8,
+    "p90_abs_ms": 16.8,
+    "ibi_A_ms": 495.8,
+    "ibi_B_ms": 500.0
    },
    "bars": {
     "n": 5,
     "on_one": 1.0,
-    "median_ms": 22.7,
+    "median_ms": 7.3,
     "beat_of_bar": [
      1,
      1,
@@ -189,7 +506,65 @@
      1,
      1
     ],
-    "first_ms": 11.9,
+    "first_ms": -2.9,
+    "first_on_one": true
+   }
+  },
+  {
+   "link": "D.A.N.C.E (Extended) | Peggy Gou || Dance The Night | Dua Lipa",
+   "word": "D.A.N.C.E → Dance The Night",
+   "type": "same",
+   "plan": {
+    "synced": true,
+    "ride": {
+     "r0": 1.209,
+     "i1": 16.959,
+     "i2": 29.675,
+     "hold": 4,
+     "bars": 6
+    },
+    "q": 1,
+    "r": 1.209,
+    "semis": 0,
+    "rel": "ear",
+    "style": "echo",
+    "aStart": 9.797,
+    "cut": 18.82,
+    "aOut": 18.443,
+    "bPos": 8.232,
+    "bFade": 0.012,
+    "pre": 0,
+    "tail": 16,
+    "gap": 0.49,
+    "onBeat": "1",
+    "foundA": true,
+    "foundB": false,
+    "drop": false,
+    "keyA": "10A",
+    "keyB": "10A",
+    "keySrc": "measured"
+   },
+   "latency_ms": 182.9,
+   "placeA_ms": 0,
+   "placeB_ms": null,
+   "beat": {
+    "n": 15,
+    "median_ms": 6.4,
+    "p90_abs_ms": 14.5,
+    "ibi_A_ms": 451.1,
+    "ibi_B_ms": 460.0
+   },
+   "bars": {
+    "n": 4,
+    "on_one": 1.0,
+    "median_ms": 2.0,
+    "beat_of_bar": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "first_ms": 8.8,
     "first_on_one": true
    }
   },
@@ -200,15 +575,15 @@
    "plan": {
     "synced": true,
     "ride": null,
-    "q": 2,
+    "q": 1,
     "r": 1.017,
-    "semis": 1,
-    "rel": "ear",
+    "semis": 0,
+    "rel": null,
     "style": "echo",
     "aStart": 4.128,
     "cut": 14.917,
     "aOut": 12.85,
-    "bPos": 7.332,
+    "bPos": 9.07,
     "bFade": 0.012,
     "pre": 0,
     "tail": 16,
@@ -218,30 +593,143 @@
     "foundB": false,
     "drop": false,
     "keyA": "10B",
-    "keyB": "4A",
+    "keyB": null,
+    "keySrc": null
+   },
+   "latency_ms": 182.9,
+   "placeA_ms": 0,
+   "placeB_ms": 2,
+   "beat": {
+    "n": 12,
+    "median_ms": 6.8,
+    "p90_abs_ms": 15.6,
+    "ibi_A_ms": 674.0,
+    "ibi_B_ms": 680.0
+   },
+   "bars": {
+    "n": 2,
+    "on_one": 1.0,
+    "median_ms": 3.9,
+    "beat_of_bar": [
+     1,
+     1
+    ],
+    "first_ms": 2.0,
+    "first_on_one": true
+   }
+  },
+  {
+   "link": "Falling For You (Extended) | Amelie Lens || I'm Fallin' | Black Coffee, RY X",
+   "word": "Falling → I'm Fallin'",
+   "type": "same",
+   "plan": {
+    "synced": true,
+    "ride": {
+     "r0": 1.187,
+     "i1": 23.706,
+     "i2": 29.675,
+     "hold": 2,
+     "bars": 3
+    },
+    "q": 1,
+    "r": 1.187,
+    "semis": 0,
+    "rel": "ear",
+    "style": "echo",
+    "aStart": 6.887,
+    "cut": 15.457,
+    "aOut": 15.077,
+    "bPos": 19.638,
+    "bFade": 0.012,
+    "pre": 0,
+    "tail": 8.786,
+    "gap": 1.263,
+    "onBeat": "1",
+    "foundA": true,
+    "foundB": true,
+    "drop": false,
+    "keyA": "9A",
+    "keyB": "9A",
     "keySrc": "measured"
    },
    "latency_ms": 182.9,
    "placeA_ms": 0,
-   "placeB_ms": -2,
+   "placeB_ms": null,
    "beat": {
-    "n": 11,
-    "median_ms": -1.8,
-    "p90_abs_ms": 14.5,
-    "ibi_A_ms": 673.6,
-    "ibi_B_ms": 680.0
+    "n": 7,
+    "median_ms": 202.1,
+    "p90_abs_ms": 205.2,
+    "ibi_A_ms": 441.3,
+    "ibi_B_ms": 440.0
    },
    "bars": {
-    "n": 4,
-    "on_one": 1.0,
-    "median_ms": 0.1,
+    "n": 2,
+    "on_one": 0.0,
+    "median_ms": -6.0,
     "beat_of_bar": [
+     1,
+     4
+    ],
+    "first_ms": -214.0,
+    "first_on_one": false
+   }
+  },
+  {
+   "link": "Feel So Close (Extended) | Calvin Harris || קרוב אלייך | עומר אדם",
+   "word": "Close → קרוב אלייך",
+   "type": "lang",
+   "plan": {
+    "synced": true,
+    "ride": {
+     "r0": 0.853,
+     "i1": 19.35,
+     "i2": 29.676,
+     "hold": 4,
+     "bars": 3
+    },
+    "q": 0.5,
+    "r": 0.853,
+    "semis": -1,
+    "rel": "ear-ok",
+    "style": "echo",
+    "aStart": 1.537,
+    "cut": 9.039,
+    "aOut": 7.677,
+    "bPos": 6.552,
+    "bFade": 0.012,
+    "pre": 0,
+    "tail": 16,
+    "gap": 1.84,
+    "onBeat": "1",
+    "foundA": true,
+    "foundB": true,
+    "drop": false,
+    "keyA": "9B",
+    "keyB": "5A",
+    "keySrc": "measured"
+   },
+   "latency_ms": 182.9,
+   "placeA_ms": 0,
+   "placeB_ms": null,
+   "beat": {
+    "n": 17,
+    "median_ms": 6.1,
+    "p90_abs_ms": 16.2,
+    "ibi_A_ms": 468.3,
+    "ibi_B_ms": 460.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 1.0,
+    "median_ms": 6.6,
+    "beat_of_bar": [
+     1,
      1,
      1,
      1,
      1
     ],
-    "first_ms": 6.4,
+    "first_ms": 6.6,
     "first_on_one": true
    }
   },
@@ -265,12 +753,12 @@
     "style": "echo",
     "aStart": 5.839,
     "cut": 13.041,
-    "aOut": 12.87,
+    "aOut": 12.23,
     "bPos": 2.421,
     "bFade": 0.012,
     "pre": 0,
     "tail": 16,
-    "gap": 1.148,
+    "gap": 1.788,
     "onBeat": "1",
     "foundA": true,
     "foundB": true,
@@ -284,22 +772,22 @@
    "placeB_ms": 1,
    "beat": {
     "n": 13,
-    "median_ms": 0.0,
-    "p90_abs_ms": 20.0,
-    "ibi_A_ms": 600.0,
+    "median_ms": 4.0,
+    "p90_abs_ms": 23.5,
+    "ibi_A_ms": 599.6,
     "ibi_B_ms": 600.0
    },
    "bars": {
     "n": 4,
     "on_one": 1.0,
-    "median_ms": 20.0,
+    "median_ms": 22.2,
     "beat_of_bar": [
      1,
      1,
      1,
      1
     ],
-    "first_ms": 20.0,
+    "first_ms": 0.0,
     "first_on_one": true
    }
   },
@@ -344,6 +832,229 @@
    "bars": null
   },
   {
+   "link": "Go Crazy | Chris Brown, Young Thug || ילדה משוגעת | רואי אדם",
+   "word": "Go Crazy → ילדה משוגעת",
+   "type": "lang",
+   "plan": {
+    "synced": true,
+    "ride": null,
+    "q": 1,
+    "r": 0.99,
+    "semis": -1,
+    "rel": "ear",
+    "style": "echo",
+    "aStart": 0.534,
+    "cut": 10.742,
+    "aOut": 8.96,
+    "bPos": 10.961,
+    "bFade": 0.012,
+    "pre": 0,
+    "tail": 16,
+    "gap": 2.185,
+    "onBeat": "1",
+    "foundA": true,
+    "foundB": true,
+    "drop": false,
+    "keyA": "4A",
+    "keyB": "11A",
+    "keySrc": "measured"
+   },
+   "latency_ms": 182.9,
+   "placeA_ms": 0,
+   "placeB_ms": null,
+   "beat": {
+    "n": 12,
+    "median_ms": -7.2,
+    "p90_abs_ms": 13.8,
+    "ibi_A_ms": 638.0,
+    "ibi_B_ms": 640.0
+   },
+   "bars": {
+    "n": 4,
+    "on_one": 1.0,
+    "median_ms": -4.1,
+    "beat_of_bar": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "first_ms": 3.7,
+    "first_on_one": true
+   }
+  },
+  {
+   "link": "Hey Mama | David Guetta, Nicki Minaj, Bebe Rexha, Afrojack || מאמי | איציק קלה",
+   "word": "Hey Mama → מאמי",
+   "type": "lang",
+   "plan": {
+    "synced": true,
+    "ride": {
+     "r0": 1.181,
+     "i1": 19.475,
+     "i2": 29.629,
+     "hold": 2,
+     "bars": 6
+    },
+    "q": 2,
+    "r": 1.181,
+    "semis": 0,
+    "rel": "ear",
+    "style": "echo",
+    "aStart": 5.053,
+    "cut": 13.42,
+    "aOut": 12.93,
+    "bPos": 16.181,
+    "bFade": 0.012,
+    "pre": 0,
+    "tail": 12.001,
+    "gap": 1.474,
+    "onBeat": "1",
+    "foundA": true,
+    "foundB": true,
+    "drop": false,
+    "keyA": "9A",
+    "keyB": "8A",
+    "keySrc": "measured"
+   },
+   "latency_ms": 185.8,
+   "placeA_ms": 0,
+   "placeB_ms": null,
+   "beat": {
+    "n": 7,
+    "median_ms": -4.4,
+    "p90_abs_ms": 13.1,
+    "ibi_A_ms": 349.6,
+    "ibi_B_ms": 350.0
+   },
+   "bars": {
+    "n": 2,
+    "on_one": 1.0,
+    "median_ms": 4.3,
+    "beat_of_bar": [
+     1,
+     1
+    ],
+    "first_ms": 3.4,
+    "first_on_one": true
+   }
+  },
+  {
+   "link": "High On Life | Martin Garrix, Bonn || חיים מאושרים | עדן בן זקן",
+   "word": "High On Life → חיים מאושרים",
+   "type": "lang",
+   "plan": {
+    "synced": true,
+    "ride": {
+     "r0": 1.123,
+     "i1": 19.973,
+     "i2": 29.629,
+     "hold": 2,
+     "bars": 5
+    },
+    "q": 1,
+    "r": 1.123,
+    "semis": 0,
+    "rel": "ear",
+    "style": "echo",
+    "aStart": 6.404,
+    "cut": 17.653,
+    "aOut": 17.167,
+    "bPos": 15.763,
+    "bFade": 0.012,
+    "pre": 0,
+    "tail": 12.745,
+    "gap": 1.028,
+    "onBeat": "1",
+    "foundA": true,
+    "foundB": true,
+    "drop": false,
+    "keyA": "11B",
+    "keyB": "11A",
+    "keySrc": "measured"
+   },
+   "latency_ms": 182.9,
+   "placeA_ms": 0,
+   "placeB_ms": null,
+   "beat": {
+    "n": 7,
+    "median_ms": -38.6,
+    "p90_abs_ms": 49.4,
+    "ibi_A_ms": 470.9,
+    "ibi_B_ms": 480.0
+   },
+   "bars": {
+    "n": 2,
+    "on_one": 1.0,
+    "median_ms": -5.8,
+    "beat_of_bar": [
+     1,
+     1
+    ],
+    "first_ms": 16.1,
+    "first_on_one": true
+   }
+  },
+  {
+   "link": "In Silence | Amelie Lens || שובר שתיקה | מושיק עפיה",
+   "word": "In Silence → שובר שתיקה",
+   "type": "lang",
+   "plan": {
+    "synced": true,
+    "ride": {
+     "r0": 0.877,
+     "i1": 18.283,
+     "i2": 29.676,
+     "hold": 4,
+     "bars": 3
+    },
+    "q": 0.5,
+    "r": 0.877,
+    "semis": -1,
+    "rel": "ear-ok",
+    "style": "echo",
+    "aStart": 5.791,
+    "cut": 15.165,
+    "aOut": 15.165,
+    "bPos": 5.131,
+    "bFade": 0.012,
+    "pre": 0,
+    "tail": 16,
+    "gap": 2.346,
+    "onBeat": "1",
+    "foundA": true,
+    "foundB": true,
+    "drop": false,
+    "keyA": "3B",
+    "keyB": "10A",
+    "keySrc": "measured"
+   },
+   "latency_ms": 182.9,
+   "placeA_ms": 0,
+   "placeB_ms": null,
+   "beat": {
+    "n": 17,
+    "median_ms": -3.9,
+    "p90_abs_ms": 14.9,
+    "ibi_A_ms": 468.5,
+    "ibi_B_ms": 470.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 1.0,
+    "median_ms": -3.6,
+    "beat_of_bar": [
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "first_ms": 4.6,
+    "first_on_one": true
+   }
+  },
+  {
    "link": "Just Dance | Lady Gaga, Colby O'Donis || היא רק רוצה לרקוד | עומר אדם, משה פרץ",
    "word": "Just Dance = רק לרקוד",
    "type": "lang",
@@ -353,47 +1064,48 @@
     "q": 1,
     "r": 0.915,
     "semis": 0,
-    "rel": "ear-ok",
+    "rel": null,
     "style": "echo",
-    "aStart": 14.391,
-    "cut": 26.494,
-    "aOut": 25.09,
+    "aStart": 3.296,
+    "cut": 13.381,
+    "aOut": 13.381,
     "bPos": 2.319,
     "bFade": 0.012,
     "pre": 0,
     "tail": 16,
-    "gap": 2.027,
+    "gap": 0.553,
     "onBeat": "1",
-    "foundA": true,
+    "foundA": false,
     "foundB": true,
     "drop": false,
-    "keyA": "12A",
+    "keyA": null,
     "keyB": "10A",
-    "keySrc": "measured"
+    "keySrc": null
    },
-   "latency_ms": 182.9,
+   "latency_ms": 185.8,
    "placeA_ms": 0,
    "placeB_ms": -1,
    "beat": {
     "n": 15,
-    "median_ms": 11.4,
+    "median_ms": 13.5,
     "p90_abs_ms": 22.3,
-    "ibi_A_ms": 504.2,
+    "ibi_A_ms": 503.9,
     "ibi_B_ms": 500.0
    },
    "bars": {
-    "n": 5,
-    "on_one": 1.0,
-    "median_ms": 15.6,
+    "n": 8,
+    "on_one": 0.375,
+    "median_ms": 14.2,
     "beat_of_bar": [
+     3,
      1,
+     3,
+     3,
      1,
-     1,
-     1,
-     1
+     3
     ],
-    "first_ms": -10.9,
-    "first_on_one": true
+    "first_ms": -11.1,
+    "first_on_one": false
    }
   },
   {
@@ -450,6 +1162,326 @@
    }
   },
   {
+   "link": "Lose Ya Breath | Anitta || Breathe | Blu Cantrell, Sean Paul",
+   "word": "Breath → Breathe",
+   "type": "same",
+   "plan": {
+    "synced": false,
+    "ride": null,
+    "q": 1,
+    "r": 1,
+    "semis": 0,
+    "rel": null,
+    "style": "echo",
+    "aStart": 13.16,
+    "cut": 22.533,
+    "aOut": 22.507,
+    "bPos": 7.107,
+    "bFade": 0.012,
+    "pre": 0,
+    "tail": 16,
+    "gap": 0.143,
+    "onBeat": "1",
+    "foundA": true,
+    "foundB": false,
+    "drop": false,
+    "keyA": "4B",
+    "keyB": "10A",
+    "keySrc": "measured"
+   },
+   "latency_ms": 182.9,
+   "placeA_ms": 0,
+   "placeB_ms": 0,
+   "beat": {
+    "n": 12,
+    "median_ms": -23.8,
+    "p90_abs_ms": 202.1,
+    "ibi_A_ms": 468.7,
+    "ibi_B_ms": 660.0
+   },
+   "bars": {
+    "n": 4,
+    "on_one": 0.25,
+    "median_ms": -56.4,
+    "beat_of_bar": [
+     1,
+     3,
+     4,
+     2
+    ],
+    "first_ms": 27.5,
+    "first_on_one": true
+   }
+  },
+  {
+   "link": "Loyal | Chris Brown, Lil Wayne, Tyga || Perro Fiel | Shakira, Nicky Jam",
+   "word": "Loyal → Perro Fiel",
+   "type": "lang",
+   "plan": {
+    "synced": true,
+    "ride": {
+     "r0": 1.141,
+     "i1": 17.257,
+     "i2": 29.675,
+     "hold": 4,
+     "bars": 5
+    },
+    "q": 1,
+    "r": 1.141,
+    "semis": 0,
+    "rel": "ear-ok",
+    "style": "echo",
+    "aStart": 0.736,
+    "cut": 7.595,
+    "aOut": 7.29,
+    "bPos": 6.822,
+    "bFade": 0.012,
+    "pre": 0,
+    "tail": 16,
+    "gap": 0.425,
+    "onBeat": "1",
+    "foundA": true,
+    "foundB": false,
+    "drop": false,
+    "keyA": "5A",
+    "keyB": "3B",
+    "keySrc": "measured"
+   },
+   "latency_ms": 182.9,
+   "placeA_ms": 0,
+   "placeB_ms": -2,
+   "beat": {
+    "n": 14,
+    "median_ms": 5.1,
+    "p90_abs_ms": 15.5,
+    "ibi_A_ms": 570.9,
+    "ibi_B_ms": 580.0
+   },
+   "bars": {
+    "n": 4,
+    "on_one": 1.0,
+    "median_ms": 0.5,
+    "beat_of_bar": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "first_ms": -4.0,
+    "first_on_one": true
+   }
+  },
+  {
+   "link": "Me Enamoré | Shakira || טיפש או מאוהב | קורל חצבני",
+   "word": "Me Enamoré → טיפש או מאוהב",
+   "type": "lang",
+   "plan": {
+    "synced": true,
+    "ride": null,
+    "q": 1,
+    "r": 0.912,
+    "semis": -1,
+    "rel": "ear",
+    "style": "echo",
+    "aStart": 2.801,
+    "cut": 16.649,
+    "aOut": 14.99,
+    "bPos": 0.857,
+    "bFade": 0.012,
+    "pre": 0,
+    "tail": 16,
+    "gap": 3.022,
+    "onBeat": "1",
+    "foundA": true,
+    "foundB": true,
+    "drop": false,
+    "keyA": "7B",
+    "keyB": "2A",
+    "keySrc": "measured"
+   },
+   "latency_ms": 182.9,
+   "placeA_ms": 0,
+   "placeB_ms": null,
+   "beat": {
+    "n": 13,
+    "median_ms": -4.6,
+    "p90_abs_ms": 13.1,
+    "ibi_A_ms": 576.9,
+    "ibi_B_ms": 580.0
+   },
+   "bars": {
+    "n": 4,
+    "on_one": 1.0,
+    "median_ms": 1.0,
+    "beat_of_bar": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "first_ms": 6.0,
+    "first_on_one": true
+   }
+  },
+  {
+   "link": "Move | Adam Port, Stryv, Keinemusik, Orso, Malachiii || זז בטירוף | איתי לוי",
+   "word": "Move → זז",
+   "type": "lang",
+   "plan": {
+    "synced": true,
+    "ride": null,
+    "q": 1,
+    "r": 0.938,
+    "semis": 0,
+    "rel": "ear",
+    "style": "echo",
+    "aStart": 10.11,
+    "cut": 22.113,
+    "aOut": 21.29,
+    "bPos": 20.708,
+    "bFade": 0.012,
+    "pre": 0,
+    "tail": 9.407,
+    "gap": 0.955,
+    "onBeat": "1",
+    "foundA": true,
+    "foundB": true,
+    "drop": false,
+    "keyA": "1A",
+    "keyB": "12A",
+    "keySrc": "measured"
+   },
+   "latency_ms": 185.8,
+   "placeA_ms": 0,
+   "placeB_ms": null,
+   "beat": {
+    "n": 15,
+    "median_ms": 13.0,
+    "p90_abs_ms": 21.1,
+    "ibi_A_ms": 499.9,
+    "ibi_B_ms": 500.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 0.8,
+    "median_ms": 12.7,
+    "beat_of_bar": [
+     1,
+     1,
+     1,
+     1,
+     4
+    ],
+    "first_ms": 12.7,
+    "first_on_one": true
+   }
+  },
+  {
+   "link": "Need U (100%) | Duke Dumont, A*M*E || You Need Me | Black Coffee, Maxine Ashley, Sun-El Musician",
+   "word": "Need U → You Need Me",
+   "type": "answer",
+   "plan": {
+    "synced": true,
+    "ride": null,
+    "q": 1,
+    "r": 1.051,
+    "semis": 0,
+    "rel": "ear-ok",
+    "style": "echo",
+    "aStart": 6.325,
+    "cut": 16.001,
+    "aOut": 15.63,
+    "bPos": 19.133,
+    "bFade": 0.015,
+    "pre": 0,
+    "tail": 9.932,
+    "gap": 0.491,
+    "onBeat": "1",
+    "foundA": true,
+    "foundB": true,
+    "drop": false,
+    "keyA": "5A",
+    "keyB": "8A",
+    "keySrc": "measured"
+   },
+   "latency_ms": 182.9,
+   "placeA_ms": 0,
+   "placeB_ms": -1,
+   "beat": {
+    "n": 16,
+    "median_ms": -8.1,
+    "p90_abs_ms": 15.5,
+    "ibi_A_ms": 484.1,
+    "ibi_B_ms": 480.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 1.0,
+    "median_ms": -6.8,
+    "beat_of_bar": [
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "first_ms": -6.8,
+    "first_on_one": true
+   }
+  },
+  {
+   "link": "Nice & Slow | Usher || Despacito | Luis Fonsi, Daddy Yankee",
+   "word": "Nice & Slow → Despacito",
+   "type": "lang",
+   "plan": {
+    "synced": false,
+    "ride": null,
+    "q": 2,
+    "r": 1,
+    "semis": 0,
+    "rel": null,
+    "style": "echo",
+    "aStart": 1.258,
+    "cut": 13.048,
+    "aOut": 13.048,
+    "bPos": 12.22,
+    "bFade": 0.012,
+    "pre": 0,
+    "tail": 16,
+    "gap": 1.92,
+    "onBeat": "1",
+    "foundA": false,
+    "foundB": true,
+    "drop": false,
+    "keyA": "4A",
+    "keyB": "10B",
+    "keySrc": "measured"
+   },
+   "latency_ms": 182.9,
+   "placeA_ms": 0,
+   "placeB_ms": 0,
+   "beat": {
+    "n": 11,
+    "median_ms": -65.5,
+    "p90_abs_ms": 407.6,
+    "ibi_A_ms": 997.8,
+    "ibi_B_ms": 680.0
+   },
+   "bars": {
+    "n": 4,
+    "on_one": 0.25,
+    "median_ms": -45.5,
+    "beat_of_bar": [
+     1,
+     4,
+     2,
+     1
+    ],
+    "first_ms": -94.2,
+    "first_on_one": false
+   }
+  },
+  {
    "link": "Not An Angel | Tems || Angel | Sonny Fodera, Clementine Douglas",
    "word": "Not An Angel → Angel",
    "type": "answer",
@@ -483,7 +1515,7 @@
     "keyB": "10A",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
+   "latency_ms": 185.8,
    "placeA_ms": 0,
    "placeB_ms": 1,
    "beat": {
@@ -505,6 +1537,59 @@
     ],
     "first_ms": -85.8,
     "first_on_one": false
+   }
+  },
+  {
+   "link": "Only Girl (In The World) | Rihanna || Run the World (Girls) | Beyoncé",
+   "word": "World → Run the World",
+   "type": "same",
+   "plan": {
+    "synced": true,
+    "ride": null,
+    "q": 1,
+    "r": 0.984,
+    "semis": 0,
+    "rel": null,
+    "style": "echo",
+    "aStart": 3.26,
+    "cut": 14.694,
+    "aOut": 13.669,
+    "bPos": 8.307,
+    "bFade": 0.012,
+    "pre": 0,
+    "tail": 16,
+    "gap": 1.144,
+    "onBeat": "1",
+    "foundA": true,
+    "foundB": false,
+    "drop": false,
+    "keyA": "10B",
+    "keyB": null,
+    "keySrc": null
+   },
+   "latency_ms": 182.9,
+   "placeA_ms": 0,
+   "placeB_ms": -1,
+   "beat": {
+    "n": 16,
+    "median_ms": 8.1,
+    "p90_abs_ms": 17.1,
+    "ibi_A_ms": 477.0,
+    "ibi_B_ms": 480.0
+   },
+   "bars": {
+    "n": 5,
+    "on_one": 1.0,
+    "median_ms": 9.1,
+    "beat_of_bar": [
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "first_ms": 17.1,
+    "first_on_one": true
    }
   },
   {
@@ -548,6 +1633,150 @@
    "bars": null
   },
   {
+   "link": "Panic Room | CamelPhat, Au/Ra || No Room For A Saint | Dom Dolla, Nathan Nicholson",
+   "word": "Room → No Room For A Saint",
+   "type": "same",
+   "plan": {
+    "synced": true,
+    "ride": null,
+    "q": 1,
+    "r": 0.932,
+    "semis": 0,
+    "rel": null,
+    "style": "echo",
+    "aStart": 14.496,
+    "cut": 24.251,
+    "aOut": 23.38,
+    "bPos": 21.894,
+    "bFade": 0.012,
+    "pre": 0,
+    "tail": 8.215,
+    "gap": 2.584,
+    "onBeat": "1",
+    "foundA": true,
+    "foundB": true,
+    "drop": false,
+    "keyA": "7B",
+    "keyB": "6A",
+    "keySrc": "measured"
+   },
+   "latency_ms": 182.9,
+   "placeA_ms": 0,
+   "placeB_ms": null,
+   "beat": {
+    "n": 13,
+    "median_ms": 10.5,
+    "p90_abs_ms": 18.0,
+    "ibi_A_ms": 487.7,
+    "ibi_B_ms": 480.0
+   },
+   "bars": {
+    "n": 4,
+    "on_one": 1.0,
+    "median_ms": 13.7,
+    "beat_of_bar": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "first_ms": 20.0,
+    "first_on_one": true
+   }
+  },
+  {
+   "link": "People Talk People Sing | Mau P || מדברים | נועה קירל",
+   "word": "Talk → מדברים",
+   "type": "lang",
+   "plan": {
+    "synced": false,
+    "ride": null,
+    "q": 1,
+    "r": 1,
+    "semis": 0,
+    "rel": null,
+    "style": "echo",
+    "aStart": 0,
+    "cut": 3.5,
+    "aOut": 2.235,
+    "bPos": 15.162,
+    "bFade": 0.012,
+    "pre": 0,
+    "tail": 14.413,
+    "gap": 2.987,
+    "onBeat": "1",
+    "foundA": true,
+    "foundB": true,
+    "drop": false,
+    "keyA": "12B",
+    "keyB": "7A",
+    "keySrc": "measured"
+   },
+   "latency_ms": 182.9,
+   "placeA_ms": 0,
+   "placeB_ms": 0,
+   "beat": null,
+   "bars": null
+  },
+  {
+   "link": "People | Libianca || People Talk People Sing | Mau P",
+   "word": "People → People Talk People Sing",
+   "type": "chain",
+   "plan": {
+    "synced": true,
+    "ride": {
+     "r0": 0.761,
+     "i1": 9.037,
+     "i2": 23.804,
+     "hold": 4,
+     "bars": 8
+    },
+    "q": 1,
+    "r": 0.761,
+    "semis": -1,
+    "rel": "ear-ok",
+    "style": "echo",
+    "aStart": 15.099,
+    "cut": 22.371,
+    "aOut": 21.96,
+    "bPos": 1.654,
+    "bFade": 0.012,
+    "pre": 0,
+    "tail": 16,
+    "gap": 1.34,
+    "onBeat": "1",
+    "foundA": true,
+    "foundB": true,
+    "drop": false,
+    "keyA": "4B",
+    "keyB": "12B",
+    "keySrc": "measured"
+   },
+   "latency_ms": 182.9,
+   "placeA_ms": 0,
+   "placeB_ms": null,
+   "beat": {
+    "n": 13,
+    "median_ms": -47.6,
+    "p90_abs_ms": 56.8,
+    "ibi_A_ms": 607.4,
+    "ibi_B_ms": 600.0
+   },
+   "bars": {
+    "n": 4,
+    "on_one": 1.0,
+    "median_ms": -39.8,
+    "beat_of_bar": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "first_ms": -10.7,
+    "first_on_one": true
+   }
+  },
+  {
    "link": "Rain On Me | Lady Gaga, Ariana Grande || ברוך מוריד הגשם | פאר טסי",
    "word": "Rain On Me → מוריד הגשם",
    "type": "answer",
@@ -575,20 +1804,20 @@
     "keyB": "5A",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
+   "latency_ms": 185.8,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
     "n": 16,
-    "median_ms": 7.3,
-    "p90_abs_ms": 17.3,
+    "median_ms": 0.5,
+    "p90_abs_ms": 13.3,
     "ibi_A_ms": 488.4,
     "ibi_B_ms": 480.0
    },
    "bars": {
     "n": 5,
     "on_one": 1.0,
-    "median_ms": 15.3,
+    "median_ms": 5.7,
     "beat_of_bar": [
      1,
      1,
@@ -596,7 +1825,57 @@
      1,
      1
     ],
-    "first_ms": 16.1,
+    "first_ms": 5.7,
+    "first_on_one": true
+   }
+  },
+  {
+   "link": "Relación | Sech || קשר רציני | מוטי טקה",
+   "word": "Relación → קשר רציני",
+   "type": "lang",
+   "plan": {
+    "synced": true,
+    "ride": null,
+    "q": 1,
+    "r": 1.146,
+    "semis": 0,
+    "rel": "ear",
+    "style": "echo",
+    "aStart": 9.203,
+    "cut": 17.576,
+    "aOut": 16.86,
+    "bPos": 21.119,
+    "bFade": 0.012,
+    "pre": 0,
+    "tail": 7.377,
+    "gap": 2.337,
+    "onBeat": "1",
+    "foundA": true,
+    "foundB": true,
+    "drop": false,
+    "keyA": "7B",
+    "keyB": "8A",
+    "keySrc": "measured"
+   },
+   "latency_ms": 182.9,
+   "placeA_ms": 0,
+   "placeB_ms": null,
+   "beat": {
+    "n": 7,
+    "median_ms": -3.3,
+    "p90_abs_ms": 16.1,
+    "ibi_A_ms": 698.3,
+    "ibi_B_ms": 700.0
+   },
+   "bars": {
+    "n": 2,
+    "on_one": 1.0,
+    "median_ms": -3.3,
+    "beat_of_bar": [
+     1,
+     1
+    ],
+    "first_ms": -6.7,
     "first_on_one": true
    }
   },
@@ -628,7 +1907,7 @@
     "keyB": "5A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": 1,
    "beat": {
@@ -654,1379 +1933,48 @@
    }
   },
   {
-   "link": "Sha La La | עידו שוהם, רועי מכלוף || LaLaLa | Black Coffee, Usher",
-   "word": "La La",
+   "link": "Shake It To The Max (FLY) (Remix) | Moliy, Silent Addy, Skillibeng, Shenseea || Shake Ya Boom Boom | סטטיק ובן אל, Black Eyed Peas",
+   "word": "Shake → Shake Ya Boom Boom",
    "type": "same",
    "plan": {
     "synced": true,
     "ride": null,
     "q": 1,
-    "r": 0.913,
+    "r": 0.934,
     "semis": 0,
     "rel": "ear",
-    "style": "cut",
-    "aStart": 1.475,
-    "cut": 12.906,
-    "aOut": 12.906,
-    "bPos": 2.141,
+    "style": "echo",
+    "aStart": 18.7,
+    "cut": 26.045,
+    "aOut": 25.07,
+    "bPos": 9.593,
     "bFade": 0.012,
     "pre": 0,
     "tail": 16,
-    "gap": 0.727,
-    "onBeat": "1",
-    "foundA": false,
-    "foundB": true,
-    "drop": false,
-    "keyA": "9A",
-    "keyB": "10A",
-    "keySrc": "measured"
-   },
-   "latency_ms": 182.9,
-   "placeA_ms": 0,
-   "placeB_ms": null,
-   "beat": {
-    "n": 14,
-    "median_ms": -7.3,
-    "p90_abs_ms": 13.7,
-    "ibi_A_ms": 571.2,
-    "ibi_B_ms": 580.0
-   },
-   "bars": {
-    "n": 4,
-    "on_one": 1.0,
-    "median_ms": -2.9,
-    "beat_of_bar": [
-     1,
-     1,
-     1,
-     1
-    ],
-    "first_ms": 4.4,
-    "first_on_one": true
-   }
-  },
-  {
-   "link": "Take My Breath | The Weeknd || Every Breath You Take | Kayote, Slenderino, Gabriel Wittner, Luciana Silva",
-   "word": "Take My Breath → Every Breath You Take",
-   "type": "chain",
-   "plan": {
-    "synced": true,
-    "ride": null,
-    "q": 1,
-    "r": 1.034,
-    "semis": 0,
-    "rel": "ear-ok",
-    "style": "echo",
-    "aStart": 0.925,
-    "cut": 12.828,
-    "aOut": 11.33,
-    "bPos": 20.282,
-    "bFade": 0.012,
-    "pre": 0,
-    "tail": 8.942,
-    "gap": 3.124,
+    "gap": 2.345,
     "onBeat": "1",
     "foundA": true,
     "foundB": true,
     "drop": false,
     "keyA": "5A",
-    "keyB": "8B",
-    "keySrc": "measured"
-   },
-   "latency_ms": 182.9,
-   "placeA_ms": 0,
-   "placeB_ms": null,
-   "beat": {
-    "n": 14,
-    "median_ms": -29.4,
-    "p90_abs_ms": 38.3,
-    "ibi_A_ms": 495.7,
-    "ibi_B_ms": 500.0
-   },
-   "bars": {
-    "n": 4,
-    "on_one": 1.0,
-    "median_ms": -30.2,
-    "beat_of_bar": [
-     1,
-     1,
-     1,
-     1
-    ],
-    "first_ms": -26.0,
-    "first_on_one": true
-   }
-  },
-  {
-   "link": "Telephone | Lady Gaga, Beyoncé || הלו הלו | עדן בן זקן",
-   "word": "Telephone → הלו הלו",
-   "type": "answer",
-   "plan": {
-    "synced": true,
-    "ride": null,
-    "q": 1,
-    "r": 0.939,
-    "semis": 0,
-    "rel": "ear",
-    "style": "echo",
-    "aStart": 12.251,
-    "cut": 22.088,
-    "aOut": 22.03,
-    "bPos": 15.864,
-    "bFade": 0.012,
-    "pre": 0,
-    "tail": 14.609,
-    "gap": 1.165,
-    "onBeat": "1",
-    "foundA": true,
-    "foundB": true,
-    "drop": false,
-    "keyA": "4A",
-    "keyB": "4A",
-    "keySrc": "measured"
-   },
-   "latency_ms": 182.9,
-   "placeA_ms": 0,
-   "placeB_ms": null,
-   "beat": {
-    "n": 16,
-    "median_ms": 18.8,
-    "p90_abs_ms": 26.6,
-    "ibi_A_ms": 491.5,
-    "ibi_B_ms": 500.0
-   },
-   "bars": {
-    "n": 5,
-    "on_one": 1.0,
-    "median_ms": 18.5,
-    "beat_of_bar": [
-     1,
-     1,
-     1,
-     1,
-     1
-    ],
-    "first_ms": 10.6,
-    "first_on_one": true
-   }
-  },
-  {
-   "link": "Truth or Dare | Tyla || אמת או חובה | ריקי גל",
-   "word": "Truth or Dare = אמת או חובה",
-   "type": "lang",
-   "plan": {
-    "synced": true,
-    "ride": {
-     "r0": 0.864,
-     "i1": 22.802,
-     "i2": 29.629,
-     "hold": 2,
-     "bars": 4
-    },
-    "q": 1,
-    "r": 0.864,
-    "semis": 0,
-    "rel": null,
-    "style": "echo",
-    "aStart": 8.073,
-    "cut": 20.487,
-    "aOut": 19.2,
-    "bPos": 19.225,
-    "bFade": 0.012,
-    "pre": 0,
-    "tail": 11.365,
-    "gap": 2.142,
-    "onBeat": "1",
-    "foundA": true,
-    "foundB": true,
-    "drop": false,
-    "keyA": "3A",
-    "keyB": "4A",
-    "keySrc": "measured"
-   },
-   "latency_ms": 185.8,
-   "placeA_ms": 0,
-   "placeB_ms": null,
-   "beat": {
-    "n": 7,
-    "median_ms": -5.6,
-    "p90_abs_ms": 42.2,
-    "ibi_A_ms": 516.8,
-    "ibi_B_ms": 520.0
-   },
-   "bars": {
-    "n": 2,
-    "on_one": 1.0,
-    "median_ms": -2.0,
-    "beat_of_bar": [
-     1,
-     1
-    ],
-    "first_ms": 1.6,
-    "first_on_one": true
-   }
-  },
-  {
-   "link": "Waiting For Tonight | FISHER, Jennifer Lopez || עד שהגעת | יואב יצחק",
-   "word": "Waiting → עד שהגעת",
-   "type": "answer",
-   "plan": {
-    "synced": true,
-    "ride": {
-     "r0": 1.216,
-     "i1": 18.342,
-     "i2": 29.629,
-     "hold": 4,
-     "bars": 5
-    },
-    "q": 1,
-    "r": 1.216,
-    "semis": -1,
-    "rel": "ear",
-    "style": "echo",
-    "aStart": 13.057,
-    "cut": 22.363,
-    "aOut": 21.956,
-    "bPos": 9.285,
-    "bFade": 0.012,
-    "pre": 0,
-    "tail": 16,
-    "gap": 1.818,
-    "onBeat": "1",
-    "foundA": true,
-    "foundB": true,
-    "drop": false,
-    "keyA": "3A",
-    "keyB": "10A",
-    "keySrc": "measured"
-   },
-   "latency_ms": 185.8,
-   "placeA_ms": 0,
-   "placeB_ms": null,
-   "beat": {
-    "n": 16,
-    "median_ms": 13.5,
-    "p90_abs_ms": 23.6,
-    "ibi_A_ms": 465.0,
-    "ibi_B_ms": 460.0
-   },
-   "bars": {
-    "n": 5,
-    "on_one": 1.0,
-    "median_ms": 18.5,
-    "beat_of_bar": [
-     1,
-     1,
-     1,
-     1,
-     1
-    ],
-    "first_ms": -1.7,
-    "first_on_one": true
-   }
-  },
-  {
-   "link": "אם את כבר הולכת | נדב חנציס || Leave The Door Open | Bruno Mars, Anderson .Paak, Silk Sonic",
-   "word": "הולכת → Leave The Door Open",
-   "type": "answer",
-   "plan": {
-    "synced": false,
-    "ride": null,
-    "q": 1,
-    "r": 1,
-    "semis": 0,
-    "rel": "ear",
-    "style": "echo",
-    "aStart": 14.033,
-    "cut": 23.631,
-    "aOut": 21.95,
-    "bPos": 16.26,
-    "bFade": 0.012,
-    "pre": 0,
-    "tail": 13.316,
-    "gap": 3.042,
-    "onBeat": "1",
-    "foundA": true,
-    "foundB": true,
-    "drop": false,
-    "keyA": "7A",
-    "keyB": "8B",
-    "keySrc": "measured"
-   },
-   "latency_ms": 182.9,
-   "placeA_ms": 0,
-   "placeB_ms": 0,
-   "beat": {
-    "n": 9,
-    "median_ms": 216.5,
-    "p90_abs_ms": 308.6,
-    "ibi_A_ms": 778.7,
-    "ibi_B_ms": 810.0
-   },
-   "bars": {
-    "n": 3,
-    "on_one": 0.0,
-    "median_ms": 175.2,
-    "beat_of_bar": [
-     3,
-     3,
-     3
-    ],
-    "first_ms": 50.0,
-    "first_on_one": false
-   }
-  },
-  {
-   "link": "היא רק רוצה לרקוד | עומר אדם, משה פרץ || Dance With Me | SHADU",
-   "word": "לרקוד → Dance",
-   "type": "chain",
-   "plan": {
-    "synced": true,
-    "ride": null,
-    "q": 1,
-    "r": 1.057,
-    "semis": 0,
-    "rel": null,
-    "style": "echo",
-    "aStart": 0,
-    "cut": 4.166,
-    "aOut": 3.765,
-    "bPos": 6.86,
-    "bFade": 0.012,
-    "pre": 0,
-    "tail": 16,
-    "gap": 2.114,
-    "onBeat": "1",
-    "foundA": true,
-    "foundB": true,
-    "drop": false,
-    "keyA": "10A",
-    "keyB": "7A",
-    "keySrc": "measured"
-   },
-   "latency_ms": 197.1,
-   "placeA_ms": -14,
-   "placeB_ms": -13,
-   "beat": {
-    "n": 17,
-    "median_ms": -7.1,
-    "p90_abs_ms": 22.6,
-    "ibi_A_ms": 462.1,
-    "ibi_B_ms": 460.0
-   },
-   "bars": null
-  },
-  {
-   "link": "השעות הקטנות | שילה בן סעדון || No Sleep | Martin Garrix, Bonn",
-   "word": "השעות הקטנות → No Sleep",
-   "type": "theme",
-   "plan": {
-    "synced": true,
-    "ride": {
-     "r0": 1.265,
-     "i1": 16.239,
-     "i2": 29.675,
-     "hold": 2,
-     "bars": 7
-    },
-    "q": 1,
-    "r": 1.265,
-    "semis": 0,
-    "rel": "ear",
-    "style": "echo",
-    "aStart": 0,
-    "cut": 4.721,
-    "aOut": 4.283,
-    "bPos": 12.49,
-    "bFade": 0.012,
-    "pre": 0,
-    "tail": 14.728,
-    "gap": 1.163,
-    "onBeat": "1",
-    "foundA": true,
-    "foundB": true,
-    "drop": false,
-    "keyA": "1A",
-    "keyB": "1B",
-    "keySrc": "measured"
-   },
-   "latency_ms": 185.8,
-   "placeA_ms": 0,
-   "placeB_ms": null,
-   "beat": {
-    "n": 7,
-    "median_ms": -4.1,
-    "p90_abs_ms": 19.6,
-    "ibi_A_ms": 369.6,
-    "ibi_B_ms": 380.0
-   },
-   "bars": {
-    "n": 2,
-    "on_one": 1.0,
-    "median_ms": 4.2,
-    "beat_of_bar": [
-     1,
-     1
-    ],
-    "first_ms": 13.3,
-    "first_on_one": true
-   }
-  },
-  {
-   "link": "טרנטולה | סטטיק, אגם בוחבוט || Tarantula | Pendulum",
-   "word": "טרנטולה = Tarantula",
-   "type": "lang",
-   "plan": {
-    "synced": true,
-    "ride": {
-     "r0": 0.804,
-     "i1": 7.465,
-     "i2": 18.493,
-     "hold": 4,
-     "bars": 8
-    },
-    "q": 2,
-    "r": 0.804,
-    "semis": 0,
-    "rel": "ear-ok",
-    "style": "echo",
-    "aStart": 13.912,
-    "cut": 24.196,
-    "aOut": 24.196,
-    "bPos": 1.951,
-    "bFade": 0.012,
-    "pre": 0,
-    "tail": 16,
-    "gap": 1.609,
-    "onBeat": "1",
-    "foundA": true,
-    "foundB": true,
-    "drop": false,
-    "keyA": "7B",
-    "keyB": "11B",
-    "keySrc": "measured"
-   },
-   "latency_ms": 182.9,
-   "placeA_ms": 0,
-   "placeB_ms": null,
-   "beat": {
-    "n": 8,
-    "median_ms": -18.3,
-    "p90_abs_ms": 27.9,
-    "ibi_A_ms": 856.5,
-    "ibi_B_ms": 860.0
-   },
-   "bars": {
-    "n": 4,
-    "on_one": 0.75,
-    "median_ms": -13.5,
-    "beat_of_bar": [
-     1,
-     1,
-     3,
-     1
-    ],
-    "first_ms": -13.8,
-    "first_on_one": true
-   }
-  },
-  {
-   "link": "יש לי אותך | משה פרץ || I Got U | Duke Dumont, Jax Jones",
-   "word": "יש לי אותך = I Got U",
-   "type": "lang",
-   "plan": {
-    "synced": true,
-    "ride": {
-     "r0": 0.795,
-     "i1": 22.849,
-     "i2": 29.676,
-     "hold": 4,
-     "bars": 3
-    },
-    "q": 1,
-    "r": 0.795,
-    "semis": -1,
-    "rel": "ear",
-    "style": "echo",
-    "aStart": 5.35,
-    "cut": 15.349,
-    "aOut": 14.49,
-    "bPos": 14.904,
-    "bFade": 0.012,
-    "pre": 0,
-    "tail": 16,
-    "gap": 2.006,
-    "onBeat": "1",
-    "foundA": true,
-    "foundB": true,
-    "drop": false,
-    "keyA": "2B",
-    "keyB": "8A",
-    "keySrc": "measured"
-   },
-   "latency_ms": 182.9,
-   "placeA_ms": 0,
-   "placeB_ms": -2,
-   "beat": {
-    "n": 12,
-    "median_ms": -27.0,
-    "p90_abs_ms": 33.1,
-    "ibi_A_ms": 625.8,
-    "ibi_B_ms": 620.0
-   },
-   "bars": {
-    "n": 4,
-    "on_one": 1.0,
-    "median_ms": -28.3,
-    "beat_of_bar": [
-     1,
-     1,
-     1,
-     1
-    ],
-    "first_ms": -3.5,
-    "first_on_one": true
-   }
-  },
-  {
-   "link": "מה אתה רוצה ממני | חנן בן ארי || One Kiss | Calvin Harris, Dua Lipa",
-   "word": "מה אתה רוצה ממני? → One Kiss",
-   "type": "answer",
-   "plan": {
-    "synced": true,
-    "ride": null,
-    "q": 2,
-    "r": 1.032,
-    "semis": 0,
-    "rel": "ear",
-    "style": "echo",
-    "aStart": 4.747,
-    "cut": 19.748,
-    "aOut": 19.52,
-    "bPos": 14.289,
-    "bFade": 0.012,
-    "pre": 0,
-    "tail": 14.812,
-    "gap": 1.26,
-    "onBeat": "1",
-    "foundA": true,
-    "foundB": true,
-    "drop": false,
-    "keyA": "7A",
-    "keyB": "7B",
-    "keySrc": "measured"
-   },
-   "latency_ms": 185.8,
-   "placeA_ms": 0,
-   "placeB_ms": 2,
-   "beat": {
-    "n": 17,
-    "median_ms": 22.1,
-    "p90_abs_ms": 126.8,
-    "ibi_A_ms": 453.0,
-    "ibi_B_ms": 460.0
-   },
-   "bars": {
-    "n": 5,
-    "on_one": 0.0,
-    "median_ms": 15.2,
-    "beat_of_bar": [
-     2,
-     2,
-     2,
-     2,
-     2
-    ],
-    "first_ms": -100.6,
-    "first_on_one": false
-   }
-  },
-  {
-   "link": "מסיבה עם פפיון | אייל גולן, ליאור נרקיס || Dress Code (Extended) | Mau P",
-   "word": "פפיון → Dress Code",
-   "type": "theme",
-   "plan": {
-    "synced": true,
-    "ride": null,
-    "q": 1,
-    "r": 1.014,
-    "semis": 1,
-    "rel": "ear-ok",
-    "style": "echo",
-    "aStart": 1.828,
-    "cut": 9.22,
-    "aOut": 8.076,
-    "bPos": 18.761,
-    "bFade": 0.012,
-    "pre": 0,
-    "tail": 10.638,
-    "gap": 1.703,
-    "onBeat": "1",
-    "foundA": true,
-    "foundB": true,
-    "drop": false,
-    "keyA": "8A",
-    "keyB": "3B",
-    "keySrc": "measured"
-   },
-   "latency_ms": 185.8,
-   "placeA_ms": 0,
-   "placeB_ms": null,
-   "beat": {
-    "n": 17,
-    "median_ms": 19.6,
-    "p90_abs_ms": 40.5,
-    "ibi_A_ms": 459.8,
-    "ibi_B_ms": 460.0
-   },
-   "bars": {
-    "n": 5,
-    "on_one": 1.0,
-    "median_ms": 19.1,
-    "beat_of_bar": [
-     1,
-     1,
-     1,
-     1,
-     1
-    ],
-    "first_ms": 17.4,
-    "first_on_one": true
-   }
-  },
-  {
-   "link": "נעצור את זה כאן | קובי ממן || Don't Stop The Music | Rihanna",
-   "word": "נעצור → Don't Stop",
-   "type": "answer",
-   "plan": {
-    "synced": true,
-    "ride": {
-     "r0": 1.223,
-     "i1": 15.255,
-     "i2": 29.676,
-     "hold": 4,
-     "bars": 7
-    },
-    "q": 2,
-    "r": 1.223,
-    "semis": -1,
-    "rel": "ear-ok",
-    "style": "echo",
-    "aStart": 3.43,
-    "cut": 13.027,
-    "aOut": 13.027,
-    "bPos": 7.432,
-    "bFade": 0.012,
-    "pre": 0,
-    "tail": 16,
-    "gap": 0.05,
-    "onBeat": "1",
-    "foundA": false,
-    "foundB": false,
-    "drop": false,
-    "keyA": "2A",
-    "keyB": "11A",
-    "keySrc": "measured"
-   },
-   "latency_ms": 185.8,
-   "placeA_ms": 0,
-   "placeB_ms": null,
-   "beat": {
-    "n": 16,
-    "median_ms": -0.0,
-    "p90_abs_ms": 0.0,
-    "ibi_A_ms": 400.0,
-    "ibi_B_ms": 400.0
-   },
-   "bars": {
-    "n": 5,
-    "on_one": 1.0,
-    "median_ms": -0.0,
-    "beat_of_bar": [
-     1,
-     1,
-     1,
-     1,
-     1
-    ],
-    "first_ms": -0.0,
-    "first_on_one": true
-   }
-  },
-  {
-   "link": "פסיכולוגית | אודיה || Psycho | Chris Lake",
-   "word": "פסיכולוגית → Psycho",
-   "type": "lang",
-   "plan": {
-    "synced": true,
-    "ride": {
-     "r0": 0.755,
-     "i1": 15.571,
-     "i2": 29.652,
-     "hold": 4,
-     "bars": 7
-    },
-    "q": 1,
-    "r": 0.755,
-    "semis": 0,
-    "rel": null,
-    "style": "echo",
-    "aStart": 0,
-    "cut": 2.989,
-    "aOut": 2.02,
-    "bPos": 7.954,
-    "bFade": 0.012,
-    "pre": 0,
-    "tail": 16,
-    "gap": 1.089,
-    "onBeat": "1",
-    "foundA": true,
-    "foundB": false,
-    "drop": false,
-    "keyA": "6A",
-    "keyB": null,
-    "keySrc": null
-   },
-   "latency_ms": 256.9,
-   "placeA_ms": -22,
-   "placeB_ms": null,
-   "beat": null,
-   "bars": null
-  },
-  {
-   "link": "2AM (Extended) | MK || Watch The Sunrise | Chris Lake, Aatig",
-   "word": "2AM → Sunrise",
-   "type": "count",
-   "plan": {
-    "synced": true,
-    "ride": null,
-    "q": 1,
-    "r": 0.976,
-    "semis": 0,
-    "rel": "ear",
-    "style": "echo",
-    "aStart": 0.094,
-    "cut": 5.947,
-    "aOut": 5.947,
-    "bPos": 7.823,
-    "bFade": 0.012,
-    "pre": 0,
-    "tail": 16,
-    "gap": 0.017,
-    "onBeat": "1",
-    "foundA": true,
-    "foundB": false,
-    "drop": false,
-    "keyA": "8B",
-    "keyB": "7B",
-    "keySrc": "measured"
-   },
-   "latency_ms": 182.9,
-   "placeA_ms": 0,
-   "placeB_ms": 0,
-   "beat": {
-    "n": 16,
-    "median_ms": 3.7,
-    "p90_abs_ms": 16.9,
-    "ibi_A_ms": 487.0,
-    "ibi_B_ms": 480.0
-   },
-   "bars": {
-    "n": 5,
-    "on_one": 1.0,
-    "median_ms": -2.8,
-    "beat_of_bar": [
-     1,
-     1,
-     1,
-     1,
-     1
-    ],
-    "first_ms": -14.7,
-    "first_on_one": true
-   }
-  },
-  {
-   "link": "Break My Heart | Dua Lipa || תשבור לי ת'לב | אודיה",
-   "word": "Break My Heart → תשבור לי ת'לב",
-   "type": "lang",
-   "plan": {
-    "synced": false,
-    "ride": null,
-    "q": 1,
-    "r": 1,
-    "semis": 0,
-    "rel": null,
-    "style": "echo",
-    "aStart": 7.138,
-    "cut": 19.882,
-    "aOut": 17.98,
-    "bPos": 8.681,
-    "bFade": 0.012,
-    "pre": 0,
-    "tail": 16,
-    "gap": 2.022,
-    "onBeat": "1",
-    "foundA": true,
-    "foundB": false,
-    "drop": false,
-    "keyA": "9A",
-    "keyB": "12A",
-    "keySrc": "measured"
-   },
-   "latency_ms": 182.9,
-   "placeA_ms": 0,
-   "placeB_ms": 0,
-   "beat": {
-    "n": 10,
-    "median_ms": 66.4,
-    "p90_abs_ms": 182.7,
-    "ibi_A_ms": 529.9,
-    "ibi_B_ms": 540.0
-   },
-   "bars": {
-    "n": 4,
-    "on_one": 0.5,
-    "median_ms": 76.3,
-    "beat_of_bar": [
-     1,
-     1,
-     2,
-     4
-    ],
-    "first_ms": 1.0,
-    "first_on_one": true
-   }
-  },
-  {
-   "link": "Diamonds | Rihanna || לקנות לך יהלום | אייל גולן",
-   "word": "Diamonds → יהלום",
-   "type": "answer",
-   "plan": {
-    "synced": true,
-    "ride": {
-     "r0": 0.884,
-     "i1": 24.025,
-     "i2": 29.652,
-     "hold": 2,
-     "bars": 2
-    },
-    "q": 1,
-    "r": 0.884,
-    "semis": 0,
-    "rel": "ear",
-    "style": "echo",
-    "aStart": 11.568,
-    "cut": 19.395,
-    "aOut": 17.57,
-    "bPos": 19.412,
-    "bFade": 0.012,
-    "pre": 0,
-    "tail": 11.092,
-    "gap": 1.945,
-    "onBeat": "1",
-    "foundA": true,
-    "foundB": false,
-    "drop": false,
-    "keyA": "11B",
-    "keyB": "11B",
-    "keySrc": "measured"
-   },
-   "latency_ms": 182.9,
-   "placeA_ms": 0,
-   "placeB_ms": null,
-   "beat": {
-    "n": 7,
-    "median_ms": 2.8,
-    "p90_abs_ms": 9.5,
-    "ibi_A_ms": 651.9,
-    "ibi_B_ms": 650.0
-   },
-   "bars": {
-    "n": 2,
-    "on_one": 1.0,
-    "median_ms": 10.9,
-    "beat_of_bar": [
-     1,
-     1
-    ],
-    "first_ms": 14.7,
-    "first_on_one": true
-   }
-  },
-  {
-   "link": "Hips Don't Lie | Shakira, Wyclef Jean || No Lie | Sean Paul, Dua Lipa",
-   "word": "Lie",
-   "type": "chain",
-   "plan": {
-    "synced": true,
-    "ride": null,
-    "q": 1,
-    "r": 0.98,
-    "semis": 1,
-    "rel": "ear",
-    "style": "echo",
-    "aStart": 7.419,
-    "cut": 14.62,
-    "aOut": 14.62,
-    "bPos": 9.481,
-    "bFade": 0.012,
-    "pre": 0,
-    "tail": 16,
-    "gap": 0.885,
-    "onBeat": "1",
-    "foundA": false,
-    "foundB": true,
-    "drop": false,
-    "keyA": "3A",
-    "keyB": "7A",
-    "keySrc": "measured"
-   },
-   "latency_ms": 182.9,
-   "placeA_ms": 0,
-   "placeB_ms": 2,
-   "beat": {
-    "n": 13,
-    "median_ms": 12.7,
-    "p90_abs_ms": 18.0,
-    "ibi_A_ms": 598.9,
-    "ibi_B_ms": 600.0
-   },
-   "bars": {
-    "n": 4,
-    "on_one": 1.0,
-    "median_ms": 10.5,
-    "beat_of_bar": [
-     1,
-     1,
-     1,
-     1
-    ],
-    "first_ms": 4.0,
-    "first_on_one": true
-   }
-  },
-  {
-   "link": "Houdini | Dua Lipa || Houdini | Eminem",
-   "word": "Houdini",
-   "type": "same",
-   "plan": {
-    "synced": true,
-    "ride": null,
-    "q": 1,
-    "r": 0.921,
-    "semis": 0,
-    "rel": "ear",
-    "style": "cut",
-    "aStart": 10.812,
-    "cut": 21.07,
-    "aOut": 21.07,
-    "bPos": 15.002,
-    "bFade": 0.012,
-    "pre": 0,
-    "tail": 15.821,
-    "gap": 1.568,
-    "onBeat": "1",
-    "foundA": true,
-    "foundB": false,
-    "drop": false,
-    "keyA": "7A",
-    "keyB": "8A",
+    "keyB": "5A",
     "keySrc": "measured"
    },
    "latency_ms": 185.8,
    "placeA_ms": 0,
    "placeB_ms": -2,
    "beat": {
-    "n": 15,
-    "median_ms": 3.0,
-    "p90_abs_ms": 10.9,
-    "ibi_A_ms": 512.8,
-    "ibi_B_ms": 520.0
-   },
-   "bars": {
-    "n": 5,
-    "on_one": 1.0,
-    "median_ms": 1.8,
-    "beat_of_bar": [
-     1,
-     1,
-     1,
-     1,
-     1
-    ],
-    "first_ms": -4.2,
-    "first_on_one": true
-   }
-  },
-  {
-   "link": "I THINK | Tyler, The Creator || Think Of Me | HUGEL, David Guetta, Kehlani, Daecolm",
-   "word": "THINK → Think Of Me",
-   "type": "chain",
-   "plan": {
-    "synced": true,
-    "ride": null,
-    "q": 1,
-    "r": 0.983,
-    "semis": -1,
-    "rel": null,
-    "style": "echo",
-    "aStart": 4.116,
-    "cut": 14.287,
-    "aOut": 14.287,
-    "bPos": 4.08,
-    "bFade": 0.012,
-    "pre": 0,
-    "tail": 16,
-    "gap": 0.559,
-    "onBeat": "1",
-    "foundA": false,
-    "foundB": true,
-    "drop": false,
-    "keyA": "6A",
-    "keyB": "3B",
-    "keySrc": "measured"
-   },
-   "latency_ms": 182.9,
-   "placeA_ms": 0,
-   "placeB_ms": 1,
-   "beat": {
-    "n": 15,
-    "median_ms": -14.9,
-    "p90_abs_ms": 24.6,
-    "ibi_A_ms": 508.8,
-    "ibi_B_ms": 500.0
-   },
-   "bars": {
-    "n": 5,
-    "on_one": 1.0,
-    "median_ms": -14.4,
-    "beat_of_bar": [
-     1,
-     1,
-     1,
-     1,
-     1
-    ],
-    "first_ms": -8.4,
-    "first_on_one": true
-   }
-  },
-  {
-   "link": "Isha Yafa | איציק קלה || Pretty Girl | Rema, Ice Spice",
-   "word": "Isha Yafa = Pretty Girl",
-   "type": "lang",
-   "plan": {
-    "synced": true,
-    "ride": null,
-    "q": 1,
-    "r": 1,
-    "semis": 1,
-    "rel": "ear-ok",
-    "style": "echo",
-    "aStart": 3.359,
-    "cut": 12.666,
-    "aOut": 12.666,
-    "bPos": 15.759,
-    "bFade": 0.012,
-    "pre": 0,
-    "tail": 13.816,
-    "gap": 1.251,
-    "onBeat": "1",
-    "foundA": false,
-    "foundB": true,
-    "drop": false,
-    "keyA": "4B",
-    "keyB": "9B",
-    "keySrc": "measured"
-   },
-   "latency_ms": 182.9,
-   "placeA_ms": 0,
-   "placeB_ms": null,
-   "beat": {
-    "n": 17,
-    "median_ms": 2.2,
-    "p90_abs_ms": 9.5,
-    "ibi_A_ms": 465.2,
-    "ibi_B_ms": 460.0
-   },
-   "bars": {
-    "n": 5,
-    "on_one": 1.0,
-    "median_ms": -6.8,
-    "beat_of_bar": [
-     1,
-     1,
-     1,
-     1,
-     1
-    ],
-    "first_ms": -6.8,
-    "first_on_one": true
-   }
-  },
-  {
-   "link": "Llamado de Emergencia | Daddy Yankee || 911 | Sech",
-   "word": "Emergencia → 911",
-   "type": "lang",
-   "plan": {
-    "synced": true,
-    "ride": {
-     "r0": 0.845,
-     "i1": 17.143,
-     "i2": 29.676,
-     "hold": 4,
-     "bars": 6
-    },
-    "q": 1,
-    "r": 0.845,
-    "semis": -1,
-    "rel": "ear-ok",
-    "style": "echo",
-    "aStart": 6.743,
-    "cut": 14.089,
-    "aOut": 14.089,
-    "bPos": 8.866,
-    "bFade": 0.012,
-    "pre": 0,
-    "tail": 16,
-    "gap": 2.14,
-    "onBeat": "1",
-    "foundA": false,
-    "foundB": true,
-    "drop": false,
-    "keyA": "9A",
-    "keyB": "5A",
-    "keySrc": "measured"
-   },
-   "latency_ms": 185.8,
-   "placeA_ms": 0,
-   "placeB_ms": null,
-   "beat": {
     "n": 13,
-    "median_ms": -0.2,
-    "p90_abs_ms": 10.2,
-    "ibi_A_ms": 611.2,
+    "median_ms": -8.4,
+    "p90_abs_ms": 15.6,
+    "ibi_A_ms": 612.4,
     "ibi_B_ms": 620.0
    },
    "bars": {
     "n": 4,
     "on_one": 1.0,
-    "median_ms": -0.2,
+    "median_ms": -4.2,
     "beat_of_bar": [
-     1,
-     1,
-     1,
-     1
-    ],
-    "first_ms": 6.7,
-    "first_on_one": true
-   }
-  },
-  {
-   "link": "Marea (we've lost dancing) | Fred again.., The Blessed Madonna || We Dance Again | Black Coffee, Nakhane",
-   "word": "lost dancing → Dance Again",
-   "type": "answer",
-   "plan": {
-    "synced": true,
-    "ride": null,
-    "q": 1,
-    "r": 1.008,
-    "semis": -1,
-    "rel": null,
-    "style": "echo",
-    "aStart": 2.328,
-    "cut": 14.036,
-    "aOut": 12.74,
-    "bPos": 17.125,
-    "bFade": 0.012,
-    "pre": 0,
-    "tail": 12.346,
-    "gap": 1.416,
-    "onBeat": "1",
-    "foundA": true,
-    "foundB": false,
-    "drop": false,
-    "keyA": "4A",
-    "keyB": "10A",
-    "keySrc": "measured"
-   },
-   "latency_ms": 182.9,
-   "placeA_ms": 0,
-   "placeB_ms": null,
-   "beat": {
-    "n": 16,
-    "median_ms": 10.3,
-    "p90_abs_ms": 18.7,
-    "ibi_A_ms": 487.7,
-    "ibi_B_ms": 480.0
-   },
-   "bars": {
-    "n": 5,
-    "on_one": 1.0,
-    "median_ms": 11.9,
-    "beat_of_bar": [
-     1,
-     1,
-     1,
-     1,
-     1
-    ],
-    "first_ms": 13.8,
-    "first_on_one": true
-   }
-  },
-  {
-   "link": "Marry You | Bruno Mars || חתונה של השמחות | דודו אהרון",
-   "word": "Marry You → חתונה",
-   "type": "answer",
-   "plan": {
-    "synced": true,
-    "ride": null,
-    "q": 1,
-    "r": 1.099,
-    "semis": 0,
-    "rel": "ear-ok",
-    "style": "echo",
-    "aStart": 4.861,
-    "cut": 13.14,
-    "aOut": 13.14,
-    "bPos": 18.23,
-    "bFade": 0.012,
-    "pre": 0,
-    "tail": 10.328,
-    "gap": 0.068,
-    "onBeat": "1",
-    "foundA": false,
-    "foundB": true,
-    "drop": false,
-    "keyA": "7B",
-    "keyB": "5A",
-    "keySrc": "measured"
-   },
-   "latency_ms": 182.9,
-   "placeA_ms": 0,
-   "placeB_ms": null,
-   "beat": {
-    "n": 19,
-    "median_ms": -1.0,
-    "p90_abs_ms": 12.3,
-    "ibi_A_ms": 412.8,
-    "ibi_B_ms": 420.0
-   },
-   "bars": {
-    "n": 6,
-    "on_one": 1.0,
-    "median_ms": -3.0,
-    "beat_of_bar": [
-     1,
-     1,
-     1,
-     1,
-     1,
-     1
-    ],
-    "first_ms": -8.2,
-    "first_on_one": true
-   }
-  },
-  {
-   "link": "Move | Adam Port, Stryv, Keinemusik, Orso, Malachiii || זז בטירוף | איתי לוי",
-   "word": "Move → זז",
-   "type": "lang",
-   "plan": {
-    "synced": true,
-    "ride": null,
-    "q": 1,
-    "r": 0.938,
-    "semis": 0,
-    "rel": "ear",
-    "style": "echo",
-    "aStart": 10.11,
-    "cut": 22.113,
-    "aOut": 21.29,
-    "bPos": 3.826,
-    "bFade": 0.012,
-    "pre": 0,
-    "tail": 16,
-    "gap": 0.943,
-    "onBeat": "1",
-    "foundA": true,
-    "foundB": false,
-    "drop": false,
-    "keyA": "1A",
-    "keyB": "12A",
-    "keySrc": "measured"
-   },
-   "latency_ms": 185.8,
-   "placeA_ms": 0,
-   "placeB_ms": -1,
-   "beat": {
-    "n": 15,
-    "median_ms": 16.0,
-    "p90_abs_ms": 17.2,
-    "ibi_A_ms": 499.8,
-    "ibi_B_ms": 500.0
-   },
-   "bars": {
-    "n": 5,
-    "on_one": 1.0,
-    "median_ms": 16.0,
-    "beat_of_bar": [
-     1,
-     1,
-     1,
-     1,
-     1
-    ],
-    "first_ms": 14.3,
-    "first_on_one": true
-   }
-  },
-  {
-   "link": "Paradise | עומר אדם || Paradise (Extended) | Meduza, Dermot Kennedy",
-   "word": "Paradise",
-   "type": "same",
-   "plan": {
-    "synced": true,
-    "ride": null,
-    "q": 1,
-    "r": 1.009,
-    "semis": 0,
-    "rel": "ear",
-    "style": "echo",
-    "aStart": 3.859,
-    "cut": 13.456,
-    "aOut": 13.456,
-    "bPos": 14.1,
-    "bFade": 0.012,
-    "pre": 0,
-    "tail": 15.345,
-    "gap": 0.546,
-    "onBeat": "1",
-    "foundA": false,
-    "foundB": true,
-    "drop": false,
-    "keyA": "1A",
-    "keyB": "1A",
-    "keySrc": "measured"
-   },
-   "latency_ms": 185.8,
-   "placeA_ms": 0,
-   "placeB_ms": 2,
-   "beat": {
-    "n": 16,
-    "median_ms": 0.0,
-    "p90_abs_ms": 10.0,
-    "ibi_A_ms": 480.0,
-    "ibi_B_ms": 480.0
-   },
-   "bars": {
-    "n": 5,
-    "on_one": 1.0,
-    "median_ms": 0.0,
-    "beat_of_bar": [
-     1,
      1,
      1,
      1,
@@ -2037,102 +1985,172 @@
    }
   },
   {
-   "link": "She Wolf | Shakira || זאבה רעבה | איתי לוי",
-   "word": "She Wolf = זאבה",
+   "link": "Si Te Vas | Sech, Ozuna || אם את כבר הולכת | נדב חנציס",
+   "word": "Si Te Vas → אם את כבר הולכת",
    "type": "lang",
    "plan": {
     "synced": true,
     "ride": {
-     "r0": 1.162,
-     "i1": 18.085,
+     "r0": 0.871,
+     "i1": 23.631,
      "i2": 29.675,
-     "hold": 4,
-     "bars": 5
+     "hold": 2,
+     "bars": 3
     },
     "q": 1,
-    "r": 1.162,
+    "r": 0.871,
     "semis": 0,
-    "rel": null,
+    "rel": "ear",
     "style": "echo",
-    "aStart": 3.186,
-    "cut": 13.022,
-    "aOut": 13.022,
-    "bPos": 8.939,
+    "aStart": 13.918,
+    "cut": 24.941,
+    "aOut": 22.76,
+    "bPos": 18.832,
     "bFade": 0.012,
     "pre": 0,
-    "tail": 16,
-    "gap": 0.283,
+    "tail": 11.87,
+    "gap": 3.229,
     "onBeat": "1",
-    "foundA": false,
+    "foundA": true,
     "foundB": true,
     "drop": false,
-    "keyA": "10B",
+    "keyA": "8B",
     "keyB": "7A",
     "keySrc": "measured"
    },
    "latency_ms": 182.9,
    "placeA_ms": 0,
-   "placeB_ms": 2,
+   "placeB_ms": null,
+   "beat": {
+    "n": 8,
+    "median_ms": -3.1,
+    "p90_abs_ms": 14.4,
+    "ibi_A_ms": 688.3,
+    "ibi_B_ms": 680.0
+   },
+   "bars": {
+    "n": 3,
+    "on_one": 1.0,
+    "median_ms": -7.7,
+    "beat_of_bar": [
+     1,
+     1,
+     1
+    ],
+    "first_ms": -7.7,
+    "first_on_one": true
+   }
+  },
+  {
+   "link": "Stupid Love | Lady Gaga || Get Stupid | Cloonee",
+   "word": "Stupid → Get Stupid",
+   "type": "same",
+   "plan": {
+    "synced": true,
+    "ride": null,
+    "q": 1,
+    "r": 0.961,
+    "semis": 0,
+    "rel": null,
+    "style": "cut",
+    "aStart": 3.573,
+    "cut": 13.251,
+    "aOut": 13.251,
+    "bPos": 7.93,
+    "bFade": 0.012,
+    "pre": 0,
+    "tail": 16,
+    "gap": 0.05,
+    "onBeat": "1",
+    "foundA": false,
+    "foundB": false,
+    "drop": false,
+    "keyA": null,
+    "keyB": null,
+    "keySrc": null
+   },
+   "latency_ms": 182.9,
+   "placeA_ms": 0,
+   "placeB_ms": 1,
    "beat": {
     "n": 15,
-    "median_ms": 3.6,
-    "p90_abs_ms": 11.4,
-    "ibi_A_ms": 492.1,
-    "ibi_B_ms": 500.0
+    "median_ms": 18.0,
+    "p90_abs_ms": 25.9,
+    "ibi_A_ms": 483.5,
+    "ibi_B_ms": 480.0
    },
    "bars": {
     "n": 4,
     "on_one": 1.0,
-    "median_ms": 5.4,
+    "median_ms": 14.5,
     "beat_of_bar": [
      1,
      1,
      1,
      1
     ],
-    "first_ms": 7.7,
+    "first_ms": 15.6,
     "first_on_one": true
    }
   },
   {
-   "link": "Single Ladies (Put a Ring on It) | Beyoncé || Marry You | Bruno Mars",
-   "word": "Put a Ring on It → Marry You",
-   "type": "answer",
+   "link": "Take It (Extended) | Dom Dolla || TAKE IT OFF | FISHER, AATIG",
+   "word": "Take It → Take It Off",
+   "type": "chain",
    "plan": {
-    "synced": false,
-    "ride": null,
-    "q": 2,
-    "r": 1,
+    "synced": true,
+    "ride": {
+     "r0": 1.23,
+     "i1": 9.974,
+     "i2": 29.173,
+     "hold": 4,
+     "bars": 8
+    },
+    "q": 1,
+    "r": 1.23,
     "semis": 0,
-    "rel": null,
+    "rel": "ear-ok",
     "style": "echo",
-    "aStart": 1.275,
-    "cut": 6.223,
-    "aOut": 5.71,
-    "bPos": 8.173,
+    "aStart": 4.732,
+    "cut": 14.488,
+    "aOut": 14.488,
+    "bPos": 0.375,
     "bFade": 0.012,
     "pre": 0,
     "tail": 16,
-    "gap": 0.633,
+    "gap": 2.127,
     "onBeat": "1",
     "foundA": true,
-    "foundB": false,
+    "foundB": true,
     "drop": false,
-    "keyA": "8B",
-    "keyB": "7B",
+    "keyA": "5A",
+    "keyB": "5B",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
+   "latency_ms": 185.8,
    "placeA_ms": 0,
-   "placeB_ms": 0,
+   "placeB_ms": -2,
    "beat": {
-    "n": 19,
-    "median_ms": 22.9,
-    "p90_abs_ms": 228.7,
-    "ibi_A_ms": 618.3,
-    "ibi_B_ms": 420.0
+    "n": 16,
+    "median_ms": -2.3,
+    "p90_abs_ms": 10.6,
+    "ibi_A_ms": 487.8,
+    "ibi_B_ms": 480.0
    },
-   "bars": null
+   "bars": {
+    "n": 5,
+    "on_one": 1.0,
+    "median_ms": 0.5,
+    "beat_of_bar": [
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "first_ms": 5.0,
+    "first_on_one": true
+   }
   },
   {
    "link": "Houdini | Dua Lipa || You Need Me | Black Coffee, Maxine Ashley, Sun-El Musician",
@@ -2162,20 +2180,20 @@
     "keyB": "8A",
     "keySrc": "measured"
    },
-   "latency_ms": 182.9,
+   "latency_ms": 185.8,
    "placeA_ms": 0,
    "placeB_ms": -2,
    "beat": {
     "n": 15,
-    "median_ms": -9.4,
-    "p90_abs_ms": 18.7,
-    "ibi_A_ms": 512.7,
+    "median_ms": -6.1,
+    "p90_abs_ms": 14.1,
+    "ibi_A_ms": 512.8,
     "ibi_B_ms": 520.0
    },
    "bars": {
     "n": 5,
     "on_one": 1.0,
-    "median_ms": -7.5,
+    "median_ms": -4.6,
     "beat_of_bar": [
      1,
      1,
@@ -2183,7 +2201,7 @@
      1,
      1
     ],
-    "first_ms": -16.7,
+    "first_ms": -10.5,
     "first_on_one": true
    }
   },
@@ -2215,20 +2233,20 @@
     "keyB": "10A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": null,
    "beat": {
     "n": 16,
-    "median_ms": 29.0,
-    "p90_abs_ms": 45.4,
-    "ibi_A_ms": 479.5,
+    "median_ms": 36.3,
+    "p90_abs_ms": 52.3,
+    "ibi_A_ms": 479.3,
     "ibi_B_ms": 480.0
    },
    "bars": {
     "n": 5,
     "on_one": 1.0,
-    "median_ms": 28.8,
+    "median_ms": 35.2,
     "beat_of_bar": [
      1,
      1,
@@ -2236,7 +2254,7 @@
      1,
      1
     ],
-    "first_ms": 23.4,
+    "first_ms": 29.4,
     "first_on_one": true
    }
   },
@@ -2273,15 +2291,15 @@
    "placeB_ms": null,
    "beat": {
     "n": 16,
-    "median_ms": -17.0,
-    "p90_abs_ms": 25.6,
-    "ibi_A_ms": 491.3,
+    "median_ms": -23.9,
+    "p90_abs_ms": 32.0,
+    "ibi_A_ms": 491.9,
     "ibi_B_ms": 500.0
    },
    "bars": {
     "n": 5,
     "on_one": 1.0,
-    "median_ms": -9.4,
+    "median_ms": -19.5,
     "beat_of_bar": [
      1,
      1,
@@ -2289,7 +2307,7 @@
      1,
      1
     ],
-    "first_ms": -7.8,
+    "first_ms": -8.8,
     "first_on_one": true
    }
   },
@@ -2326,7 +2344,7 @@
    "placeB_ms": 0,
    "beat": {
     "n": 16,
-    "median_ms": -0.0,
+    "median_ms": 0.0,
     "p90_abs_ms": 0.0,
     "ibi_A_ms": 480.0,
     "ibi_B_ms": 480.0
@@ -2427,7 +2445,7 @@
     "keyB": "12B",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": 0,
    "beat": {
@@ -2479,7 +2497,7 @@
     "keyB": "7A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": -2,
    "beat": {
@@ -2501,59 +2519,6 @@
      1
     ],
     "first_ms": 20.0,
-    "first_on_one": true
-   }
-  },
-  {
-   "link": "אולי הלילה | משה פרץ || אהבנו | חיים משה",
-   "word": "אהבנו",
-   "type": "heard",
-   "plan": {
-    "synced": true,
-    "ride": null,
-    "q": 1,
-    "r": 0.992,
-    "semis": 0,
-    "rel": null,
-    "style": "blend",
-    "aStart": 4.056,
-    "cut": 13.429,
-    "aOut": 13.429,
-    "bPos": 3.066,
-    "bFade": 0.012,
-    "pre": 1.875,
-    "tail": 16,
-    "gap": 1.072,
-    "onBeat": "1",
-    "foundA": false,
-    "foundB": true,
-    "drop": false,
-    "keyA": null,
-    "keyB": "9A",
-    "keySrc": null
-   },
-   "latency_ms": 182.9,
-   "placeA_ms": -3,
-   "placeB_ms": -6,
-   "beat": {
-    "n": 17,
-    "median_ms": 14.0,
-    "p90_abs_ms": 21.7,
-    "ibi_A_ms": 468.2,
-    "ibi_B_ms": 460.0
-   },
-   "bars": {
-    "n": 5,
-    "on_one": 1.0,
-    "median_ms": 13.2,
-    "beat_of_bar": [
-     1,
-     1,
-     1,
-     1,
-     1
-    ],
-    "first_ms": 11.2,
     "first_on_one": true
    }
   },
@@ -2585,7 +2550,7 @@
     "keyB": "5A",
     "keySrc": "measured"
    },
-   "latency_ms": 185.8,
+   "latency_ms": 182.9,
    "placeA_ms": 0,
    "placeB_ms": 0,
    "beat": {
@@ -2906,12 +2871,66 @@
    "placeB_ms": null,
    "beat": {
     "n": 16,
-    "median_ms": 0.0,
-    "p90_abs_ms": 10.0,
+    "median_ms": -6.7,
+    "p90_abs_ms": 13.3,
     "ibi_A_ms": 480.0,
     "ibi_B_ms": 480.0
    },
    "bars": null
+  },
+  {
+   "link": "יהלום מעבדה | נסרין קדרי || בלילות | אודיה",
+   "word": "בלילות",
+   "type": "heard",
+   "plan": {
+    "synced": true,
+    "ride": null,
+    "q": 1,
+    "r": 1.008,
+    "semis": 0,
+    "rel": "ear",
+    "style": "echo",
+    "aStart": 10.83,
+    "cut": 20.275,
+    "aOut": 20.148,
+    "bPos": 2.59,
+    "bFade": 0.012,
+    "pre": 0,
+    "tail": 16,
+    "gap": 1.267,
+    "onBeat": "1",
+    "foundA": true,
+    "foundB": true,
+    "drop": false,
+    "keyA": "7A",
+    "keyB": "6A",
+    "keySrc": "measured"
+   },
+   "latency_ms": 182.9,
+   "placeA_ms": 0,
+   "placeB_ms": 4,
+   "beat": {
+    "n": 15,
+    "median_ms": -3.5,
+    "p90_abs_ms": 68.3,
+    "ibi_A_ms": 473.2,
+    "ibi_B_ms": 480.0
+   },
+   "bars": {
+    "n": 6,
+    "on_one": 0.5,
+    "median_ms": -3.0,
+    "beat_of_bar": [
+     1,
+     1,
+     1,
+     4,
+     2,
+     1
+    ],
+    "first_ms": 2.5,
+    "first_on_one": true
+   }
   }
  ]
 }
