@@ -1,24 +1,24 @@
 == parts/log-0.txt
-shard 0: 4 of 28 previews to analyse
-shard 0 done: 4 analysed, 4 grids
+shard 0: 5 of 40 previews to analyse
+shard 0 done: 5 analysed, 5 grids
 == parts/log-1.txt
-shard 1: 4 of 28 previews to analyse
-shard 1 done: 4 analysed, 4 grids
+shard 1: 5 of 40 previews to analyse
+shard 1 done: 5 analysed, 5 grids
 == parts/log-2.txt
-shard 2: 4 of 28 previews to analyse
-shard 2 done: 4 analysed, 4 grids
+shard 2: 5 of 40 previews to analyse
+shard 2 done: 5 analysed, 5 grids
 == parts/log-3.txt
-shard 3: 4 of 28 previews to analyse
-shard 3 done: 4 analysed, 4 grids
+shard 3: 5 of 40 previews to analyse
+shard 3 done: 5 analysed, 5 grids
 == parts/log-4.txt
-shard 4: 3 of 28 previews to analyse
-shard 4 done: 3 analysed, 3 grids
+shard 4: 5 of 40 previews to analyse
+shard 4 done: 5 analysed, 5 grids
 == parts/log-5.txt
-shard 5: 3 of 28 previews to analyse
-shard 5 done: 3 analysed, 3 grids
+shard 5: 5 of 40 previews to analyse
+shard 5 done: 5 analysed, 5 grids
 == parts/log-6.txt
-shard 6: 3 of 28 previews to analyse
-shard 6 done: 3 analysed, 3 grids
+shard 6: 5 of 40 previews to analyse
+shard 6 done: 5 analysed, 4 grids
 == parts/log-7.txt
-shard 7: 3 of 28 previews to analyse
-shard 7 done: 3 analysed, 3 grids
+shard 7: 5 of 40 previews to analyse
+shard 7 done: 5 analysed, 5 grids
