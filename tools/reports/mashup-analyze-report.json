@@ -1,7 +1,7 @@
 {
- "generated": "2026-10-23T02:37:55+00:00",
+ "generated": "2026-10-31T15:56:31+00:00",
  "analysis": {
-  "generated": "2026-10-23T02:37:55+00:00",
+  "generated": "2026-10-31T15:56:31+00:00",
   "v": 2,
   "tracks": 1221,
   "ok": 1221,
@@ -10,14 +10,14 @@
  },
  "key_vs_catalog": {
   "essentia": {
-   "n": 1205,
-   "exact": 674,
-   "near": 896
+   "n": 1221,
+   "exact": 789,
+   "near": 964
   },
   "numpy_only": {
-   "n": 12,
-   "exact": 5,
-   "near": 6
+   "n": 24,
+   "exact": 10,
+   "near": 15
   }
  },
  "links": [
@@ -148,13 +148,13 @@
   },
   {
    "link": "Move | Adam Port, Stryv, Keinemusik, Orso, Malachiii || זז בטירוף | איתי לוי",
-   "a": 2,
-   "b": 0
+   "a": 3,
+   "b": 1
   },
   {
    "link": "ימים יגידו | אייל גולן || Brighter Days | Cajmere, Dajae",
    "a": 0,
-   "b": 6
+   "b": 5
   },
   {
    "link": "זה הזמן לסלוח | יואב יצחק || It's That Time (FISHER Remix) | Marlon Hoffstadt, FISHER",
@@ -163,7 +163,7 @@
   },
   {
    "link": "Waiting For Tonight | FISHER, Jennifer Lopez || עד שהגעת | יואב יצחק",
-   "a": 2,
+   "a": 3,
    "b": 2
   },
   {
@@ -224,7 +224,7 @@
   {
    "link": "Truth or Dare | Tyla || אמת או חובה | ריקי גל",
    "a": 2,
-   "b": 5
+   "b": 4
   },
   {
    "link": "לא יוצאת לי מהראש | זוהר אשירוב || Can't Get You Out Of My Head | Gabriel Wittner, Kayote, YRIQUE",
@@ -234,7 +234,7 @@
   {
    "link": "בלעדייך | אייל גולן || Contigo | SHADU",
    "a": 0,
-   "b": 0
+   "b": 1
   },
   {
    "link": "נצח לצידך | עומר אדם || By Your Side | Calvin Harris, Tom Grennan",
@@ -259,7 +259,7 @@
   {
    "link": "Scream | Usher || Shout | Marasi, Core music",
    "a": 1,
-   "b": 3
+   "b": 4
   },
   {
    "link": "ONE CALL | Tyla, Omah Lay, SPINALL || 10 Missed Calls | Black Coffee, Pharrell Williams, Jozzy",
@@ -269,7 +269,7 @@
   {
    "link": "Telephone | Lady Gaga, Beyoncé || הלו הלו | עדן בן זקן",
    "a": 1,
-   "b": 2
+   "b": 1
   },
   {
    "link": "Llamado de Emergencia | Daddy Yankee || 911 | Sech",
@@ -294,7 +294,7 @@
   {
    "link": "Despacito | Luis Fonsi, Daddy Yankee || Push The Tempo | Sub Focus",
    "a": 4,
-   "b": 4
+   "b": 1
   },
   {
    "link": "כוסות ריקות | סטטיק ובן אל, ליאור נרקיס || Pour It Up | Rihanna",
@@ -369,12 +369,12 @@
   {
    "link": "Take It (Extended) | Dom Dolla || TAKE IT OFF | FISHER, AATIG",
    "a": 4,
-   "b": 0
+   "b": 1
   },
   {
    "link": "Turn off the Lights (Extended) | Chris Lake, Alexis Roberts || Turn On The Lights again.. | Fred again.., Swedish House Mafia, Future",
    "a": 0,
-   "b": 4
+   "b": 3
   },
   {
    "link": "Marea (we've lost dancing) | Fred again.., The Blessed Madonna || We Dance Again | Black Coffee, Nakhane",
@@ -393,7 +393,7 @@
   },
   {
    "link": "Further Up (Na, Na, Na, Na, Na) | סטטיק ובן אל, Pitbull || (It Goes Like) Nanana | Peggy Gou",
-   "a": 6,
+   "a": 2,
    "b": 6
   },
   {
@@ -429,7 +429,7 @@
   {
    "link": "פסיכולוגית | אודיה || Psycho | Chris Lake",
    "a": 1,
-   "b": 3
+   "b": 1
   },
   {
    "link": "Not An Angel | Tems || Angel | Sonny Fodera, Clementine Douglas",
@@ -473,8 +473,8 @@
   },
   {
    "link": "Sha La La | עידו שוהם, רועי מכלוף || LaLaLa | Black Coffee, Usher",
-   "a": 1,
-   "b": 1
+   "a": 4,
+   "b": 0
   },
   {
    "link": "מסיבה עם פפיון | אייל גולן, ליאור נרקיס || Dress Code (Extended) | Mau P",
@@ -495,13 +495,1058 @@
    "link": "Two Zulu Men In Ibiza | Enoo Napa, DJ Merlon || Alma de Ibiza (WEPA) | Kayote, LonelyBrothers, Kush Rust",
    "a": 0,
    "b": 0
+  },
+  {
+   "link": "DXB to TLV | עומר אדם || תל אביב | עומר אדם",
+   "a": 0,
+   "b": 4
+  },
+  {
+   "link": "הולכים להשתגע | אייל גולן, משה פרץ || Go Crazy | Chris Brown, Young Thug",
+   "a": 1,
+   "b": 1
+  },
+  {
+   "link": "With You | Chris Brown || Contigo | SHADU",
+   "a": 1,
+   "b": 1
+  },
+  {
+   "link": "Addicted To You | Avicii || Adicto | Tainy, Anuel AA, Ozuna",
+   "a": 1,
+   "b": 2
+  },
+  {
+   "link": "Si Te Vas | Sech, Ozuna || אם את כבר הולכת | נדב חנציס",
+   "a": 1,
+   "b": 1
+  },
+  {
+   "link": "Sigo Extrañándote | J Balvin || את חסרה לי | עדן חסון",
+   "a": 0,
+   "b": 1
+  },
+  {
+   "link": "מה שהיה | חיים ישראל || Lo Que Pasó, Pasó | Daddy Yankee",
+   "a": 1,
+   "b": 1
+  },
+  {
+   "link": "גן עדן | איתי לוי || Paradise | Purple Disco Machine, Benjamin Ingrosso",
+   "a": 1,
+   "b": 0
+  },
+  {
+   "link": "Tudo Bom | סטטיק ובן אל || Hakol Letova | סטטיק ובן אל",
+   "a": 5,
+   "b": 0
+  },
+  {
+   "link": "Zahav | סטטיק ובן אל || Golden Boy | נדב גדג'",
+   "a": 3,
+   "b": 0
+  },
+  {
+   "link": "השמלה החדשה שלי | רן דנקר || Dress Code (Extended) | Mau P",
+   "a": 0,
+   "b": 2
+  },
+  {
+   "link": "מחפש את הדרך | איציק קלה || Find The Way | Peggy Gou",
+   "a": 0,
+   "b": 3
+  },
+  {
+   "link": "Strangers (Extended) | Dom Dolla, Mansionair || שני זרים | התאומים",
+   "a": 1,
+   "b": 0
+  },
+  {
+   "link": "Copines | Aya Nakamura || חברות שלך | עומר אדם",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "אנא מג'נונה | עדן בן זקן || משוגעת | גל אדם, NOROZ",
+   "a": 4,
+   "b": 0
+  },
+  {
+   "link": "Nostalgia (Extended) | Sammy Virji || געגועים | יואב יצחק",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "פני מלאך | יואב יצחק || Angel | Sonny Fodera, Clementine Douglas",
+   "a": 2,
+   "b": 1
+  },
+  {
+   "link": "הסוד | שרית חדד, סאבלימינל || Secret ID | Da Capo, Moojo",
+   "a": 2,
+   "b": 0
+  },
+  {
+   "link": "In Silence | Amelie Lens || שובר שתיקה | מושיק עפיה",
+   "a": 3,
+   "b": 1
+  },
+  {
+   "link": "LUNA | Feid || Moonlight | Sammy Virji",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "Mar | Romeo Santos || שמש ים | פאר טסי",
+   "a": 1,
+   "b": 0
+  },
+  {
+   "link": "La Playa | Myke Towers || כביש החוף | סטטיק ובן אל",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "Nights In The Sun | Wizkid || שמש שזורחת עליי | רביד פלוטניק",
+   "a": 1,
+   "b": 0
+  },
+  {
+   "link": "City Boys | Burna Boy || כל העיר שלנו | עדן בן זקן, פאר טסי",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "Lonely Together | Avicii, Rita Ora || בודד בעיר הגדולה | אייל גולן",
+   "a": 2,
+   "b": 0
+  },
+  {
+   "link": "נרקומן של בדידות | עומר אדם || Scared to Be Lonely | Martin Garrix, Dua Lipa",
+   "a": 1,
+   "b": 2
+  },
+  {
+   "link": "שישי בצהריים | אייל גולן || Freaky Friday | Lil Dicky, Chris Brown",
+   "a": 1,
+   "b": 0
+  },
+  {
+   "link": "Freaky Friday | Lil Dicky, Chris Brown || השבת שלי | חיים ישראל",
+   "a": 0,
+   "b": 1
+  },
+  {
+   "link": "הולכים להשתגע | אייל גולן, משה פרץ || Don't Go Mad | Swedish House Mafia, Playboi Carti",
+   "a": 1,
+   "b": 0
+  },
+  {
+   "link": "אל תכעס | The Ultras, שקד קוממי, אלי פרץ || לא כועס | נאור כהן",
+   "a": 0,
+   "b": 1
+  },
+  {
+   "link": "Not Afraid | Eminem || ממה את מפחדת | אייל גולן, בניה ברבי",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "בחורים טובים | עומר אדם || בחורות טובות | שרית חדד, אודיה",
+   "a": 0,
+   "b": 1
+  },
+  {
+   "link": "מי תרצי שאהיה | יואב יצחק || מי אני | פאר טסי",
+   "a": 0,
+   "b": 5
+  },
+  {
+   "link": "U Don't Have to Call | Usher || הלו הלו | עדן בן זקן",
+   "a": 0,
+   "b": 1
+  },
+  {
+   "link": "NOKIA | Drake || Telephone | Lady Gaga, Beyoncé",
+   "a": 0,
+   "b": 1
+  },
+  {
+   "link": "My Boo | Usher, Alicia Keys || Not Gonna Be Your Boo | Cloonee, Robin S",
+   "a": 0,
+   "b": 1
+  },
+  {
+   "link": "Needed Me | Rihanna || You Need Me | Black Coffee, Maxine Ashley, Sun-El Musician",
+   "a": 0,
+   "b": 3
+  },
+  {
+   "link": "Solo Conmigo | Romeo Santos || Contigo | SHADU",
+   "a": 0,
+   "b": 1
+  },
+  {
+   "link": "JOY (By My Side) | Sammy Virji || By Your Side | Calvin Harris, Tom Grennan",
+   "a": 1,
+   "b": 0
+  },
+  {
+   "link": "Need U (100%) | Duke Dumont, A*M*E || You Need Me | Black Coffee, Maxine Ashley, Sun-El Musician",
+   "a": 2,
+   "b": 3
+  },
+  {
+   "link": "Piece Of Your Heart (James Hype Remix) | Meduza, Goodboys || Piece of My Heart | Wizkid, Brent Faiyaz",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "DXB to TLV | עומר אדם || לונדון דובאי | קפליו",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "יאללה ביי אני נוסעת לדובאי | רינת בר || לונדון דובאי | קפליו",
+   "a": 2,
+   "b": 0
+  },
+  {
+   "link": "לונדון | אודיה || לונדון דובאי | קפליו",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "Miami 2 Ibiza | Swedish House Mafia, Tinie Tempah || Alma de Ibiza (WEPA) | Kayote, LonelyBrothers, Kush Rust",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "אולי הלילה | משה פרץ || לילה שלי | פרויקט רביבו",
+   "a": 1,
+   "b": 6
+  },
+  {
+   "link": "7 לילות | ליאם גולן || LA NOCHE (Extended) | Chris Lake",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "UNA NOCHE EN MEDELLÍN (Remix) | Cris MJ, Karol G || LA NOCHE (Extended) | Chris Lake",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "Too Many Nights | Metro Boomin, Future, Don Toliver || 7 לילות | ליאם גולן",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "Lose Ya Breath | Anitta || Breathe | Blu Cantrell, Sean Paul",
+   "a": 1,
+   "b": 4
+  },
+  {
+   "link": "Take My Breath | The Weeknd || Breathe | CamelPhat, Cristoph, Jem Cooke",
+   "a": 2,
+   "b": 2
+  },
+  {
+   "link": "Locked out of Heaven | Bruno Mars || Heaven | Avicii",
+   "a": 2,
+   "b": 0
+  },
+  {
+   "link": "Heaven | Avicii || Heaven Takes You Home | Swedish House Mafia, Connie Constance",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "Find My Way Home | Sammy Virji || לשוב הביתה | ישי ריבו",
+   "a": 2,
+   "b": 0
+  },
+  {
+   "link": "את לי הבית | אביהו מדינה, יואב יצחק || Home | Martin Garrix, Bonn",
+   "a": 0,
+   "b": 3
+  },
+  {
+   "link": "מרצדס שחורה | עדן בן זקן || ב.מ.וו. שחורה | אתניקס",
+   "a": 1,
+   "b": 0
+  },
+  {
+   "link": "TESLA | Mau P || מרצדס שחורה | עדן בן זקן",
+   "a": 0,
+   "b": 1
+  },
+  {
+   "link": "NISSAN ALTIMA | Doechii || TESLA | Mau P",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "וודקה ראשן | רואי אדם || טקילה | עומר אדם",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "כוסות ריקות | סטטיק ובן אל, ליאור נרקיס || טקילה | עומר אדם",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "יהלום מעבדה | נסרין קדרי || Diamonds | Rihanna",
+   "a": 1,
+   "b": 2
+  },
+  {
+   "link": "יהלום מעבדה | נסרין קדרי || לקנות לך יהלום | אייל גולן",
+   "a": 1,
+   "b": 0
+  },
+  {
+   "link": "מלכת הקרח | נתנאל דהאן || המלכה של השכונה | עומר אדם",
+   "a": 1,
+   "b": 0
+  },
+  {
+   "link": "מלך העולם - רמיקס | חיים ישראל || אתה המלך | אייל גולן, חיים ישראל",
+   "a": 3,
+   "b": 0
+  },
+  {
+   "link": "מלך העולם - רמיקס | חיים ישראל || Save The World (Extended) | Swedish House Mafia",
+   "a": 4,
+   "b": 0
+  },
+  {
+   "link": "עד סוף העולם | חיים משה || Save The World (Extended) | Swedish House Mafia",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "In Your Eyes | The Weeknd || המבט בעיניך | אגם בוחבוט",
+   "a": 2,
+   "b": 0
+  },
+  {
+   "link": "דבר אליי עם העיניים | עדן בן זקן || In Your Eyes | The Weeknd",
+   "a": 0,
+   "b": 2
+  },
+  {
+   "link": "נועצת מבט | עומר אדם || המבט בעיניך | אגם בוחבוט",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "Blinding Lights | The Weeknd || Turn On The Lights again.. | Fred again.., Swedish House Mafia, Future",
+   "a": 2,
+   "b": 3
+  },
+  {
+   "link": "האור שבעיניים | אייל גולן || Blinding Lights | The Weeknd",
+   "a": 1,
+   "b": 1
+  },
+  {
+   "link": "All Of The Lights | Kanye West || Blinding Lights | The Weeknd",
+   "a": 0,
+   "b": 1
+  },
+  {
+   "link": "Flashing Lights | Kanye West || Blinding Lights | The Weeknd",
+   "a": 0,
+   "b": 1
+  },
+  {
+   "link": "El Apagón | Bad Bunny || Turn off the Lights (Extended) | Chris Lake, Alexis Roberts",
+   "a": 0,
+   "b": 1
+  },
+  {
+   "link": "Clara (the night is dark) | Fred again.. || In the Dark | Purple Disco Machine, Sophie and the Giants",
+   "a": 0,
+   "b": 1
+  },
+  {
+   "link": "Moth To A Flame | Swedish House Mafia, The Weeknd || Stop This Flame (MK Remix) | Celeste, MK",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "Dancing In The Flames | The Weeknd || Moth To A Flame | Swedish House Mafia, The Weeknd",
+   "a": 1,
+   "b": 0
+  },
+  {
+   "link": "Love Is Gone | David Guetta || Gone Gone Gone | David Guetta, Teddy Swims, Tones And I",
+   "a": 4,
+   "b": 0
+  },
+  {
+   "link": "Timeless | The Weeknd, Playboi Carti || הזמן שלנו | איתי לוי",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "High On Life | Martin Garrix, Bonn || חיים מאושרים | עדן בן זקן",
+   "a": 3,
+   "b": 2
+  },
+  {
+   "link": "Go Crazy | Chris Brown, Young Thug || ילדה משוגעת | רואי אדם",
+   "a": 1,
+   "b": 2
+  },
+  {
+   "link": "Crazy Tings | Tems || משוגעת | גל אדם, NOROZ",
+   "a": 3,
+   "b": 0
+  },
+  {
+   "link": "מטורפת | רואי אדם, ציון ברוך || זז בטירוף | איתי לוי",
+   "a": 1,
+   "b": 1
+  },
+  {
+   "link": "תזיזו | עדן בן זקן || Move | Adam Port, Stryv, Keinemusik, Orso, Malachiii",
+   "a": 1,
+   "b": 3
+  },
+  {
+   "link": "תזיזו | עדן בן זקן || Move Your Body To The Beat | Reinier Zonneveld",
+   "a": 1,
+   "b": 1
+  },
+  {
+   "link": "ROKEDET | עופר ניסים, אניה בוקשטיין || Dance The Night | Dua Lipa",
+   "a": 0,
+   "b": 1
+  },
+  {
+   "link": "רוקד לי על העצב | מור || We Dance Again | Black Coffee, Nakhane",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "D.A.N.C.E (Extended) | Peggy Gou || Dance The Night | Dua Lipa",
+   "a": 6,
+   "b": 1
+  },
+  {
+   "link": "Baila Baila Baila | Ozuna || Bailando (English Version) | Enrique Iglesias, Sean Paul, Descemer Bueno, Gente De Zona",
+   "a": 6,
+   "b": 5
+  },
+  {
+   "link": "הגענו הבנות | עדן בן זקן || Run the World (Girls) | Beyoncé",
+   "a": 1,
+   "b": 1
+  },
+  {
+   "link": "שלושה בנות | נועה קירל, גיטית פישר || Yeah The Girls (Extended) | FISHER, MERYLL",
+   "a": 2,
+   "b": 0
+  },
+  {
+   "link": "Only Girl (In The World) | Rihanna || Run the World (Girls) | Beyoncé",
+   "a": 2,
+   "b": 1
+  },
+  {
+   "link": "Hakol Letova | סטטיק ובן אל || כל עכבה לטובה | בן צור",
+   "a": 0,
+   "b": 2
+  },
+  {
+   "link": "מוזיקה טובה | פאר טסי || House Music | Boris Brejcha, Arctic Lake",
+   "a": 0,
+   "b": 1
+  },
+  {
+   "link": "מוזיקה טובה | פאר טסי || Don't Stop The Music | Rihanna",
+   "a": 0,
+   "b": 2
+  },
+  {
+   "link": "מסיבה בחיפה | The Ultras, איתי לוי || מסיבת רווקים | איתי לוי",
+   "a": 1,
+   "b": 1
+  },
+  {
+   "link": "מסיבת רווקים | איתי לוי || Single Ladies (Put a Ring on It) | Beyoncé",
+   "a": 1,
+   "b": 0
+  },
+  {
+   "link": "ילדה סוכר | מוקי || 2 Sugar | Wizkid, Ayra Starr",
+   "a": 0,
+   "b": 3
+  },
+  {
+   "link": "שאנל אזולאי | אודיה || CHANEL | Tyla",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "לורו פיאנה | רואי אדם || שאנל אזולאי | אודיה",
+   "a": 2,
+   "b": 0
+  },
+  {
+   "link": "פלוס אחד | מרגי || 1+1=11 | Peggy Gou, Lenny Kravitz",
+   "a": 1,
+   "b": 0
+  },
+  {
+   "link": "מיליון סיבות | יואב יצחק || מיליון מילים | מיכאל לוי",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "אחת ממיליון | רון חיון || מיליון סיבות | יואב יצחק",
+   "a": 2,
+   "b": 0
+  },
+  {
+   "link": "אז יאללה | ליאור נרקיס || יאללה ביי אני נוסעת לדובאי | רינת בר",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "Welcome To Israel | חיים ישראל || עם ישראל חי | אייל גולן",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "Jerusalema (Remix) | Master KG, Burna Boy, Nomcebo Zikode || Welcome To Israel | חיים ישראל",
+   "a": 2,
+   "b": 0
+  },
+  {
+   "link": "שלום עליכם | איציק קלה || שלום לך | עומר אדם",
+   "a": 3,
+   "b": 0
+  },
+  {
+   "link": "Asibe Happy | Kabza De Small, DJ Maphorisa || שמח | חיים ישראל",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "תן לנו שמחה | מתן חסן || מהפכה של שמחה | עומר אדם, ליאור נרקיס",
+   "a": 2,
+   "b": 0
+  },
+  {
+   "link": "תשמח | עומר אדם || ושמחת | חיים ישראל",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "Felices los 4 | Maluma || מאושרים | פאר טסי, טליסמאן",
+   "a": 6,
+   "b": 0
+  },
+  {
+   "link": "Love Me | Lil Wayne, Drake, Future || תמיד אוהב אותי | ששון איפרם שאולוב",
+   "a": 0,
+   "b": 2
+  },
+  {
+   "link": "In My Head (Extended) | Chris Lake || מדוע אין לי שקט בראש | פאר טסי",
+   "a": 1,
+   "b": 0
+  },
+  {
+   "link": "Voices In My Head (Extended) | Anyma || In My Head (Extended) | Chris Lake",
+   "a": 6,
+   "b": 1
+  },
+  {
+   "link": "WTF | עדן בן זקן || WTF | HUGEL, Amber Van Day",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "קסם | עומר אדם, איציק קלה || Abracadabra | Lady Gaga",
+   "a": 4,
+   "b": 5
+  },
+  {
+   "link": "מכשפה | סטטיק, עדי ביטי || Abracadabra | Lady Gaga",
+   "a": 1,
+   "b": 5
+  },
+  {
+   "link": "24K Magic | Bruno Mars || קסם | עומר אדם, איציק קלה",
+   "a": 1,
+   "b": 4
+  },
+  {
+   "link": "People | Libianca || People Talk People Sing | Mau P",
+   "a": 6,
+   "b": 1
+  },
+  {
+   "link": "People Talk People Sing | Mau P || מדברים | נועה קירל",
+   "a": 1,
+   "b": 1
+  },
+  {
+   "link": "Superman | Eminem || Superman | Black Coffee",
+   "a": 1,
+   "b": 0
+  },
+  {
+   "link": "The Monster | Eminem, Rihanna || Scary Monsters and Nice Sprites | Skrillex",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "Mockingbird | Eminem || Mockingbird | Moojo",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "Angels Never Die | Indira Paganotto || Angel | Sonny Fodera, Clementine Douglas",
+   "a": 0,
+   "b": 1
+  },
+  {
+   "link": "פני מלאך | יואב יצחק || Angels Never Die | Indira Paganotto",
+   "a": 2,
+   "b": 0
+  },
+  {
+   "link": "Pon de Replay | Rihanna || Replay | Tems",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "Burn | Usher || Burning | Tems",
+   "a": 1,
+   "b": 5
+  },
+  {
+   "link": "Loyal | Chris Brown, Lil Wayne, Tyga || Perro Fiel | Shakira, Nicky Jam",
+   "a": 3,
+   "b": 1
+  },
+  {
+   "link": "Forever | Chris Brown || לנצח תישאר | משה פרץ",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "Good Days | SZA || ימים יגידו | אייל גולן",
+   "a": 0,
+   "b": 2
+  },
+  {
+   "link": "Me Enamoré | Shakira || טיפש או מאוהב | קורל חצבני",
+   "a": 1,
+   "b": 1
+  },
+  {
+   "link": "Hey Mama | David Guetta, Nicki Minaj, Bebe Rexha, Afrojack || מאמי | איציק קלה",
+   "a": 2,
+   "b": 2
+  },
+  {
+   "link": "Maman - מאמו | איתי לוי || מאמי | אודיה",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "Nice & Slow | Usher || Despacito | Luis Fonsi, Daddy Yankee",
+   "a": 1,
+   "b": 4
+  },
+  {
+   "link": "SOS | Avicii, Aloe Blacc || Llamado de Emergencia | Daddy Yankee",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "SOS | Avicii, Aloe Blacc || 911 | Sech",
+   "a": 0,
+   "b": 2
+  },
+  {
+   "link": "Waiting For Love (Extended) | Avicii || Waiting For Tonight | FISHER, Jennifer Lopez",
+   "a": 2,
+   "b": 2
+  },
+  {
+   "link": "There for You | Martin Garrix, Troye Sivan || There For You (Extended) | Gorgon City, MK",
+   "a": 2,
+   "b": 2
+  },
+  {
+   "link": "She Wolf (Falling to Pieces) (Extended) | David Guetta, Sia || She Wolf | Shakira",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "Papillon | ARTBAT || Butterflies | Tyla",
+   "a": 0,
+   "b": 1
+  },
+  {
+   "link": "Hypnotized | Anyma || Hypnotized (Extended) | Purple Disco Machine, Sophie and the Giants",
+   "a": 0,
+   "b": 1
+  },
+  {
+   "link": "Lions in the Wild | Martin Garrix, Tiësto || Lions Of God | Indira Paganotto",
+   "a": 3,
+   "b": 0
+  },
+  {
+   "link": "Trouble | Sub Focus || אל תעשי לו צרות | אושר כהן",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "Trouble | Sub Focus || Trouble Maker | Rema",
+   "a": 0,
+   "b": 1
+  },
+  {
+   "link": "Fever | Vybz Kartel || טמפרטורה | עומר אדם, Richie Loop",
+   "a": 5,
+   "b": 0
+  },
+  {
+   "link": "Shake It To The Max (FLY) (Remix) | Moliy, Silent Addy, Skillibeng, Shenseea || Shake Ya Boom Boom | סטטיק ובן אל, Black Eyed Peas",
+   "a": 6,
+   "b": 2
+  },
+  {
+   "link": "Gata | Anitta, Chencho Corleone || Un Gatito Me Llamó | Karol G",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "Relación | Sech || קשר רציני | מוטי טקה",
+   "a": 1,
+   "b": 1
+  },
+  {
+   "link": "Somos de Calle | Daddy Yankee || ברחובות של תל אביב | עדן בן זקן",
+   "a": 1,
+   "b": 0
+  },
+  {
+   "link": "LALA | Myke Towers || LaLaLa | Black Coffee, Usher",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "Touching The Sky | Rauw Alejandro || Sky | Playboi Carti",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "Feel So Close (Extended) | Calvin Harris || קרוב אלייך | עומר אדם",
+   "a": 1,
+   "b": 1
+  },
+  {
+   "link": "Friends (Extended) | Meduza, Hayla || חברות שלך | עומר אדם",
+   "a": 2,
+   "b": 0
+  },
+  {
+   "link": "Born To Love (Extended) | Meduza, SHELLS || נולדת בשבילי | אייל גולן",
+   "a": 2,
+   "b": 0
+  },
+  {
+   "link": "Drugs From Amsterdam (Extended) | Mau P || A Drug From God | Chris Lake, NPC",
+   "a": 0,
+   "b": 1
+  },
+  {
+   "link": "The Power | Duke Dumont, Zak Abel || POWER | Kanye West",
+   "a": 0,
+   "b": 2
+  },
+  {
+   "link": "This Feeling | Vintage Culture, Goodboys || You Give Me A Feeling | Vintage Culture, James Hype",
+   "a": 4,
+   "b": 1
+  },
+  {
+   "link": "Never Be Alone | Sonny Fodera, Becky Hill || I'm Not Alone | Calvin Harris",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "Panic Room | CamelPhat, Au/Ra || No Room For A Saint | Dom Dolla, Nathan Nicholson",
+   "a": 2,
+   "b": 1
+  },
+  {
+   "link": "Disco Inferno | 50 Cent || Inferno (Space 92 Remix) | Carl Cox, Reinier Zonneveld, Christopher Coe",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "Bitch Better Have My Money | Rihanna || Bank Account | 21 Savage",
+   "a": 2,
+   "b": 0
+  },
+  {
+   "link": "All My Life | Lil Durk, J. Cole || את החיים שלי | לידור בן ישי, קורל חצבני",
+   "a": 0,
+   "b": 1
+  },
+  {
+   "link": "מסיבות של מסכות | בן אל || Mask Off | Future",
+   "a": 3,
+   "b": 4
+  },
+  {
+   "link": "גשם מתוק | סטטיק ובן אל, רמי קלינשטיין || Rain On Me | Lady Gaga, Ariana Grande",
+   "a": 0,
+   "b": 5
+  },
+  {
+   "link": "Sweet Nothing (Extended) | Calvin Harris, Florence Welch || גשם מתוק | סטטיק ובן אל, רמי קלינשטיין",
+   "a": 4,
+   "b": 0
+  },
+  {
+   "link": "Heart Upon My Sleeve | Avicii || Beat Of Your Heart | Purple Disco Machine",
+   "a": 0,
+   "b": 1
+  },
+  {
+   "link": "Beat Of Your Heart | Purple Disco Machine || קעקוע על הלב | איתי לוי",
+   "a": 1,
+   "b": 0
+  },
+  {
+   "link": "Broken Clocks | SZA || שבורים | אופל רביבו",
+   "a": 1,
+   "b": 0
+  },
+  {
+   "link": "FRIKI | Karol G, Feid || Freaks (Extended) | FISHER",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "Too Busy To Be Bae (Francis Mercier Remix) | Kizz Daniel, Francis Mercier || Get Busy | Sean Paul",
+   "a": 5,
+   "b": 0
+  },
+  {
+   "link": "Taste | Sabrina Carpenter || TASTE | Uncle Waffles",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "Die With A Smile | Lady Gaga, Bruno Mars || Danielle (smile on my face) | Fred again..",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "Stupid Love | Lady Gaga || Get Stupid | Cloonee",
+   "a": 2,
+   "b": 1
+  },
+  {
+   "link": "Higher Ground | Martin Garrix, John Martin || Higher | Burna Boy",
+   "a": 1,
+   "b": 0
+  },
+  {
+   "link": "Falling For You (Extended) | Amelie Lens || I'm Fallin' | Black Coffee, RY X",
+   "a": 1,
+   "b": 1
+  },
+  {
+   "link": "Forbidden Voices | Martin Garrix || Voices In My Head (Extended) | Anyma",
+   "a": 0,
+   "b": 6
+  },
+  {
+   "link": "Piece of Me (Extended) | MK, Becky Hill || Piece Of Your Heart (James Hype Remix) | Meduza, Goodboys",
+   "a": 1,
+   "b": 0
+  },
+  {
+   "link": "Miracle | Calvin Harris, Ellie Goulding || Miracle Maker (Extended) | Dom Dolla, Clementine Douglas",
+   "a": 1,
+   "b": 0
+  },
+  {
+   "link": "Thinking About You | Calvin Harris, Ayah Marar || Think Of Me | HUGEL, David Guetta, Kehlani, Daecolm",
+   "a": 0,
+   "b": 3
+  },
+  {
+   "link": "Gimme That Bounce | Mau P || Bounce | Rema",
+   "a": 0,
+   "b": 5
+  },
+  {
+   "link": "THANK GOD | Travis Scott || God's Plan | Drake",
+   "a": 1,
+   "b": 0
+  },
+  {
+   "link": "WAIT FOR U | Future, Drake, Tems || Waiting For Tonight | FISHER, Jennifer Lopez",
+   "a": 0,
+   "b": 2
+  },
+  {
+   "link": "All The Stars | Kendrick Lamar, SZA || Starry Night | Peggy Gou",
+   "a": 4,
+   "b": 0
+  },
+  {
+   "link": "HIGHEST IN THE ROOM | Travis Scott || Higher | Burna Boy",
+   "a": 1,
+   "b": 0
+  },
+  {
+   "link": "BUTTERFLY EFFECT | Travis Scott || Papillon | ARTBAT",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "Efecto | Bad Bunny || BUTTERFLY EFFECT | Travis Scott",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "Disco Boy | Disco Lines || Disco Inferno | 50 Cent",
+   "a": 1,
+   "b": 0
+  },
+  {
+   "link": "Champion | Rampa, Keinemusik, Sparrow & Barbossa || Champion Sound | Davido, Focalistic",
+   "a": 4,
+   "b": 1
+  },
+  {
+   "link": "שבורים | אופל רביבו || תשבור לי ת'לב | אודיה",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "במילים את מנצחת | רובי לוי || הלילה אתה מנצח | תום אבני",
+   "a": 0,
+   "b": 1
+  },
+  {
+   "link": "צמאה לאהבה | לירן דנינו || נשמות צמאות | בן צור",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "רוב השעות | עידן רייכל || השעות הקטנות | שילה בן סעדון",
+   "a": 0,
+   "b": 1
+  },
+  {
+   "link": "באתי אלייך | אייל גולן || קרוב אלייך | עומר אדם",
+   "a": 1,
+   "b": 1
+  },
+  {
+   "link": "רציתי שתבואי | אדיר גץ || תבואי היום | אייל גולן",
+   "a": 1,
+   "b": 1
+  },
+  {
+   "link": "סיפור ישן | יואב יצחק || סיפור אהבה | מוטי טקה",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "החיים עוד לפנייך | זוהר אשירוב || החיים לפניי | עדן חסון, איתי גלו",
+   "a": 0,
+   "b": 1
+  },
+  {
+   "link": "זה הזמן לסלוח | יואב יצחק || אדון הסליחות | איציק קלה",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "אני מסתובב | נדב חנציס || סיבובים | עדן חסון",
+   "a": 0,
+   "b": 6
+  },
+  {
+   "link": "חצי דפוק | עומר אדם || חצי בן אדם | דודי בוזגלו",
+   "a": 2,
+   "b": 0
+  },
+  {
+   "link": "שיכורים מאהבה | עדן בן זקן || וודקה ראשן | רואי אדם",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "קירות | איתי לוי || חומות | יגל",
+   "a": 1,
+   "b": 0
+  },
+  {
+   "link": "יעשו לנו כבוד | עומר אדם || אין כבוד | אושר כהן",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "בואי ניפגש | פאר טסי || ניפגש בשמחות | עומר אדם",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "אז הלכתי | עומר אדם || כשאת הולכת | עומר אדם",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "Be Honest | Jorja Smith, Burna Boy || באמת של האמת | אושר כהן",
+   "a": 0,
+   "b": 0
+  },
+  {
+   "link": "Good Days | SZA || Brighter Days | Cajmere, Dajae",
+   "a": 0,
+   "b": 5
+  },
+  {
+   "link": "I Need It | Vintage Culture, OMRI., Dafna Shilon || If U Need It (Extended) | Sammy Virji",
+   "a": 0,
+   "b": 2
+  },
+  {
+   "link": "Say The Word | Chase & Status || כתבתי מילים | פאר טסי",
+   "a": 3,
+   "b": 0
+  },
+  {
+   "link": "כתבתי מילים | פאר טסי || מיליון מילים | מיכאל לוי",
+   "a": 0,
+   "b": 0
   }
  ],
  "discovered": {
   "links": 220,
-  "titles_heard": 2824,
-  "own_title_heard": 387,
-  "transcribed": 1104,
+  "titles_heard": 2749,
+  "own_title_heard": 377,
+  "transcribed": 1072,
   "top": [
    "Houdini | Dua Lipa → You Need Me | Black Coffee, Maxine Ashley, Sun-El Musician (You Need Me, 108.1)",
    "דבר אליי עם העיניים | עדן בן זקן → תרימו | עדן בן זקן (תרימו, 105.5)",
@@ -510,7 +1555,6 @@
    "Born This Way | Lady Gaga → The Nights (Extended) | Avicii (The Nights, 104.0)",
    "Amarillo | J Balvin → Me Gusta | Shakira, Anuel AA (Me Gusta, 102.8)",
    "Lay Me Down | Avicii → Show Me (Extended) | John Summit, Hannah Boleyn (Show Me, 102.5)",
-   "אולי הלילה | משה פרץ → אהבנו | חיים משה (אהבנו, 102.1)",
    "Backseat Freestyle | Kendrick Lamar → POWER | Kanye West (POWER, 101.9)",
    "Llamado de Emergencia | Daddy Yankee → Corazón | Maluma (Corazón, 101.5)",
    "Djadja | Aya Nakamura → Baby (Is it a Crime) | Rema (Baby, 101.4)",
@@ -527,20 +1571,21 @@
    "סיפור ישן | יואב יצחק → הלוואי | בועז שרעבי (הלוואי, 97.7)",
    "יש לי אותך | משה פרץ → הלוואי | בועז שרעבי (הלוואי, 97.7)",
    "מלכת הקרח | נתנאל דהאן → הלוואי | בועז שרעבי (הלוואי, 97.7)",
-   "NISSAN ALTIMA | Doechii → Water | Tyla (Water, 97.7)"
+   "NISSAN ALTIMA | Doechii → Water | Tyla (Water, 97.7)",
+   "You Make Me | Avicii → More (RedOne Jimmy Joker Remix) | Usher (More, 97.6)"
   ]
  },
  "words": {
-  "generated": "2026-10-23T02:37:55+00:00",
+  "generated": "2026-10-31T15:56:31+00:00",
   "v": 3,
-  "links": 95,
-  "both_found": 27,
+  "links": 304,
+  "both_found": 77,
   "discovered": 220,
   "note": "When each link's word is sung in each preview (seconds). Timestamps only; no lyrics are stored. disc: links found by listening (A's preview sings B's title, w = that title)."
  },
  "key_methods": {
   "e": 1221
  },
- "vocal_share_median": 0.642,
+ "vocal_share_median": 0.641,
  "errors": {}
 }

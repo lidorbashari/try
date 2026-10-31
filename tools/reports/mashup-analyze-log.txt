@@ -1,117 +1,451 @@
 == parts/alog-0.txt
-shard 0: 2 of 28 previews
-titles to listen for: 1206
+shard 0: 2 of 24 previews
+titles to listen for: 1205
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 whisper model: large-v3-turbo
-shard 0: 2/2 (36s) last: key 3A e vocal share 0.0 tuning -1 pitch 82 | titles heard so far 3
+shard 0: 2/2 (55s) last: key 3B e vocal share 0.804 tuning 17 pitch 59 | titles heard so far 4
 == parts/alog-1.txt
-shard 1: 2 of 28 previews
-titles to listen for: 1206
+shard 1: 2 of 24 previews
+titles to listen for: 1205
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
-whisper model: large-v3-turbo
-shard 1: 2/2 (71s) last: key 1A e vocal share 0.0 tuning 2 pitch 54 | titles heard so far 6
+whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
+shard 1: 2/2 (41s) last: key 9B e vocal share 0.613 tuning 0 pitch 56 | titles heard so far 4
 == parts/alog-10.txt
-shard 10: 1 of 28 previews
-titles to listen for: 1206
+shard 10: 1 of 24 previews
+titles to listen for: 1205
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 whisper model: large-v3-turbo
-shard 10: 1/1 (43s) last: key 6A e vocal share 0.296 tuning -2 pitch 58 | titles heard so far 0
+shard 10: 1/1 (49s) last: key 6A e vocal share 0.194 tuning -3 pitch 71 | titles heard so far 2
 == parts/alog-11.txt
-shard 11: 1 of 28 previews
-titles to listen for: 1206
+shard 11: 1 of 24 previews
+titles to listen for: 1205
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
-shard 11: 1/1 (23s) last: key 2B e vocal share 0.0 tuning -12 pitch 57 | titles heard so far 0
+whisper model: large-v3-turbo
+shard 11: 1/1 (64s) last: key 6B e vocal share 0.093 tuning 4 pitch 58 | titles heard so far 4
 == parts/alog-12.txt
-shard 12: 1 of 28 previews
-titles to listen for: 1206
+shard 12: 1 of 24 previews
+titles to listen for: 1205
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 whisper model: large-v3-turbo
-shard 12: 1/1 (54s) last: key 3A e vocal share None tuning None pitch 55 | titles heard so far 2
+shard 12: 1/1 (67s) last: key 4A e vocal share 0.667 tuning 1 pitch 59 | titles heard so far 3
 == parts/alog-13.txt
-shard 13: 1 of 28 previews
-titles to listen for: 1206
+shard 13: 1 of 24 previews
+titles to listen for: 1205
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
-shard 13: 1/1 (14s) last: key 6B e vocal share 0.019 tuning 13 pitch 58 | titles heard so far 0
+whisper model: large-v3-turbo
+shard 13: 1/1 (65s) last: key 9A e vocal share None tuning None pitch 63 | titles heard so far 1
 == parts/alog-14.txt
-shard 14: 1 of 28 previews
-titles to listen for: 1206
+shard 14: 1 of 24 previews
+titles to listen for: 1205
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 whisper model: large-v3-turbo
-shard 14: 1/1 (43s) last: key 4A e vocal share 0.037 tuning 19 pitch 41 | titles heard so far 0
+shard 14: 1/1 (62s) last: key 9A e vocal share 0.617 tuning -2 pitch 57 | titles heard so far 3
 == parts/alog-15.txt
-shard 15: 1 of 28 previews
-titles to listen for: 1206
+shard 15: 1 of 24 previews
+titles to listen for: 1205
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
-shard 15: 1/1 (24s) last: key 5B e vocal share 0.0 tuning -6 pitch 63 | titles heard so far 0
+whisper model: large-v3-turbo
+shard 15: 1/1 (60s) last: key 5B e vocal share 0.81 tuning -1 pitch 62 | titles heard so far 2
 == parts/alog-16.txt
-shard 16: 1 of 28 previews
-titles to listen for: 1206
+shard 16: 1 of 24 previews
+titles to listen for: 1205
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
-whisper model: large-v3-turbo
-shard 16: 1/1 (49s) last: key 4A e vocal share 0.759 tuning 1 pitch 60 | titles heard so far 0
+shard 16: 1/1 (22s) last: key 8A e vocal share 0.0 tuning -3 pitch 71 | titles heard so far 0
 == parts/alog-17.txt
-shard 17: 1 of 28 previews
-titles to listen for: 1206
+shard 17: 1 of 24 previews
+titles to listen for: 1205
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 whisper model: large-v3-turbo
-shard 17: 1/1 (57s) last: key 7A e vocal share 0.63 tuning 1 pitch 53 | titles heard so far 0
+shard 17: 1/1 (26s) last: key 5A e vocal share 0.56 tuning -2 pitch 63 | titles heard so far 3
 == parts/alog-18.txt
-shard 18: 1 of 28 previews
-titles to listen for: 1206
+shard 18: 1 of 24 previews
+titles to listen for: 1205
+Downloading: "https://dl.fbaipublicfiles.com/demucs/hybrid_transformer/955717e8-8726e21a.th" to /home/runner/.cache/torch/hub/checkpoints/955717e8-8726e21a.th
+  0%|          | 0.00/80.2M [00:00<?, ?B/s] 23%|██▎       | 18.4M/80.2M [00:00<00:00, 193MB/s] 62%|██████▏   | 49.4M/80.2M [00:00<00:00, 270MB/s] 94%|█████████▍| 75.2M/80.2M [00:00<00:00, 270MB/s]100%|██████████| 80.2M/80.2M [00:00<00:00, 263MB/s]
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 whisper model: large-v3-turbo
-shard 18: 1/1 (46s) last: key 5A e vocal share 0.037 tuning -14 pitch 61 | titles heard so far 1
+shard 18: 1/1 (53s) last: key 2A e vocal share 0.483 tuning -7 pitch 65 | titles heard so far 1
 == parts/alog-19.txt
-shard 19: 1 of 28 previews
-titles to listen for: 1206
+shard 19: 1 of 24 previews
+titles to listen for: 1205
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
-whisper model: large-v3-turbo
-shard 19: 1/1 (42s) last: key 2A e vocal share 0.527 tuning -14 pitch 59 | titles heard so far 0
+shard 19: 1/1 (24s) last: key 12A e vocal share 0.0 tuning 3 pitch 62 | titles heard so far 0
 == parts/alog-2.txt
-shard 2: 2 of 28 previews
-titles to listen for: 1206
+shard 2: 2 of 24 previews
+titles to listen for: 1205
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 whisper model: large-v3-turbo
-shard 2: 2/2 (71s) last: key 3A e vocal share 0.0 tuning 5 pitch 61 | titles heard so far 4
+shard 2: 2/2 (48s) last: key 7B e vocal share 0.339 tuning -11 pitch 53 | titles heard so far 3
 == parts/alog-3.txt
-shard 3: 2 of 28 previews
-titles to listen for: 1206
+shard 3: 2 of 24 previews
+titles to listen for: 1205
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 whisper model: large-v3-turbo
-shard 3: 2/2 (55s) last: key 8A e vocal share 0.0 tuning -32 pitch 57 | titles heard so far 2
+shard 3: 2/2 (60s) last: key 3A e vocal share 0.0 tuning 4 pitch 83 | titles heard so far 0
 == parts/alog-4.txt
-shard 4: 2 of 28 previews
-titles to listen for: 1206
+shard 4: 1 of 24 previews
+titles to listen for: 1205
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 whisper model: large-v3-turbo
-shard 4: 2/2 (87s) last: key 7B e vocal share 0.476 tuning -9 pitch 72 | titles heard so far 2
+shard 4: 1/1 (42s) last: key 8B e vocal share None tuning None pitch 58 | titles heard so far 3
 == parts/alog-5.txt
-shard 5: 2 of 28 previews
-titles to listen for: 1206
+shard 5: 1 of 24 previews
+titles to listen for: 1205
+Downloading: "https://dl.fbaipublicfiles.com/demucs/hybrid_transformer/955717e8-8726e21a.th" to /home/runner/.cache/torch/hub/checkpoints/955717e8-8726e21a.th
+  0%|          | 0.00/80.2M [00:00<?, ?B/s] 47%|████▋     | 37.4M/80.2M [00:00<00:00, 392MB/s]100%|██████████| 80.2M/80.2M [00:00<00:00, 427MB/s]
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
-whisper model: large-v3-turbo
-shard 5: 2/2 (49s) last: key 4A e vocal share 0.0 tuning -30 pitch 53 | titles heard so far 4
+shard 5: 1/1 (27s) last: key 8A e vocal share 0.0 tuning 4 pitch 62 | titles heard so far 0
 == parts/alog-6.txt
-shard 6: 2 of 28 previews
-titles to listen for: 1206
+shard 6: 1 of 24 previews
+titles to listen for: 1205
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 whisper model: large-v3-turbo
-shard 6: 2/2 (42s) last: key 2A e vocal share 0.0 tuning -4 pitch 58 | titles heard so far 3
+shard 6: 1/1 (43s) last: key 8B e vocal share None tuning None pitch 52 | titles heard so far 1
 == parts/alog-7.txt
-shard 7: 2 of 28 previews
-titles to listen for: 1206
+shard 7: 1 of 24 previews
+titles to listen for: 1205
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 whisper model: large-v3-turbo
-shard 7: 2/2 (88s) last: key 4B e vocal share 0.0 tuning -15 pitch 77 | titles heard so far 0
+shard 7: 1/1 (37s) last: key 8A e vocal share 0.984 tuning -2 pitch 56 | titles heard so far 1
 == parts/alog-8.txt
-shard 8: 1 of 28 previews
-titles to listen for: 1206
+shard 8: 1 of 24 previews
+titles to listen for: 1205
+Downloading: "https://dl.fbaipublicfiles.com/demucs/hybrid_transformer/955717e8-8726e21a.th" to /home/runner/.cache/torch/hub/checkpoints/955717e8-8726e21a.th
+  0%|          | 0.00/80.2M [00:00<?, ?B/s] 28%|██▊       | 22.6M/80.2M [00:00<00:00, 237MB/s] 72%|███████▏  | 57.6M/80.2M [00:00<00:00, 313MB/s]100%|██████████| 80.2M/80.2M [00:00<00:00, 324MB/s]
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 whisper model: large-v3-turbo
-shard 8: 1/1 (45s) last: key 11A e vocal share 0.245 tuning -2 pitch 56 | titles heard so far 0
+shard 8: 1/1 (61s) last: key 7A e vocal share 0.672 tuning -4 pitch 60 | titles heard so far 4
 == parts/alog-9.txt
-shard 9: 1 of 28 previews
-titles to listen for: 1206
+shard 9: 1 of 24 previews
+titles to listen for: 1205
 [   INFO   ] MusicExtractorSVM: no classifier models were configured by default
 whisper model: large-v3-turbo
-shard 9: 1/1 (49s) last: key 6A e vocal share 0.821 tuning -2 pitch 58 | titles heard so far 2
+shard 9: 1/1 (65s) last: key 4B e vocal share 0.978 tuning -4 pitch 56 | titles heard so far 2
+== parts/wlog-0.txt
+21/58 phrases found 0/1 (whisper runs 9)
+22/58 phrases found 1/1 (whisper runs 1)
+23/58 phrases found 0/1 (whisper runs 9)
+24/58 phrases found 0/1 (whisper runs 9)
+25/58 phrases found 0/1 (whisper runs 9)
+26/58 phrases found 1/1 (whisper runs 7)
+27/58 phrases found 2/2 (whisper runs 1)
+28/58 phrases found 0/1 (whisper runs 9)
+29/58 phrases found 0/1 (whisper runs 6)
+30/58 phrases found 1/1 (whisper runs 1)
+31/58 phrases found 1/1 (whisper runs 1)
+32/58 phrases found 0/1 (whisper runs 9)
+33/58 phrases found 0/1 (whisper runs 9)
+34/58 phrases found 1/1 (whisper runs 1)
+35/58 phrases found 1/1 (whisper runs 1)
+36/58 phrases found 0/2 (whisper runs 9)
+37/58 phrases found 1/1 (whisper runs 1)
+whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
+38/58 phrases found 0/1 (whisper runs 3)
+39/58 phrases found 0/1 (whisper runs 3)
+40/58 phrases found 0/1 (whisper runs 3)
+41/58 phrases found 1/1 (whisper runs 1)
+42/58 phrases found 0/1 (whisper runs 3)
+43/58 phrases found 2/2 (whisper runs 1)
+44/58 phrases found 1/1 (whisper runs 1)
+45/58 phrases found 0/2 (whisper runs 3)
+46/58 phrases found 0/2 (whisper runs 3)
+47/58 phrases found 1/1 (whisper runs 1)
+48/58 phrases found 0/1 (whisper runs 3)
+49/58 phrases found 0/1 (whisper runs 3)
+50/58 phrases found 0/1 (whisper runs 3)
+51/58 phrases found 2/2 (whisper runs 1)
+52/58 phrases found 2/2 (whisper runs 1)
+53/58 phrases found 1/1 (whisper runs 1)
+54/58 phrases found 0/1 (whisper runs 3)
+55/58 phrases found 1/1 (whisper runs 3)
+56/58 phrases found 0/2 (whisper runs 3)
+57/58 phrases found 0/2 (whisper runs 3)
+58/58 phrases found 1/1 (whisper runs 1)
+words stats: {'tracks': 58, 'phrases': 72, 'found': 35}
+== parts/wlog-1.txt
+21/58 phrases found 0/1 (whisper runs 9)
+22/58 phrases found 0/1 (whisper runs 9)
+23/58 phrases found 0/1 (whisper runs 9)
+24/58 phrases found 0/1 (whisper runs 9)
+25/58 phrases found 2/2 (whisper runs 1)
+26/58 phrases found 1/1 (whisper runs 4)
+27/58 phrases found 0/2 (whisper runs 9)
+28/58 phrases found 1/1 (whisper runs 9)
+29/58 phrases found 1/3 (whisper runs 9)
+30/58 phrases found 1/1 (whisper runs 1)
+31/58 phrases found 1/1 (whisper runs 1)
+32/58 phrases found 0/1 (whisper runs 9)
+33/58 phrases found 1/1 (whisper runs 1)
+34/58 phrases found 1/1 (whisper runs 6)
+35/58 phrases found 0/1 (whisper runs 9)
+36/58 phrases found 0/1 (whisper runs 9)
+37/58 phrases found 1/1 (whisper runs 1)
+whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
+38/58 phrases found 1/1 (whisper runs 1)
+39/58 phrases found 2/2 (whisper runs 1)
+40/58 phrases found 0/1 (whisper runs 3)
+41/58 phrases found 0/2 (whisper runs 3)
+42/58 phrases found 1/1 (whisper runs 1)
+43/58 phrases found 0/1 (whisper runs 3)
+44/58 phrases found 0/1 (whisper runs 3)
+45/58 phrases found 0/1 (whisper runs 3)
+46/58 phrases found 1/1 (whisper runs 1)
+47/58 phrases found 0/2 (whisper runs 3)
+48/58 phrases found 1/1 (whisper runs 1)
+49/58 phrases found 0/1 (whisper runs 3)
+50/58 phrases found 0/2 (whisper runs 3)
+51/58 phrases found 1/1 (whisper runs 1)
+52/58 phrases found 0/2 (whisper runs 3)
+53/58 phrases found 1/1 (whisper runs 1)
+54/58 phrases found 0/1 (whisper runs 3)
+55/58 phrases found 2/2 (whisper runs 1)
+56/58 phrases found 0/2 (whisper runs 3)
+57/58 phrases found 0/1 (whisper runs 3)
+58/58 phrases found 0/3 (whisper runs 3)
+words stats: {'tracks': 58, 'phrases': 76, 'found': 36}
+== parts/wlog-2.txt
+20/58 phrases found 1/1 (whisper runs 1)
+21/58 phrases found 0/2 (whisper runs 9)
+22/58 phrases found 0/1 (whisper runs 9)
+23/58 phrases found 1/1 (whisper runs 1)
+24/58 phrases found 1/1 (whisper runs 1)
+25/58 phrases found 1/1 (whisper runs 1)
+26/58 phrases found 1/1 (whisper runs 1)
+27/58 phrases found 0/2 (whisper runs 9)
+28/58 phrases found 1/1 (whisper runs 1)
+29/58 phrases found 1/1 (whisper runs 1)
+30/58 phrases found 1/1 (whisper runs 1)
+31/58 phrases found 2/2 (whisper runs 1)
+32/58 phrases found 0/1 (whisper runs 9)
+33/58 phrases found 0/1 (whisper runs 9)
+34/58 phrases found 2/2 (whisper runs 1)
+35/58 phrases found 0/1 (whisper runs 9)
+36/58 phrases found 1/1 (whisper runs 1)
+37/58 phrases found 0/2 (whisper runs 9)
+38/58 phrases found 0/1 (whisper runs 3)
+39/58 phrases found 1/1 (whisper runs 1)
+40/58 phrases found 0/1 (whisper runs 3)
+41/58 phrases found 0/1 (whisper runs 3)
+42/58 phrases found 1/1 (whisper runs 1)
+43/58 phrases found 2/2 (whisper runs 1)
+44/58 phrases found 2/2 (whisper runs 1)
+45/58 phrases found 1/1 (whisper runs 1)
+46/58 phrases found 2/3 (whisper runs 3)
+47/58 phrases found 0/1 (whisper runs 3)
+48/58 phrases found 0/1 (whisper runs 3)
+49/58 phrases found 0/1 (whisper runs 3)
+50/58 phrases found 0/1 (whisper runs 3)
+51/58 phrases found 0/2 (whisper runs 3)
+52/58 phrases found 1/1 (whisper runs 1)
+53/58 phrases found 0/1 (whisper runs 3)
+54/58 phrases found 1/1 (whisper runs 1)
+55/58 phrases found 0/1 (whisper runs 3)
+56/58 phrases found 1/1 (whisper runs 1)
+57/58 phrases found 1/1 (whisper runs 1)
+58/58 phrases found 0/1 (whisper runs 3)
+words stats: {'tracks': 58, 'phrases': 74, 'found': 43}
+== parts/wlog-3.txt
+20/57 phrases found 0/2 (whisper runs 9)
+21/57 phrases found 1/1 (whisper runs 1)
+22/57 phrases found 1/1 (whisper runs 1)
+23/57 phrases found 1/1 (whisper runs 4)
+24/57 phrases found 1/1 (whisper runs 4)
+25/57 phrases found 1/1 (whisper runs 1)
+26/57 phrases found 1/1 (whisper runs 1)
+27/57 phrases found 0/1 (whisper runs 9)
+28/57 phrases found 1/1 (whisper runs 1)
+29/57 phrases found 0/1 (whisper runs 9)
+30/57 phrases found 0/1 (whisper runs 9)
+31/57 phrases found 1/1 (whisper runs 1)
+32/57 phrases found 1/1 (whisper runs 1)
+33/57 phrases found 0/1 (whisper runs 9)
+34/57 phrases found 1/2 (whisper runs 9)
+35/57 phrases found 1/1 (whisper runs 4)
+36/57 phrases found 0/3 (whisper runs 9)
+37/57 phrases found 2/2 (whisper runs 1)
+whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
+38/57 phrases found 1/1 (whisper runs 1)
+39/57 phrases found 1/1 (whisper runs 1)
+40/57 phrases found 1/1 (whisper runs 1)
+41/57 phrases found 1/1 (whisper runs 1)
+42/57 phrases found 3/3 (whisper runs 1)
+43/57 phrases found 1/1 (whisper runs 1)
+44/57 phrases found 0/3 (whisper runs 3)
+45/57 phrases found 0/1 (whisper runs 3)
+46/57 phrases found 2/2 (whisper runs 1)
+47/57 phrases found 1/1 (whisper runs 1)
+48/57 phrases found 0/3 (whisper runs 3)
+49/57 phrases found 1/1 (whisper runs 1)
+50/57 phrases found 1/1 (whisper runs 1)
+51/57 phrases found 1/1 (whisper runs 1)
+52/57 phrases found 0/1 (whisper runs 3)
+53/57 phrases found 1/1 (whisper runs 2)
+54/57 phrases found 0/1 (whisper runs 3)
+55/57 phrases found 2/2 (whisper runs 1)
+56/57 phrases found 0/1 (whisper runs 3)
+57/57 phrases found 0/1 (whisper runs 3)
+words stats: {'tracks': 57, 'phrases': 80, 'found': 47}
+== parts/wlog-4.txt
+19/57 phrases found 0/1 (whisper runs 3)
+20/57 phrases found 0/1 (whisper runs 9)
+21/57 phrases found 2/2 (whisper runs 9)
+22/57 phrases found 1/1 (whisper runs 1)
+23/57 phrases found 0/1 (whisper runs 9)
+24/57 phrases found 1/1 (whisper runs 1)
+25/57 phrases found 0/2 (whisper runs 9)
+26/57 phrases found 0/1 (whisper runs 9)
+27/57 phrases found 1/1 (whisper runs 9)
+28/57 phrases found 0/1 (whisper runs 9)
+29/57 phrases found 0/1 (whisper runs 9)
+30/57 phrases found 1/1 (whisper runs 1)
+31/57 phrases found 0/1 (whisper runs 9)
+32/57 phrases found 1/1 (whisper runs 1)
+33/57 phrases found 0/1 (whisper runs 9)
+34/57 phrases found 0/2 (whisper runs 9)
+35/57 phrases found 3/3 (whisper runs 1)
+36/57 phrases found 0/1 (whisper runs 9)
+37/57 phrases found 2/2 (whisper runs 1)
+38/57 phrases found 1/1 (whisper runs 1)
+39/57 phrases found 0/1 (whisper runs 3)
+40/57 phrases found 0/1 (whisper runs 3)
+41/57 phrases found 0/2 (whisper runs 3)
+42/57 phrases found 2/2 (whisper runs 1)
+43/57 phrases found 0/2 (whisper runs 3)
+44/57 phrases found 0/1 (whisper runs 3)
+45/57 phrases found 1/1 (whisper runs 2)
+46/57 phrases found 1/1 (whisper runs 1)
+47/57 phrases found 0/1 (whisper runs 3)
+48/57 phrases found 1/1 (whisper runs 1)
+49/57 phrases found 2/2 (whisper runs 1)
+50/57 phrases found 1/1 (whisper runs 1)
+51/57 phrases found 1/1 (whisper runs 1)
+52/57 phrases found 0/1 (whisper runs 3)
+53/57 phrases found 0/1 (whisper runs 3)
+54/57 phrases found 2/2 (whisper runs 1)
+55/57 phrases found 0/1 (whisper runs 3)
+56/57 phrases found 1/1 (whisper runs 1)
+57/57 phrases found 1/1 (whisper runs 1)
+words stats: {'tracks': 57, 'phrases': 68, 'found': 36}
+== parts/wlog-5.txt
+20/57 phrases found 1/1 (whisper runs 1)
+21/57 phrases found 0/1 (whisper runs 9)
+22/57 phrases found 1/1 (whisper runs 1)
+23/57 phrases found 0/1 (whisper runs 9)
+24/57 phrases found 0/2 (whisper runs 9)
+25/57 phrases found 1/1 (whisper runs 7)
+26/57 phrases found 2/2 (whisper runs 1)
+27/57 phrases found 2/2 (whisper runs 1)
+28/57 phrases found 0/2 (whisper runs 9)
+29/57 phrases found 1/1 (whisper runs 1)
+30/57 phrases found 1/1 (whisper runs 1)
+31/57 phrases found 0/1 (whisper runs 9)
+32/57 phrases found 2/2 (whisper runs 1)
+33/57 phrases found 0/1 (whisper runs 9)
+34/57 phrases found 0/1 (whisper runs 9)
+35/57 phrases found 0/1 (whisper runs 9)
+36/57 phrases found 0/1 (whisper runs 9)
+37/57 phrases found 1/1 (whisper runs 9)
+whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
+38/57 phrases found 0/1 (whisper runs 3)
+39/57 phrases found 1/1 (whisper runs 1)
+40/57 phrases found 0/1 (whisper runs 3)
+41/57 phrases found 1/1 (whisper runs 1)
+42/57 phrases found 0/1 (whisper runs 3)
+43/57 phrases found 0/1 (whisper runs 3)
+44/57 phrases found 1/1 (whisper runs 1)
+45/57 phrases found 1/1 (whisper runs 1)
+46/57 phrases found 0/1 (whisper runs 3)
+47/57 phrases found 0/1 (whisper runs 3)
+48/57 phrases found 1/1 (whisper runs 1)
+49/57 phrases found 0/1 (whisper runs 3)
+50/57 phrases found 0/1 (whisper runs 3)
+51/57 phrases found 1/1 (whisper runs 1)
+52/57 phrases found 0/1 (whisper runs 3)
+53/57 phrases found 0/1 (whisper runs 3)
+54/57 phrases found 1/1 (whisper runs 1)
+55/57 phrases found 1/1 (whisper runs 1)
+56/57 phrases found 0/1 (whisper runs 3)
+57/57 phrases found 2/2 (whisper runs 1)
+words stats: {'tracks': 57, 'phrases': 72, 'found': 40}
+== parts/wlog-6.txt
+19/57 phrases found 1/1 (whisper runs 3)
+20/57 phrases found 0/1 (whisper runs 9)
+21/57 phrases found 0/1 (whisper runs 9)
+22/57 phrases found 1/1 (whisper runs 1)
+23/57 phrases found 1/1 (whisper runs 1)
+24/57 phrases found 1/1 (whisper runs 1)
+25/57 phrases found 0/2 (whisper runs 9)
+26/57 phrases found 1/1 (whisper runs 1)
+27/57 phrases found 0/1 (whisper runs 9)
+28/57 phrases found 1/1 (whisper runs 1)
+29/57 phrases found 0/1 (whisper runs 9)
+30/57 phrases found 1/1 (whisper runs 1)
+31/57 phrases found 2/2 (whisper runs 1)
+32/57 phrases found 0/1 (whisper runs 9)
+33/57 phrases found 1/1 (whisper runs 1)
+34/57 phrases found 2/2 (whisper runs 1)
+35/57 phrases found 1/1 (whisper runs 1)
+36/57 phrases found 0/1 (whisper runs 9)
+37/57 phrases found 0/1 (whisper runs 9)
+38/57 phrases found 1/1 (whisper runs 1)
+39/57 phrases found 1/1 (whisper runs 1)
+40/57 phrases found 1/1 (whisper runs 1)
+41/57 phrases found 0/1 (whisper runs 3)
+42/57 phrases found 1/1 (whisper runs 1)
+43/57 phrases found 1/1 (whisper runs 1)
+44/57 phrases found 0/2 (whisper runs 3)
+45/57 phrases found 1/1 (whisper runs 3)
+46/57 phrases found 1/2 (whisper runs 3)
+47/57 phrases found 0/2 (whisper runs 3)
+48/57 phrases found 0/1 (whisper runs 3)
+49/57 phrases found 1/1 (whisper runs 1)
+50/57 phrases found 0/2 (whisper runs 3)
+51/57 phrases found 2/2 (whisper runs 1)
+52/57 phrases found 0/1 (whisper runs 3)
+53/57 phrases found 0/1 (whisper runs 3)
+54/57 phrases found 0/1 (whisper runs 3)
+55/57 phrases found 0/1 (whisper runs 3)
+56/57 phrases found 1/1 (whisper runs 1)
+57/57 phrases found 1/1 (whisper runs 1)
+words stats: {'tracks': 57, 'phrases': 68, 'found': 38}
+== parts/wlog-7.txt
+20/57 phrases found 0/1 (whisper runs 9)
+21/57 phrases found 0/1 (whisper runs 9)
+22/57 phrases found 1/1 (whisper runs 1)
+23/57 phrases found 1/1 (whisper runs 1)
+24/57 phrases found 0/1 (whisper runs 9)
+25/57 phrases found 0/1 (whisper runs 9)
+26/57 phrases found 0/1 (whisper runs 9)
+27/57 phrases found 1/1 (whisper runs 1)
+28/57 phrases found 1/1 (whisper runs 1)
+29/57 phrases found 0/1 (whisper runs 9)
+30/57 phrases found 0/1 (whisper runs 9)
+31/57 phrases found 1/1 (whisper runs 1)
+32/57 phrases found 1/1 (whisper runs 1)
+33/57 phrases found 0/2 (whisper runs 9)
+34/57 phrases found 0/1 (whisper runs 9)
+35/57 phrases found 0/1 (whisper runs 9)
+36/57 phrases found 1/1 (whisper runs 1)
+37/57 phrases found 0/2 (whisper runs 9)
+whisper model: ivrit-ai/whisper-large-v3-turbo-ct2
+38/57 phrases found 0/2 (whisper runs 3)
+39/57 phrases found 1/1 (whisper runs 1)
+40/57 phrases found 0/1 (whisper runs 3)
+41/57 phrases found 0/2 (whisper runs 3)
+42/57 phrases found 0/1 (whisper runs 3)
+43/57 phrases found 1/1 (whisper runs 1)
+44/57 phrases found 2/2 (whisper runs 3)
+45/57 phrases found 0/2 (whisper runs 3)
+46/57 phrases found 0/1 (whisper runs 3)
+47/57 phrases found 0/1 (whisper runs 3)
+48/57 phrases found 0/2 (whisper runs 3)
+49/57 phrases found 1/1 (whisper runs 1)
+50/57 phrases found 1/1 (whisper runs 1)
+51/57 phrases found 1/1 (whisper runs 1)
+52/57 phrases found 1/1 (whisper runs 2)
+53/57 phrases found 1/1 (whisper runs 1)
+54/57 phrases found 0/1 (whisper runs 3)
+55/57 phrases found 1/1 (whisper runs 1)
+56/57 phrases found 1/1 (whisper runs 1)
+57/57 phrases found 1/1 (whisper runs 1)
+words stats: {'tracks': 57, 'phrases': 70, 'found': 28}
